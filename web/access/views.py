@@ -66,6 +66,7 @@ SERVICE_LABEL = {
 def index(request):
     m = model()
     rows = m.ranked(limit=12)
+    island = request.GET.get("island", "MV002012")
     return render(request, "access/index.html", {
         "s": m.stats(),
         "islands": m.picker,
@@ -73,9 +74,9 @@ def index(request):
         "rows": rows,
         "gaps": m.gaps,
         "manifest": _manifest(),
-        "default_from": "MV002012",   # Kulhudhuffushi: the demo journey that works
+        "default_from": island,
         "default_to": "",
-        "default_from_name": "Kulhudhuffushi",
+        "default_from_name": m.name_of(island),
         "default_to_name": "",
         "default_island": request.GET.get("island", "MV002012"),
         "n_rows": len(m.inhabited),
@@ -92,6 +93,8 @@ def index(request):
         "worst_h": "%.1f h" % float(m.inhabited.hours_to_hs.max()),
         "sel_atoll": "",
         "sel_band": "",
+        # the island → service panel is in the first HTML paint, not only after an htmx call
+        "first_panel": connect_context(m, island),
     })
 
 
@@ -113,18 +116,11 @@ TYPE_LABEL = {
 }
 
 
-@require_GET
-def connect(request):
-    """Island to service: every service type, where the nearest one is, and how you get there."""
-    m = model()
-    node = request.GET.get("island", "").strip()
-    if not node:
-        node = m.inhabited.sort_values("population", ascending=False).iloc[0].node_id
+def connect_context(m, node: str, category: str = "") -> dict:
+    """Everything the island → service panel needs, for one island and one category."""
     card = m.card(node)
     if card is None:
         raise Http404(f"unknown island: {node}")
-    category = request.GET.get("category", "").strip()
-
     rows, paths = [], []
     for svc_type, a in card["access"].items():
         if category and a["category"] != category:
@@ -159,13 +155,24 @@ def connect(request):
     far = [r for r in rows if r["hours"] is not None]
     worst = max(far, key=lambda r: r["hours"]) if far else None
 
-    return render(request, "access/_connect.html", {
+    return {
         "c": card, "rows": rows, "category": category,
         "paths": json.dumps(paths),
         "local_n": local_n, "within2": within2, "total_n": len(rows),
         "worst": worst, "categories": ["education", "health"],
         "cat_label": {"education": "Education", "health": "Health"},
-    })
+    }
+
+
+@require_GET
+def connect(request):
+    """Island to service: every service type, where the nearest one is, and how you get there."""
+    m = model()
+    node = request.GET.get("island", "").strip()
+    if not node:
+        node = m.inhabited.sort_values("population", ascending=False).iloc[0].node_id
+    return render(request, "access/_connect.html",
+                  connect_context(m, node, request.GET.get("category", "").strip()))
 
 
 @require_GET

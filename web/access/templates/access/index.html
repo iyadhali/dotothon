@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div id="connect-out"{% if default_island %} hx-get="/connect/?island={{ default_island }}" hx-trigger="load" hx-swap="innerHTML"{% endif %}></div>
+    <div id="connect-out">{% with c=first_panel.c rows=first_panel.rows category=first_panel.category paths=first_panel.paths local_n=first_panel.local_n within2=first_panel.within2 total_n=first_panel.total_n worst=first_panel.worst cat_label=first_panel.cat_label %}{% include "access/_connect.html" %}{% endwith %}</div>
 
     <div class="mapctl">
       <label class="metricrow" id="metricrow">
@@ -63,14 +63,13 @@
   <aside class="ovl ovl-right">
     <div class="card" id="paircard">
       <div class="cardhead">
-        <h2>Connect to another island</h2>
-        <span class="hint">one more hop</span>
+        <h2>Journey from <span id="fromName">{{ default_from_name }}</span></h2>
+        <span class="hint">pick a second island</span>
       </div>
       <div id="route-out" data-default-to="{{ default_to }}">
-        <p class="empty">Pick a second island and the journey from the selected one appears here.</p>
+
       </div>
-      <p class="fromline">From <b id="fromName">{{ default_from_name }}</b>
-        <input name="from" id="from" type="hidden" value="{{ default_from }}"></p>
+      <input name="from" id="from" type="hidden" value="{{ default_from }}">
       <label class="pickto">To
         <div class="combo" id="toCombo">
           <input id="toText" class="combotext" type="text" value="{{ default_to_name }}"
@@ -333,11 +332,17 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
 
   syncZoom();
   const firstIsland = mapEl.dataset.defaultIsland;
-  if (firstIsland) selectIsland(firstIsland, {fly:false});
+  if (firstIsland) {
+    selectIsland(firstIsland, {fly:false});
+    const p0 = state.byId.get(firstIsland);
+    if (p0) map.setView([p0.lat, p0.lon], 8.5, {animate:false});   // open on the selected island
+  }
   const ro = el("route-out").dataset;
   const qp2 = new URLSearchParams(location.search);
   if (qp2.get("to")) { setPicker("to", qp2.get("to")); submitRoute(); }
   // share a view: ?lat=6.15&lon=73.28&z=9 opens the map at that spot, even after the demo route
+  drawConnect();          // the panel is in the first paint; draw its journeys straight away
+  frameConnect();
   if (VIEW) { pendingView = VIEW; map.setView([VIEW.lat, VIEW.lon], VIEW.z, {animate:false}); }
 });
 
@@ -486,6 +491,16 @@ el("routeBtn").addEventListener("click", submitRoute);
 function clearConnect() {
   if (state.connectLayer) { map.removeLayer(state.connectLayer); state.connectLayer = null; }
 }
+// frame the selected island together with the provider islands it can reach
+function frameConnect() {
+  const pts = state.connectPts || [];
+  if (!pts.length) return;
+  const b = L.latLngBounds(pts);
+  map.fitBounds(b, isWide()
+    ? {paddingTopLeft:[Math.min(340, map.getSize().x * 0.26), 70], paddingBottomRight:[Math.min(340, map.getSize().x * 0.26), 70], maxZoom:9.5}
+    : {padding:[40, 40], maxZoom:9.5});
+}
+
 function drawConnect() {
   clearConnect();
   const node = document.querySelector("#connect-out [data-paths]");
@@ -501,11 +516,8 @@ function drawConnect() {
   });
   state.connectLayer = layer.addTo(map);
   const pts = groups.flat();
-  if (pts.length) {
-    map.fitBounds(L.latLngBounds(pts), isWide()
-      ? {paddingTopLeft:[420, 70], paddingBottomRight:[70, 70], maxZoom:9}
-      : {padding:[40, 40], maxZoom:9});
-  }
+  state.connectPts = pts;
+  frameConnect();
 }
 
 // the ranked table is swapped by htmx, so its picker is rebuilt after every swap

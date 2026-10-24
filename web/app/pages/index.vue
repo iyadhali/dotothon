@@ -34,15 +34,16 @@ const {
 /** Where-to-build: the proposed site in focus (null = all five). */
 const focusRank = ref<number | null>(null)
 let siteDeepLinkUsed = false
-watch(siting, () => {
+watch(siting, (value) => {
   // Deep link: ?view=recommended&site=2 opens once with that site in focus.
   const site = import.meta.client ? Number(new URLSearchParams(window.location.search).get('site')) : NaN
   if (!siteDeepLinkUsed && Number.isInteger(site) && site > 0) {
     siteDeepLinkUsed = true
     focusRank.value = site
-  } else {
-    focusRank.value = null
+    return
   }
+  // Keep the focus across recomputes while that rank still exists.
+  if (focusRank.value !== null && !value?.sites.some((candidate) => candidate.rank === focusRank.value)) focusRank.value = null
 })
 
 const focusSite = computed(() => siting.value?.sites.find((site) => site.rank === focusRank.value) ?? null)

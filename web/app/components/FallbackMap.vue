@@ -60,6 +60,29 @@ const path = (points: [number, number][]) =>
   points.map(([lon, lat], i) => `${i ? 'L' : 'M'}${project(lon, lat).join(',')}`).join(' ')
 
 const covered = computed(() => new Set(props.sites.flatMap((site) => site.newlyCoveredIslandIds)))
+
+/** Zoom to the focused site's routes, or the selected island's journeys; otherwise the whole chain. */
+const viewBox = computed(() => {
+  const focusPoints: [number, number][] = []
+  if (props.view === 'recommended' && props.focusSiteId) {
+    const site = props.islands.find((island) => island.id === props.focusSiteId)
+    if (site) focusPoints.push([site.lon, site.lat])
+    for (const route of props.siteRoutes) focusPoints.push(...route.points)
+  } else if (props.view === 'access' && props.selectedIslandId) {
+    const origin = props.islands.find((island) => island.id === props.selectedIslandId)
+    if (origin) focusPoints.push([origin.lon, origin.lat])
+    for (const journey of props.journeys) focusPoints.push(...journey.points)
+    for (const destination of props.destinations) focusPoints.push([destination.lon, destination.lat])
+  }
+  if (focusPoints.length < 2) return `0 0 ${W} ${H}`
+  const projected = focusPoints.map(([lon, lat]) => project(lon, lat))
+  const xs = projected.map(([x]) => x)
+  const ys = projected.map(([, y]) => y)
+  const size = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys), 60) * 1.6
+  const cx = (Math.max(...xs) + Math.min(...xs)) / 2
+  const cy = (Math.max(...ys) + Math.min(...ys)) / 2
+  return `${cx - size / 2} ${cy - size / 2} ${size} ${size}`
+})
 const byId = computed(() => new Map(props.islands.map((island) => [island.id, island])))
 
 function fill(island: Island): string {
@@ -76,7 +99,7 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
 </script>
 
 <template>
-  <svg class="am-fallback" :viewBox="`0 0 ${W} ${H}`" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Maldives islands map" @click.self="emit('select', null)">
+  <svg class="am-fallback" :viewBox="viewBox" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Maldives islands map" @click.self="emit('select', null)">
     <g :opacity="focused ? 0.15 : view === 'access' ? 0.6 : 0.2">
       <path
         v-for="route in routes"

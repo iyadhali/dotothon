@@ -43,12 +43,12 @@ Scores are our own honest guess at what a judge would write today, updated after
 | Criterion | Weight | Score | Points | Evidence we can point at | Gap |
 |---|---|---|---|---|---|
 | Relevance | 10 % | 5 | 10.0 | island-to-island access to post-16 education is a live Maldivian policy question; 187 islands, not a toy sample | — |
-| Data Utilization | 15 % | 4 | 12.0 | 4 organiser datasets + 3 public sources; school table reconciles to the published 5,105 students; island areas match OCHA at r = 0.9996 | **FollowMe carries the model; MTCC, MACL and Avas are only context.** Add one cross-validation (see action 4) |
+| Data Utilization | 15 % | 4 | 12.0 | 4 organiser datasets + 7 public sources + the service register; school table reconciles to the published 5,105 students; island areas match OCHA at r = 0.9996 | **FollowMe carries the model; MTCC, MACL and Avas are only context.** Add one cross-validation (see action 4) |
 | Innovation | 10 % | 4 | 8.0 | observed network from GPS; 1,303 physically impossible crossings rejected; no road or air link is invented: every edge is an observed crossing | must be *stated* as the innovation, or a judge reads it as "another dashboard" and scores 2 |
-| Technical execution | 20 % | 4 | 16.0 | live demo, runs offline, pipeline re-runnable, limits named in-app and in the README | **three capital routes return "no observed journey"** (Addu, Fuvahmulah, Thinadhoo) — correct, but reads as a bug. Air layer fixes it |
-| Impact | 15 % | 4 | 12.0 | `docs/findings.md`: named user (MoE Planning & Research), 28-island decision table ranked by children, named schools and km; NER 29.9 % vs 91.9 % | boarding/subsidy costing not modelled |
-| Scalability & readiness | 15 % | 5 | 15.0 | `make ingest` / `make watch`: a dropped file triggers only the affected stages, measured at 6 s; `source_manifest.md` records provenance; the web app hot-reloads rebuilt tables; `make check` asserts 13 published numbers | no hosted instance (runs locally by design) |
-| Clarity | 5 % | 4 | 4.0 | one question, one map, one number | 8-slide story not built yet |
+| Technical execution | 20 % | 4 | 16.0 | live demo, runs offline, pipeline re-runnable, limits named in-app and in the README | **two capital routes return "no observed journey"** (Addu, Fuvahmulah); Thinadhoo now reaches 715 islands through the observed network — correct, but reads as a bug. Air layer is the next step |
+| Impact | 15 % | 4 | 12.0 | `docs/findings.md`: named user (MoE Planning & Research), 33-island decision table ranked by children, named schools and km; NER 29.9 % vs 91.9 % | boarding/subsidy costing not modelled |
+| Scalability & readiness | 15 % | 5 | 15.0 | `make ingest` / `make watch`: a dropped file triggers only the affected stages, measured at 6 s; `source_manifest.md` records provenance; the web app hot-reloads rebuilt tables; `make check` asserts 27 published numbers | no hosted instance (runs locally by design) |
+| Clarity | 5 % | 4 | 4.0 | one question, one map, one simulator | 8-slide story not built yet |
 | Teamwork | 10 % | 4 | 8.0 | five cleanly separable stages | needs two speakers minimum and a visible split of roles |
 | **Total** | | | **85.0** | after actions 1–2 and the automatic ingest (Scalability 4→5) |
 
@@ -57,13 +57,14 @@ Scores are our own honest guess at what a judge would write today, updated after
 1. **Name the decision-maker and ship one decision output (Impact, 15 %, first tie-break).**
    User: the Planning and Research Division at the Ministry of Education — the unit that publishes
    the School Statistics we already parse — plus MTCC/RTL route scheduling. Deliverable: a table of
-   the **28 islands beyond 2 h**, with population, children, hours, and *the specific link whose
+   the **33 islands beyond 2 h**, with population, children, hours, and *the specific link whose
    addition would fix each*. **Done — see `docs/findings.md` and `data/derived/priority_gaps.csv`.**
 2. **Prove the model refreshes (Scalability, 15 %, first tie-break).**
    `make refresh GPS=/path/to/next-month` now exists, and `make check` asserts the published
    numbers after every rebuild. Still to demonstrate: the same pipeline run on a one-week subset.
-3. **Add the air layer (Technical, 20 %).** 14 domestic airports; the three failing capital routes
-   become reachable, and "unreachable" stops being a false negative in front of a judge.
+3. **Add the air layer (Technical, 20 %).** 14 domestic airports; the two failing capital routes
+   (Addu, Fuvahmulah) become reachable, and "unreachable" stops being a false negative in front of
+   a judge.
 4. **Cross-validate FollowMe against MTCC (Data Utilization, 15 %).** MTCC reports monthly
    ridership on 8 ferry routes; we observe crossings on those same routes. If observed crossing
    volume tracks reported ridership, we have used two organiser datasets to check each other —

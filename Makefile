@@ -10,9 +10,9 @@ PY      ?= python3
 GPS     ?= data/FollowMe_august_2025
 PORT    ?= 8000
 
-.PHONY: all ingest watch setup external spine gps schools provision model webdata check run refresh
+.PHONY: all ingest watch setup external spine gps schools provision model access simulator placement webdata database check run refresh
 
-all: external spine gps provision model webdata check
+all: external spine gps provision model access simulator placement webdata database check
 
 setup:
 	$(PY) -m pip install -r requirements.txt
@@ -33,15 +33,32 @@ gps:
 provision:
 	$(PY) scripts/build_school_provision.py
 
-# graph + service layer → hours to the nearest grade 11–12 school, and the gap table
+# graph + school layer → hours to the nearest grade 11–12 school, and the gap table
 model:
 	$(PY) scripts/build_reachability.py
+
+# service register + the same graph → coverage for every education and health service
+access:
+	$(PY) scripts/seed_services.py --if-missing
+	$(PY) scripts/build_service_access.py
+
+# coverage ranking → placement.csv (where a new facility covers the most people)
+simulator:
+	$(PY) scripts/build_simulator.py
+
+# one hypothetical crossing at a time → travel_time.csv + link_candidates.csv
+placement:
+	$(PY) scripts/build_placement.py
 
 # map points for the Django app
 webdata:
 	$(PY) web/build_web_data.py
 
-# incremental ingest: fingerprint the four supplied datasets, rebuild only what changed
+# every derived CSV → data/platform.sqlite (the only thing the app reads)
+database:
+	$(PY) scripts/build_database.py
+
+# incremental ingest: fingerprint every source group, rebuild only what changed
 ingest:
 	$(PY) scripts/ingest.py
 
@@ -49,18 +66,19 @@ ingest:
 watch:
 	$(PY) scripts/watch_data.py --every 10
 
-# assert the numbers we publish still hold
+# only the data/incoming pass
 absorb:
 	python3 scripts/absorb_incoming.py
 
+# assert the numbers we publish still hold
 check:
 	$(PY) scripts/check_outputs.py
 
-run: webdata
+run: database webdata
 	cd web && $(PY) manage.py runserver $(PORT)
 
 # full rebuild on a new month of GPS without touching open data
-refresh: spine gps provision model webdata check
+refresh: spine gps provision model access simulator placement webdata database check
 
 guard: ## install the push guard (only a-team-accessibility-model may be pushed)
 	sh scripts/git-guard/install.sh

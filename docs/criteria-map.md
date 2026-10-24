@@ -11,8 +11,8 @@ Impact and Scalability are 50 of the 100 points; **Impact + Scalability also bre
 
 | Artifact | Criterion | What it does for the score |
 |---|---|---|
-| `docs/findings.md` + `data/derived/priority_gaps.csv` | **Impact 15 %** | named user, named decision, 28-island table ranked by children with the school island and km to it |
-| `make refresh` + `scripts/check_outputs.py` | **Scalability 15 %** | proves the pipeline runs on new data and that 13 published numbers still hold |
+| `docs/findings.md` + `data/derived/priority_gaps.csv` | **Impact 15 %** | named user, named decision, 33-island table ranked by children with the school island and km to it |
+| `make refresh` + `scripts/check_outputs.py` | **Scalability 15 %** | proves the pipeline runs on new data and that 27 published numbers still hold |
 | `scripts/ingest.py` + `scripts/watch_data.py` + `source_manifest.md` | **Scalability 15 %**, **Data Utilization 15 %** | **new data is processed automatically**: fingerprints decide which stages rebuild, the watcher reacts to a dropped file in seconds (measured: 6 s from `touch` to rebuilt tables), and every run records provenance |
 | `scripts/build_sea_network.py` (GPS → stays → crossings) | **Innovation 10 %** *and* **Technical 20 %** | the method itself: the network is observed, not published |
 | Django app (`web/`) | **Technical 20 %**, **Clarity 5 %** | live demo, offline, one screen that answers the question — **not** the innovation |
@@ -27,18 +27,19 @@ Impact and Scalability are 50 of the 100 points; **Impact + Scalability also bre
 Each of these would cost time and move no criterion — several would actively hurt the Innovation
 score by making this look like a dashboard project.
 
-- **No login, no database, no admin panel.** `DATABASES = {}` on purpose.
+- **No login, no admin panel, no database server.** One SQLite file; `DATABASES = {}` on purpose
+  because the app opens it read-only.
 - **No fares page.** No fare data was supplied; inventing one would fail Data Utilization.
 - **No live API calls.** Everything is precomputed; venue wifi cannot break the demo.
 - **No animation, 3D, or choropleth-by-default.** The circle map is readable in a projector shot;
-  a choropleth of 186 islands at national zoom is not.
+  a choropleth of 187 islands at national zoom is not.
 - **No second dashboard.** The app is the demo surface for one method, not a product.
 
 ## Risk to the score, and who owns it
 
 | Risk | Criterion at stake | Mitigation |
 |---|---|---|
-| Judge clicks Addu → Malé and sees "no observed journey" | Technical 20 % | say the sentence before they do: *that is the air gap*; or ship the air layer |
+| Judge clicks an Addu island → Malé and sees "no observed journey" | Technical 20 % | say it before they do: *no tracked vessel crossed in August 2025* — the causeway is road, and the air layer is the named next step |
 | Judge reads the app as "another dashboard" | Innovation 10 % | slide 2 opens with the GPS-reconstruction, not the app |
 | FollowMe alone carries the model | Data Utilization 15 % | say plainly that MTCC/MACL/Avas are context, and name the one cross-check we do have |
 | Only one team member can explain the code | Teamwork 10 %, Technical 20 % | second speaker on the pipeline and on the limits |

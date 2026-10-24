@@ -7,7 +7,7 @@ two questions judges ask: **who benefits**, and **what could they do differently
 
 Of the Maldives' 187 inhabited islands, **44 teach grade 11–12**. On the network that boats
 actually sailed in August 2025, **154 islands — 416,235 people — can reach one of those schools
-within two hours**, and **33 islands cannot**. Those 28 hold **32,584 residents and 9,591 children
+within two hours**, and **33 islands cannot**. Those 33 hold **32,584 residents and 9,591 children
 aged 0–17**. Nationally the consequence is visible: 91.9 % of primary-age children are in school,
 but only **29.9 %** of 16–17-year-olds are enrolled in grades 11–12. The barrier is not a missing
 school; it is the last connection between an island and the school that already exists.
@@ -18,9 +18,9 @@ school; it is the last connection between an island and the school that already 
 |---|---|
 | **Planning & Research Division, Ministry of Education** — the unit that publishes the *School Statistics* series used here | decides where a boarding/hostel place or a transport subsidy buys the most enrolment, because the gap table is ranked by children, not islands |
 | **MTCC / RTL route planning** | sees which pairs are *almost* connected: every gap row names the school island and the kilometres between them |
-| **Island councils of the 28** | can put a specific, costed ask to the ministry instead of a general complaint |
+| **Island councils of the 33** | can put a specific, costed ask to the ministry instead of a general complaint |
 
-## The decision table (top of the 28, ranked by children affected)
+## The decision table (top of the 26 islands with an observed route, ranked by children affected)
 
 | Island | Atoll | Population | Children 0–17 | Hours now | Nearest grade 11–12 | km apart | If direct |
 |---|---|---:|---:|---:|---|---:|---:|
@@ -30,6 +30,10 @@ school; it is the last connection between an island and the school that already 
 | Fenfushi | Alifu Dhaalu | 1,000 | 333 | 2.19 | Mahibadhoo | 36.1 | 1.48 h |
 | Kelaa | Haa Alifu | 1,115 | 327 | 4.98 | Dhihdhoo | 13.4 | 0.86 h |
 | Isdhoo | Laamu | 929 | 309 | 3.40 | Fonadhoo | 33.3 | 1.40 h |
+
+The five Addu islands with no observed crossing — Feydhoo, Maradhoo, Meedhoo, Maradhoofeydhoo and
+Hulhudhoo — are not ranked here because there is no observed route to cost; they are joined to
+Hithadhoo by causeway. Counted by road, the gap is 28 islands, 21,281 residents and 6,758 children.
 
 Median saving if the nearest school were reachable directly: **1.51 hours each way**, which is the
 difference between a same-day return and an overnight stay. Full table:
@@ -43,13 +47,16 @@ quarter.
 
 ## What we are *not* claiming
 
-- **"No observed route" ≠ no service.** Two islands (Nadellaa, GDh; Muraidhoo, HA) had no tracked
-  crossing in August 2025. They are reported as a data gap, never as a cut-off.
+- **"No observed route" ≠ no service.** Seven islands had no tracked crossing in August 2025:
+  five Addu islands (Feydhoo, Maradhoo, Meedhoo, Maradhoofeydhoo, Hulhudhoo) joined to Hithadhoo
+  by causeway, plus Nadellaa (GDh) and Muraidhoo (HA). They are reported as a data gap, never as a
+  cut-off.
 - **The "if direct" column is a scenario**, not an observation: straight-line distance at 20 knots
   plus a 0.5 h connection. It prices a hypothetical link; it does not claim anyone sails it.
 - **One month of GPS.** Seasonal routes and monsoon cancellations are invisible.
-- **No fares.** The supplied data has none, so affordability — which the original challenge card
-  claimed — is deliberately absent from this analysis rather than guessed at.
+- **No inter-island fares.** The only supplied fare table is a Greater Malé airport-transfer
+  matrix (six zones, MVR 30–120), so affordability — which the original challenge card claimed —
+  is deliberately absent from this analysis rather than guessed at.
 
 ## How to reproduce
 
@@ -67,18 +74,18 @@ version of the same finding:
 
 | Service | Islands with one | Islands within 2 h | People within 2 h | Median hours |
 |---|---|---|---|---|
-| Health centre | 155 | 186 | 422,593 | 0.0 |
-| Hospital | 4 | 35 | 262,712 | 4.56 |
+| Health centre | 155 | 183 | 422,593 | 0.0 |
+| Hospital | 4 | 30 | 262,712 | 4.79 |
 
-Primary care is effectively universal — 186 of 187 inhabited islands reach a health centre within
-two hours. Secondary care is not: **only 30 islands, 262,712 residents and 51,601 children can reach
-a hospital within two hours, and the median island is 4.6 hours away.** Four islands hold all five
+Primary care is effectively universal — 183 of 187 inhabited islands reach a health centre within
+two hours. Secondary care is not: **only 30 islands, 262,712 residents and 48,768 children can reach
+a hospital within two hours, and the median island is 4.79 hours away.** Four islands hold all five
 hospitals (Malé has two).
 
 For the decision-maker this is the same question as the school gap, with a higher stakes label:
 the multi-modal network already carries people to a health centre almost everywhere, but the
 last leg to a hospital is a flight or an overnight sea crossing. Any policy that adds a hospital
-link — or a scheduled air connection that makes the existing ones reachable — moves 51,601
+link — or a scheduled air connection that makes the existing ones reachable — moves 48,768
 children at once.
 
 What we do not claim: we do not measure quality of care, bed capacity, or whether a patient would

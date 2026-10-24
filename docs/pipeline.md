@@ -1,6 +1,6 @@
 # Data pipeline — how new data gets processed
 
-The four datasets were delivered as files, so that is how new data arrives: **drop the file where
+The supplied datasets were delivered as files, so that is how new data arrives: **drop the file where
 the old one lived and the pipeline rebuilds itself.** Nothing to re-wire, no code change, no
 restart of the web app.
 
@@ -36,7 +36,7 @@ stage understands it. Re-dropping the same bytes is a no-op.
 ## How it decides what to rebuild
 
 Each source group is fingerprinted — a SHA-256 over `(path, size, mtime)` for every file. That is
-cheaper than reading 1.9 GB of GPS just to decide whether to read it, and it catches exactly what
+cheaper than reading 1.8 GB of GPS just to decide whether to read it, and it catches exactly what
 "new data" looks like in practice. The fingerprints are stored in `data/derived/.ingest.json`, so
 the next run knows which inputs produced which outputs.
 
@@ -47,8 +47,14 @@ the next run knows which inputs produced which outputs.
 | `sea` | the FollowMe folder changed | `sea_edges.csv`, `sea_nodes.csv` |
 | `provision` | the MoE statistics PDF changed | `island_school_provision.csv` |
 | `reachability` | any of the above rebuilt | `island_access.csv`, `island_pairs.csv`, `priority_gaps.csv` |
+| `services` | the service register or MoE directory changed | `services.csv` (MoE, MoH, MNU, hospitals) |
+| `service_access` | services or reachability rebuilt | `service_access.csv`, `service_summary.csv` |
+| `simulator` | service access rebuilt | `placement.csv` |
+| `placement` | reachability rebuilt | `travel_time.csv`, `link_candidates.csv` |
+| `incoming` | a file landed in `data/incoming/` | `source_file`, `raw_record` |
+| `database` | any derived table rebuilt | `data/platform.sqlite` |
 | `web` | reachability rebuilt | `islands_points.json` (the map data) |
-| `check` | always | 13 assertions on the numbers we publish |
+| `check` | always | 27 assertions on the numbers we publish |
 
 The web app does **not** need restarting: `web/access/data.py` keys its in-memory model on the
 mtimes of the derived tables, so the next request rebuilds it. A judge can watch a file land and

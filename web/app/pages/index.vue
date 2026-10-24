@@ -28,6 +28,7 @@ const {
   metricsError,
   baselineSummary,
   scenarioSummary,
+  unfilteredSummary,
   scenarioActive,
   scenarioDescription,
   comparison,
@@ -75,20 +76,13 @@ const displaySummary = computed(() =>
 
     <div v-if="dataStatus === 'loading'" class="mm-page-loading" role="status" aria-live="polite">
       <span class="mm-spinner" aria-hidden="true" />
-      <div>
-        <strong>Loading the prepared network…</strong>
-        <p>
-          Looking for <code>/data/multimodal.json</code> and
-          <code>/data/islands.geojson</code>. If they are not published yet, the bundled
-          fixture network is used instead.
-        </p>
-      </div>
+      <strong>Loading the prepared network…</strong>
     </div>
 
     <div v-else-if="dataStatus === 'error'" class="mm-page-error" role="alert">
-      <h2>The prototype could not load any network</h2>
+      <h2>No network loaded</h2>
       <p>{{ fatalError ?? 'Unknown data error.' }}</p>
-      <p>Reload the page to retry, or check that the prepared data was published.</p>
+      <p>Reload to retry, or check that the prepared data was published.</p>
     </div>
 
     <div v-else class="mm-shell">
@@ -98,35 +92,58 @@ const displaySummary = computed(() =>
 
       <main class="mm-main">
         <div v-if="dataSource === 'fixture'" class="mm-banner mm-banner--fixture" role="status">
-          <strong>Fixture data — no real-world claims.</strong>
-          <span>
-            The prepared network at <code>/data/multimodal.json</code> is not available, so the
-            page is using the bundled sample network. Population, coverage and journey numbers
-            here are test values, not national figures.
-          </span>
+          <strong>Fixture data — test values.</strong>
+          <span>Bundled sample network; no national claims.</span>
           <details v-if="loadNote">
-            <summary>Why the fallback happened</summary>
+            <summary>Why</summary>
+            <code>{{ loadNote }}</code>
+          </details>
+        </div>
+
+        <div v-else-if="dataSource === 'static'" class="mm-banner mm-banner--fixture" role="status">
+          <strong>Static fallback.</strong>
+          <span>Same prepared network, served as JSON; results are unchanged.</span>
+          <details v-if="loadNote">
+            <summary>Why</summary>
             <code>{{ loadNote }}</code>
           </details>
         </div>
 
         <div v-if="!engineReady" class="mm-banner mm-banner--engine" role="status">
-          <strong>Routing engine not wired yet.</strong>
-          <span>
-            The network loaded, but journey planning and accessibility calculations are not
-            registered in this build. The map shows coverage states and the controls are
-            browsable; colours and metrics appear once the router is integrated.
-          </span>
+          <strong>Routing engine not wired.</strong>
+          <span>Map states render; journeys and metrics need the router.</span>
         </div>
 
         <div v-if="filterActive" class="mm-banner mm-banner--filter" role="status">
           <strong>Network filter active.</strong>
-          <span>
-            Islands removed by your Land/Sea/Air or route selection are labelled
-            <em>Not selected by network filter</em>, separately from coverage gaps. The
-            headline population figures include only the selected network.
-          </span>
+          <span>Not selected ≠ no infrastructure.</span>
+          <details>
+            <summary>What this means</summary>
+            <p>
+              Islands removed by your Land/Sea/Air or route selection are labelled “Not selected by
+              network filter”. Headline figures include only the selected network.
+            </p>
+          </details>
         </div>
+
+        <KpiStrip
+          :summary="displaySummary"
+          :threshold="threshold"
+          :loading="metricsLoading"
+          :error="metricsError"
+          :scenario-active="scenarioActive"
+          :filter-active="filterActive"
+        />
+
+        <InsightStrip
+          :summary="displaySummary"
+          :unfiltered-summary="unfilteredSummary"
+          :comparison="comparison"
+          :threshold="threshold"
+          :filter-active="filterActive"
+          :scenario-active="scenarioActive"
+          :loading="metricsLoading"
+        />
 
         <div class="mm-grid">
           <MapPanel
@@ -186,39 +203,39 @@ const displaySummary = computed(() =>
           <CoveragePanel
             class="mm-grid__wide"
             :meta="meta"
-            :data-source="dataSource === 'fixture' ? 'fixture' : 'live'"
+            :data-source="dataSource ?? 'api'"
             :geojson-loaded="geojsonLoaded"
             :load-note="loadNote ?? ''"
           />
 
-          <HdxPanel class="mm-grid__wide" />
+          <HdxPanel
+            class="mm-grid__wide"
+            :summary="displaySummary"
+            :threshold="threshold"
+          />
         </div>
 
         <footer class="mm-footer">
-          <p>
-            <strong>What this is.</strong> A working prototype of reference-day multimodal
-            access to health and education facilities. It reports modelled physical access,
-            not confirmed service availability, observed demand or a verified calendar.
+          <p class="mm-footer__line">
+            <strong>Prototype.</strong> Modelled physical access on one reference day — not
+            confirmed services, demand or a verified calendar.
           </p>
-          <p>
-            <strong>What it is not.</strong> MTCC passenger counts in the source data are
-            synthetic; they are not observed demand. Missing coverage is not evidence that an
-            island has no transport. Fares and fuel costs are out of scope.
-          </p>
-          <p>
-            <strong>Publish and inspect.</strong> The pipeline exports QGIS-ready layers
-            (islands, facilities, ferry and air routes, access edges, style) under
-            <a href="/data/qgis/index.html">/data/qgis/</a>; if the link is missing, the export has
-            not been published yet. To publish the same layers
-            in Mapbox, upload the exported GeoJSON as a tileset in Mapbox Studio and point a
-            Mapbox style at it. QGIS and Mapbox Studio are authoring tools only: this app reads
-            <code>/data/multimodal.json</code> and <code>/data/islands.geojson</code> and does
-            not require either tool at runtime.
-          </p>
-          <p class="mm-footer__meta">
-            Island names are preserved from source records where possible. Times are integer
-            minutes after midnight, Maldives time (UTC+5).
-          </p>
+          <details class="mm-footer__more">
+            <summary>Caveats, sources & publishing</summary>
+            <p>
+              MTCC passenger counts are synthetic, not observed demand. Missing coverage is not
+              evidence that an island has no transport. Fares and fuel are out of scope. Island
+              names follow source records; times are integer minutes after midnight, Maldives time
+              (UTC+5).
+            </p>
+            <p>
+              QGIS-ready layers are exported to <a href="/data/qgis/">/data/qgis/</a> when the
+              pipeline publishes them; a missing link means the export is not published. To publish
+              in Mapbox, upload the exported GeoJSON as a tileset in Mapbox Studio and point a style
+              at it. QGIS and Mapbox Studio are authoring tools only — this app reads
+              <code>/data/multimodal.json</code> and <code>/data/islands.geojson</code> at runtime.
+            </p>
+          </details>
         </footer>
       </main>
     </div>

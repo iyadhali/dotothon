@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { formatDate } from '../utils/format'
 
 const props = defineProps<{
-  dataSource: 'live' | 'fixture' | null
+  dataSource: 'api' | 'static' | 'fixture' | null
   dataStatus: 'loading' | 'ready' | 'error'
   referenceDay: string | null
   generatedAt: string | null
@@ -12,6 +12,8 @@ const props = defineProps<{
 const sourceLabel = computed(() => {
   if (props.dataStatus === 'loading') return 'Loading prepared network…'
   if (props.dataSource === 'fixture') return 'Fixture data'
+  if (props.dataSource === 'static') return 'Static fallback'
+  if (props.dataSource === 'api') return 'SQLite API'
   return 'Prepared network'
 })
 </script>
@@ -39,8 +41,7 @@ const sourceLabel = computed(() => {
           <p class="mm-eyebrow">Maldives · multimodal accessibility prototype</p>
           <h1>Island Access Atlas</h1>
           <p class="mm-lede">
-            Ferry- and air-based access to health and education facilities, modelled from
-            published timetables and estimated air frequencies on a single reference day.
+            Ferry + air access to health and education, modelled on one reference day.
           </p>
         </div>
       </div>
@@ -79,8 +80,11 @@ const sourceLabel = computed(() => {
       <span class="mm-confidence__item">
         <i class="mm-line mm-line--assumption" aria-hidden="true" /> Assumption
       </span>
-      <span class="mm-confidence__note">
-        Verified means every transit leg has a published timetable and no air leg is used.
+      <span
+        class="mm-confidence__note"
+        title="Verified means every transit leg is timetabled and no air leg is used."
+      >
+        Verified = timetabled, no air leg.
       </span>
     </div>
   </header>

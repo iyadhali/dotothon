@@ -3,12 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev --host 127.0.0.1",
-    "build": "nuxt build",
+    "dev": "node --experimental-strip-types scripts/build-db.ts && nuxt dev --host 127.0.0.1",
+    "build": "node --experimental-strip-types scripts/build-db.ts && nuxt build",
     "preview": "nuxt preview --host 127.0.0.1",
     "postinstall": "nuxt prepare",
     "typecheck": "nuxt typecheck",
     "test": "python -m unittest discover -s ../tools/tests -v",
+    "db:build": "node --experimental-strip-types scripts/build-db.ts",
+    "db:check": "node --experimental-strip-types scripts/build-db.ts --check",
+    "test:db": "node --experimental-strip-types --test scripts/db.test.ts",
     "test:routing": "node --experimental-strip-types --test shared/routing/router.test.ts",
     "check:routing": "node --experimental-strip-types scripts/check-routing.ts",
     "test:data": "python3 -m unittest discover -s ../scripts/multimodal/tests -v"

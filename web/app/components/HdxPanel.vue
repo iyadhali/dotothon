@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { $fetch } from 'ofetch'
+import type { AccessibilitySummary } from '../../shared/routing/types'
+import type { ThresholdMinutes } from '../utils/analysis'
+import { formatDuration, formatPercent, formatPopulation } from '../utils/format'
 
 interface HdxNationalRow {
   category: string
@@ -23,6 +26,11 @@ interface HdxBaseline {
   national: HdxNationalRow[]
   units?: HdxUnitRow[]
 }
+
+const props = defineProps<{
+  summary: AccessibilitySummary | null
+  threshold: ThresholdMinutes
+}>()
 
 type HdxStatus = 'loading' | 'ready' | 'missing' | 'error'
 
@@ -56,6 +64,61 @@ function categoryLabel(value: string): string {
     .join(' ')
 }
 
+function thresholdText(value: string | number): string {
+  return String(value)
+}
+
+function findRow(category: string, threshold: string): HdxNationalRow | undefined {
+  return baseline.value?.national.find(
+    (row) =>
+      row.category === category &&
+      thresholdText(row.threshold).trim().toLowerCase() === threshold.toLowerCase(),
+  )
+}
+
+const tileRows = computed(() => [
+  {
+    key: 'education',
+    label: 'Education',
+    context: 'within 5 km',
+    row: findRow('education', '5 km'),
+  },
+  {
+    key: 'hospital',
+    label: 'Hospital',
+    context: 'within 60 min',
+    row: findRow('hospitals', '60 min'),
+  },
+  {
+    key: 'primary',
+    label: 'Primary care',
+    context: 'within 60 min',
+    row: findRow('primary_healthcare', '60 min'),
+  },
+])
+
+const hospital60 = computed(() => findRow('hospitals', '60 min'))
+
+const multimodalShare = computed(() => {
+  if (!props.summary || props.summary.populationTotal <= 0) return null
+  const within =
+    props.threshold === 60
+      ? props.summary.within60
+      : props.threshold === 120
+        ? props.summary.within120
+        : props.summary.within240
+  return (within / props.summary.populationTotal) * 100
+})
+
+const comparison = computed(() => {
+  if (multimodalShare.value === null || !hospital60.value) return null
+  return {
+    multimodal: multimodalShare.value,
+    benchmark: hospital60.value.share,
+    delta: multimodalShare.value - hospital60.value.share,
+  }
+})
+
 const nationalRows = computed(() => baseline.value?.national ?? [])
 
 const unitGroups = computed(() => {
@@ -82,135 +145,162 @@ const unitGroups = computed(() => {
 })
 
 const nationalByThreshold = computed(() => {
-  const rows = nationalRows.value
-  return [...rows].sort(
+  return [...nationalRows.value].sort(
     (a, b) =>
       a.category.localeCompare(b.category) ||
       String(a.threshold).localeCompare(String(b.threshold), undefined, { numeric: true }),
   )
 })
 
+function barStyle(share: number): Record<string, string> {
+  return { width: `${Math.max(0, Math.min(100, share))}%` }
+}
+
 onMounted(async () => {
-  try {
-    const payload = await $fetch<unknown>('/data/heigit-baseline.json', { timeout: 12000 })
-    if (!isHdxBaseline(payload)) {
-      status.value = 'error'
-      errorNote.value =
-        'The HDX benchmark file exists but does not match the expected source / national / units schema, so it is not displayed.'
+  const notes: string[] = []
+  for (const url of ['/api/hdx', '/data/heigit-baseline.json']) {
+    try {
+      const payload = await $fetch<unknown>(url, { timeout: 12000 })
+      if (!isHdxBaseline(payload)) {
+        notes.push(`${url} returned an unexpected schema`)
+        continue
+      }
+      baseline.value = payload
+      status.value = 'ready'
       return
+    } catch (error) {
+      notes.push(`${url}: ${error instanceof Error ? error.message : String(error)}`)
     }
-    baseline.value = payload
-    status.value = 'ready'
-  } catch (error) {
-    status.value = 'missing'
-    errorNote.value =
-      error instanceof Error ? error.message : 'The HDX benchmark file could not be fetched.'
   }
+  status.value = 'missing'
+  errorNote.value = notes.join(' · ') || 'The HDX benchmark file could not be fetched.'
 })
 </script>
 
 <template>
-  <section class="mm-panel mm-panel--wide mm-hdx" aria-labelledby="mm-hdx-title">
+  <section class="mm-panel mm-hdx" aria-labelledby="mm-hdx-title">
     <header class="mm-panel__head">
       <div>
-        <p class="mm-eyebrow">External benchmark</p>
-        <h2 id="mm-hdx-title" class="mm-panel__title">HDX / HeiGIT land-based comparison</h2>
+        <h2 id="mm-hdx-title" class="mm-panel__title">External benchmark</h2>
+        <p class="mm-panel__sub mm-one-line">
+          HDX/HeiGIT land–car access · separate population universe
+        </p>
       </div>
-      <span class="mm-tag">Benchmark · not merged</span>
+      <span class="mm-tag mm-tag--warn">Land-only · not merged</span>
     </header>
 
-    <p class="mm-panel__note">
-      This panel compares against the published HDX/HeiGIT land-based benchmark. Education
-      uses distance thresholds (5–50 km); hospitals and primary care use travel-time
-      thresholds (10–120 min). It is shown as context only: it is <strong>not</strong> merged
-      into this prototype's multimodal population denominators, and the app does not
-      interpolate or recompute its values.
-    </p>
-
     <p v-if="status === 'loading'" class="mm-loading-inline" role="status">
-      <span class="mm-spinner mm-spinner--small" aria-hidden="true" /> Loading
-      <code>/data/heigit-baseline.json</code>…
+      <span class="mm-spinner mm-spinner--small" aria-hidden="true" /> Loading benchmark…
     </p>
 
     <template v-else-if="status === 'ready' && baseline">
-      <dl class="mm-hdx__source">
-        <div>
-          <dt>Source</dt>
-          <dd>{{ baseline.source }}</dd>
-        </div>
-        <div>
-          <dt>Method</dt>
-          <dd>{{ baseline.method }}</dd>
-        </div>
-        <div>
-          <dt>Caution</dt>
-          <dd>{{ baseline.warning }}</dd>
-        </div>
-      </dl>
-
-      <div class="mm-hdx__table-wrap">
-        <table class="mm-hdx__table">
-          <caption class="mm-hdx__caption">
-            National benchmark rows as published. Shares are the source values; no
-            interpolation or rounding beyond display.
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">Category</th>
-              <th scope="col">Threshold</th>
-              <th scope="col">Share</th>
-              <th scope="col">Population</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="row in nationalByThreshold" :key="`${row.category}-${row.threshold}`">
-              <th scope="row">{{ categoryLabel(row.category) }}</th>
-              <td>{{ typeof row.threshold === 'number' ? `${row.threshold} km` : row.threshold }}</td>
-              <td>{{ row.share.toFixed(1) }}%</td>
-              <td>{{ row.population.toLocaleString('en-GB') }}</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="mm-hdx__tiles">
+        <article v-for="tile in tileRows" :key="tile.key" class="mm-hdx__tile">
+          <span class="mm-hdx__tile-label">{{ tile.label }}</span>
+          <strong class="mm-hdx__tile-value">
+            {{ tile.row ? `${tile.row.share.toFixed(1)}%` : '—' }}
+          </strong>
+          <span class="mm-hdx__tile-context">{{ tile.context }}</span>
+          <span class="mm-bar mm-bar--hdx" aria-hidden="true">
+            <span v-if="tile.row" :style="barStyle(tile.row.share)" />
+          </span>
+          <span class="mm-hdx__tile-pop">
+            {{ tile.row ? `${formatPopulation(tile.row.population)} residents` : 'Not published' }}
+          </span>
+        </article>
       </div>
 
-      <details v-if="unitGroups.length" class="mm-hdx__units">
-        <summary>Unit-level summary ({{ baseline.units?.length ?? 0 }} rows)</summary>
-        <ul>
-          <li v-for="group in unitGroups" :key="group.key">
-            {{ group.key }}: {{ group.count }} units
-            <template v-if="group.average !== null">
-              · mean within-5 km share {{ group.average.toFixed(1) }}%
-              ({{ group.withDistance }} with distance values).
-            </template>
-            <template v-else>· time-threshold units; no within-5 km value.</template>
-          </li>
-        </ul>
+      <article v-if="comparison" class="mm-hdx__insight">
+        <span class="mm-chip mm-chip--derived">derived · not like-for-like</span>
+        <p>
+          This atlas
+          <strong>{{ formatPercent(comparison.multimodal / 100) }}</strong> within
+          {{ formatDuration(threshold) }} · HDX hospital ≤60 min
+          <strong>{{ comparison.benchmark.toFixed(1) }}%</strong>
+          <span class="mm-hdx__delta">
+            {{ comparison.delta >= 0 ? '+' : '' }}{{ comparison.delta.toFixed(1) }} pts
+          </span>
+        </p>
+        <span class="mm-hdx__insight-note">
+          Different populations, modes and definitions. Shown for orientation only — not causal,
+          not a validation.
+        </span>
+      </article>
+
+      <details class="mm-data-details mm-hdx__more">
+        <summary>
+          National rows ({{ nationalRows.length }}) · source, units &amp; limits
+        </summary>
+        <dl class="mm-hdx__source">
+          <div>
+            <dt>Source</dt>
+            <dd>{{ baseline.source }}</dd>
+          </div>
+          <div>
+            <dt>Method</dt>
+            <dd>{{ baseline.method }}</dd>
+          </div>
+          <div>
+            <dt>Caution</dt>
+            <dd>{{ baseline.warning }}</dd>
+          </div>
+        </dl>
+
+        <div class="mm-hdx__table-wrap">
+          <table class="mm-hdx__table">
+            <caption class="mm-hdx__caption">
+              National benchmark rows as published; shares are the source values, no interpolation.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Threshold</th>
+                <th scope="col">Share</th>
+                <th scope="col">Population</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in nationalByThreshold" :key="`${row.category}-${row.threshold}`">
+                <th scope="row">{{ categoryLabel(row.category) }}</th>
+                <td>{{ thresholdText(row.threshold) }}</td>
+                <td>{{ row.share.toFixed(1) }}%</td>
+                <td>{{ formatPopulation(row.population) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <details v-if="unitGroups.length" class="mm-hdx__units">
+          <summary>Unit-level summary ({{ baseline.units?.length ?? 0 }} rows)</summary>
+          <ul>
+            <li v-for="group in unitGroups" :key="group.key">
+              {{ group.key }}: {{ group.count }} units
+              <template v-if="group.average !== null">
+                · mean within-5 km share {{ group.average.toFixed(1) }}%
+                ({{ group.withDistance }} with distance values).
+              </template>
+              <template v-else>· time-threshold units; no within-5 km value.</template>
+            </li>
+          </ul>
+        </details>
+
         <p class="mm-hint">
-          Unit summaries are descriptive only. They cover land/car access and do not establish
-          multimodal access, service availability or a national population denominator.
+          Land/car access only; education distance-based, hospitals and primary care time-based;
+          WorldPop population, not the 2022 census origin universe; some units excluded or
+          aggregated. A separate benchmark, not a replacement or validation.
         </p>
       </details>
-
-      <p class="mm-panel__note">
-        Known limits of the benchmark: it models <strong>land/car access only</strong>, not
-        ferry or air travel; education is distance-based while hospitals and primary care are
-        time-based; its population source is WorldPop rather than the 2022 census origin
-        universe; and it excludes or aggregates some units. Treat it as a separate benchmark,
-        not as a replacement or validation of the numbers above.
-      </p>
     </template>
 
     <template v-else>
-      <p v-if="status === 'error'" class="mm-panel__note">
-        The HDX benchmark file could not be read as the expected schema, so no comparison is
-        shown. Values are never inferred or back-filled.
+      <p class="mm-panel__note">
+        Benchmark not published at <code>/data/heigit-baseline.json</code>; values are never
+        inferred or back-filled.
       </p>
-      <p v-else class="mm-panel__note">
-        The HDX benchmark file is not published at
-        <code>/data/heigit-baseline.json</code>, so no comparison can be shown. Values are
-        never inferred or back-filled.
-      </p>
-      <p v-if="errorNote" class="mm-hint">{{ errorNote }}</p>
+      <details v-if="errorNote" class="mm-data-details">
+        <summary>Fetch detail</summary>
+        <p class="mm-muted">{{ errorNote }}</p>
+      </details>
     </template>
   </section>
 </template>

@@ -12,6 +12,10 @@ web/.pnpm-store/
 web/.cache/
 web/test-results/
 web/output/
+# Generated SQLite serving database (built by `npm run db:build`)
+web/server/assets/*.sqlite
+web/server/assets/*.sqlite-wal
+web/server/assets/*.sqlite-shm
 # Stray npm lockfile; this project installs with pnpm (see web/README.md)
 web/package-lock.json
 qgis/*.qgd

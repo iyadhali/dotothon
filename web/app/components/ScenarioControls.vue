@@ -54,10 +54,7 @@ const selectedPatternLabel = computed(
 <template>
   <section class="mm-rail__section" aria-labelledby="mm-scenario-title">
     <h2 id="mm-scenario-title" class="mm-rail__title mm-rail__title--small">Scenario</h2>
-    <p class="mm-hint">
-      Baseline uses the prepared reference-day services. Scenarios are hypothetical user changes,
-      not observed operations or demand forecasts.
-    </p>
+    <p class="mm-hint">User changes, not observed operations.</p>
 
     <fieldset class="mm-fieldset">
       <legend class="mm-label">Timetable scenario</legend>

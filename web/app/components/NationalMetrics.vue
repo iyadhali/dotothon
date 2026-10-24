@@ -2,12 +2,7 @@
 import { computed } from 'vue'
 import type { AccessibilitySummary } from '../../shared/routing/types'
 import type { ThresholdMinutes } from '../utils/analysis'
-import {
-  formatClock,
-  formatDuration,
-  formatPercent,
-  formatPopulation,
-} from '../utils/format'
+import { formatClock, formatDuration, formatPercent, formatPopulation } from '../utils/format'
 
 const props = defineProps<{
   summary: AccessibilitySummary | null
@@ -20,40 +15,28 @@ const props = defineProps<{
   filterActive?: boolean
 }>()
 
-const thresholdKey = computed<keyof AccessibilitySummary>(() => {
-  switch (props.threshold) {
-    case 60:
-      return 'within60'
-    case 120:
-      return 'within120'
-    default:
-      return 'within240'
-  }
-})
-
 const thresholdLabel = computed(() => formatDuration(props.threshold))
 
 const withinThreshold = computed(() => {
   if (!props.summary) return 0
-  const value = props.summary[thresholdKey.value]
-  return typeof value === 'number' ? value : 0
+  switch (props.threshold) {
+    case 60:
+      return props.summary.within60
+    case 120:
+      return props.summary.within120
+    default:
+      return props.summary.within240
+  }
 })
 
-const withinShare = computed(() => {
-  if (!props.summary || props.summary.populationTotal <= 0) return 0
-  return withinThreshold.value / props.summary.populationTotal
-})
-
-const reachableShare = computed(() => {
+const coverageShare = computed(() => {
   if (!props.summary || props.summary.populationTotal <= 0) return 0
   return props.summary.populationReachable / props.summary.populationTotal
 })
 
 const verifiedShare = computed(() => {
-  if (!props.summary) return 0
-  const reachable = props.summary.populationReachable
-  if (reachable <= 0) return 0
-  return props.summary.reachableVerifiedPopulation / reachable
+  if (!props.summary || props.summary.populationReachable <= 0) return 0
+  return props.summary.reachableVerifiedPopulation / props.summary.populationReachable
 })
 
 const originTotal = computed(() => {
@@ -65,23 +48,69 @@ const originTotal = computed(() => {
   )
 })
 
-const coveragePct = computed(() =>
-  props.summary ? formatPercent(props.summary.coverage) : '—',
-)
+const thresholdRows = computed(() => {
+  if (!props.summary) return []
+  const total = props.summary.populationTotal || 1
+  return [
+    { key: 60 as const, label: '60 min', value: props.summary.within60 },
+    { key: 120 as const, label: '120 min', value: props.summary.within120 },
+    { key: 240 as const, label: '240 min', value: props.summary.within240 },
+  ].map((row) => ({
+    ...row,
+    selected: row.key === props.threshold,
+    share: row.value / total,
+  }))
+})
+
+const originSegments = computed(() => {
+  if (!props.summary) return []
+  const total = originTotal.value || 1
+  return [
+    {
+      key: 'reachable',
+      label: 'Reachable',
+      count: props.summary.originsReachable,
+      share: props.summary.originsReachable / total,
+    },
+    {
+      key: 'unreachable',
+      label: 'Unreachable',
+      count: props.summary.originsUnreachable,
+      share: props.summary.originsUnreachable / total,
+    },
+    {
+      key: 'no_access',
+      label: 'No access',
+      count: props.summary.originsNoAccess,
+      share: props.summary.originsNoAccess / total,
+    },
+  ]
+})
+
+function donutStyle(share: number): Record<string, string> {
+  const pct = Math.max(0, Math.min(100, share * 100))
+  return {
+    background: `conic-gradient(var(--mm-accent) 0 ${pct}%, #e7e2d5 ${pct}% 100%)`,
+  }
+}
+
+function widthStyle(share: number): Record<string, string> {
+  return { width: `${Math.max(0, Math.min(100, share * 100))}%` }
+}
 </script>
 
 <template>
-  <section class="mm-panel" aria-labelledby="mm-metrics-heading">
+  <section class="mm-panel mm-metrics" aria-labelledby="mm-metrics-heading">
     <header class="mm-panel__head">
       <div>
-        <h2 id="mm-metrics-heading" class="mm-panel__title">National access metrics</h2>
-        <p class="mm-panel__sub">
-          Population that can reach a listed <strong>{{ categoryLabel }}</strong> facility
-          departing at <strong>{{ formatClock(departureMinute) }}</strong>, same day.
+        <h2 id="mm-metrics-heading" class="mm-panel__title">Access metrics</h2>
+        <p class="mm-panel__sub mm-one-line">
+          Same-day {{ categoryLabel }} at {{ formatClock(departureMinute) }} · selected threshold
+          {{ thresholdLabel }}
         </p>
       </div>
       <span class="mm-tag" :class="scenarioActive ? 'mm-tag--scenario' : 'mm-tag--quiet'">
-        {{ scenarioActive ? 'Scenario network' : 'Baseline network' }} · {{ thresholdLabel }}
+        {{ scenarioActive ? 'Scenario' : 'Baseline' }}
       </span>
     </header>
 
@@ -91,47 +120,65 @@ const coveragePct = computed(() =>
 
     <div v-else-if="loading" class="mm-skeleton-grid" role="status" aria-live="polite">
       <span class="mm-spinner" aria-hidden="true" />
-      <span>Computing access for every origin island…</span>
+      <span>Computing every origin island…</span>
     </div>
 
     <div v-else-if="!summary" class="mm-empty" role="status">
-      Accessibility has not been computed yet.
+      Waiting for the accessibility summary.
     </div>
 
     <template v-else>
-      <div class="mm-metric-hero">
-        <div>
-          <span class="mm-eyebrow">Within {{ thresholdLabel }}</span>
-          <strong class="mm-metric-hero__value">{{ formatPopulation(withinThreshold) }}</strong>
-          <span class="mm-metric-hero__share">{{ formatPercent(withinShare) }} of the origin population</span>
-        </div>
-        <div class="mm-metric-hero__coverage">
-          <span class="mm-eyebrow">Coverage (any same-day access)</span>
-          <strong>{{ coveragePct }}</strong>
-          <span class="mm-muted">{{ formatPopulation(summary.populationReachable) }} residents</span>
-        </div>
-      </div>
-
-      <div class="mm-metric-grid">
-        <article class="mm-metric">
-          <h3>Reachable population</h3>
-          <p class="mm-metric__value">{{ formatPopulation(summary.populationReachable) }}</p>
-          <p class="mm-muted">{{ formatPercent(reachableShare) }} of origin population</p>
+      <div class="mm-widgets">
+        <article class="mm-widget mm-widget--coverage">
+          <h3 class="mm-widget__title">Any same-day access</h3>
+          <div class="mm-widget__donut-row">
+            <div
+              class="mm-donut"
+              :style="donutStyle(coverageShare)"
+              role="img"
+              :aria-label="`${formatPercent(coverageShare)} of the origin population has any same-day access: ${formatPopulation(summary.populationReachable)} residents`"
+            >
+              <span class="mm-donut__value">{{ formatPercent(coverageShare) }}</span>
+              <span class="mm-donut__sub">{{ formatPopulation(summary.populationReachable) }}</span>
+            </div>
+            <ul class="mm-legend-list">
+              <li>
+                <span class="mm-dot mm-dot--verified" aria-hidden="true" />
+                Reachable
+                <strong>{{ formatPopulation(summary.populationReachable) }}</strong>
+              </li>
+              <li>
+                <span class="mm-dot mm-dot--unreachable" aria-hidden="true" />
+                Unreachable
+                <strong>{{ formatPopulation(summary.unreachablePopulation) }}</strong>
+              </li>
+              <li>
+                <span class="mm-dot mm-dot--noaccess" aria-hidden="true" />
+                No access
+                <strong>{{ formatPopulation(summary.noOriginAccessPopulation) }}</strong>
+              </li>
+            </ul>
+          </div>
         </article>
 
-        <article class="mm-metric">
-          <h3>Evidence mix (reachable)</h3>
-          <div class="mm-stack" aria-hidden="true">
-            <span
-              class="mm-stack__verified"
-              :style="{ width: formatPercent(verifiedShare) }"
-            />
-            <span class="mm-stack__estimated" :style="{ width: formatPercent(1 - verifiedShare) }" />
+        <article class="mm-widget">
+          <h3 class="mm-widget__title">Evidence mix</h3>
+          <p class="mm-widget__big">
+            {{ formatPercent(verifiedShare) }}
+            <span>verified share of reachable residents</span>
+          </p>
+          <div
+            class="mm-stack"
+            role="img"
+            :aria-label="`Verified ${formatPopulation(summary.reachableVerifiedPopulation)} residents; estimated or mixed ${formatPopulation(summary.reachableEstimatedPopulation)} residents`"
+          >
+            <span class="mm-stack__verified" :style="widthStyle(verifiedShare)" />
+            <span class="mm-stack__estimated" :style="widthStyle(1 - verifiedShare)" />
           </div>
-          <ul class="mm-evidence-list">
+          <ul class="mm-legend-list mm-legend-list--inline">
             <li>
               <span class="mm-dot mm-dot--verified" aria-hidden="true" />
-              Verified timetable
+              Verified
               <strong>{{ formatPopulation(summary.reachableVerifiedPopulation) }}</strong>
             </li>
             <li>
@@ -142,60 +189,76 @@ const coveragePct = computed(() =>
           </ul>
         </article>
 
-        <article class="mm-metric">
-          <h3>Unreachable on the reference day</h3>
-          <p class="mm-metric__value">{{ formatPopulation(summary.unreachablePopulation) }}</p>
-          <p class="mm-muted">
-            {{ summary.originsUnreachable }} origin islands · missing timetable ≠ zero access
-          </p>
-        </article>
-
-        <article class="mm-metric">
-          <h3>{{ filterActive ? 'No access under current selection' : 'No origin access in prepared data' }}</h3>
-          <p class="mm-metric__value">{{ formatPopulation(summary.noOriginAccessPopulation) }}</p>
-          <p class="mm-muted">{{ summary.originsNoAccess }} origin islands · coverage gap</p>
-        </article>
-
-        <article class="mm-metric mm-metric--wide">
-          <h3>Population within 1 h / 2 h / 4 h</h3>
-          <div class="mm-three">
-            <div>
-              <span class="mm-muted">60 min</span>
-              <strong>{{ formatPopulation(summary.within60) }}</strong>
-            </div>
-            <div>
-              <span class="mm-muted">120 min</span>
-              <strong>{{ formatPopulation(summary.within120) }}</strong>
-            </div>
-            <div>
-              <span class="mm-muted">240 min</span>
-              <strong>{{ formatPopulation(summary.within240) }}</strong>
-            </div>
+        <article class="mm-widget mm-widget--thresholds">
+          <h3 class="mm-widget__title">Population within threshold</h3>
+          <div
+            v-for="row in thresholdRows"
+            :key="row.key"
+            class="mm-threshold-row"
+            :class="{ 'is-selected': row.selected }"
+            :aria-current="row.selected ? 'true' : undefined"
+          >
+            <span class="mm-threshold-row__label">{{ row.label }}</span>
+            <strong class="mm-threshold-row__value">{{ formatPopulation(row.value) }}</strong>
+            <span class="mm-threshold-row__share">{{ formatPercent(row.share) }}</span>
+            <span class="mm-bar mm-bar--threshold" aria-hidden="true">
+              <span :style="widthStyle(row.share)" />
+            </span>
           </div>
         </article>
 
-        <article class="mm-metric">
-          <h3>Origin islands assessed</h3>
-          <p class="mm-metric__value">{{ originTotal }}</p>
-          <p class="mm-muted">
-            {{ summary.originsReachable }} reachable · {{ summary.originsUnreachable }} unreachable ·
-            {{ summary.originsNoAccess }} without access
+        <article class="mm-widget">
+          <h3 class="mm-widget__title">Origin islands assessed</h3>
+          <p class="mm-widget__big">
+            {{ originTotal }}
+            <span>origin islands · {{ formatPopulation(summary.populationTotal) }} residents</span>
           </p>
+          <div
+            class="mm-seg-bar"
+            role="img"
+            :aria-label="`${summary.originsReachable} reachable, ${summary.originsUnreachable} unreachable, ${summary.originsNoAccess} without access`"
+          >
+            <span
+              v-for="segment in originSegments"
+              :key="segment.key"
+              class="mm-seg-bar__part"
+              :class="`mm-seg-bar__part--${segment.key}`"
+              :style="widthStyle(segment.share)"
+            />
+          </div>
+          <ul class="mm-legend-list mm-legend-list--inline">
+            <li v-for="segment in originSegments" :key="segment.key">
+              <span class="mm-dot" :class="`mm-dot--${segment.key}`" aria-hidden="true" />
+              {{ segment.label }}
+              <strong>{{ segment.count }}</strong>
+            </li>
+          </ul>
         </article>
       </div>
 
-      <p v-if="filterActive" class="mm-alert mm-alert--info" role="note">
-        A network filter is active. “No access under current selection” can include islands that
-        have transport in the prepared network but were removed by your Land/Sea/Air or route
-        selection; it is not a coverage finding. The map uses a separate “Not selected” band.
+      <p v-if="filterActive" class="mm-metric-note" role="note">
+        <span class="mm-chip mm-chip--filter">filter</span>
+        No-access includes islands excluded by your network selection.
       </p>
 
-      <p class="mm-panel__foot">
-        Totals cover the 447,420-resident origin universe, not the 515,132 republic census
-        total. Same-day itineraries only; next-day alternatives are shown in the journey card
-        but are never counted as national access. See the coverage panel for omitted groups
-        and facility precision.
-      </p>
+      <details class="mm-method">
+        <summary>Method &amp; denominator</summary>
+        <p>
+          Totals cover the 447,420-resident origin universe, not the 515,132 republic census
+          total. Same-day itineraries only; next-day alternatives appear in the journey card and
+          are never counted as national access.
+        </p>
+        <p v-if="filterActive">
+          A network filter is active: “No access” can include islands with transport in the
+          prepared network that your Land/Sea/Air or route selection removed. The map labels that
+          state “Not selected”.
+        </p>
+        <p>
+          Verified means every transit leg has a published timetable and no air leg is used; all
+          other reachable residents are estimated or mixed. See Data &amp; coverage for omitted
+          groups and facility precision.
+        </p>
+      </details>
     </template>
   </section>
 </template>

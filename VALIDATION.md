@@ -20,16 +20,26 @@ Run sequentially from the repository root and `web/`.
 | `python -m unittest discover -s tools/tests -v` | **7 tests OK** |
 | `python3 -m unittest discover -s scripts/multimodal/tests -v` | **50 tests OK** |
 | `cd web && npm run test:routing` | **38 tests, 38 pass** |
+| `cd web && npm run test:db` | **4 tests, 4 pass** (build, parity, tamper, missing source) |
+| `cd web && npm run db:check` | **exit 0**, digest `526d70e09d1321161267fdf74adb1786e0d2f7fe720625361269ccc7163cd1f7` |
 | `cd web && npm run check:routing` | **exit 0** (invariants + national summary + pilot) |
 | `cd web && npm run typecheck` | **exit 0** |
-| `cd web && npm run build` | **exit 0**, 3.93 MB client bundle (919 kB gzip) |
-| Built server `GET /api/health` | **200** `{"status":"ok","application":"maldives-mobility"}` |
+| `cd web && npm run build` | **exit 0**, `Σ Total size: 7.07 MB (1.43 MB gzip)` including the ~2.3 MB SQLite asset |
+| Built server `GET /api/health` | **200** `{"status":"ok","application":"maldives-mobility","database":{"available":true,"schemaVersion":1,"islands":200,"facilities":945,"services":166,"categories":48}}` |
+| Built server `GET /api/network` | **200**, 924,599 bytes (compact JSON, same payload as source) |
+| Built server `GET /api/islands` | **200**, 280,261 bytes, `application/geo+json` |
+| Built server `GET /api/hdx` | **200**, 6,742 bytes |
+| Built server with `MULTIMODAL_DB_PATH` missing | `/api/network` and `/api/health` **503** `database_unavailable` |
+| Built server with a corrupt DB file | `/api/network` **503** `database_unavailable` (quick-check/missing-table guard) |
 | Built server `GET /` | **200**, title `Island Access Atlas — Maldives multimodal accessibility` |
-| Built server `GET /data/multimodal.json` | **200**, 1,120,880 bytes |
-| Built server `GET /data/islands.geojson` | **200**, 280,262 bytes |
+| Built server `GET /data/multimodal.json` | **200**, 1,120,880 bytes (static fallback) |
+| Built server `GET /data/islands.geojson` | **200**, 280,261 bytes |
 | Built server `GET /data/heigit-baseline.json` | **200**, 10,004 bytes |
 | Built server `GET /data/qgis/index.html` | **200**, QGIS landing page |
-| Headless Chrome, 1440 px and 360 px | Page renders; controls, map, journey card, national metrics, scenario and coverage panels present; no page exceptions |
+| Headless Chrome, API path | Header `SQLite API`; journey/national metrics match static build; no console errors |
+| Headless Chrome, API blocked | Header `Static fallback`; same journey/metrics; no fixture banner |
+| Headless Chrome, API + static blocked | Header `Fixture data`; labelled sample network |
+| Headless Chrome, 1440 px and 390 px | Page renders; controls, map, journey card, national metrics, scenario and coverage panels present; no page exceptions |
 
 Local checks ran on Node **v22.23.1** with an `EBADENGINE` warning because
 `web/package.json` declares Node `>=24`; the build and tests pass anyway. CI uses
@@ -54,6 +64,25 @@ no network access). Outputs are byte-identical in two locations:
 | `data/processed/multimodal/report.json` | 153,287 B | Counts, join methods, intervention reconciliation, exclusions, coverage notes, assumptions |
 | `web/public/data/heigit-baseline.json` | 10,004 B | 34 national + 43 unit HDX rows, no interpolation |
 | `data/processed/multimodal/qgis/` | 7 files | Islands, facilities, ferry/air routes, access edges, QML + README |
+
+### 2.1 SQLite serving layer
+
+`web/scripts/build-db.ts` compiles the three JSON artifacts above into
+`web/server/assets/maldives.sqlite` (2,342,912 B, digest
+`526d70e0…3cd1f7`). The file is gitignored and rebuilt by `npm run db:build`; `dev` and
+`build` run the builder first. The schema (`user_version=1`) keeps normalized entity
+columns plus `payload_json`/`feature_json` so the API returns the exact source shape.
+The builder validates fixed counts (200/191/117/20/153/166/945/48/200 features/34+43 HDX),
+foreign keys, `integrity_check`, and deep payload parity before replacing the file.
+
+`web/server/utils/database.ts` materializes the Nitro server asset into a writable temp
+directory, opens it read-only with `node:sqlite` (`DatabaseSync`, `PRAGMA query_only=ON`)
+and caches the handle. Routes: `/api/network`, `/api/islands`, `/api/hdx`; `/api/health`
+reports schema/counts. A missing, unreadable or wrong-schema DB returns **503
+`database_unavailable`**; the page then falls back to the same static JSON and labels
+the source `Static fallback`, then to `Fixture data` only if both fail. The SQLite layer
+is read-only this iteration: user scenarios are computed in the browser and are not
+persisted.
 
 Network composition:
 

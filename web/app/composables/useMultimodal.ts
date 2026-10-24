@@ -62,7 +62,7 @@ import {
   type CategoryGroup,
 } from '../utils/categories'
 
-export type DataSource = 'live' | 'fixture'
+export type DataSource = 'api' | 'static' | 'fixture'
 export type DataStatus = 'loading' | 'ready' | 'error'
 export type ScenarioMode =
   | 'baseline'
@@ -220,6 +220,7 @@ export function useMultimodal() {
   // ------------------------------------------------------------------- results
   const baselineAccessibility = shallowRef<AccessibilityResult | null>(null)
   const scenarioAccessibility = shallowRef<AccessibilityResult | null>(null)
+  const unfilteredAccessibility = shallowRef<AccessibilityResult | null>(null)
   const metricsLoading = ref(false)
   const metricsError = ref<string | null>(null)
   const journey = shallowRef<Journey | null>(null)
@@ -583,6 +584,9 @@ export function useMultimodal() {
   const scenarioSummary = computed<AccessibilitySummary | null>(
     () => scenarioAccessibility.value?.summary ?? null,
   )
+  const unfilteredSummary = computed<AccessibilitySummary | null>(
+    () => unfilteredAccessibility.value?.summary ?? null,
+  )
 
   const comparison = computed<ScenarioComparison | null>(() => {
     if (!scenarioActive.value) return null
@@ -623,6 +627,7 @@ export function useMultimodal() {
     if (!engine || !baselineNetwork || !cat) {
       baselineAccessibility.value = null
       scenarioAccessibility.value = null
+      unfilteredAccessibility.value = null
       metricsLoading.value = false
       return
     }
@@ -637,6 +642,15 @@ export function useMultimodal() {
     try {
       const request = accessibilityRequest()
       const baseline = engine.computeAccessibility(baselineNetwork, request)
+      const unfiltered = filterActive.value
+        ? engine.computeAccessibility(baselineNetwork, {
+            departureMinute: departureMinute.value,
+            category: cat,
+            allowedModes: ['land', 'sea', 'air'],
+            disabledRouteIds: [],
+            includeEstimatedAir: true,
+          })
+        : null
       let scenario: AccessibilityResult | null = null
       const active = activeNetwork.value
       if (scenarioActive.value && active) {
@@ -645,10 +659,12 @@ export function useMultimodal() {
       if (token !== metricsToken) return
       baselineAccessibility.value = baseline
       scenarioAccessibility.value = scenario
+      unfilteredAccessibility.value = unfiltered
     } catch (error) {
       if (token !== metricsToken) return
       baselineAccessibility.value = null
       scenarioAccessibility.value = null
+      unfilteredAccessibility.value = null
       metricsError.value = describeError(error)
     } finally {
       if (token === metricsToken) metricsLoading.value = false
@@ -871,13 +887,28 @@ export function useMultimodal() {
 
   // ---------------------------------------------------------------- load logic
   async function loadGeojson(): Promise<void> {
-    try {
-      const raw = await $fetch<unknown>('/data/islands.geojson', { timeout: 15000 })
-      islandsGeojson.value = isFeatureCollection(raw) ? raw : null
-    } catch {
-      islandsGeojson.value = null
+    for (const url of ['/api/islands', '/data/islands.geojson']) {
+      try {
+        const raw = await $fetch<unknown>(url, { timeout: 15000 })
+        if (isFeatureCollection(raw)) {
+          islandsGeojson.value = raw
+          geojsonLoaded.value = true
+          return
+        }
+      } catch {
+        // try the next source
+      }
     }
+    islandsGeojson.value = null
     geojsonLoaded.value = true
+  }
+
+  async function fetchNetwork(url: string): Promise<MultimodalNetwork> {
+    const payload = await $fetch<unknown>(url, { timeout: 15000 })
+    if (!isNetworkShape(payload)) {
+      throw new Error(`${url} exists but its shape is invalid.`)
+    }
+    return payload
   }
 
   /** Timetabled services whose stop pattern includes a stop on this island. */
@@ -986,24 +1017,28 @@ export function useMultimodal() {
   async function load(): Promise<void> {
     dataStatus.value = 'loading'
     fatalError.value = null
+    let apiNote = ''
     try {
-      const live = await $fetch<unknown>('/data/multimodal.json', { timeout: 15000 })
-      if (!isNetworkShape(live)) {
-        throw new Error('Prepared network found but its shape is invalid; using fixture data.')
-      }
-      network.value = live
-      dataSource.value = 'live'
+      network.value = await fetchNetwork('/api/network')
+      dataSource.value = 'api'
       loadNote.value = null
-    } catch (error) {
-      loadNote.value = describeError(error)
-      const fixture: unknown = fixtureNetwork
-      if (!isNetworkShape(fixture)) {
-        dataStatus.value = 'error'
-        fatalError.value = 'No prepared network and the bundled fixture network is invalid.'
-        return
+    } catch (apiError) {
+      apiNote = describeError(apiError)
+      try {
+        network.value = await fetchNetwork('/data/multimodal.json')
+        dataSource.value = 'static'
+        loadNote.value = `SQLite API unavailable (${apiNote}); using static prepared JSON.`
+      } catch (staticError) {
+        loadNote.value = `SQLite API: ${apiNote} Static JSON: ${describeError(staticError)}`
+        const fixture: unknown = fixtureNetwork
+        if (!isNetworkShape(fixture)) {
+          dataStatus.value = 'error'
+          fatalError.value = 'No prepared network and the bundled fixture network is invalid.'
+          return
+        }
+        network.value = fixture
+        dataSource.value = 'fixture'
       }
-      network.value = fixture
-      dataSource.value = 'fixture'
     }
 
     await loadGeojson()
@@ -1258,6 +1293,7 @@ export function useMultimodal() {
     metricsError,
     baselineSummary,
     scenarioSummary,
+    unfilteredSummary,
     comparison,
     // map
     islandBands,

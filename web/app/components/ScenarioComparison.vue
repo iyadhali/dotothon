@@ -31,8 +31,7 @@ const withinDelta = computed(() => props.comparison?.withinDeltas[props.threshol
       <div>
         <h2 id="mm-scenario-heading" class="mm-panel__title">Scenario comparison</h2>
         <p class="mm-panel__sub">
-          Baseline network versus a user-defined change. Scenario trips are hypotheses, not
-          observed services.
+          User-defined change versus baseline; scenarios are hypothetical.
         </p>
       </div>
       <span class="mm-tag mm-tag--scenario">{{ scenarioActive ? 'Scenario active' : 'Baseline' }}</span>

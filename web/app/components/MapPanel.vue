@@ -39,12 +39,12 @@ function onSelectOrigin(islandId: string): void {
 
 const facilityPopulation = computed(() =>
   props.facilities.length === 0
-    ? 'No facilities of this category in the prepared data'
-    : `${pluralise(props.facilities.length, 'island')} with ${pluralise(
+    ? 'No facilities of this category'
+    : `${pluralise(props.facilities.length, 'island')} · ${pluralise(
         props.facilities.reduce((sum, facility) => sum + facility.count, 0),
-        'listed facility',
-        'listed facilities',
-      )}, island-level precision`,
+        'facility',
+        'facilities',
+      )} · island-level precision`,
 )
 </script>
 
@@ -54,11 +54,9 @@ const facilityPopulation = computed(() =>
       <div>
         <h2 id="mm-map-heading" class="mm-panel__title">Island access map</h2>
         <p class="mm-panel__sub">
-          Travel time from
-          <strong>{{ originName || 'the selected origin' }}</strong>
-          to the nearest <strong>{{ categoryLabel }}</strong> facility, departing
-          <strong>{{ formatClock(departureMinute) }}</strong>.
-          {{ facilityPopulation }}
+          <strong>{{ originName || 'Selected origin' }}</strong> →
+          nearest <strong>{{ categoryLabel }}</strong> · departure
+          <strong>{{ formatClock(departureMinute) }}</strong> · {{ facilityPopulation }}
         </p>
       </div>
       <div class="mm-map-panel__tools">

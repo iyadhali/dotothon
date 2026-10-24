@@ -296,10 +296,7 @@ function share(minutes: number): string {
       </div>
 
       <p class="mm-panel__foot">
-        Reference day: {{ formatDate(referenceDay) }}. Service calendars are unverified and
-        assumed to repeat on that weekday; the search horizon is
-        {{ formatDuration(maxJourneyMinutes) }} from the requested departure. Times use
-        Maldives time (UTC+5).
+        Ref {{ formatDate(referenceDay) }} · calendars unverified · {{ formatDuration(maxJourneyMinutes) }} search horizon · Maldives time (UTC+5).
       </p>
     </template>
   </section>

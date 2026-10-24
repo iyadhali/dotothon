@@ -65,10 +65,7 @@ const seaArrival = computed(() => {
     <h2 id="mm-simulator-title" class="mm-rail__title mm-rail__title--small">
       Intervention simulator
     </h2>
-    <p class="mm-hint">
-      Simulate one user-defined intervention, then read the baseline-versus-scenario comparison.
-      These are assumptions, not observed services or proposed policy.
-    </p>
+    <p class="mm-hint">Hypothetical additions; results are scenario comparisons, not forecasts.</p>
 
     <fieldset class="mm-fieldset">
       <legend class="mm-label">Intervention type</legend>

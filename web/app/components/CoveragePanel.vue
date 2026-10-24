@@ -5,18 +5,17 @@ import { formatDate, formatPopulation } from '../utils/format'
 
 const props = defineProps<{
   meta: NetworkMeta | null
-  dataSource: 'live' | 'fixture'
+  dataSource: 'api' | 'static' | 'fixture'
   geojsonLoaded: boolean
   loadNote: string
 }>()
 
-// From the readiness plan: these residents are outside the 191-origin universe.
 const HARBOUR_RESIDENTS = 1399
 const NON_ADMIN_RESIDENTS = 66313
 
-const isLive = computed(() => props.dataSource === 'live')
-
+const isLive = computed(() => props.dataSource === 'api' || props.dataSource === 'static')
 const population = computed(() => props.meta?.population ?? null)
+const counts = computed(() => props.meta?.counts ?? null)
 
 const omittedResidents = computed(() => {
   if (!population.value) return 0
@@ -35,8 +34,6 @@ const serviceDayAssumption = computed(
     'Timetables are assumed to repeat on the reference weekday; date-specific calendars are unavailable.',
 )
 
-const counts = computed(() => props.meta?.counts ?? null)
-
 function confidenceTone(confidence: string): string {
   switch (confidence) {
     case 'source':
@@ -50,12 +47,12 @@ function confidenceTone(confidence: string): string {
 </script>
 
 <template>
-  <section class="mm-panel mm-coverage" aria-labelledby="mm-coverage-heading">
+  <section class="mm-panel mm-data" aria-labelledby="mm-coverage-heading">
     <header class="mm-panel__head">
       <div>
-        <h2 id="mm-coverage-heading" class="mm-panel__title">Coverage &amp; assumptions</h2>
-        <p class="mm-panel__sub">
-          What this prototype knows, what it estimates and what it deliberately leaves out.
+        <h2 id="mm-coverage-heading" class="mm-panel__title">Data &amp; coverage</h2>
+        <p class="mm-panel__sub mm-one-line">
+          {{ isLive ? 'Prepared network' : 'Bundled fixture' }} · island-level precision
         </p>
       </div>
       <span class="mm-tag" :class="isLive ? 'mm-tag--good' : 'mm-tag--warn'">
@@ -63,125 +60,122 @@ function confidenceTone(confidence: string): string {
       </span>
     </header>
 
-    <div v-if="!meta" class="mm-empty" role="status">
-      No network metadata is available yet.
-    </div>
+    <div v-if="!meta" class="mm-empty" role="status">No network metadata yet.</div>
 
     <template v-else>
-      <div class="mm-coverage-grid">
-        <article class="mm-coverage-card">
-          <h3>Population scope</h3>
+      <div class="mm-chip-row" aria-label="Coverage snapshot">
+        <span class="mm-chip mm-chip--strong">
+          {{ population ? formatPopulation(population.origins) : '—' }} routed residents
+        </span>
+        <span v-if="population" class="mm-chip">
+          {{ population.originCount }} origin islands
+        </span>
+        <span v-if="counts" class="mm-chip">{{ counts.facilities }} facilities</span>
+        <span v-if="counts" class="mm-chip">{{ counts.islands }} islands</span>
+        <span class="mm-chip">ref {{ formatDate(meta.referenceDay) }}</span>
+        <span class="mm-chip">island precision</span>
+      </div>
+
+      <p class="mm-data__line">
+        <template v-if="isLive && population">
+          {{ formatPopulation(omittedResidents) }} residents outside administrative island rows
+          are omitted · missing coverage is not zero access.
+        </template>
+        <template v-else>
+          Fixture values exercise the interface; they are not national figures.
+        </template>
+      </p>
+
+      <div class="mm-details-grid">
+        <details class="mm-data-details">
+          <summary>Population scope</summary>
           <template v-if="population">
-            <p class="mm-coverage-card__value">
-              {{ formatPopulation(population.origins) }}
-              <span v-if="isLive">of {{ formatPopulation(population.republic2022) }}</span>
-            </p>
-            <p class="mm-muted" v-if="isLive">
-              residents on {{ population.originCount }} origin islands, out of the
-              {{ formatPopulation(population.republic2022) }} republic census total.
-              {{ formatPopulation(omittedResidents) }} people outside administrative island
-              rows are omitted from routing.
-            </p>
-            <p class="mm-muted" v-else>
-              Fixture population, not the national {{ formatPopulation(515132) }} scope. The
-              fixture exists to exercise the interface and router; it makes no real-world
-              claims.
+            <p>
+              <strong>{{ formatPopulation(population.origins) }}</strong> residents on
+              {{ population.originCount }} origin islands<template v-if="isLive">
+                of the {{ formatPopulation(population.republic2022) }} republic census total</template
+              >.
             </p>
             <p class="mm-muted">{{ populationNote }}</p>
+            <p v-if="isLive" class="mm-muted">
+              Omitted from routing: {{ formatPopulation(HARBOUR_RESIDENTS) }} harbour-area
+              residents; {{ formatPopulation(NON_ADMIN_RESIDENTS) }} people on non-administrative
+              islands. Census city total (211,908) includes wards not added on top of the four
+              Greater Malé origin rows, avoiding double counting.
+            </p>
+            <p v-else class="mm-muted">
+              Fixture population, not the national {{ formatPopulation(515132) }} scope.
+            </p>
           </template>
           <p v-else class="mm-muted">Population scope is not recorded in the metadata.</p>
-        </article>
+        </details>
 
-        <article class="mm-coverage-card">
-          <h3>Facility precision</h3>
+        <details class="mm-data-details">
+          <summary>Facilities, sources &amp; snapshot</summary>
           <p>
-            Island-level only (<code>location_precision = island</code>). The app reports
-            physical access to a listed facility's island, not building coordinates, clinical
-            services, opening hours, bed capacity or enrolment.
+            Facilities are island-level only (<code>location_precision = island</code>): the app
+            reports physical access to a listed facility's island, not building coordinates,
+            clinical services, opening hours, bed capacity or enrolment. A dot marks an island
+            centroid, not a building.
           </p>
           <p class="mm-muted">
-            A facility dot marks an island centroid. Do not read it as a building location or
-            catchment.
+            Prepared {{ formatDate(meta.generatedAt) }} · {{ meta.timezone }} · schema v{{
+              meta.schemaVersion
+            }}. Timetables come from operator releases where available; air services use an
+            estimated weekly-frequency model.
           </p>
-        </article>
+          <p v-if="counts" class="mm-muted">
+            {{ counts.islands }} islands · {{ counts.origins }} origins · {{ counts.stops }} stops ·
+            {{ counts.airports }} airports · {{ counts.ferryTrips }} ferry trips ·
+            {{ counts.airServices }} air services · {{ counts.facilities }} facilities ·
+            {{ counts.categories }} categories.
+          </p>
+          <p v-if="!geojsonLoaded" class="mm-muted">
+            Island polygons were unavailable; the schematic uses projected centroids only.
+          </p>
+        </details>
 
-        <article class="mm-coverage-card">
-          <h3>Reference-day assumption</h3>
+        <details class="mm-data-details">
+          <summary>Reference-day assumption</summary>
           <p>
             Reference day <strong>{{ formatDate(meta.referenceDay) }}</strong>.
             {{ serviceDayAssumption }}
           </p>
           <p class="mm-muted">
-            The optional next-day alternative repeats the same timetable once, 24 hours later.
-            It is an assumption, never a date-specific calendar claim.
+            The optional next-day alternative repeats the same timetable once, 24 hours later. It
+            is an assumption, never a date-specific calendar claim.
           </p>
-        </article>
+        </details>
 
-        <article class="mm-coverage-card">
-          <h3>Sources &amp; snapshot</h3>
-          <p>
-            Prepared {{ formatDate(meta.generatedAt) }} · {{ meta.timezone }} · schema v{{ meta.schemaVersion }}.
-            Timetables come from operator releases where available; air services use an
-            estimated weekly-frequency model.
-          </p>
-          <p class="mm-muted" v-if="counts">
-            {{ counts.islands }} islands · {{ counts.origins }} origins · {{ counts.stops }} stops
-            · {{ counts.airports }} airports · {{ counts.ferryTrips }} ferry trips ·
-            {{ counts.airServices }} air services · {{ counts.facilities }} facilities ·
-            {{ counts.categories }} categories.
-          </p>
-          <p class="mm-muted" v-if="!geojsonLoaded">
-            Island polygons were unavailable; the schematic uses projected centroids only.
-          </p>
-        </article>
+        <details class="mm-data-details">
+          <summary>Model assumptions ({{ meta.assumptions.length }})</summary>
+          <ul class="mm-assumption-list">
+            <li v-for="assumption in meta.assumptions" :key="assumption.id">
+              <div class="mm-assumption__head">
+                <code>{{ assumption.id }}</code>
+                <span class="mm-confidence" :class="confidenceTone(assumption.confidence)">
+                  {{ assumption.confidence }}
+                </span>
+              </div>
+              <p>{{ assumption.value }}</p>
+              <p class="mm-muted">Source: {{ assumption.source }}</p>
+              <p v-if="assumption.note" class="mm-muted">{{ assumption.note }}</p>
+            </li>
+          </ul>
+        </details>
+
+        <details v-if="meta.coverageNotes?.length" class="mm-data-details mm-data-details--wide">
+          <summary>Coverage notes ({{ meta.coverageNotes.length }})</summary>
+          <ul class="mm-note-list">
+            <li v-for="note in meta.coverageNotes" :key="note">{{ note }}</li>
+          </ul>
+        </details>
+
+        <details v-if="loadNote" class="mm-data-details mm-data-details--wide">
+          <summary>Data source note</summary>
+          <p class="mm-muted">{{ loadNote }}</p>
+        </details>
       </div>
-
-      <div class="mm-omitted" v-if="isLive && population">
-        <h3>Who is outside the denominator</h3>
-        <ul>
-          <li>
-            <strong>{{ formatPopulation(HARBOUR_RESIDENTS) }}</strong> harbour-area residents.
-          </li>
-          <li>
-            <strong>{{ formatPopulation(NON_ADMIN_RESIDENTS) }}</strong> people on
-            non-administrative islands.
-          </li>
-          <li>
-            Census city total (211,908) includes wards that are not added on top of the four
-            Greater Malé origin rows, avoiding double counting.
-          </li>
-        </ul>
-        <p class="mm-muted">
-          Missing coverage is not zero access. An island absent from this network may still
-          have transport in reality.
-        </p>
-      </div>
-
-      <details class="mm-assumptions" open>
-        <summary>Model assumptions ({{ meta.assumptions.length }})</summary>
-        <ul>
-          <li v-for="assumption in meta.assumptions" :key="assumption.id">
-            <div class="mm-assumption__head">
-              <code>{{ assumption.id }}</code>
-              <span class="mm-confidence" :class="confidenceTone(assumption.confidence)">
-                {{ assumption.confidence }}
-              </span>
-            </div>
-            <p>{{ assumption.value }}</p>
-            <p class="mm-muted">Source: {{ assumption.source }}</p>
-            <p v-if="assumption.note" class="mm-muted">{{ assumption.note }}</p>
-          </li>
-        </ul>
-      </details>
-
-      <div v-if="meta.coverageNotes?.length" class="mm-notice mm-notice--info" role="note">
-        <strong>Coverage notes</strong>
-        <ul>
-          <li v-for="note in meta.coverageNotes" :key="note">{{ note }}</li>
-        </ul>
-      </div>
-
-      <p v-if="loadNote" class="mm-muted">{{ loadNote }}</p>
     </template>
   </section>
 </template>

@@ -458,3 +458,24 @@ is an authoring/publication path, not a runtime dependency.
 6. **Met.** HDX panel is labelled land/car-only, shows national and unit rows, explains WorldPop/omitted units, and is not merged into the multimodal denominator.
 
 **Not verified on this host:** a real Mapbox token and a desktop QGIS session. The Mapbox code typechecks/builds and its failure fallback is exercised; QGIS layers are deterministic but not visually opened.
+
+## 11. SQLite serving layer (24 October 2026)
+
+**Met.** `web/scripts/build-db.ts` compiles the prepared JSON (network, islands GeoJSON,
+HDX benchmark) into `web/server/assets/maldives.sqlite` with the schema in
+`web/scripts/sqlite-schema.sql` (`user_version=1`). It validates fixed counts, foreign
+keys, integrity and deep payload parity before atomically replacing the file;
+`db.test.ts` covers build, parity, tamper rejection and missing input (4/4 pass).
+
+`web/server/utils/database.ts` materialises the Nitro server asset into a temp file and
+opens it read-only with `node:sqlite`; `/api/network`, `/api/islands` and `/api/hdx`
+serve the same shapes as the static files. `/api/health` reports schema/counts and
+returns 503 `database_unavailable` when the DB is missing or invalid. The UI tries the
+API, then static JSON, then the fixture, and labels the active source. The layer is
+read-only: user scenarios are computed in the browser and not persisted.
+
+Verified: DB 2,342,912 B, digest `526d70e0…3cd1f7`; `/api/network` 200 924,599 B,
+`/api/islands` 200 280,261 B, `/api/hdx` 200 6,742 B, health 200; missing-DB 503;
+built server `/` 200; API/static/fixture UI paths exercised in headless Chrome.
+Not verified: concurrent production workers (read-only, independent handles) and a
+write API (out of scope).

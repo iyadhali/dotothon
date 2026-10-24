@@ -33,14 +33,21 @@ for the build contract.
 
 ## Working prototype
 
-The prototype is served from prepared static artifacts, so no database or live
-operator feed is needed. It runs on Node 24+ locally (the package declares Node 24+
-and CI uses Node 24; Node 22 also runs with an engine warning).
+The prototype is served by a **read-only SQLite database** bundled as a Nitro server
+asset. `npm run dev` and `npm run build` generate `web/server/assets/maldives.sqlite`
+from the prepared JSON first; the API then reads it at `/api/network`, `/api/islands`
+and `/api/hdx`. If the database is unavailable the API returns 503 and the page falls
+back to the same prepared JSON, then to the bundled fixture network. There is no live
+operator feed. It runs on Node 24+ locally (the package declares Node 24+; Node 22
+also runs with an engine warning).
 
 ```bash
 cd web
 npm install
-npm run dev          # http://127.0.0.1:3000
+npm run dev          # builds the SQLite asset, then http://127.0.0.1:3000
+npm run db:build     # rebuild the SQLite asset explicitly
+npm run db:check     # compare the asset with the prepared JSON
+npm run test:db      # builder/parity/corruption tests
 ```
 
 No Mapbox token is required: without `NUXT_PUBLIC_MAPBOX_TOKEN` the app renders a
@@ -54,6 +61,8 @@ polygon choropleth and the same data. Prepared artifacts:
 - `web/public/data/heigit-baseline.json` — HDX/HeiGIT land-only benchmark (34 national
   and 43 unit rows), shown separately and never merged.
 - `web/public/data/qgis/` — QGIS GeoJSON + QML export and landing page.
+- `web/server/assets/maldives.sqlite` — generated read-only serving database, about
+  2.3 MB; gitignored and rebuilt from the files above.
 - `data/processed/multimodal/report.json` — join counts, exclusions, intervention
   reconciliation, coverage notes and every assumption.
 

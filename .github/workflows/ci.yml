@@ -31,9 +31,15 @@ jobs:
       - name: Routing tests
         working-directory: web
         run: pnpm test:routing
+      - name: SQLite builder tests
+        working-directory: web
+        run: pnpm test:db
       - name: Routing checks (national summary and pilot corridor)
         working-directory: web
         run: pnpm check:routing
-      - name: Production build
+      - name: Production build (builds the SQLite asset)
         working-directory: web
         run: pnpm build
+      - name: SQLite database check
+        working-directory: web
+        run: pnpm db:check

@@ -31,6 +31,7 @@ network access):
 | `../web/public/data/multimodal.json` + `islands.geojson` | Byte-identical browser artifacts served by the app |
 | `../web/public/data/heigit-baseline.json` | 34 national + 43 unit HDX/HeiGIT land-only rows (no interpolation) |
 | `../web/public/data/qgis/` | Published QGIS GeoJSON/QML export and `index.html` |
+| `../web/server/assets/maldives.sqlite` | Generated read-only serving DB (gitignored); built from the three JSON artifacts, exact-count validated |
 
 Inputs used: `data/external/_derived/mdv_islands_master.csv`,
 `census2022_to_codab_crosswalk.csv`, `census2022_population_by_island.csv`,
@@ -48,6 +49,7 @@ python3 scripts/multimodal/build_network.py
 python3 scripts/multimodal/build_hdx_baseline.py
 python3 scripts/multimodal/export_qgis.py
 python3 -m unittest discover -s scripts/multimodal/tests -v
+# then, from web/: npm run db:build && npm run db:check && npm run test:db
 ```
 
 The 128 unresolved aliases (120 education, 8 health) and 50 zero-category base

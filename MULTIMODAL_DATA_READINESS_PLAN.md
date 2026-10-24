@@ -142,5 +142,9 @@ All five phases are implemented and validated in this checkout:
 - **P3:** router supports mode presets, route/service exclusions, added facilities/sea links/land links and timetable scenarios; 38 tests plus a 106-check CLI.
 - **P4:** the UI exposes network presets/custom modes, a 49-ferry/31-air-pair route checklist, grouped intervention categories and coverage panel, facility/sea/land simulator, HDX panel and QGIS links; typecheck/build pass.
 - **P5:** artifacts regenerated and published; `README.md`, `web/README.md`, `data/README.md` and `VALIDATION.md` describe the extension; final checks green.
+- **Serving layer (post-P5):** prepared JSON is compiled into a read-only
+  `web/server/assets/maldives.sqlite` and served by `/api/network`, `/api/islands` and
+  `/api/hdx`; the UI falls back to static JSON and then the fixture. See
+  `MULTIMODAL_IMPLEMENTATION.md` §11 and `VALIDATION.md` §2.1.
 
 See [`VALIDATION.md`](VALIDATION.md) for numbers, manual acceptance checks and limits.

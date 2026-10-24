@@ -29,6 +29,9 @@ Mapbox polygon choropleth; if the style or WebGL fails it falls back to the sche
 and shows a notice. Never put a secret token in public runtime configuration.
 
 ```bash
+npm run db:build
+npm run db:check
+npm run test:db
 npm run typecheck
 npm run test:routing
 npm run check:routing
@@ -76,10 +79,26 @@ cache and can produce a spurious blank build failure. CI uses pnpm and Node 24.
 - **QGIS/Mapbox footer:** links the published QGIS export; Mapbox Studio is
   publication-only, not a runtime dependency.
 
-## Data
+## Data and read API
 
-The app loads prepared static artifacts; it does not read raw datathon CSVs or use a
-database:
+The prepared JSON is the source of truth; `npm run db:build` compiles it into a
+read-only SQLite database at `server/assets/maldives.sqlite`. Nitro serves that file as
+a server asset, copies it to a writable temp directory on first use, and opens it with
+`node:sqlite` (`DatabaseSync`, read-only). The API is:
+
+| Route | Returns |
+|---|---|
+| `/api/network` | Full `MultimodalNetwork` (same shape as `public/data/multimodal.json`) |
+| `/api/islands` | GeoJSON `FeatureCollection` of the 200 islands |
+| `/api/hdx` | HDX/HeiGIT benchmark object (same shape as `public/data/heigit-baseline.json`) |
+| `/api/health` | Liveness + database schema/counts; 503 when the DB is unavailable |
+
+The page tries the API first, then the static files, then the bundled fixture. The
+header says which source is active (`SQLite API`, `Static fallback`, `Fixture data`).
+If the DB is missing/corrupt the API returns 503 and the static path is used; no data
+is silently replaced.
+
+Artifacts:
 
 - `public/data/multimodal.json` — 200 islands, 191 origins, 117 ferry stops, 20 airports,
   102 ferry trips, 62 estimated air services, 153 access edges, 945 facilities,
@@ -87,13 +106,14 @@ database:
 - `public/data/islands.geojson` — 200 island polygons / representative points.
 - `public/data/heigit-baseline.json` — HDX/HeiGIT land-only benchmark.
 - `public/data/qgis/` — QGIS GeoJSON/QML export and `index.html`.
+- `server/assets/maldives.sqlite` — generated serving DB (gitignored, ~2.3 MB).
 
 The source of truth is `../scripts/multimodal/build_network.py` (plus
 `build_hdx_baseline.py` and `export_qgis.py`); it writes
 `../data/processed/multimodal/*` and copies the browser artifacts. See
-[`../data/README.md`](../data/README.md). If the live fetch fails the app falls back
-to a clearly labelled fixture (`shared/routing/fixtures/sample-network.json`) so the
-interface and router remain testable.
+[`../data/README.md`](../data/README.md). `scripts/build-db.ts` validates fixed counts
+and deep parity before replacing the DB; `scripts/db.test.ts` covers build, parity,
+tamper rejection and missing-input handling.
 
 ## Code map
 
@@ -108,7 +128,14 @@ interface and router remain testable.
 | `shared/routing/router.ts` | Timetable-aware Dijkstra, accessibility and scenarios |
 | `shared/routing/router.test.ts` | 38 router unit tests (pilot, boundary, reverse, next-day, air toggle, mode/route filters, additions, monotonicity) |
 | `scripts/check-routing.ts` | Real-data invariants, national summary and pilot table |
-| `server/api/health.get.ts` | Health endpoint |
+| `scripts/build-db.ts` | Builds/validates the read-only SQLite asset from prepared JSON |
+| `scripts/sqlite-schema.sql` | Database schema (`user_version=1`) |
+| `scripts/db.test.ts` | Builder, parity, tamper and missing-source tests |
+| `server/utils/database.ts` | Server-asset materialisation, read-only `node:sqlite` access |
+| `server/api/network.get.ts` | SQLite-backed network API |
+| `server/api/islands.get.ts` | SQLite-backed GeoJSON API |
+| `server/api/hdx.get.ts` | SQLite-backed HDX benchmark API |
+| `server/api/health.get.ts` | Health endpoint with database schema/counts |
 
 ## Modelling rules visible in the UI
 

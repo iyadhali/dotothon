@@ -31,6 +31,7 @@ import fixtureNetwork from '#shared/routing/fixtures/sample-network.json'
 import { getMultimodalEngine } from '../utils/engine'
 import type { CategoryAccess } from '../../shared/routing/nearby'
 import type { FareTable } from '../../shared/routing/cost'
+import type { SitingResult } from '../../shared/routing/recommend'
 import {
   buildAirportPoints,
   buildFacilityPoints,
@@ -182,6 +183,9 @@ const ACCESS_REPORT_CATEGORIES = [
 /** Default lodging (MVR 700, typical Malé guesthouse) + meals (MVR 250) for one night away; see data/external/economics/value_of_time.json. Editable in the panel. */
 const ACCESS_REPORT_OVERNIGHT_MVR = 950
 
+export type MapView = 'access' | 'underserved' | 'recommended'
+export type UnderservedClass = 'served' | 'over_threshold' | 'no_trip' | 'no_data'
+
 export function useMultimodal() {
   // ---------------------------------------------------------------- data load
   const dataStatus = ref<DataStatus>('loading')
@@ -195,6 +199,10 @@ export function useMultimodal() {
   const accessReportError = ref<string | null>(null)
   /** Lodging and meals for one night away (MVR), used when the trip home is not same-day. */
   const overnightMvr = ref(ACCESS_REPORT_OVERNIGHT_MVR)
+  /** Map story: current access, underserved residents, or recommended new sites. */
+  const mapView = ref<MapView>('access')
+  const siting = shallowRef<SitingResult | null>(null)
+  const sitingError = ref<string | null>(null)
   const islandsGeojson = shallowRef<FeatureCollection | null>(null)
   const geojsonLoaded = ref(false)
   const engineReady = ref(false)
@@ -799,6 +807,50 @@ export function useMultimodal() {
     }
   }
 
+  /** Greedy maximal-coverage ranking of new sites; only computed for the Recommended view. */
+  function recomputeSiting(): void {
+    const engine = getMultimodalEngine()
+    const active = activeNetwork.value
+    if (mapView.value !== 'recommended' || !engine?.buildTravelMatrix || !engine.recommendSites || !active || !category.value) {
+      siting.value = null
+      return
+    }
+    try {
+      const matrix = engine.buildTravelMatrix(active, {
+        departureMinute: departureMinute.value,
+        maxJourneyMinutes: threshold.value,
+        allowedModes: allowedModes.value,
+        disabledRouteIds: disabledRouteIds.value,
+      })
+      siting.value = engine.recommendSites(active, matrix, {
+        category: category.value,
+        thresholdMinutes: threshold.value,
+        picks: 5,
+      })
+      sitingError.value = null
+    } catch (error) {
+      siting.value = null
+      sitingError.value = describeError(error)
+    }
+  }
+
+  /** Underserved class per origin island relative to the selected threshold. */
+  const underservedClasses = computed<Record<string, UnderservedClass>>(() => {
+    const result = displayAccessibility.value
+    const out: Record<string, UnderservedClass> = {}
+    if (!result) return out
+    for (const [islandId, access] of Object.entries(result.perOrigin)) {
+      if (access.status === 'reachable') {
+        out[islandId] = (access.journey?.elapsedMinutes ?? 0) <= threshold.value ? 'served' : 'over_threshold'
+      } else if (access.status === 'no_origin_access') {
+        out[islandId] = 'no_data'
+      } else if (access.status === 'not_reachable') {
+        out[islandId] = 'no_trip'
+      }
+    }
+    return out
+  })
+
   async function loadFares(): Promise<void> {
     try {
       fares.value = await $fetch<FareTable>('/data/fares.json', { timeout: 15000 })
@@ -933,6 +985,9 @@ export function useMultimodal() {
   const scheduleAccessReport = debounce(() => {
     void recomputeAccessReport()
   })
+  const scheduleSiting = debounce(() => {
+    recomputeSiting()
+  })
   const scheduleInterventions = debounce(() => {
     void recomputeInterventions()
   }, 260)
@@ -963,6 +1018,10 @@ export function useMultimodal() {
   watch([originIslandId, category, departureMinute, selectionKey, scenarioView, overnightMvr, fares], () => {
     if (!controlsReady.value) return
     scheduleAccessReport.run()
+  })
+  watch([mapView, category, departureMinute, threshold, selectionKey, scenarioView], () => {
+    if (!controlsReady.value) return
+    scheduleSiting.run()
   })
   watch(
     [categoryIsIntervention, originIslandId, departureMinute, selectionKey, scenarioView],
@@ -1133,8 +1192,12 @@ export function useMultimodal() {
     dataStatus.value = 'ready'
     engineReady.value = getMultimodalEngine() !== null
     controlsReady.value = true
+    // Deep link: ?view=underserved|recommended opens that map story (handy for demos).
+    const requested = new URLSearchParams(window.location.search).get('view')
+    if (requested === 'underserved' || requested === 'recommended') mapView.value = requested
     await loadFares()
     await Promise.all([recomputeMetrics(), recomputeJourney(), recomputeInterventions(), recomputeAccessReport()])
+    recomputeSiting()
   }
 
   onMounted(() => {
@@ -1389,6 +1452,11 @@ export function useMultimodal() {
     airportPoints,
     facilityPoints,
     regionSplit,
+    // map stories
+    mapView,
+    siting,
+    sitingError,
+    underservedClasses,
     // island access report
     fares,
     accessReport,

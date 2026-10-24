@@ -1003,6 +1003,47 @@ export function planIslandToIsland(
   return label ? buildJourney(graph, base, label, request.toIslandId) : null
 }
 
+/**
+ * Earliest same-day travel time (minutes) from one island to every island it can reach,
+ * including itself at 0. One search per origin; used to rank candidate facility sites.
+ */
+export function travelTimesFrom(
+  network: MultimodalNetwork,
+  request: NetworkSelection & {
+    originIslandId: string
+    departureMinute: number
+    scenario?: Scenario
+    maxJourneyMinutes?: number
+  },
+): Map<string, number> {
+  const defaults = getRoutingDefaults(network)
+  const effectiveNetwork: MultimodalNetwork = request.scenario ? applyScenario(network, request.scenario) : network
+  const selection = resolveSelection(request)
+  const graph = getGraph(effectiveNetwork, { ...selection, allowNextDay: false })
+  const times = new Map<string, number>([[request.originIslandId, 0]])
+  const originNode = toIslandNode(request.originIslandId)
+  if (!graph.islandsWithOutgoingConnectivity.has(originNode)) return times
+  const targets = new Set(effectiveNetwork.islands.map((island) => island.id))
+  targets.delete(request.originIslandId)
+  const labels = searchDestinations(
+    graph,
+    {
+      originNode,
+      originIslandId: request.originIslandId,
+      category: 'island:*',
+      departureMinute: request.departureMinute,
+      maxArrivalMinute: request.departureMinute + (request.maxJourneyMinutes ?? defaults.maxJourneyMinutes),
+      targetIslands: targets,
+    },
+    targets.size,
+  )
+  for (const label of labels) {
+    const islandId = islandIdFromNode(label.node)
+    if (islandId && !times.has(islandId)) times.set(islandId, label.time - request.departureMinute)
+  }
+  return times
+}
+
 /** Plan a journey, or `null` when the category/origin cannot produce one. */
 export function planJourney(network: MultimodalNetwork, request: JourneyRequest): Journey | null {
   return planJourneyWithStatus(network, request).journey

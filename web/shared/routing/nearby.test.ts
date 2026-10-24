@@ -162,3 +162,32 @@ test('access report: Malé facility reached by air from Dharavandhoo returns the
   assert.ok(toMale.cost.knownMvr >= 1435)
   if (toMale.sameDayReturn) assert.ok((toMale.returnJourney?.arrivalMinute ?? 1440) < 1440)
 })
+
+test('travel times: origin is 0 and each time matches island-to-island planning', async () => {
+  const { travelTimesFrom } = await import('./router.ts')
+  const network = loadFixture()
+  const times = travelTimesFrom(network, { originIslandId: DHARAVANDHOO, departureMinute: 14 * 60 + 5 })
+  assert.equal(times.get(DHARAVANDHOO), 0)
+  const toEydhafushi = times.get(EYDHAFUSHI)
+  const planned = planIslandToIsland(network, {
+    fromIslandId: DHARAVANDHOO,
+    toIslandId: EYDHAFUSHI,
+    departureMinute: 14 * 60 + 5,
+  })
+  assert.ok(toEydhafushi !== undefined && planned)
+  assert.ok(Math.abs(toEydhafushi - planned.elapsedMinutes) <= 15, 'matrix time within the alighting buffer')
+})
+
+test('siting: picks never cover the same residents twice and gains add up', async () => {
+  const { buildTravelMatrix, recommendSites } = await import('./recommend.ts')
+  const network = loadFixture()
+  const matrix = buildTravelMatrix(network, { departureMinute: 6 * 60, maxJourneyMinutes: 240 })
+  const result = recommendSites(network, matrix, { category: 'health_hospital', thresholdMinutes: 240, picks: 3 })
+  const all = result.sites.flatMap((site) => site.newlyCoveredIslandIds)
+  assert.equal(new Set(all).size, all.length)
+  const totalGain = result.sites.reduce((sum, site) => sum + site.gainPopulation, 0)
+  assert.equal(result.coveredBefore + totalGain, result.sites.at(-1)?.coveredAfter ?? result.coveredBefore)
+  for (let i = 1; i < result.sites.length; i += 1) {
+    assert.ok((result.sites[i]?.gainPopulation ?? 0) <= (result.sites[i - 1]?.gainPopulation ?? 0))
+  }
+})

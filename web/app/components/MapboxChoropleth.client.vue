@@ -32,6 +32,12 @@ const props = defineProps<{
   geojson: FeatureCollection | null
   /** Nearest facility per service for the selected origin, drawn as lines + labels. */
   highlights?: MapHighlight[]
+  /** Which map story to draw. */
+  mapView?: 'access' | 'underserved' | 'recommended'
+  /** Underserved class per origin island (underserved view). */
+  underserved?: Record<string, string>
+  /** Ranked candidate sites and the islands each newly covers (recommended view). */
+  sites?: { rank: number; islandId: string; newlyCoveredIslandIds: string[] }[]
 }>()
 
 
@@ -52,6 +58,18 @@ const SOURCE_ORIGIN = 'mm-origin'
 const SOURCE_HIGHLIGHT_LINES = 'mm-highlight-lines'
 const SOURCE_HIGHLIGHT_POINTS = 'mm-highlight-points'
 const LAYER_HIGHLIGHT_LABELS = 'mm-highlight-labels'
+const SOURCE_STORY = 'mm-story'
+const SOURCE_SITES = 'mm-sites'
+const LAYER_SITE_LABELS = 'mm-site-labels'
+/** Underserved view: colour by how far an island is from the threshold. */
+const STORY_COLORS: Record<string, string> = {
+  served: '#c9d6cf',
+  over_threshold: '#e0a03a',
+  no_trip: '#a8325e',
+  no_data: '#ffffff',
+  covered: '#287c6f',
+  muted: '#d8d2c4',
+}
 /** Circle radius grows with the square root of population and with zoom. */
 const POPULATION_RADIUS = [
   'interpolate',
@@ -128,9 +146,12 @@ function clearRendered(): void {
     SOURCE_FACILITIES,
     SOURCE_ORIGIN,
     SOURCE_HIGHLIGHT_LINES,
+    SOURCE_STORY,
   ]) {
     removeLayerAndSource(id)
   }
+  if (map.getLayer(LAYER_SITE_LABELS)) map.removeLayer(LAYER_SITE_LABELS)
+  removeLayerAndSource(SOURCE_SITES)
   if (map.getLayer(LAYER_HIGHLIGHT_LABELS)) map.removeLayer(LAYER_HIGHLIGHT_LABELS)
   removeLayerAndSource(SOURCE_HIGHLIGHT_POINTS)
   for (const marker of airportMarkers) marker.remove()
@@ -180,6 +201,12 @@ function polygonFeature(feature: Feature): Feature<Polygon> | null {
 function render(): void {
   if (!map || !mapReady || disposed) return
   clearRendered()
+
+  const view = props.mapView ?? 'access'
+  if (view !== 'access') {
+    renderStory(view)
+    return
+  }
 
   // Island polygons: the choropleth itself. One fill source per band, constant colour.
   if (props.geojson) {
@@ -406,6 +433,66 @@ function render(): void {
   }
 }
 
+/** Underserved / recommended views: one data-driven circle layer plus site markers. */
+function renderStory(view: 'underserved' | 'recommended'): void {
+  if (!map) return
+  const covered = new Set((props.sites ?? []).flatMap((site) => site.newlyCoveredIslandIds))
+  const features = props.islands
+    .filter((island) => island.isOrigin)
+    .map((island) => {
+      const feature = featureIsland(island)
+      const cls =
+        view === 'underserved'
+          ? (props.underserved?.[island.id] ?? 'served')
+          : covered.has(island.id)
+            ? 'covered'
+            : 'muted'
+      feature.properties = { ...feature.properties, cls }
+      return feature
+    })
+  map.addSource(SOURCE_STORY, { type: 'geojson', data: collection(features) })
+  map.addLayer({
+    id: `${SOURCE_STORY}-layer`,
+    type: 'circle',
+    source: SOURCE_STORY,
+    paint: {
+      'circle-color': ['match', ['get', 'cls'], ...Object.entries(STORY_COLORS).flat(), '#d8d2c4'] as unknown as string,
+      'circle-radius': POPULATION_RADIUS,
+      'circle-stroke-color': ['match', ['get', 'cls'], 'no_data', '#5b685e', '#233d36'] as unknown as string,
+      'circle-stroke-width': ['match', ['get', 'cls'], 'no_data', 1.5, 0.8] as unknown as number,
+      'circle-stroke-opacity': 0.75,
+      'circle-opacity': 0.92,
+    },
+  })
+  originLayerIds.push(`${SOURCE_STORY}-layer`)
+
+  if (view !== 'recommended' || !props.sites?.length) return
+  const byId = new Map(props.islands.map((island) => [island.id, island]))
+  const siteFeatures = props.sites.flatMap((site) => {
+    const island = byId.get(site.islandId)
+    if (!island) return []
+    return [{
+      type: 'Feature' as const,
+      geometry: { type: 'Point' as const, coordinates: [island.lon, island.lat] },
+      properties: { rank: String(site.rank), islandId: island.id },
+    }]
+  })
+  map.addSource(SOURCE_SITES, { type: 'geojson', data: collection(siteFeatures) })
+  map.addLayer({
+    id: `${SOURCE_SITES}-layer`,
+    type: 'circle',
+    source: SOURCE_SITES,
+    paint: { 'circle-color': '#b36c48', 'circle-radius': 11, 'circle-stroke-color': '#fffdf8', 'circle-stroke-width': 2 },
+  })
+  map.addLayer({
+    id: LAYER_SITE_LABELS,
+    type: 'symbol',
+    source: SOURCE_SITES,
+    layout: { 'text-field': ['get', 'rank'], 'text-size': 12, 'text-allow-overlap': true },
+    paint: { 'text-color': '#fffdf8' },
+  })
+}
+
 function fitToIslands(): void {
   if (!map) return
   const points = props.islands.map((island) => [island.lon, island.lat] as [number, number])
@@ -521,6 +608,9 @@ watch(
     props.originIslandId,
     props.geojson,
     props.highlights,
+    props.mapView,
+    props.underserved,
+    props.sites,
   ],
   () => {
     if (mapReady) render()

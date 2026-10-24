@@ -44,6 +44,9 @@ const {
   selectOrigin,
   regionSplit,
   accessReport,
+  mapView,
+  siting,
+  underservedClasses,
 } = store
 
 const SHORT_LABELS: Record<string, string> = {
@@ -194,7 +197,12 @@ const displaySummary = computed(() =>
             :has-mapbox-token="hasMapboxToken"
             :filter-active="filterActive"
             :highlights="mapHighlights"
+            :map-view="mapView"
+            :underserved="underservedClasses"
+            :siting="siting"
+            :threshold-minutes="threshold"
             @select-origin="selectOrigin"
+            @set-view="(next) => (mapView = next)"
           />
 
           <IslandAccessPanel class="mm-hero__panel" :store="store" />

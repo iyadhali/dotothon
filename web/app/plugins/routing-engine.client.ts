@@ -6,6 +6,7 @@ import {
   planJourneyWithStatus,
 } from '../../shared/routing/router'
 import { buildAccessReport } from '../../shared/routing/nearby'
+import { buildTravelMatrix, recommendSites } from '../../shared/routing/recommend'
 import { setMultimodalEngine } from '../utils/engine'
 
 /**
@@ -20,5 +21,7 @@ export default defineNuxtPlugin(() => {
     applyScenario,
     createServiceFromPattern,
     buildAccessReport,
+    buildTravelMatrix,
+    recommendSites,
   })
 })

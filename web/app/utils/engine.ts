@@ -16,9 +16,11 @@ import type {
   MultimodalNetwork,
   Scenario,
   TimetabledService,
+  TravelMode,
 } from '../../shared/routing/types'
 import type { AccessReportOptions, CategoryAccess } from '../../shared/routing/nearby'
 import type { FareTable } from '../../shared/routing/cost'
+import type { SitingResult, TravelMatrix } from '../../shared/routing/recommend'
 
 export interface MultimodalEngine {
   planJourney: (network: MultimodalNetwork, request: JourneyRequest) => Journey | null
@@ -48,6 +50,16 @@ export interface MultimodalEngine {
     fares: FareTable | null,
     options: AccessReportOptions,
   ) => CategoryAccess[]
+  /** Same-day island-to-island travel times for siting (optional). */
+  buildTravelMatrix?: (
+    network: MultimodalNetwork,
+    options: { departureMinute: number; maxJourneyMinutes: number; allowedModes?: TravelMode[]; disabledRouteIds?: string[] },
+  ) => TravelMatrix
+  recommendSites?: (
+    network: MultimodalNetwork,
+    matrix: TravelMatrix,
+    options: { category: string; thresholdMinutes: number; picks?: number },
+  ) => SitingResult
 }
 
 let engine: MultimodalEngine | null = null

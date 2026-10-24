@@ -39,6 +39,40 @@ def round_coords(c, dp=5):
     return [round_coords(x, dp) for x in c]
 
 
+def _flatten_pairs(c, out: list) -> None:
+    """Collect every [lon, lat] leaf from a (Multi)Polygon coordinate tree."""
+    if isinstance(c, (list, tuple)) and c and isinstance(c[0], (int, float)):
+        out.append(c)
+        return
+    for x in c:
+        _flatten_pairs(x, out)
+
+
+def write_atolls() -> None:
+    """Atoll outlines, so the national map shows the country's 21 rings and not just dots."""
+    src = json.loads((ROOT / "data" / "external" / "mdv_admin1_atolls.geojson").read_text())
+    feats = []
+    for f in src["features"]:
+        p = f["properties"]
+        name = p.get("adm1_name") or p.get("adm1_pcode")
+        geom = f["geometry"]
+        pts: list = []
+        _flatten_pairs(geom["coordinates"], pts)
+        # a rough centroid is enough for a label
+        lat = sum(x[1] for x in pts) / len(pts)
+        lon = sum(x[0] for x in pts) / len(pts)
+        feats.append({
+            "type": "Feature",
+            "geometry": {"type": geom["type"], "coordinates": round_coords(geom["coordinates"], 4)},
+            "properties": {"name": name, "code": p.get("adm1_pcode"),
+                           "centroid": [round(lat, 4), round(lon, 4)],
+                           "upright": p.get("adm1_name")},
+        })
+    out = OUT.parent / "atolls.geojson"
+    out.write_text(json.dumps({"type": "FeatureCollection", "features": feats}, separators=(",", ":")))
+    print(f"wrote {out.name} — {len(feats)} atolls, {out.stat().st_size / 1e3:.0f} KB")
+
+
 def main() -> None:
     acc = pd.read_csv(ROOT / "data" / "derived" / "island_access.csv")
     nodes = pd.read_csv(ROOT / "data" / "derived" / "sea_nodes.csv")
@@ -75,6 +109,17 @@ def main() -> None:
             },
         })
 
+    # per-island hours for every service type, so the map can be recoloured client-side
+    sa_path = ROOT / "data" / "derived" / "service_access.csv"
+    if sa_path.exists():
+        sa = pd.read_csv(sa_path)
+        metrics = {f"{cat}:{t}": g.set_index("node_id").hours.to_dict()
+                   for (cat, t), g in sa.groupby(["category", "service_type"])}
+        for f in feats:
+            f["properties"]["m"] = {
+                k: (None if pd.isna(v.get(f["properties"]["id"])) else round(float(v[f["properties"]["id"]]), 2))
+                for k, v in metrics.items()}
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"type": "FeatureCollection", "features": feats}, separators=(",", ":")))
 
@@ -106,6 +151,8 @@ def main() -> None:
     (OUT.parent / "islands_points.json").write_text(json.dumps(pts, separators=(",", ":")))
     print(f"wrote islands_points.json — {len(pts)} points, "
           f"{(OUT.parent / 'islands_points.json').stat().st_size / 1e3:.0f} KB")
+    write_atolls()
+
     bands = pd.Series([x["properties"]["band"] for x in feats]).value_counts().to_dict()
     print(f"wrote {OUT.relative_to(ROOT)} — {len(feats)} features, "
           f"{OUT.stat().st_size / 1e6:.2f} MB, bands {bands}")

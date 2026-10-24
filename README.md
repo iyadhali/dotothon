@@ -51,7 +51,8 @@ travel time to the nearest grade 11–12 school. Everything else floats over it.
 | **Hover** an island | name, atoll, residents and travel time in a tooltip |
 | **Click** an island | profile card (population, children, provision, nearest school and campus, observed crossings) |
 | **Legend chips** | filter the map to one travel-time band; click again to clear |
-| **Atoll dropdown** | fly to that atoll's bounding box |
+| **Zoom in** | the 21 atoll outlines and their names appear, then island names, then real coastlines |
+| **Atoll dropdown** | fly to that atoll's bounding box; `?lat=…&lon=…&z=…` opens a shared view |
 | **Search / list** | live filter over 187 islands; hover a row to light up its island, Enter to open the top hit |
 | **Plan a journey** | click a start island, then a destination — the best route is drawn on the map and broken down leg by leg |
 | **Reset** (or `Esc`) | clear filters, route and selection |

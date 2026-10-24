@@ -146,10 +146,17 @@ const BAND = {own:"#0f766e", under2:"#2f855a", under4:"#d69e2e", under8:"#dd6b20
               over8:"#c53030", unknown:"#9aa5b1"};
 const el = id => document.getElementById(id);
 const mapEl = el("map");
+let pendingView = null;           // ?z= deep link, applied after the demo route lands
+const VIEW = (() => {             // read now: the route pushes ?from=&to= over the URL
+  const q = new URLSearchParams(location.search);
+  if (!q.get("z")) return null;
+  return {lat: parseFloat(q.get("lat")) || 3.6, lon: parseFloat(q.get("lon")) || 73.3,
+          z: parseFloat(q.get("z"))};
+})();
 
 const map = L.map(mapEl, {
   zoomSnap: 0.25, minZoom: 5, maxZoom: 12, zoomControl: false, attributionControl: false
-}).setView([3.6, 73.3], 6);
+}).setView([6.05, 73.25], 8);
 L.control.zoom({position: "bottomright"}).addTo(map);
 
 const state = {mode:"explore", from:null, to:null, band:null, atoll:"", q:"",
@@ -190,6 +197,79 @@ function fitAll() {
 
 requestAnimationFrame(() => map.invalidateSize());
 
+/* Atolls and island shapes. The national view is dots because 1,556 polygons are sub-pixel at
+   zoom 6; zoom in and the real coastlines take over, coloured by the same metric. */
+const POLY_ZOOM = 10.75;  // coastlines only have real size at the deepest zoom levels
+const SHAPE_MIN_POP = 0;          // every island with a polygon, including uninhabited ones
+let polyLayer = null, polyState = "idle";
+
+function polyStyle(f) {
+  const p = f.properties;
+  const h = p.m && p.m[state.metric] !== undefined ? p.m[state.metric] : p.hours;
+  return {color:"#ffffff", weight:1, opacity:.95,
+          fillColor: BAND[bandOf(h)] || BAND.unknown, fillOpacity:.95};
+}
+
+function ensurePolys() {
+  if (polyState !== "idle") return;
+  polyState = "loading";
+  fetch("/static/access/islands.geojson").then(r => r.json()).then(gj => {
+    polyLayer = L.geoJSON(gj, {
+      renderer: L.canvas({padding: 0.4}),
+      style: polyStyle,
+      onEachFeature: (f, layer) => {
+        const p = f.properties;
+        layer.bindTooltip(`<b>${p.name}</b><br>${p.atoll} · ${p.pop.toLocaleString()} residents`,
+                          {sticky:true, direction:"top", className:"tip"});
+        layer.on("click", () => onIslandClick(p.id));
+        layer.on("mouseover", () => layer.setStyle({weight:2, color:"#0b1f2a"}));
+        layer.on("mouseout", () => layer.setStyle({weight:1, color:"#ffffff"}));
+      }
+    });
+    polyState = "ready";
+    if (map.getZoom() >= POLY_ZOOM) polyLayer.addTo(map);
+  });
+}
+
+function recolorPolys() { if (polyLayer) polyLayer.setStyle(polyStyle); }
+
+const atollLabels = L.layerGroup();
+const nameLabels = L.layerGroup();      // one label per inhabited island, only when there is room
+fetch("/static/access/atolls.geojson").then(r => r.json()).then(gj => {
+  const rings = L.geoJSON(gj, {interactive:false, style:{
+      color:"#9ec9d6", weight:1.1, opacity:.9, fillColor:"#e8f5f8", fillOpacity:.35
+    }}).addTo(map);
+  rings.bringToBack();                       // outlines must sit under the island markers
+  gj.features.forEach(f => {
+    const c = f.properties.centroid;
+    if (!c) return;
+    L.marker(c, {interactive:false, keyboard:false, icon:L.divIcon({
+        className:"atoll-label", html:`<span>${f.properties.name}</span>`,
+        iconSize:[0, 0], iconAnchor:[0, 0]
+      })}).addTo(atollLabels);
+  });
+});
+
+function syncZoom() {
+  const z = map.getZoom();
+  if (z >= POLY_ZOOM) ensurePolys();
+  if (polyLayer) {
+    if (z >= POLY_ZOOM) { if (!map.hasLayer(polyLayer)) { polyLayer.addTo(map); polyLayer.bringToBack(); } }
+    else if (map.hasLayer(polyLayer)) map.removeLayer(polyLayer);
+  }
+  if (z >= 7.2) { if (!map.hasLayer(atollLabels)) atollLabels.addTo(map); }
+  else if (map.hasLayer(atollLabels)) map.removeLayer(atollLabels);
+  if (z >= 9) { if (!map.hasLayer(nameLabels)) nameLabels.addTo(map); }
+  else if (map.hasLayer(nameLabels)) map.removeLayer(nameLabels);
+  // zoomed in, the dots shrink so the coastline underneath has room to show
+  const shrink = z >= 9 ? 0.55 : 1;
+  state.markers.forEach((m, id) => {
+    const p = state.byId.get(id);
+    if (p) m.setRadius(Math.max(3, radius(p.pop) * shrink));
+  });
+}
+map.on("zoomend", syncZoom);
+
 fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   state.points = pts;
   map.invalidateSize();
@@ -216,16 +296,23 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
     m.on("click", () => onIslandClick(p.id));
     state.markers.set(p.id, m);
 
+    if (p.pop > 0) {
+      L.marker([p.lat, p.lon], {interactive:false, keyboard:false, icon:L.divIcon({
+          className:"island-label", html:`<span>${p.name}</span>`, iconSize:[0, 0], iconAnchor:[-7, 0]
+        })}).addTo(nameLabels);
+    }
     if (!state.atollBounds.has(p.atoll)) state.atollBounds.set(p.atoll, L.latLngBounds([]));
     state.atollBounds.get(p.atoll).extend([p.lat, p.lon]);
   });
 
-  fitAll();
+  syncZoom();
   renderList();
   if (mapEl.dataset.defaultIsland) selectIsland(mapEl.dataset.defaultIsland, {fly:false, load:false});
   setMode("explore");
   const ro = el("route-out").dataset;
   if (ro.defaultFrom && ro.defaultTo) submitRoute();   // show one worked journey on first paint
+  // share a view: ?lat=6.15&lon=73.28&z=9 opens the map at that spot, even after the demo route
+  if (VIEW) { pendingView = VIEW; map.setView([VIEW.lat, VIEW.lon], VIEW.z, {animate:false}); }
 });
 
 function selectIsland(id, opts = {}) {
@@ -260,10 +347,13 @@ function onIslandClick(id) {
   selectIsland(id);
 }
 
+let autoRoute = true;
 function submitRoute() {
+  const wasAuto = autoRoute;
+  autoRoute = false;
   const from = el("from").value, to = el("to").value;
   htmx.ajax("GET", `/route/?from=${from}&to=${to}`, {target:"#route-out", swap:"innerHTML"});
-  history.replaceState({}, "", `?from=${from}&to=${to}`);
+  if (!wasAuto) history.replaceState({}, "", `?from=${from}&to=${to}`);
 }
 
 function clearRoute() { if (state.routeLayer) { map.removeLayer(state.routeLayer); state.routeLayer = null; } }
@@ -283,9 +373,14 @@ function drawRoute() {
     L.circleMarker(path[path.length-1], {radius:6, color:"#0b4f57", weight:2, fillColor:"#fff", fillOpacity:1})
   ]).addTo(map);
   const wasFirst = firstRoute;
-  if (!firstRoute) map.fitBounds(L.latLngBounds(path), isWide()
-    ? {paddingTopLeft:[350, 60], paddingBottomRight:[380, 60], maxZoom:9}
-    : {padding:[40, 40], maxZoom:9});
+  if (pendingView) {                       // a shared ?z= view outranks the automatic fit
+    map.setView([pendingView.lat, pendingView.lon], pendingView.z, {animate:false});
+    pendingView = null;
+  } else if (!firstRoute && !VIEW) {
+    map.fitBounds(L.latLngBounds(path), isWide()
+      ? {paddingTopLeft:[350, 60], paddingBottomRight:[380, 60], maxZoom:9}
+      : {padding:[40, 40], maxZoom:9});
+  }
   firstRoute = false;
   return wasFirst;
 }
@@ -363,6 +458,7 @@ function applyMetric() {
     m.setStyle({fillColor: BAND[p.band] || BAND.unknown,
                 opacity: on ? 0.85 : 0.12, fillOpacity: on ? 0.92 : 0.10});
   });
+  recolorPolys();
   renderList();
 }
 
@@ -384,7 +480,7 @@ el("resetmap").addEventListener("click", () => {
   document.querySelectorAll("#legend li").forEach(x => x.classList.remove("is-off"));
   state.markers.forEach(m => m.setStyle({opacity:0.85, fillOpacity:0.92, weight:0.8, color:"#ffffff"}));
   state.sel = null; clearRoute();
-  fitAll();
+  syncZoom();
   renderList();
 });
 

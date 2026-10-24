@@ -237,6 +237,13 @@ Children aged 0–17 across those islands: **73,754 (31.1 %) — the demand deno
 
 ## 6. How this scores against the published rubric
 
+> **Updated 24 Oct, after the organisers circulated the real rubric.** Each criterion is scored
+> **1–5** and weighted to 100; three things change our strategy: a **dashboard is explicitly not
+> innovative on its own**, **Data Utilization restricts sources** to organiser-provided, shared
+> self-collected, or public open data, and the tie-break is the average of **Impact + Scalability**.
+> The full rubric, our self-assessment (~76/100 today) and the five actions ranked by points at
+> stake live in [docs/judging-criteria.md](docs/judging-criteria.md).
+
 | Criterion | Weight | What this project puts on the table |
 |---|---|---|
 | Technical execution | 20 % | clean pipeline, runnable in one command, explicit limits section (one month of GPS, sample ridership) |

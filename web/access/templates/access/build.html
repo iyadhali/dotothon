@@ -242,6 +242,13 @@ function renderMap() {
     }
   }
 
+  rank.slice(0, 10).forEach(r => {
+    const p = ISLES[r.c.i];
+    L.circleMarker([p.lat, p.lon], {
+      radius: radius(p.pop) + 3.5, color: "#0f766e", weight: 1.6, opacity: .9, fill: false
+    }).addTo(hiLayer);
+  });
+
   const used = [];
   state.built.forEach((i, n) => {
     const p = ISLES[i], at = map.latLngToContainerPoint([p.lat, p.lon]);
@@ -252,8 +259,7 @@ function renderMap() {
       riseOnHover: true, zIndexOffset: 900
     }).addTo(pinLayer).bindTooltip(`${p.name} · built (${n + 1})`, {direction: "top"});
   });
-  const pinCount = map.getZoom() >= 6.75 ? 10 : 4;
-  rank.slice(0, pinCount).forEach((r, n) => {
+  rank.slice(0, 10).forEach((r, n) => {
     const p = ISLES[r.c.i], at = map.latLngToContainerPoint([p.lat, p.lon]);
     if (used.some(q => q.distanceTo(at) < 18)) return;   // the table still ranks it; the pin waits
     used.push(at);

@@ -3,7 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useMultimodal, type FacilityType, type MapView } from '../composables/useMultimodal'
 import type { DestinationAccess } from '../../shared/routing/nearby'
 import { formatClock, formatClockWithDay, formatDuration, formatPopulation } from '../utils/format'
-import { journeyPaths, type Destination, type FacilityIsland, type JourneyPath } from '../utils/routes'
+import { buildLandPaths, journeyPaths, type Destination, type FacilityIsland, type JourneyPath } from '../utils/routes'
 import { ACCESS_CLASSES, accessClassLabel, type AccessClass } from '../utils/classify'
 import { EVIDENCE_LAYERS, journeyEvidence } from '#shared/routing/evidence'
 import { TRAVELLERS } from '#shared/routing/cost'
@@ -34,6 +34,18 @@ const impactMax = computed(() => Math.max(1, ...impact.value.map((step) => step.
 const pct = (value: number, total: number) => (total > 0 ? `${Math.round((100 * value) / total)}%` : '—')
 
 const DAYS = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+
+/** Which route networks are drawn on the map (display only; routing uses the Data menu). */
+const showRoutes = ref({ sea: true, air: true, land: true })
+const ROUTE_TOGGLES = [
+  { key: 'sea', label: 'Sea' },
+  { key: 'air', label: 'Air' },
+  { key: 'land', label: 'Land' },
+] as const
+const visibleRoutes = computed(() =>
+  routePaths.value.filter((route) => (route.mode === 'air' ? showRoutes.value.air : showRoutes.value.sea)),
+)
+const landPaths = computed(() => (network.value && showRoutes.value.land ? buildLandPaths(network.value) : []))
 const layersOpen = ref(false)
 /** `?map=svg` forces the token-free fallback map (also used when Mapbox / WebGL fails). */
 const forceSvg = ref(false)
@@ -332,7 +344,8 @@ function homeText(destination: DestinationAccess): string {
         <FallbackMap
           v-if="useSvg"
           :islands="network?.islands ?? []"
-          :routes="routePaths"
+          :routes="visibleRoutes"
+          :land-routes="landPaths"
           :facilities="facilityIslands"
           :selected-island-id="mapView === 'access' ? selectedId : null"
           :journeys="mapView === 'access' ? journeys : []"
@@ -345,7 +358,8 @@ function homeText(destination: DestinationAccess): string {
         <MinimalMap
           v-else
           :islands="network?.islands ?? []"
-          :routes="routePaths"
+          :routes="visibleRoutes"
+          :land-routes="landPaths"
           :facilities="facilityIslands"
           :selected-island-id="mapView === 'access' ? selectedId : null"
           :journeys="mapView === 'access' ? journeys : []"
@@ -358,6 +372,20 @@ function homeText(destination: DestinationAccess): string {
         />
       </ClientOnly>
       <p v-if="mapFailed" class="am-error">Basemap unavailable ({{ mapFailed }}); showing the offline map.</p>
+
+      <div class="am-routes" role="group" aria-label="Show routes">
+        <span>Show routes</span>
+        <button
+          v-for="item in ROUTE_TOGGLES"
+          :key="item.key"
+          type="button"
+          :aria-pressed="showRoutes[item.key]"
+          :class="[`is-${item.key}`, { 'is-on': showRoutes[item.key] }]"
+          @click="showRoutes[item.key] = !showRoutes[item.key]"
+        >
+          <i aria-hidden="true" /> {{ item.label }}
+        </button>
+      </div>
 
       <div class="am-views" role="tablist" aria-label="Map view">
         <button
@@ -383,8 +411,9 @@ function homeText(destination: DestinationAccess): string {
           </template>
           <span v-else-if="facilityType === 'health'"><i class="dot health" /> Health facility (large = hospital)</span>
           <span v-else><i class="dot education" /> School (large = grade 11–12 / higher ed)</span>
-          <span><i class="line ferry" /> Ferry / boat</span>
-          <span><i class="line air" /> Flight</span>
+          <span v-if="showRoutes.sea"><i class="line ferry" /> Ferry / boat</span>
+          <span v-if="showRoutes.air"><i class="line air" /> Flight</span>
+          <span v-if="showRoutes.land"><i class="line land" /> Road link</span>
         </template>
         <template v-else-if="mapView === 'underserved'">
           <strong class="am-legend__title">{{ SHORT[category] ?? 'Facility' }}, leaving {{ formatClock(departureMinute) }}</strong>
@@ -747,6 +776,53 @@ function homeText(destination: DestinationAccess): string {
 }
 .line.air {
   border-top: 2px dashed #a5b4fc;
+}
+.line.land {
+  border-top: 2.5px solid #334155;
+}
+.am-routes {
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px 3px 10px;
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+  font-size: 12px;
+  color: var(--am-muted);
+}
+.am-routes button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--am-muted);
+  cursor: pointer;
+}
+.am-routes button i {
+  width: 14px;
+  height: 0;
+  border-top: 2px solid currentColor;
+  opacity: 0.5;
+}
+.am-routes button.is-sea i { border-top-color: #0284c7; }
+.am-routes button.is-air i { border-top: 2px dashed #7c3aed; }
+.am-routes button.is-land i { border-top: 2.5px solid #334155; }
+.am-routes button.is-on {
+  background: #f1f5f9;
+  color: var(--am-text);
+}
+.am-routes button.is-on i {
+  opacity: 1;
 }
 .am-panel,
 .am-hint {

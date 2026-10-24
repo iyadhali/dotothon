@@ -63,7 +63,13 @@ export function buildTravelMatrix(
 export function recommendSites(
   network: MultimodalNetwork,
   matrix: TravelMatrix,
-  options: { category: string; thresholdMinutes: number; picks?: number },
+  options: {
+    category: string
+    thresholdMinutes: number
+    picks?: number
+    /** Islands that may not be picked (e.g. already planned elsewhere). */
+    excludeIslandIds?: string[]
+  },
 ): SitingResult {
   const origins = network.islands.filter((island) => island.isOrigin)
   const facilityIslands = new Set(
@@ -85,7 +91,8 @@ export function recommendSites(
   const sumPopulation = (ids: Iterable<string>) => [...ids].reduce((sum, id) => sum + (populationOf.get(id) ?? 0), 0)
   const coveredBefore = sumPopulation(covered)
 
-  const candidates = origins.filter((o) => !facilityIslands.has(o.id))
+  const excluded = new Set(options.excludeIslandIds ?? [])
+  const candidates = origins.filter((o) => !facilityIslands.has(o.id) && !excluded.has(o.id))
   const sites: RecommendedSite[] = []
   for (let rank = 1; rank <= (options.picks ?? 5); rank += 1) {
     let best: { island: (typeof origins)[number]; gain: number; ids: string[] } | null = null

@@ -11,6 +11,7 @@ import { ACCESS_CLASS_COLORS } from '../utils/classify'
 const props = defineProps<{
   islands: Island[]
   routes: RoutePath[]
+  landRoutes: { id: string; points: [number, number][] }[]
   facilities: FacilityIsland[]
   selectedIslandId: string | null
   journeys: JourneyPath[]
@@ -83,6 +84,9 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
         stroke-width="1"
         :stroke-dasharray="route.mode === 'air' ? '4 3' : undefined"
       />
+    </g>
+    <g :opacity="focused ? 0.3 : view === 'access' ? 0.9 : 0.25">
+      <path v-for="road in landRoutes" :key="road.id" :d="path(road.points)" fill="none" stroke="#334155" stroke-width="2.5" stroke-linecap="round" />
     </g>
     <circle
       v-for="island in islands.filter((i) => i.isOrigin)"

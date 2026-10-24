@@ -318,3 +318,27 @@ export interface Destination {
   lat: number
   label: string
 }
+
+/** Road links (bridges, causeways, link roads) as drawable lines, one per island pair. */
+export function buildLandPaths(network: MultimodalNetwork): { id: string; points: LonLat[]; label: string }[] {
+  const coordinates = new Map<string, LonLat>()
+  const names = new Map<string, string>()
+  for (const island of network.islands) {
+    coordinates.set(`island:${island.id}`, [island.lon, island.lat])
+    names.set(`island:${island.id}`, island.name)
+  }
+  for (const stop of network.stops) coordinates.set(`stop:${stop.id}`, [stop.lon, stop.lat])
+  for (const airport of network.airports) coordinates.set(`airport:${airport.iata}`, [airport.lon, airport.lat])
+  const seen = new Set<string>()
+  const paths: { id: string; points: LonLat[]; label: string }[] = []
+  for (const edge of network.accessEdges) {
+    if (edge.mode !== 'road') continue
+    const key = [edge.from, edge.to].sort().join('|')
+    const from = coordinates.get(edge.from)
+    const to = coordinates.get(edge.to)
+    if (seen.has(key) || !from || !to) continue
+    seen.add(key)
+    paths.push({ id: key, points: [from, to], label: `${names.get(edge.from) ?? edge.from} – ${names.get(edge.to) ?? edge.to}` })
+  }
+  return paths
+}

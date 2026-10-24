@@ -10,6 +10,8 @@ import { ACCESS_CLASS_COLORS } from '../utils/classify'
 const props = defineProps<{
   islands: Island[]
   routes: RoutePath[]
+  /** Road links (bridges, causeways); empty when the Land toggle is off. */
+  landRoutes: { id: string; points: [number, number][] }[]
   facilities: FacilityIsland[]
   selectedIslandId: string | null
   journeys: JourneyPath[]
@@ -83,6 +85,16 @@ function routeFeatures(): FeatureCollection {
   )
 }
 
+function landFeatures(): FeatureCollection {
+  return fc(
+    props.landRoutes.map((route) => ({
+      type: 'Feature',
+      geometry: { type: 'LineString', coordinates: route.points },
+      properties: {},
+    })),
+  )
+}
+
 function facilityFeatures(): FeatureCollection {
   return fc(
     props.facilities.map((facility) => ({
@@ -124,6 +136,7 @@ function refresh(): void {
   const byId = new Map(props.islands.map((island) => [island.id, island]))
   setData('am-islands', islandFeatures())
   setData('am-routes', routeFeatures())
+  setData('am-land', landFeatures())
   setData('am-facilities', facilityFeatures())
   setData('am-journey', journeyFeatures())
   setData('am-selected', pointFeatures(selected ? [selected] : []))
@@ -144,6 +157,7 @@ function refresh(): void {
   const focused = access && selected !== null
   map.setPaintProperty('am-routes-ferry', 'line-opacity', focused ? 0.12 : access ? 0.55 : 0.15)
   map.setPaintProperty('am-routes-air', 'line-opacity', focused ? 0.1 : access ? 0.5 : 0.12)
+  map.setPaintProperty('am-land', 'line-opacity', focused ? 0.25 : access ? 0.9 : 0.2)
   map.setLayoutProperty('am-facilities', 'visibility', access ? 'visible' : 'none')
   map.setPaintProperty('am-facilities', 'circle-opacity', focused ? 0.35 : 0.95)
 }
@@ -167,7 +181,7 @@ function fitAll(): void {
 
 function addLayers(): void {
   if (!map) return
-  for (const id of ['am-islands', 'am-routes', 'am-facilities', 'am-journey', 'am-selected', 'am-destinations', 'am-sites']) {
+  for (const id of ['am-islands', 'am-routes', 'am-land', 'am-facilities', 'am-journey', 'am-selected', 'am-destinations', 'am-sites']) {
     map.addSource(id, { type: 'geojson', data: fc([]) })
   }
   map.addLayer({
@@ -183,6 +197,13 @@ function addLayers(): void {
     source: 'am-routes',
     filter: ['==', ['get', 'mode'], 'air'],
     paint: { 'line-color': COLORS.air, 'line-width': 1, 'line-dasharray': [3, 2], 'line-opacity': 0.5 },
+  })
+  map.addLayer({
+    id: 'am-land',
+    type: 'line',
+    source: 'am-land',
+    layout: { 'line-cap': 'round' },
+    paint: { 'line-color': '#334155', 'line-width': 2.5, 'line-opacity': 0.9 },
   })
   map.addLayer({
     id: 'am-islands',
@@ -337,7 +358,7 @@ onMounted(() => {
 })
 
 watch(
-  () => [props.islands, props.routes, props.facilities, props.journeys, props.destinations, props.view, props.underserved, props.sites],
+  () => [props.islands, props.routes, props.landRoutes, props.facilities, props.journeys, props.destinations, props.view, props.underserved, props.sites],
   () => refresh(),
 )
 watch(

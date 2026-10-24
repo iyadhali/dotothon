@@ -1,0 +1,17 @@
+#!/bin/sh
+# Refuse to push anything except a-team-accessibility-model.
+# Installed as .git/hooks/pre-push; kept here so it is versioned and reviewable.
+ALLOWED="refs/heads/a-team-accessibility-model"
+status=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+  case "$remote_ref" in
+    "$ALLOWED") echo "guard: ok  $remote_ref" ;;
+    "") ;;                                   # deletions carry an empty ref name
+    *)
+      echo "guard: BLOCKED  a push to $remote_ref is not allowed." >&2
+      echo "guard: this repository only pushes $ALLOWED" >&2
+      status=1
+      ;;
+  esac
+done
+exit $status

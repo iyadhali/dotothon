@@ -61,3 +61,6 @@ run: webdata
 
 # full rebuild on a new month of GPS without touching open data
 refresh: spine gps provision model webdata check
+
+guard: ## install the push guard (only a-team-accessibility-model may be pushed)
+	sh scripts/git-guard/install.sh

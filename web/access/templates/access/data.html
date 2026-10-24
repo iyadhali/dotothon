@@ -1,0 +1,139 @@
+{% extends "access/base.html" %}
+{% load fmt %}
+{% block body %}
+<header class="topbar">
+  <div class="brand">
+    <p class="eyebrow">Maldives Datathon 2026 · Team A</p>
+    <h1>Data and method</h1>
+    <p class="lede">Four organiser datasets and five public sources, rebuilt into one travel-time
+      network. <b>{{ s.islands }}</b> inhabited islands, <b>{{ s.edges|num }}</b> observed crossings,
+      <b>{{ total_services }}</b> services placed. Drop a new file into the data folder and the whole
+      chain reruns by itself.</p>
+  </div>
+  <div class="topright">
+    {% include "access/_nav.html" with active="data" %}
+    <div class="chips">
+      {% if manifest %}<div class="chip num"><span class="n">{{ manifest.generated_at|slice:":16" }}</span><span class="l">last<br>rebuild</span></div>{% endif %}
+      <a class="chip num link" href="/"><span class="n">←</span><span class="l">back to<br>the map</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <section class="card">
+    <div class="cardhead">
+      <h2>Sources</h2>
+      <span class="hint">named in the submission declaration, as the brief requires</span>
+    </div>
+    <table class="mini wide reg">
+      <thead><tr><th>Source</th><th>Publisher</th><th>What it gives us</th>
+        <th class="r">Files</th><th class="r">Size</th><th class="r">Last change</th></tr></thead>
+      <tbody>
+        {% for src in sources %}
+        <tr>
+          <td><b>{{ src.label }}</b></td>
+          <td class="muted">{{ src.publisher }}</td>
+          <td class="muted small">{{ src.detail }}</td>
+          <td class="r">{{ src.files }}</td>
+          <td class="r">{{ src.bytes|filesize }}</td>
+          <td class="r muted">{{ src.latest }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="6" class="empty">Run <code>python3 scripts/ingest.py</code> to build the manifest.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <div class="cardhead">
+        <h2>What the network says</h2>
+        <span class="hint">islands within two hours, by service</span>
+      </div>
+      <table class="bars">
+        {% for r in summary %}
+        <tr>
+          <th>{{ r.label }}</th>
+          <td><div class="track"><span style="width:{% widthratio r.islands_within_2h s.islands 100 %}%"></span></div></td>
+          <td class="num">{{ r.islands_within_2h|floatformat:0 }}/{{ s.islands }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <p class="note">One island network answers every service question. Add a service type and it
+        inherits the same crossings, the same causeway links and the same connection penalty.</p>
+    </div>
+
+    <div class="card">
+      <div class="cardhead">
+        <h2>Last rebuild</h2>
+        {% if run %}<span class="hint">run {{ run.run_id }} · {{ run.trigger }}</span>{% endif %}
+      </div>
+      {% if run %}
+      <div class="figrow">
+        <div><b>{{ run.started|slice:":16" }}</b><span>started</span></div>
+        <div><b>{{ stage_count }}</b><span>stages</span></div>
+        <div><b>{{ run.trigger }}</b><span>triggered by</span></div>
+      </div>
+      {% endif %}
+      {% if manifest %}
+      <table class="mini">
+        <thead><tr><th>Stage</th><th class="r">Seconds</th></tr></thead>
+        <tbody>
+        {% for name, secs in manifest.stages_run.items %}
+          <tr><td>{{ name }}</td><td class="r">{{ secs }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+      <p class="note">Fingerprints are sha256 over path, size and modified time, so an unchanged
+        source costs nothing and a touched file rebuilds only what depends on it.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cardhead">
+      <h2>Tables</h2>
+      <span class="hint">everything the app reads is queried from <code>data/platform.sqlite</code></span>
+    </div>
+    <table class="mini wide">
+      <thead><tr><th>Table</th><th class="r">Rows</th><th>Holds</th></tr></thead>
+      <tbody>
+        {% for name, n in tables.items %}
+        <tr><td><code>{{ name }}</code></td><td class="r">{{ n|num }}</td>
+          <td class="muted small">{{ table_notes|get_item:name }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <div class="cardhead">
+      <h2>Method, and what it does not claim</h2>
+    </div>
+    <div class="grid2 prose">
+      <div>
+        <p><b>Trips.</b> A stay is five or more consecutive GPS polls under two knots; a trip is the
+          leg between two stays. The edge weight is the median observed crossing time for that pair
+          of islands, and the count of trips is published beside it.</p>
+        <p><b>Journeys.</b> One hour is added for each connection and a journey may use at most two
+          sailings, which is what makes Addu's internal hops cheap and the capital reachable.</p>
+      </div>
+      <div>
+        <p><b>Roads.</b> Addu's six census islands are joined by causeway because the boat data
+          cannot see them. No other land link is assumed.</p>
+        <p><b>Limits.</b> One month of movement data, not a timetable: a route with no observation is
+          unknown, not closed. Air is not yet in the network, so Addu and Fuvahmulah show no sea
+          link to the capital. Population is resident population, which includes foreign residents.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Built {{ manifest.generated_at }} by <code>scripts/ingest.py</code>. Population: Maldives Bureau
+      of Statistics, Census 2022. School supply: Ministry of Education, <em>School Statistics 2024</em>.
+      Health facilities: Ministry of Health. Boundaries: OCHA COD-AB (CC BY). Movement: FollowMe
+      anonymised GPS, August 2025, via the datathon dataset.</p>
+  </footer>
+</main>
+{% endblock %}

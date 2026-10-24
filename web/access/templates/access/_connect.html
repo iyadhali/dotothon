@@ -1,0 +1,42 @@
+{% load fmt %}
+<div class="cardhead">
+  <h2>{{ c.name }} → services</h2>
+  <span class="pill">{{ c.atoll }}</span>
+</div>
+
+<div class="cats">
+  <a class="cat{% if not category %} is-on{% endif %}" href="#"
+     hx-get="/connect/?island={{ c.id }}" hx-target="#connect-out" hx-swap="innerHTML">All</a>
+  <a class="cat{% if category == 'education' %} is-on{% endif %}" href="#"
+     hx-get="/connect/?island={{ c.id }}&category=education" hx-target="#connect-out" hx-swap="innerHTML">Education</a>
+  <a class="cat{% if category == 'health' %} is-on{% endif %}" href="#"
+     hx-get="/connect/?island={{ c.id }}&category=health" hx-target="#connect-out" hx-swap="innerHTML">Health</a>
+</div>
+
+<div class="figs trio">
+  <div><span class="n">{{ local_n }}/{{ total_n }}</span><span class="l">on this island</span></div>
+  <div><span class="n">{{ within2 }}/{{ total_n }}</span><span class="l">within 2 h</span></div>
+  <div><span class="n">{% if worst %}{{ worst.hours|hours }}{% else %}—{% endif %}</span><span class="l">worst: {{ worst.label|default:"—"|lower }}</span></div>
+</div>
+
+<ul class="svcroute">
+  {% for r in rows %}
+  <li class="{% if r.local %}is-local{% endif %}">
+    <span class="who">{{ r.label }}</span>
+    <span class="to">
+      {% if r.local %}
+        <b class="yes">on the island</b>
+      {% elif r.hours %}
+        <b>{{ r.hours|hours }}</b> to {{ r.place }}
+        <em>{{ r.hops }} sailing{{ r.hops|pluralize }}</em>
+      {% else %}
+        <b class="no">no observed route</b>
+      {% endif %}
+    </span>
+  </li>
+  {% empty %}
+  <li class="empty">No service of that category in the register.</li>
+  {% endfor %}
+</ul>
+
+<p class="ovlfoot" data-paths="{{ paths }}">Lines on the map are the journeys to each provider.</p>

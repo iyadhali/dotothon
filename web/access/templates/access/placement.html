@@ -3,30 +3,44 @@
 
 {% block body %}
 <header class="topbar">
-  <div>
-    <p class="eyebrow">Maldives Datathon 2026 · A Team · sea · land · air</p>
-    <h1>Placement simulator — where does one more facility connect the most people?</h1>
+  <div class="brand">
+    <p class="eyebrow">Maldives Datathon 2026 · Team A</p>
+    <h1>Where one more facility does the most</h1>
+    <p class="lede">Today <b>{{ now.facilities }}</b> {{ stype_label|lower }}{{ now.facilities|pluralize }}
+      serve <b>{{ now.islands_2h }}/{{ s.islands }}</b> islands. Building one more at
+      <b>{{ picks.0.island }}</b> would bring <b>{{ picks.0.newly_within_2h|num }}</b> more people
+      and <b>{{ picks.0.children_newly|num }}</b> children inside two hours.</p>
   </div>
-  {% include "access/_nav.html" with active="simulator" %}
+  <div class="topright">
+    {% include "access/_nav.html" with active="placement" %}
+    <div class="chips">
+      <div class="chip num"><span class="n">{{ now.islands_2h }}/{{ s.islands }}</span><span class="l">islands within<br>2 h today</span></div>
+      <div class="chip num"><span class="n">{{ now.people_2h|num }}</span><span class="l">people within<br>2 h today</span></div>
+      <a class="chip num link" href="/services/"><span class="n">←</span><span class="l">services<br>register</span></a>
+    </div>
+  </div>
 </header>
 
 <main class="page">
+  <section class="card">
+    <div class="cardhead">
+      <h2>What the ranking does</h2>
+      <span class="hint">one facility at a time, on the same network the map uses</span>
+    </div>
+    <p class="prose">For every island that has no {{ stype_label|lower }}, we ask how many people who
+      are currently more than two hours away would fall inside two hours if one were built there.
+      The islands are then ranked and the best pick is added to the network before the next round,
+      so the second and third picks account for the first. It is a greedy ranking on observed
+      connectivity: it knows population and travel time, and nothing about land, staffing or cost.</p>
+  </section>
+
   <section class="grid2">
-    <div class="card">
+    <div class="card mapcard">
       <div class="cardhead">
-        <h2>The question</h2>
-        <span class="muted">one facility, placed where the network helps most</span>
+        <h2>If one more were built</h2>
+        <span class="hint">numbered pins follow the ranking order</span>
       </div>
-      <p class="prose">
-        Every number below comes from the same travel-time network the map uses. For each candidate
-        island we ask: if this facility were built here, how many residents who are currently more
-        than two hours from <em>any</em> {{ stype_label|lower }} would fall inside two hours?
-      </p>
-      <p class="prose">
-        It is a greedy ranking on observed connectivity — not an optimum, and not a cost model.
-        It knows nothing about land, staffing or demand beyond population. What it does show is
-        how unevenly one decision distributes.
-      </p>
+      <div id="simmap" class="simmap"></div>
       <ul class="legend-line">
         <li><i class="dot own"></i> has one</li>
         <li><i class="dot under2"></i> within 2 h</li>
@@ -34,33 +48,6 @@
         <li><i class="dot over8"></i> over 8 h</li>
         <li><i class="dot unknown"></i> no route</li>
       </ul>
-    </div>
-
-    <div class="card">
-      <div class="cardhead">
-        <h2>Today</h2>
-        <span class="muted">{{ stype_label }}</span>
-      </div>
-      <div class="figs figs-4">
-        <div><b>{{ now.facilities }}</b><span>facilities</span></div>
-        <div><b>{{ now.islands_2h }}/{{ s.islands }}</b><span>islands within 2 h</span></div>
-        <div><b>{{ now.people_2h|num }}</b><span>people within 2 h</span></div>
-        <div><b>{{ now.children_2h|num }}</b><span>children within 2 h</span></div>
-      </div>
-      <p class="muted small">
-        Median island is {% if now.median_hours %}{{ now.median_hours|hours }}{% else %}—{% endif %}
-        from the nearest {{ stype_label|lower }}.
-      </p>
-    </div>
-  </section>
-
-  <section class="grid2">
-    <div class="card mapcard">
-      <div class="cardhead">
-        <h2>If one more were built</h2>
-        <span class="muted">numbered pins = the greedy sequence</span>
-      </div>
-      <div id="simmap" class="simmap"></div>
     </div>
 
     <div class="card">
@@ -74,8 +61,8 @@
       </div>
       <table class="mini wide">
         <thead>
-          <tr><th>#</th><th>Island</th><th>Atoll</th><th class="num">People newly &lt; 2 h</th>
-              <th class="num">Children</th><th class="num">Islands within 2 h</th></tr>
+          <tr><th>#</th><th>Island</th><th>Atoll</th><th class="r">People newly &lt; 2 h</th>
+              <th class="r">Children</th><th class="r">Islands within 2 h</th></tr>
         </thead>
         <tbody>
         {% for p in picks %}
@@ -83,30 +70,28 @@
             <td><span class="pin">{{ p.k }}</span></td>
             <td><b>{{ p.island }}</b></td>
             <td class="muted">{{ p.atoll }}</td>
-            <td class="num">+{{ p.newly_within_2h|num }}</td>
-            <td class="num">+{{ p.children_newly|num }}</td>
-            <td class="num">{{ p.coverage_after }}/{{ s.islands }}</td>
+            <td class="r">+{{ p.newly_within_2h|num }}</td>
+            <td class="r">+{{ p.children_newly|num }}</td>
+            <td class="r">{{ p.coverage_after }}/{{ s.islands }}</td>
           </tr>
         {% endfor %}
         </tbody>
       </table>
-      <p class="muted small">
-        Each row is added to the network that already contains the rows above it, so the numbers
-        compound: the second facility covers fewer new people because the first already served them.
-      </p>
+      <p class="note">The gains compound: each row is added to the network that already contains the
+        rows above it, which is why the second pick covers fewer new people than the first.</p>
     </div>
   </section>
 
   <section class="card">
     <div class="cardhead">
-      <h2>What the ranking says</h2>
-      <span class="muted">same method, four service types</span>
+      <h2>One facility, four service types</h2>
+      <span class="hint">best first placement for each</span>
     </div>
     <table class="mini wide">
       <thead>
         <tr><th>Service</th><th>Best first placement</th><th>Atoll</th>
-            <th class="num">People newly &lt; 2 h</th><th class="num">Children</th>
-            <th class="num">Islands within 2 h before → after</th></tr>
+            <th class="r">People newly &lt; 2 h</th><th class="r">Children</th>
+            <th class="r">Islands within 2 h before → after</th></tr>
       </thead>
       <tbody>
       {% for t in types %}
@@ -115,19 +100,16 @@
           {% for p in t.first %}
           <td><b>{{ p.island }}</b></td>
           <td class="muted">{{ p.atoll }}</td>
-          <td class="num">+{{ p.newly_within_2h|num }}</td>
-          <td class="num">+{{ p.children_newly|num }}</td>
-          <td class="num">{{ t.before }} → <b>{{ p.coverage_after }}</b></td>
+          <td class="r">+{{ p.newly_within_2h|num }}</td>
+          <td class="r">+{{ p.children_newly|num }}</td>
+          <td class="r">{{ t.before }} → <b>{{ p.coverage_after }}</b></td>
           {% endfor %}
         </tr>
       {% endfor %}
       </tbody>
     </table>
-    <p class="muted small">
-      The hospital row is the argument: one facility on one island moves the same number of people
-      as every school and campus decision combined, because the last leg to a hospital is the
-      longest leg on the network.
-    </p>
+    <p class="note">The hospital row is the argument: one hospital moves more people than a school
+      and a campus combined, because the last leg to a hospital is the longest leg on the network.</p>
   </section>
 </main>
 
@@ -140,7 +122,7 @@ const metric = "{{ metric }}";
 
 const map = L.map("simmap", {zoomControl: true, attributionControl: false, scrollWheelZoom: true});
 const BAND = {own:"#0f766e", under2:"#2f855a", under4:"#b7791f", under8:"#c05621", over8:"#c53030", unknown:"#a0aab4"};
-const radius = pop => Math.max(4.5, 3 + 2.6 * Math.log10(1 + pop) - 1.4);
+const radius = pop => Math.max(2.6, 2.6 + Math.max(0, Math.log10(1 + pop) - 2.2) * 1.9);
 
 fetch("{% static 'access/islands_points.json' %}")
   .then(r => r.json())
@@ -161,14 +143,14 @@ fetch("{% static 'access/islands_points.json' %}")
         `<b>${p.name}</b><br>${p.atoll} · ${p.pop.toLocaleString()} residents`,
         {sticky: true, direction: "top", className: "tip"});
     });
-    picks.forEach((pk, i) => {
+    picks.forEach(pk => {
       const pt = points.find(p => p.id === pk.id);
       if (!pt) return;
       L.marker([pt.lat, pt.lon], {
         icon: L.divIcon({className: "simpin", html: `<span>${pk.k}</span>`, iconSize: [26, 26]})
       }).addTo(map).bindTooltip(
         `<b>${pk.name}</b><br>+${pk.pop.toLocaleString()} people, +${pk.kids.toLocaleString()} children`,
-        {direction: "top", className: "tip", permanent: false});
+        {direction: "top", className: "tip"});
     });
     map.fitBounds(L.latLngBounds(bounds), {padding: [24, 24], maxZoom: 7});
     setTimeout(() => map.invalidateSize(), 60);

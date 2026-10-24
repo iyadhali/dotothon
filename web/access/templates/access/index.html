@@ -3,17 +3,21 @@
 {% block body %}
 <header class="topbar">
   <div class="brand">
-    <p class="eyebrow">Maldives Datathon 2026 · Team A · Sea · Land · Air</p>
-    <h1>Can a student on island A reach grade 11–12 on island B?</h1>
+    <p class="eyebrow">Maldives Datathon 2026 · Team A</p>
+    <h1>Reaching grade 11–12, island by island</h1>
+    <p class="lede"><b>{{ s.hs_islands }} of {{ s.islands }}</b> inhabited islands teach grade 11–12;
+      <b>{{ s.within2_islands }}</b> reach one within two hours. The remaining
+      <b>{{ n_beyond }}</b> hold <b>{{ gap_children|num }} children</b>, and the median one is
+      a two-and-a-half hour crossing away. Times are measured from
+      <b>{{ s.edges|num }}</b> observed sailings, not a timetable.</p>
   </div>
   <div class="topright">
     {% include "access/_nav.html" with active="map" %}
     <div class="chips">
-    <div class="chip num"><span class="n">{{ s.hs_islands }}</span><span class="l">islands teach<br>grade 11–12</span></div>
-    <div class="chip num"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one within<br>2 hours</span></div>
-    <div class="chip num hot"><span class="n">{{ s.no_service }}</span><span class="l">no observed<br>route</span></div>
-    <a class="chip num link" href="/services/"><span class="n">{{ n_services }}</span><span class="l">services in the<br>register →</span></a>
-    <div class="chip num"><span class="n">{{ s.kids|num }}</span><span class="l">children aged<br>0–17</span></div>
+    <div class="chip num"><span class="n">{{ s.hs_islands }}</span><span class="l">teach<br>grade 11–12</span></div>
+    <div class="chip num"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one<br>in 2 h</span></div>
+    <div class="chip num hot"><span class="n">{{ n_beyond }}</span><span class="l">islands<br>beyond 2 h</span></div>
+    <a class="chip num link" href="/services/"><span class="n">{{ n_services }}</span><span class="l">services<br>mapped →</span></a>
     </div>
   </div>
 </header>
@@ -27,8 +31,8 @@
 
   <aside class="ovl ovl-left">
     <div class="modes" role="tablist">
-      <button class="mode is-on" data-mode="explore" role="tab" type="button">Explore</button>
-      <button class="mode" data-mode="route" role="tab" type="button">Plan a journey</button>
+      <button class="mode is-on" data-mode="pair" role="tab" type="button">Island → island</button>
+      <button class="mode" data-mode="service" role="tab" type="button">Island → service</button>
     </div>
 
     <div class="row2">
@@ -39,7 +43,11 @@
       </select>
     </div>
 
-    <label class="metricrow">
+    <div id="svcblock" hidden>
+      <div id="connect-out"{% if default_island %} hx-get="/connect/?island={{ default_island }}" hx-trigger="load" hx-swap="innerHTML"{% endif %}></div>
+    </div>
+
+    <label class="metricrow" id="metricrow">
       <span>Colour by</span>
       <select id="metric">
         <option value="education:school_higher_secondary">Education · grade 11–12</option>
@@ -60,18 +68,13 @@
     </ul>
 
     <p class="routehint" id="routehint" hidden></p>
+    <p class="listhead" id="listhead">Furthest from a school</p>
     <ol class="hitlist" id="hitlist"></ol>
     <p class="ovlfoot" id="footnote">size = population · colour = hours to <span id="metricname">grade 11–12</span> · <a href="#tables">decision tables ↓</a></p>
   </aside>
 
   <aside class="ovl ovl-right">
-    <div class="card" id="panel"
-         {% if default_island %}hx-get="/island/{{ default_island }}/" hx-trigger="load" hx-swap="innerHTML"{% endif %}>
-      <div class="cardhead"><h2>Island profile</h2></div>
-      <p class="empty">Click any island on the map, or search on the left.</p>
-    </div>
-
-    <div class="card">
+    <div class="card" id="paircard">
       <div class="cardhead"><h2>Island to island</h2>
         <button class="ghost" id="swap" type="button" title="Swap start and destination">⇄ swap</button>
       </div>
@@ -99,15 +102,25 @@
         <button type="submit">Find journey</button>
       </form>
     </div>
+
+    <div class="card" id="panel"
+         {% if default_island %}hx-get="/island/{{ default_island }}/" hx-trigger="load" hx-swap="innerHTML"{% endif %}>
+      <div class="cardhead"><h2>Island profile</h2></div>
+      <p class="empty">Click any island on the map, or search on the left.</p>
+    </div>
+
   </aside>
 
   <button class="resetmap" id="resetmap" type="button" title="Reset view and filters">⤺ reset</button>
 </main>
 
 <main class="wrap" id="tables">
+  {% include "access/_insights.html" %}
+
   <section class="card tablecard">
     <div class="cardhead">
-      <h2>Worst served first</h2>
+      <h2>Islands furthest from grade 11–12</h2>
+      <span class="hint">ranked by hours · the map colours the same measure</span>
       <div class="chips">
         <button hx-get="/ranked/?band=over4" hx-target="#ranked" hx-swap="innerHTML" class="chip">Over 4 h</button>
         <button hx-get="/ranked/?band=none" hx-target="#ranked" hx-swap="innerHTML" class="chip">No reachable school</button>
@@ -318,7 +331,7 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   syncZoom();
   renderList();
   if (mapEl.dataset.defaultIsland) selectIsland(mapEl.dataset.defaultIsland, {fly:false, load:false});
-  setMode("explore");
+  setMode(new URLSearchParams(location.search).get("mode") === "service" ? "service" : "pair");
   const ro = el("route-out").dataset;
   if (ro.defaultFrom && ro.defaultTo) submitRoute();   // show one worked journey on first paint
   // share a view: ?lat=6.15&lon=73.28&z=9 opens the map at that spot, even after the demo route
@@ -335,7 +348,12 @@ function selectIsland(id, opts = {}) {
     if (opts.fly !== false) map.flyTo([p.lat, p.lon], Math.max(map.getZoom(), 8), {duration:0.6});
   }
   if (opts.load !== false) htmx.ajax("GET", `/island/${id}/`, {target:"#panel", swap:"innerHTML"});
-  history.replaceState({}, "", `?island=${id}`);
+  if (state.mode === "service") {
+    htmx.ajax("GET", `/connect/?island=${id}`, {target:"#connect-out", swap:"innerHTML"});
+  }
+  const q = new URLSearchParams(location.search);
+  q.set("island", id);
+  history.replaceState({}, "", "?" + q.toString());
 }
 
 function onIslandClick(id) {
@@ -403,11 +421,12 @@ document.addEventListener("click", e => {
   el("to").value = btn.dataset.routeTo;
   state.from = btn.dataset.routeFrom;
   state.to = btn.dataset.routeTo;
-  setMode("route", {keep: true});
+  setMode("pair", {keep: true});
   submitRoute();
 });
 
 document.body.addEventListener("htmx:afterSwap", e => {
+  if (e.detail.target && e.detail.target.id === "connect-out") drawConnect();
   if (e.detail.target && e.detail.target.id === "route-out") {
     const wasFirst = drawRoute();
     if (!wasFirst) e.detail.target.scrollIntoView({block: "nearest", behavior: "smooth"});
@@ -423,8 +442,29 @@ el("swap").addEventListener("click", () => {
 function setMode(m, opts = {}) {
   state.mode = m;
   document.querySelectorAll(".mode").forEach(b => b.classList.toggle("is-on", b.dataset.mode === m));
-  el("routehint").hidden = m !== "route";
-  if (m === "route") {
+  el("svcblock").hidden = m !== "service";
+  el("paircard").hidden = m === "service";
+  el("routehint").hidden = m !== "pair";
+  // in service mode the left panel is the story: drop the colour-by, legend and worst-list
+  el("metricrow").hidden = m === "service";
+  el("legend").hidden = m === "service";
+  el("hitlist").hidden = m === "service";
+  el("footnote").hidden = m === "service";
+  el("listhead").hidden = m === "service";
+  document.querySelector(".ovl-right").hidden = m === "service";
+  document.querySelector(".ovl-left").classList.toggle("wide", m === "service");
+  if (m === "service") {
+    clearConnect();
+    const island = state.sel || el("from").value;
+    if (island) {
+      htmx.ajax("GET", `/connect/?island=${island}`,
+                {target:"#connect-out", swap:"innerHTML"});
+    }
+    return;
+  }
+  el("connect-out").innerHTML = "";
+  clearConnect();
+  if (m === "pair") {
     if (opts.keep) {
       const a = (state.byId.get(state.from) || {}).name || "this island";
       const b = (state.byId.get(state.to) || {}).name || "the destination";
@@ -433,6 +473,32 @@ function setMode(m, opts = {}) {
       state.from = null; state.to = null;
       el("routehint").textContent = "Click the starting island on the map.";
     }
+  }
+}
+
+// island to service: every provider leg drawn at once, coloured by category
+function clearConnect() {
+  if (state.connectLayer) { map.removeLayer(state.connectLayer); state.connectLayer = null; }
+}
+function drawConnect() {
+  clearConnect();
+  const node = document.querySelector("#connect-out [data-paths]");
+  if (!node) return;
+  let groups;
+  try { groups = JSON.parse(node.dataset.paths); } catch (e) { return; }
+  const colour = ["#1f6f8b", "#2f855a", "#b7791f", "#9c4221", "#4a5568", "#805ad5"];
+  const layer = L.layerGroup();
+  groups.forEach((pts, i) => {
+    if (!pts || pts.length < 2) return;
+    L.polyline(pts, {color: colour[i % colour.length], weight: 2, opacity: .85,
+                     dashArray: "5 5"}).addTo(layer);
+  });
+  state.connectLayer = layer.addTo(map);
+  const pts = groups.flat();
+  if (pts.length) {
+    map.fitBounds(L.latLngBounds(pts), isWide()
+      ? {paddingTopLeft:[420, 70], paddingBottomRight:[70, 70], maxZoom:9}
+      : {padding:[40, 40], maxZoom:9});
   }
 }
 document.querySelectorAll(".mode").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
@@ -503,7 +569,8 @@ function renderList() {
       const ha = metricHours(a), hb = metricHours(b);
       return (hb === null ? 1e9 : hb) - (ha === null ? 1e9 : ha);
     });
-  el("hitlist").innerHTML = rows.slice(0, 40).map(p => {
+  const cap = state.q || state.atoll || state.band ? 200 : 8;   // a shortlist unless the user is searching
+  el("hitlist").innerHTML = rows.slice(0, cap).map(p => {
     const h = metricHours(p);
     const label = h === 0 ? "here" : h === null || h === undefined ? "no route" : h.toFixed(1) + " h";
     return `<li data-id="${p.id}">

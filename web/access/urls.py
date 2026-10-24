@@ -7,7 +7,8 @@ urlpatterns = [
     path("island/<str:node_id>/", views.island_card, name="island_card"),
     path("route/", views.route, name="route"),
     path("ranked/", views.ranked, name="ranked"),
+    path("connect/", views.connect, name="connect"),
     path("services/", views.services, name="services"),
-    path("simulator/", views.simulator, name="simulator"),
-    path("platform/", views.platform, name="platform"),
+    path("placement/", views.placement, name="placement"),
+    path("data/", views.data_room, name="data"),
 ]

@@ -574,3 +574,117 @@ pre.code code, pre.code { background: #0f2f2c; }
   display: inline-block; font-size: 10px; font-weight: 560; color: #234b58; white-space: nowrap;
   pointer-events: none; text-shadow: 0 1px 0 #fff, 0 0 6px rgba(255,255,255,.9);
 }
+
+/* ---------- widgets ---------- */
+.lede { max-width: 68ch; color: #cfe3e8; font-size: 13.5px; line-height: 1.5; margin: 2px 0 0; }
+.lede b { color: #fff; font-weight: 640; }
+
+.insights { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 0; }
+@media (max-width: 900px) { .insights { grid-template-columns: 1fr; } }
+
+.ladder { display: flex; flex-direction: column; gap: 9px; }
+.rung { display: grid; grid-template-columns: 152px 1fr 88px; align-items: center; gap: 10px; }
+.rung .rlabel { font-size: 12px; color: var(--ink); }
+.rung .track { height: 8px; border-radius: 99px; background: #eef3f3; overflow: hidden; }
+.rung .track span { display: block; height: 100%; border-radius: 99px; background: #0f766e; }
+.rung:last-child .track span { background: #b23a2f; }
+.rung .rvalue { font-size: 12.5px; font-weight: 640; text-align: right; font-variant-numeric: tabular-nums; }
+.rung .rvalue em { display: block; font-style: normal; font-weight: 400; font-size: 10px; color: var(--muted); }
+
+table.bars { width: 100%; border-collapse: collapse; }
+table.bars th { text-align: left; font-size: 11.5px; font-weight: 560; color: var(--ink); padding: 4px 8px 4px 0; white-space: nowrap; }
+table.bars td { padding: 4px 0; vertical-align: middle; width: 100%; }
+table.bars td .track { height: 7px; border-radius: 99px; background: #eef3f3; overflow: hidden; }
+table.bars td .track span { display: block; height: 100%; border-radius: 99px; background: #2f855a; }
+table.bars td.num { font-size: 11.5px; color: var(--muted); text-align: right; padding-left: 8px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.bars tr.is-zero td .track span { background: #b23a2f; }
+
+.splitbar { display: flex; height: 10px; border-radius: 99px; overflow: hidden; background: #eef3f3; }
+.splitbar span { display: block; height: 100%; }
+.splitbar .move { background: #0f766e; }
+.splitbar .wait { background: #d69e2e; }
+
+.figrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.figrow > div { background: #f8f5ee; border-radius: 10px; padding: 10px 12px; }
+.figrow b { display: block; font-size: 20px; font-weight: 660; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.figrow span { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+
+.delta { display: inline-flex; align-items: baseline; gap: 6px; font-weight: 640; }
+.delta .arrow { color: var(--muted); font-weight: 400; }
+.delta .up { color: #0f766e; }
+
+/* the map owns the first screen but never more than that, so the widgets below stay reachable */
+.stage { height: min(calc(100vh - 96px), 780px); }
+
+table.bars td.num { vertical-align: top; padding-top: 2px; }
+table.bars td.num .sub { display: block; font-size: 10px; letter-spacing: .02em; text-transform: none; color: var(--muted); margin-top: 1px; }
+
+/* ---------- phones ---------- */
+@media (max-width: 760px) {
+  html, body { overflow-x: hidden; }
+  .page, .wrap { padding: 12px 12px 32px; }
+  .topbar { padding: 10px 12px 12px; }
+  .topbar .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip.num { padding: 5px 7px; }
+  .chip.num .n { font-size: 14px; }
+  .chip.num .l { font-size: 9px; }
+  .nav { flex-wrap: wrap; row-gap: 4px; }
+  .lede { font-size: 12.5px; line-height: 1.45; }
+  .card { padding: 14px; overflow-x: auto; }
+  .cardhead { flex-wrap: wrap; gap: 6px; }
+  table.bars th { white-space: normal; font-size: 11px; }
+  table.bars td.num { font-size: 10.5px; }
+  .rung { grid-template-columns: 108px 1fr 62px; gap: 6px; }
+  .rung .rlabel { font-size: 11px; }
+  .figrow { grid-template-columns: 1fr 1fr; }
+  .grid2 { grid-template-columns: 1fr; }
+  .insights { grid-template-columns: 1fr; }
+  .prose { font-size: 12.5px; }
+}
+
+@media (max-width: 760px) {
+  table.bars { table-layout: fixed; width: 100%; }
+  table.bars th { width: 42%; }
+  table.bars td.num { width: 26%; white-space: normal; }
+  .card, .grid2 > *, .insights > * { min-width: 0; max-width: 100%; }
+  main.page, main.wrap { max-width: 100vw; }
+  .reg td, .reg th { white-space: normal; }
+}
+
+/* ---------- island → service ---------- */
+.cats { display: flex; gap: 6px; margin: 0 0 10px; }
+.cat {
+  font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; font-weight: 620;
+  padding: 5px 10px; border-radius: 999px; color: var(--muted);
+  background: #f2efe7; text-decoration: none;
+}
+.cat.is-on { background: var(--ink); color: #fff; }
+.figs.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 12px; }
+.figs.trio div { background: #f8f5ee; border-radius: 10px; padding: 8px 10px; }
+.figs.trio .n { display: block; font-size: 16px; font-weight: 680; font-variant-numeric: tabular-nums; }
+.figs.trio .l { display: block; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+
+ul.svcroute { list-style: none; margin: 0; padding: 0; }
+ul.svcroute li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+  padding: 7px 0; border-top: 1px solid var(--line); font-size: 12.5px;
+}
+ul.svcroute li:first-child { border-top: 0; }
+ul.svcroute .who { color: var(--muted); }
+ul.svcroute .to { text-align: right; }
+ul.svcroute .to b { font-variant-numeric: tabular-nums; }
+ul.svcroute .to b.yes { color: var(--green); }
+ul.svcroute .to b.no { color: var(--red); }
+ul.svcroute .to em { display: block; font-style: normal; font-size: 10.5px; color: var(--muted); }
+ul.svcroute li.is-local .who { color: var(--ink); }
+
+.ovl-left.wide { width: 384px; }
+.ovl-left.wide #hitlist, .ovl-left.wide #legend { display: none; }
+.onhere { font-size: 11.5px; color: var(--muted); margin: 0 0 10px; line-height: 1.45; }
+@media (max-width: 900px) { .ovl-left.wide { width: auto; } }
+
+/* the hidden attribute must beat any class that sets display */
+[hidden] { display: none !important; }
+
+.listhead { font-size: 10px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted);
+  margin: 10px 0 4px; }

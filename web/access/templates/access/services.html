@@ -1,98 +1,124 @@
 {% extends "access/base.html" %}
 {% load fmt %}
-{% block title %}Services register · Maldives accessibility{% endblock %}
 {% block body %}
 <header class="topbar">
-  <div>
-    <p class="eyebrow">MALDIVES DATATHON 2026 · TEAM A · SEA · LAND · AIR</p>
-    <h1>Services register — education and health, island by island</h1>
+  <div class="brand">
+    <p class="eyebrow">Maldives Datathon 2026 · Team A</p>
+    <h1>Services, island by island</h1>
+    <p class="lede">Primary school and health centre cover almost the whole country:
+      <b>187 of 187</b> islands reach a primary school inside two hours, <b>186</b> reach a health
+      centre. Hospitals are the exception — <b>{{ hospital.islands_2h }}/187</b> islands, and the
+      median island is <b>{{ hospital.median_hours|hours }}</b> from one.</p>
   </div>
   <div class="topright">
     {% include "access/_nav.html" with active="services" %}
     <div class="chips">
       <div class="chip num"><span class="n">{{ total }}</span><span class="l">services<br>in the register</span></div>
+      <div class="chip num"><span class="n">{{ categories|length }}</span><span class="l">categories</span></div>
+      <a class="chip num link" href="/placement/"><span class="n">→</span><span class="l">place the<br>next one</span></a>
     </div>
   </div>
 </header>
 
-<main class="wrap page">
-  {% if added %}<p class="notice ok">Added “{{ added }}” and rebuilt the access table.</p>{% endif %}
-  {% if error %}<p class="notice bad">{{ error }}</p>{% endif %}
-
-  <section class="card">
-    <div class="cardhead">
-      <h2>What each service type reaches</h2>
-      <span class="hint">within two hours on the observed network</span>
-    </div>
-    <table class="mini wide">
-      <thead><tr><th>Service</th><th class="r">Facilities</th><th class="r">Islands with one</th>
-        <th class="r">Islands within 2 h</th><th class="r">No route</th><th class="r">People within 2 h</th>
-        <th class="r">Children within 2 h</th><th class="r">Median hours</th></tr></thead>
-      <tbody>
-      {% for r in summary %}
-        <tr>
-          <td>{{ r.service_type|svclabel|capfirst }} <span class="tag">{{ r.category }}</span></td>
-          <td class="r">{{ r.n_facilities|floatformat:"0" }}</td>
-          <td class="r">{{ r.islands_with_local|floatformat:"0" }}</td>
-          <td class="r">{{ r.islands_within_2h|floatformat:"0" }} <em>/ 187</em></td>
-          <td class="r">{{ r.islands_unreachable|floatformat:"0" }}</td>
-          <td class="r">{{ r.population_within_2h|num }}</td>
-          <td class="r">{{ r.children_within_2h|num }}</td>
-          <td class="r">{{ r.median_hours }}</td>
+<main class="page">
+  <section class="grid2">
+    <div class="card">
+      <div class="cardhead">
+        <h2>Reach by service type</h2>
+        <span class="hint">scarcest first · islands within two hours of {{ s.islands }}</span>
+      </div>
+      <table class="bars">
+        {% for r in summary %}
+        <tr class="{% if r.islands_within_2h == 0 %}is-zero{% endif %}">
+          <th>{{ r.label }}</th>
+          <td><div class="track"><span style="width:{% widthratio r.islands_within_2h s.islands 100 %}%"></span></div></td>
+          <td class="num">{{ r.islands_within_2h|floatformat:0 }}/{{ s.islands }}
+            <span class="sub">{% if r.median_hours %}median {{ r.median_hours|hours }}{% else %}on the island{% endif %}</span></td>
         </tr>
-      {% endfor %}
-      </tbody>
-    </table>
-    <p class="hint">Health centres are near-universal; hospitals are concentrated on four islands —
-    that contrast is the finding the map is built to show.</p>
+        {% endfor %}
+      </table>
+      <p class="note">This measures whether a service exists on or near an island, not how well it
+        is staffed. The register holds one row per facility.</p>
+    </div>
+
+    <div class="card">
+      <div class="cardhead">
+        <h2>People more than two hours from a hospital</h2>
+        <span class="hint">by atoll</span>
+      </div>
+      <table class="bars">
+        {% for g in gap_rows %}
+        <tr>
+          <th>{{ g.atoll }}</th>
+          <td><div class="track"><span style="width:{% widthratio g.people_beyond gap_rows.0.people_beyond 100 %}%"></span></div></td>
+          <td class="num">{{ g.people_beyond|num }}
+            <span class="sub">{{ g.children_beyond|num }} children</span></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <p class="note">Four hospitals: IGMH and ADK in the capital region, Gan Regional in the south,
+        Faafu Atoll in the centre. Everyone else reaches one by sea.</p>
+    </div>
   </section>
 
   <section class="card">
-    <div class="cardhead"><h2>Add a service</h2><span class="hint">appended to <code>data/services.csv</code>, then the access table is rebuilt</span></div>
-    <form method="post" class="svcform">
+    <div class="cardhead">
+      <h2>Register</h2>
+      <div class="tabs">
+        <a href="?cat=" class="tab{% if not cat %} is-on{% endif %}">All {{ total }}</a>
+        {% for c in categories %}
+        <a href="?cat={{ c }}" class="tab{% if cat == c %} is-on{% endif %}">{{ c|capfirst }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <table class="mini wide reg">
+      <thead><tr><th>Service</th><th>Type</th><th>Atoll</th><th>Island</th><th>Source</th></tr></thead>
+      <tbody>
+        {% for r in services %}
+        <tr>
+          <td><b>{{ r.name }}</b></td>
+          <td class="muted">{{ r.type_label }}</td>
+          <td class="muted">{{ r.atoll }}</td>
+          <td>{{ r.island }}</td>
+          <td class="muted small">{{ r.source }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5" class="empty">Nothing in this category yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="note">Showing {{ n }} of {{ total }}. A school that teaches grades 1–10 appears once,
+      under lower secondary, so the register does not double-count.</p>
+  </section>
+
+  <section class="card">
+    <div class="cardhead">
+      <h2>Add a service</h2>
+      <span class="hint">saved to the register, then reach and the map are recalculated</span>
+    </div>
+    {% if added %}<p class="flash ok">Added {{ added }}. Reach and the map have been recalculated.</p>{% endif %}
+    {% if error %}<p class="flash bad">{{ error }}</p>{% endif %}
+    <form method="post" class="addform">
       {% csrf_token %}
-      <label>Name<input name="name" required maxlength="90" placeholder="e.g. Maafushi Health Centre"></label>
+      <label>Name<input name="name" placeholder="Maafushi Health Centre" required maxlength="90"></label>
       <label>Service type
         <select name="service_type" required>
-          {% for cat, t, label in types %}<option value="{{ t }}">{{ label }} ({{ cat }})</option>{% endfor %}
+          {% for c, t, label in types %}<option value="{{ t }}">{{ label }}</option>{% endfor %}
         </select>
       </label>
       <label>Island
         <select name="island" required>
           {% regroup picker by atoll as groups %}
           {% for g in groups %}
-            <optgroup label="{{ g.grouper }}">
-              {% for i in g.list %}<option value="{{ i.node_id }}">{{ i.island }}</option>{% endfor %}
-            </optgroup>
+          <optgroup label="{{ g.grouper }}">
+            {% for i in g.list %}<option value="{{ i.node_id }}">{{ i.island }}</option>{% endfor %}
+          </optgroup>
           {% endfor %}
         </select>
       </label>
-      <label>Note (optional)<input name="notes" maxlength="200" placeholder="source, phone, opening hours…"></label>
+      <label>Note<input name="notes" placeholder="source, phone, opening hours" maxlength="200"></label>
       <button type="submit">Add service</button>
     </form>
-  </section>
-
-  <section class="card">
-    <div class="cardhead">
-      <h2>Register</h2>
-      <nav class="filters">
-        <a href="/services/" class="{% if not cat %}is-on{% endif %}">All ({{ total }})</a>
-        <a href="/services/?cat=education" class="{% if cat == 'education' %}is-on{% endif %}">Education</a>
-        <a href="/services/?cat=health" class="{% if cat == 'health' %}is-on{% endif %}">Health</a>
-      </nav>
-    </div>
-    <table class="mini wide">
-      <thead><tr><th>Service</th><th>Type</th><th>Atoll</th><th>Island</th><th>Source</th></tr></thead>
-      <tbody>
-      {% for r in services %}
-        <tr><td>{{ r.name }}</td><td>{{ r.service_type|svclabel }}</td><td>{{ r.atoll }}</td>
-          <td>{{ r.island }}</td><td class="hint">{{ r.source }}</td></tr>
-      {% empty %}
-        <tr><td colspan="5" class="empty">No services in this category.</td></tr>
-      {% endfor %}
-      </tbody>
-    </table>
-    <p class="hint">Showing {{ n }} of {{ total }}.</p>
   </section>
 </main>
 {% endblock %}

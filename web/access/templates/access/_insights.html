@@ -1,0 +1,36 @@
+{% load fmt %}
+<section class="insights">
+  <div class="card">
+    <div class="cardhead">
+      <h2>Coverage ladder</h2>
+      <span class="hint">grade 11–12 · {{ s.islands }} inhabited islands</span>
+    </div>
+    <div class="ladder">
+      {% for row in funnel %}
+      <div class="rung">
+        <div class="rlabel">{{ row.label }}</div>
+        <div class="track"><span style="width:{% widthratio row.value row.of 100 %}%"></span></div>
+        <div class="rvalue">{{ row.value }}<em>{{ row.note }}</em></div>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="note">The drop happens at the transition, not in primary schooling: almost every island
+      teaches up to grade 10, and four in five islands are two hours from a school that continues.</p>
+  </div>
+
+  <div class="card">
+    <div class="cardhead">
+      <h2>Within two hours, by atoll</h2>
+      <span class="hint">worst first · {{ atoll_rows|length }} atolls</span>
+    </div>
+    <table class="bars">
+      {% for a in atoll_rows %}
+      <tr class="{% if a.within2 == 0 %}is-zero{% endif %}">
+        <th>{{ a.atoll }}</th>
+        <td><div class="track"><span style="width:{{ a.share }}%"></span></div></td>
+        <td class="num">{{ a.within2 }}/{{ a.islands }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</section>

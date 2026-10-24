@@ -50,3 +50,12 @@ def filesize(value) -> str:
         if n >= scale:
             return f"{n / scale:,.1f} {unit}".replace(".0 ", " ")
     return f"{n:,.0f} B"
+
+
+@register.filter
+def get_item(mapping, key):
+    """dict lookup by variable key, which Django templates cannot do natively."""
+    try:
+        return mapping.get(key, "")
+    except AttributeError:
+        return ""

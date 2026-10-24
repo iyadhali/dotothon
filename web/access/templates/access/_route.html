@@ -1,6 +1,12 @@
 {% if error %}
   <p class="note warn">{{ error }}</p>
 {% else %}
+  {% if sailing_pct is not None and not error %}
+  <div class="splitbar" title="sailing vs waiting">
+    <span class="move" style="width:{{ sailing_pct }}%"></span>
+    <span class="wait" style="width:{{ wait_pct }}%"></span>
+  </div>
+  {% endif %}
   <div class="journey"{% if path %} data-path="{{ path }}"{% endif %}>
     <div class="jhead">
       <span class="jlabel">{{ frm_name }} → {{ to_name }}</span>

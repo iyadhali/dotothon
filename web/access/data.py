@@ -372,3 +372,37 @@ def _model_for(version: tuple) -> Model:
 def model() -> Model:
     """Always the model for the current data on disk."""
     return _model_for(data_version())
+
+
+# --- widgets ---------------------------------------------------------------------------------
+# Every number below is a query over the same tables the pages use; nothing is hard-coded.
+
+def coverage_by_atoll() -> list[dict]:
+    """Islands and people per atoll, split by whether grade 11-12 is within two hours."""
+    df = db_frame("""
+        select atoll,
+               count(*) as islands,
+               sum(population) as population,
+               sum(case when hours_to_hs is not null and hours_to_hs <= 2 then 1 else 0 end) as within2,
+               sum(case when hours_to_hs is null or hours_to_hs > 2 then 1 else 0 end) as beyond
+        from island_access group by atoll""")
+    df["share"] = (df.within2 / df.islands * 100).round(0)
+    return df.sort_values(["beyond", "population"], ascending=[False, False]).to_dict("records")
+
+
+def service_gap_by_atoll(service_type: str = "hospital", limit: int = 6) -> list[dict]:
+    """Which atolls hold the people who live more than two hours from this service type."""
+    df = db_frame("""
+        select atoll,
+               sum(case when hours is null or hours > 2 then population else 0 end) as people_beyond,
+               sum(case when hours is null or hours > 2 then child_0_17 else 0 end) as children_beyond
+        from service_access where service_type = ? group by atoll
+        having people_beyond > 0 order by people_beyond desc limit ?""", (service_type, limit))
+    return df.to_dict("records")
+
+
+def journey_split(hours: float, wait: float) -> dict:
+    """Sailing time vs waiting time, for the journey card's little bar."""
+    moving = max(0.0, hours - wait)
+    return {"moving": round(moving, 2), "waiting": round(wait, 2),
+            "moving_pct": round(100 * moving / hours) if hours else 0}

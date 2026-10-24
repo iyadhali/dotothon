@@ -54,7 +54,8 @@ travel time to the nearest grade 11–12 school. Everything else floats over it.
 | **Zoom in** | the 21 atoll outlines and their names appear, then island names, then real coastlines |
 | **Atoll dropdown** | fly to that atoll's bounding box; `?lat=…&lon=…&z=…` opens a shared view |
 | **Search / list** | live filter over 187 islands; hover a row to light up its island, Enter to open the top hit |
-| **Plan a journey** | click a start island, then a destination — the best route is drawn on the map and broken down leg by leg |
+| **Island → island** | pick two islands: the best journey within two sailings, drawn on the map and split into sailing time and connection waiting |
+| **Island → service** | pick one island and a category (education, health): every service type it can reach, who provides it, how long it takes, and the journeys drawn together |
 | **Reset** (or `Esc`) | clear filters, route and selection |
 | | |
 | **Decision tables** | below the map: worst-served ranking, and the 28 islands beyond two hours with the link that would fix each |
@@ -143,13 +144,13 @@ sources ──▶ ingest (sha256 fingerprint per group) ──▶ derived tables
 | Watch for new drops | `scripts/watch_data.py`, `make watch` (logs to `data/derived/ingest.log`) |
 | Schema + views the app queries | `db/schema.sql` |
 | Loader | `scripts/build_database.py` → `data/platform.sqlite` |
-| Placement model | `scripts/build_simulator.py` → `placement.csv` |
+| Placement model | `scripts/build_simulator.py` (the placement model) → `placement.csv` |
 
 Drop a new `MACL/*.csv` or a new `FollowMe_*/` month, run `make ingest`, and the map, the services
 register and the simulator all move together. The app opens the database read-only and reloads
 itself when the file changes, so nothing needs restarting.
 
-**The placement simulator** (`/simulator/`) is the "so what" of the platform: for each service
+**Placement** (`/placement/`) is the "so what" of the platform: for each service
 type it greedily adds one facility at a time to the island that moves the most people inside two
 hours. One hospital on Kulhudhuffushi connects **+33,399 people and +11,855 children**, taking
 hospital coverage from 35 to 54 islands — more than every school and campus decision in the same

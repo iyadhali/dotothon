@@ -10,7 +10,7 @@ from django.http import Http404
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_GET, require_http_methods
 
-from .data import DERIVED, ROOT, model
+from .data import DERIVED, ROOT, coverage_by_atoll, model, service_gap_by_atoll
 
 
 def _manifest() -> dict | None:
@@ -23,6 +23,62 @@ def _manifest() -> dict | None:
         return None
 
 
+def source_rows(manifest: dict | None) -> list[dict]:
+    """Manifest sources flattened for the table on the data page."""
+    if not manifest:
+        return []
+    rows = []
+    for key, info in manifest.get("sources", {}).items():
+        label, publisher, detail = SOURCE_INFO.get(key, (key.title(), "—", ""))
+        rows.append({"key": key, "label": label, "publisher": publisher, "detail": detail,
+                     "files": info.get("files"), "bytes": info.get("bytes"),
+                     "latest": (info.get("latest_mtime") or "")[:10]})
+    return sorted(rows, key=lambda r: r["label"])
+
+
+def funnel_rows(m) -> list[dict]:
+    """The coverage ladder for grade 11-12, from all islands down to the ones with no route."""
+    from .data import db_frame
+    st = m.stats()
+    ls = int(db_frame("select count(*) as n from island_access where has_own_lower_secondary = 1").n.iloc[0])
+    return [
+        {"label": "Inhabited islands", "value": st["islands"], "of": st["islands"], "note": "2022 census"},
+        {"label": "Teach grade 7-10", "value": ls,
+         "of": st["islands"], "note": "lower secondary on the island"},
+        {"label": "Teach grade 11-12", "value": st["hs_islands"], "of": st["islands"], "note": "higher secondary on the island"},
+        {"label": "Reach grade 11-12 in 2 h", "value": st["within2_islands"], "of": st["islands"], "note": "on the observed network"},
+        {"label": "No observed route", "value": st["no_service"], "of": st["islands"], "note": "no sailing in the month of GPS"},
+    ]
+
+
+TABLE_NOTES = {
+    "dataset": "one row per source file, with its fingerprint",
+    "ingest_run": "one row per pipeline run",
+    "ingest_stage": "each stage of each run, with seconds",
+    "island": "every node in the network, inhabited or not",
+    "sea_edge": "observed crossings between islands",
+    "land_edge": "causeway links the boat data cannot see",
+    "service": "the facility register",
+    "service_access": "time from every island to each service type",
+    "service_summary": "national line per service type",
+    "priority_gaps": "islands beyond two hours, ranked",
+    "placement": "the greedy placement ranking",
+    "meta": "build metadata",
+}
+
+# what each source is, in the words the page uses; the file counts come from the manifest
+SOURCE_INFO = {
+    "followme":  ("FollowMe GPS pings", "Organiser", "Anonymised device movement, August 2025"),
+    "mtcc":      ("MTCC bus and ferry ridership", "Organiser", "Monthly and daily passenger counts"),
+    "macl":      ("MACL airport traffic", "Organiser", "Scheduled and charter records, 2012–2026"),
+    "avas":      ("Avas Ride trips", "Organiser", "Completed, expired and cancelled rides, 2026"),
+    "census":    ("Census 2022 population", "Maldives Bureau of Statistics", "Island and atoll indicator sheets"),
+    "boundaries":("Administrative boundaries", "OCHA COD-AB (CC BY)", "21 atolls, 1,556 islands"),
+    "moe":       ("School statistics 2024", "Ministry of Education", "Enrolment and grade range, island by island"),
+    "moh":       ("Health facility list", "Ministry of Health", "Health centres and hospitals by island"),
+    "services":  ("Service register", "This project", "Additions made in the app, kept in data/services.csv"),
+}
+
 SERVICE_LABEL = {
     "hospital": "Hospital",
     "health_centre": "Health centre",
@@ -34,8 +90,8 @@ SERVICE_LABEL = {
 
 
 @require_GET
-def platform(request):
-    """How the thing is built: sources -> ingest -> derived tables -> SQLite -> app."""
+def data_room(request):
+    """Where the numbers come from: sources, refresh state, tables, method."""
     from .data import db_frame
     tables = db_frame("""
         select name, (select count(*) from pragma_table_info(m.name)) as columns
@@ -48,17 +104,24 @@ def platform(request):
             counts[t] = None
     runs = db_frame("select * from ingest_run order by run_id desc limit 1")
     m = model()
-    return render(request, "access/platform.html", {
+    summary = m.summary_rows()
+    for row in summary:
+        row["label"] = SERVICE_LABEL.get(row.get("service_type", ""), row.get("service_type", ""))
+    return render(request, "access/data.html", {
         "run": runs.iloc[0].to_dict() if len(runs) else None,
         "tables": counts,
-        "summary": m.summary_rows(),
+        "summary": summary,
         "manifest": _manifest(),
         "s": m.stats(),
+        "stage_count": len((runs.iloc[0]["stages"] or "").split(",")) if len(runs) else 0,
+        "sources": source_rows(_manifest()),
+        "total_services": len(m.services),
+        "table_notes": TABLE_NOTES,
     })
 
 
 @require_GET
-def simulator(request):
+def placement(request):
     """Placement simulator: where should the next facility go to connect the most people?"""
     m = model()
     types = m.placement_types()
@@ -81,7 +144,7 @@ def simulator(request):
                              category=t.get("category", ""),
                              metric=f"{t.get('category','')}:{st}"))
     metric = next((e["metric"] for e in enriched if e["service_type"] == stype), "")
-    return render(request, "access/simulator.html", {
+    return render(request, "access/placement.html", {
         "types": enriched,
         "metric": metric,
         "stype": stype,
@@ -110,6 +173,11 @@ def index(request):
         "default_island": request.GET.get("island", "MV002012"),
         "n_rows": len(m.inhabited),
         "n_services": len(m.services),
+        "atoll_rows": coverage_by_atoll(),
+        "n_beyond": m.stats()["islands"] - m.stats()["within2_islands"],
+        "gap_people": sum(int(g.get("population", 0)) for g in m.gaps),
+        "gap_children": sum(int(g.get("child_0_17", 0) or 0) for g in m.gaps),
+        "funnel": funnel_rows(m),
         "sel_atoll": "",
         "sel_band": "",
     })
@@ -121,6 +189,63 @@ def island_card(request, node_id):
     if c is None:
         raise Http404(f"unknown island: {node_id}")
     return render(request, "access/_island_card.html", {"c": c})
+
+
+TYPE_LABEL = {
+    "school_primary": "Primary school",
+    "school_lower_secondary": "Grades 7–10",
+    "school_higher_secondary": "Grades 11–12",
+    "college": "University campus",
+    "health_centre": "Health centre",
+    "hospital": "Hospital",
+}
+
+
+@require_GET
+def connect(request):
+    """Island to service: every service type, where the nearest one is, and how you get there."""
+    m = model()
+    node = request.GET.get("island", "").strip()
+    if not node:
+        node = m.inhabited.sort_values("population", ascending=False).iloc[0].node_id
+    card = m.card(node)
+    if card is None:
+        raise Http404(f"unknown island: {node}")
+    category = request.GET.get("category", "").strip()
+
+    rows, paths = [], []
+    for svc_type, a in card["access"].items():
+        if category and a["category"] != category:
+            continue
+        row = {"type": svc_type, "label": TYPE_LABEL.get(svc_type, svc_type),
+               "category": a["category"], "local": a["local"], "hours": a["hours"],
+               "place": a["place"], "hops": None, "path": None}
+        pid = a.get("provider_id")
+        if not a["local"] and pid:
+            legs, total = m.route(node, pid)
+            if legs:
+                row["hops"] = len(legs)
+                row["hours"] = round(total, 2)
+                seq = [legs[0].a] + [e.b for e in legs]
+                pts = [[round(float(m.by_id.loc[n, "lat"]), 5), round(float(m.by_id.loc[n, "lon"]), 5)]
+                       for n in seq]
+                row["path"] = pts
+                paths.append(pts)
+        rows.append(row)
+
+    rows.sort(key=lambda r: (0 if r["local"] else 1, r["hours"] if r["hours"] is not None else 999))
+    local_n = sum(1 for r in rows if r["local"])
+    within2 = sum(1 for r in rows if r["hours"] is not None and r["hours"] <= 2)
+    far = [r for r in rows if r["hours"] is not None]
+    worst = max(far, key=lambda r: r["hours"]) if far else None
+
+    return render(request, "access/_connect.html", {
+        "c": card, "rows": rows, "category": category,
+        "paths": json.dumps(paths),
+        "local_n": local_n, "within2": within2, "total_n": len(rows),
+        "worst": worst, "categories": ["education", "health"],
+        "cat_label": {"education": "Education", "health": "Health"},
+    })
 
 
 @require_GET
@@ -148,6 +273,11 @@ def route(request):
             ctx["total"] = total
             ctx["hops"] = len(legs)
             ctx["conn_h"] = max(0, len(legs) - 1) * 1.0
+            # sailing time vs time spent waiting for a connection, for the little bar
+            sailing = sum(e.hours for e in legs)
+            ctx["sailing"] = round(sailing, 2)
+            ctx["sailing_pct"] = round(100 * sailing / total) if total else 0
+            ctx["wait_pct"] = 100 - ctx["sailing_pct"]
             # coordinates for the map polyline: the start island then every leg's destination
             seq = [legs[0].a] + [e.b for e in legs]
             ctx["path"] = json.dumps([
@@ -236,14 +366,21 @@ def services(request):
                     error = f"Saved, but the rebuild failed — {msg}"
     cat = request.GET.get("cat", "")
     records = m.services if not cat else m.services[m.services.category == cat]
+    rows = records.sort_values(["atoll", "island", "service_type"]).copy()
+    rows["type_label"] = rows.service_type.map(SERVICE_LABEL).fillna(rows.service_type)
+    summary = m.service_summary.copy()
+    summary["label"] = summary.service_type.map(SERVICE_LABEL).fillna(summary.service_type)
+    summary = summary.sort_values("islands_within_2h")
     return render(request, "access/services.html", {
-        "services": records.sort_values(["atoll", "island", "service_type"])
-                             [["name", "category", "service_type", "atoll", "island", "source"]]
-                             .to_dict("records"),
-        "summary": m.service_summary.to_dict("records"),
+        "services": rows[["name", "category", "service_type", "type_label", "atoll", "island", "source"]]
+                          .to_dict("records"),
+        "summary": summary.to_dict("records"),
+        "hospital": m.access_now("hospital"),
+        "categories": sorted(m.services.category.unique()),
         "types": SERVICE_TYPES,
         "picker": m.picker,
         "n": len(records), "total": len(m.services),
         "cat": cat, "added": added, "error": error,
+        "gap_rows": service_gap_by_atoll("hospital"),
         "s": m.stats(), "manifest": _manifest(),
     })

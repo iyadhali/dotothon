@@ -2,11 +2,12 @@ import assert from 'node:assert/strict'
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { DatabaseSync } from 'node:sqlite'
 import test from 'node:test'
 import { buildDatabase, checkDatabase, EXPECTED } from './build-db.ts'
 
-const SOURCE_DIR = new URL('../public/data/', import.meta.url).pathname
+const SOURCE_DIR = fileURLToPath(new URL('../public/data/', import.meta.url))
 
 function temporaryDatabase(): { directory: string; outputPath: string } {
   const directory = mkdtempSync(join(tmpdir(), 'island-access-db-'))
@@ -27,7 +28,7 @@ test('builds every source entity into the serving database', () => {
       facilities: EXPECTED.facilities,
       categories: EXPECTED.categories,
       facilityCategories: 1858,
-      serviceStops: 390,
+      serviceStops: 498, // 390 RTL + 108 MTCC 2023 stop-times (augment_network.py)
       hdxNational: EXPECTED.hdxNational,
       hdxUnits: EXPECTED.hdxUnits,
     })
@@ -47,13 +48,13 @@ test('builds every source entity into the serving database', () => {
         (db.prepare('SELECT count(*) AS count FROM services WHERE kind = ?').get('timetabled') as {
           count: number
         }).count,
-        102,
+        123, // 102 RTL + 21 MTCC 2023 trips
       )
       assert.equal(
         (db.prepare('SELECT count(*) AS count FROM services WHERE kind = ?').get('frequency') as {
           count: number
         }).count,
-        64,
+        226, // 64 air/ferry frequency services + 162 observed boat links
       )
     } finally {
       db.close()

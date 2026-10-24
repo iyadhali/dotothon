@@ -28,7 +28,7 @@ const sourceLabel = computed(() => {
             <path
               d="M8 25c4-5 8-5 12 0s8 5 12 0"
               fill="none"
-              stroke="#faf9f5"
+              stroke="#ffffff"
               stroke-width="2.2"
               stroke-linecap="round"
             />

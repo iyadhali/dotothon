@@ -1,14 +1,14 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
 
-:root { color-scheme: light; --ui-bg: #faf9f5; --ui-text: #233d36; }
-body { margin: 0; background: #faf9f5; color: #233d36; font-family: 'Segoe UI', sans-serif; }
+:root { color-scheme: light; --ui-bg: #ffffff; --ui-text: #233d36; }
+body { margin: 0; background: #ffffff; color: #233d36; font-family: 'Segoe UI', sans-serif; }
 * { box-sizing: border-box; }
 a, button { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid #287c6f; outline-offset: 4px; }
 .site-header { height: 76px; border-bottom: 1px solid #e0e4dc; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(20px, 4vw, 64px); }
 .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 16px; text-decoration: none; }
-.brand-mark { display: grid; place-items: center; width: 36px; height: 36px; background: #245c50; color: #faf9f5; border-radius: 9px; font-family: Georgia, serif; font-size: 29px; font-weight: 400; padding-bottom: 6px; }
+.brand-mark { display: grid; place-items: center; width: 36px; height: 36px; background: #245c50; color: #ffffff; border-radius: 9px; font-family: Georgia, serif; font-size: 29px; font-weight: 400; padding-bottom: 6px; }
 main { max-width: 1600px; margin: auto; padding: 40px clamp(20px, 4vw, 64px) 20px; }
 .page-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }
 .eyebrow { margin: 0 0 10px; color: #61746b; font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
@@ -21,8 +21,8 @@ h1 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacing: -
 .map-placeholder-icon { font-size: 34px; color: #287c6f; margin-bottom: 5px; }
 .map-placeholder h2 { font-family: Georgia, serif; font-size: 30px; font-weight: 400; letter-spacing: -.025em; margin: 0; }
 .map-placeholder p { margin: 0; color: #536b5f; font-size: 14px; }
-.map-placeholder code { background: #faf9f5; border: 1px solid #d7e0d7; padding: 10px 14px; border-radius: 5px; font-size: 12px; }
+.map-placeholder code { background: #ffffff; border: 1px solid #d7e0d7; padding: 10px 14px; border-radius: 5px; font-size: 12px; }
 .map-placeholder span { font-size: 12px; color: #61746b; }
-.map-message { position: absolute; top: 20px; left: 20px; right: 64px; padding: 14px 18px; background: #faf9f5; border: 1px solid #d7e0d7; border-radius: 6px; font-size: 14px; }
+.map-message { position: absolute; top: 20px; left: 20px; right: 64px; padding: 14px 18px; background: #ffffff; border: 1px solid #d7e0d7; border-radius: 6px; font-size: 14px; }
 .page-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; color: #61746b; font-size: 12px; }
 @media (max-width: 650px) { main { padding-top: 28px; } .page-heading { display: block; } .page-description { margin-top: 16px; } .site-header { height: 66px; } .map-shell { height: 55vh; min-height: 340px; } .page-footer { flex-wrap: wrap; } }

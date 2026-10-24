@@ -25,10 +25,12 @@ const SCHEMA_PATH = resolve(HERE, 'sqlite-schema.sql')
 export const EXPECTED = {
   islands: 200,
   origins: 191,
-  stops: 117,
+  // Includes the gap-filling layers from scripts/multimodal/augment_network.py:
+  // 45 MTCC 2023 stops (+45 jetty access edges), 21 MTCC trips and 162 observed boat links.
+  stops: 162,
   airports: 20,
-  accessEdges: 153,
-  services: 166,
+  accessEdges: 198,
+  services: 349,
   facilities: 945,
   categories: 48,
   geojsonFeatures: 200,

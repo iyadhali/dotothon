@@ -362,7 +362,7 @@ const readout = computed(() => {
             :cy="marker.y"
             :r="marker.radius"
             fill="#b36c48"
-            stroke="#faf9f5"
+            stroke="#ffffff"
             stroke-width="1.6"
           >
             <title>
@@ -383,7 +383,7 @@ const readout = computed(() => {
               transform-origin="center"
               :transform="`rotate(45 ${marker.x} ${marker.y})`"
               fill="#233d36"
-              stroke="#faf9f5"
+              stroke="#ffffff"
               stroke-width="1.4"
             >
               <title>{{ marker.airport.iata }} · {{ marker.airport.name }} ({{ marker.airport.islandName }})</title>
@@ -430,7 +430,7 @@ const readout = computed(() => {
               :cy="entry.y"
               :r="entry.radius + 7"
               fill="none"
-              stroke="#faf9f5"
+              stroke="#ffffff"
               stroke-width="5"
               aria-hidden="true"
             />

@@ -68,7 +68,7 @@ const STORY_COLORS: Record<string, string> = {
   no_trip: '#a8325e',
   no_data: '#ffffff',
   covered: '#287c6f',
-  muted: '#d8d2c4',
+  muted: '#d5dad7',
 }
 /** Circle radius grows with the square root of population and with zoom. */
 const POPULATION_RADIUS = [
@@ -240,7 +240,7 @@ function render(): void {
         type: 'fill',
         source: SOURCE_POLYGONS,
         paint: {
-          'fill-color': '#e8e1d0',
+          'fill-color': '#e6e9e7',
           'fill-opacity': 0.6,
           'fill-outline-color': '#233d36',
         },
@@ -280,7 +280,7 @@ function render(): void {
       type: 'circle',
       source: SOURCE_CONTEXT,
       paint: {
-        'circle-color': '#f3f0e7',
+        'circle-color': '#f4f6f5',
         'circle-radius': 3,
         'circle-stroke-color': '#233d36',
         'circle-stroke-width': 0.8,
@@ -331,7 +331,7 @@ function render(): void {
       paint: {
         'circle-color': '#b36c48',
         'circle-radius': 4.5,
-        'circle-stroke-color': '#faf9f5',
+        'circle-stroke-color': '#ffffff',
         'circle-stroke-width': 1.5,
       },
     })
@@ -409,7 +409,7 @@ function render(): void {
         type: 'circle',
         source: SOURCE_HIGHLIGHT_POINTS,
         paint: {
-          'circle-color': '#fffdf8',
+          'circle-color': '#ffffff',
           'circle-radius': 6,
           'circle-stroke-color': '#b36c48',
           'circle-stroke-width': 2.5,
@@ -427,7 +427,7 @@ function render(): void {
           'text-allow-overlap': false,
           'text-max-width': 14,
         },
-        paint: { 'text-color': '#233d36', 'text-halo-color': '#fffdf8', 'text-halo-width': 1.6 },
+        paint: { 'text-color': '#233d36', 'text-halo-color': '#ffffff', 'text-halo-width': 1.6 },
       })
     }
   }
@@ -456,7 +456,7 @@ function renderStory(view: 'underserved' | 'recommended'): void {
     type: 'circle',
     source: SOURCE_STORY,
     paint: {
-      'circle-color': ['match', ['get', 'cls'], ...Object.entries(STORY_COLORS).flat(), '#d8d2c4'] as unknown as string,
+      'circle-color': ['match', ['get', 'cls'], ...Object.entries(STORY_COLORS).flat(), '#d5dad7'] as unknown as string,
       'circle-radius': POPULATION_RADIUS,
       'circle-stroke-color': ['match', ['get', 'cls'], 'no_data', '#5b685e', '#233d36'] as unknown as string,
       'circle-stroke-width': ['match', ['get', 'cls'], 'no_data', 1.5, 0.8] as unknown as number,
@@ -482,14 +482,14 @@ function renderStory(view: 'underserved' | 'recommended'): void {
     id: `${SOURCE_SITES}-layer`,
     type: 'circle',
     source: SOURCE_SITES,
-    paint: { 'circle-color': '#b36c48', 'circle-radius': 11, 'circle-stroke-color': '#fffdf8', 'circle-stroke-width': 2 },
+    paint: { 'circle-color': '#b36c48', 'circle-radius': 11, 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2 },
   })
   map.addLayer({
     id: LAYER_SITE_LABELS,
     type: 'symbol',
     source: SOURCE_SITES,
     layout: { 'text-field': ['get', 'rank'], 'text-size': 12, 'text-allow-overlap': true },
-    paint: { 'text-color': '#fffdf8' },
+    paint: { 'text-color': '#ffffff' },
   })
 }
 

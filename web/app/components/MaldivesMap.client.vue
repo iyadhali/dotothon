@@ -38,7 +38,7 @@ onMounted(async () => {
       map.addSource('application-data', { type: 'geojson', data: props.data })
       map.addLayer({ id: 'areas', source: 'application-data', type: 'fill', filter: ['==', ['geometry-type'], 'Polygon'], paint: { 'fill-color': '#287c6f', 'fill-opacity': 0.25 } })
       map.addLayer({ id: 'routes', source: 'application-data', type: 'line', filter: ['==', ['geometry-type'], 'LineString'], paint: { 'line-color': '#287c6f', 'line-width': 2 } })
-      map.addLayer({ id: 'facilities', source: 'application-data', type: 'circle', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-color': '#b36c48', 'circle-radius': 5, 'circle-stroke-color': '#fffdf8', 'circle-stroke-width': 1.5 } })
+      map.addLayer({ id: 'facilities', source: 'application-data', type: 'circle', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-color': '#b36c48', 'circle-radius': 5, 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 1.5 } })
       ready.value = true
       error.value = ''
     })

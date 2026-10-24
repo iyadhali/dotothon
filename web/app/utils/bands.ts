@@ -135,7 +135,7 @@ export const BAND_STYLES: readonly BandStyle[] = [
     key: 'non_origin',
     label: 'Not an origin island',
     shortLabel: 'Not an origin',
-    color: '#f3f0e7',
+    color: '#f4f6f5',
     ink: '#5c665c',
     pattern: 'none',
     radius: 2.8,

@@ -1,15 +1,15 @@
 /* ------------------------------------------------------------------
    Island Access Atlas — prototype interface styles.
-   Visual language: cream paper, deep green ink, sea-green accent,
+   Visual language: white surfaces, deep green ink, sea-green accent,
    terracotta for facilities/scenarios. Georgia for headings.
    Colour is never the only signal: every band also has a label and a
    hatch pattern for coverage states.
    ------------------------------------------------------------------ */
 
 :root {
-  --mm-cream: #faf9f5;
-  --mm-paper: #fffdf8;
-  --mm-cream-deep: #f3f0e7;
+  --mm-cream: #ffffff;
+  --mm-paper: #ffffff;
+  --mm-cream-deep: #f4f6f5;
   --mm-ink: #233d36;
   --mm-accent: #287c6f;
   --mm-terracotta: #b36c48;
@@ -17,16 +17,13 @@
   --mm-line: rgba(35, 61, 54, 0.16);
   --mm-line-strong: rgba(35, 61, 54, 0.3);
   --mm-radius: 16px;
-  --mm-shadow: 0 1px 2px rgba(35, 61, 54, 0.05), 0 10px 28px rgba(35, 61, 54, 0.06);
+  --mm-shadow: 0 1px 2px rgba(16, 24, 22, 0.06);
 }
 
 .mm-page {
   min-height: 100vh;
   color: var(--mm-ink);
-  background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(157, 191, 143, 0.16), transparent 65%),
-    radial-gradient(900px 500px at -10% 20%, rgba(227, 196, 119, 0.12), transparent 60%),
-    var(--mm-cream);
+  background: var(--mm-cream);
 }
 
 .mm-page h1,
@@ -526,7 +523,7 @@
   gap: 2px;
   padding: 9px 11px;
   margin-bottom: 8px;
-  background: #f3f0e7;
+  background: #f4f6f5;
   border-left: 3px solid var(--mm-accent);
   border-radius: 0 9px 9px 0;
   font-size: 11px;
@@ -964,7 +961,7 @@
   overflow: hidden;
   border: 1px solid var(--mm-line);
   border-radius: 14px;
-  background: #f1eee2;
+  background: #f3f5f4;
 }
 
 .mm-map-panel__frame .mm-mapbox,
@@ -1567,7 +1564,7 @@
   padding: 15px 16px;
   border: 1px solid var(--mm-line);
   border-radius: 13px;
-  background: linear-gradient(135deg, #eef3ea 0%, #f8f4e6 100%);
+  background: var(--mm-cream-deep);
 }
 
 .mm-metric-hero__value {
@@ -2486,7 +2483,7 @@
   border: 1px solid var(--mm-line);
   border-left: 3px solid var(--mm-accent);
   border-radius: 9px;
-  background: #fffef9;
+  background: #ffffff;
   min-width: 0;
 }
 
@@ -3499,35 +3496,6 @@
   margin-top: 16px;
 }
 
-/* Access panel: dividers instead of nested cards, compact headings */
-.mm-access .mm-panel__head {
-  align-items: flex-start;
-}
-.mm-access__card {
-  border: 0;
-  border-top: 1px solid var(--mm-line);
-  border-radius: 0;
-  background: transparent;
-  padding: 14px 0 4px;
-}
-.mm-access__card .mm-subhead {
-  font-size: 0.78rem;
-  font-family: inherit;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--mm-muted);
-  margin: 0;
-}
-.mm-access__night {
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-.mm-access__night input {
-  width: 84px;
-}
 
 /* ------------------------------------------------------------ map stories */
 .mm-stories {
@@ -3632,7 +3600,7 @@
   height: 24px;
   border-radius: 50%;
   background: var(--mm-terracotta);
-  color: #fffdf8;
+  color: #ffffff;
   display: grid;
   place-items: center;
   font-size: 0.78rem;
@@ -3656,4 +3624,172 @@
   .mm-stories {
     grid-template-columns: 1fr;
   }
+}
+
+/* ------------------------------------------------------------ island access panel */
+.mm-access__night {
+  display: grid;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: var(--mm-muted);
+}
+.mm-access__night input {
+  width: 96px;
+  padding: 6px 8px;
+  border: 1px solid var(--mm-line-strong);
+  border-radius: 8px;
+  background: var(--mm-paper);
+  color: var(--mm-ink);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+.mm-access__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.mm-access__card {
+  border: 1px solid var(--mm-line);
+  border-radius: 12px;
+  background: var(--mm-paper);
+  padding: 12px 14px;
+  min-width: 0;
+}
+.mm-access__status {
+  margin: 6px 0 0;
+  color: var(--mm-muted);
+  font-size: 0.86rem;
+}
+.mm-access__list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.mm-access__item + .mm-access__item {
+  border-top: 1px solid var(--mm-line);
+  padding-top: 10px;
+}
+.mm-access__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+.mm-access__place {
+  color: var(--mm-ink);
+  overflow-wrap: anywhere;
+}
+.mm-access__time {
+  font-weight: 600;
+  color: var(--mm-accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mm-access__facility,
+.mm-access__route,
+.mm-access__basis {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--mm-muted);
+  overflow-wrap: anywhere;
+}
+.mm-access__costs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 8px 0 0;
+}
+.mm-access__costs div {
+  background: var(--mm-cream-deep);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+.mm-access__costs dt {
+  font-size: 0.72rem;
+  color: var(--mm-muted);
+}
+.mm-access__costs dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--mm-ink);
+  font-variant-numeric: tabular-nums;
+}
+.mm-access__return {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+}
+.mm-access__return.is-ok {
+  color: var(--mm-accent);
+}
+.mm-access__return.is-warn {
+  color: var(--mm-terracotta);
+}
+.mm-access__foot p {
+  margin: 12px 0 0;
+  font-size: 0.76rem;
+  color: var(--mm-muted);
+}
+
+/* ----------------------------------------------------- Greater Malé / atoll split */
+.mm-region {
+  margin: 14px 0;
+  overflow-x: auto;
+}
+.mm-region__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  font-variant-numeric: tabular-nums;
+}
+.mm-region__table th,
+.mm-region__table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--mm-line);
+  text-align: right;
+  white-space: nowrap;
+}
+.mm-region__table th:first-child,
+.mm-region__table thead th:first-child {
+  text-align: left;
+}
+.mm-region__table thead th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--mm-muted);
+}
+.mm-region__note {
+  margin: 6px 0 0;
+  font-size: 0.78rem;
+}
+
+/* Access panel: dividers instead of nested cards, compact headings */
+.mm-access .mm-panel__head {
+  align-items: flex-start;
+}
+.mm-access__card {
+  border: 0;
+  border-top: 1px solid var(--mm-line);
+  border-radius: 0;
+  background: transparent;
+  padding: 14px 0 4px;
+}
+.mm-access__card .mm-subhead {
+  font-size: 0.78rem;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mm-muted);
+  margin: 0;
+}
+.mm-access__night {
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.mm-access__night input {
+  width: 84px;
 }

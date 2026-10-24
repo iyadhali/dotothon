@@ -19,7 +19,7 @@ const props = defineProps<{
   view: 'access' | 'underserved' | 'recommended'
   underserved: Record<string, string>
   sites: { rank: number; islandId: string; newlyCoveredIslandIds: string[] }[]
-  siteRoutes: { rank: number; mode: string; points: [number, number][] }[]
+  siteRoutes: { rank: number; mode: string; points: [number, number][]; improves?: boolean }[]
   siteLabels: Destination[]
   focusSiteId: string | null
 }>()
@@ -152,6 +152,7 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
           :d="path(route.points)"
           pathLength="1"
           class="am-fallback__site-route"
+          :class="{ 'is-same': !route.improves }"
           :style="{ animationDelay: `${(index % 12) * 60}ms` }"
         />
       </g>
@@ -197,6 +198,11 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
   stroke-dashoffset: 1;
   filter: drop-shadow(0 0 4px rgba(22, 163, 74, 0.55));
   animation: am-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.am-fallback__site-route.is-same {
+  stroke: #86efac;
+  stroke-width: 1.6;
+  filter: none;
 }
 @keyframes am-draw {
   to {

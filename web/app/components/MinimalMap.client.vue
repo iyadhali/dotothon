@@ -20,7 +20,7 @@ const props = defineProps<{
   underserved: Record<string, string>
   sites: { rank: number; islandId: string; newlyCoveredIslandIds: string[] }[]
   /** Where-to-build: journeys from newly covered islands to the proposed sites. */
-  siteRoutes: { rank: number; mode: string; points: [number, number][] }[]
+  siteRoutes: { rank: number; mode: string; points: [number, number][]; improves?: boolean }[]
   /** Labels on newly covered islands, e.g. "Kandoodhoo · 3 h 10 → 38 min". */
   siteLabels: Destination[]
   /** Proposed site the camera should focus on; null shows all. */
@@ -131,9 +131,9 @@ function pointFeatures(points: { lon: number; lat: number; label?: string; rank?
   )
 }
 
-function siteRouteFeatures(): FeatureCollection {
+function siteRouteFeatures(improves: boolean): FeatureCollection {
   return fc(
-    props.siteRoutes.map((route) => ({
+    props.siteRoutes.filter((route) => (route.improves === true) === improves).map((route) => ({
       type: 'Feature',
       geometry: { type: 'LineString', coordinates: route.points },
       properties: { rank: route.rank, mode: route.mode },
@@ -194,7 +194,8 @@ function refresh(): void {
   setData('am-journey', journeyFeatures())
   setData('am-selected', pointFeatures(selected ? [selected] : []))
   setData('am-destinations', pointFeatures(props.destinations))
-  setData('am-site-routes', siteRouteFeatures())
+  setData('am-site-routes', siteRouteFeatures(true))
+  setData('am-site-routes-other', siteRouteFeatures(false))
   setData('am-site-labels', pointFeatures(props.view === 'recommended' ? props.siteLabels : []))
   setData(
     'am-sites',
@@ -236,7 +237,7 @@ function fitAll(): void {
 
 function addLayers(): void {
   if (!map) return
-  for (const id of ['am-islands', 'am-routes', 'am-land', 'am-facilities', 'am-journey', 'am-selected', 'am-destinations', 'am-sites', 'am-site-labels']) {
+  for (const id of ['am-islands', 'am-routes', 'am-land', 'am-facilities', 'am-journey', 'am-selected', 'am-destinations', 'am-sites', 'am-site-labels', 'am-site-routes-other']) {
     map.addSource(id, { type: 'geojson', data: fc([]) })
   }
   // lineMetrics enables line-progress, which drives the draw-on animation.
@@ -333,6 +334,13 @@ function addLayers(): void {
       'text-max-width': 16,
     },
     paint: { 'text-color': '#0f172a', 'text-halo-color': '#ffffff', 'text-halo-width': 1.6 },
+  })
+  map.addLayer({
+    id: 'am-site-routes-other',
+    type: 'line',
+    source: 'am-site-routes-other',
+    layout: { 'line-cap': 'round', 'line-join': 'round' },
+    paint: { 'line-color': '#86efac', 'line-width': 1.6, 'line-opacity': 0.85 },
   })
   map.addLayer({
     id: 'am-site-routes-glow',

@@ -33,10 +33,16 @@ const {
 
 /** Where-to-build: the proposed site in focus (null = all five). */
 const focusRank = ref<number | null>(null)
+let siteDeepLinkUsed = false
 watch(siting, () => {
-  // Deep link: ?view=recommended&site=2 opens with that site in focus.
+  // Deep link: ?view=recommended&site=2 opens once with that site in focus.
   const site = import.meta.client ? Number(new URLSearchParams(window.location.search).get('site')) : NaN
-  focusRank.value = Number.isInteger(site) && site > 0 && focusRank.value === null ? site : null
+  if (!siteDeepLinkUsed && Number.isInteger(site) && site > 0) {
+    siteDeepLinkUsed = true
+    focusRank.value = site
+  } else {
+    focusRank.value = null
+  }
 })
 
 const focusSite = computed(() => siting.value?.sites.find((site) => site.rank === focusRank.value) ?? null)
@@ -49,14 +55,17 @@ const siteRoutePaths = computed(() => {
   if (!net || mapView.value !== 'recommended') return []
   return shownSiteRoutes.value.flatMap((site) =>
     site.routes.flatMap((route) =>
-      route.journey ? journeyPaths(net, route.journey).filter((path) => path.mode !== 'walk').map((path) => ({ rank: site.rank, mode: path.mode, points: path.points })) : [],
+      route.journey
+        ? journeyPaths(net, route.journey)
+            .filter((path) => path.mode !== 'walk')
+            .map((path) => ({ rank: site.rank, mode: path.mode, points: path.points, improves: route.improves === true }))
+        : [],
     ),
   )
 })
 
 function beforeText(route: { beforeMinutes: number | null; beforeStatus: string | null }): string {
-  if (route.beforeMinutes !== null) return formatDuration(route.beforeMinutes)
-  return route.beforeStatus === 'no_origin_access' ? 'no transport data' : 'no same-day trip'
+  return route.beforeMinutes !== null ? formatDuration(route.beforeMinutes) : 'over 3 h'
 }
 
 const siteLabels = computed<Destination[]>(() => {
@@ -65,11 +74,18 @@ const siteLabels = computed<Destination[]>(() => {
   return shownSiteRoutes.value.flatMap((site) =>
     site.routes.flatMap((route) => {
       const island = net.islands.find((candidate) => candidate.id === route.originId)
-      if (!island || route.minutes === null) return []
+      if (!island || route.minutes === null || !route.improves) return []
       return [{ islandId: island.id, lon: island.lon, lat: island.lat, label: `${island.name}\n${beforeText(route)} → ${formatDuration(route.minutes)}` }]
     }),
   )
 })
+
+function catchmentSize(rank: number): number {
+  return sitingRoutes.value.find((site) => site.rank === rank)?.routes.length ?? 0
+}
+function fasterCount(rank: number): number {
+  return sitingRoutes.value.find((site) => site.rank === rank)?.routes.filter((route) => route.improves).length ?? 0
+}
 
 function toggleSite(rank: number): void {
   focusRank.value = focusRank.value === rank ? null : rank
@@ -474,7 +490,8 @@ function homeText(destination: DestinationAccess): string {
         </template>
         <template v-else>
           <span><i class="dot site" /> Proposed site</span>
-          <span><i class="dot covered" /> Newly within {{ threshold }} min</span>
+          <span><i class="line route-new" /> Faster than today</span>
+          <span><i class="line route-same" /> Could also use it</span>
         </template>
       </div>
 
@@ -555,20 +572,30 @@ function homeText(destination: DestinationAccess): string {
           <li v-for="site in siting.sites" :key="site.islandId" :class="{ 'is-focus': focusRank === site.rank }">
             <button type="button" class="am-site__btn" :aria-pressed="focusRank === site.rank" @click="toggleSite(site.rank)">
               <span class="am-rank">{{ site.rank }}</span>
-              <span class="am-site__name">{{ site.name }}<small>{{ site.atollName }} · {{ site.newlyCoveredIslandIds.length }} island{{ site.newlyCoveredIslandIds.length === 1 ? '' : 's' }}</small></span>
+              <span class="am-site__name">{{ site.name }}<small>{{ site.atollName }} · reached from {{ catchmentSize(site.rank) }} island{{ catchmentSize(site.rank) === 1 ? '' : 's' }}, faster for {{ fasterCount(site.rank) }}</small></span>
               <span class="am-site__gain">+{{ formatPopulation(site.gainPopulation) }}</span>
             </button>
             <ul v-if="focusRank === site.rank" class="am-site__routes">
-              <li v-for="route in sitingRoutes.find((s) => s.rank === site.rank)?.routes ?? []" :key="route.originId">
+              <li
+                v-for="route in sitingRoutes.find((s) => s.rank === site.rank)?.routes ?? []"
+                :key="route.originId"
+                :class="{ 'is-same': !route.improves }"
+              >
                 <span>{{ route.originName }}</span>
                 <span class="am-site__change">
-                  <s>{{ beforeText(route) }}</s> → <b>{{ route.minutes !== null ? formatDuration(route.minutes) : '—' }}</b>
+                  <template v-if="route.improves">
+                    <s>{{ beforeText(route) }}</s> → <b>{{ formatDuration(route.minutes ?? 0) }}</b>
+                  </template>
+                  <template v-else>{{ formatDuration(route.minutes ?? 0) }} · already {{ beforeText(route) }}</template>
                 </span>
               </li>
             </ul>
           </li>
         </ol>
-        <p v-if="siting && focusRank === null" class="am-muted">Click a site to fly to it and see each island's new journey.</p>
+        <p v-if="siting && focusRank === null" class="am-muted">
+          Green routes: islands that could reach each new site within 3 h (best departure of the day). Bright = faster than any
+          hospital today. Click a site to fly to it.
+        </p>
         <p v-if="siting" class="am-foot">
           {{ formatPopulation(siting.coveredBefore) }} →
           {{ formatPopulation(siting.sites.at(-1)?.coveredAfter ?? siting.coveredBefore) }} residents within
@@ -839,6 +866,13 @@ function homeText(destination: DestinationAccess): string {
 .line.air {
   border-top: 2px dashed #a5b4fc;
 }
+.line.route-new {
+  border-top: 3px solid #16a34a;
+  box-shadow: 0 0 6px rgba(22, 163, 74, 0.6);
+}
+.line.route-same {
+  border-top: 2px solid #86efac;
+}
 .line.land {
   border-top: 2.5px solid #334155;
 }
@@ -1068,6 +1102,9 @@ function homeText(destination: DestinationAccess): string {
 }
 .am-site__change b {
   color: #15803d;
+}
+.am-site__routes li.is-same {
+  color: var(--am-muted);
 }
 .am-rank {
   width: 22px;

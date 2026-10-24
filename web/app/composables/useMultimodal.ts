@@ -188,6 +188,10 @@ const ACCESS_REPORT_OVERNIGHT_MVR = 950
 
 export type MapView = 'access' | 'underserved' | 'recommended'
 export type FacilityType = 'all' | 'health' | 'education'
+/** A proposed site's service area: islands reaching it within this many minutes ... */
+const SITE_AREA_MINUTES = 180
+/** ... on the best of these departures (06:00, 08:00, 10:00, 14:00). */
+const SITE_AREA_DEPARTURES = [360, 480, 600, 840]
 export interface SiteRoute {
   originId: string
   originName: string
@@ -197,6 +201,8 @@ export interface SiteRoute {
   /** Travel time to the nearest existing facility before (null when not reachable). */
   beforeMinutes: number | null
   beforeStatus: OriginAccessStatus | null
+  /** The new site is faster than every existing facility for this island. */
+  improves?: boolean
 }
 export interface SiteRoutes {
   rank: number
@@ -909,30 +915,59 @@ export function useMultimodal() {
         thresholdMinutes: threshold.value,
         picks: 5,
       })
+      // Service area of each site: islands that can reach it within SITE_AREA_MINUTES on the best
+      // of several departures (how people plan a hospital trip). `improves` marks islands for which
+      // the new site beats every existing facility on the same best-of-day basis.
+      const best = new Map<string, Map<string, { minutes: number; departure: number }>>()
+      for (const departure of SITE_AREA_DEPARTURES) {
+        const matrix = engine.buildTravelMatrix(active, {
+          departureMinute: departure,
+          maxJourneyMinutes: SITE_AREA_MINUTES,
+          allowedModes: allowedModes.value,
+          disabledRouteIds: disabledRouteIds.value,
+          disabledServiceIds: evidenceDisabledServiceIds.value,
+          dayOfWeek: dayOfWeek.value,
+        })
+        for (const [originId, row] of matrix) {
+          const acc = best.get(originId) ?? new Map()
+          for (const [islandId, minutes] of row) {
+            const prev = acc.get(islandId)
+            if (!prev || minutes < prev.minutes) acc.set(islandId, { minutes, departure })
+          }
+          best.set(originId, acc)
+        }
+      }
+      const existing = [...new Set(active.facilities.filter((f) => f.categories.includes(category.value)).map((f) => f.islandId))]
+      const names = new Map(active.islands.map((island) => [island.id, island.name]))
       sitingRoutes.value = engine.planIslandToIsland
         ? siting.value.sites.map((site) => ({
             rank: site.rank,
             siteId: site.islandId,
-            routes: site.newlyCoveredIslandIds.map((originId) => {
-              const journey = engine.planIslandToIsland!(active, {
-                fromIslandId: originId,
-                toIslandId: site.islandId,
-                departureMinute: departureMinute.value,
-                allowedModes: allowedModes.value,
-                disabledRouteIds: disabledRouteIds.value,
-                disabledServiceIds: evidenceDisabledServiceIds.value,
-                dayOfWeek: dayOfWeek.value,
+            routes: [...best.entries()]
+              .filter(([originId, row]) => originId !== site.islandId && row.has(site.islandId))
+              .map(([originId, row]) => {
+                const target = row.get(site.islandId)!
+                const was = Math.min(...existing.map((id) => row.get(id)?.minutes ?? Infinity))
+                const journey = engine.planIslandToIsland!(active, {
+                  fromIslandId: originId,
+                  toIslandId: site.islandId,
+                  departureMinute: target.departure,
+                  allowedModes: allowedModes.value,
+                  disabledRouteIds: disabledRouteIds.value,
+                  disabledServiceIds: evidenceDisabledServiceIds.value,
+                  dayOfWeek: dayOfWeek.value,
+                })
+                return {
+                  originId,
+                  originName: names.get(originId) ?? originId,
+                  journey,
+                  minutes: target.minutes,
+                  beforeMinutes: Number.isFinite(was) ? was : null,
+                  beforeStatus: Number.isFinite(was) ? ('reachable' as const) : null,
+                  improves: target.minutes < was,
+                }
               })
-              const before = displayAccessibility.value?.perOrigin[originId]
-              return {
-                originId,
-                originName: active.islands.find((island) => island.id === originId)?.name ?? originId,
-                journey,
-                minutes: journey?.elapsedMinutes ?? null,
-                beforeMinutes: before?.status === 'reachable' ? (before.journey?.elapsedMinutes ?? null) : null,
-                beforeStatus: before?.status ?? null,
-              }
-            }),
+              .sort((a, b) => Number(b.improves) - Number(a.improves) || a.minutes - b.minutes),
           }))
         : []
       sitingError.value = null

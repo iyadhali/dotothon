@@ -186,567 +186,567 @@ MV020008,Fenfushi,Alifu Dhaalu,education,college,4,False,4.78,MLE,Malé City,The
 MV020009,Dhihdhoo,Alifu Dhaalu,education,college,4,False,3.47,MLE,Malé City,The Maldives National University,141,26
 MV020010,Maamin'gili,Alifu Dhaalu,education,college,4,False,3.3,MLE,Malé City,The Maldives National University,2798,833
 MLE,Malé City,Male,education,college,4,True,0.0,MLE,Malé City,The Maldives National University,211908,34823
-MV001001,Thuraakunu,Haa Alifu,education,school_higher_secondary,43,False,2.63,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),427,109
-MV001002,Uligamu,Haa Alifu,education,school_higher_secondary,43,False,2.53,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),400,110
-MV001005,Mulhadhoo,Haa Alifu,education,school_higher_secondary,43,False,0.66,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),286,79
-MV001006,Huvarafushi,Haa Alifu,education,school_higher_secondary,43,False,0.47,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),1841,547
-MV001007,Ihavandhoo,Haa Alifu,education,school_higher_secondary,43,True,0.0,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),2873,1124
-MV001008,Kelaa,Haa Alifu,education,school_higher_secondary,43,False,4.98,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),1115,327
-MV001009,Vashafaru,Haa Alifu,education,school_higher_secondary,43,False,0.82,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),476,138
-MV001010,Dhihdhoo,Haa Alifu,education,school_higher_secondary,43,True,0.0,MV001010,Dhihdhoo,Dhidhdhoo — higher secondary (Gr 11-12),3412,1260
-MV001011,Filladhoo,Haa Alifu,education,school_higher_secondary,43,False,7.61,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),559,171
-MV001012,Maarandhoo,Haa Alifu,education,school_higher_secondary,43,False,1.23,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),668,258
-MV001013,Thakandhoo,Haa Alifu,education,school_higher_secondary,43,False,0.88,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),279,42
-MV001014,Utheemu,Haa Alifu,education,school_higher_secondary,43,False,0.72,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),612,213
-MV001015,Muraidhoo,Haa Alifu,education,school_higher_secondary,43,False,,,,,534,207
-MV001016,Baarah,Haa Alifu,education,school_higher_secondary,43,False,2.17,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1141,406
-MV002003,Hanimaadhoo,Haa Dhaalu,education,school_higher_secondary,43,True,0.0,MV002003,Hanimaadhoo,Hanimaadhoo — higher secondary (Gr 11-12),2664,667
-MV002004,Finey,Haa Dhaalu,education,school_higher_secondary,43,False,0.96,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),409,135
-MV002005,Naivaadhoo,Haa Dhaalu,education,school_higher_secondary,43,False,0.29,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),495,159
-MV002006,Hirimaradhoo,Haa Dhaalu,education,school_higher_secondary,43,False,2.13,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),293,67
-MV002007,Nolhivaranfaru,Haa Dhaalu,education,school_higher_secondary,43,False,0.49,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1254,426
-MV002008,Nellaidhoo,Haa Dhaalu,education,school_higher_secondary,43,True,0.0,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),1038,393
-MV002009,Nolhivaramu,Haa Dhaalu,education,school_higher_secondary,43,False,0.39,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1985,842
-MV002010,Kurin'bee,Haa Dhaalu,education,school_higher_secondary,43,False,0.59,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),492,172
-MV002012,Kulhudhuffushi,Haa Dhaalu,education,school_higher_secondary,43,True,0.0,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),10131,3601
-MV002013,Kumundhoo,Haa Dhaalu,education,school_higher_secondary,43,False,0.35,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),997,324
-MV002014,Neykurendhoo,Haa Dhaalu,education,school_higher_secondary,43,False,0.5,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),641,206
-MV002015,Vaikaradhoo,Haa Dhaalu,education,school_higher_secondary,43,False,0.55,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),776,253
-MV002017,Makunudhoo,Haa Dhaalu,education,school_higher_secondary,43,False,0.93,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1265,486
-MV003001,Kan'ditheemu,Shaviyani,education,school_higher_secondary,43,False,0.69,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1193,460
-MV003002,Noomaraa,Shaviyani,education,school_higher_secondary,43,False,3.13,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),371,127
-MV003003,Goidhoo,Shaviyani,education,school_higher_secondary,43,False,1.12,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),592,194
-MV003004,Feydhoo,Shaviyani,education,school_higher_secondary,43,False,2.13,MV003013,Komandoo,Komandoo — higher secondary (Gr 11-12),854,306
-MV003005,Feevah,Shaviyani,education,school_higher_secondary,43,False,1.35,MV003007,Foakaidhoo,Foakaidhoo — higher secondary (Gr 11-12),694,235
-MV003006,Bileiyfahi,Shaviyani,education,school_higher_secondary,43,False,2.18,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),502,178
-MV003007,Foakaidhoo,Shaviyani,education,school_higher_secondary,43,True,0.0,MV003007,Foakaidhoo,Foakaidhoo — higher secondary (Gr 11-12),1571,635
-MV003008,Narudhoo,Shaviyani,education,school_higher_secondary,43,False,0.1,MV003016,Milandhoo,Milandhoo — higher secondary (Gr 11-12),544,200
-MV003010,Maroshi,Shaviyani,education,school_higher_secondary,43,False,3.48,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),479,144
-MV003011,Lhaimagu,Shaviyani,education,school_higher_secondary,43,False,1.7,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),684,214
-MV003013,Komandoo,Shaviyani,education,school_higher_secondary,43,True,0.0,MV003013,Komandoo,Komandoo — higher secondary (Gr 11-12),921,286
-MV003014,Maaun'goodhoo,Shaviyani,education,school_higher_secondary,43,False,1.06,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),944,326
-MV003015,Funadhoo,Shaviyani,education,school_higher_secondary,43,True,0.0,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),2255,766
-MV003016,Milandhoo,Shaviyani,education,school_higher_secondary,43,True,0.0,MV003016,Milandhoo,Milandhoo — higher secondary (Gr 11-12),2094,802
-MV004001,Hen'badhoo,Noonu,education,school_higher_secondary,43,False,0.51,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),638,227
-MV004002,Ken'dhikulhudhoo,Noonu,education,school_higher_secondary,43,True,0.0,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),1556,583
-MV004003,Maalhendhoo,Noonu,education,school_higher_secondary,43,False,2.9,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),724,264
-MV004004,Kudafari,Noonu,education,school_higher_secondary,43,False,0.47,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),628,231
-MV004005,Landhoo,Noonu,education,school_higher_secondary,43,False,0.84,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),757,278
-MV004006,Maafaru,Noonu,education,school_higher_secondary,43,False,0.97,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),919,283
-MV004007,Lhohi,Noonu,education,school_higher_secondary,43,False,1.91,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),692,231
-MV004008,Miladhoo,Noonu,education,school_higher_secondary,43,False,1.74,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),934,337
-MV004009,Magoodhoo,Noonu,education,school_higher_secondary,43,False,0.64,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),305,112
-MV004010,Manadhoo,Noonu,education,school_higher_secondary,43,False,1.51,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),1745,519
-MV004011,Holhudhoo,Noonu,education,school_higher_secondary,43,True,0.0,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),1428,460
-MV004012,Fohdhoo,Noonu,education,school_higher_secondary,43,False,0.55,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),345,80
-MV004013,Velidhoo,Noonu,education,school_higher_secondary,43,False,0.47,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),1832,536
-MV005001,Hinnavaru,Lhaviyani,education,school_higher_secondary,43,True,0.0,MV005001,Hinnavaru,Hinnavaru — higher secondary (Gr 11-12),2286,702
-MV005002,Naifaru,Lhaviyani,education,school_higher_secondary,43,True,0.0,MV005002,Naifaru,Naifaru — higher secondary (Gr 11-12),4832,1437
-MV005003,Kurendhoo,Lhaviyani,education,school_higher_secondary,43,False,0.42,MV005002,Naifaru,Naifaru — higher secondary (Gr 11-12),1171,364
-MV005004,Olhuvelifushi,Lhaviyani,education,school_higher_secondary,43,False,2.31,MV005002,Naifaru,Naifaru — higher secondary (Gr 11-12),703,246
-MV006001,Alifushi,Raa,education,school_higher_secondary,43,True,0.0,MV006001,Alifushi,Alifushi — higher secondary (Gr 11-12),1859,576
-MV006002,Vaadhoo,Raa,education,school_higher_secondary,43,False,0.8,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),452,148
-MV006003,Rasgetheemu,Raa,education,school_higher_secondary,43,False,0.4,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — higher secondary (Gr 11-12),537,168
-MV006004,An'golhitheemu,Raa,education,school_higher_secondary,43,False,1.83,MV006001,Alifushi,Alifushi — higher secondary (Gr 11-12),381,118
-MV006005,Hulhudhuffaaru,Raa,education,school_higher_secondary,43,True,0.0,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — higher secondary (Gr 11-12),1228,426
-MV006006,Un'goofaaru,Raa,education,school_higher_secondary,43,False,1.57,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),1754,571
-MV006008,Maakurathu,Raa,education,school_higher_secondary,43,False,1.87,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),956,330
-MV006009,Rasmaadhoo,Raa,education,school_higher_secondary,43,False,2.08,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),554,163
-MV006010,Innamaadhoo,Raa,education,school_higher_secondary,43,False,2.46,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),663,183
-MV006011,Maduvvari,Raa,education,school_higher_secondary,43,False,0.38,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),1760,594
-MV006012,In'guraidhoo,Raa,education,school_higher_secondary,43,False,1.48,MV006001,Alifushi,Alifushi — higher secondary (Gr 11-12),1278,478
-MV006013,Fainu,Raa,education,school_higher_secondary,43,False,2.33,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),423,133
-MV006014,Meedhoo,Raa,education,school_higher_secondary,43,True,0.0,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),1872,615
-MV006015,Kinolhas,Raa,education,school_higher_secondary,43,False,0.61,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),543,211
-MV006019,Dhuvaafaru,Raa,education,school_higher_secondary,43,False,1.01,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),3321,1214
-MV007001,Kudarikilu,Baa,education,school_higher_secondary,43,False,1.7,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),557,162
-MV007002,Kamadhoo,Baa,education,school_higher_secondary,43,False,1.82,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),552,113
-MV007003,Kendhoo,Baa,education,school_higher_secondary,43,False,1.59,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),1002,346
-MV007004,Kihaadhoo,Baa,education,school_higher_secondary,43,False,0.56,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),481,196
-MV007005,Dhonfanu,Baa,education,school_higher_secondary,43,False,1.43,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),398,128
-MV007006,Dharavandhoo,Baa,education,school_higher_secondary,43,False,0.34,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),997,286
-MV007007,Maalhos,Baa,education,school_higher_secondary,43,False,0.27,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),572,201
-MV007008,Eydhafushi,Baa,education,school_higher_secondary,43,True,0.0,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),2581,844
-MV007009,Thulhaadhoo,Baa,education,school_higher_secondary,43,True,0.0,MV007009,Thulhaadhoo,Thulhaadhoo — higher secondary (Gr 11-12),1625,502
-MV007010,Hithaadhoo,Baa,education,school_higher_secondary,43,False,0.19,MV007009,Thulhaadhoo,Thulhaadhoo — higher secondary (Gr 11-12),744,282
-MV007011,Fulhadhoo,Baa,education,school_higher_secondary,43,False,1.4,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),341,66
-MV007012,Fehendhoo,Baa,education,school_higher_secondary,43,False,1.57,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),198,51
-MV007013,Goidhoo,Baa,education,school_higher_secondary,43,False,1.41,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),583,171
-MV008001,Thoddoo,Alifu Alifu,education,school_higher_secondary,43,True,0.0,MV008001,Thoddoo,Thoddoo — higher secondary (Gr 11-12),1924,552
-MV008002,Rasdhoo,Alifu Alifu,education,school_higher_secondary,43,False,0.46,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),1282,352
-MV008003,Ukulhas,Alifu Alifu,education,school_higher_secondary,43,True,0.0,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),1284,462
-MV008004,Mathiveri,Alifu Alifu,education,school_higher_secondary,43,False,1.68,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),878,317
-MV008005,Bodufolhudhoo,Alifu Alifu,education,school_higher_secondary,43,False,0.71,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),704,254
-MV008006,Feridhoo,Alifu Alifu,education,school_higher_secondary,43,False,1.96,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),544,167
-MV008007,Maalhos,Alifu Alifu,education,school_higher_secondary,43,False,2.59,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),516,166
-MV008008,Himendhoo,Alifu Alifu,education,school_higher_secondary,43,False,1.6,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),885,321
-MV009001,Kaashidhoo,Kaafu,education,school_higher_secondary,43,False,1.03,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),2528,682
-MV009002,Gaafaru,Kaafu,education,school_higher_secondary,43,False,4.44,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),1294,503
-MV009003,Dhiffushi,Kaafu,education,school_higher_secondary,43,False,2.47,MV005002,Naifaru,Naifaru — higher secondary (Gr 11-12),1270,373
-MV009004,Thulusdhoo,Kaafu,education,school_higher_secondary,43,False,1.72,MV008001,Thoddoo,Thoddoo — higher secondary (Gr 11-12),1801,390
-MV009005,Huraa,Kaafu,education,school_higher_secondary,43,False,2.8,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),1654,410
-MV009006,Hinmafushi,Kaafu,education,school_higher_secondary,43,False,2.11,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),2012,330
-MV009007,Gulhi,Kaafu,education,school_higher_secondary,43,False,0.37,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),976,280
-MV009008,Maafushi,Kaafu,education,school_higher_secondary,43,True,0.0,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),4471,736
-MV009009,Guraidhoo,Kaafu,education,school_higher_secondary,43,False,0.64,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),1743,471
-MV010001,Fulidhoo,Vaavu,education,school_higher_secondary,43,False,0.63,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),400,86
-MV010002,Thinadhoo,Vaavu,education,school_higher_secondary,43,False,0.18,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),258,6
-MV010003,Felidhoo,Vaavu,education,school_higher_secondary,43,False,0.13,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),620,170
-MV010004,Keyodhoo,Vaavu,education,school_higher_secondary,43,True,0.0,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),641,183
-MV010005,Rakeedhoo,Vaavu,education,school_higher_secondary,43,False,1.31,MV013004,Mulah,Mulah — higher secondary (Gr 11-12),76,4
-MV011001,Feeali,Faafu,education,school_higher_secondary,43,False,1.27,MV011002,Bileiydhoo,Biledhdhoo — higher secondary (Gr 11-12),922,370
-MV011002,Bileiydhoo,Faafu,education,school_higher_secondary,43,True,0.0,MV011002,Bileiydhoo,Biledhdhoo — higher secondary (Gr 11-12),967,372
-MV011003,Magoodhoo,Faafu,education,school_higher_secondary,43,False,0.35,MV011002,Bileiydhoo,Biledhdhoo — higher secondary (Gr 11-12),702,278
-MV011004,Dharan'boodhoo,Faafu,education,school_higher_secondary,43,False,0.24,MV011005,Nilandhoo,Nilandhoo — higher secondary (Gr 11-12),455,170
-MV011005,Nilandhoo,Faafu,education,school_higher_secondary,43,True,0.0,MV011005,Nilandhoo,Nilandhoo — higher secondary (Gr 11-12),1823,680
-MV012001,Meedhoo,Dhaalu,education,school_higher_secondary,43,True,0.0,MV012001,Meedhoo,Meedhoo — higher secondary (Gr 11-12),1118,306
-MV012002,Ban'didhoo,Dhaalu,education,school_higher_secondary,43,False,1.06,MV012001,Meedhoo,Meedhoo — higher secondary (Gr 11-12),629,216
-MV012003,Rin'budhoo,Dhaalu,education,school_higher_secondary,43,False,1.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),316,98
-MV012004,Hulhudheli,Dhaalu,education,school_higher_secondary,43,False,0.46,MV011005,Nilandhoo,Nilandhoo — higher secondary (Gr 11-12),764,250
-MV012007,Maaen'boodhoo,Dhaalu,education,school_higher_secondary,43,False,0.56,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),679,208
-MV012008,Kudahuvadhoo,Dhaalu,education,school_higher_secondary,43,True,0.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),3131,1002
-MV013001,Raiymandhoo,Meemu,education,school_higher_secondary,43,False,2.54,MV013008,Dhiggaru,Dhiggaru — higher secondary (Gr 11-12),171,22
-MV013003,Veyvah,Meemu,education,school_higher_secondary,43,False,0.44,MV013004,Mulah,Mulah — higher secondary (Gr 11-12),304,78
-MV013004,Mulah,Meemu,education,school_higher_secondary,43,True,0.0,MV013004,Mulah,Mulah — higher secondary (Gr 11-12),1426,447
-MV013005,Muli,Meemu,education,school_higher_secondary,43,True,0.0,MV013005,Muli,Muli — higher secondary (Gr 11-12),949,257
-MV013006,Naalaafushi,Meemu,education,school_higher_secondary,43,False,0.13,MV013005,Muli,Muli — higher secondary (Gr 11-12),430,118
-MV013007,Kolhufushi,Meemu,education,school_higher_secondary,43,True,0.0,MV013007,Kolhufushi,Kolhufushi — higher secondary (Gr 11-12),793,251
-MV013008,Dhiggaru,Meemu,education,school_higher_secondary,43,True,0.0,MV013008,Dhiggaru,Dhiggaru — higher secondary (Gr 11-12),1099,349
-MV013009,Maduvvari,Meemu,education,school_higher_secondary,43,False,0.26,MV013008,Dhiggaru,Dhiggaru — higher secondary (Gr 11-12),318,79
-MV014001,Burunee,Thaa,education,school_higher_secondary,43,False,3.42,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),414,136
-MV014002,Vilufushi,Thaa,education,school_higher_secondary,43,True,0.0,MV014002,Vilufushi,Vilufushi — higher secondary (Gr 11-12),1081,367
-MV014003,Madifushi,Thaa,education,school_higher_secondary,43,False,0.27,MV014005,Guraidhoo,Guraidhoo — higher secondary (Gr 11-12),858,299
-MV014004,Dhiyamigili,Thaa,education,school_higher_secondary,43,False,0.35,MV014005,Guraidhoo,Guraidhoo — higher secondary (Gr 11-12),649,257
-MV014005,Guraidhoo,Thaa,education,school_higher_secondary,43,True,0.0,MV014005,Guraidhoo,Guraidhoo — higher secondary (Gr 11-12),1293,443
-MV014006,Kan'doodhoo,Thaa,education,school_higher_secondary,43,False,0.84,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),456,139
-MV014007,Vandhoo,Thaa,education,school_higher_secondary,43,False,0.57,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),364,97
-MV014008,Hirilandhoo,Thaa,education,school_higher_secondary,43,False,0.66,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),1146,328
-MV014009,Gaadhiffushi,Thaa,education,school_higher_secondary,43,False,0.44,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),317,82
-MV014010,Thimarafushi,Thaa,education,school_higher_secondary,43,False,0.25,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),1229,375
-MV014011,Veymandoo,Thaa,education,school_higher_secondary,43,True,0.0,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),1321,452
-MV014012,Kin'bidhoo,Thaa,education,school_higher_secondary,43,False,0.32,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),715,266
-MV014013,Omadhoo,Thaa,education,school_higher_secondary,43,False,0.35,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),417,137
-MV015001,Isdhoo,Laamu,education,school_higher_secondary,43,False,3.4,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),929,309
-MV015002,Dhan'bidhoo,Laamu,education,school_higher_secondary,43,False,2.42,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),606,207
-MV015003,Maabaidhoo,Laamu,education,school_higher_secondary,43,False,1.82,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),565,203
-MV015004,Mundoo,Laamu,education,school_higher_secondary,43,False,2.2,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),176,48
-MV015005,Kalaidhoo,Laamu,education,school_higher_secondary,43,False,1.79,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),655,221
-MV015007,Maavah,Laamu,education,school_higher_secondary,43,True,0.0,MV015007,Maavah,Maavah — higher secondary (Gr 11-12),1379,472
-MV015008,Fonadhoo,Laamu,education,school_higher_secondary,43,True,0.0,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),2986,986
-MV015010,Maamendhoo,Laamu,education,school_higher_secondary,43,False,0.36,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),879,259
-MV015011,Hithadhoo,Laamu,education,school_higher_secondary,43,False,0.43,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),1108,380
-MV015012,Kunahandhoo,Laamu,education,school_higher_secondary,43,False,0.56,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),601,211
-MV015013,Gan,Laamu,education,school_higher_secondary,43,False,2.16,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),4815,1457
-MV016001,Kolamaafushi,Gaafu Alifu,education,school_higher_secondary,43,False,0.68,MV016002,Vilin'gili,Viligili — higher secondary (Gr 11-12),636,148
-MV016002,Vilin'gili,Gaafu Alifu,education,school_higher_secondary,43,True,0.0,MV016002,Vilin'gili,Viligili — higher secondary (Gr 11-12),2900,889
-MV016003,Maamendhoo,Gaafu Alifu,education,school_higher_secondary,43,True,0.0,MV016003,Maamendhoo,Maamendhoo — higher secondary (Gr 11-12),1201,391
-MV016004,Nilandhoo,Gaafu Alifu,education,school_higher_secondary,43,False,0.28,MV016005,Dhaandhoo,Dhaandhoo — higher secondary (Gr 11-12),545,159
-MV016005,Dhaandhoo,Gaafu Alifu,education,school_higher_secondary,43,True,0.0,MV016005,Dhaandhoo,Dhaandhoo — higher secondary (Gr 11-12),1044,269
-MV016006,Dhevvadhoo,Gaafu Alifu,education,school_higher_secondary,43,False,0.79,MV016002,Vilin'gili,Viligili — higher secondary (Gr 11-12),599,143
-MV016007,Kon'dey,Gaafu Alifu,education,school_higher_secondary,43,False,0.43,MV016005,Dhaandhoo,Dhaandhoo — higher secondary (Gr 11-12),328,95
-MV016009,Gemanafushi,Gaafu Alifu,education,school_higher_secondary,43,False,1.62,MV017004,Gahdhoo,Gadhdhoo — higher secondary (Gr 11-12),1318,464
-MV016010,Kan'duhulhudhoo,Gaafu Alifu,education,school_higher_secondary,43,False,5.45,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),619,192
-MV017001,Madaveli,Gaafu Dhaalu,education,school_higher_secondary,43,False,0.53,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),1219,407
-MV017002,Hoadehdhoo,Gaafu Dhaalu,education,school_higher_secondary,43,False,0.73,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),885,304
-MV017003,Nadellaa,Gaafu Dhaalu,education,school_higher_secondary,43,False,,,,,581,159
-MV017004,Gahdhoo,Gaafu Dhaalu,education,school_higher_secondary,43,True,0.0,MV017004,Gahdhoo,Gadhdhoo — higher secondary (Gr 11-12),1414,403
-MV017005,Rathafandhoo,Gaafu Dhaalu,education,school_higher_secondary,43,False,1.57,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),431,97
-MV017006,Vaadhoo,Gaafu Dhaalu,education,school_higher_secondary,43,False,1.05,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),516,100
-MV017007,Fiyoari,Gaafu Dhaalu,education,school_higher_secondary,43,False,1.9,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),637,206
-MV017008,Faresmaathodaa,Gaafu Dhaalu,education,school_higher_secondary,43,False,0.9,MV017004,Gahdhoo,Gadhdhoo — higher secondary (Gr 11-12),858,235
-MV017010,Thinadhoo,Gaafu Dhaalu,education,school_higher_secondary,43,True,0.0,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),6217,2134
-MV018001,Fuvahmulah,Gnaviyani,education,school_higher_secondary,43,True,0.0,MV018001,Fuvahmulah,Fuvahmulah — higher secondary (Gr 11-12),9177,2761
-MV019001,Meedhoo,Seenu,education,school_higher_secondary,43,False,0.0,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1892,541
-MV019002,Hithadhoo,Seenu,education,school_higher_secondary,43,True,0.0,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),13759,3560
-MV019003,Maradhoo,Seenu,education,school_higher_secondary,43,False,0.45,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),2542,712
-MV019004,Feydhoo,Seenu,education,school_higher_secondary,43,False,0.25,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_higher_secondary,43,False,0.35,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_higher_secondary,43,False,0.1,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1182,259
-MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_higher_secondary,43,False,0.59,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),484,148
-MV020002,Omadhoo,Alifu Dhaalu,education,school_higher_secondary,43,False,0.28,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),913,344
-MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_higher_secondary,43,False,0.3,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),509,173
-MV020004,Mahibadhoo,Alifu Dhaalu,education,school_higher_secondary,43,True,0.0,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),2580,796
-MV020005,Mandhoo,Alifu Dhaalu,education,school_higher_secondary,43,False,2.03,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),418,85
-MV020006,Dhan'gethi,Alifu Dhaalu,education,school_higher_secondary,43,False,0.39,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),936,256
-MV020007,Dhigurah,Alifu Dhaalu,education,school_higher_secondary,43,False,1.64,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),761,153
-MV020008,Fenfushi,Alifu Dhaalu,education,school_higher_secondary,43,False,2.19,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),1000,333
-MV020009,Dhihdhoo,Alifu Dhaalu,education,school_higher_secondary,43,False,1.96,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),141,26
-MV020010,Maamin'gili,Alifu Dhaalu,education,school_higher_secondary,43,False,0.71,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),2798,833
-MLE,Malé City,Male,education,school_higher_secondary,43,False,1.2,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),211908,34823
-MV001001,Thuraakunu,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001001,Thuraakunu,Thuraakunu — lower secondary (Gr 7-10),427,109
-MV001002,Uligamu,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001002,Uligamu,Uligamu — lower secondary (Gr 7-10),400,110
-MV001005,Mulhadhoo,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001005,Mulhadhoo,Mulhadhoo — lower secondary (Gr 7-10),286,79
-MV001006,Huvarafushi,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001006,Huvarafushi,Hoarafushi — lower secondary (Gr 7-10),1841,547
-MV001007,Ihavandhoo,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001007,Ihavandhoo,Ihavandhoo — lower secondary (Gr 7-10),2873,1124
-MV001008,Kelaa,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001008,Kelaa,Kelaa — lower secondary (Gr 7-10),1115,327
-MV001009,Vashafaru,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001009,Vashafaru,Vashafaru — lower secondary (Gr 7-10),476,138
-MV001010,Dhihdhoo,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001010,Dhihdhoo,Dhidhdhoo — lower secondary (Gr 7-10),3412,1260
-MV001011,Filladhoo,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001011,Filladhoo,Filladhoo — lower secondary (Gr 7-10),559,171
-MV001012,Maarandhoo,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001012,Maarandhoo,Maarandhoo — lower secondary (Gr 7-10),668,258
-MV001013,Thakandhoo,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001013,Thakandhoo,Thakandhoo — lower secondary (Gr 7-10),279,42
-MV001014,Utheemu,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001014,Utheemu,Utheemu — lower secondary (Gr 7-10),612,213
-MV001015,Muraidhoo,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001015,Muraidhoo,Muraidhoo — lower secondary (Gr 7-10),534,207
-MV001016,Baarah,Haa Alifu,education,school_lower_secondary,180,True,0.0,MV001016,Baarah,Baarah — lower secondary (Gr 7-10),1141,406
-MV002003,Hanimaadhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002003,Hanimaadhoo,Hanimaadhoo — lower secondary (Gr 7-10),2664,667
-MV002004,Finey,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002004,Finey,Finey — lower secondary (Gr 7-10),409,135
-MV002005,Naivaadhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002005,Naivaadhoo,Naivaadhoo — lower secondary (Gr 7-10),495,159
-MV002006,Hirimaradhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002006,Hirimaradhoo,Hirimaradhoo — lower secondary (Gr 7-10),293,67
-MV002007,Nolhivaranfaru,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002007,Nolhivaranfaru,Nolhivaranfaru — lower secondary (Gr 7-10),1254,426
-MV002008,Nellaidhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002008,Nellaidhoo,Nellaidhoo — lower secondary (Gr 7-10),1038,393
-MV002009,Nolhivaramu,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002009,Nolhivaramu,Nolhivaramu — lower secondary (Gr 7-10),1985,842
-MV002010,Kurin'bee,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002010,Kurin'bee,Kuribi — lower secondary (Gr 7-10),492,172
-MV002012,Kulhudhuffushi,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002012,Kulhudhuffushi,Kulhudhuffushi — lower secondary (Gr 7-10),10131,3601
-MV002013,Kumundhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002013,Kumundhoo,Kumundhoo — lower secondary (Gr 7-10),997,324
-MV002014,Neykurendhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002014,Neykurendhoo,Neykurendhoo — lower secondary (Gr 7-10),641,206
-MV002015,Vaikaradhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002015,Vaikaradhoo,Vaikaradhoo — lower secondary (Gr 7-10),776,253
-MV002017,Makunudhoo,Haa Dhaalu,education,school_lower_secondary,180,True,0.0,MV002017,Makunudhoo,Makunudhoo — lower secondary (Gr 7-10),1265,486
-MV003001,Kan'ditheemu,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003001,Kan'ditheemu,Kaditheemu — lower secondary (Gr 7-10),1193,460
-MV003002,Noomaraa,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003002,Noomaraa,Noomaraa — lower secondary (Gr 7-10),371,127
-MV003003,Goidhoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003003,Goidhoo,Goidhoo — lower secondary (Gr 7-10),592,194
-MV003004,Feydhoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003004,Feydhoo,Feydhoo — lower secondary (Gr 7-10),854,306
-MV003005,Feevah,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003005,Feevah,Feevah — lower secondary (Gr 7-10),694,235
-MV003006,Bileiyfahi,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003006,Bileiyfahi,Bilehffahi — lower secondary (Gr 7-10),502,178
-MV003007,Foakaidhoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003007,Foakaidhoo,Foakaidhoo — lower secondary (Gr 7-10),1571,635
-MV003008,Narudhoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003008,Narudhoo,Narudhoo — lower secondary (Gr 7-10),544,200
-MV003010,Maroshi,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003010,Maroshi,Maroshi — lower secondary (Gr 7-10),479,144
-MV003011,Lhaimagu,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003011,Lhaimagu,Lhaimagu — lower secondary (Gr 7-10),684,214
-MV003013,Komandoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003013,Komandoo,Komandoo — lower secondary (Gr 7-10),921,286
-MV003014,Maaun'goodhoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003014,Maaun'goodhoo,Maaugoodhoo — lower secondary (Gr 7-10),944,326
-MV003015,Funadhoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003015,Funadhoo,Funadhoo — lower secondary (Gr 7-10),2255,766
-MV003016,Milandhoo,Shaviyani,education,school_lower_secondary,180,True,0.0,MV003016,Milandhoo,Milandhoo — lower secondary (Gr 7-10),2094,802
-MV004001,Hen'badhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004001,Hen'badhoo,Henbadhoo — lower secondary (Gr 7-10),638,227
-MV004002,Ken'dhikulhudhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — lower secondary (Gr 7-10),1556,583
-MV004003,Maalhendhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004003,Maalhendhoo,Maalhendhoo — lower secondary (Gr 7-10),724,264
-MV004004,Kudafari,Noonu,education,school_lower_secondary,180,True,0.0,MV004004,Kudafari,Kudafari — lower secondary (Gr 7-10),628,231
-MV004005,Landhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004005,Landhoo,Landhoo — lower secondary (Gr 7-10),757,278
-MV004006,Maafaru,Noonu,education,school_lower_secondary,180,True,0.0,MV004006,Maafaru,Maafaru — lower secondary (Gr 7-10),919,283
-MV004007,Lhohi,Noonu,education,school_lower_secondary,180,True,0.0,MV004007,Lhohi,Lhohi — lower secondary (Gr 7-10),692,231
-MV004008,Miladhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004008,Miladhoo,Miladhoo — lower secondary (Gr 7-10),934,337
-MV004009,Magoodhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004009,Magoodhoo,Magoodhoo — lower secondary (Gr 7-10),305,112
-MV004010,Manadhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004010,Manadhoo,Manadhoo — lower secondary (Gr 7-10),1745,519
-MV004011,Holhudhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004011,Holhudhoo,Holhudhoo — lower secondary (Gr 7-10),1428,460
-MV004012,Fohdhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004012,Fohdhoo,Fodhdhoo — lower secondary (Gr 7-10),345,80
-MV004013,Velidhoo,Noonu,education,school_lower_secondary,180,True,0.0,MV004013,Velidhoo,Velidhoo — lower secondary (Gr 7-10),1832,536
-MV005001,Hinnavaru,Lhaviyani,education,school_lower_secondary,180,True,0.0,MV005001,Hinnavaru,Hinnavaru — lower secondary (Gr 7-10),2286,702
-MV005002,Naifaru,Lhaviyani,education,school_lower_secondary,180,True,0.0,MV005002,Naifaru,Naifaru — lower secondary (Gr 7-10),4832,1437
-MV005003,Kurendhoo,Lhaviyani,education,school_lower_secondary,180,True,0.0,MV005003,Kurendhoo,Kurendhoo — lower secondary (Gr 7-10),1171,364
-MV005004,Olhuvelifushi,Lhaviyani,education,school_lower_secondary,180,True,0.0,MV005004,Olhuvelifushi,Olhuvelifushi — lower secondary (Gr 7-10),703,246
-MV006001,Alifushi,Raa,education,school_lower_secondary,180,True,0.0,MV006001,Alifushi,Alifushi — lower secondary (Gr 7-10),1859,576
-MV006002,Vaadhoo,Raa,education,school_lower_secondary,180,True,0.0,MV006002,Vaadhoo,Vaadhoo — lower secondary (Gr 7-10),452,148
-MV006003,Rasgetheemu,Raa,education,school_lower_secondary,180,True,0.0,MV006003,Rasgetheemu,Rasgetheemu — lower secondary (Gr 7-10),537,168
-MV006004,An'golhitheemu,Raa,education,school_lower_secondary,180,True,0.0,MV006004,An'golhitheemu,Agolhitheemu — lower secondary (Gr 7-10),381,118
-MV006005,Hulhudhuffaaru,Raa,education,school_lower_secondary,180,True,0.0,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — lower secondary (Gr 7-10),1228,426
-MV006006,Un'goofaaru,Raa,education,school_lower_secondary,180,True,0.0,MV006006,Un'goofaaru,Ugoofaaru — lower secondary (Gr 7-10),1754,571
-MV006008,Maakurathu,Raa,education,school_lower_secondary,180,True,0.0,MV006008,Maakurathu,Maakurathu — lower secondary (Gr 7-10),956,330
-MV006009,Rasmaadhoo,Raa,education,school_lower_secondary,180,True,0.0,MV006009,Rasmaadhoo,Rasmaadhoo — lower secondary (Gr 7-10),554,163
-MV006010,Innamaadhoo,Raa,education,school_lower_secondary,180,True,0.0,MV006010,Innamaadhoo,Innamaadhoo — lower secondary (Gr 7-10),663,183
-MV006011,Maduvvari,Raa,education,school_lower_secondary,180,True,0.0,MV006011,Maduvvari,Maduvvari — lower secondary (Gr 7-10),1760,594
-MV006012,In'guraidhoo,Raa,education,school_lower_secondary,180,True,0.0,MV006012,In'guraidhoo,Iguraidhoo — lower secondary (Gr 7-10),1278,478
-MV006013,Fainu,Raa,education,school_lower_secondary,180,True,0.0,MV006013,Fainu,Fainu — lower secondary (Gr 7-10),423,133
-MV006014,Meedhoo,Raa,education,school_lower_secondary,180,True,0.0,MV006014,Meedhoo,Meedhoo — lower secondary (Gr 7-10),1872,615
-MV006015,Kinolhas,Raa,education,school_lower_secondary,180,True,0.0,MV006015,Kinolhas,Kinolhas — lower secondary (Gr 7-10),543,211
-MV006019,Dhuvaafaru,Raa,education,school_lower_secondary,180,True,0.0,MV006019,Dhuvaafaru,Dhuvaafaru — lower secondary (Gr 7-10),3321,1214
-MV007001,Kudarikilu,Baa,education,school_lower_secondary,180,True,0.0,MV007001,Kudarikilu,Kudarikilu — lower secondary (Gr 7-10),557,162
-MV007002,Kamadhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007002,Kamadhoo,Kamadhoo — lower secondary (Gr 7-10),552,113
-MV007003,Kendhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007003,Kendhoo,Kendhoo — lower secondary (Gr 7-10),1002,346
-MV007004,Kihaadhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007004,Kihaadhoo,Kihaadhoo — lower secondary (Gr 7-10),481,196
-MV007005,Dhonfanu,Baa,education,school_lower_secondary,180,True,0.0,MV007005,Dhonfanu,Dhonfanu — lower secondary (Gr 7-10),398,128
-MV007006,Dharavandhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007006,Dharavandhoo,Dharavandhoo — lower secondary (Gr 7-10),997,286
-MV007007,Maalhos,Baa,education,school_lower_secondary,180,True,0.0,MV007007,Maalhos,Maalhos — lower secondary (Gr 7-10),572,201
-MV007008,Eydhafushi,Baa,education,school_lower_secondary,180,True,0.0,MV007008,Eydhafushi,Eydhafushi — lower secondary (Gr 7-10),2581,844
-MV007009,Thulhaadhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007009,Thulhaadhoo,Thulhaadhoo — lower secondary (Gr 7-10),1625,502
-MV007010,Hithaadhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007010,Hithaadhoo,Hithaadhoo — lower secondary (Gr 7-10),744,282
-MV007011,Fulhadhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007011,Fulhadhoo,Fulhadhoo — lower secondary (Gr 7-10),341,66
-MV007012,Fehendhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007012,Fehendhoo,Fehendhoo — lower secondary (Gr 7-10),198,51
-MV007013,Goidhoo,Baa,education,school_lower_secondary,180,True,0.0,MV007013,Goidhoo,Goidhoo — lower secondary (Gr 7-10),583,171
-MV008001,Thoddoo,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008001,Thoddoo,Thoddoo — lower secondary (Gr 7-10),1924,552
-MV008002,Rasdhoo,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008002,Rasdhoo,Rasdhoo — lower secondary (Gr 7-10),1282,352
-MV008003,Ukulhas,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008003,Ukulhas,Ukulhas — lower secondary (Gr 7-10),1284,462
-MV008004,Mathiveri,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008004,Mathiveri,Mathiveri — lower secondary (Gr 7-10),878,317
-MV008005,Bodufolhudhoo,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008005,Bodufolhudhoo,Bodufolhudhoo — lower secondary (Gr 7-10),704,254
-MV008006,Feridhoo,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008006,Feridhoo,Feridhoo — lower secondary (Gr 7-10),544,167
-MV008007,Maalhos,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008007,Maalhos,Maalhos — lower secondary (Gr 7-10),516,166
-MV008008,Himendhoo,Alifu Alifu,education,school_lower_secondary,180,True,0.0,MV008008,Himendhoo,Himandhoo — lower secondary (Gr 7-10),885,321
-MV009001,Kaashidhoo,Kaafu,education,school_lower_secondary,180,True,0.0,MV009001,Kaashidhoo,Kaashidhoo — lower secondary (Gr 7-10),2528,682
-MV009002,Gaafaru,Kaafu,education,school_lower_secondary,180,True,0.0,MV009002,Gaafaru,Gaafaru — lower secondary (Gr 7-10),1294,503
-MV009003,Dhiffushi,Kaafu,education,school_lower_secondary,180,True,0.0,MV009003,Dhiffushi,Dhiffushi — lower secondary (Gr 7-10),1270,373
-MV009004,Thulusdhoo,Kaafu,education,school_lower_secondary,180,True,0.0,MV009004,Thulusdhoo,Thulusdhoo — lower secondary (Gr 7-10),1801,390
-MV009005,Huraa,Kaafu,education,school_lower_secondary,180,True,0.0,MV009005,Huraa,Huraa — lower secondary (Gr 7-10),1654,410
-MV009006,Hinmafushi,Kaafu,education,school_lower_secondary,180,True,0.0,MV009006,Hinmafushi,Himmafushi — lower secondary (Gr 7-10),2012,330
-MV009007,Gulhi,Kaafu,education,school_lower_secondary,180,True,0.0,MV009007,Gulhi,Gulhi — lower secondary (Gr 7-10),976,280
-MV009008,Maafushi,Kaafu,education,school_lower_secondary,180,True,0.0,MV009008,Maafushi,Maafushi — lower secondary (Gr 7-10),4471,736
-MV009009,Guraidhoo,Kaafu,education,school_lower_secondary,180,True,0.0,MV009009,Guraidhoo,Guraidhoo — lower secondary (Gr 7-10),1743,471
-MV010001,Fulidhoo,Vaavu,education,school_lower_secondary,180,True,0.0,MV010001,Fulidhoo,Fulidhoo — lower secondary (Gr 7-10),400,86
-MV010002,Thinadhoo,Vaavu,education,school_lower_secondary,180,False,0.18,MV010004,Keyodhoo,Keyodhoo — lower secondary (Gr 7-10),258,6
-MV010003,Felidhoo,Vaavu,education,school_lower_secondary,180,True,0.0,MV010003,Felidhoo,Felidhoo — lower secondary (Gr 7-10),620,170
-MV010004,Keyodhoo,Vaavu,education,school_lower_secondary,180,True,0.0,MV010004,Keyodhoo,Keyodhoo — lower secondary (Gr 7-10),641,183
-MV010005,Rakeedhoo,Vaavu,education,school_lower_secondary,180,False,1.31,MV013004,Mulah,Mulah — lower secondary (Gr 7-10),76,4
-MV011001,Feeali,Faafu,education,school_lower_secondary,180,True,0.0,MV011001,Feeali,Feeali — lower secondary (Gr 7-10),922,370
-MV011002,Bileiydhoo,Faafu,education,school_lower_secondary,180,True,0.0,MV011002,Bileiydhoo,Biledhdhoo — lower secondary (Gr 7-10),967,372
-MV011003,Magoodhoo,Faafu,education,school_lower_secondary,180,True,0.0,MV011003,Magoodhoo,Magoodhoo — lower secondary (Gr 7-10),702,278
-MV011004,Dharan'boodhoo,Faafu,education,school_lower_secondary,180,True,0.0,MV011004,Dharan'boodhoo,Dharaboodhoo — lower secondary (Gr 7-10),455,170
-MV011005,Nilandhoo,Faafu,education,school_lower_secondary,180,True,0.0,MV011005,Nilandhoo,Nilandhoo — lower secondary (Gr 7-10),1823,680
-MV012001,Meedhoo,Dhaalu,education,school_lower_secondary,180,True,0.0,MV012001,Meedhoo,Meedhoo — lower secondary (Gr 7-10),1118,306
-MV012002,Ban'didhoo,Dhaalu,education,school_lower_secondary,180,True,0.0,MV012002,Ban'didhoo,Badidhoo — lower secondary (Gr 7-10),629,216
-MV012003,Rin'budhoo,Dhaalu,education,school_lower_secondary,180,True,0.0,MV012003,Rin'budhoo,Ribudhoo — lower secondary (Gr 7-10),316,98
-MV012004,Hulhudheli,Dhaalu,education,school_lower_secondary,180,True,0.0,MV012004,Hulhudheli,Hulhudheli — lower secondary (Gr 7-10),764,250
-MV012007,Maaen'boodhoo,Dhaalu,education,school_lower_secondary,180,True,0.0,MV012007,Maaen'boodhoo,Maaeboodhoo — lower secondary (Gr 7-10),679,208
-MV012008,Kudahuvadhoo,Dhaalu,education,school_lower_secondary,180,True,0.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — lower secondary (Gr 7-10),3131,1002
-MV013001,Raiymandhoo,Meemu,education,school_lower_secondary,180,False,1.29,MV013009,Maduvvari,Maduvvari — lower secondary (Gr 7-10),171,22
-MV013003,Veyvah,Meemu,education,school_lower_secondary,180,True,0.0,MV013003,Veyvah,Veyvah — lower secondary (Gr 7-10),304,78
-MV013004,Mulah,Meemu,education,school_lower_secondary,180,True,0.0,MV013004,Mulah,Mulah — lower secondary (Gr 7-10),1426,447
-MV013005,Muli,Meemu,education,school_lower_secondary,180,True,0.0,MV013005,Muli,Muli — lower secondary (Gr 7-10),949,257
-MV013006,Naalaafushi,Meemu,education,school_lower_secondary,180,True,0.0,MV013006,Naalaafushi,Naalaafushi — lower secondary (Gr 7-10),430,118
-MV013007,Kolhufushi,Meemu,education,school_lower_secondary,180,True,0.0,MV013007,Kolhufushi,Kolhufushi — lower secondary (Gr 7-10),793,251
-MV013008,Dhiggaru,Meemu,education,school_lower_secondary,180,True,0.0,MV013008,Dhiggaru,Dhiggaru — lower secondary (Gr 7-10),1099,349
-MV013009,Maduvvari,Meemu,education,school_lower_secondary,180,True,0.0,MV013009,Maduvvari,Maduvvari — lower secondary (Gr 7-10),318,79
-MV014001,Burunee,Thaa,education,school_lower_secondary,180,True,0.0,MV014001,Burunee,Buruni — lower secondary (Gr 7-10),414,136
-MV014002,Vilufushi,Thaa,education,school_lower_secondary,180,True,0.0,MV014002,Vilufushi,Vilufushi — lower secondary (Gr 7-10),1081,367
-MV014003,Madifushi,Thaa,education,school_lower_secondary,180,True,0.0,MV014003,Madifushi,Madifushi — lower secondary (Gr 7-10),858,299
-MV014004,Dhiyamigili,Thaa,education,school_lower_secondary,180,True,0.0,MV014004,Dhiyamigili,Dhiyamigili — lower secondary (Gr 7-10),649,257
-MV014005,Guraidhoo,Thaa,education,school_lower_secondary,180,True,0.0,MV014005,Guraidhoo,Guraidhoo — lower secondary (Gr 7-10),1293,443
-MV014006,Kan'doodhoo,Thaa,education,school_lower_secondary,180,True,0.0,MV014006,Kan'doodhoo,Kadoodhoo — lower secondary (Gr 7-10),456,139
-MV014007,Vandhoo,Thaa,education,school_lower_secondary,180,True,0.0,MV014007,Vandhoo,Vandhoo — lower secondary (Gr 7-10),364,97
-MV014008,Hirilandhoo,Thaa,education,school_lower_secondary,180,True,0.0,MV014008,Hirilandhoo,Hirilandhoo — lower secondary (Gr 7-10),1146,328
-MV014009,Gaadhiffushi,Thaa,education,school_lower_secondary,180,True,0.0,MV014009,Gaadhiffushi,Gaadhiffushi — lower secondary (Gr 7-10),317,82
-MV014010,Thimarafushi,Thaa,education,school_lower_secondary,180,True,0.0,MV014010,Thimarafushi,Thimarafushi — lower secondary (Gr 7-10),1229,375
-MV014011,Veymandoo,Thaa,education,school_lower_secondary,180,True,0.0,MV014011,Veymandoo,Veymandoo — lower secondary (Gr 7-10),1321,452
-MV014012,Kin'bidhoo,Thaa,education,school_lower_secondary,180,True,0.0,MV014012,Kin'bidhoo,Kibidhoo — lower secondary (Gr 7-10),715,266
-MV014013,Omadhoo,Thaa,education,school_lower_secondary,180,True,0.0,MV014013,Omadhoo,Omadhoo — lower secondary (Gr 7-10),417,137
-MV015001,Isdhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015001,Isdhoo,Isdhoo — lower secondary (Gr 7-10),929,309
-MV015002,Dhan'bidhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015002,Dhan'bidhoo,Dhabidhoo — lower secondary (Gr 7-10),606,207
-MV015003,Maabaidhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015003,Maabaidhoo,Maabaidhoo — lower secondary (Gr 7-10),565,203
-MV015004,Mundoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015004,Mundoo,Mundoo — lower secondary (Gr 7-10),176,48
-MV015005,Kalaidhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015005,Kalaidhoo,Kalaidhoo — lower secondary (Gr 7-10),655,221
-MV015007,Maavah,Laamu,education,school_lower_secondary,180,True,0.0,MV015007,Maavah,Maavah — lower secondary (Gr 7-10),1379,472
-MV015008,Fonadhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015008,Fonadhoo,Fonadhoo — lower secondary (Gr 7-10),2986,986
-MV015010,Maamendhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015010,Maamendhoo,Maamendhoo — lower secondary (Gr 7-10),879,259
-MV015011,Hithadhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015011,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),1108,380
-MV015012,Kunahandhoo,Laamu,education,school_lower_secondary,180,True,0.0,MV015012,Kunahandhoo,Kunahandhoo — lower secondary (Gr 7-10),601,211
-MV015013,Gan,Laamu,education,school_lower_secondary,180,False,0.56,MV015004,Mundoo,Mundoo — lower secondary (Gr 7-10),4815,1457
-MV016001,Kolamaafushi,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016001,Kolamaafushi,Kolamaafushi — lower secondary (Gr 7-10),636,148
-MV016002,Vilin'gili,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016002,Vilin'gili,Viligili — lower secondary (Gr 7-10),2900,889
-MV016003,Maamendhoo,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016003,Maamendhoo,Maamendhoo — lower secondary (Gr 7-10),1201,391
-MV016004,Nilandhoo,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016004,Nilandhoo,Nilandhoo — lower secondary (Gr 7-10),545,159
-MV016005,Dhaandhoo,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016005,Dhaandhoo,Dhaandhoo — lower secondary (Gr 7-10),1044,269
-MV016006,Dhevvadhoo,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016006,Dhevvadhoo,Dhevvadhoo — lower secondary (Gr 7-10),599,143
-MV016007,Kon'dey,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016007,Kon'dey,Kodey — lower secondary (Gr 7-10),328,95
-MV016009,Gemanafushi,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016009,Gemanafushi,Gemanafushi — lower secondary (Gr 7-10),1318,464
-MV016010,Kan'duhulhudhoo,Gaafu Alifu,education,school_lower_secondary,180,True,0.0,MV016010,Kan'duhulhudhoo,Kanduhulhudhoo — lower secondary (Gr 7-10),619,192
-MV017001,Madaveli,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017001,Madaveli,Madaveli — lower secondary (Gr 7-10),1219,407
-MV017002,Hoadehdhoo,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017002,Hoadehdhoo,Hoadedhdhoo — lower secondary (Gr 7-10),885,304
-MV017003,Nadellaa,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017003,Nadellaa,Nadallaa — lower secondary (Gr 7-10),581,159
-MV017004,Gahdhoo,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017004,Gahdhoo,Gadhdhoo — lower secondary (Gr 7-10),1414,403
-MV017005,Rathafandhoo,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017005,Rathafandhoo,Rathafandhoo — lower secondary (Gr 7-10),431,97
-MV017006,Vaadhoo,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017006,Vaadhoo,Vaadhoo — lower secondary (Gr 7-10),516,100
-MV017007,Fiyoari,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017007,Fiyoari,Fiyoari — lower secondary (Gr 7-10),637,206
-MV017008,Faresmaathodaa,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017008,Faresmaathodaa,Fares-Maathodaa — lower secondary (Gr 7-10),858,235
-MV017010,Thinadhoo,Gaafu Dhaalu,education,school_lower_secondary,180,True,0.0,MV017010,Thinadhoo,Thinadhoo — lower secondary (Gr 7-10),6217,2134
-MV018001,Fuvahmulah,Gnaviyani,education,school_lower_secondary,180,True,0.0,MV018001,Fuvahmulah,Fuvahmulah — lower secondary (Gr 7-10),9177,2761
-MV019001,Meedhoo,Seenu,education,school_lower_secondary,180,True,0.0,MV019001,Meedhoo,Meedhoo — lower secondary (Gr 7-10),1892,541
-MV019002,Hithadhoo,Seenu,education,school_lower_secondary,180,True,0.0,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),13759,3560
-MV019003,Maradhoo,Seenu,education,school_lower_secondary,180,True,0.0,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),2542,712
-MV019004,Feydhoo,Seenu,education,school_lower_secondary,180,True,0.0,MV019004,Feydhoo,Feydhoo — lower secondary (Gr 7-10),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_lower_secondary,180,False,0.35,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_lower_secondary,180,False,0.1,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),1182,259
-MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — lower secondary (Gr 7-10),484,148
-MV020002,Omadhoo,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020002,Omadhoo,Omadhoo — lower secondary (Gr 7-10),913,344
-MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — lower secondary (Gr 7-10),509,173
-MV020004,Mahibadhoo,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020004,Mahibadhoo,Mahibadhoo — lower secondary (Gr 7-10),2580,796
-MV020005,Mandhoo,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020005,Mandhoo,Mandhoo — lower secondary (Gr 7-10),418,85
-MV020006,Dhan'gethi,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020006,Dhan'gethi,Dhagethi — lower secondary (Gr 7-10),936,256
-MV020007,Dhigurah,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020007,Dhigurah,Dhigurah — lower secondary (Gr 7-10),761,153
-MV020008,Fenfushi,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020008,Fenfushi,Fenfushi — lower secondary (Gr 7-10),1000,333
-MV020009,Dhihdhoo,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020009,Dhihdhoo,Dhidhdhoo — lower secondary (Gr 7-10),141,26
-MV020010,Maamin'gili,Alifu Dhaalu,education,school_lower_secondary,180,True,0.0,MV020010,Maamin'gili,Maamigili — lower secondary (Gr 7-10),2798,833
-MLE,Malé City,Male,education,school_lower_secondary,180,False,0.4,MV009006,Hinmafushi,Himmafushi — lower secondary (Gr 7-10),211908,34823
-MV001001,Thuraakunu,Haa Alifu,education,school_primary,182,True,0.0,MV001001,Thuraakunu,Thuraakunu — primary school (Gr 1-6),427,109
-MV001002,Uligamu,Haa Alifu,education,school_primary,182,True,0.0,MV001002,Uligamu,Uligamu — primary school (Gr 1-6),400,110
-MV001005,Mulhadhoo,Haa Alifu,education,school_primary,182,True,0.0,MV001005,Mulhadhoo,Mulhadhoo — primary school (Gr 1-6),286,79
-MV001006,Huvarafushi,Haa Alifu,education,school_primary,182,True,0.0,MV001006,Huvarafushi,Hoarafushi — primary school (Gr 1-6),1841,547
-MV001007,Ihavandhoo,Haa Alifu,education,school_primary,182,True,0.0,MV001007,Ihavandhoo,Ihavandhoo — primary school (Gr 1-6),2873,1124
-MV001008,Kelaa,Haa Alifu,education,school_primary,182,True,0.0,MV001008,Kelaa,Kelaa — primary school (Gr 1-6),1115,327
-MV001009,Vashafaru,Haa Alifu,education,school_primary,182,True,0.0,MV001009,Vashafaru,Vashafaru — primary school (Gr 1-6),476,138
-MV001010,Dhihdhoo,Haa Alifu,education,school_primary,182,True,0.0,MV001010,Dhihdhoo,Dhidhdhoo — primary school (Gr 1-6),3412,1260
-MV001011,Filladhoo,Haa Alifu,education,school_primary,182,True,0.0,MV001011,Filladhoo,Filladhoo — primary school (Gr 1-6),559,171
-MV001012,Maarandhoo,Haa Alifu,education,school_primary,182,True,0.0,MV001012,Maarandhoo,Maarandhoo — primary school (Gr 1-6),668,258
-MV001013,Thakandhoo,Haa Alifu,education,school_primary,182,True,0.0,MV001013,Thakandhoo,Thakandhoo — primary school (Gr 1-6),279,42
-MV001014,Utheemu,Haa Alifu,education,school_primary,182,True,0.0,MV001014,Utheemu,Utheemu — primary school (Gr 1-6),612,213
-MV001015,Muraidhoo,Haa Alifu,education,school_primary,182,True,0.0,MV001015,Muraidhoo,Muraidhoo — primary school (Gr 1-6),534,207
-MV001016,Baarah,Haa Alifu,education,school_primary,182,True,0.0,MV001016,Baarah,Baarah — primary school (Gr 1-6),1141,406
-MV002003,Hanimaadhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002003,Hanimaadhoo,Hanimaadhoo — primary school (Gr 1-6),2664,667
-MV002004,Finey,Haa Dhaalu,education,school_primary,182,True,0.0,MV002004,Finey,Finey — primary school (Gr 1-6),409,135
-MV002005,Naivaadhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002005,Naivaadhoo,Naivaadhoo — primary school (Gr 1-6),495,159
-MV002006,Hirimaradhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002006,Hirimaradhoo,Hirimaradhoo — primary school (Gr 1-6),293,67
-MV002007,Nolhivaranfaru,Haa Dhaalu,education,school_primary,182,True,0.0,MV002007,Nolhivaranfaru,Nolhivaranfaru — primary school (Gr 1-6),1254,426
-MV002008,Nellaidhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002008,Nellaidhoo,Nellaidhoo — primary school (Gr 1-6),1038,393
-MV002009,Nolhivaramu,Haa Dhaalu,education,school_primary,182,True,0.0,MV002009,Nolhivaramu,Nolhivaramu — primary school (Gr 1-6),1985,842
-MV002010,Kurin'bee,Haa Dhaalu,education,school_primary,182,True,0.0,MV002010,Kurin'bee,Kuribi — primary school (Gr 1-6),492,172
-MV002012,Kulhudhuffushi,Haa Dhaalu,education,school_primary,182,True,0.0,MV002012,Kulhudhuffushi,Kulhudhuffushi — primary school (Gr 1-6),10131,3601
-MV002013,Kumundhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002013,Kumundhoo,Kumundhoo — primary school (Gr 1-6),997,324
-MV002014,Neykurendhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002014,Neykurendhoo,Neykurendhoo — primary school (Gr 1-6),641,206
-MV002015,Vaikaradhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002015,Vaikaradhoo,Vaikaradhoo — primary school (Gr 1-6),776,253
-MV002017,Makunudhoo,Haa Dhaalu,education,school_primary,182,True,0.0,MV002017,Makunudhoo,Makunudhoo — primary school (Gr 1-6),1265,486
-MV003001,Kan'ditheemu,Shaviyani,education,school_primary,182,True,0.0,MV003001,Kan'ditheemu,Kaditheemu — primary school (Gr 1-6),1193,460
-MV003002,Noomaraa,Shaviyani,education,school_primary,182,True,0.0,MV003002,Noomaraa,Noomaraa — primary school (Gr 1-6),371,127
-MV003003,Goidhoo,Shaviyani,education,school_primary,182,True,0.0,MV003003,Goidhoo,Goidhoo — primary school (Gr 1-6),592,194
-MV003004,Feydhoo,Shaviyani,education,school_primary,182,True,0.0,MV003004,Feydhoo,Feydhoo — primary school (Gr 1-6),854,306
-MV003005,Feevah,Shaviyani,education,school_primary,182,True,0.0,MV003005,Feevah,Feevah — primary school (Gr 1-6),694,235
-MV003006,Bileiyfahi,Shaviyani,education,school_primary,182,True,0.0,MV003006,Bileiyfahi,Bilehffahi — primary school (Gr 1-6),502,178
-MV003007,Foakaidhoo,Shaviyani,education,school_primary,182,True,0.0,MV003007,Foakaidhoo,Foakaidhoo — primary school (Gr 1-6),1571,635
-MV003008,Narudhoo,Shaviyani,education,school_primary,182,True,0.0,MV003008,Narudhoo,Narudhoo — primary school (Gr 1-6),544,200
-MV003010,Maroshi,Shaviyani,education,school_primary,182,True,0.0,MV003010,Maroshi,Maroshi — primary school (Gr 1-6),479,144
-MV003011,Lhaimagu,Shaviyani,education,school_primary,182,True,0.0,MV003011,Lhaimagu,Lhaimagu — primary school (Gr 1-6),684,214
-MV003013,Komandoo,Shaviyani,education,school_primary,182,True,0.0,MV003013,Komandoo,Komandoo — primary school (Gr 1-6),921,286
-MV003014,Maaun'goodhoo,Shaviyani,education,school_primary,182,True,0.0,MV003014,Maaun'goodhoo,Maaugoodhoo — primary school (Gr 1-6),944,326
-MV003015,Funadhoo,Shaviyani,education,school_primary,182,True,0.0,MV003015,Funadhoo,Funadhoo — primary school (Gr 1-6),2255,766
-MV003016,Milandhoo,Shaviyani,education,school_primary,182,True,0.0,MV003016,Milandhoo,Milandhoo — primary school (Gr 1-6),2094,802
-MV004001,Hen'badhoo,Noonu,education,school_primary,182,True,0.0,MV004001,Hen'badhoo,Henbadhoo — primary school (Gr 1-6),638,227
-MV004002,Ken'dhikulhudhoo,Noonu,education,school_primary,182,True,0.0,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — primary school (Gr 1-6),1556,583
-MV004003,Maalhendhoo,Noonu,education,school_primary,182,True,0.0,MV004003,Maalhendhoo,Maalhendhoo — primary school (Gr 1-6),724,264
-MV004004,Kudafari,Noonu,education,school_primary,182,True,0.0,MV004004,Kudafari,Kudafari — primary school (Gr 1-6),628,231
-MV004005,Landhoo,Noonu,education,school_primary,182,True,0.0,MV004005,Landhoo,Landhoo — primary school (Gr 1-6),757,278
-MV004006,Maafaru,Noonu,education,school_primary,182,True,0.0,MV004006,Maafaru,Maafaru — primary school (Gr 1-6),919,283
-MV004007,Lhohi,Noonu,education,school_primary,182,True,0.0,MV004007,Lhohi,Lhohi — primary school (Gr 1-6),692,231
-MV004008,Miladhoo,Noonu,education,school_primary,182,True,0.0,MV004008,Miladhoo,Miladhoo — primary school (Gr 1-6),934,337
-MV004009,Magoodhoo,Noonu,education,school_primary,182,True,0.0,MV004009,Magoodhoo,Magoodhoo — primary school (Gr 1-6),305,112
-MV004010,Manadhoo,Noonu,education,school_primary,182,True,0.0,MV004010,Manadhoo,Manadhoo — primary school (Gr 1-6),1745,519
-MV004011,Holhudhoo,Noonu,education,school_primary,182,True,0.0,MV004011,Holhudhoo,Holhudhoo — primary school (Gr 1-6),1428,460
-MV004012,Fohdhoo,Noonu,education,school_primary,182,True,0.0,MV004012,Fohdhoo,Fodhdhoo — primary school (Gr 1-6),345,80
-MV004013,Velidhoo,Noonu,education,school_primary,182,True,0.0,MV004013,Velidhoo,Velidhoo — primary school (Gr 1-6),1832,536
-MV005001,Hinnavaru,Lhaviyani,education,school_primary,182,True,0.0,MV005001,Hinnavaru,Hinnavaru — primary school (Gr 1-6),2286,702
-MV005002,Naifaru,Lhaviyani,education,school_primary,182,True,0.0,MV005002,Naifaru,Naifaru — primary school (Gr 1-6),4832,1437
-MV005003,Kurendhoo,Lhaviyani,education,school_primary,182,True,0.0,MV005003,Kurendhoo,Kurendhoo — primary school (Gr 1-6),1171,364
-MV005004,Olhuvelifushi,Lhaviyani,education,school_primary,182,True,0.0,MV005004,Olhuvelifushi,Olhuvelifushi — primary school (Gr 1-6),703,246
-MV006001,Alifushi,Raa,education,school_primary,182,True,0.0,MV006001,Alifushi,Alifushi — primary school (Gr 1-6),1859,576
-MV006002,Vaadhoo,Raa,education,school_primary,182,True,0.0,MV006002,Vaadhoo,Vaadhoo — primary school (Gr 1-6),452,148
-MV006003,Rasgetheemu,Raa,education,school_primary,182,True,0.0,MV006003,Rasgetheemu,Rasgetheemu — primary school (Gr 1-6),537,168
-MV006004,An'golhitheemu,Raa,education,school_primary,182,True,0.0,MV006004,An'golhitheemu,Agolhitheemu — primary school (Gr 1-6),381,118
-MV006005,Hulhudhuffaaru,Raa,education,school_primary,182,True,0.0,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — primary school (Gr 1-6),1228,426
-MV006006,Un'goofaaru,Raa,education,school_primary,182,True,0.0,MV006006,Un'goofaaru,Ugoofaaru — primary school (Gr 1-6),1754,571
-MV006008,Maakurathu,Raa,education,school_primary,182,True,0.0,MV006008,Maakurathu,Maakurathu — primary school (Gr 1-6),956,330
-MV006009,Rasmaadhoo,Raa,education,school_primary,182,True,0.0,MV006009,Rasmaadhoo,Rasmaadhoo — primary school (Gr 1-6),554,163
-MV006010,Innamaadhoo,Raa,education,school_primary,182,True,0.0,MV006010,Innamaadhoo,Innamaadhoo — primary school (Gr 1-6),663,183
-MV006011,Maduvvari,Raa,education,school_primary,182,True,0.0,MV006011,Maduvvari,Maduvvari — primary school (Gr 1-6),1760,594
-MV006012,In'guraidhoo,Raa,education,school_primary,182,True,0.0,MV006012,In'guraidhoo,Iguraidhoo — primary school (Gr 1-6),1278,478
-MV006013,Fainu,Raa,education,school_primary,182,True,0.0,MV006013,Fainu,Fainu — primary school (Gr 1-6),423,133
-MV006014,Meedhoo,Raa,education,school_primary,182,True,0.0,MV006014,Meedhoo,Meedhoo — primary school (Gr 1-6),1872,615
-MV006015,Kinolhas,Raa,education,school_primary,182,True,0.0,MV006015,Kinolhas,Kinolhas — primary school (Gr 1-6),543,211
-MV006019,Dhuvaafaru,Raa,education,school_primary,182,True,0.0,MV006019,Dhuvaafaru,Dhuvaafaru — primary school (Gr 1-6),3321,1214
-MV007001,Kudarikilu,Baa,education,school_primary,182,True,0.0,MV007001,Kudarikilu,Kudarikilu — primary school (Gr 1-6),557,162
-MV007002,Kamadhoo,Baa,education,school_primary,182,True,0.0,MV007002,Kamadhoo,Kamadhoo — primary school (Gr 1-6),552,113
-MV007003,Kendhoo,Baa,education,school_primary,182,True,0.0,MV007003,Kendhoo,Kendhoo — primary school (Gr 1-6),1002,346
-MV007004,Kihaadhoo,Baa,education,school_primary,182,True,0.0,MV007004,Kihaadhoo,Kihaadhoo — primary school (Gr 1-6),481,196
-MV007005,Dhonfanu,Baa,education,school_primary,182,True,0.0,MV007005,Dhonfanu,Dhonfanu — primary school (Gr 1-6),398,128
-MV007006,Dharavandhoo,Baa,education,school_primary,182,True,0.0,MV007006,Dharavandhoo,Dharavandhoo — primary school (Gr 1-6),997,286
-MV007007,Maalhos,Baa,education,school_primary,182,True,0.0,MV007007,Maalhos,Maalhos — primary school (Gr 1-6),572,201
-MV007008,Eydhafushi,Baa,education,school_primary,182,True,0.0,MV007008,Eydhafushi,Eydhafushi — primary school (Gr 1-6),2581,844
-MV007009,Thulhaadhoo,Baa,education,school_primary,182,True,0.0,MV007009,Thulhaadhoo,Thulhaadhoo — primary school (Gr 1-6),1625,502
-MV007010,Hithaadhoo,Baa,education,school_primary,182,True,0.0,MV007010,Hithaadhoo,Hithaadhoo — primary school (Gr 1-6),744,282
-MV007011,Fulhadhoo,Baa,education,school_primary,182,True,0.0,MV007011,Fulhadhoo,Fulhadhoo — primary school (Gr 1-6),341,66
-MV007012,Fehendhoo,Baa,education,school_primary,182,True,0.0,MV007012,Fehendhoo,Fehendhoo — primary school (Gr 1-6),198,51
-MV007013,Goidhoo,Baa,education,school_primary,182,True,0.0,MV007013,Goidhoo,Goidhoo — primary school (Gr 1-6),583,171
-MV008001,Thoddoo,Alifu Alifu,education,school_primary,182,True,0.0,MV008001,Thoddoo,Thoddoo — primary school (Gr 1-6),1924,552
-MV008002,Rasdhoo,Alifu Alifu,education,school_primary,182,True,0.0,MV008002,Rasdhoo,Rasdhoo — primary school (Gr 1-6),1282,352
-MV008003,Ukulhas,Alifu Alifu,education,school_primary,182,True,0.0,MV008003,Ukulhas,Ukulhas — primary school (Gr 1-6),1284,462
-MV008004,Mathiveri,Alifu Alifu,education,school_primary,182,True,0.0,MV008004,Mathiveri,Mathiveri — primary school (Gr 1-6),878,317
-MV008005,Bodufolhudhoo,Alifu Alifu,education,school_primary,182,True,0.0,MV008005,Bodufolhudhoo,Bodufolhudhoo — primary school (Gr 1-6),704,254
-MV008006,Feridhoo,Alifu Alifu,education,school_primary,182,True,0.0,MV008006,Feridhoo,Feridhoo — primary school (Gr 1-6),544,167
-MV008007,Maalhos,Alifu Alifu,education,school_primary,182,True,0.0,MV008007,Maalhos,Maalhos — primary school (Gr 1-6),516,166
-MV008008,Himendhoo,Alifu Alifu,education,school_primary,182,True,0.0,MV008008,Himendhoo,Himandhoo — primary school (Gr 1-6),885,321
-MV009001,Kaashidhoo,Kaafu,education,school_primary,182,True,0.0,MV009001,Kaashidhoo,Kaashidhoo — primary school (Gr 1-6),2528,682
-MV009002,Gaafaru,Kaafu,education,school_primary,182,True,0.0,MV009002,Gaafaru,Gaafaru — primary school (Gr 1-6),1294,503
-MV009003,Dhiffushi,Kaafu,education,school_primary,182,True,0.0,MV009003,Dhiffushi,Dhiffushi — primary school (Gr 1-6),1270,373
-MV009004,Thulusdhoo,Kaafu,education,school_primary,182,True,0.0,MV009004,Thulusdhoo,Thulusdhoo — primary school (Gr 1-6),1801,390
-MV009005,Huraa,Kaafu,education,school_primary,182,True,0.0,MV009005,Huraa,Huraa — primary school (Gr 1-6),1654,410
-MV009006,Hinmafushi,Kaafu,education,school_primary,182,True,0.0,MV009006,Hinmafushi,Himmafushi — primary school (Gr 1-6),2012,330
-MV009007,Gulhi,Kaafu,education,school_primary,182,True,0.0,MV009007,Gulhi,Gulhi — primary school (Gr 1-6),976,280
-MV009008,Maafushi,Kaafu,education,school_primary,182,True,0.0,MV009008,Maafushi,Maafushi — primary school (Gr 1-6),4471,736
-MV009009,Guraidhoo,Kaafu,education,school_primary,182,True,0.0,MV009009,Guraidhoo,Guraidhoo — primary school (Gr 1-6),1743,471
-MV010001,Fulidhoo,Vaavu,education,school_primary,182,True,0.0,MV010001,Fulidhoo,Fulidhoo — primary school (Gr 1-6),400,86
-MV010002,Thinadhoo,Vaavu,education,school_primary,182,True,0.0,MV010002,Thinadhoo,Thinadhoo — primary school (Gr 1-6),258,6
-MV010003,Felidhoo,Vaavu,education,school_primary,182,True,0.0,MV010003,Felidhoo,Felidhoo — primary school (Gr 1-6),620,170
-MV010004,Keyodhoo,Vaavu,education,school_primary,182,True,0.0,MV010004,Keyodhoo,Keyodhoo — primary school (Gr 1-6),641,183
-MV010005,Rakeedhoo,Vaavu,education,school_primary,182,False,1.14,MV010002,Thinadhoo,Thinadhoo — primary school (Gr 1-6),76,4
-MV011001,Feeali,Faafu,education,school_primary,182,True,0.0,MV011001,Feeali,Feeali — primary school (Gr 1-6),922,370
-MV011002,Bileiydhoo,Faafu,education,school_primary,182,True,0.0,MV011002,Bileiydhoo,Biledhdhoo — primary school (Gr 1-6),967,372
-MV011003,Magoodhoo,Faafu,education,school_primary,182,True,0.0,MV011003,Magoodhoo,Magoodhoo — primary school (Gr 1-6),702,278
-MV011004,Dharan'boodhoo,Faafu,education,school_primary,182,True,0.0,MV011004,Dharan'boodhoo,Dharaboodhoo — primary school (Gr 1-6),455,170
-MV011005,Nilandhoo,Faafu,education,school_primary,182,True,0.0,MV011005,Nilandhoo,Nilandhoo — primary school (Gr 1-6),1823,680
-MV012001,Meedhoo,Dhaalu,education,school_primary,182,True,0.0,MV012001,Meedhoo,Meedhoo — primary school (Gr 1-6),1118,306
-MV012002,Ban'didhoo,Dhaalu,education,school_primary,182,True,0.0,MV012002,Ban'didhoo,Badidhoo — primary school (Gr 1-6),629,216
-MV012003,Rin'budhoo,Dhaalu,education,school_primary,182,True,0.0,MV012003,Rin'budhoo,Ribudhoo — primary school (Gr 1-6),316,98
-MV012004,Hulhudheli,Dhaalu,education,school_primary,182,True,0.0,MV012004,Hulhudheli,Hulhudheli — primary school (Gr 1-6),764,250
-MV012007,Maaen'boodhoo,Dhaalu,education,school_primary,182,True,0.0,MV012007,Maaen'boodhoo,Maaeboodhoo — primary school (Gr 1-6),679,208
-MV012008,Kudahuvadhoo,Dhaalu,education,school_primary,182,True,0.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — primary school (Gr 1-6),3131,1002
-MV013001,Raiymandhoo,Meemu,education,school_primary,182,True,0.0,MV013001,Raiymandhoo,Raimandhoo — primary school (Gr 1-6),171,22
-MV013003,Veyvah,Meemu,education,school_primary,182,True,0.0,MV013003,Veyvah,Veyvah — primary school (Gr 1-6),304,78
-MV013004,Mulah,Meemu,education,school_primary,182,True,0.0,MV013004,Mulah,Mulah — primary school (Gr 1-6),1426,447
-MV013005,Muli,Meemu,education,school_primary,182,True,0.0,MV013005,Muli,Muli — primary school (Gr 1-6),949,257
-MV013006,Naalaafushi,Meemu,education,school_primary,182,True,0.0,MV013006,Naalaafushi,Naalaafushi — primary school (Gr 1-6),430,118
-MV013007,Kolhufushi,Meemu,education,school_primary,182,True,0.0,MV013007,Kolhufushi,Kolhufushi — primary school (Gr 1-6),793,251
-MV013008,Dhiggaru,Meemu,education,school_primary,182,True,0.0,MV013008,Dhiggaru,Dhiggaru — primary school (Gr 1-6),1099,349
-MV013009,Maduvvari,Meemu,education,school_primary,182,True,0.0,MV013009,Maduvvari,Maduvvari — primary school (Gr 1-6),318,79
-MV014001,Burunee,Thaa,education,school_primary,182,True,0.0,MV014001,Burunee,Buruni — primary school (Gr 1-6),414,136
-MV014002,Vilufushi,Thaa,education,school_primary,182,True,0.0,MV014002,Vilufushi,Vilufushi — primary school (Gr 1-6),1081,367
-MV014003,Madifushi,Thaa,education,school_primary,182,True,0.0,MV014003,Madifushi,Madifushi — primary school (Gr 1-6),858,299
-MV014004,Dhiyamigili,Thaa,education,school_primary,182,True,0.0,MV014004,Dhiyamigili,Dhiyamigili — primary school (Gr 1-6),649,257
-MV014005,Guraidhoo,Thaa,education,school_primary,182,True,0.0,MV014005,Guraidhoo,Guraidhoo — primary school (Gr 1-6),1293,443
-MV014006,Kan'doodhoo,Thaa,education,school_primary,182,True,0.0,MV014006,Kan'doodhoo,Kadoodhoo — primary school (Gr 1-6),456,139
-MV014007,Vandhoo,Thaa,education,school_primary,182,True,0.0,MV014007,Vandhoo,Vandhoo — primary school (Gr 1-6),364,97
-MV014008,Hirilandhoo,Thaa,education,school_primary,182,True,0.0,MV014008,Hirilandhoo,Hirilandhoo — primary school (Gr 1-6),1146,328
-MV014009,Gaadhiffushi,Thaa,education,school_primary,182,True,0.0,MV014009,Gaadhiffushi,Gaadhiffushi — primary school (Gr 1-6),317,82
-MV014010,Thimarafushi,Thaa,education,school_primary,182,True,0.0,MV014010,Thimarafushi,Thimarafushi — primary school (Gr 1-6),1229,375
-MV014011,Veymandoo,Thaa,education,school_primary,182,True,0.0,MV014011,Veymandoo,Veymandoo — primary school (Gr 1-6),1321,452
-MV014012,Kin'bidhoo,Thaa,education,school_primary,182,True,0.0,MV014012,Kin'bidhoo,Kibidhoo — primary school (Gr 1-6),715,266
-MV014013,Omadhoo,Thaa,education,school_primary,182,True,0.0,MV014013,Omadhoo,Omadhoo — primary school (Gr 1-6),417,137
-MV015001,Isdhoo,Laamu,education,school_primary,182,True,0.0,MV015001,Isdhoo,Isdhoo — primary school (Gr 1-6),929,309
-MV015002,Dhan'bidhoo,Laamu,education,school_primary,182,True,0.0,MV015002,Dhan'bidhoo,Dhabidhoo — primary school (Gr 1-6),606,207
-MV015003,Maabaidhoo,Laamu,education,school_primary,182,True,0.0,MV015003,Maabaidhoo,Maabaidhoo — primary school (Gr 1-6),565,203
-MV015004,Mundoo,Laamu,education,school_primary,182,True,0.0,MV015004,Mundoo,Mundoo — primary school (Gr 1-6),176,48
-MV015005,Kalaidhoo,Laamu,education,school_primary,182,True,0.0,MV015005,Kalaidhoo,Kalaidhoo — primary school (Gr 1-6),655,221
-MV015007,Maavah,Laamu,education,school_primary,182,True,0.0,MV015007,Maavah,Maavah — primary school (Gr 1-6),1379,472
-MV015008,Fonadhoo,Laamu,education,school_primary,182,True,0.0,MV015008,Fonadhoo,Fonadhoo — primary school (Gr 1-6),2986,986
-MV015010,Maamendhoo,Laamu,education,school_primary,182,True,0.0,MV015010,Maamendhoo,Maamendhoo — primary school (Gr 1-6),879,259
-MV015011,Hithadhoo,Laamu,education,school_primary,182,True,0.0,MV015011,Hithadhoo,Hithadhoo — primary school (Gr 1-6),1108,380
-MV015012,Kunahandhoo,Laamu,education,school_primary,182,True,0.0,MV015012,Kunahandhoo,Kunahandhoo — primary school (Gr 1-6),601,211
-MV015013,Gan,Laamu,education,school_primary,182,False,0.56,MV015004,Mundoo,Mundoo — primary school (Gr 1-6),4815,1457
-MV016001,Kolamaafushi,Gaafu Alifu,education,school_primary,182,True,0.0,MV016001,Kolamaafushi,Kolamaafushi — primary school (Gr 1-6),636,148
-MV016002,Vilin'gili,Gaafu Alifu,education,school_primary,182,True,0.0,MV016002,Vilin'gili,Viligili — primary school (Gr 1-6),2900,889
-MV016003,Maamendhoo,Gaafu Alifu,education,school_primary,182,True,0.0,MV016003,Maamendhoo,Maamendhoo — primary school (Gr 1-6),1201,391
-MV016004,Nilandhoo,Gaafu Alifu,education,school_primary,182,True,0.0,MV016004,Nilandhoo,Nilandhoo — primary school (Gr 1-6),545,159
-MV016005,Dhaandhoo,Gaafu Alifu,education,school_primary,182,True,0.0,MV016005,Dhaandhoo,Dhaandhoo — primary school (Gr 1-6),1044,269
-MV016006,Dhevvadhoo,Gaafu Alifu,education,school_primary,182,True,0.0,MV016006,Dhevvadhoo,Dhevvadhoo — primary school (Gr 1-6),599,143
-MV016007,Kon'dey,Gaafu Alifu,education,school_primary,182,True,0.0,MV016007,Kon'dey,Kodey — primary school (Gr 1-6),328,95
-MV016009,Gemanafushi,Gaafu Alifu,education,school_primary,182,True,0.0,MV016009,Gemanafushi,Gemanafushi — primary school (Gr 1-6),1318,464
-MV016010,Kan'duhulhudhoo,Gaafu Alifu,education,school_primary,182,True,0.0,MV016010,Kan'duhulhudhoo,Kanduhulhudhoo — primary school (Gr 1-6),619,192
-MV017001,Madaveli,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017001,Madaveli,Madaveli — primary school (Gr 1-6),1219,407
-MV017002,Hoadehdhoo,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017002,Hoadehdhoo,Hoadedhdhoo — primary school (Gr 1-6),885,304
-MV017003,Nadellaa,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017003,Nadellaa,Nadallaa — primary school (Gr 1-6),581,159
-MV017004,Gahdhoo,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017004,Gahdhoo,Gadhdhoo — primary school (Gr 1-6),1414,403
-MV017005,Rathafandhoo,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017005,Rathafandhoo,Rathafandhoo — primary school (Gr 1-6),431,97
-MV017006,Vaadhoo,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017006,Vaadhoo,Vaadhoo — primary school (Gr 1-6),516,100
-MV017007,Fiyoari,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017007,Fiyoari,Fiyoari — primary school (Gr 1-6),637,206
-MV017008,Faresmaathodaa,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017008,Faresmaathodaa,Fares-Maathodaa — primary school (Gr 1-6),858,235
-MV017010,Thinadhoo,Gaafu Dhaalu,education,school_primary,182,True,0.0,MV017010,Thinadhoo,Thinadhoo — primary school (Gr 1-6),6217,2134
-MV018001,Fuvahmulah,Gnaviyani,education,school_primary,182,True,0.0,MV018001,Fuvahmulah,Fuvahmulah — primary school (Gr 1-6),9177,2761
-MV019001,Meedhoo,Seenu,education,school_primary,182,True,0.0,MV019001,Meedhoo,Meedhoo — primary school (Gr 1-6),1892,541
-MV019002,Hithadhoo,Seenu,education,school_primary,182,True,0.0,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),13759,3560
-MV019003,Maradhoo,Seenu,education,school_primary,182,True,0.0,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),2542,712
-MV019004,Feydhoo,Seenu,education,school_primary,182,True,0.0,MV019004,Feydhoo,Feydhoo — primary school (Gr 1-6),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_primary,182,False,0.35,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_primary,182,False,0.1,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),1182,259
-MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — primary school (Gr 1-6),484,148
-MV020002,Omadhoo,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020002,Omadhoo,Omadhoo — primary school (Gr 1-6),913,344
-MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — primary school (Gr 1-6),509,173
-MV020004,Mahibadhoo,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020004,Mahibadhoo,Mahibadhoo — primary school (Gr 1-6),2580,796
-MV020005,Mandhoo,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020005,Mandhoo,Mandhoo — primary school (Gr 1-6),418,85
-MV020006,Dhan'gethi,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020006,Dhan'gethi,Dhagethi — primary school (Gr 1-6),936,256
-MV020007,Dhigurah,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020007,Dhigurah,Dhigurah — primary school (Gr 1-6),761,153
-MV020008,Fenfushi,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020008,Fenfushi,Fenfushi — primary school (Gr 1-6),1000,333
-MV020009,Dhihdhoo,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020009,Dhihdhoo,Dhidhdhoo — primary school (Gr 1-6),141,26
-MV020010,Maamin'gili,Alifu Dhaalu,education,school_primary,182,True,0.0,MV020010,Maamin'gili,Maamigili — primary school (Gr 1-6),2798,833
-MLE,Malé City,Male,education,school_primary,182,False,0.4,MV009006,Hinmafushi,Himmafushi — primary school (Gr 1-6),211908,34823
+MV001001,Thuraakunu,Haa Alifu,education,school_higher_secondary,44,False,2.63,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),427,109
+MV001002,Uligamu,Haa Alifu,education,school_higher_secondary,44,False,2.53,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),400,110
+MV001005,Mulhadhoo,Haa Alifu,education,school_higher_secondary,44,False,0.66,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),286,79
+MV001006,Huvarafushi,Haa Alifu,education,school_higher_secondary,44,False,0.47,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),1841,547
+MV001007,Ihavandhoo,Haa Alifu,education,school_higher_secondary,44,True,0.0,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),2873,1124
+MV001008,Kelaa,Haa Alifu,education,school_higher_secondary,44,False,4.98,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),1115,327
+MV001009,Vashafaru,Haa Alifu,education,school_higher_secondary,44,False,0.82,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),476,138
+MV001010,Dhihdhoo,Haa Alifu,education,school_higher_secondary,44,True,0.0,MV001010,Dhihdhoo,Dhidhdhoo — higher secondary (Gr 11-12),3412,1260
+MV001011,Filladhoo,Haa Alifu,education,school_higher_secondary,44,False,7.61,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),559,171
+MV001012,Maarandhoo,Haa Alifu,education,school_higher_secondary,44,False,1.23,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),668,258
+MV001013,Thakandhoo,Haa Alifu,education,school_higher_secondary,44,False,0.88,MV001007,Ihavandhoo,Ihavandhoo — higher secondary (Gr 11-12),279,42
+MV001014,Utheemu,Haa Alifu,education,school_higher_secondary,44,False,0.72,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),612,213
+MV001015,Muraidhoo,Haa Alifu,education,school_higher_secondary,44,False,,,,,534,207
+MV001016,Baarah,Haa Alifu,education,school_higher_secondary,44,False,2.17,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1141,406
+MV002003,Hanimaadhoo,Haa Dhaalu,education,school_higher_secondary,44,True,0.0,MV002003,Hanimaadhoo,Hanimaadhoo — higher secondary (Gr 11-12),2664,667
+MV002004,Finey,Haa Dhaalu,education,school_higher_secondary,44,False,0.96,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),409,135
+MV002005,Naivaadhoo,Haa Dhaalu,education,school_higher_secondary,44,False,0.29,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),495,159
+MV002006,Hirimaradhoo,Haa Dhaalu,education,school_higher_secondary,44,False,2.13,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),293,67
+MV002007,Nolhivaranfaru,Haa Dhaalu,education,school_higher_secondary,44,False,0.49,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1254,426
+MV002008,Nellaidhoo,Haa Dhaalu,education,school_higher_secondary,44,True,0.0,MV002008,Nellaidhoo,Nellaidhoo — higher secondary (Gr 11-12),1038,393
+MV002009,Nolhivaramu,Haa Dhaalu,education,school_higher_secondary,44,False,0.39,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1985,842
+MV002010,Kurin'bee,Haa Dhaalu,education,school_higher_secondary,44,False,0.59,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),492,172
+MV002012,Kulhudhuffushi,Haa Dhaalu,education,school_higher_secondary,44,True,0.0,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),10131,3601
+MV002013,Kumundhoo,Haa Dhaalu,education,school_higher_secondary,44,False,0.35,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),997,324
+MV002014,Neykurendhoo,Haa Dhaalu,education,school_higher_secondary,44,False,0.5,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),641,206
+MV002015,Vaikaradhoo,Haa Dhaalu,education,school_higher_secondary,44,False,0.55,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),776,253
+MV002017,Makunudhoo,Haa Dhaalu,education,school_higher_secondary,44,False,0.93,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1265,486
+MV003001,Kan'ditheemu,Shaviyani,education,school_higher_secondary,44,False,0.69,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),1193,460
+MV003002,Noomaraa,Shaviyani,education,school_higher_secondary,44,False,3.13,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),371,127
+MV003003,Goidhoo,Shaviyani,education,school_higher_secondary,44,False,1.12,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),592,194
+MV003004,Feydhoo,Shaviyani,education,school_higher_secondary,44,False,2.13,MV003013,Komandoo,Komandoo — higher secondary (Gr 11-12),854,306
+MV003005,Feevah,Shaviyani,education,school_higher_secondary,44,False,1.35,MV003007,Foakaidhoo,Foakaidhoo — higher secondary (Gr 11-12),694,235
+MV003006,Bileiyfahi,Shaviyani,education,school_higher_secondary,44,False,2.18,MV002012,Kulhudhuffushi,Kulhudhuffushi — higher secondary (Gr 11-12),502,178
+MV003007,Foakaidhoo,Shaviyani,education,school_higher_secondary,44,True,0.0,MV003007,Foakaidhoo,Foakaidhoo — higher secondary (Gr 11-12),1571,635
+MV003008,Narudhoo,Shaviyani,education,school_higher_secondary,44,False,0.1,MV003016,Milandhoo,Milandhoo — higher secondary (Gr 11-12),544,200
+MV003010,Maroshi,Shaviyani,education,school_higher_secondary,44,False,3.48,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),479,144
+MV003011,Lhaimagu,Shaviyani,education,school_higher_secondary,44,False,1.7,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),684,214
+MV003013,Komandoo,Shaviyani,education,school_higher_secondary,44,True,0.0,MV003013,Komandoo,Komandoo — higher secondary (Gr 11-12),921,286
+MV003014,Maaun'goodhoo,Shaviyani,education,school_higher_secondary,44,False,1.06,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),944,326
+MV003015,Funadhoo,Shaviyani,education,school_higher_secondary,44,True,0.0,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),2255,766
+MV003016,Milandhoo,Shaviyani,education,school_higher_secondary,44,True,0.0,MV003016,Milandhoo,Milandhoo — higher secondary (Gr 11-12),2094,802
+MV004001,Hen'badhoo,Noonu,education,school_higher_secondary,44,False,0.51,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),638,227
+MV004002,Ken'dhikulhudhoo,Noonu,education,school_higher_secondary,44,True,0.0,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),1556,583
+MV004003,Maalhendhoo,Noonu,education,school_higher_secondary,44,False,2.9,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),724,264
+MV004004,Kudafari,Noonu,education,school_higher_secondary,44,False,0.47,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),628,231
+MV004005,Landhoo,Noonu,education,school_higher_secondary,44,False,0.84,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),757,278
+MV004006,Maafaru,Noonu,education,school_higher_secondary,44,False,0.97,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),919,283
+MV004007,Lhohi,Noonu,education,school_higher_secondary,44,False,1.91,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),692,231
+MV004008,Miladhoo,Noonu,education,school_higher_secondary,44,False,1.74,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),934,337
+MV004009,Magoodhoo,Noonu,education,school_higher_secondary,44,False,0.64,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),305,112
+MV004010,Manadhoo,Noonu,education,school_higher_secondary,44,False,1.51,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — higher secondary (Gr 11-12),1745,519
+MV004011,Holhudhoo,Noonu,education,school_higher_secondary,44,True,0.0,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),1428,460
+MV004012,Fohdhoo,Noonu,education,school_higher_secondary,44,False,0.55,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),345,80
+MV004013,Velidhoo,Noonu,education,school_higher_secondary,44,False,0.47,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),1832,536
+MV005001,Hinnavaru,Lhaviyani,education,school_higher_secondary,44,True,0.0,MV005001,Hinnavaru,Hinnavaru — higher secondary (Gr 11-12),2286,702
+MV005002,Naifaru,Lhaviyani,education,school_higher_secondary,44,True,0.0,MV005002,Naifaru,Naifaru — higher secondary (Gr 11-12),4832,1437
+MV005003,Kurendhoo,Lhaviyani,education,school_higher_secondary,44,False,0.42,MV005002,Naifaru,Naifaru — higher secondary (Gr 11-12),1171,364
+MV005004,Olhuvelifushi,Lhaviyani,education,school_higher_secondary,44,False,2.31,MV005002,Naifaru,Naifaru — higher secondary (Gr 11-12),703,246
+MV006001,Alifushi,Raa,education,school_higher_secondary,44,True,0.0,MV006001,Alifushi,Alifushi — higher secondary (Gr 11-12),1859,576
+MV006002,Vaadhoo,Raa,education,school_higher_secondary,44,False,0.8,MV004011,Holhudhoo,Holhudhoo — higher secondary (Gr 11-12),452,148
+MV006003,Rasgetheemu,Raa,education,school_higher_secondary,44,False,0.4,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — higher secondary (Gr 11-12),537,168
+MV006004,An'golhitheemu,Raa,education,school_higher_secondary,44,False,1.83,MV006001,Alifushi,Alifushi — higher secondary (Gr 11-12),381,118
+MV006005,Hulhudhuffaaru,Raa,education,school_higher_secondary,44,True,0.0,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — higher secondary (Gr 11-12),1228,426
+MV006006,Un'goofaaru,Raa,education,school_higher_secondary,44,False,1.57,MV003015,Funadhoo,Funadhoo — higher secondary (Gr 11-12),1754,571
+MV006008,Maakurathu,Raa,education,school_higher_secondary,44,False,1.87,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),956,330
+MV006009,Rasmaadhoo,Raa,education,school_higher_secondary,44,False,2.08,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),554,163
+MV006010,Innamaadhoo,Raa,education,school_higher_secondary,44,False,2.46,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),663,183
+MV006011,Maduvvari,Raa,education,school_higher_secondary,44,False,0.38,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),1760,594
+MV006012,In'guraidhoo,Raa,education,school_higher_secondary,44,False,1.48,MV006001,Alifushi,Alifushi — higher secondary (Gr 11-12),1278,478
+MV006013,Fainu,Raa,education,school_higher_secondary,44,False,2.33,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),423,133
+MV006014,Meedhoo,Raa,education,school_higher_secondary,44,True,0.0,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),1872,615
+MV006015,Kinolhas,Raa,education,school_higher_secondary,44,False,0.61,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),543,211
+MV006019,Dhuvaafaru,Raa,education,school_higher_secondary,44,False,1.01,MV006014,Meedhoo,Meedhoo — higher secondary (Gr 11-12),3321,1214
+MV007001,Kudarikilu,Baa,education,school_higher_secondary,44,False,1.7,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),557,162
+MV007002,Kamadhoo,Baa,education,school_higher_secondary,44,False,1.82,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),552,113
+MV007003,Kendhoo,Baa,education,school_higher_secondary,44,False,1.59,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),1002,346
+MV007004,Kihaadhoo,Baa,education,school_higher_secondary,44,False,0.56,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),481,196
+MV007005,Dhonfanu,Baa,education,school_higher_secondary,44,False,1.43,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),398,128
+MV007006,Dharavandhoo,Baa,education,school_higher_secondary,44,False,0.34,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),997,286
+MV007007,Maalhos,Baa,education,school_higher_secondary,44,False,0.27,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),572,201
+MV007008,Eydhafushi,Baa,education,school_higher_secondary,44,True,0.0,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),2581,844
+MV007009,Thulhaadhoo,Baa,education,school_higher_secondary,44,True,0.0,MV007009,Thulhaadhoo,Thulhaadhoo — higher secondary (Gr 11-12),1625,502
+MV007010,Hithaadhoo,Baa,education,school_higher_secondary,44,False,0.19,MV007009,Thulhaadhoo,Thulhaadhoo — higher secondary (Gr 11-12),744,282
+MV007011,Fulhadhoo,Baa,education,school_higher_secondary,44,False,1.4,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),341,66
+MV007012,Fehendhoo,Baa,education,school_higher_secondary,44,False,1.57,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),198,51
+MV007013,Goidhoo,Baa,education,school_higher_secondary,44,False,1.41,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),583,171
+MV008001,Thoddoo,Alifu Alifu,education,school_higher_secondary,44,True,0.0,MV008001,Thoddoo,Thoddoo — higher secondary (Gr 11-12),1924,552
+MV008002,Rasdhoo,Alifu Alifu,education,school_higher_secondary,44,False,0.46,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),1282,352
+MV008003,Ukulhas,Alifu Alifu,education,school_higher_secondary,44,True,0.0,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),1284,462
+MV008004,Mathiveri,Alifu Alifu,education,school_higher_secondary,44,False,1.68,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),878,317
+MV008005,Bodufolhudhoo,Alifu Alifu,education,school_higher_secondary,44,False,0.71,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),704,254
+MV008006,Feridhoo,Alifu Alifu,education,school_higher_secondary,44,False,1.84,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",544,167
+MV008007,Maalhos,Alifu Alifu,education,school_higher_secondary,44,False,2.16,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",516,166
+MV008008,Himendhoo,Alifu Alifu,education,school_higher_secondary,44,False,1.6,MV008003,Ukulhas,Ukulhas — higher secondary (Gr 11-12),885,321
+MV009001,Kaashidhoo,Kaafu,education,school_higher_secondary,44,False,1.03,MV007008,Eydhafushi,Eydhafushi — higher secondary (Gr 11-12),2528,682
+MV009002,Gaafaru,Kaafu,education,school_higher_secondary,44,False,3.02,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",1294,503
+MV009003,Dhiffushi,Kaafu,education,school_higher_secondary,44,False,1.06,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",1270,373
+MV009004,Thulusdhoo,Kaafu,education,school_higher_secondary,44,False,0.74,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",1801,390
+MV009005,Huraa,Kaafu,education,school_higher_secondary,44,False,1.27,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",1654,410
+MV009006,Hinmafushi,Kaafu,education,school_higher_secondary,44,False,0.38,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",2012,330
+MV009007,Gulhi,Kaafu,education,school_higher_secondary,44,False,0.37,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),976,280
+MV009008,Maafushi,Kaafu,education,school_higher_secondary,44,True,0.0,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),4471,736
+MV009009,Guraidhoo,Kaafu,education,school_higher_secondary,44,False,0.64,MV009008,Maafushi,Maafushi — higher secondary (Gr 11-12),1743,471
+MV010001,Fulidhoo,Vaavu,education,school_higher_secondary,44,False,0.63,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),400,86
+MV010002,Thinadhoo,Vaavu,education,school_higher_secondary,44,False,0.18,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),258,6
+MV010003,Felidhoo,Vaavu,education,school_higher_secondary,44,False,0.13,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),620,170
+MV010004,Keyodhoo,Vaavu,education,school_higher_secondary,44,True,0.0,MV010004,Keyodhoo,Keyodhoo — higher secondary (Gr 11-12),641,183
+MV010005,Rakeedhoo,Vaavu,education,school_higher_secondary,44,False,1.31,MV013004,Mulah,Mulah — higher secondary (Gr 11-12),76,4
+MV011001,Feeali,Faafu,education,school_higher_secondary,44,False,1.27,MV011002,Bileiydhoo,Biledhdhoo — higher secondary (Gr 11-12),922,370
+MV011002,Bileiydhoo,Faafu,education,school_higher_secondary,44,True,0.0,MV011002,Bileiydhoo,Biledhdhoo — higher secondary (Gr 11-12),967,372
+MV011003,Magoodhoo,Faafu,education,school_higher_secondary,44,False,0.35,MV011002,Bileiydhoo,Biledhdhoo — higher secondary (Gr 11-12),702,278
+MV011004,Dharan'boodhoo,Faafu,education,school_higher_secondary,44,False,0.24,MV011005,Nilandhoo,Nilandhoo — higher secondary (Gr 11-12),455,170
+MV011005,Nilandhoo,Faafu,education,school_higher_secondary,44,True,0.0,MV011005,Nilandhoo,Nilandhoo — higher secondary (Gr 11-12),1823,680
+MV012001,Meedhoo,Dhaalu,education,school_higher_secondary,44,True,0.0,MV012001,Meedhoo,Meedhoo — higher secondary (Gr 11-12),1118,306
+MV012002,Ban'didhoo,Dhaalu,education,school_higher_secondary,44,False,1.06,MV012001,Meedhoo,Meedhoo — higher secondary (Gr 11-12),629,216
+MV012003,Rin'budhoo,Dhaalu,education,school_higher_secondary,44,False,1.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),316,98
+MV012004,Hulhudheli,Dhaalu,education,school_higher_secondary,44,False,0.46,MV011005,Nilandhoo,Nilandhoo — higher secondary (Gr 11-12),764,250
+MV012007,Maaen'boodhoo,Dhaalu,education,school_higher_secondary,44,False,0.56,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),679,208
+MV012008,Kudahuvadhoo,Dhaalu,education,school_higher_secondary,44,True,0.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),3131,1002
+MV013001,Raiymandhoo,Meemu,education,school_higher_secondary,44,False,2.54,MV013008,Dhiggaru,Dhiggaru — higher secondary (Gr 11-12),171,22
+MV013003,Veyvah,Meemu,education,school_higher_secondary,44,False,0.44,MV013004,Mulah,Mulah — higher secondary (Gr 11-12),304,78
+MV013004,Mulah,Meemu,education,school_higher_secondary,44,True,0.0,MV013004,Mulah,Mulah — higher secondary (Gr 11-12),1426,447
+MV013005,Muli,Meemu,education,school_higher_secondary,44,True,0.0,MV013005,Muli,Muli — higher secondary (Gr 11-12),949,257
+MV013006,Naalaafushi,Meemu,education,school_higher_secondary,44,False,0.13,MV013005,Muli,Muli — higher secondary (Gr 11-12),430,118
+MV013007,Kolhufushi,Meemu,education,school_higher_secondary,44,True,0.0,MV013007,Kolhufushi,Kolhufushi — higher secondary (Gr 11-12),793,251
+MV013008,Dhiggaru,Meemu,education,school_higher_secondary,44,True,0.0,MV013008,Dhiggaru,Dhiggaru — higher secondary (Gr 11-12),1099,349
+MV013009,Maduvvari,Meemu,education,school_higher_secondary,44,False,0.26,MV013008,Dhiggaru,Dhiggaru — higher secondary (Gr 11-12),318,79
+MV014001,Burunee,Thaa,education,school_higher_secondary,44,False,3.42,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),414,136
+MV014002,Vilufushi,Thaa,education,school_higher_secondary,44,True,0.0,MV014002,Vilufushi,Vilufushi — higher secondary (Gr 11-12),1081,367
+MV014003,Madifushi,Thaa,education,school_higher_secondary,44,False,0.27,MV014005,Guraidhoo,Guraidhoo — higher secondary (Gr 11-12),858,299
+MV014004,Dhiyamigili,Thaa,education,school_higher_secondary,44,False,0.35,MV014005,Guraidhoo,Guraidhoo — higher secondary (Gr 11-12),649,257
+MV014005,Guraidhoo,Thaa,education,school_higher_secondary,44,True,0.0,MV014005,Guraidhoo,Guraidhoo — higher secondary (Gr 11-12),1293,443
+MV014006,Kan'doodhoo,Thaa,education,school_higher_secondary,44,False,0.84,MV012008,Kudahuvadhoo,Kudahuvadhoo — higher secondary (Gr 11-12),456,139
+MV014007,Vandhoo,Thaa,education,school_higher_secondary,44,False,0.57,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),364,97
+MV014008,Hirilandhoo,Thaa,education,school_higher_secondary,44,False,0.66,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),1146,328
+MV014009,Gaadhiffushi,Thaa,education,school_higher_secondary,44,False,0.44,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),317,82
+MV014010,Thimarafushi,Thaa,education,school_higher_secondary,44,False,0.25,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),1229,375
+MV014011,Veymandoo,Thaa,education,school_higher_secondary,44,True,0.0,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),1321,452
+MV014012,Kin'bidhoo,Thaa,education,school_higher_secondary,44,False,0.32,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),715,266
+MV014013,Omadhoo,Thaa,education,school_higher_secondary,44,False,0.35,MV014011,Veymandoo,Veymandoo — higher secondary (Gr 11-12),417,137
+MV015001,Isdhoo,Laamu,education,school_higher_secondary,44,False,3.4,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),929,309
+MV015002,Dhan'bidhoo,Laamu,education,school_higher_secondary,44,False,2.42,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),606,207
+MV015003,Maabaidhoo,Laamu,education,school_higher_secondary,44,False,1.82,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),565,203
+MV015004,Mundoo,Laamu,education,school_higher_secondary,44,False,2.2,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),176,48
+MV015005,Kalaidhoo,Laamu,education,school_higher_secondary,44,False,1.79,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),655,221
+MV015007,Maavah,Laamu,education,school_higher_secondary,44,True,0.0,MV015007,Maavah,Maavah — higher secondary (Gr 11-12),1379,472
+MV015008,Fonadhoo,Laamu,education,school_higher_secondary,44,True,0.0,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),2986,986
+MV015010,Maamendhoo,Laamu,education,school_higher_secondary,44,False,0.36,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),879,259
+MV015011,Hithadhoo,Laamu,education,school_higher_secondary,44,False,0.43,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),1108,380
+MV015012,Kunahandhoo,Laamu,education,school_higher_secondary,44,False,0.56,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),601,211
+MV015013,Gan,Laamu,education,school_higher_secondary,44,False,2.16,MV015008,Fonadhoo,Fonadhoo — higher secondary (Gr 11-12),4815,1457
+MV016001,Kolamaafushi,Gaafu Alifu,education,school_higher_secondary,44,False,0.68,MV016002,Vilin'gili,Viligili — higher secondary (Gr 11-12),636,148
+MV016002,Vilin'gili,Gaafu Alifu,education,school_higher_secondary,44,True,0.0,MV016002,Vilin'gili,Viligili — higher secondary (Gr 11-12),2900,889
+MV016003,Maamendhoo,Gaafu Alifu,education,school_higher_secondary,44,True,0.0,MV016003,Maamendhoo,Maamendhoo — higher secondary (Gr 11-12),1201,391
+MV016004,Nilandhoo,Gaafu Alifu,education,school_higher_secondary,44,False,0.28,MV016005,Dhaandhoo,Dhaandhoo — higher secondary (Gr 11-12),545,159
+MV016005,Dhaandhoo,Gaafu Alifu,education,school_higher_secondary,44,True,0.0,MV016005,Dhaandhoo,Dhaandhoo — higher secondary (Gr 11-12),1044,269
+MV016006,Dhevvadhoo,Gaafu Alifu,education,school_higher_secondary,44,False,0.79,MV016002,Vilin'gili,Viligili — higher secondary (Gr 11-12),599,143
+MV016007,Kon'dey,Gaafu Alifu,education,school_higher_secondary,44,False,0.43,MV016005,Dhaandhoo,Dhaandhoo — higher secondary (Gr 11-12),328,95
+MV016009,Gemanafushi,Gaafu Alifu,education,school_higher_secondary,44,False,1.62,MV017004,Gahdhoo,Gadhdhoo — higher secondary (Gr 11-12),1318,464
+MV016010,Kan'duhulhudhoo,Gaafu Alifu,education,school_higher_secondary,44,False,5.45,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),619,192
+MV017001,Madaveli,Gaafu Dhaalu,education,school_higher_secondary,44,False,0.53,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),1219,407
+MV017002,Hoadehdhoo,Gaafu Dhaalu,education,school_higher_secondary,44,False,0.73,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),885,304
+MV017003,Nadellaa,Gaafu Dhaalu,education,school_higher_secondary,44,False,,,,,581,159
+MV017004,Gahdhoo,Gaafu Dhaalu,education,school_higher_secondary,44,True,0.0,MV017004,Gahdhoo,Gadhdhoo — higher secondary (Gr 11-12),1414,403
+MV017005,Rathafandhoo,Gaafu Dhaalu,education,school_higher_secondary,44,False,1.57,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),431,97
+MV017006,Vaadhoo,Gaafu Dhaalu,education,school_higher_secondary,44,False,1.05,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),516,100
+MV017007,Fiyoari,Gaafu Dhaalu,education,school_higher_secondary,44,False,1.9,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),637,206
+MV017008,Faresmaathodaa,Gaafu Dhaalu,education,school_higher_secondary,44,False,0.9,MV017004,Gahdhoo,Gadhdhoo — higher secondary (Gr 11-12),858,235
+MV017010,Thinadhoo,Gaafu Dhaalu,education,school_higher_secondary,44,True,0.0,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),6217,2134
+MV018001,Fuvahmulah,Gnaviyani,education,school_higher_secondary,44,True,0.0,MV018001,Fuvahmulah,Fuvahmulah — higher secondary (Gr 11-12),9177,2761
+MV019001,Meedhoo,Seenu,education,school_higher_secondary,44,False,0.0,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1892,541
+MV019002,Hithadhoo,Seenu,education,school_higher_secondary,44,True,0.0,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),13759,3560
+MV019003,Maradhoo,Seenu,education,school_higher_secondary,44,False,0.45,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),2542,712
+MV019004,Feydhoo,Seenu,education,school_higher_secondary,44,False,0.25,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),4289,914
+MV019005,Maradhoofeydhoo,Seenu,education,school_higher_secondary,44,False,0.35,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1398,407
+MV019006,Hulhudhoo,Seenu,education,school_higher_secondary,44,False,0.1,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1182,259
+MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,0.59,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),484,148
+MV020002,Omadhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,0.28,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),913,344
+MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,0.3,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),509,173
+MV020004,Mahibadhoo,Alifu Dhaalu,education,school_higher_secondary,44,True,0.0,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),2580,796
+MV020005,Mandhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,2.03,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),418,85
+MV020006,Dhan'gethi,Alifu Dhaalu,education,school_higher_secondary,44,False,0.39,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),936,256
+MV020007,Dhigurah,Alifu Dhaalu,education,school_higher_secondary,44,False,1.64,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),761,153
+MV020008,Fenfushi,Alifu Dhaalu,education,school_higher_secondary,44,False,2.19,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),1000,333
+MV020009,Dhihdhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,1.96,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),141,26
+MV020010,Maamin'gili,Alifu Dhaalu,education,school_higher_secondary,44,False,0.71,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),2798,833
+MLE,Malé City,Male,education,school_higher_secondary,44,True,0.0,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — higher secondary (Gr 11-12)",211908,34823
+MV001001,Thuraakunu,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001001,Thuraakunu,Thuraakunu — lower secondary (Gr 7-10),427,109
+MV001002,Uligamu,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001002,Uligamu,Uligamu — lower secondary (Gr 7-10),400,110
+MV001005,Mulhadhoo,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001005,Mulhadhoo,Mulhadhoo — lower secondary (Gr 7-10),286,79
+MV001006,Huvarafushi,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001006,Huvarafushi,Hoarafushi — lower secondary (Gr 7-10),1841,547
+MV001007,Ihavandhoo,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001007,Ihavandhoo,Ihavandhoo — lower secondary (Gr 7-10),2873,1124
+MV001008,Kelaa,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001008,Kelaa,Kelaa — lower secondary (Gr 7-10),1115,327
+MV001009,Vashafaru,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001009,Vashafaru,Vashafaru — lower secondary (Gr 7-10),476,138
+MV001010,Dhihdhoo,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001010,Dhihdhoo,Dhidhdhoo — lower secondary (Gr 7-10),3412,1260
+MV001011,Filladhoo,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001011,Filladhoo,Filladhoo — lower secondary (Gr 7-10),559,171
+MV001012,Maarandhoo,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001012,Maarandhoo,Maarandhoo — lower secondary (Gr 7-10),668,258
+MV001013,Thakandhoo,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001013,Thakandhoo,Thakandhoo — lower secondary (Gr 7-10),279,42
+MV001014,Utheemu,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001014,Utheemu,Utheemu — lower secondary (Gr 7-10),612,213
+MV001015,Muraidhoo,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001015,Muraidhoo,Muraidhoo — lower secondary (Gr 7-10),534,207
+MV001016,Baarah,Haa Alifu,education,school_lower_secondary,181,True,0.0,MV001016,Baarah,Baarah — lower secondary (Gr 7-10),1141,406
+MV002003,Hanimaadhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002003,Hanimaadhoo,Hanimaadhoo — lower secondary (Gr 7-10),2664,667
+MV002004,Finey,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002004,Finey,Finey — lower secondary (Gr 7-10),409,135
+MV002005,Naivaadhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002005,Naivaadhoo,Naivaadhoo — lower secondary (Gr 7-10),495,159
+MV002006,Hirimaradhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002006,Hirimaradhoo,Hirimaradhoo — lower secondary (Gr 7-10),293,67
+MV002007,Nolhivaranfaru,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002007,Nolhivaranfaru,Nolhivaranfaru — lower secondary (Gr 7-10),1254,426
+MV002008,Nellaidhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002008,Nellaidhoo,Nellaidhoo — lower secondary (Gr 7-10),1038,393
+MV002009,Nolhivaramu,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002009,Nolhivaramu,Nolhivaramu — lower secondary (Gr 7-10),1985,842
+MV002010,Kurin'bee,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002010,Kurin'bee,Kuribi — lower secondary (Gr 7-10),492,172
+MV002012,Kulhudhuffushi,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002012,Kulhudhuffushi,Kulhudhuffushi — lower secondary (Gr 7-10),10131,3601
+MV002013,Kumundhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002013,Kumundhoo,Kumundhoo — lower secondary (Gr 7-10),997,324
+MV002014,Neykurendhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002014,Neykurendhoo,Neykurendhoo — lower secondary (Gr 7-10),641,206
+MV002015,Vaikaradhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002015,Vaikaradhoo,Vaikaradhoo — lower secondary (Gr 7-10),776,253
+MV002017,Makunudhoo,Haa Dhaalu,education,school_lower_secondary,181,True,0.0,MV002017,Makunudhoo,Makunudhoo — lower secondary (Gr 7-10),1265,486
+MV003001,Kan'ditheemu,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003001,Kan'ditheemu,Kaditheemu — lower secondary (Gr 7-10),1193,460
+MV003002,Noomaraa,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003002,Noomaraa,Noomaraa — lower secondary (Gr 7-10),371,127
+MV003003,Goidhoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003003,Goidhoo,Goidhoo — lower secondary (Gr 7-10),592,194
+MV003004,Feydhoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003004,Feydhoo,Feydhoo — lower secondary (Gr 7-10),854,306
+MV003005,Feevah,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003005,Feevah,Feevah — lower secondary (Gr 7-10),694,235
+MV003006,Bileiyfahi,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003006,Bileiyfahi,Bilehffahi — lower secondary (Gr 7-10),502,178
+MV003007,Foakaidhoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003007,Foakaidhoo,Foakaidhoo — lower secondary (Gr 7-10),1571,635
+MV003008,Narudhoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003008,Narudhoo,Narudhoo — lower secondary (Gr 7-10),544,200
+MV003010,Maroshi,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003010,Maroshi,Maroshi — lower secondary (Gr 7-10),479,144
+MV003011,Lhaimagu,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003011,Lhaimagu,Lhaimagu — lower secondary (Gr 7-10),684,214
+MV003013,Komandoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003013,Komandoo,Komandoo — lower secondary (Gr 7-10),921,286
+MV003014,Maaun'goodhoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003014,Maaun'goodhoo,Maaugoodhoo — lower secondary (Gr 7-10),944,326
+MV003015,Funadhoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003015,Funadhoo,Funadhoo — lower secondary (Gr 7-10),2255,766
+MV003016,Milandhoo,Shaviyani,education,school_lower_secondary,181,True,0.0,MV003016,Milandhoo,Milandhoo — lower secondary (Gr 7-10),2094,802
+MV004001,Hen'badhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004001,Hen'badhoo,Henbadhoo — lower secondary (Gr 7-10),638,227
+MV004002,Ken'dhikulhudhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — lower secondary (Gr 7-10),1556,583
+MV004003,Maalhendhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004003,Maalhendhoo,Maalhendhoo — lower secondary (Gr 7-10),724,264
+MV004004,Kudafari,Noonu,education,school_lower_secondary,181,True,0.0,MV004004,Kudafari,Kudafari — lower secondary (Gr 7-10),628,231
+MV004005,Landhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004005,Landhoo,Landhoo — lower secondary (Gr 7-10),757,278
+MV004006,Maafaru,Noonu,education,school_lower_secondary,181,True,0.0,MV004006,Maafaru,Maafaru — lower secondary (Gr 7-10),919,283
+MV004007,Lhohi,Noonu,education,school_lower_secondary,181,True,0.0,MV004007,Lhohi,Lhohi — lower secondary (Gr 7-10),692,231
+MV004008,Miladhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004008,Miladhoo,Miladhoo — lower secondary (Gr 7-10),934,337
+MV004009,Magoodhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004009,Magoodhoo,Magoodhoo — lower secondary (Gr 7-10),305,112
+MV004010,Manadhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004010,Manadhoo,Manadhoo — lower secondary (Gr 7-10),1745,519
+MV004011,Holhudhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004011,Holhudhoo,Holhudhoo — lower secondary (Gr 7-10),1428,460
+MV004012,Fohdhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004012,Fohdhoo,Fodhdhoo — lower secondary (Gr 7-10),345,80
+MV004013,Velidhoo,Noonu,education,school_lower_secondary,181,True,0.0,MV004013,Velidhoo,Velidhoo — lower secondary (Gr 7-10),1832,536
+MV005001,Hinnavaru,Lhaviyani,education,school_lower_secondary,181,True,0.0,MV005001,Hinnavaru,Hinnavaru — lower secondary (Gr 7-10),2286,702
+MV005002,Naifaru,Lhaviyani,education,school_lower_secondary,181,True,0.0,MV005002,Naifaru,Naifaru — lower secondary (Gr 7-10),4832,1437
+MV005003,Kurendhoo,Lhaviyani,education,school_lower_secondary,181,True,0.0,MV005003,Kurendhoo,Kurendhoo — lower secondary (Gr 7-10),1171,364
+MV005004,Olhuvelifushi,Lhaviyani,education,school_lower_secondary,181,True,0.0,MV005004,Olhuvelifushi,Olhuvelifushi — lower secondary (Gr 7-10),703,246
+MV006001,Alifushi,Raa,education,school_lower_secondary,181,True,0.0,MV006001,Alifushi,Alifushi — lower secondary (Gr 7-10),1859,576
+MV006002,Vaadhoo,Raa,education,school_lower_secondary,181,True,0.0,MV006002,Vaadhoo,Vaadhoo — lower secondary (Gr 7-10),452,148
+MV006003,Rasgetheemu,Raa,education,school_lower_secondary,181,True,0.0,MV006003,Rasgetheemu,Rasgetheemu — lower secondary (Gr 7-10),537,168
+MV006004,An'golhitheemu,Raa,education,school_lower_secondary,181,True,0.0,MV006004,An'golhitheemu,Agolhitheemu — lower secondary (Gr 7-10),381,118
+MV006005,Hulhudhuffaaru,Raa,education,school_lower_secondary,181,True,0.0,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — lower secondary (Gr 7-10),1228,426
+MV006006,Un'goofaaru,Raa,education,school_lower_secondary,181,True,0.0,MV006006,Un'goofaaru,Ugoofaaru — lower secondary (Gr 7-10),1754,571
+MV006008,Maakurathu,Raa,education,school_lower_secondary,181,True,0.0,MV006008,Maakurathu,Maakurathu — lower secondary (Gr 7-10),956,330
+MV006009,Rasmaadhoo,Raa,education,school_lower_secondary,181,True,0.0,MV006009,Rasmaadhoo,Rasmaadhoo — lower secondary (Gr 7-10),554,163
+MV006010,Innamaadhoo,Raa,education,school_lower_secondary,181,True,0.0,MV006010,Innamaadhoo,Innamaadhoo — lower secondary (Gr 7-10),663,183
+MV006011,Maduvvari,Raa,education,school_lower_secondary,181,True,0.0,MV006011,Maduvvari,Maduvvari — lower secondary (Gr 7-10),1760,594
+MV006012,In'guraidhoo,Raa,education,school_lower_secondary,181,True,0.0,MV006012,In'guraidhoo,Iguraidhoo — lower secondary (Gr 7-10),1278,478
+MV006013,Fainu,Raa,education,school_lower_secondary,181,True,0.0,MV006013,Fainu,Fainu — lower secondary (Gr 7-10),423,133
+MV006014,Meedhoo,Raa,education,school_lower_secondary,181,True,0.0,MV006014,Meedhoo,Meedhoo — lower secondary (Gr 7-10),1872,615
+MV006015,Kinolhas,Raa,education,school_lower_secondary,181,True,0.0,MV006015,Kinolhas,Kinolhas — lower secondary (Gr 7-10),543,211
+MV006019,Dhuvaafaru,Raa,education,school_lower_secondary,181,True,0.0,MV006019,Dhuvaafaru,Dhuvaafaru — lower secondary (Gr 7-10),3321,1214
+MV007001,Kudarikilu,Baa,education,school_lower_secondary,181,True,0.0,MV007001,Kudarikilu,Kudarikilu — lower secondary (Gr 7-10),557,162
+MV007002,Kamadhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007002,Kamadhoo,Kamadhoo — lower secondary (Gr 7-10),552,113
+MV007003,Kendhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007003,Kendhoo,Kendhoo — lower secondary (Gr 7-10),1002,346
+MV007004,Kihaadhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007004,Kihaadhoo,Kihaadhoo — lower secondary (Gr 7-10),481,196
+MV007005,Dhonfanu,Baa,education,school_lower_secondary,181,True,0.0,MV007005,Dhonfanu,Dhonfanu — lower secondary (Gr 7-10),398,128
+MV007006,Dharavandhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007006,Dharavandhoo,Dharavandhoo — lower secondary (Gr 7-10),997,286
+MV007007,Maalhos,Baa,education,school_lower_secondary,181,True,0.0,MV007007,Maalhos,Maalhos — lower secondary (Gr 7-10),572,201
+MV007008,Eydhafushi,Baa,education,school_lower_secondary,181,True,0.0,MV007008,Eydhafushi,Eydhafushi — lower secondary (Gr 7-10),2581,844
+MV007009,Thulhaadhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007009,Thulhaadhoo,Thulhaadhoo — lower secondary (Gr 7-10),1625,502
+MV007010,Hithaadhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007010,Hithaadhoo,Hithaadhoo — lower secondary (Gr 7-10),744,282
+MV007011,Fulhadhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007011,Fulhadhoo,Fulhadhoo — lower secondary (Gr 7-10),341,66
+MV007012,Fehendhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007012,Fehendhoo,Fehendhoo — lower secondary (Gr 7-10),198,51
+MV007013,Goidhoo,Baa,education,school_lower_secondary,181,True,0.0,MV007013,Goidhoo,Goidhoo — lower secondary (Gr 7-10),583,171
+MV008001,Thoddoo,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008001,Thoddoo,Thoddoo — lower secondary (Gr 7-10),1924,552
+MV008002,Rasdhoo,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008002,Rasdhoo,Rasdhoo — lower secondary (Gr 7-10),1282,352
+MV008003,Ukulhas,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008003,Ukulhas,Ukulhas — lower secondary (Gr 7-10),1284,462
+MV008004,Mathiveri,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008004,Mathiveri,Mathiveri — lower secondary (Gr 7-10),878,317
+MV008005,Bodufolhudhoo,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008005,Bodufolhudhoo,Bodufolhudhoo — lower secondary (Gr 7-10),704,254
+MV008006,Feridhoo,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008006,Feridhoo,Feridhoo — lower secondary (Gr 7-10),544,167
+MV008007,Maalhos,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008007,Maalhos,Maalhos — lower secondary (Gr 7-10),516,166
+MV008008,Himendhoo,Alifu Alifu,education,school_lower_secondary,181,True,0.0,MV008008,Himendhoo,Himandhoo — lower secondary (Gr 7-10),885,321
+MV009001,Kaashidhoo,Kaafu,education,school_lower_secondary,181,True,0.0,MV009001,Kaashidhoo,Kaashidhoo — lower secondary (Gr 7-10),2528,682
+MV009002,Gaafaru,Kaafu,education,school_lower_secondary,181,True,0.0,MV009002,Gaafaru,Gaafaru — lower secondary (Gr 7-10),1294,503
+MV009003,Dhiffushi,Kaafu,education,school_lower_secondary,181,True,0.0,MV009003,Dhiffushi,Dhiffushi — lower secondary (Gr 7-10),1270,373
+MV009004,Thulusdhoo,Kaafu,education,school_lower_secondary,181,True,0.0,MV009004,Thulusdhoo,Thulusdhoo — lower secondary (Gr 7-10),1801,390
+MV009005,Huraa,Kaafu,education,school_lower_secondary,181,True,0.0,MV009005,Huraa,Huraa — lower secondary (Gr 7-10),1654,410
+MV009006,Hinmafushi,Kaafu,education,school_lower_secondary,181,True,0.0,MV009006,Hinmafushi,Himmafushi — lower secondary (Gr 7-10),2012,330
+MV009007,Gulhi,Kaafu,education,school_lower_secondary,181,True,0.0,MV009007,Gulhi,Gulhi — lower secondary (Gr 7-10),976,280
+MV009008,Maafushi,Kaafu,education,school_lower_secondary,181,True,0.0,MV009008,Maafushi,Maafushi — lower secondary (Gr 7-10),4471,736
+MV009009,Guraidhoo,Kaafu,education,school_lower_secondary,181,True,0.0,MV009009,Guraidhoo,Guraidhoo — lower secondary (Gr 7-10),1743,471
+MV010001,Fulidhoo,Vaavu,education,school_lower_secondary,181,True,0.0,MV010001,Fulidhoo,Fulidhoo — lower secondary (Gr 7-10),400,86
+MV010002,Thinadhoo,Vaavu,education,school_lower_secondary,181,False,0.18,MV010004,Keyodhoo,Keyodhoo — lower secondary (Gr 7-10),258,6
+MV010003,Felidhoo,Vaavu,education,school_lower_secondary,181,True,0.0,MV010003,Felidhoo,Felidhoo — lower secondary (Gr 7-10),620,170
+MV010004,Keyodhoo,Vaavu,education,school_lower_secondary,181,True,0.0,MV010004,Keyodhoo,Keyodhoo — lower secondary (Gr 7-10),641,183
+MV010005,Rakeedhoo,Vaavu,education,school_lower_secondary,181,False,1.31,MV013004,Mulah,Mulah — lower secondary (Gr 7-10),76,4
+MV011001,Feeali,Faafu,education,school_lower_secondary,181,True,0.0,MV011001,Feeali,Feeali — lower secondary (Gr 7-10),922,370
+MV011002,Bileiydhoo,Faafu,education,school_lower_secondary,181,True,0.0,MV011002,Bileiydhoo,Biledhdhoo — lower secondary (Gr 7-10),967,372
+MV011003,Magoodhoo,Faafu,education,school_lower_secondary,181,True,0.0,MV011003,Magoodhoo,Magoodhoo — lower secondary (Gr 7-10),702,278
+MV011004,Dharan'boodhoo,Faafu,education,school_lower_secondary,181,True,0.0,MV011004,Dharan'boodhoo,Dharaboodhoo — lower secondary (Gr 7-10),455,170
+MV011005,Nilandhoo,Faafu,education,school_lower_secondary,181,True,0.0,MV011005,Nilandhoo,Nilandhoo — lower secondary (Gr 7-10),1823,680
+MV012001,Meedhoo,Dhaalu,education,school_lower_secondary,181,True,0.0,MV012001,Meedhoo,Meedhoo — lower secondary (Gr 7-10),1118,306
+MV012002,Ban'didhoo,Dhaalu,education,school_lower_secondary,181,True,0.0,MV012002,Ban'didhoo,Badidhoo — lower secondary (Gr 7-10),629,216
+MV012003,Rin'budhoo,Dhaalu,education,school_lower_secondary,181,True,0.0,MV012003,Rin'budhoo,Ribudhoo — lower secondary (Gr 7-10),316,98
+MV012004,Hulhudheli,Dhaalu,education,school_lower_secondary,181,True,0.0,MV012004,Hulhudheli,Hulhudheli — lower secondary (Gr 7-10),764,250
+MV012007,Maaen'boodhoo,Dhaalu,education,school_lower_secondary,181,True,0.0,MV012007,Maaen'boodhoo,Maaeboodhoo — lower secondary (Gr 7-10),679,208
+MV012008,Kudahuvadhoo,Dhaalu,education,school_lower_secondary,181,True,0.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — lower secondary (Gr 7-10),3131,1002
+MV013001,Raiymandhoo,Meemu,education,school_lower_secondary,181,False,1.29,MV013009,Maduvvari,Maduvvari — lower secondary (Gr 7-10),171,22
+MV013003,Veyvah,Meemu,education,school_lower_secondary,181,True,0.0,MV013003,Veyvah,Veyvah — lower secondary (Gr 7-10),304,78
+MV013004,Mulah,Meemu,education,school_lower_secondary,181,True,0.0,MV013004,Mulah,Mulah — lower secondary (Gr 7-10),1426,447
+MV013005,Muli,Meemu,education,school_lower_secondary,181,True,0.0,MV013005,Muli,Muli — lower secondary (Gr 7-10),949,257
+MV013006,Naalaafushi,Meemu,education,school_lower_secondary,181,True,0.0,MV013006,Naalaafushi,Naalaafushi — lower secondary (Gr 7-10),430,118
+MV013007,Kolhufushi,Meemu,education,school_lower_secondary,181,True,0.0,MV013007,Kolhufushi,Kolhufushi — lower secondary (Gr 7-10),793,251
+MV013008,Dhiggaru,Meemu,education,school_lower_secondary,181,True,0.0,MV013008,Dhiggaru,Dhiggaru — lower secondary (Gr 7-10),1099,349
+MV013009,Maduvvari,Meemu,education,school_lower_secondary,181,True,0.0,MV013009,Maduvvari,Maduvvari — lower secondary (Gr 7-10),318,79
+MV014001,Burunee,Thaa,education,school_lower_secondary,181,True,0.0,MV014001,Burunee,Buruni — lower secondary (Gr 7-10),414,136
+MV014002,Vilufushi,Thaa,education,school_lower_secondary,181,True,0.0,MV014002,Vilufushi,Vilufushi — lower secondary (Gr 7-10),1081,367
+MV014003,Madifushi,Thaa,education,school_lower_secondary,181,True,0.0,MV014003,Madifushi,Madifushi — lower secondary (Gr 7-10),858,299
+MV014004,Dhiyamigili,Thaa,education,school_lower_secondary,181,True,0.0,MV014004,Dhiyamigili,Dhiyamigili — lower secondary (Gr 7-10),649,257
+MV014005,Guraidhoo,Thaa,education,school_lower_secondary,181,True,0.0,MV014005,Guraidhoo,Guraidhoo — lower secondary (Gr 7-10),1293,443
+MV014006,Kan'doodhoo,Thaa,education,school_lower_secondary,181,True,0.0,MV014006,Kan'doodhoo,Kadoodhoo — lower secondary (Gr 7-10),456,139
+MV014007,Vandhoo,Thaa,education,school_lower_secondary,181,True,0.0,MV014007,Vandhoo,Vandhoo — lower secondary (Gr 7-10),364,97
+MV014008,Hirilandhoo,Thaa,education,school_lower_secondary,181,True,0.0,MV014008,Hirilandhoo,Hirilandhoo — lower secondary (Gr 7-10),1146,328
+MV014009,Gaadhiffushi,Thaa,education,school_lower_secondary,181,True,0.0,MV014009,Gaadhiffushi,Gaadhiffushi — lower secondary (Gr 7-10),317,82
+MV014010,Thimarafushi,Thaa,education,school_lower_secondary,181,True,0.0,MV014010,Thimarafushi,Thimarafushi — lower secondary (Gr 7-10),1229,375
+MV014011,Veymandoo,Thaa,education,school_lower_secondary,181,True,0.0,MV014011,Veymandoo,Veymandoo — lower secondary (Gr 7-10),1321,452
+MV014012,Kin'bidhoo,Thaa,education,school_lower_secondary,181,True,0.0,MV014012,Kin'bidhoo,Kibidhoo — lower secondary (Gr 7-10),715,266
+MV014013,Omadhoo,Thaa,education,school_lower_secondary,181,True,0.0,MV014013,Omadhoo,Omadhoo — lower secondary (Gr 7-10),417,137
+MV015001,Isdhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015001,Isdhoo,Isdhoo — lower secondary (Gr 7-10),929,309
+MV015002,Dhan'bidhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015002,Dhan'bidhoo,Dhabidhoo — lower secondary (Gr 7-10),606,207
+MV015003,Maabaidhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015003,Maabaidhoo,Maabaidhoo — lower secondary (Gr 7-10),565,203
+MV015004,Mundoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015004,Mundoo,Mundoo — lower secondary (Gr 7-10),176,48
+MV015005,Kalaidhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015005,Kalaidhoo,Kalaidhoo — lower secondary (Gr 7-10),655,221
+MV015007,Maavah,Laamu,education,school_lower_secondary,181,True,0.0,MV015007,Maavah,Maavah — lower secondary (Gr 7-10),1379,472
+MV015008,Fonadhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015008,Fonadhoo,Fonadhoo — lower secondary (Gr 7-10),2986,986
+MV015010,Maamendhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015010,Maamendhoo,Maamendhoo — lower secondary (Gr 7-10),879,259
+MV015011,Hithadhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015011,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),1108,380
+MV015012,Kunahandhoo,Laamu,education,school_lower_secondary,181,True,0.0,MV015012,Kunahandhoo,Kunahandhoo — lower secondary (Gr 7-10),601,211
+MV015013,Gan,Laamu,education,school_lower_secondary,181,False,0.56,MV015004,Mundoo,Mundoo — lower secondary (Gr 7-10),4815,1457
+MV016001,Kolamaafushi,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016001,Kolamaafushi,Kolamaafushi — lower secondary (Gr 7-10),636,148
+MV016002,Vilin'gili,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016002,Vilin'gili,Viligili — lower secondary (Gr 7-10),2900,889
+MV016003,Maamendhoo,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016003,Maamendhoo,Maamendhoo — lower secondary (Gr 7-10),1201,391
+MV016004,Nilandhoo,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016004,Nilandhoo,Nilandhoo — lower secondary (Gr 7-10),545,159
+MV016005,Dhaandhoo,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016005,Dhaandhoo,Dhaandhoo — lower secondary (Gr 7-10),1044,269
+MV016006,Dhevvadhoo,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016006,Dhevvadhoo,Dhevvadhoo — lower secondary (Gr 7-10),599,143
+MV016007,Kon'dey,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016007,Kon'dey,Kodey — lower secondary (Gr 7-10),328,95
+MV016009,Gemanafushi,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016009,Gemanafushi,Gemanafushi — lower secondary (Gr 7-10),1318,464
+MV016010,Kan'duhulhudhoo,Gaafu Alifu,education,school_lower_secondary,181,True,0.0,MV016010,Kan'duhulhudhoo,Kanduhulhudhoo — lower secondary (Gr 7-10),619,192
+MV017001,Madaveli,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017001,Madaveli,Madaveli — lower secondary (Gr 7-10),1219,407
+MV017002,Hoadehdhoo,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017002,Hoadehdhoo,Hoadedhdhoo — lower secondary (Gr 7-10),885,304
+MV017003,Nadellaa,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017003,Nadellaa,Nadallaa — lower secondary (Gr 7-10),581,159
+MV017004,Gahdhoo,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017004,Gahdhoo,Gadhdhoo — lower secondary (Gr 7-10),1414,403
+MV017005,Rathafandhoo,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017005,Rathafandhoo,Rathafandhoo — lower secondary (Gr 7-10),431,97
+MV017006,Vaadhoo,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017006,Vaadhoo,Vaadhoo — lower secondary (Gr 7-10),516,100
+MV017007,Fiyoari,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017007,Fiyoari,Fiyoari — lower secondary (Gr 7-10),637,206
+MV017008,Faresmaathodaa,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017008,Faresmaathodaa,Fares-Maathodaa — lower secondary (Gr 7-10),858,235
+MV017010,Thinadhoo,Gaafu Dhaalu,education,school_lower_secondary,181,True,0.0,MV017010,Thinadhoo,Thinadhoo — lower secondary (Gr 7-10),6217,2134
+MV018001,Fuvahmulah,Gnaviyani,education,school_lower_secondary,181,True,0.0,MV018001,Fuvahmulah,Fuvahmulah — lower secondary (Gr 7-10),9177,2761
+MV019001,Meedhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019001,Meedhoo,Meedhoo — lower secondary (Gr 7-10),1892,541
+MV019002,Hithadhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),13759,3560
+MV019003,Maradhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),2542,712
+MV019004,Feydhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019004,Feydhoo,Feydhoo — lower secondary (Gr 7-10),4289,914
+MV019005,Maradhoofeydhoo,Seenu,education,school_lower_secondary,181,False,0.35,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),1398,407
+MV019006,Hulhudhoo,Seenu,education,school_lower_secondary,181,False,0.1,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),1182,259
+MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — lower secondary (Gr 7-10),484,148
+MV020002,Omadhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020002,Omadhoo,Omadhoo — lower secondary (Gr 7-10),913,344
+MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — lower secondary (Gr 7-10),509,173
+MV020004,Mahibadhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020004,Mahibadhoo,Mahibadhoo — lower secondary (Gr 7-10),2580,796
+MV020005,Mandhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020005,Mandhoo,Mandhoo — lower secondary (Gr 7-10),418,85
+MV020006,Dhan'gethi,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020006,Dhan'gethi,Dhagethi — lower secondary (Gr 7-10),936,256
+MV020007,Dhigurah,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020007,Dhigurah,Dhigurah — lower secondary (Gr 7-10),761,153
+MV020008,Fenfushi,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020008,Fenfushi,Fenfushi — lower secondary (Gr 7-10),1000,333
+MV020009,Dhihdhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020009,Dhihdhoo,Dhidhdhoo — lower secondary (Gr 7-10),141,26
+MV020010,Maamin'gili,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020010,Maamin'gili,Maamigili — lower secondary (Gr 7-10),2798,833
+MLE,Malé City,Male,education,school_lower_secondary,181,True,0.0,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — lower secondary (Gr 7-10)",211908,34823
+MV001001,Thuraakunu,Haa Alifu,education,school_primary,183,True,0.0,MV001001,Thuraakunu,Thuraakunu — primary school (Gr 1-6),427,109
+MV001002,Uligamu,Haa Alifu,education,school_primary,183,True,0.0,MV001002,Uligamu,Uligamu — primary school (Gr 1-6),400,110
+MV001005,Mulhadhoo,Haa Alifu,education,school_primary,183,True,0.0,MV001005,Mulhadhoo,Mulhadhoo — primary school (Gr 1-6),286,79
+MV001006,Huvarafushi,Haa Alifu,education,school_primary,183,True,0.0,MV001006,Huvarafushi,Hoarafushi — primary school (Gr 1-6),1841,547
+MV001007,Ihavandhoo,Haa Alifu,education,school_primary,183,True,0.0,MV001007,Ihavandhoo,Ihavandhoo — primary school (Gr 1-6),2873,1124
+MV001008,Kelaa,Haa Alifu,education,school_primary,183,True,0.0,MV001008,Kelaa,Kelaa — primary school (Gr 1-6),1115,327
+MV001009,Vashafaru,Haa Alifu,education,school_primary,183,True,0.0,MV001009,Vashafaru,Vashafaru — primary school (Gr 1-6),476,138
+MV001010,Dhihdhoo,Haa Alifu,education,school_primary,183,True,0.0,MV001010,Dhihdhoo,Dhidhdhoo — primary school (Gr 1-6),3412,1260
+MV001011,Filladhoo,Haa Alifu,education,school_primary,183,True,0.0,MV001011,Filladhoo,Filladhoo — primary school (Gr 1-6),559,171
+MV001012,Maarandhoo,Haa Alifu,education,school_primary,183,True,0.0,MV001012,Maarandhoo,Maarandhoo — primary school (Gr 1-6),668,258
+MV001013,Thakandhoo,Haa Alifu,education,school_primary,183,True,0.0,MV001013,Thakandhoo,Thakandhoo — primary school (Gr 1-6),279,42
+MV001014,Utheemu,Haa Alifu,education,school_primary,183,True,0.0,MV001014,Utheemu,Utheemu — primary school (Gr 1-6),612,213
+MV001015,Muraidhoo,Haa Alifu,education,school_primary,183,True,0.0,MV001015,Muraidhoo,Muraidhoo — primary school (Gr 1-6),534,207
+MV001016,Baarah,Haa Alifu,education,school_primary,183,True,0.0,MV001016,Baarah,Baarah — primary school (Gr 1-6),1141,406
+MV002003,Hanimaadhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002003,Hanimaadhoo,Hanimaadhoo — primary school (Gr 1-6),2664,667
+MV002004,Finey,Haa Dhaalu,education,school_primary,183,True,0.0,MV002004,Finey,Finey — primary school (Gr 1-6),409,135
+MV002005,Naivaadhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002005,Naivaadhoo,Naivaadhoo — primary school (Gr 1-6),495,159
+MV002006,Hirimaradhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002006,Hirimaradhoo,Hirimaradhoo — primary school (Gr 1-6),293,67
+MV002007,Nolhivaranfaru,Haa Dhaalu,education,school_primary,183,True,0.0,MV002007,Nolhivaranfaru,Nolhivaranfaru — primary school (Gr 1-6),1254,426
+MV002008,Nellaidhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002008,Nellaidhoo,Nellaidhoo — primary school (Gr 1-6),1038,393
+MV002009,Nolhivaramu,Haa Dhaalu,education,school_primary,183,True,0.0,MV002009,Nolhivaramu,Nolhivaramu — primary school (Gr 1-6),1985,842
+MV002010,Kurin'bee,Haa Dhaalu,education,school_primary,183,True,0.0,MV002010,Kurin'bee,Kuribi — primary school (Gr 1-6),492,172
+MV002012,Kulhudhuffushi,Haa Dhaalu,education,school_primary,183,True,0.0,MV002012,Kulhudhuffushi,Kulhudhuffushi — primary school (Gr 1-6),10131,3601
+MV002013,Kumundhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002013,Kumundhoo,Kumundhoo — primary school (Gr 1-6),997,324
+MV002014,Neykurendhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002014,Neykurendhoo,Neykurendhoo — primary school (Gr 1-6),641,206
+MV002015,Vaikaradhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002015,Vaikaradhoo,Vaikaradhoo — primary school (Gr 1-6),776,253
+MV002017,Makunudhoo,Haa Dhaalu,education,school_primary,183,True,0.0,MV002017,Makunudhoo,Makunudhoo — primary school (Gr 1-6),1265,486
+MV003001,Kan'ditheemu,Shaviyani,education,school_primary,183,True,0.0,MV003001,Kan'ditheemu,Kaditheemu — primary school (Gr 1-6),1193,460
+MV003002,Noomaraa,Shaviyani,education,school_primary,183,True,0.0,MV003002,Noomaraa,Noomaraa — primary school (Gr 1-6),371,127
+MV003003,Goidhoo,Shaviyani,education,school_primary,183,True,0.0,MV003003,Goidhoo,Goidhoo — primary school (Gr 1-6),592,194
+MV003004,Feydhoo,Shaviyani,education,school_primary,183,True,0.0,MV003004,Feydhoo,Feydhoo — primary school (Gr 1-6),854,306
+MV003005,Feevah,Shaviyani,education,school_primary,183,True,0.0,MV003005,Feevah,Feevah — primary school (Gr 1-6),694,235
+MV003006,Bileiyfahi,Shaviyani,education,school_primary,183,True,0.0,MV003006,Bileiyfahi,Bilehffahi — primary school (Gr 1-6),502,178
+MV003007,Foakaidhoo,Shaviyani,education,school_primary,183,True,0.0,MV003007,Foakaidhoo,Foakaidhoo — primary school (Gr 1-6),1571,635
+MV003008,Narudhoo,Shaviyani,education,school_primary,183,True,0.0,MV003008,Narudhoo,Narudhoo — primary school (Gr 1-6),544,200
+MV003010,Maroshi,Shaviyani,education,school_primary,183,True,0.0,MV003010,Maroshi,Maroshi — primary school (Gr 1-6),479,144
+MV003011,Lhaimagu,Shaviyani,education,school_primary,183,True,0.0,MV003011,Lhaimagu,Lhaimagu — primary school (Gr 1-6),684,214
+MV003013,Komandoo,Shaviyani,education,school_primary,183,True,0.0,MV003013,Komandoo,Komandoo — primary school (Gr 1-6),921,286
+MV003014,Maaun'goodhoo,Shaviyani,education,school_primary,183,True,0.0,MV003014,Maaun'goodhoo,Maaugoodhoo — primary school (Gr 1-6),944,326
+MV003015,Funadhoo,Shaviyani,education,school_primary,183,True,0.0,MV003015,Funadhoo,Funadhoo — primary school (Gr 1-6),2255,766
+MV003016,Milandhoo,Shaviyani,education,school_primary,183,True,0.0,MV003016,Milandhoo,Milandhoo — primary school (Gr 1-6),2094,802
+MV004001,Hen'badhoo,Noonu,education,school_primary,183,True,0.0,MV004001,Hen'badhoo,Henbadhoo — primary school (Gr 1-6),638,227
+MV004002,Ken'dhikulhudhoo,Noonu,education,school_primary,183,True,0.0,MV004002,Ken'dhikulhudhoo,Kedhikulhudhoo — primary school (Gr 1-6),1556,583
+MV004003,Maalhendhoo,Noonu,education,school_primary,183,True,0.0,MV004003,Maalhendhoo,Maalhendhoo — primary school (Gr 1-6),724,264
+MV004004,Kudafari,Noonu,education,school_primary,183,True,0.0,MV004004,Kudafari,Kudafari — primary school (Gr 1-6),628,231
+MV004005,Landhoo,Noonu,education,school_primary,183,True,0.0,MV004005,Landhoo,Landhoo — primary school (Gr 1-6),757,278
+MV004006,Maafaru,Noonu,education,school_primary,183,True,0.0,MV004006,Maafaru,Maafaru — primary school (Gr 1-6),919,283
+MV004007,Lhohi,Noonu,education,school_primary,183,True,0.0,MV004007,Lhohi,Lhohi — primary school (Gr 1-6),692,231
+MV004008,Miladhoo,Noonu,education,school_primary,183,True,0.0,MV004008,Miladhoo,Miladhoo — primary school (Gr 1-6),934,337
+MV004009,Magoodhoo,Noonu,education,school_primary,183,True,0.0,MV004009,Magoodhoo,Magoodhoo — primary school (Gr 1-6),305,112
+MV004010,Manadhoo,Noonu,education,school_primary,183,True,0.0,MV004010,Manadhoo,Manadhoo — primary school (Gr 1-6),1745,519
+MV004011,Holhudhoo,Noonu,education,school_primary,183,True,0.0,MV004011,Holhudhoo,Holhudhoo — primary school (Gr 1-6),1428,460
+MV004012,Fohdhoo,Noonu,education,school_primary,183,True,0.0,MV004012,Fohdhoo,Fodhdhoo — primary school (Gr 1-6),345,80
+MV004013,Velidhoo,Noonu,education,school_primary,183,True,0.0,MV004013,Velidhoo,Velidhoo — primary school (Gr 1-6),1832,536
+MV005001,Hinnavaru,Lhaviyani,education,school_primary,183,True,0.0,MV005001,Hinnavaru,Hinnavaru — primary school (Gr 1-6),2286,702
+MV005002,Naifaru,Lhaviyani,education,school_primary,183,True,0.0,MV005002,Naifaru,Naifaru — primary school (Gr 1-6),4832,1437
+MV005003,Kurendhoo,Lhaviyani,education,school_primary,183,True,0.0,MV005003,Kurendhoo,Kurendhoo — primary school (Gr 1-6),1171,364
+MV005004,Olhuvelifushi,Lhaviyani,education,school_primary,183,True,0.0,MV005004,Olhuvelifushi,Olhuvelifushi — primary school (Gr 1-6),703,246
+MV006001,Alifushi,Raa,education,school_primary,183,True,0.0,MV006001,Alifushi,Alifushi — primary school (Gr 1-6),1859,576
+MV006002,Vaadhoo,Raa,education,school_primary,183,True,0.0,MV006002,Vaadhoo,Vaadhoo — primary school (Gr 1-6),452,148
+MV006003,Rasgetheemu,Raa,education,school_primary,183,True,0.0,MV006003,Rasgetheemu,Rasgetheemu — primary school (Gr 1-6),537,168
+MV006004,An'golhitheemu,Raa,education,school_primary,183,True,0.0,MV006004,An'golhitheemu,Agolhitheemu — primary school (Gr 1-6),381,118
+MV006005,Hulhudhuffaaru,Raa,education,school_primary,183,True,0.0,MV006005,Hulhudhuffaaru,Hulhudhuffaaru — primary school (Gr 1-6),1228,426
+MV006006,Un'goofaaru,Raa,education,school_primary,183,True,0.0,MV006006,Un'goofaaru,Ugoofaaru — primary school (Gr 1-6),1754,571
+MV006008,Maakurathu,Raa,education,school_primary,183,True,0.0,MV006008,Maakurathu,Maakurathu — primary school (Gr 1-6),956,330
+MV006009,Rasmaadhoo,Raa,education,school_primary,183,True,0.0,MV006009,Rasmaadhoo,Rasmaadhoo — primary school (Gr 1-6),554,163
+MV006010,Innamaadhoo,Raa,education,school_primary,183,True,0.0,MV006010,Innamaadhoo,Innamaadhoo — primary school (Gr 1-6),663,183
+MV006011,Maduvvari,Raa,education,school_primary,183,True,0.0,MV006011,Maduvvari,Maduvvari — primary school (Gr 1-6),1760,594
+MV006012,In'guraidhoo,Raa,education,school_primary,183,True,0.0,MV006012,In'guraidhoo,Iguraidhoo — primary school (Gr 1-6),1278,478
+MV006013,Fainu,Raa,education,school_primary,183,True,0.0,MV006013,Fainu,Fainu — primary school (Gr 1-6),423,133
+MV006014,Meedhoo,Raa,education,school_primary,183,True,0.0,MV006014,Meedhoo,Meedhoo — primary school (Gr 1-6),1872,615
+MV006015,Kinolhas,Raa,education,school_primary,183,True,0.0,MV006015,Kinolhas,Kinolhas — primary school (Gr 1-6),543,211
+MV006019,Dhuvaafaru,Raa,education,school_primary,183,True,0.0,MV006019,Dhuvaafaru,Dhuvaafaru — primary school (Gr 1-6),3321,1214
+MV007001,Kudarikilu,Baa,education,school_primary,183,True,0.0,MV007001,Kudarikilu,Kudarikilu — primary school (Gr 1-6),557,162
+MV007002,Kamadhoo,Baa,education,school_primary,183,True,0.0,MV007002,Kamadhoo,Kamadhoo — primary school (Gr 1-6),552,113
+MV007003,Kendhoo,Baa,education,school_primary,183,True,0.0,MV007003,Kendhoo,Kendhoo — primary school (Gr 1-6),1002,346
+MV007004,Kihaadhoo,Baa,education,school_primary,183,True,0.0,MV007004,Kihaadhoo,Kihaadhoo — primary school (Gr 1-6),481,196
+MV007005,Dhonfanu,Baa,education,school_primary,183,True,0.0,MV007005,Dhonfanu,Dhonfanu — primary school (Gr 1-6),398,128
+MV007006,Dharavandhoo,Baa,education,school_primary,183,True,0.0,MV007006,Dharavandhoo,Dharavandhoo — primary school (Gr 1-6),997,286
+MV007007,Maalhos,Baa,education,school_primary,183,True,0.0,MV007007,Maalhos,Maalhos — primary school (Gr 1-6),572,201
+MV007008,Eydhafushi,Baa,education,school_primary,183,True,0.0,MV007008,Eydhafushi,Eydhafushi — primary school (Gr 1-6),2581,844
+MV007009,Thulhaadhoo,Baa,education,school_primary,183,True,0.0,MV007009,Thulhaadhoo,Thulhaadhoo — primary school (Gr 1-6),1625,502
+MV007010,Hithaadhoo,Baa,education,school_primary,183,True,0.0,MV007010,Hithaadhoo,Hithaadhoo — primary school (Gr 1-6),744,282
+MV007011,Fulhadhoo,Baa,education,school_primary,183,True,0.0,MV007011,Fulhadhoo,Fulhadhoo — primary school (Gr 1-6),341,66
+MV007012,Fehendhoo,Baa,education,school_primary,183,True,0.0,MV007012,Fehendhoo,Fehendhoo — primary school (Gr 1-6),198,51
+MV007013,Goidhoo,Baa,education,school_primary,183,True,0.0,MV007013,Goidhoo,Goidhoo — primary school (Gr 1-6),583,171
+MV008001,Thoddoo,Alifu Alifu,education,school_primary,183,True,0.0,MV008001,Thoddoo,Thoddoo — primary school (Gr 1-6),1924,552
+MV008002,Rasdhoo,Alifu Alifu,education,school_primary,183,True,0.0,MV008002,Rasdhoo,Rasdhoo — primary school (Gr 1-6),1282,352
+MV008003,Ukulhas,Alifu Alifu,education,school_primary,183,True,0.0,MV008003,Ukulhas,Ukulhas — primary school (Gr 1-6),1284,462
+MV008004,Mathiveri,Alifu Alifu,education,school_primary,183,True,0.0,MV008004,Mathiveri,Mathiveri — primary school (Gr 1-6),878,317
+MV008005,Bodufolhudhoo,Alifu Alifu,education,school_primary,183,True,0.0,MV008005,Bodufolhudhoo,Bodufolhudhoo — primary school (Gr 1-6),704,254
+MV008006,Feridhoo,Alifu Alifu,education,school_primary,183,True,0.0,MV008006,Feridhoo,Feridhoo — primary school (Gr 1-6),544,167
+MV008007,Maalhos,Alifu Alifu,education,school_primary,183,True,0.0,MV008007,Maalhos,Maalhos — primary school (Gr 1-6),516,166
+MV008008,Himendhoo,Alifu Alifu,education,school_primary,183,True,0.0,MV008008,Himendhoo,Himandhoo — primary school (Gr 1-6),885,321
+MV009001,Kaashidhoo,Kaafu,education,school_primary,183,True,0.0,MV009001,Kaashidhoo,Kaashidhoo — primary school (Gr 1-6),2528,682
+MV009002,Gaafaru,Kaafu,education,school_primary,183,True,0.0,MV009002,Gaafaru,Gaafaru — primary school (Gr 1-6),1294,503
+MV009003,Dhiffushi,Kaafu,education,school_primary,183,True,0.0,MV009003,Dhiffushi,Dhiffushi — primary school (Gr 1-6),1270,373
+MV009004,Thulusdhoo,Kaafu,education,school_primary,183,True,0.0,MV009004,Thulusdhoo,Thulusdhoo — primary school (Gr 1-6),1801,390
+MV009005,Huraa,Kaafu,education,school_primary,183,True,0.0,MV009005,Huraa,Huraa — primary school (Gr 1-6),1654,410
+MV009006,Hinmafushi,Kaafu,education,school_primary,183,True,0.0,MV009006,Hinmafushi,Himmafushi — primary school (Gr 1-6),2012,330
+MV009007,Gulhi,Kaafu,education,school_primary,183,True,0.0,MV009007,Gulhi,Gulhi — primary school (Gr 1-6),976,280
+MV009008,Maafushi,Kaafu,education,school_primary,183,True,0.0,MV009008,Maafushi,Maafushi — primary school (Gr 1-6),4471,736
+MV009009,Guraidhoo,Kaafu,education,school_primary,183,True,0.0,MV009009,Guraidhoo,Guraidhoo — primary school (Gr 1-6),1743,471
+MV010001,Fulidhoo,Vaavu,education,school_primary,183,True,0.0,MV010001,Fulidhoo,Fulidhoo — primary school (Gr 1-6),400,86
+MV010002,Thinadhoo,Vaavu,education,school_primary,183,True,0.0,MV010002,Thinadhoo,Thinadhoo — primary school (Gr 1-6),258,6
+MV010003,Felidhoo,Vaavu,education,school_primary,183,True,0.0,MV010003,Felidhoo,Felidhoo — primary school (Gr 1-6),620,170
+MV010004,Keyodhoo,Vaavu,education,school_primary,183,True,0.0,MV010004,Keyodhoo,Keyodhoo — primary school (Gr 1-6),641,183
+MV010005,Rakeedhoo,Vaavu,education,school_primary,183,False,1.14,MV010002,Thinadhoo,Thinadhoo — primary school (Gr 1-6),76,4
+MV011001,Feeali,Faafu,education,school_primary,183,True,0.0,MV011001,Feeali,Feeali — primary school (Gr 1-6),922,370
+MV011002,Bileiydhoo,Faafu,education,school_primary,183,True,0.0,MV011002,Bileiydhoo,Biledhdhoo — primary school (Gr 1-6),967,372
+MV011003,Magoodhoo,Faafu,education,school_primary,183,True,0.0,MV011003,Magoodhoo,Magoodhoo — primary school (Gr 1-6),702,278
+MV011004,Dharan'boodhoo,Faafu,education,school_primary,183,True,0.0,MV011004,Dharan'boodhoo,Dharaboodhoo — primary school (Gr 1-6),455,170
+MV011005,Nilandhoo,Faafu,education,school_primary,183,True,0.0,MV011005,Nilandhoo,Nilandhoo — primary school (Gr 1-6),1823,680
+MV012001,Meedhoo,Dhaalu,education,school_primary,183,True,0.0,MV012001,Meedhoo,Meedhoo — primary school (Gr 1-6),1118,306
+MV012002,Ban'didhoo,Dhaalu,education,school_primary,183,True,0.0,MV012002,Ban'didhoo,Badidhoo — primary school (Gr 1-6),629,216
+MV012003,Rin'budhoo,Dhaalu,education,school_primary,183,True,0.0,MV012003,Rin'budhoo,Ribudhoo — primary school (Gr 1-6),316,98
+MV012004,Hulhudheli,Dhaalu,education,school_primary,183,True,0.0,MV012004,Hulhudheli,Hulhudheli — primary school (Gr 1-6),764,250
+MV012007,Maaen'boodhoo,Dhaalu,education,school_primary,183,True,0.0,MV012007,Maaen'boodhoo,Maaeboodhoo — primary school (Gr 1-6),679,208
+MV012008,Kudahuvadhoo,Dhaalu,education,school_primary,183,True,0.0,MV012008,Kudahuvadhoo,Kudahuvadhoo — primary school (Gr 1-6),3131,1002
+MV013001,Raiymandhoo,Meemu,education,school_primary,183,True,0.0,MV013001,Raiymandhoo,Raimandhoo — primary school (Gr 1-6),171,22
+MV013003,Veyvah,Meemu,education,school_primary,183,True,0.0,MV013003,Veyvah,Veyvah — primary school (Gr 1-6),304,78
+MV013004,Mulah,Meemu,education,school_primary,183,True,0.0,MV013004,Mulah,Mulah — primary school (Gr 1-6),1426,447
+MV013005,Muli,Meemu,education,school_primary,183,True,0.0,MV013005,Muli,Muli — primary school (Gr 1-6),949,257
+MV013006,Naalaafushi,Meemu,education,school_primary,183,True,0.0,MV013006,Naalaafushi,Naalaafushi — primary school (Gr 1-6),430,118
+MV013007,Kolhufushi,Meemu,education,school_primary,183,True,0.0,MV013007,Kolhufushi,Kolhufushi — primary school (Gr 1-6),793,251
+MV013008,Dhiggaru,Meemu,education,school_primary,183,True,0.0,MV013008,Dhiggaru,Dhiggaru — primary school (Gr 1-6),1099,349
+MV013009,Maduvvari,Meemu,education,school_primary,183,True,0.0,MV013009,Maduvvari,Maduvvari — primary school (Gr 1-6),318,79
+MV014001,Burunee,Thaa,education,school_primary,183,True,0.0,MV014001,Burunee,Buruni — primary school (Gr 1-6),414,136
+MV014002,Vilufushi,Thaa,education,school_primary,183,True,0.0,MV014002,Vilufushi,Vilufushi — primary school (Gr 1-6),1081,367
+MV014003,Madifushi,Thaa,education,school_primary,183,True,0.0,MV014003,Madifushi,Madifushi — primary school (Gr 1-6),858,299
+MV014004,Dhiyamigili,Thaa,education,school_primary,183,True,0.0,MV014004,Dhiyamigili,Dhiyamigili — primary school (Gr 1-6),649,257
+MV014005,Guraidhoo,Thaa,education,school_primary,183,True,0.0,MV014005,Guraidhoo,Guraidhoo — primary school (Gr 1-6),1293,443
+MV014006,Kan'doodhoo,Thaa,education,school_primary,183,True,0.0,MV014006,Kan'doodhoo,Kadoodhoo — primary school (Gr 1-6),456,139
+MV014007,Vandhoo,Thaa,education,school_primary,183,True,0.0,MV014007,Vandhoo,Vandhoo — primary school (Gr 1-6),364,97
+MV014008,Hirilandhoo,Thaa,education,school_primary,183,True,0.0,MV014008,Hirilandhoo,Hirilandhoo — primary school (Gr 1-6),1146,328
+MV014009,Gaadhiffushi,Thaa,education,school_primary,183,True,0.0,MV014009,Gaadhiffushi,Gaadhiffushi — primary school (Gr 1-6),317,82
+MV014010,Thimarafushi,Thaa,education,school_primary,183,True,0.0,MV014010,Thimarafushi,Thimarafushi — primary school (Gr 1-6),1229,375
+MV014011,Veymandoo,Thaa,education,school_primary,183,True,0.0,MV014011,Veymandoo,Veymandoo — primary school (Gr 1-6),1321,452
+MV014012,Kin'bidhoo,Thaa,education,school_primary,183,True,0.0,MV014012,Kin'bidhoo,Kibidhoo — primary school (Gr 1-6),715,266
+MV014013,Omadhoo,Thaa,education,school_primary,183,True,0.0,MV014013,Omadhoo,Omadhoo — primary school (Gr 1-6),417,137
+MV015001,Isdhoo,Laamu,education,school_primary,183,True,0.0,MV015001,Isdhoo,Isdhoo — primary school (Gr 1-6),929,309
+MV015002,Dhan'bidhoo,Laamu,education,school_primary,183,True,0.0,MV015002,Dhan'bidhoo,Dhabidhoo — primary school (Gr 1-6),606,207
+MV015003,Maabaidhoo,Laamu,education,school_primary,183,True,0.0,MV015003,Maabaidhoo,Maabaidhoo — primary school (Gr 1-6),565,203
+MV015004,Mundoo,Laamu,education,school_primary,183,True,0.0,MV015004,Mundoo,Mundoo — primary school (Gr 1-6),176,48
+MV015005,Kalaidhoo,Laamu,education,school_primary,183,True,0.0,MV015005,Kalaidhoo,Kalaidhoo — primary school (Gr 1-6),655,221
+MV015007,Maavah,Laamu,education,school_primary,183,True,0.0,MV015007,Maavah,Maavah — primary school (Gr 1-6),1379,472
+MV015008,Fonadhoo,Laamu,education,school_primary,183,True,0.0,MV015008,Fonadhoo,Fonadhoo — primary school (Gr 1-6),2986,986
+MV015010,Maamendhoo,Laamu,education,school_primary,183,True,0.0,MV015010,Maamendhoo,Maamendhoo — primary school (Gr 1-6),879,259
+MV015011,Hithadhoo,Laamu,education,school_primary,183,True,0.0,MV015011,Hithadhoo,Hithadhoo — primary school (Gr 1-6),1108,380
+MV015012,Kunahandhoo,Laamu,education,school_primary,183,True,0.0,MV015012,Kunahandhoo,Kunahandhoo — primary school (Gr 1-6),601,211
+MV015013,Gan,Laamu,education,school_primary,183,False,0.56,MV015004,Mundoo,Mundoo — primary school (Gr 1-6),4815,1457
+MV016001,Kolamaafushi,Gaafu Alifu,education,school_primary,183,True,0.0,MV016001,Kolamaafushi,Kolamaafushi — primary school (Gr 1-6),636,148
+MV016002,Vilin'gili,Gaafu Alifu,education,school_primary,183,True,0.0,MV016002,Vilin'gili,Viligili — primary school (Gr 1-6),2900,889
+MV016003,Maamendhoo,Gaafu Alifu,education,school_primary,183,True,0.0,MV016003,Maamendhoo,Maamendhoo — primary school (Gr 1-6),1201,391
+MV016004,Nilandhoo,Gaafu Alifu,education,school_primary,183,True,0.0,MV016004,Nilandhoo,Nilandhoo — primary school (Gr 1-6),545,159
+MV016005,Dhaandhoo,Gaafu Alifu,education,school_primary,183,True,0.0,MV016005,Dhaandhoo,Dhaandhoo — primary school (Gr 1-6),1044,269
+MV016006,Dhevvadhoo,Gaafu Alifu,education,school_primary,183,True,0.0,MV016006,Dhevvadhoo,Dhevvadhoo — primary school (Gr 1-6),599,143
+MV016007,Kon'dey,Gaafu Alifu,education,school_primary,183,True,0.0,MV016007,Kon'dey,Kodey — primary school (Gr 1-6),328,95
+MV016009,Gemanafushi,Gaafu Alifu,education,school_primary,183,True,0.0,MV016009,Gemanafushi,Gemanafushi — primary school (Gr 1-6),1318,464
+MV016010,Kan'duhulhudhoo,Gaafu Alifu,education,school_primary,183,True,0.0,MV016010,Kan'duhulhudhoo,Kanduhulhudhoo — primary school (Gr 1-6),619,192
+MV017001,Madaveli,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017001,Madaveli,Madaveli — primary school (Gr 1-6),1219,407
+MV017002,Hoadehdhoo,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017002,Hoadehdhoo,Hoadedhdhoo — primary school (Gr 1-6),885,304
+MV017003,Nadellaa,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017003,Nadellaa,Nadallaa — primary school (Gr 1-6),581,159
+MV017004,Gahdhoo,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017004,Gahdhoo,Gadhdhoo — primary school (Gr 1-6),1414,403
+MV017005,Rathafandhoo,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017005,Rathafandhoo,Rathafandhoo — primary school (Gr 1-6),431,97
+MV017006,Vaadhoo,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017006,Vaadhoo,Vaadhoo — primary school (Gr 1-6),516,100
+MV017007,Fiyoari,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017007,Fiyoari,Fiyoari — primary school (Gr 1-6),637,206
+MV017008,Faresmaathodaa,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017008,Faresmaathodaa,Fares-Maathodaa — primary school (Gr 1-6),858,235
+MV017010,Thinadhoo,Gaafu Dhaalu,education,school_primary,183,True,0.0,MV017010,Thinadhoo,Thinadhoo — primary school (Gr 1-6),6217,2134
+MV018001,Fuvahmulah,Gnaviyani,education,school_primary,183,True,0.0,MV018001,Fuvahmulah,Fuvahmulah — primary school (Gr 1-6),9177,2761
+MV019001,Meedhoo,Seenu,education,school_primary,183,True,0.0,MV019001,Meedhoo,Meedhoo — primary school (Gr 1-6),1892,541
+MV019002,Hithadhoo,Seenu,education,school_primary,183,True,0.0,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),13759,3560
+MV019003,Maradhoo,Seenu,education,school_primary,183,True,0.0,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),2542,712
+MV019004,Feydhoo,Seenu,education,school_primary,183,True,0.0,MV019004,Feydhoo,Feydhoo — primary school (Gr 1-6),4289,914
+MV019005,Maradhoofeydhoo,Seenu,education,school_primary,183,False,0.35,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),1398,407
+MV019006,Hulhudhoo,Seenu,education,school_primary,183,False,0.1,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),1182,259
+MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — primary school (Gr 1-6),484,148
+MV020002,Omadhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020002,Omadhoo,Omadhoo — primary school (Gr 1-6),913,344
+MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — primary school (Gr 1-6),509,173
+MV020004,Mahibadhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020004,Mahibadhoo,Mahibadhoo — primary school (Gr 1-6),2580,796
+MV020005,Mandhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020005,Mandhoo,Mandhoo — primary school (Gr 1-6),418,85
+MV020006,Dhan'gethi,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020006,Dhan'gethi,Dhagethi — primary school (Gr 1-6),936,256
+MV020007,Dhigurah,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020007,Dhigurah,Dhigurah — primary school (Gr 1-6),761,153
+MV020008,Fenfushi,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020008,Fenfushi,Fenfushi — primary school (Gr 1-6),1000,333
+MV020009,Dhihdhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020009,Dhihdhoo,Dhidhdhoo — primary school (Gr 1-6),141,26
+MV020010,Maamin'gili,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020010,Maamin'gili,Maamigili — primary school (Gr 1-6),2798,833
+MLE,Malé City,Male,education,school_primary,183,True,0.0,MLE,Malé City,"Malé City (incl. Villimalé, Hulhumalé) — primary school (Gr 1-6)",211908,34823
 MV001001,Thuraakunu,Haa Alifu,health,health_centre,155,True,0.0,MV001001,Thuraakunu,Haa Alifu Thuraakunu Health Centre,427,109
 MV001002,Uligamu,Haa Alifu,health,health_centre,155,True,0.0,MV001002,Uligamu,Haa Alifu Uligan Health Centre,400,110
 MV001005,Mulhadhoo,Haa Alifu,health,health_centre,155,True,0.0,MV001005,Mulhadhoo,Haa Alifu Molhadhoo Health Centre,286,79

@@ -157,6 +157,20 @@ def education(sp: pd.DataFrame) -> list[dict]:
              ("is_higher_secondary", "school_higher_secondary", "higher secondary (Gr 11-12)")]
     for r in prov.itertuples():
         if getattr(r, "is_region_total", False):
+            # the MoE publishes Greater Malé as a single row. Those are Malé City's schools, so
+            # attribute the capability to the capital and say in the note where it came from.
+            row = male_row(sp)
+            if row is None:
+                continue
+            for flag, stype, label in tiers:
+                if not getattr(r, flag):
+                    continue
+                rows.append(dict(category="education", service_type=stype,
+                                 name=f"{row.island} — {label}",
+                                 atoll=row.atoll_name, island=row.island,
+                                 lat=round(float(row.lat), 5), lon=round(float(row.lon), 5),
+                                 source="MoE School Statistics 2024, Greater Malé region row",
+                                 notes="the ministry reports Greater Malé as one region"))
             continue
         for flag, stype, label in tiers:
             if not getattr(r, flag):

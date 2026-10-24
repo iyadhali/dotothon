@@ -62,11 +62,18 @@ SERVICE_LABEL = {
 }
 
 
+# opening view: the capital is the least surprising starting point. The browser remembers the
+# island you last looked at and ?island= overrides both.
+DEFAULT_ISLAND = "MLE"
+
+
 @require_GET
 def index(request):
     m = model()
     rows = m.ranked(limit=12)
-    island = request.GET.get("island", "MV002012")
+    island = request.GET.get("island") or DEFAULT_ISLAND
+    if island not in m.by_id.index:
+        island = DEFAULT_ISLAND
     return render(request, "access/index.html", {
         "s": m.stats(),
         "islands": m.picker,
@@ -78,7 +85,7 @@ def index(request):
         "default_to": "",
         "default_from_name": m.name_of(island),
         "default_to_name": "",
-        "default_island": request.GET.get("island", "MV002012"),
+        "default_island": island,
         "n_rows": len(m.inhabited),
         "n_services": len(m.services),
         "atoll_rows": coverage_by_atoll(),

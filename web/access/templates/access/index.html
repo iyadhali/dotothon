@@ -334,7 +334,10 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   });
 
   syncZoom();
-  const firstIsland = mapEl.dataset.defaultIsland;
+  // the URL wins, then the island you last opened in this browser, then the server default
+  const saved = (() => { try { return localStorage.getItem("island"); } catch (e) { return null; } })();
+  const qpIsland = new URLSearchParams(location.search).get("island");
+  const firstIsland = qpIsland || (saved && state.byId.has(saved) ? saved : mapEl.dataset.defaultIsland);
   if (firstIsland) {
     selectIsland(firstIsland, {fly:false});
     const p0 = state.byId.get(firstIsland);
@@ -412,6 +415,7 @@ function setPicker(hiddenId, value) {
 }
 
 function selectIsland(id, opts = {}) {
+  try { localStorage.setItem("island", id); } catch (e) { /* private mode */ }
   const p = state.byId.get(id);
   if (!p) return;
   if (state.sel) state.sel.setStyle({weight:0.8, color:"#ffffff"});

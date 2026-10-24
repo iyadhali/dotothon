@@ -19,6 +19,6 @@ These notes support the planned Maldives facilities atlas and transport simulato
 | [11](11_economic_models.md) | Economic modelling options |
 | [12](12_air_fares.md) | Air fares |
 
-The earlier [multi-modal accessibility plan](../MULTI_MODAL_ACCESSIBILITY_PLAN.md) remains available. It describes a proposed direction; the current implemented web scope is only the [basic Nuxt/Mapbox starter](../web/README.md).
+The [multimodal data readiness plan](../MULTIMODAL_DATA_READINESS_PLAN.md) prioritizes remaining data gaps, the pilot implementation sequence and validation checks. The earlier [multi-modal accessibility plan](../MULTI_MODAL_ACCESSIBILITY_PLAN.md) remains available. Both describe proposed work; the current implemented web scope is only the [basic Nuxt/Mapbox starter](../web/README.md).
 
 To discover notes added after this index, use `data_read_research` through the [agent tools](../tools/README.md), or list this directory. The raw data is not automatically uploaded or bundled with the starter.

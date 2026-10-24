@@ -10,7 +10,7 @@ from django.http import Http404
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_GET, require_http_methods
 
-from .data import DERIVED, ROOT, coverage_by_atoll, model, service_gap_by_atoll
+from .data import DERIVED, ROOT, coverage_by_atoll, db_frame, model, service_gap_by_atoll
 
 
 def _manifest() -> dict | None:
@@ -95,6 +95,9 @@ def index(request):
         "sel_band": "",
         # the island → service panel is in the first HTML paint, not only after an htmx call
         "first_panel": connect_context(m, island),
+        "n_links": int(db_frame(
+            "select count(*) n from (select min(from_id, to_id) a, max(from_id, to_id) b, "
+            "sum(trips) t from sea_edge group by 1, 2 having t >= 2)").iloc[0, 0]),
     })
 
 
@@ -190,15 +193,17 @@ def route(request):
         ctx["frm_name"] = m.name_of(frm)
         ctx["to_name"] = m.name_of(to)
         if legs is None:
-            ctx["error"] = ("No observed journey within two sailings. "
-                            "That is a finding, not a bug: the crossing may exist but was not "
-                            "captured in the August 2025 GPS sample.")
+            ctx["connected"] = False
+            ctx["error"] = ("Not connected on the observed network. No route using at most two "
+                            "sailings was captured in the August 2025 GPS month.")
         else:
             ctx["legs"] = [{"a": e.a, "b": e.b, "a_name": m.name_of(e.a), "b_name": m.name_of(e.b),
                             "hours": round(e.hours, 2), "kind": e.kind, "trips": e.trips}
                            for e in legs]
+            ctx["connected"] = True
             ctx["total"] = total
             ctx["hops"] = len(legs)
+            ctx["sailings"] = sum(1 for e in legs if e.kind == "sea")
             ctx["conn_h"] = max(0, len(legs) - 1) * 1.0
             # sailing time vs time spent waiting for a connection, for the little bar
             sailing = sum(e.hours for e in legs)

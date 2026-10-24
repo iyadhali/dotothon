@@ -6,7 +6,7 @@
     <p class="eyebrow">Maldives Datathon 2026 · Team A</p>
     <h1>What can each island reach?</h1>
     <p class="lede">44 of 187 islands teach grade 11–12. 159 reach one within two hours;
-      {{ n_beyond }} hold {{ gap_children|num }} children. Times come from 8,274 observed sailings.</p>
+      {{ n_beyond }} hold {{ gap_children|num }} children. Times come from 20,960 observed trips, not a timetable.</p>
   </div>
   <div class="topright">
     <div class="chips">
@@ -56,6 +56,9 @@
         <li data-band="over8"><i style="background:#c53030"></i>over 8 h</li>
         <li data-band="unknown"><i style="background:#9aa5b1"></i>no route</li>
       </ul>
+      <button class="chip toggle" id="netToggle" type="button" aria-pressed="false">
+        <i></i> show the {{ n_links }} observed links
+      </button>
       <p class="ovlfoot" id="footnote">circle = population · colour = hours to <span id="metricname">grades 11–12</span></p>
     </div>
   </aside>
@@ -340,6 +343,7 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   const ro = el("route-out").dataset;
   const qp2 = new URLSearchParams(location.search);
   if (qp2.get("to")) { setPicker("to", qp2.get("to")); submitRoute(); }
+  if (qp2.get("links") === "1") toggleLinks();   // shareable: the measured network on
   // share a view: ?lat=6.15&lon=73.28&z=9 opens the map at that spot, even after the demo route
   drawConnect();          // the panel is in the first paint; draw its journeys straight away
   frameConnect();
@@ -459,6 +463,27 @@ function submitRoute() {
 }
 
 function clearRoute() { if (state.routeLayer) { map.removeLayer(state.routeLayer); state.routeLayer = null; } }
+
+let linksLayer = null, linksOn = false;
+function toggleLinks() {
+  linksOn = !linksOn;
+  el("netToggle").setAttribute("aria-pressed", linksOn ? "true" : "false");
+  el("netToggle").classList.toggle("is-on", linksOn);
+  if (!linksOn) { if (linksLayer) { map.removeLayer(linksLayer); linksLayer = null; } return; }
+  if (linksLayer) { linksLayer.addTo(map); return; }
+  fetch("/static/access/links.geojson").then(r => r.json()).then(gj => {
+    linksLayer = L.geoJSON(gj, {
+      style: f => {
+        const h = f.properties.hours || 0;
+        const c = h <= 2 ? "#0f766e" : h <= 4 ? "#d69e2e" : h <= 8 ? "#dd6b20" : "#c53030";
+        return {color: c, weight: Math.min(2.6, 0.4 + Math.log2(1 + f.properties.trips) * 0.7), opacity: 0.32};
+      },
+    });
+    linksLayer.bringToBack();
+    linksLayer.addTo(map);
+    state.markers.bringToFront();          // islands stay readable above the lines
+  });
+}
 
 let firstRoute = true;
 function drawRoute() {

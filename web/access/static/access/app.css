@@ -773,3 +773,21 @@ button.primary:hover { background: #0b6259; }
 .fromline { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
   margin: 2px 0 6px; }
 .fromline b { color: var(--ink); letter-spacing: 0; text-transform: none; font-size: 12.5px; font-weight: 640; }
+
+/* connectivity verdict: the first thing the second island answers */
+.verdict { display: flex; align-items: baseline; gap: 10px; margin: 2px 0 10px; }
+.verdict b { font-size: 15px; letter-spacing: -.01em; }
+.verdict span { font-size: 11.5px; color: var(--muted); }
+.verdict.yes b { color: #0f766e; }
+.verdict.no b { color: #b42318; }
+.verdict.yes b::before, .verdict.no b::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 7px;
+  vertical-align: 2px;
+}
+.verdict.yes b::before { background: #0f766e; }
+.verdict.no b::before { background: #b42318; }
+
+.chip.toggle { display: inline-flex; align-items: center; gap: 7px; margin-top: 4px; }
+.chip.toggle i { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--muted); }
+.chip.toggle.is-on { background: #e9f6f4; border-color: #9fd6cd; color: #0b4f57; }
+.chip.toggle.is-on i { background: #0f766e; border-color: #0f766e; }

@@ -152,10 +152,41 @@ def main() -> None:
     print(f"wrote islands_points.json — {len(pts)} points, "
           f"{(OUT.parent / 'islands_points.json').stat().st_size / 1e3:.0f} KB")
     write_atolls()
+    write_links()
 
     bands = pd.Series([x["properties"]["band"] for x in feats]).value_counts().to_dict()
     print(f"wrote {OUT.relative_to(ROOT)} — {len(feats)} features, "
           f"{OUT.stat().st_size / 1e6:.2f} MB, bands {bands}")
+
+
+def write_links():
+    """Every observed island pair as a line, so the map can show the measured network itself.
+
+    One undirected line per pair (the sea_edges file stores both directions), keeping pairs that
+    were seen at least twice — a single trip is as likely to be a GPS artefact as a route.
+    """
+    root = ROOT
+    edges = pd.read_csv(root / "data" / "derived" / "sea_edges.csv")
+    nodes = pd.read_csv(root / "data" / "derived" / "sea_nodes.csv").set_index("node_id")
+    edges["key"] = [tuple(sorted((a, b))) for a, b in zip(edges.from_id, edges.to_id)]
+    pairs = (edges.groupby("key")
+             .agg(trips=("trips", "sum"), hours=("med_hours", "median")).reset_index())
+    pairs = pairs[pairs.trips >= 2]
+    feats = []
+    for r in pairs.itertuples(index=False):
+        a, b = r.key
+        if a not in nodes.index or b not in nodes.index:
+            continue
+        feats.append({
+            "type": "Feature",
+            "geometry": {"type": "LineString", "coordinates": [
+                [round(float(nodes.loc[a, "lon"]), 4), round(float(nodes.loc[a, "lat"]), 4)],
+                [round(float(nodes.loc[b, "lon"]), 4), round(float(nodes.loc[b, "lat"]), 4)]]},
+            "properties": {"trips": int(r.trips), "hours": round(float(r.hours), 2)},
+        })
+    out = OUT.parent / "links.geojson"
+    out.write_text(json.dumps({"type": "FeatureCollection", "features": feats}, separators=(",", ":")))
+    print(f"wrote links.geojson — {len(feats)} observed pairs, {out.stat().st_size / 1e3:.0f} KB")
 
 
 if __name__ == "__main__":

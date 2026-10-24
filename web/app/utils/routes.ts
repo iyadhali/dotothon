@@ -251,3 +251,12 @@ function formatDeparture(minute: number | undefined): string {
   const normalised = ((Math.round(minute) % 1440) + 1440) % 1440
   return `${String(Math.floor(normalised / 60)).padStart(2, '0')}:${String(normalised % 60).padStart(2, '0')}`
 }
+
+/** A destination drawn on the map for the selected origin (nearest facility per service). */
+export interface MapHighlight {
+  islandId: string
+  lon: number
+  lat: number
+  /** Short label, e.g. "Hospital · 2 h 20". */
+  label: string
+}

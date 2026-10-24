@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useMultimodal } from '../composables/useMultimodal'
+import { formatDuration } from '../utils/format'
+import type { MapHighlight } from '../utils/routes'
 
 const store = useMultimodal()
 
@@ -41,7 +43,37 @@ const {
   filterActive,
   selectOrigin,
   regionSplit,
+  accessReport,
 } = store
+
+const SHORT_LABELS: Record<string, string> = {
+  health_hospital: 'Hospital',
+  health_regional_tertiary: 'Regional hospital',
+  education_grade_11_12: 'Grade 11–12',
+  education_higher_ed: 'Higher education',
+}
+
+/** Nearest destination per service for the selected island, merged by island for the map. */
+const mapHighlights = computed<MapHighlight[]>(() => {
+  const net = network.value
+  if (!net) return []
+  const byIsland = new Map<string, { labels: string[]; minutes: number }>()
+  for (const row of accessReport.value) {
+    const first = row.destinations[0]
+    if (!first || first.journey.elapsedMinutes === 0) continue
+    const label = SHORT_LABELS[row.category] ?? net.categories.find((c) => c.id === row.category)?.label ?? row.category
+    const entry = byIsland.get(first.journey.destinationIslandId) ?? { labels: [], minutes: first.journey.elapsedMinutes }
+    entry.labels.push(label)
+    byIsland.set(first.journey.destinationIslandId, entry)
+  }
+  const islandsById = new Map(net.islands.map((island) => [island.id, island]))
+  return [...byIsland.entries()].flatMap(([islandId, entry]) => {
+    const island = islandsById.get(islandId)
+    if (!island) return []
+    return [{ islandId, lon: island.lon, lat: island.lat, label: `${island.name}
+${entry.labels.join(', ')} · ${formatDuration(entry.minutes)}` }]
+  })
+})
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -146,7 +178,7 @@ const displaySummary = computed(() =>
           :loading="metricsLoading"
         />
 
-        <div class="mm-grid">
+        <div class="mm-hero">
           <MapPanel
             :islands="islands"
             :bands="islandBands"
@@ -161,11 +193,14 @@ const displaySummary = computed(() =>
             :metrics-loading="metricsLoading"
             :has-mapbox-token="hasMapboxToken"
             :filter-active="filterActive"
+            :highlights="mapHighlights"
             @select-origin="selectOrigin"
           />
 
-          <IslandAccessPanel class="mm-grid__wide" :store="store" />
+          <IslandAccessPanel class="mm-hero__panel" :store="store" />
+        </div>
 
+        <div class="mm-grid">
           <JourneyCard
             :origin="selectedOrigin"
             :access="selectedOriginAccess"

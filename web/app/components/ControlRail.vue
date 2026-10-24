@@ -53,55 +53,40 @@ const networkFact = computed(() => {
 <template>
   <div class="mm-rail">
     <section class="mm-rail__section" aria-labelledby="mm-controls-title">
-      <h2 id="mm-controls-title" class="mm-rail__title">Controls</h2>
-      <p class="mm-hint">
-        Set one origin and departure. National metrics cover every origin island; the journey
-        card follows the selected origin.
-      </p>
+      <h2 id="mm-controls-title" class="mm-rail__title">Explore</h2>
+      <p class="mm-hint">Pick an island (or click it on the map), a service and a departure time.</p>
 
       <OriginSelect v-model="originIslandId" :origins="origins" />
 
       <label class="mm-field">
-        <span class="mm-label">Destination category</span>
+        <span class="mm-label">Service shown on the map</span>
         <select v-model="category" class="mm-input">
           <optgroup v-for="group in categoryGroups" :key="group.label" :label="group.label">
             <option v-for="definition in group.categories" :key="definition.id" :value="definition.id">
-              {{ definition.label }} — {{ definition.facilityCount }} facilities /
-              {{ definition.islandCount }} islands
+              {{ definition.label }} ({{ definition.islandCount }} islands)
             </option>
           </optgroup>
         </select>
       </label>
       <p v-if="selectedCategory" class="mm-hint">
-        {{ selectedCategory.definition }}
-        <span class="mm-hint__meta">{{ selectedCategory.confidenceNote }}</span>
+        {{ selectedCategory.facilityCount }} facilities on {{ selectedCategory.islandCount }} islands.
       </p>
 
       <label class="mm-field">
         <span class="mm-label">Departure time</span>
         <input v-model="departureTime" class="mm-input" type="time" step="60" />
-        <span class="mm-hint">
-          Maldives time (UTC+5) on the reference day. Journey results are earliest arrival
-          after this time.
-        </span>
+        <span class="mm-hint">Maldives time. Ferry departures decide most results, so try 06:00 and 14:00.</span>
       </label>
 
-      <p class="mm-hint" role="note">
-        Air model: {{ airModelNote }}
-      </p>
-
       <fieldset class="mm-fieldset">
-        <legend class="mm-label">Metrics threshold</legend>
+        <legend class="mm-label">National metric: within</legend>
         <div class="mm-seg mm-seg--three" role="radiogroup" aria-label="Travel-time threshold">
           <label v-for="value in thresholds" :key="value" class="mm-seg__item">
             <input v-model="threshold" type="radio" name="mm-threshold" :value="value" />
             <span class="mm-seg__label">{{ value }} min</span>
           </label>
         </div>
-        <p class="mm-hint">
-          Headline metric: population that can reach the nearest eligible facility within
-          {{ thresholdLabel }}.
-        </p>
+        
       </fieldset>
 
       <p v-if="!engineReady" class="mm-alert mm-alert--info" role="status">
@@ -110,7 +95,16 @@ const networkFact = computed(() => {
       </p>
     </section>
 
-    <NetworkControls :store="store" :disabled="!engineReady" />
+    <details class="mm-advanced">
+      <summary>
+        <div>
+          Network &amp; scenario tools
+          <span>Switch modes and routes, add a ferry trip or a facility</span>
+        </div>
+      </summary>
+      <div class="mm-advanced__body">
+        <p class="mm-hint" role="note">Air model: {{ airModelNote }}</p>
+        <NetworkControls :store="store" :disabled="!engineReady" />
 
     <ScenarioControls :store="store" :disabled="!engineReady" />
 
@@ -144,5 +138,7 @@ const networkFact = computed(() => {
         </div>
       </dl>
     </section>
+      </div>
+    </details>
   </div>
 </template>

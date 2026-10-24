@@ -16,7 +16,7 @@ import {
 import type { Feature, FeatureCollection, LineString, Point, Polygon } from 'geojson'
 import type { Island } from '../../shared/routing/types'
 import { BAND_BY_KEY, LEGEND_BANDS, type IslandBandInfo } from '../utils/bands'
-import type { AirportPoint, FacilityPoint, RoutePath } from '../utils/routes'
+import type { AirportPoint, FacilityPoint, MapHighlight, RoutePath } from '../utils/routes'
 import { formatDuration, formatPopulation } from '../utils/format'
 import { featureIslandId } from '../utils/geo'
 
@@ -30,7 +30,10 @@ const props = defineProps<{
   categoryLabel: string
   /** Island polygons from islands.geojson; drawn as the actual choropleth. */
   geojson: FeatureCollection | null
+  /** Nearest facility per service for the selected origin, drawn as lines + labels. */
+  highlights?: MapHighlight[]
 }>()
+
 
 const emit = defineEmits<{
   'select-origin': [islandId: string]
@@ -46,6 +49,19 @@ const SOURCE_ROUTES_ESTIMATED = 'mm-routes-estimated'
 const SOURCE_ROUTES_AIR = 'mm-routes-air'
 const SOURCE_FACILITIES = 'mm-facilities'
 const SOURCE_ORIGIN = 'mm-origin'
+const SOURCE_HIGHLIGHT_LINES = 'mm-highlight-lines'
+const SOURCE_HIGHLIGHT_POINTS = 'mm-highlight-points'
+const LAYER_HIGHLIGHT_LABELS = 'mm-highlight-labels'
+/** Circle radius grows with the square root of population and with zoom. */
+const POPULATION_RADIUS = [
+  'interpolate',
+  ['linear'],
+  ['zoom'],
+  5,
+  ['+', 2.5, ['*', 0.03, ['sqrt', ['get', 'population']]]],
+  9,
+  ['+', 5, ['*', 0.07, ['sqrt', ['get', 'population']]]],
+] as unknown as number
 
 const container = ref<HTMLDivElement | null>(null)
 const errorMessage = ref('')
@@ -111,9 +127,12 @@ function clearRendered(): void {
     SOURCE_ROUTES_AIR,
     SOURCE_FACILITIES,
     SOURCE_ORIGIN,
+    SOURCE_HIGHLIGHT_LINES,
   ]) {
     removeLayerAndSource(id)
   }
+  if (map.getLayer(LAYER_HIGHLIGHT_LABELS)) map.removeLayer(LAYER_HIGHLIGHT_LABELS)
+  removeLayerAndSource(SOURCE_HIGHLIGHT_POINTS)
   for (const marker of airportMarkers) marker.remove()
   airportMarkers = []
   originLayerIds = []
@@ -216,7 +235,7 @@ function render(): void {
       source: id,
       paint: {
         'circle-color': band.color,
-        'circle-radius': 6,
+        'circle-radius': POPULATION_RADIUS,
         'circle-stroke-color': band.ink,
         'circle-stroke-width': 1,
         'circle-stroke-opacity': 0.7,
@@ -328,6 +347,62 @@ function render(): void {
         'circle-stroke-width': 2.5,
       },
     })
+
+    // Nearest facility per service: a line from the origin and a labelled destination.
+    const highlights = (props.highlights ?? []).filter((item) => item.islandId !== origin.id)
+    if (highlights.length > 0) {
+      map.addSource(SOURCE_HIGHLIGHT_LINES, {
+        type: 'geojson',
+        data: collection(
+          highlights.map((item) => ({
+            type: 'Feature',
+            geometry: { type: 'LineString', coordinates: [[origin.lon, origin.lat], [item.lon, item.lat]] },
+            properties: {},
+          })),
+        ),
+      })
+      map.addLayer({
+        id: `${SOURCE_HIGHLIGHT_LINES}-layer`,
+        type: 'line',
+        source: SOURCE_HIGHLIGHT_LINES,
+        paint: { 'line-color': '#b36c48', 'line-width': 1.8, 'line-dasharray': [2, 1.5], 'line-opacity': 0.85 },
+      })
+      map.addSource(SOURCE_HIGHLIGHT_POINTS, {
+        type: 'geojson',
+        data: collection(
+          highlights.map((item) => ({
+            type: 'Feature',
+            geometry: { type: 'Point', coordinates: [item.lon, item.lat] },
+            properties: { label: item.label },
+          })),
+        ),
+      })
+      map.addLayer({
+        id: `${SOURCE_HIGHLIGHT_POINTS}-layer`,
+        type: 'circle',
+        source: SOURCE_HIGHLIGHT_POINTS,
+        paint: {
+          'circle-color': '#fffdf8',
+          'circle-radius': 6,
+          'circle-stroke-color': '#b36c48',
+          'circle-stroke-width': 2.5,
+        },
+      })
+      map.addLayer({
+        id: LAYER_HIGHLIGHT_LABELS,
+        type: 'symbol',
+        source: SOURCE_HIGHLIGHT_POINTS,
+        layout: {
+          'text-field': ['get', 'label'],
+          'text-size': 12,
+          'text-offset': [0, 1.3],
+          'text-anchor': 'top',
+          'text-allow-overlap': false,
+          'text-max-width': 14,
+        },
+        paint: { 'text-color': '#233d36', 'text-halo-color': '#fffdf8', 'text-halo-width': 1.6 },
+      })
+    }
   }
 }
 
@@ -445,6 +520,7 @@ watch(
     props.facilities,
     props.originIslandId,
     props.geojson,
+    props.highlights,
   ],
   () => {
     if (mapReady) render()

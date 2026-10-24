@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { MapHighlight } from '../utils/routes'
 import { computed, ref } from 'vue'
 import type { FeatureCollection } from 'geojson'
 import type { Island } from '../../shared/routing/types'
@@ -21,6 +22,7 @@ const props = defineProps<{
   metricsLoading: boolean
   hasMapboxToken: boolean
   filterActive?: boolean
+  highlights?: MapHighlight[]
 }>()
 
 const emit = defineEmits<{ 'select-origin': [islandId: string] }>()
@@ -102,6 +104,7 @@ const facilityPopulation = computed(() =>
           :origin-island-id="originIslandId"
           :category-label="categoryLabel"
           :geojson="geojson"
+          :highlights="highlights"
           @select-origin="onSelectOrigin"
           @fallback="onFallback"
         />

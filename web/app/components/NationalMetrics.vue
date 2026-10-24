@@ -93,7 +93,7 @@ const originSegments = computed(() => {
     },
     {
       key: 'no_access',
-      label: 'No access',
+      label: 'No transport data',
       count: props.summary.originsNoAccess,
       share: props.summary.originsNoAccess / total,
     },

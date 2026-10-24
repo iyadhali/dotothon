@@ -74,15 +74,18 @@ const viewBox = computed(() => {
     for (const journey of props.journeys) focusPoints.push(...journey.points)
     for (const destination of props.destinations) focusPoints.push([destination.lon, destination.lat])
   }
-  if (focusPoints.length < 2) return `0 0 ${W} ${H}`
+  if (focusPoints.length < 2) return { x: 0, y: 0, size: W }
   const projected = focusPoints.map(([lon, lat]) => project(lon, lat))
   const xs = projected.map(([x]) => x)
   const ys = projected.map(([, y]) => y)
   const size = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys), 60) * 1.6
   const cx = (Math.max(...xs) + Math.min(...xs)) / 2
   const cy = (Math.max(...ys) + Math.min(...ys)) / 2
-  return `${cx - size / 2} ${cy - size / 2} ${size} ${size}`
+  return { x: cx - size / 2, y: cy - size / 2, size }
 })
+/** Zoom factor: marks and labels are divided by it so they keep their on-screen size. */
+const k = computed(() => W / viewBox.value.size)
+const textStyle = (px: number) => ({ fontSize: `${px / k.value}px`, strokeWidth: `${3 / k.value}px` })
 const byId = computed(() => new Map(props.islands.map((island) => [island.id, island])))
 
 function fill(island: Island): string {
@@ -99,7 +102,7 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
 </script>
 
 <template>
-  <svg class="am-fallback" :viewBox="viewBox" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Maldives islands map" @click.self="emit('select', null)">
+  <svg class="am-fallback" :viewBox="`${viewBox.x} ${viewBox.y} ${viewBox.size} ${viewBox.size}`" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Maldives islands map" @click.self="emit('select', null)">
     <g :opacity="focused ? 0.15 : view === 'access' ? 0.6 : 0.2">
       <path
         v-for="route in routes"
@@ -107,22 +110,22 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
         :d="path(route.points)"
         fill="none"
         :stroke="route.mode === 'air' ? '#a5b4fc' : '#94a3b8'"
-        stroke-width="1"
-        :stroke-dasharray="route.mode === 'air' ? '4 3' : undefined"
+        :stroke-width="1 / k"
+        :stroke-dasharray="route.mode === 'air' ? `${4 / k} ${3 / k}` : undefined"
       />
     </g>
     <g :opacity="focused ? 0.3 : view === 'access' ? 0.9 : 0.25">
-      <path v-for="road in landRoutes" :key="road.id" :d="path(road.points)" fill="none" stroke="#334155" stroke-width="2.5" stroke-linecap="round" />
+      <path v-for="road in landRoutes" :key="road.id" :d="path(road.points)" fill="none" stroke="#334155" :stroke-width="2.5 / k" stroke-linecap="round" />
     </g>
     <circle
       v-for="island in islands.filter((i) => i.isOrigin)"
       :key="island.id"
       :cx="project(island.lon, island.lat)[0]"
       :cy="project(island.lon, island.lat)[1]"
-      :r="radius(island)"
+      :r="radius(island) / k"
       :fill="fill(island)"
       :stroke="view === 'underserved' && underserved[island.id] === 'no_data' ? '#64748b' : '#ffffff'"
-      stroke-width="1"
+      :stroke-width="1 / k"
       class="am-fallback__island"
       @click.stop="emit('select', island.id)"
     >
@@ -134,11 +137,11 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
         :key="`f-${facility.islandId}`"
         :cx="project(facility.lon, facility.lat)[0]"
         :cy="project(facility.lon, facility.lat)[1]"
-        :r="facility.major ? 5 : 3"
+        :r="(facility.major ? 5 : 3) / k"
         :fill="FACILITY_COLOR[facility.kind]"
         :opacity="focused ? 0.35 : 0.95"
         stroke="#ffffff"
-        stroke-width="0.8"
+        :stroke-width="0.8 / k"
         pointer-events="none"
       />
       <path
@@ -147,13 +150,13 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
         :d="path(journey.points)"
         fill="none"
         :stroke="JOURNEY_COLOR[journey.mode] ?? '#475569'"
-        stroke-width="3"
+        :stroke-width="3 / k"
         stroke-linecap="round"
-        :stroke-dasharray="journey.mode === 'air' ? '6 4' : undefined"
+        :stroke-dasharray="journey.mode === 'air' ? `${6 / k} ${4 / k}` : undefined"
       />
       <g v-for="destination in destinations" :key="`d-${destination.islandId}`">
-        <circle :cx="project(destination.lon, destination.lat)[0]" :cy="project(destination.lon, destination.lat)[1]" r="6" fill="#ffffff" stroke="#0f172a" stroke-width="2.5" />
-        <text :x="project(destination.lon, destination.lat)[0] + 10" :y="project(destination.lon, destination.lat)[1] + 4" class="am-fallback__label">
+        <circle :cx="project(destination.lon, destination.lat)[0]" :cy="project(destination.lon, destination.lat)[1]" :r="6 / k" fill="#ffffff" stroke="#0f172a" :stroke-width="2.5 / k" />
+        <text :x="project(destination.lon, destination.lat)[0] + 10 / k" :y="project(destination.lon, destination.lat)[1] + 4 / k" class="am-fallback__label" :style="textStyle(13)">
           {{ destination.label.replace('\n', ' · ') }}
         </text>
       </g>
@@ -161,10 +164,10 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
         v-if="selectedIslandId && byId.get(selectedIslandId)"
         :cx="project(byId.get(selectedIslandId)!.lon, byId.get(selectedIslandId)!.lat)[0]"
         :cy="project(byId.get(selectedIslandId)!.lon, byId.get(selectedIslandId)!.lat)[1]"
-        r="7"
+        :r="7 / k"
         fill="#0f172a"
         stroke="#ffffff"
-        stroke-width="2.5"
+        :stroke-width="2.5 / k"
       />
     </template>
     <template v-if="view === 'recommended'">
@@ -176,18 +179,18 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
           pathLength="1"
           class="am-fallback__site-route"
           :class="{ 'is-same': !route.improves }"
-          :style="{ animationDelay: `${(index % 12) * 60}ms` }"
+          :style="{ animationDelay: `${(index % 12) * 60}ms`, strokeWidth: `${(route.improves ? 3 : 1.6) / k}px` }"
         />
       </g>
       <g v-for="label in siteLabels" :key="`sl-${label.islandId}`">
-        <text :x="project(label.lon, label.lat)[0] + 8" :y="project(label.lon, label.lat)[1] + 16" class="am-fallback__site-label">
+        <text :x="project(label.lon, label.lat)[0] + 8 / k" :y="project(label.lon, label.lat)[1] + 16 / k" class="am-fallback__site-label" :style="textStyle(12)">
           {{ label.label.replace('\n', ' · ') }}
         </text>
       </g>
       <g v-for="site in sites" :key="`s-${site.islandId}`">
         <template v-if="byId.get(site.islandId)">
-          <circle :cx="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[0]" :cy="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[1]" r="11" fill="#0f172a" stroke="#ffffff" stroke-width="2" />
-          <text :x="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[0]" :y="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[1] + 4" text-anchor="middle" class="am-fallback__rank">{{ site.rank }}</text>
+          <circle :cx="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[0]" :cy="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[1]" :r="11 / k" fill="#0f172a" stroke="#ffffff" :stroke-width="2 / k" />
+          <text :x="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[0]" :y="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[1] + 4 / k" text-anchor="middle" class="am-fallback__rank" :style="{ fontSize: `${12 / k}px` }">{{ site.rank }}</text>
         </template>
       </g>
     </template>

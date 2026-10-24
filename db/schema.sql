@@ -162,26 +162,8 @@ CREATE TABLE IF NOT EXISTS priority_gaps (
 
 -- ---------------------------------------------------------------- landing zone ----------------
 -- One row per file ever seen, with its content hash, so a re-drop of the same bytes is a no-op.
-CREATE TABLE IF NOT EXISTS source_file (
-    path       TEXT PRIMARY KEY,        -- relative to the repo root
-    sha256     TEXT NOT NULL,
-    bytes      INTEGER NOT NULL,
-    rows       INTEGER,
-    kind       TEXT,                    -- services | mtcc | macl | avas | followme | census | moh | moe | raw
-    stage      TEXT,                    -- the pipeline stage it feeds, NULL when nothing consumes it yet
-    first_seen TEXT,
-    last_seen  TEXT
-);
-
 -- Files the pipeline does not understand yet are still kept: one row per record as JSON, so a new
 -- dataset is queryable the moment it is dropped, before any stage knows what to do with it.
-CREATE TABLE IF NOT EXISTS raw_record (
-    source_file TEXT NOT NULL,          -- FK to source_file(path)
-    row_no      INTEGER NOT NULL,
-    payload     TEXT NOT NULL,          -- the record as a JSON object
-    PRIMARY KEY (source_file, row_no)
-);
-
 -- Every reconciliation writes one row per table it touched, so "who changed what, when" is a query.
 CREATE TABLE IF NOT EXISTS data_change (
     change_id     INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -227,3 +209,15 @@ CREATE VIEW IF NOT EXISTS island_access AS
            hours_to_hs, hours_to_lower_sec, hours_to_campus,
            islands_reachable, sea_neighbours
     FROM island WHERE type = 'inhabited';
+
+-- air links. Empty until a timetable source is available: the point is that adding the air layer
+-- is an insert into this table, not a change to the router, the schema or the templates.
+create table if not exists air_edge (
+    a    text not null references island(node_id),
+    b    text not null references island(node_id),
+    hours real not null,              -- gate-to-gate flight time
+    trips integer,                    -- observed departures in the source period
+    source text,
+    primary key (a, b)
+);
+create index if not exists idx_air_edge_a on air_edge(a);

@@ -29,7 +29,9 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 INCOMING = ROOT / "data" / "incoming"
-DB = ROOT / "data" / "platform.sqlite"
+# the landing zone is deliberately a *separate* database from the one the app serves:
+# raw bytes never reach the serving path, only what a stage has processed does
+DB = ROOT / "data" / "landing.sqlite"
 SCHEMA = ROOT / "db" / "schema.sql"
 MAX_ROWS = 50_000          # a runaway file should not silently bloat the database
 
@@ -81,6 +83,18 @@ def ensure_schema(con) -> None:
     con.executescript(SCHEMA.read_text())      # idempotent: CREATE ... IF NOT EXISTS
 
 
+LANDING_SCHEMA = """
+create table if not exists source_file (
+    path text primary key, sha256 text not null, bytes integer, rows integer,
+    kind text, stage text, first_seen text, last_seen text);
+create table if not exists raw_record (
+    source_file text not null, row_no integer not null, payload text,
+    primary key (source_file, row_no));
+create table if not exists intake_log (
+    logged_at text, path text, action text, detail text);
+"""
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -93,6 +107,7 @@ def main() -> None:
         return
 
     con = sqlite3.connect(DB)
+    con.executescript(LANDING_SCHEMA)
     ensure_schema(con)
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     report = []

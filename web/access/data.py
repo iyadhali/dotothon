@@ -119,6 +119,17 @@ class Model:
                                         float(r.med_knots), int(r.trips))
         # the Addu causeway lives in the database with the boat edges it has to be combined with;
         # the Python constant is only a fallback for a database built before that table existed
+        # air links are optional: when the table is empty the network is the sea network plus roads
+        try:
+            air = db_frame("select * from air_edge")
+        except Exception:
+            air = None
+        if air is not None and len(air):
+            for r in air.itertuples():
+                if not (self._known(r.a) and self._known(r.b)):
+                    continue
+                for x, y in ((r.a, r.b), (r.b, r.a)):
+                    best[(x, y)] = Edge(x, y, float(r.hours), None, None, int(r.trips or 0), "air")
         land = db_frame("select * from land_edge")
         if len(land):
             for r in land.itertuples():
@@ -199,7 +210,7 @@ class Model:
                 done = (node, sails, mode)
                 break
             for e in self.adj.get(node, []):
-                ns = sails + (1 if e.kind == "sea" else 0)
+                ns = sails + (1 if e.kind == "sea" else 0)   # air and road legs do not use the sailing budget
                 if ns > MAX_HOPS:
                     continue
                 connects = mode is not None and not (mode == "land" and e.kind == "land")

@@ -4,6 +4,7 @@ Each fragment is a plain Django template render — no JSON, no client-side rout
 HTML in, so the same code path serves the first paint and every interaction after it.
 """
 import json
+import sqlite3
 
 import pandas as pd
 from django.http import Http404
@@ -67,6 +68,14 @@ SERVICE_LABEL = {
 DEFAULT_ISLAND = "MLE"
 
 
+def _has_air() -> bool:
+    """True once an air timetable has been loaded — the footer says so without a code change."""
+    try:
+        return int(db_frame("select count(*) c from air_edge").c.iloc[0]) > 0
+    except Exception:
+        return False
+
+
 def db_meta() -> dict:
     """What the database says about itself — the panel footer shows this, not a CSV's mtime."""
     try:
@@ -80,7 +89,14 @@ def db_meta() -> dict:
                                    .strftime("%d %b %H:%M"))
         except Exception:
             pass
-        meta["files"] = int(db_frame("select count(*) c from source_file").c.iloc[0])
+        # the landing zone is a different file on purpose: raw bytes never enter the serving DB
+        try:
+            land = sqlite3.connect(f"file:{ROOT / 'data' / 'landing.sqlite'}?mode=ro", uri=True)
+            meta["landing"] = int(land.execute("select count(*) from source_file").fetchone()[0])
+            meta["raw_rows"] = int(land.execute("select count(*) from raw_record").fetchone()[0])
+            land.close()
+        except Exception:
+            meta["landing"], meta["raw_rows"] = 0, 0
         meta["changes"] = int(db_frame("select count(*) c from data_change").c.iloc[0])
         return meta
     except Exception:
@@ -102,6 +118,7 @@ def index(request):
         "gaps": m.gaps,
         "manifest": _manifest(),
         "db_meta": db_meta(),
+        "has_air": _has_air(),
         "default_from": island,
         "default_to": "",
         "default_from_name": m.name_of(island) or island,

@@ -182,7 +182,8 @@ KEYS = {
     "island": ["node_id"], "sea_edge": ["from_id", "to_id"], "land_edge": ["a", "b"],
     "service": ["service_id"], "service_access": ["node_id", "service_type"],
     "service_summary": ["category", "service_type"], "priority_gaps": ["node_id"],
-    "placement": ["service_type", "k"], "dataset": ["id"], "meta": ["key"],
+    "placement": ["service_type", "k"],
+    "air_edge": ["a", "b"], "dataset": ["id"], "meta": ["key"],
 }
 
 
@@ -278,7 +279,7 @@ def main() -> None:
     counts = {t: con.execute(f"select count(*) from {t}").fetchone()[0]
               for t in ["island", "sea_edge", "land_edge", "service", "service_access",
                         "service_summary", "priority_gaps", "placement", "dataset", "meta",
-                        "source_file", "raw_record", "data_change"]}
+                        "air_edge", "data_change"]}
     print(f"wrote {OUT.relative_to(ROOT)}  ({OUT.stat().st_size/1e6:.2f} MB)")
     print("  " + "  ".join(f"{k}={v:,}" for k, v in counts.items()))
     if touched:
@@ -290,7 +291,7 @@ def main() -> None:
 
     if "--inspect" in sys.argv:
         con = sqlite3.connect(OUT)
-        for t in ["island", "service", "sea_edge", "data_change", "source_file"]:
+        for t in ["island", "service", "sea_edge", "air_edge", "data_change"]:
             print(f"\n{t}:")
             for row in con.execute(f"select * from {t} limit 3"):
                 print("   ", row)

@@ -17,6 +17,8 @@ import type {
   Scenario,
   TimetabledService,
 } from '../../shared/routing/types'
+import type { AccessReportOptions, CategoryAccess } from '../../shared/routing/nearby'
+import type { FareTable } from '../../shared/routing/cost'
 
 export interface MultimodalEngine {
   planJourney: (network: MultimodalNetwork, request: JourneyRequest) => Journey | null
@@ -40,6 +42,12 @@ export interface MultimodalEngine {
     newFirstDepartureMinute: number,
     id?: string,
   ) => TimetabledService
+  /** Nearest facilities per category with time, fare and same-day return (optional). */
+  buildAccessReport?: (
+    network: MultimodalNetwork,
+    fares: FareTable | null,
+    options: AccessReportOptions,
+  ) => CategoryAccess[]
 }
 
 let engine: MultimodalEngine | null = null

@@ -155,3 +155,49 @@ export function compareAccessibility(
     changes,
   }
 }
+
+/** Greater Malé origin islands (census city/ward rows). */
+export const GREATER_MALE_NAMES = new Set(['Maale', 'Hulhumaale', 'Hulhule', "Vilin'gili"])
+
+export interface RegionAccess {
+  population: number
+  /** Facility on the home island: no travel needed. */
+  onIsland: number
+  /** Reached by travelling on the network the same day. */
+  byTransport: number
+  /** Has transport data but no same-day connection. */
+  unreachable: number
+  /** No transport data for the island (coverage gap). */
+  noData: number
+}
+
+export interface RegionSplit {
+  greaterMale: RegionAccess
+  atolls: RegionAccess
+}
+
+/**
+ * Split an accessibility result into Greater Malé and the atolls. Greater Malé holds about
+ * 47% of residents and has every service, so the national figure hides the atoll picture.
+ */
+export function splitByRegion(result: AccessibilityResult | null, islands: Island[]): RegionSplit | null {
+  if (!result) return null
+  const empty = (): RegionAccess => ({ population: 0, onIsland: 0, byTransport: 0, unreachable: 0, noData: 0 })
+  const split: RegionSplit = { greaterMale: empty(), atolls: empty() }
+  for (const island of islands) {
+    if (!island.isOrigin) continue
+    const access = result.perOrigin[island.id]
+    if (!access) continue
+    const bucket = GREATER_MALE_NAMES.has(island.name) ? split.greaterMale : split.atolls
+    bucket.population += island.population
+    if (access.status === 'reachable') {
+      if (access.journey && access.journey.elapsedMinutes > 0) bucket.byTransport += island.population
+      else bucket.onIsland += island.population
+    } else if (access.status === 'no_origin_access') {
+      bucket.noData += island.population
+    } else {
+      bucket.unreachable += island.population
+    }
+  }
+  return split
+}

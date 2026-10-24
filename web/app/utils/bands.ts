@@ -112,14 +112,14 @@ export const BAND_STYLES: readonly BandStyle[] = [
   },
   {
     key: 'no_origin_access',
-    label: 'No origin access',
-    shortLabel: 'No access',
+    label: 'No transport data',
+    shortLabel: 'No data',
     color: '#efe9dd',
     ink: '#4a4f43',
     pattern: 'dots',
     radius: 3.5,
     description:
-      'The prepared network has no physical access edge from this island, so no journey can be modelled. A coverage gap, not zero travel time.',
+      'No ferry, flight or road link from this island in our data, so no journey can be modelled. A data coverage gap, not proof that no boat runs.',
   },
   {
     key: 'no_destination',

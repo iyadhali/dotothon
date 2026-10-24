@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { AccessibilitySummary } from '../../shared/routing/types'
-import type { ThresholdMinutes } from '../utils/analysis'
+import type { RegionAccess, RegionSplit, ThresholdMinutes } from '../utils/analysis'
 import { formatClock, formatDuration, formatPercent, formatPopulation } from '../utils/format'
 
 const props = defineProps<{
   summary: AccessibilitySummary | null
+  split?: RegionSplit | null
   loading: boolean
   error: string | null
   threshold: ThresholdMinutes
@@ -16,6 +17,18 @@ const props = defineProps<{
 }>()
 
 const thresholdLabel = computed(() => formatDuration(props.threshold))
+
+function share(part: number, region: RegionAccess): string {
+  return region.population > 0 ? formatPercent(part / region.population) : '—'
+}
+
+const regionRows = computed(() => {
+  if (!props.split) return []
+  return [
+    { key: 'atolls', label: 'Atoll islands', region: props.split.atolls },
+    { key: 'greater-male', label: 'Greater Malé', region: props.split.greaterMale },
+  ]
+})
 
 const withinThreshold = computed(() => {
   if (!props.summary) return 0
@@ -240,6 +253,36 @@ function widthStyle(share: number): Record<string, string> {
         <span class="mm-chip mm-chip--filter">filter</span>
         No-access includes islands excluded by your network selection.
       </p>
+
+      <div v-if="regionRows.length" class="mm-region">
+        <h3 class="mm-subhead">Where the national figure comes from</h3>
+        <table class="mm-region__table">
+          <thead>
+            <tr>
+              <th scope="col">Region</th>
+              <th scope="col">Residents</th>
+              <th scope="col">On island</th>
+              <th scope="col">By travel</th>
+              <th scope="col">No trip</th>
+              <th scope="col">No data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="row in regionRows" :key="row.key">
+              <th scope="row">{{ row.label }}</th>
+              <td>{{ formatPopulation(row.region.population) }}</td>
+              <td>{{ share(row.region.onIsland, row.region) }}</td>
+              <td>{{ share(row.region.byTransport, row.region) }}</td>
+              <td>{{ share(row.region.unreachable, row.region) }}</td>
+              <td>{{ share(row.region.noData, row.region) }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mm-muted mm-region__note">
+          Greater Malé has every listed service, so the national share mostly reflects it. The atoll row
+          shows how many people depend on boats and flights.
+        </p>
+      </div>
 
       <details class="mm-method">
         <summary>Method &amp; denominator</summary>

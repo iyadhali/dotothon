@@ -234,11 +234,66 @@ checks use the prepared artifacts and the recorded RTL snapshot.
 - **67 origins have no access** in the prepared network. This is reported as missing
   coverage, never as zero travel demand.
 
+## 5a. Update, 24 October evening: gap-filling sea layers, fares, island access report
+
+`scripts/multimodal/augment_network.py` (run after `build_network.py`) adds two sea layers:
+
+- **MTCC 2023 timetable**: 21 Saturday trips, 45 stops, only in the atolls with no RTL stop
+  in the snapshot (AA, ADh, K, V, M, Lh). Source: the MTCC all-atolls timetable PDF
+  (16 Jul 2023), recovered from the Wayback Machine; `research/15_ferry_timetable_gaps.md`.
+  One island did not match (Felivaru, Lh).
+- **Observed boat links**: 162 regular island-to-island links from FollowMe GPS (Aug 2025)
+  that touch an island the RTL network could not reach, as estimated-frequency `sea`
+  services under route id `observed-boats` (switchable). These are movements of any
+  tracked boat, not a public timetable; departures are spread evenly over the observed
+  hours, so this layer is **optimistic**. `research/14_followme_observed_links.md`.
+
+Results, 08:00, hospital tier 1–3 (denominator 447,420):
+
+| Network | Reachable | Atoll residents: hospital on island / by travel | No transport data |
+|---|---:|---|---:|
+| Before (RTL + estimated air) | 327,354 (73.2%) | 31.8% / 15.6% | 67 islands, 63,749 |
+| After, multimodal | 363,648 (81.3%) | 31.8% / 32.9% | 6 islands, 4,335 |
+| After, no air | 359,009 (80.2%) | 31.8% / 30.9% | 6 islands, 4,335 |
+
+Regional/tertiary hospital, 08:00: 78.9% multimodal, 72.8% without air (atolls: 60.1% / 48.6%).
+Grade 11–12, 08:00: 89.7% (atolls 80.5%). Hospital at 06:00: 95.6%, which shows the
+optimism of the evenly spread observed-boat departures; quote 08:00 figures, and the
+"before" row as the timetable-only lower bound.
+
+**Fares** (`scripts/multimodal/build_fares.py` → `web/public/data/fares.json`): RTL ferry
+fare = 33.8 + 1.79 × great-circle km (fit to the official gazette step tariff, n = 1,837,
+r² 0.87); Maldivian domestic resident fares per airport pair (36 pairs, regular fare,
+estimated where only promotional fares were found), distance model otherwise; Greater Malé
+taxi tariff fit for road links; Malé–Vilimalé ferry MVR 3. Observed-boat legs are priced at
+the RTL tariff (estimated). Scheduled speedboats have no resident tariff and stay unpriced.
+Sources: `research/12_air_fares.md`, `research/13_sea_land_fares.md`.
+
+**Island access report** (`web/shared/routing/nearby.ts`, panel "What can … reach?"): for a
+clicked island, the 3 nearest reachable islands per service with door-to-door time, one-way
+and round-trip resident fare, and whether the trip home works the same day after a 2-hour
+appointment; otherwise a night away (default MVR 950: MVR 700 lodging + 250 meals,
+`data/external/economics/value_of_time.json`) is added. Unknown fares are shown as "+".
+CLI: `node --experimental-strip-types web/scripts/nearby-demo.ts Thuraakunu 06:00`.
+
+**External validation** (`research/16_external_validation.md`): modelled access tracks
+Aasandha spend per person (ρ = −0.60, p = 0.01, n = 17 atolls) and the share of 16–19 year
+olds in education where coverage is good (ρ = −0.74, p = 0.004, n = 13); it does not
+significantly predict emergency evacuations (ρ = +0.28, p = 0.25). Exploratory, small n.
+Ferry durations: observed FollowMe trips are a median 0.65× the RTL timetable time
+(speedboats included), with rank correlation 0.80.
+
+Checks after this update: router tests 48/48 (38 existing + 10 for nearest destinations,
+island-to-island, fares and same-day return), `check:routing` OK, `typecheck` OK, `build`
+OK, pipeline tests OK (17 skipped without local source CSVs), tools tests 7/7.
+
 ## 6. Reproduction
 
 ```bash
 # from repository root
 python3 scripts/multimodal/build_network.py
+python3 scripts/multimodal/augment_network.py   # MTCC 2023 + observed boat links
+python3 scripts/multimodal/build_fares.py
 python3 scripts/multimodal/build_hdx_baseline.py
 python3 scripts/multimodal/export_qgis.py
 python3 -m unittest discover -s scripts/multimodal/tests -v

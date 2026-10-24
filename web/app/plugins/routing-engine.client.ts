@@ -5,6 +5,7 @@ import {
   planJourney,
   planJourneyWithStatus,
 } from '../../shared/routing/router'
+import { buildAccessReport } from '../../shared/routing/nearby'
 import { setMultimodalEngine } from '../utils/engine'
 
 /**
@@ -18,5 +19,6 @@ export default defineNuxtPlugin(() => {
     computeAccessibility,
     applyScenario,
     createServiceFromPattern,
+    buildAccessReport,
   })
 })

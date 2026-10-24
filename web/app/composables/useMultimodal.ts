@@ -29,6 +29,8 @@ import type {
 } from '../../shared/routing/types'
 import fixtureNetwork from '#shared/routing/fixtures/sample-network.json'
 import { getMultimodalEngine } from '../utils/engine'
+import type { CategoryAccess } from '../../shared/routing/nearby'
+import type { FareTable } from '../../shared/routing/cost'
 import {
   buildAirportPoints,
   buildFacilityPoints,
@@ -42,7 +44,13 @@ import {
   type ServiceOption,
 } from '../utils/routes'
 import { buildIslandBands, type IslandBandInfo } from '../utils/bands'
-import { compareAccessibility, type ScenarioComparison, type ThresholdMinutes } from '../utils/analysis'
+import {
+  compareAccessibility,
+  splitByRegion,
+  type RegionSplit,
+  type ScenarioComparison,
+  type ThresholdMinutes,
+} from '../utils/analysis'
 import { MINUTES_PER_DAY, formatClock, parseClock } from '../utils/format'
 import {
   PRESET_FLAGS,
@@ -164,6 +172,16 @@ function slugify(value: string): string {
   )
 }
 
+/** Core services listed in the island access report, nearest first. */
+const ACCESS_REPORT_CATEGORIES = [
+  'health_hospital',
+  'health_regional_tertiary',
+  'education_grade_11_12',
+  'education_higher_ed',
+]
+/** Default lodging (MVR 700, typical Malé guesthouse) + meals (MVR 250) for one night away; see data/external/economics/value_of_time.json. Editable in the panel. */
+const ACCESS_REPORT_OVERNIGHT_MVR = 950
+
 export function useMultimodal() {
   // ---------------------------------------------------------------- data load
   const dataStatus = ref<DataStatus>('loading')
@@ -171,6 +189,12 @@ export function useMultimodal() {
   const loadNote = ref<string | null>(null)
   const fatalError = ref<string | null>(null)
   const network = shallowRef<MultimodalNetwork | null>(null)
+  const fares = shallowRef<FareTable | null>(null)
+  const accessReport = shallowRef<CategoryAccess[]>([])
+  const accessReportLoading = ref(false)
+  const accessReportError = ref<string | null>(null)
+  /** Lodging and meals for one night away (MVR), used when the trip home is not same-day. */
+  const overnightMvr = ref(ACCESS_REPORT_OVERNIGHT_MVR)
   const islandsGeojson = shallowRef<FeatureCollection | null>(null)
   const geojsonLoaded = ref(false)
   const engineReady = ref(false)
@@ -543,6 +567,10 @@ export function useMultimodal() {
     return baselineAccessibility.value
   })
 
+  const regionSplit = computed<RegionSplit | null>(() =>
+    splitByRegion(displayAccessibility.value, network.value?.islands ?? []),
+  )
+
   const islandBands = computed<Record<string, IslandBandInfo>>(() =>
     buildIslandBands(displayAccessibility.value, network.value?.islands ?? [], {
       filterActive: filterActive.value,
@@ -727,6 +755,58 @@ export function useMultimodal() {
     }
   }
 
+  let accessReportToken = 0
+
+  /** Report categories: the core services, plus the selected category when it is a service. */
+  function accessReportCategories(): string[] {
+    const known = new Set(categories.value.map((definition) => definition.id))
+    const list = ACCESS_REPORT_CATEGORIES.filter((id) => known.has(id))
+    if (category.value && known.has(category.value) && !list.includes(category.value)) list.push(category.value)
+    return list
+  }
+
+  async function recomputeAccessReport(): Promise<void> {
+    const engine = getMultimodalEngine()
+    const active = activeNetwork.value
+    if (!engine?.buildAccessReport || !active || !originIslandId.value) {
+      accessReport.value = []
+      accessReportLoading.value = false
+      return
+    }
+    const token = ++accessReportToken
+    accessReportLoading.value = true
+    accessReportError.value = null
+    await nextTick()
+    await new Promise<void>((resolve) => setTimeout(resolve, 0))
+    if (token !== accessReportToken) return
+    try {
+      const report = engine.buildAccessReport(active, fares.value, {
+        originIslandId: originIslandId.value,
+        departureMinute: departureMinute.value,
+        categories: accessReportCategories(),
+        allowedModes: allowedModes.value,
+        disabledRouteIds: disabledRouteIds.value,
+        overnightMvr: overnightMvr.value,
+      })
+      if (token !== accessReportToken) return
+      accessReport.value = report
+    } catch (error) {
+      if (token !== accessReportToken) return
+      accessReport.value = []
+      accessReportError.value = describeError(error)
+    } finally {
+      if (token === accessReportToken) accessReportLoading.value = false
+    }
+  }
+
+  async function loadFares(): Promise<void> {
+    try {
+      fares.value = await $fetch<FareTable>('/data/fares.json', { timeout: 15000 })
+    } catch {
+      fares.value = null
+    }
+  }
+
   let interventionToken = 0
 
   /**
@@ -850,6 +930,9 @@ export function useMultimodal() {
   const scheduleJourney = debounce(() => {
     void recomputeJourney()
   })
+  const scheduleAccessReport = debounce(() => {
+    void recomputeAccessReport()
+  })
   const scheduleInterventions = debounce(() => {
     void recomputeInterventions()
   }, 260)
@@ -876,6 +959,10 @@ export function useMultimodal() {
   watch([originIslandId, category, departureMinute, selectionKey, scenarioView], () => {
     if (!controlsReady.value) return
     scheduleJourney.run()
+  })
+  watch([originIslandId, category, departureMinute, selectionKey, scenarioView, overnightMvr, fares], () => {
+    if (!controlsReady.value) return
+    scheduleAccessReport.run()
   })
   watch(
     [categoryIsIntervention, originIslandId, departureMinute, selectionKey, scenarioView],
@@ -1046,7 +1133,8 @@ export function useMultimodal() {
     dataStatus.value = 'ready'
     engineReady.value = getMultimodalEngine() !== null
     controlsReady.value = true
-    await Promise.all([recomputeMetrics(), recomputeJourney(), recomputeInterventions()])
+    await loadFares()
+    await Promise.all([recomputeMetrics(), recomputeJourney(), recomputeInterventions(), recomputeAccessReport()])
   }
 
   onMounted(() => {
@@ -1300,6 +1388,13 @@ export function useMultimodal() {
     routePaths,
     airportPoints,
     facilityPoints,
+    regionSplit,
+    // island access report
+    fares,
+    accessReport,
+    accessReportLoading,
+    accessReportError,
+    overnightMvr,
     // actions
     selectOrigin,
     setDepartureFromInput,

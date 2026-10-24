@@ -43,8 +43,8 @@ const statusCopy = computed(() => {
             tone: 'info',
           }
         : {
-            title: 'No physical access from this island',
-            body: 'The prepared network has no walk, road, ferry-transfer or airport access edge from this origin island. This is a coverage gap, not proof that no transport exists.',
+            title: 'No transport data for this island',
+            body: 'Our ferry and flight data has no service from this island (for example, the RTL snapshot omits Kaafu and the central atolls). This is a data gap, not proof that no boat runs.',
             tone: 'warn',
           }
     case 'no_destination':

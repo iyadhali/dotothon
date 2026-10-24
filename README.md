@@ -66,6 +66,8 @@ polygon choropleth and the same data. Prepared artifacts:
 - `data/processed/multimodal/report.json` — join counts, exclusions, intervention
   reconciliation, coverage notes and every assumption.
 
+**Update (24 Oct evening):** MTCC 2023 timetable trips for the atolls RTL does not serve, observed FollowMe boat links, resident fares and a click-an-island access report (nearest facilities, time, one-way/round-trip fare, same-day return) were added; see [`VALIDATION.md` §5a](VALIDATION.md). With them, 81.3% of residents reach a listed hospital at 08:00 (atoll residents: 31.8% have one on their island, 32.9% reach one by travel); islands with no transport data fall from 67 to 6. The figures below are the timetable-only lower bound.
+
 Headline result at 08:00 on the reference day, hospital tier 1–3, all modelled modes:
 **327,354 of 447,420 residents (73.2%)** can reach the nearest listed hospital;
 land + sea without air is **322,715 (72.1%)**, and land-only is **297,008 (66.4%)**.

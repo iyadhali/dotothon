@@ -73,7 +73,7 @@ function describeBand(island: Island, band: IslandBandInfo): string {
     case 'not_reachable':
       return `No itinerary to a ${props.categoryLabel} facility under the reference-day assumption`
     case 'no_origin_access':
-      return 'No physical access edge from this island in the prepared network; a coverage gap'
+      return 'No transport data for this island in the prepared network: a data gap, not proof of no service'
     case 'no_destination':
       return `No ${props.categoryLabel} facility in the prepared data`
     default:

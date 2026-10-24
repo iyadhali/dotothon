@@ -12,7 +12,7 @@
     "db:build": "node --experimental-strip-types scripts/build-db.ts",
     "db:check": "node --experimental-strip-types scripts/build-db.ts --check",
     "test:db": "node --experimental-strip-types --test scripts/db.test.ts",
-    "test:routing": "node --experimental-strip-types --test shared/routing/router.test.ts",
+    "test:routing": "node --experimental-strip-types --test shared/routing/router.test.ts shared/routing/nearby.test.ts",
     "check:routing": "node --experimental-strip-types scripts/check-routing.ts",
     "test:data": "python3 -m unittest discover -s ../scripts/multimodal/tests -v"
   },

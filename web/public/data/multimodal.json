@@ -9,7 +9,7 @@
    "origins": 447420,
    "republic2022": 515132,
    "originCount": 191,
-   "note": "447,420 residents on the 191 inhabited administrative islands (2022 census). The four Greater Malé rows (Maale, Vilin'gili, Hulhumaale, Hulhule) are counted once from the 2022 city/ward split, not added on top of the census city total. Excluded from this origin scope: 1,399 harbour-area residents and 66,313 people in non-admin-island localities, for a republic total of 515,132."
+   "note": "447,420 residents on the 191 inhabited administrative islands (2022 census). The four Greater Mal\u00e9 rows (Maale, Vilin'gili, Hulhumaale, Hulhule) are counted once from the 2022 city/ward split, not added on top of the census city total. Excluded from this origin scope: 1,399 harbour-area residents and 66,313 people in non-admin-island localities, for a republic total of 515,132."
   },
   "assumptions": [
    {
@@ -29,13 +29,13 @@
     "id": "access_walk",
     "value": "Island/stop access is estimated at 4.5 km/h walking with a 1.25 detour factor.",
     "confidence": "assumption",
-    "source": "MULTIMODAL_IMPLEMENTATION.md §5"
+    "source": "MULTIMODAL_IMPLEMENTATION.md \u00a75"
    },
    {
     "id": "access_local_transport",
     "value": "Same-island access beyond 1.5 km is estimated at 25 km/h local transport plus 5 minutes.",
     "confidence": "assumption",
-    "source": "MULTIMODAL_IMPLEMENTATION.md §5"
+    "source": "MULTIMODAL_IMPLEMENTATION.md \u00a75"
    },
    {
     "id": "air_departure_generation",
@@ -67,11 +67,11 @@
     "id": "speedboat_access",
     "value": "Airport-island speedboat access is estimated at 25 km/h plus 10 minutes boarding.",
     "confidence": "assumption",
-    "source": "MULTIMODAL_IMPLEMENTATION.md §5"
+    "source": "MULTIMODAL_IMPLEMENTATION.md \u00a75"
    },
    {
     "id": "road_link_times",
-    "value": "Addu, Laamu, Malé-Hulhulé-Hulhumalé link roads are modelled at 40 km/h plus 3 minutes; distances are centroid-derived with a 1.15 detour.",
+    "value": "Addu, Laamu, Mal\u00e9-Hulhul\u00e9-Hulhumal\u00e9 link roads are modelled at 40 km/h plus 3 minutes; distances are centroid-derived with a 1.15 detour.",
     "confidence": "assumption",
     "source": "research/03_transport_network_and_methods.md"
    },
@@ -89,20 +89,35 @@
    },
    {
     "id": "villemale_ferry",
-    "value": "Malé-Vilimaale ferry is modelled as a published frequency: 7 minutes, every 15 minutes, 06:00-22:00.",
+    "value": "Mal\u00e9-Vilimaale ferry is modelled as a published frequency: 7 minutes, every 15 minutes, 06:00-22:00.",
     "confidence": "estimated",
     "source": "research/03_transport_network_and_methods.md"
+   },
+   {
+    "id": "mtcc_2023_trips",
+    "value": "21 MTCC trips from the 2023 all-atolls timetable run on Sats in atolls with no RTL coverage (AA, ADh, K, V, M, Lh).",
+    "confidence": "source",
+    "source": "data/external/ferry_timetables/supplementary_trips.csv",
+    "note": "Timetable dated 2023 (Wayback copy of mtcc.mv PDF); services may have changed since."
+   },
+   {
+    "id": "observed_boat_links",
+    "value": "162 regular boat links observed in FollowMe GPS (Aug 2025) are added as estimated sea services where an island has no RTL/MTCC service.",
+    "confidence": "estimated",
+    "source": "data/processed/followme/observed_sea_links.csv",
+    "note": "Any tracked boat (public, private, fishing); departures spread evenly over the observed hours. Switch off with route 'observed-boats'."
    }
   ],
   "counts": {
    "islands": 200,
    "origins": 191,
-   "stops": 117,
+   "stops": 162,
    "airports": 20,
-   "ferryTrips": 102,
+   "ferryTrips": 123,
    "airServices": 62,
    "facilities": 945,
-   "categories": 48
+   "categories": 48,
+   "observedSeaLinks": 162
   },
   "routingDefaults": {
    "ferryBoardMinutes": 15,
@@ -3471,6 +3486,411 @@
    "lat": 1.883632,
    "lon": 73.246466,
    "scheduled": true
+  },
+  {
+   "id": "MTCC:MV005004",
+   "code": "MV005004",
+   "name": "Olhuvelifushi",
+   "islandId": "MV005004",
+   "lat": 5.27842,
+   "lon": 73.606836,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV005003",
+   "code": "MV005003",
+   "name": "Kurendhoo",
+   "islandId": "MV005003",
+   "lat": 5.334254,
+   "lon": 73.463813,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV005002",
+   "code": "MV005002",
+   "name": "Naifaru",
+   "islandId": "MV005002",
+   "lat": 5.44524,
+   "lon": 73.3651,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV005066",
+   "code": "MV005066",
+   "name": "Madivaru",
+   "islandId": "MV005066",
+   "lat": 5.458841,
+   "lon": 73.370188,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV005001",
+   "code": "MV005001",
+   "name": "Hinnavaru",
+   "islandId": "MV005001",
+   "lat": 5.492379,
+   "lon": 73.411793,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008008",
+   "code": "MV008008",
+   "name": "Himandhoo",
+   "islandId": "MV008008",
+   "lat": 3.921231,
+   "lon": 72.744403,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008007",
+   "code": "MV008007",
+   "name": "Maalhos",
+   "islandId": "MV008007",
+   "lat": 3.986447,
+   "lon": 72.718993,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008006",
+   "code": "MV008006",
+   "name": "Feridhoo",
+   "islandId": "MV008006",
+   "lat": 4.051074,
+   "lon": 72.725513,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008004",
+   "code": "MV008004",
+   "name": "Mathiveri",
+   "islandId": "MV008004",
+   "lat": 4.192044,
+   "lon": 72.745613,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008005",
+   "code": "MV008005",
+   "name": "Bodufolhudhoo",
+   "islandId": "MV008005",
+   "lat": 4.18584,
+   "lon": 72.773526,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008003",
+   "code": "MV008003",
+   "name": "Ukulhas",
+   "islandId": "MV008003",
+   "lat": 4.214784,
+   "lon": 72.864558,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008002",
+   "code": "MV008002",
+   "name": "Rasdhoo",
+   "islandId": "MV008002",
+   "lat": 4.263199,
+   "lon": 72.991661,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020005",
+   "code": "MV020005",
+   "name": "Mandhoo",
+   "islandId": "MV020005",
+   "lat": 3.697919,
+   "lon": 72.709724,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020003",
+   "code": "MV020003",
+   "name": "Kuburudhoo",
+   "islandId": "MV020003",
+   "lat": 3.775364,
+   "lon": 72.92545,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020004",
+   "code": "MV020004",
+   "name": "Mahibadhoo",
+   "islandId": "MV020004",
+   "lat": 3.75708,
+   "lon": 72.968779,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020001",
+   "code": "MV020001",
+   "name": "Hangnameedhoo",
+   "islandId": "MV020001",
+   "lat": 3.849336,
+   "lon": 72.9554,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020002",
+   "code": "MV020002",
+   "name": "Omadhoo",
+   "islandId": "MV020002",
+   "lat": 3.791623,
+   "lon": 72.962631,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV008001",
+   "code": "MV008001",
+   "name": "Thoddoo",
+   "islandId": "MV008001",
+   "lat": 4.436997,
+   "lon": 72.958983,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020008",
+   "code": "MV020008",
+   "name": "Fenfushi",
+   "islandId": "MV020008",
+   "lat": 3.488935,
+   "lon": 72.784878,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020010",
+   "code": "MV020010",
+   "name": "Maamigili",
+   "islandId": "MV020010",
+   "lat": 3.475727,
+   "lon": 72.836589,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020009",
+   "code": "MV020009",
+   "name": "Dhidhdhoo",
+   "islandId": "MV020009",
+   "lat": 3.485007,
+   "lon": 72.876105,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020007",
+   "code": "MV020007",
+   "name": "Dhigurah",
+   "islandId": "MV020007",
+   "lat": 3.525478,
+   "lon": 72.923263,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV020006",
+   "code": "MV020006",
+   "name": "Dhagethi",
+   "islandId": "MV020006",
+   "lat": 3.60761,
+   "lon": 72.955746,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV021001",
+   "code": "MV021001",
+   "name": "Maale",
+   "islandId": "MV021001",
+   "lat": 4.174686,
+   "lon": 73.51017,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV010005",
+   "code": "MV010005",
+   "name": "Rakeedhoo",
+   "islandId": "MV010005",
+   "lat": 3.314891,
+   "lon": 73.469914,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV010004",
+   "code": "MV010004",
+   "name": "Keyodhoo",
+   "islandId": "MV010004",
+   "lat": 3.462116,
+   "lon": 73.549992,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV010003",
+   "code": "MV010003",
+   "name": "Felidhoo",
+   "islandId": "MV010003",
+   "lat": 3.471977,
+   "lon": 73.547474,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV010002",
+   "code": "MV010002",
+   "name": "Thinadhoo",
+   "islandId": "MV010002",
+   "lat": 3.487774,
+   "lon": 73.538678,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV010001",
+   "code": "MV010001",
+   "name": "Fulidhoo",
+   "islandId": "MV010001",
+   "lat": 3.680332,
+   "lon": 73.415828,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009008",
+   "code": "MV009008",
+   "name": "Maafushi",
+   "islandId": "MV009008",
+   "lat": 3.9412,
+   "lon": 73.4899,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009001",
+   "code": "MV009001",
+   "name": "Kaashidhoo",
+   "islandId": "MV009001",
+   "lat": 4.957031,
+   "lon": 73.463986,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009002",
+   "code": "MV009002",
+   "name": "Gaafaru",
+   "islandId": "MV009002",
+   "lat": 4.73627,
+   "lon": 73.500451,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009003",
+   "code": "MV009003",
+   "name": "Dhiffushi",
+   "islandId": "MV009003",
+   "lat": 4.442094,
+   "lon": 73.714054,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009004",
+   "code": "MV009004",
+   "name": "Thulusdhoo",
+   "islandId": "MV009004",
+   "lat": 4.373338,
+   "lon": 73.64853,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009005",
+   "code": "MV009005",
+   "name": "Huraa",
+   "islandId": "MV009005",
+   "lat": 4.333793,
+   "lon": 73.601997,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009006",
+   "code": "MV009006",
+   "name": "Himmafushi",
+   "islandId": "MV009006",
+   "lat": 4.308484,
+   "lon": 73.571472,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009009",
+   "code": "MV009009",
+   "name": "Guraidhoo",
+   "islandId": "MV009009",
+   "lat": 3.900626,
+   "lon": 73.467505,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV009007",
+   "code": "MV009007",
+   "name": "Gulhi",
+   "islandId": "MV009007",
+   "lat": 3.991112,
+   "lon": 73.509262,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013008",
+   "code": "MV013008",
+   "name": "Dhiggaru",
+   "islandId": "MV013008",
+   "lat": 3.111775,
+   "lon": 73.565437,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013009",
+   "code": "MV013009",
+   "name": "Maduvvari",
+   "islandId": "MV013009",
+   "lat": 3.104677,
+   "lon": 73.573198,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013001",
+   "code": "MV013001",
+   "name": "Raimandhoo",
+   "islandId": "MV013001",
+   "lat": 3.089043,
+   "lon": 73.639498,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013003",
+   "code": "MV013003",
+   "name": "Veyvah",
+   "islandId": "MV013003",
+   "lat": 2.956318,
+   "lon": 73.600141,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013004",
+   "code": "MV013004",
+   "name": "Mulah",
+   "islandId": "MV013004",
+   "lat": 2.94657,
+   "lon": 73.584933,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013005",
+   "code": "MV013005",
+   "name": "Muli",
+   "islandId": "MV013005",
+   "lat": 2.918134,
+   "lon": 73.581425,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013006",
+   "code": "MV013006",
+   "name": "Naalaafushi",
+   "islandId": "MV013006",
+   "lat": 2.895561,
+   "lon": 73.577563,
+   "scheduled": true
   }
  ],
  "airports": [
@@ -5017,7 +5437,7 @@
    "mode": "road",
    "minutes": 9,
    "confidence": "assumption",
-   "basis": "Sinamalé Bridge, Malé to Hulhulé (1.39 km); 40 km/h + 3 min assumption",
+   "basis": "Sinamal\u00e9 Bridge, Mal\u00e9 to Hulhul\u00e9 (1.39 km); 40 km/h + 3 min assumption",
    "distanceKm": 3.82,
    "assumed": true
   },
@@ -5027,9 +5447,414 @@
    "mode": "road",
    "minutes": 9,
    "confidence": "assumption",
-   "basis": "Hulhulé to Hulhumalé link road/causeway; 40 km/h + 3 min assumption",
+   "basis": "Hulhul\u00e9 to Hulhumal\u00e9 link road/causeway; 40 km/h + 3 min assumption",
    "distanceKm": 3.46,
    "assumed": true
+  },
+  {
+   "from": "island:MV005004",
+   "to": "stop:MTCC:MV005004",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV005003",
+   "to": "stop:MTCC:MV005003",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV005002",
+   "to": "stop:MTCC:MV005002",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV005066",
+   "to": "stop:MTCC:MV005066",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV005001",
+   "to": "stop:MTCC:MV005001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008008",
+   "to": "stop:MTCC:MV008008",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008007",
+   "to": "stop:MTCC:MV008007",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008006",
+   "to": "stop:MTCC:MV008006",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008004",
+   "to": "stop:MTCC:MV008004",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008005",
+   "to": "stop:MTCC:MV008005",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008003",
+   "to": "stop:MTCC:MV008003",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008002",
+   "to": "stop:MTCC:MV008002",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020005",
+   "to": "stop:MTCC:MV020005",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020003",
+   "to": "stop:MTCC:MV020003",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020004",
+   "to": "stop:MTCC:MV020004",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020001",
+   "to": "stop:MTCC:MV020001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020002",
+   "to": "stop:MTCC:MV020002",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV008001",
+   "to": "stop:MTCC:MV008001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020008",
+   "to": "stop:MTCC:MV020008",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020010",
+   "to": "stop:MTCC:MV020010",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020009",
+   "to": "stop:MTCC:MV020009",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020007",
+   "to": "stop:MTCC:MV020007",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV020006",
+   "to": "stop:MTCC:MV020006",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV021001",
+   "to": "stop:MTCC:MV021001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV010005",
+   "to": "stop:MTCC:MV010005",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV010004",
+   "to": "stop:MTCC:MV010004",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV010003",
+   "to": "stop:MTCC:MV010003",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV010002",
+   "to": "stop:MTCC:MV010002",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV010001",
+   "to": "stop:MTCC:MV010001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009008",
+   "to": "stop:MTCC:MV009008",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009001",
+   "to": "stop:MTCC:MV009001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009002",
+   "to": "stop:MTCC:MV009002",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009003",
+   "to": "stop:MTCC:MV009003",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009004",
+   "to": "stop:MTCC:MV009004",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009005",
+   "to": "stop:MTCC:MV009005",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009006",
+   "to": "stop:MTCC:MV009006",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009009",
+   "to": "stop:MTCC:MV009009",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV009007",
+   "to": "stop:MTCC:MV009007",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013008",
+   "to": "stop:MTCC:MV013008",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013009",
+   "to": "stop:MTCC:MV013009",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013001",
+   "to": "stop:MTCC:MV013001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013003",
+   "to": "stop:MTCC:MV013003",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013004",
+   "to": "stop:MTCC:MV013004",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013005",
+   "to": "stop:MTCC:MV013005",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013006",
+   "to": "stop:MTCC:MV013006",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
   }
  ],
  "services": [
@@ -10822,6 +11647,4749 @@
    "confidence": "estimated_frequency",
    "status": "published frequency (modelled; not observed timetable)",
    "source": "research/03_transport_network_and_methods.md"
+  },
+  {
+   "id": "mtcc:MTCC207-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-207",
+   "routeCode": "MTCC 207",
+   "zone": "Zone 2",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV005004",
+     "name": "Olhuvelifushi",
+     "sequence": 1,
+     "arrival": 360,
+     "departure": 360
+    },
+    {
+     "stopId": "MTCC:MV005003",
+     "name": "Kurendhoo",
+     "sequence": 2,
+     "arrival": 420,
+     "departure": 425
+    },
+    {
+     "stopId": "MTCC:MV005002",
+     "name": "Naifaru",
+     "sequence": 3,
+     "arrival": 480,
+     "departure": 485
+    },
+    {
+     "stopId": "MTCC:MV005066",
+     "name": "Madivaru",
+     "sequence": 4,
+     "arrival": 490,
+     "departure": 495
+    },
+    {
+     "stopId": "MTCC:MV005001",
+     "name": "Hinnavaru",
+     "sequence": 5,
+     "arrival": 530,
+     "departure": 535
+    },
+    {
+     "stopId": "MTCC:MV005066",
+     "name": "Madivaru",
+     "sequence": 6,
+     "arrival": 570,
+     "departure": 575
+    },
+    {
+     "stopId": "MTCC:MV005002",
+     "name": "Naifaru",
+     "sequence": 7,
+     "arrival": 580,
+     "departure": 580
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC207-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-207",
+   "routeCode": "MTCC 207",
+   "zone": "Zone 2",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV005002",
+     "name": "Naifaru",
+     "sequence": 1,
+     "arrival": 810,
+     "departure": 810
+    },
+    {
+     "stopId": "MTCC:MV005066",
+     "name": "Madivaru",
+     "sequence": 2,
+     "arrival": 815,
+     "departure": 820
+    },
+    {
+     "stopId": "MTCC:MV005001",
+     "name": "Hinnavaru",
+     "sequence": 3,
+     "arrival": 855,
+     "departure": 860
+    },
+    {
+     "stopId": "MTCC:MV005066",
+     "name": "Madivaru",
+     "sequence": 4,
+     "arrival": 895,
+     "departure": 900
+    },
+    {
+     "stopId": "MTCC:MV005002",
+     "name": "Naifaru",
+     "sequence": 5,
+     "arrival": 905,
+     "departure": 910
+    },
+    {
+     "stopId": "MTCC:MV005003",
+     "name": "Kurendhoo",
+     "sequence": 6,
+     "arrival": 965,
+     "departure": 970
+    },
+    {
+     "stopId": "MTCC:MV005004",
+     "name": "Olhuvelifushi",
+     "sequence": 7,
+     "arrival": 1030,
+     "departure": 1030
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC301-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-301",
+   "routeCode": "MTCC 301",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV008008",
+     "name": "Himandhoo",
+     "sequence": 1,
+     "arrival": 390,
+     "departure": 390
+    },
+    {
+     "stopId": "MTCC:MV008007",
+     "name": "Maalhos",
+     "sequence": 2,
+     "arrival": 420,
+     "departure": 425
+    },
+    {
+     "stopId": "MTCC:MV008006",
+     "name": "Feridhoo",
+     "sequence": 3,
+     "arrival": 450,
+     "departure": 455
+    },
+    {
+     "stopId": "MTCC:MV008004",
+     "name": "Mathiveri",
+     "sequence": 4,
+     "arrival": 510,
+     "departure": 515
+    },
+    {
+     "stopId": "MTCC:MV008005",
+     "name": "Bodufolhudhoo",
+     "sequence": 5,
+     "arrival": 535,
+     "departure": 540
+    },
+    {
+     "stopId": "MTCC:MV008003",
+     "name": "Ukulhas",
+     "sequence": 6,
+     "arrival": 575,
+     "departure": 600
+    },
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 7,
+     "arrival": 655,
+     "departure": 655
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC301-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-301",
+   "routeCode": "MTCC 301",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 1,
+     "arrival": 780,
+     "departure": 780
+    },
+    {
+     "stopId": "MTCC:MV008003",
+     "name": "Ukulhas",
+     "sequence": 2,
+     "arrival": 835,
+     "departure": 840
+    },
+    {
+     "stopId": "MTCC:MV008005",
+     "name": "Bodufolhudhoo",
+     "sequence": 3,
+     "arrival": 875,
+     "departure": 880
+    },
+    {
+     "stopId": "MTCC:MV008004",
+     "name": "Mathiveri",
+     "sequence": 4,
+     "arrival": 900,
+     "departure": 905
+    },
+    {
+     "stopId": "MTCC:MV008006",
+     "name": "Feridhoo",
+     "sequence": 5,
+     "arrival": 965,
+     "departure": 970
+    },
+    {
+     "stopId": "MTCC:MV008007",
+     "name": "Maalhos",
+     "sequence": 6,
+     "arrival": 995,
+     "departure": 1000
+    },
+    {
+     "stopId": "MTCC:MV008008",
+     "name": "Himandhoo",
+     "sequence": 7,
+     "arrival": 1030,
+     "departure": 1030
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC302-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-302",
+   "routeCode": "MTCC 302",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV020005",
+     "name": "Mandhoo",
+     "sequence": 1,
+     "arrival": 390,
+     "departure": 390
+    },
+    {
+     "stopId": "MTCC:MV020003",
+     "name": "Kuburudhoo",
+     "sequence": 2,
+     "arrival": 485,
+     "departure": 490
+    },
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 3,
+     "arrival": 510,
+     "departure": 515
+    },
+    {
+     "stopId": "MTCC:MV020001",
+     "name": "Hangnameedhoo",
+     "sequence": 4,
+     "arrival": 555,
+     "departure": 560
+    },
+    {
+     "stopId": "MTCC:MV020002",
+     "name": "Omadhoo",
+     "sequence": 5,
+     "arrival": 590,
+     "departure": 595
+    },
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 6,
+     "arrival": 610,
+     "departure": 610
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC302-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-302",
+   "routeCode": "MTCC 302",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 1,
+     "arrival": 810,
+     "departure": 810
+    },
+    {
+     "stopId": "MTCC:MV020002",
+     "name": "Omadhoo",
+     "sequence": 2,
+     "arrival": 825,
+     "departure": 830
+    },
+    {
+     "stopId": "MTCC:MV020001",
+     "name": "Hangnameedhoo",
+     "sequence": 3,
+     "arrival": 860,
+     "departure": 865
+    },
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 4,
+     "arrival": 905,
+     "departure": 910
+    },
+    {
+     "stopId": "MTCC:MV020003",
+     "name": "Kuburudhoo",
+     "sequence": 5,
+     "arrival": 930,
+     "departure": 935
+    },
+    {
+     "stopId": "MTCC:MV020005",
+     "name": "Mandhoo",
+     "sequence": 6,
+     "arrival": 1030,
+     "departure": 1030
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC303-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-303",
+   "routeCode": "MTCC 303",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Tue; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV008001",
+     "name": "Thoddoo",
+     "sequence": 1,
+     "arrival": 390,
+     "departure": 390
+    },
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 2,
+     "arrival": 490,
+     "departure": 490
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC303-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-303",
+   "routeCode": "MTCC 303",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Tue; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 1,
+     "arrival": 910,
+     "departure": 910
+    },
+    {
+     "stopId": "MTCC:MV008001",
+     "name": "Thoddoo",
+     "sequence": 2,
+     "arrival": 980,
+     "departure": 980
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC304-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-304",
+   "routeCode": "MTCC 304",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV020008",
+     "name": "Fenfushi",
+     "sequence": 1,
+     "arrival": 390,
+     "departure": 390
+    },
+    {
+     "stopId": "MTCC:MV020010",
+     "name": "Maamigili",
+     "sequence": 2,
+     "arrival": 415,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV020009",
+     "name": "Dhidhdhoo",
+     "sequence": 3,
+     "arrival": 445,
+     "departure": 450
+    },
+    {
+     "stopId": "MTCC:MV020007",
+     "name": "Dhigurah",
+     "sequence": 4,
+     "arrival": 480,
+     "departure": 485
+    },
+    {
+     "stopId": "MTCC:MV020006",
+     "name": "Dhagethi",
+     "sequence": 5,
+     "arrival": 515,
+     "departure": 520
+    },
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 6,
+     "arrival": 580,
+     "departure": 580
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC304-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-304",
+   "routeCode": "MTCC 304",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 1,
+     "arrival": 810,
+     "departure": 810
+    },
+    {
+     "stopId": "MTCC:MV020006",
+     "name": "Dhagethi",
+     "sequence": 2,
+     "arrival": 870,
+     "departure": 875
+    },
+    {
+     "stopId": "MTCC:MV020007",
+     "name": "Dhigurah",
+     "sequence": 3,
+     "arrival": 905,
+     "departure": 910
+    },
+    {
+     "stopId": "MTCC:MV020009",
+     "name": "Dhidhdhoo",
+     "sequence": 4,
+     "arrival": 940,
+     "departure": 945
+    },
+    {
+     "stopId": "MTCC:MV020010",
+     "name": "Maamigili",
+     "sequence": 5,
+     "arrival": 970,
+     "departure": 975
+    },
+    {
+     "stopId": "MTCC:MV020008",
+     "name": "Fenfushi",
+     "sequence": 6,
+     "arrival": 1000,
+     "departure": 1000
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC305-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-305",
+   "routeCode": "MTCC 305",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 1,
+     "arrival": 510,
+     "departure": 510
+    },
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 2,
+     "arrival": 760,
+     "departure": 760
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC306-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-306",
+   "routeCode": "MTCC 306",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV010005",
+     "name": "Rakeedhoo",
+     "sequence": 1,
+     "arrival": 420,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV010004",
+     "name": "Keyodhoo",
+     "sequence": 2,
+     "arrival": 490,
+     "departure": 500
+    },
+    {
+     "stopId": "MTCC:MV010003",
+     "name": "Felidhoo",
+     "sequence": 3,
+     "arrival": 510,
+     "departure": 520
+    },
+    {
+     "stopId": "MTCC:MV010002",
+     "name": "Thinadhoo",
+     "sequence": 4,
+     "arrival": 530,
+     "departure": 540
+    },
+    {
+     "stopId": "MTCC:MV010001",
+     "name": "Fulidhoo",
+     "sequence": 5,
+     "arrival": 630,
+     "departure": 645
+    },
+    {
+     "stopId": "MTCC:MV009008",
+     "name": "Maafushi",
+     "sequence": 6,
+     "arrival": 745,
+     "departure": 755
+    },
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 7,
+     "arrival": 845,
+     "departure": 845
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC307-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-307",
+   "routeCode": "MTCC 307",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV009001",
+     "name": "Kaashidhoo",
+     "sequence": 1,
+     "arrival": 420,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV009002",
+     "name": "Gaafaru",
+     "sequence": 2,
+     "arrival": 500,
+     "departure": 510
+    },
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 3,
+     "arrival": 710,
+     "departure": 710
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC308-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-308",
+   "routeCode": "MTCC 308",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV009003",
+     "name": "Dhiffushi",
+     "sequence": 1,
+     "arrival": 390,
+     "departure": 390
+    },
+    {
+     "stopId": "MTCC:MV009004",
+     "name": "Thulusdhoo",
+     "sequence": 2,
+     "arrival": 425,
+     "departure": 430
+    },
+    {
+     "stopId": "MTCC:MV009005",
+     "name": "Huraa",
+     "sequence": 3,
+     "arrival": 455,
+     "departure": 460
+    },
+    {
+     "stopId": "MTCC:MV009006",
+     "name": "Himmafushi",
+     "sequence": 4,
+     "arrival": 475,
+     "departure": 480
+    },
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 5,
+     "arrival": 520,
+     "departure": 520
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC308-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-308",
+   "routeCode": "MTCC 308",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 1,
+     "arrival": 870,
+     "departure": 870
+    },
+    {
+     "stopId": "MTCC:MV009006",
+     "name": "Himmafushi",
+     "sequence": 2,
+     "arrival": 910,
+     "departure": 915
+    },
+    {
+     "stopId": "MTCC:MV009005",
+     "name": "Huraa",
+     "sequence": 3,
+     "arrival": 930,
+     "departure": 935
+    },
+    {
+     "stopId": "MTCC:MV009004",
+     "name": "Thulusdhoo",
+     "sequence": 4,
+     "arrival": 960,
+     "departure": 965
+    },
+    {
+     "stopId": "MTCC:MV009003",
+     "name": "Dhiffushi",
+     "sequence": 5,
+     "arrival": 1000,
+     "departure": 1000
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC309-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-309",
+   "routeCode": "MTCC 309",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV009009",
+     "name": "Guraidhoo",
+     "sequence": 1,
+     "arrival": 420,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV009008",
+     "name": "Maafushi",
+     "sequence": 2,
+     "arrival": 440,
+     "departure": 445
+    },
+    {
+     "stopId": "MTCC:MV009007",
+     "name": "Gulhi",
+     "sequence": 3,
+     "arrival": 465,
+     "departure": 470
+    },
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 4,
+     "arrival": 545,
+     "departure": 545
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC309-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-309",
+   "routeCode": "MTCC 309",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 1,
+     "arrival": 900,
+     "departure": 900
+    },
+    {
+     "stopId": "MTCC:MV009007",
+     "name": "Gulhi",
+     "sequence": 2,
+     "arrival": 975,
+     "departure": 980
+    },
+    {
+     "stopId": "MTCC:MV009008",
+     "name": "Maafushi",
+     "sequence": 3,
+     "arrival": 1000,
+     "departure": 1005
+    },
+    {
+     "stopId": "MTCC:MV009009",
+     "name": "Guraidhoo",
+     "sequence": 4,
+     "arrival": 1025,
+     "departure": 1025
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC310-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-310",
+   "routeCode": "MTCC 310",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV008006",
+     "name": "Feridhoo",
+     "sequence": 1,
+     "arrival": 390,
+     "departure": 390
+    },
+    {
+     "stopId": "MTCC:MV008007",
+     "name": "Maalhos",
+     "sequence": 2,
+     "arrival": 415,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV008008",
+     "name": "Himandhoo",
+     "sequence": 3,
+     "arrival": 450,
+     "departure": 455
+    },
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 4,
+     "arrival": 550,
+     "departure": 550
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC310-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-310",
+   "routeCode": "MTCC 310",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 1,
+     "arrival": 840,
+     "departure": 840
+    },
+    {
+     "stopId": "MTCC:MV008008",
+     "name": "Himandhoo",
+     "sequence": 2,
+     "arrival": 935,
+     "departure": 940
+    },
+    {
+     "stopId": "MTCC:MV008007",
+     "name": "Maalhos",
+     "sequence": 3,
+     "arrival": 970,
+     "departure": 975
+    },
+    {
+     "stopId": "MTCC:MV008006",
+     "name": "Feridhoo",
+     "sequence": 4,
+     "arrival": 1000,
+     "departure": 1000
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC401-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-401",
+   "routeCode": "MTCC 401",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV013008",
+     "name": "Dhiggaru",
+     "sequence": 1,
+     "arrival": 420,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV013009",
+     "name": "Maduvvari",
+     "sequence": 2,
+     "arrival": 430,
+     "departure": 435
+    },
+    {
+     "stopId": "MTCC:MV013001",
+     "name": "Raimandhoo",
+     "sequence": 3,
+     "arrival": 470,
+     "departure": 475
+    },
+    {
+     "stopId": "MTCC:MV013003",
+     "name": "Veyvah",
+     "sequence": 4,
+     "arrival": 535,
+     "departure": 540
+    },
+    {
+     "stopId": "MTCC:MV013004",
+     "name": "Mulah",
+     "sequence": 5,
+     "arrival": 555,
+     "departure": 560
+    },
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 6,
+     "arrival": 570,
+     "departure": 575
+    },
+    {
+     "stopId": "MTCC:MV013006",
+     "name": "Naalaafushi",
+     "sequence": 7,
+     "arrival": 590,
+     "departure": 595
+    },
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 8,
+     "arrival": 610,
+     "departure": 610
+    }
+   ]
+  },
+  {
+   "id": "mtcc:MTCC401-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-401",
+   "routeCode": "MTCC 401",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun; included for Sat",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 1,
+     "arrival": 825,
+     "departure": 825
+    },
+    {
+     "stopId": "MTCC:MV013004",
+     "name": "Mulah",
+     "sequence": 2,
+     "arrival": 835,
+     "departure": 845
+    },
+    {
+     "stopId": "MTCC:MV013003",
+     "name": "Veyvah",
+     "sequence": 3,
+     "arrival": 860,
+     "departure": 865
+    },
+    {
+     "stopId": "MTCC:MV013001",
+     "name": "Raimandhoo",
+     "sequence": 4,
+     "arrival": 925,
+     "departure": 930
+    },
+    {
+     "stopId": "MTCC:MV013009",
+     "name": "Maduvvari",
+     "sequence": 5,
+     "arrival": 960,
+     "departure": 965
+    },
+    {
+     "stopId": "MTCC:MV013008",
+     "name": "Dhiggaru",
+     "sequence": 6,
+     "arrival": 975,
+     "departure": 975
+    }
+   ]
+  },
+  {
+   "id": "observed:MV009052-MV009004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Thulusdhoo",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV009004",
+   "weeklyFrequency": 121.9,
+   "departuresPerDay": 12,
+   "operatingWindow": {
+    "start": 563,
+    "end": 1233
+   },
+   "blockMinutes": 30,
+   "departures": [
+    563,
+    618,
+    674,
+    730,
+    786,
+    842,
+    898,
+    953,
+    1009,
+    1065,
+    1121,
+    1177
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV009008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Maafushi",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV009008",
+   "weeklyFrequency": 55.1,
+   "departuresPerDay": 8,
+   "operatingWindow": {
+    "start": 544,
+    "end": 1320
+   },
+   "blockMinutes": 30,
+   "departures": [
+    544,
+    641,
+    738,
+    835,
+    932,
+    1029,
+    1126,
+    1223
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV009003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Dhiffushi",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV009003",
+   "weeklyFrequency": 54.7,
+   "departuresPerDay": 8,
+   "operatingWindow": {
+    "start": 580,
+    "end": 1320
+   },
+   "blockMinutes": 43,
+   "departures": [
+    580,
+    672,
+    765,
+    857,
+    950,
+    1042,
+    1135,
+    1227
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009004-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Thulusdhoo \u2192 Hulhule",
+   "fromNode": "island:MV009004",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 54.0,
+   "departuresPerDay": 8,
+   "operatingWindow": {
+    "start": 480,
+    "end": 1171
+   },
+   "blockMinutes": 30,
+   "departures": [
+    480,
+    566,
+    652,
+    739,
+    825,
+    911,
+    998,
+    1084
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007006-MV007005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dharavandhoo \u2192 Dhonfanu",
+   "fromNode": "island:MV007006",
+   "toNode": "island:MV007005",
+   "weeklyFrequency": 41.6,
+   "departuresPerDay": 6,
+   "operatingWindow": {
+    "start": 587,
+    "end": 1093
+   },
+   "blockMinutes": 8,
+   "departures": [
+    587,
+    671,
+    755,
+    840,
+    924,
+    1008
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007005-MV007006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhonfanu \u2192 Dharavandhoo",
+   "fromNode": "island:MV007005",
+   "toNode": "island:MV007006",
+   "weeklyFrequency": 36.3,
+   "departuresPerDay": 5,
+   "operatingWindow": {
+    "start": 441,
+    "end": 1043
+   },
+   "blockMinutes": 7,
+   "departures": [
+    441,
+    561,
+    681,
+    802,
+    922
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV008002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Rasdhoo",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV008002",
+   "weeklyFrequency": 34.6,
+   "departuresPerDay": 5,
+   "operatingWindow": {
+    "start": 631,
+    "end": 999
+   },
+   "blockMinutes": 72,
+   "departures": [
+    631,
+    704,
+    778,
+    851,
+    925
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008002-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Rasdhoo \u2192 Hulhule",
+   "fromNode": "island:MV008002",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 34.1,
+   "departuresPerDay": 5,
+   "operatingWindow": {
+    "start": 361,
+    "end": 872
+   },
+   "blockMinutes": 67,
+   "departures": [
+    361,
+    463,
+    565,
+    667,
+    769
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV016054-MV016003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kooddoo \u2192 Maamendhoo",
+   "fromNode": "island:MV016054",
+   "toNode": "island:MV016003",
+   "weeklyFrequency": 32.6,
+   "departuresPerDay": 5,
+   "operatingWindow": {
+    "start": 367,
+    "end": 1054
+   },
+   "blockMinutes": 5,
+   "departures": [
+    367,
+    504,
+    641,
+    779,
+    916
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV016003-MV016054",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maamendhoo \u2192 Kooddoo",
+   "fromNode": "island:MV016003",
+   "toNode": "island:MV016054",
+   "weeklyFrequency": 31.6,
+   "departuresPerDay": 5,
+   "operatingWindow": {
+    "start": 440,
+    "end": 1071
+   },
+   "blockMinutes": 5,
+   "departures": [
+    440,
+    566,
+    692,
+    818,
+    944
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009004-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Thulusdhoo \u2192 Maale",
+   "fromNode": "island:MV009004",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 31.2,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 458,
+    "end": 1201
+   },
+   "blockMinutes": 33,
+   "departures": [
+    458,
+    643,
+    829,
+    1015
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV009004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Thulusdhoo",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV009004",
+   "weeklyFrequency": 30.9,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 550,
+    "end": 1320
+   },
+   "blockMinutes": 34,
+   "departures": [
+    550,
+    742,
+    935,
+    1127
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009005-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Huraa \u2192 Maale",
+   "fromNode": "island:MV009005",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 30.2,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 451,
+    "end": 1320
+   },
+   "blockMinutes": 27,
+   "departures": [
+    451,
+    668,
+    885,
+    1102
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008001-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Thoddoo \u2192 Hulhule",
+   "fromNode": "island:MV008001",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 28.7,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 409,
+    "end": 789
+   },
+   "blockMinutes": 67,
+   "departures": [
+    409,
+    504,
+    599,
+    694
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV009005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Huraa",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV009005",
+   "weeklyFrequency": 28.2,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 391,
+    "end": 1320
+   },
+   "blockMinutes": 26,
+   "departures": [
+    391,
+    623,
+    855,
+    1087
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV010001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Fulidhoo",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV010001",
+   "weeklyFrequency": 27.3,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 635,
+    "end": 980
+   },
+   "blockMinutes": 63,
+   "departures": [
+    635,
+    721,
+    807,
+    893
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009003-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhiffushi \u2192 Hulhule",
+   "fromNode": "island:MV009003",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 27.1,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 380,
+    "end": 1067
+   },
+   "blockMinutes": 43,
+   "departures": [
+    380,
+    551,
+    723,
+    895
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV008001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Thoddoo",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV008001",
+   "weeklyFrequency": 26.2,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 627,
+    "end": 990
+   },
+   "blockMinutes": 75,
+   "departures": [
+    627,
+    717,
+    808,
+    899
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV010002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Thinadhoo",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV010002",
+   "weeklyFrequency": 26.0,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 408,
+    "end": 1044
+   },
+   "blockMinutes": 82,
+   "departures": [
+    408,
+    567,
+    726,
+    885
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010001-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Fulidhoo \u2192 Hulhule",
+   "fromNode": "island:MV010001",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 24.6,
+   "departuresPerDay": 4,
+   "operatingWindow": {
+    "start": 398,
+    "end": 836
+   },
+   "blockMinutes": 61,
+   "departures": [
+    398,
+    507,
+    617,
+    726
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009009-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Guraidhoo \u2192 Maale",
+   "fromNode": "island:MV009009",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 21.2,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 480,
+    "end": 1320
+   },
+   "blockMinutes": 39,
+   "departures": [
+    480,
+    760,
+    1040
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV016002-MV016003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Viligili \u2192 Maamendhoo",
+   "fromNode": "island:MV016002",
+   "toNode": "island:MV016003",
+   "weeklyFrequency": 20.8,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 517,
+    "end": 1113
+   },
+   "blockMinutes": 8,
+   "departures": [
+    517,
+    715,
+    914
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010002-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Thinadhoo \u2192 Hulhule",
+   "fromNode": "island:MV010002",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 20.3,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 332,
+    "end": 990
+   },
+   "blockMinutes": 81,
+   "departures": [
+    332,
+    551,
+    770
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV016003-MV016002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maamendhoo \u2192 Viligili",
+   "fromNode": "island:MV016003",
+   "toNode": "island:MV016002",
+   "weeklyFrequency": 20.3,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 449,
+    "end": 1170
+   },
+   "blockMinutes": 8,
+   "departures": [
+    449,
+    689,
+    929
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007004-MV007005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kihaadhoo \u2192 Dhonfanu",
+   "fromNode": "island:MV007004",
+   "toNode": "island:MV007005",
+   "weeklyFrequency": 19.4,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 430,
+    "end": 831
+   },
+   "blockMinutes": 7,
+   "departures": [
+    430,
+    563,
+    697
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007004-MV007002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kihaadhoo \u2192 Kamadhoo",
+   "fromNode": "island:MV007004",
+   "toNode": "island:MV007002",
+   "weeklyFrequency": 19.4,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 588,
+    "end": 1065
+   },
+   "blockMinutes": 12,
+   "departures": [
+    588,
+    747,
+    906
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004002-MV004001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kedhikulhudhoo \u2192 Henbadhoo",
+   "fromNode": "island:MV004002",
+   "toNode": "island:MV004001",
+   "weeklyFrequency": 19.2,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 628,
+    "end": 1009
+   },
+   "blockMinutes": 7,
+   "departures": [
+    628,
+    755,
+    882
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010001-MV010002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Fulidhoo \u2192 Thinadhoo",
+   "fromNode": "island:MV010001",
+   "toNode": "island:MV010002",
+   "weeklyFrequency": 18.8,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 669,
+    "end": 1051
+   },
+   "blockMinutes": 27,
+   "departures": [
+    669,
+    796,
+    923
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV005001-MV005002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hinnavaru \u2192 Naifaru",
+   "fromNode": "island:MV005001",
+   "toNode": "island:MV005002",
+   "weeklyFrequency": 18.6,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 428,
+    "end": 997
+   },
+   "blockMinutes": 12,
+   "departures": [
+    428,
+    617,
+    807
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007002-MV007004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kamadhoo \u2192 Kihaadhoo",
+   "fromNode": "island:MV007002",
+   "toNode": "island:MV007004",
+   "weeklyFrequency": 18.3,
+   "departuresPerDay": 3,
+   "operatingWindow": {
+    "start": 410,
+    "end": 760
+   },
+   "blockMinutes": 12,
+   "departures": [
+    410,
+    526,
+    643
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007005-MV007004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhonfanu \u2192 Kihaadhoo",
+   "fromNode": "island:MV007005",
+   "toNode": "island:MV007004",
+   "weeklyFrequency": 16.7,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 814,
+    "end": 1049
+   },
+   "blockMinutes": 7,
+   "departures": [
+    814,
+    931
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV009009",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Guraidhoo",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV009009",
+   "weeklyFrequency": 16.4,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 391,
+    "end": 1320
+   },
+   "blockMinutes": 36,
+   "departures": [
+    391,
+    855
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007001-MV007003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kudarikilu \u2192 Kendhoo",
+   "fromNode": "island:MV007001",
+   "toNode": "island:MV007003",
+   "weeklyFrequency": 15.8,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 393,
+    "end": 1041
+   },
+   "blockMinutes": 11,
+   "departures": [
+    393,
+    717
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV005002-MV005001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Naifaru \u2192 Hinnavaru",
+   "fromNode": "island:MV005002",
+   "toNode": "island:MV005001",
+   "weeklyFrequency": 14.9,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 450,
+    "end": 1038
+   },
+   "blockMinutes": 11,
+   "departures": [
+    450,
+    744
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010002-MV010004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Thinadhoo \u2192 Keyodhoo",
+   "fromNode": "island:MV010002",
+   "toNode": "island:MV010004",
+   "weeklyFrequency": 14.2,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 706,
+    "end": 1085
+   },
+   "blockMinutes": 5,
+   "departures": [
+    706,
+    895
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007003-MV007001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kendhoo \u2192 Kudarikilu",
+   "fromNode": "island:MV007003",
+   "toNode": "island:MV007001",
+   "weeklyFrequency": 13.8,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 376,
+    "end": 992
+   },
+   "blockMinutes": 10,
+   "departures": [
+    376,
+    684
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004005-MV004006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Landhoo \u2192 Maafaru",
+   "fromNode": "island:MV004005",
+   "toNode": "island:MV004006",
+   "weeklyFrequency": 12.9,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 460,
+    "end": 822
+   },
+   "blockMinutes": 11,
+   "departures": [
+    460,
+    641
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014003-MV014004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Madifushi \u2192 Dhiyamigili",
+   "fromNode": "island:MV014003",
+   "toNode": "island:MV014004",
+   "weeklyFrequency": 12.7,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 579,
+    "end": 858
+   },
+   "blockMinutes": 5,
+   "departures": [
+    579,
+    718
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010004-MV010002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Keyodhoo \u2192 Thinadhoo",
+   "fromNode": "island:MV010004",
+   "toNode": "island:MV010002",
+   "weeklyFrequency": 12.7,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 366,
+    "end": 981
+   },
+   "blockMinutes": 6,
+   "departures": [
+    366,
+    673
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004004-MV004002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kudafari \u2192 Kedhikulhudhoo",
+   "fromNode": "island:MV004004",
+   "toNode": "island:MV004002",
+   "weeklyFrequency": 12.4,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 604,
+    "end": 967
+   },
+   "blockMinutes": 9,
+   "departures": [
+    604,
+    785
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004002-MV004004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kedhikulhudhoo \u2192 Kudafari",
+   "fromNode": "island:MV004002",
+   "toNode": "island:MV004004",
+   "weeklyFrequency": 12.0,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 437,
+    "end": 820
+   },
+   "blockMinutes": 9,
+   "departures": [
+    437,
+    628
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004001-MV004002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Henbadhoo \u2192 Kedhikulhudhoo",
+   "fromNode": "island:MV004001",
+   "toNode": "island:MV004002",
+   "weeklyFrequency": 11.8,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 478,
+    "end": 1009
+   },
+   "blockMinutes": 5,
+   "departures": [
+    478,
+    743
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004005-MV004003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Landhoo \u2192 Maalhendhoo",
+   "fromNode": "island:MV004005",
+   "toNode": "island:MV004003",
+   "weeklyFrequency": 11.8,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 634,
+    "end": 1021
+   },
+   "blockMinutes": 5,
+   "departures": [
+    634,
+    827
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007004-MV007006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kihaadhoo \u2192 Dharavandhoo",
+   "fromNode": "island:MV007004",
+   "toNode": "island:MV007006",
+   "weeklyFrequency": 11.8,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 472,
+    "end": 1060
+   },
+   "blockMinutes": 10,
+   "departures": [
+    472,
+    766
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014004-MV014005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhiyamigili \u2192 Guraidhoo",
+   "fromNode": "island:MV014004",
+   "toNode": "island:MV014005",
+   "weeklyFrequency": 11.5,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 587,
+    "end": 963
+   },
+   "blockMinutes": 5,
+   "departures": [
+    587,
+    775
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009002-MV009001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Gaafaru \u2192 Kaashidhoo",
+   "fromNode": "island:MV009002",
+   "toNode": "island:MV009001",
+   "weeklyFrequency": 11.5,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 673,
+    "end": 1126
+   },
+   "blockMinutes": 37,
+   "departures": [
+    673,
+    899
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV020001-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hangnameedhoo \u2192 Maale",
+   "fromNode": "island:MV020001",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 11.5,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 442,
+    "end": 820
+   },
+   "blockMinutes": 74,
+   "departures": [
+    442,
+    631
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004006-MV004005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maafaru \u2192 Landhoo",
+   "fromNode": "island:MV004006",
+   "toNode": "island:MV004005",
+   "weeklyFrequency": 11.5,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 619,
+    "end": 961
+   },
+   "blockMinutes": 12,
+   "departures": [
+    619,
+    790
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007002-MV007001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kamadhoo \u2192 Kudarikilu",
+   "fromNode": "island:MV007002",
+   "toNode": "island:MV007001",
+   "weeklyFrequency": 11.3,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 828,
+    "end": 1021
+   },
+   "blockMinutes": 14,
+   "departures": [
+    828,
+    924
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007001-MV007002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kudarikilu \u2192 Kamadhoo",
+   "fromNode": "island:MV007001",
+   "toNode": "island:MV007002",
+   "weeklyFrequency": 11.1,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 390,
+    "end": 781
+   },
+   "blockMinutes": 14,
+   "departures": [
+    390,
+    585
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009008-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maafushi \u2192 Hulhule",
+   "fromNode": "island:MV009008",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 11.1,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 387,
+    "end": 1268
+   },
+   "blockMinutes": 34,
+   "departures": [
+    387,
+    827
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004003-MV004005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maalhendhoo \u2192 Landhoo",
+   "fromNode": "island:MV004003",
+   "toNode": "island:MV004005",
+   "weeklyFrequency": 10.8,
+   "departuresPerDay": 2,
+   "operatingWindow": {
+    "start": 450,
+    "end": 806
+   },
+   "blockMinutes": 5,
+   "departures": [
+    450,
+    628
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV020001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Hangnameedhoo",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV020001",
+   "weeklyFrequency": 10.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 642,
+    "end": 978
+   },
+   "blockMinutes": 80,
+   "departures": [
+    642
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009006-MV021003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Himmafushi \u2192 Hulhumaale",
+   "fromNode": "island:MV009006",
+   "toNode": "island:MV021003",
+   "weeklyFrequency": 10.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 522,
+    "end": 1226
+   },
+   "blockMinutes": 37,
+   "departures": [
+    522
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021003-MV009006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhumaale \u2192 Himmafushi",
+   "fromNode": "island:MV021003",
+   "toNode": "island:MV009006",
+   "weeklyFrequency": 9.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 385,
+    "end": 1111
+   },
+   "blockMinutes": 57,
+   "departures": [
+    385
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV005003-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kurendhoo \u2192 Maale",
+   "fromNode": "island:MV005003",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 9.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 471,
+    "end": 870
+   },
+   "blockMinutes": 139,
+   "departures": [
+    471
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008004-MV008003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Mathiveri \u2192 Ukulhas",
+   "fromNode": "island:MV008004",
+   "toNode": "island:MV008003",
+   "weeklyFrequency": 9.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 536,
+    "end": 1208
+   },
+   "blockMinutes": 21,
+   "departures": [
+    536
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007006-MV007004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dharavandhoo \u2192 Kihaadhoo",
+   "fromNode": "island:MV007006",
+   "toNode": "island:MV007004",
+   "weeklyFrequency": 9.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 527,
+    "end": 1076
+   },
+   "blockMinutes": 10,
+   "departures": [
+    527
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014004-MV014003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhiyamigili \u2192 Madifushi",
+   "fromNode": "island:MV014004",
+   "toNode": "island:MV014003",
+   "weeklyFrequency": 9.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 485,
+    "end": 852
+   },
+   "blockMinutes": 4,
+   "departures": [
+    485
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV009003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Dhiffushi",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV009003",
+   "weeklyFrequency": 9.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 543,
+    "end": 1190
+   },
+   "blockMinutes": 50,
+   "departures": [
+    543
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV020006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Dhagethi",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV020006",
+   "weeklyFrequency": 8.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 659,
+    "end": 993
+   },
+   "blockMinutes": 103,
+   "departures": [
+    659
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008002-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Rasdhoo \u2192 Maale",
+   "fromNode": "island:MV008002",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 8.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 395,
+    "end": 796
+   },
+   "blockMinutes": 61,
+   "departures": [
+    395
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV009008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Maafushi",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV009008",
+   "weeklyFrequency": 8.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 550,
+    "end": 1315
+   },
+   "blockMinutes": 36,
+   "departures": [
+    550
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV008001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Thoddoo",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV008001",
+   "weeklyFrequency": 8.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 598,
+    "end": 1107
+   },
+   "blockMinutes": 74,
+   "departures": [
+    598
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014005-MV014004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Guraidhoo \u2192 Dhiyamigili",
+   "fromNode": "island:MV014005",
+   "toNode": "island:MV014004",
+   "weeklyFrequency": 8.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 493,
+    "end": 819
+   },
+   "blockMinutes": 4,
+   "departures": [
+    493
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009003-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhiffushi \u2192 Maale",
+   "fromNode": "island:MV009003",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 7.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 436,
+    "end": 1202
+   },
+   "blockMinutes": 49,
+   "departures": [
+    436
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009002-MV021003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Gaafaru \u2192 Hulhumaale",
+   "fromNode": "island:MV009002",
+   "toNode": "island:MV021003",
+   "weeklyFrequency": 7.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 422,
+    "end": 809
+   },
+   "blockMinutes": 63,
+   "departures": [
+    422
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008003-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Ukulhas \u2192 Hulhule",
+   "fromNode": "island:MV008003",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 7.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 423,
+    "end": 830
+   },
+   "blockMinutes": 75,
+   "departures": [
+    423
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013006-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Naalaafushi \u2192 Hulhule",
+   "fromNode": "island:MV013006",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 7.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 370,
+    "end": 793
+   },
+   "blockMinutes": 139,
+   "departures": [
+    370
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV009006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Himmafushi",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV009006",
+   "weeklyFrequency": 7.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 567,
+    "end": 1156
+   },
+   "blockMinutes": 22,
+   "departures": [
+    567
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014002-MV014003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Vilufushi \u2192 Madifushi",
+   "fromNode": "island:MV014002",
+   "toNode": "island:MV014003",
+   "weeklyFrequency": 7.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 547,
+    "end": 842
+   },
+   "blockMinutes": 15,
+   "departures": [
+    547
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010001-MV010003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Fulidhoo \u2192 Felidhoo",
+   "fromNode": "island:MV010001",
+   "toNode": "island:MV010003",
+   "weeklyFrequency": 7.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 545,
+    "end": 1095
+   },
+   "blockMinutes": 31,
+   "departures": [
+    545
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV009005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Huraa",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV009005",
+   "weeklyFrequency": 7.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 578,
+    "end": 999
+   },
+   "blockMinutes": 24,
+   "departures": [
+    578
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007006-MV007002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dharavandhoo \u2192 Kamadhoo",
+   "fromNode": "island:MV007006",
+   "toNode": "island:MV007002",
+   "weeklyFrequency": 7.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 503,
+    "end": 1050
+   },
+   "blockMinutes": 17,
+   "departures": [
+    503
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021003-MV009002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhumaale \u2192 Gaafaru",
+   "fromNode": "island:MV021003",
+   "toNode": "island:MV009002",
+   "weeklyFrequency": 7.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 677,
+    "end": 1001
+   },
+   "blockMinutes": 64,
+   "departures": [
+    677
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004002-MV004003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kedhikulhudhoo \u2192 Maalhendhoo",
+   "fromNode": "island:MV004002",
+   "toNode": "island:MV004003",
+   "weeklyFrequency": 7.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 435,
+    "end": 1027
+   },
+   "blockMinutes": 12,
+   "departures": [
+    435
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013008-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhiggaru \u2192 Maale",
+   "fromNode": "island:MV013008",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 7.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 507,
+    "end": 1284
+   },
+   "blockMinutes": 126,
+   "departures": [
+    507
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007003-MV006014",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kendhoo \u2192 Meedhoo",
+   "fromNode": "island:MV007003",
+   "toNode": "island:MV006014",
+   "weeklyFrequency": 7.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 634,
+    "end": 1120
+   },
+   "blockMinutes": 25,
+   "departures": [
+    634
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007002-MV007006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kamadhoo \u2192 Dharavandhoo",
+   "fromNode": "island:MV007002",
+   "toNode": "island:MV007006",
+   "weeklyFrequency": 7.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 300,
+    "end": 959
+   },
+   "blockMinutes": 17,
+   "departures": [
+    300
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV003006-MV003010",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Bilehffahi \u2192 Maroshi",
+   "fromNode": "island:MV003006",
+   "toNode": "island:MV003010",
+   "weeklyFrequency": 7.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 399,
+    "end": 452
+   },
+   "blockMinutes": 19,
+   "departures": [
+    399
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010001-MV010004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Fulidhoo \u2192 Keyodhoo",
+   "fromNode": "island:MV010001",
+   "toNode": "island:MV010004",
+   "weeklyFrequency": 7.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 710,
+    "end": 1053
+   },
+   "blockMinutes": 29,
+   "departures": [
+    710
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004004-MV004003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kudafari \u2192 Maalhendhoo",
+   "fromNode": "island:MV004004",
+   "toNode": "island:MV004003",
+   "weeklyFrequency": 7.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 470,
+    "end": 1015
+   },
+   "blockMinutes": 13,
+   "departures": [
+    470
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004003-MV004004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maalhendhoo \u2192 Kudafari",
+   "fromNode": "island:MV004003",
+   "toNode": "island:MV004004",
+   "weeklyFrequency": 7.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 604,
+    "end": 935
+   },
+   "blockMinutes": 27,
+   "departures": [
+    604
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV008003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Ukulhas",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV008003",
+   "weeklyFrequency": 6.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 598,
+    "end": 1011
+   },
+   "blockMinutes": 78,
+   "departures": [
+    598
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010005-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Rakeedhoo \u2192 Maale",
+   "fromNode": "island:MV010005",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 6.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 403,
+    "end": 894
+   },
+   "blockMinutes": 96,
+   "departures": [
+    403
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007002-MV006015",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kamadhoo \u2192 Kinolhas",
+   "fromNode": "island:MV007002",
+   "toNode": "island:MV006015",
+   "weeklyFrequency": 6.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 552,
+    "end": 1110
+   },
+   "blockMinutes": 23,
+   "departures": [
+    552
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008001-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Thoddoo \u2192 Maale",
+   "fromNode": "island:MV008001",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 6.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 300,
+    "end": 1086
+   },
+   "blockMinutes": 71,
+   "departures": [
+    300
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007008-MV007003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Eydhafushi \u2192 Kendhoo",
+   "fromNode": "island:MV007008",
+   "toNode": "island:MV007003",
+   "weeklyFrequency": 6.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 364,
+    "end": 987
+   },
+   "blockMinutes": 24,
+   "departures": [
+    364
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV020004-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Mahibadhoo \u2192 Maale",
+   "fromNode": "island:MV020004",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 6.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 436,
+    "end": 875
+   },
+   "blockMinutes": 94,
+   "departures": [
+    436
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV005001-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hinnavaru \u2192 Maale",
+   "fromNode": "island:MV005001",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 6.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 563,
+    "end": 951
+   },
+   "blockMinutes": 148,
+   "departures": [
+    563
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV003013-MV003010",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Komandoo \u2192 Maroshi",
+   "fromNode": "island:MV003013",
+   "toNode": "island:MV003010",
+   "weeklyFrequency": 6.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 611,
+    "end": 855
+   },
+   "blockMinutes": 17,
+   "departures": [
+    611
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013007-MV014002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kolhufushi \u2192 Vilufushi",
+   "fromNode": "island:MV013007",
+   "toNode": "island:MV014002",
+   "weeklyFrequency": 6.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 510,
+    "end": 566
+   },
+   "blockMinutes": 38,
+   "departures": [
+    510
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004003-MV004002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maalhendhoo \u2192 Kedhikulhudhoo",
+   "fromNode": "island:MV004003",
+   "toNode": "island:MV004002",
+   "weeklyFrequency": 6.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 624,
+    "end": 991
+   },
+   "blockMinutes": 12,
+   "departures": [
+    624
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004010-MV005001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Manadhoo \u2192 Hinnavaru",
+   "fromNode": "island:MV004010",
+   "toNode": "island:MV005001",
+   "weeklyFrequency": 6.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 527,
+    "end": 898
+   },
+   "blockMinutes": 34,
+   "departures": [
+    527
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014003-MV014002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Madifushi \u2192 Vilufushi",
+   "fromNode": "island:MV014003",
+   "toNode": "island:MV014002",
+   "weeklyFrequency": 6.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 498,
+    "end": 800
+   },
+   "blockMinutes": 16,
+   "departures": [
+    498
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009004-MV021003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Thulusdhoo \u2192 Hulhumaale",
+   "fromNode": "island:MV009004",
+   "toNode": "island:MV021003",
+   "weeklyFrequency": 6.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 630,
+    "end": 1099
+   },
+   "blockMinutes": 61,
+   "departures": [
+    630
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013007-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kolhufushi \u2192 Maale",
+   "fromNode": "island:MV013007",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 6.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 770,
+    "end": 906
+   },
+   "blockMinutes": 138,
+   "departures": [
+    770
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV013008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Dhiggaru",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV013008",
+   "weeklyFrequency": 6.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 575,
+    "end": 917
+   },
+   "blockMinutes": 117,
+   "departures": [
+    575
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV002005-MV002012",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Naivaadhoo \u2192 Kulhudhuffushi",
+   "fromNode": "island:MV002005",
+   "toNode": "island:MV002012",
+   "weeklyFrequency": 6.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 510,
+    "end": 999
+   },
+   "blockMinutes": 28,
+   "departures": [
+    510
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV016004-MV016003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Nilandhoo \u2192 Maamendhoo",
+   "fromNode": "island:MV016004",
+   "toNode": "island:MV016003",
+   "weeklyFrequency": 6.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 415,
+    "end": 676
+   },
+   "blockMinutes": 19,
+   "departures": [
+    415
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014005-MV014009",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Guraidhoo \u2192 Gaadhiffushi",
+   "fromNode": "island:MV014005",
+   "toNode": "island:MV014009",
+   "weeklyFrequency": 6.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 615,
+    "end": 762
+   },
+   "blockMinutes": 15,
+   "departures": [
+    615
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV013007",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Kolhufushi",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV013007",
+   "weeklyFrequency": 6.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 374,
+    "end": 543
+   },
+   "blockMinutes": 135,
+   "departures": [
+    374
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010001-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Fulidhoo \u2192 Maale",
+   "fromNode": "island:MV010001",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 5.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 402,
+    "end": 1061
+   },
+   "blockMinutes": 71,
+   "departures": [
+    402
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013008-MV010005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhiggaru \u2192 Rakeedhoo",
+   "fromNode": "island:MV013008",
+   "toNode": "island:MV010005",
+   "weeklyFrequency": 5.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 519,
+    "end": 854
+   },
+   "blockMinutes": 25,
+   "departures": [
+    519
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007008-MV007001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Eydhafushi \u2192 Kudarikilu",
+   "fromNode": "island:MV007008",
+   "toNode": "island:MV007001",
+   "weeklyFrequency": 5.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 357,
+    "end": 896
+   },
+   "blockMinutes": 28,
+   "departures": [
+    357
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV005001-MV004010",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hinnavaru \u2192 Manadhoo",
+   "fromNode": "island:MV005001",
+   "toNode": "island:MV004010",
+   "weeklyFrequency": 5.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 525,
+    "end": 642
+   },
+   "blockMinutes": 34,
+   "departures": [
+    525
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV002012-MV002005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kulhudhuffushi \u2192 Naivaadhoo",
+   "fromNode": "island:MV002012",
+   "toNode": "island:MV002005",
+   "weeklyFrequency": 5.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 472,
+    "end": 1169
+   },
+   "blockMinutes": 29,
+   "departures": [
+    472
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007005-MV007008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhonfanu \u2192 Eydhafushi",
+   "fromNode": "island:MV007005",
+   "toNode": "island:MV007008",
+   "weeklyFrequency": 5.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 543,
+    "end": 1054
+   },
+   "blockMinutes": 20,
+   "departures": [
+    543
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014002-MV013007",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Vilufushi \u2192 Kolhufushi",
+   "fromNode": "island:MV014002",
+   "toNode": "island:MV013007",
+   "weeklyFrequency": 5.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 727,
+    "end": 865
+   },
+   "blockMinutes": 38,
+   "departures": [
+    727
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV003010-MV003006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maroshi \u2192 Bilehffahi",
+   "fromNode": "island:MV003010",
+   "toNode": "island:MV003006",
+   "weeklyFrequency": 5.7,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 695,
+    "end": 1006
+   },
+   "blockMinutes": 24,
+   "departures": [
+    695
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV005003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Kurendhoo",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV005003",
+   "weeklyFrequency": 5.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 454,
+    "end": 866
+   },
+   "blockMinutes": 141,
+   "departures": [
+    454
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV016003-MV016004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maamendhoo \u2192 Nilandhoo",
+   "fromNode": "island:MV016003",
+   "toNode": "island:MV016004",
+   "weeklyFrequency": 5.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 1004,
+    "end": 1010
+   },
+   "blockMinutes": 19,
+   "departures": [
+    1004
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV002005-MV002008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Naivaadhoo \u2192 Nellaidhoo",
+   "fromNode": "island:MV002005",
+   "toNode": "island:MV002008",
+   "weeklyFrequency": 5.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 506,
+    "end": 728
+   },
+   "blockMinutes": 8,
+   "departures": [
+    506
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007008-MV007005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Eydhafushi \u2192 Dhonfanu",
+   "fromNode": "island:MV007008",
+   "toNode": "island:MV007005",
+   "weeklyFrequency": 5.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 486,
+    "end": 920
+   },
+   "blockMinutes": 20,
+   "departures": [
+    486
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV006015-MV007002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kinolhas \u2192 Kamadhoo",
+   "fromNode": "island:MV006015",
+   "toNode": "island:MV007002",
+   "weeklyFrequency": 5.4,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 440,
+    "end": 926
+   },
+   "blockMinutes": 20,
+   "departures": [
+    440
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007001-MV007008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kudarikilu \u2192 Eydhafushi",
+   "fromNode": "island:MV007001",
+   "toNode": "island:MV007008",
+   "weeklyFrequency": 5.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 701,
+    "end": 1034
+   },
+   "blockMinutes": 24,
+   "departures": [
+    701
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV008002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Rasdhoo",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV008002",
+   "weeklyFrequency": 5.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 604,
+    "end": 1011
+   },
+   "blockMinutes": 73,
+   "departures": [
+    604
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021003-MV009004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhumaale \u2192 Thulusdhoo",
+   "fromNode": "island:MV021003",
+   "toNode": "island:MV009004",
+   "weeklyFrequency": 5.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 357,
+    "end": 1127
+   },
+   "blockMinutes": 33,
+   "departures": [
+    357
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007007-MV007003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maalhos \u2192 Kendhoo",
+   "fromNode": "island:MV007007",
+   "toNode": "island:MV007003",
+   "weeklyFrequency": 5.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 897,
+    "end": 994
+   },
+   "blockMinutes": 21,
+   "departures": [
+    897
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV003010-MV003013",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maroshi \u2192 Komandoo",
+   "fromNode": "island:MV003010",
+   "toNode": "island:MV003013",
+   "weeklyFrequency": 5.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 411,
+    "end": 483
+   },
+   "blockMinutes": 17,
+   "departures": [
+    411
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013009-MV013003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maduvvari \u2192 Veyvah",
+   "fromNode": "island:MV013009",
+   "toNode": "island:MV013003",
+   "weeklyFrequency": 5.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 709,
+    "end": 1059
+   },
+   "blockMinutes": 16,
+   "departures": [
+    709
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010005-MV013008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Rakeedhoo \u2192 Dhiggaru",
+   "fromNode": "island:MV010005",
+   "toNode": "island:MV013008",
+   "weeklyFrequency": 5.2,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 665,
+    "end": 1011
+   },
+   "blockMinutes": 25,
+   "departures": [
+    665
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008003-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Ukulhas \u2192 Maale",
+   "fromNode": "island:MV008003",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 5.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 432,
+    "end": 1099
+   },
+   "blockMinutes": 81,
+   "departures": [
+    432
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013003-MV013009",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Veyvah \u2192 Maduvvari",
+   "fromNode": "island:MV013003",
+   "toNode": "island:MV013009",
+   "weeklyFrequency": 5.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 503,
+    "end": 874
+   },
+   "blockMinutes": 17,
+   "departures": [
+    503
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV020009-MV021001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhidhdhoo \u2192 Maale",
+   "fromNode": "island:MV020009",
+   "toNode": "island:MV021001",
+   "weeklyFrequency": 5.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 406,
+    "end": 432
+   },
+   "blockMinutes": 110,
+   "departures": [
+    406
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007003-MV007008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kendhoo \u2192 Eydhafushi",
+   "fromNode": "island:MV007003",
+   "toNode": "island:MV007008",
+   "weeklyFrequency": 5.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 428,
+    "end": 1043
+   },
+   "blockMinutes": 23,
+   "departures": [
+    428
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009005-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Huraa \u2192 Hulhule",
+   "fromNode": "island:MV009005",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 5.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 508,
+    "end": 937
+   },
+   "blockMinutes": 25,
+   "departures": [
+    508
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008008-MV008006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Himandhoo \u2192 Feridhoo",
+   "fromNode": "island:MV008008",
+   "toNode": "island:MV008006",
+   "weeklyFrequency": 5.0,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 360,
+    "end": 1082
+   },
+   "blockMinutes": 24,
+   "departures": [
+    360
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021003-MV009005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhumaale \u2192 Huraa",
+   "fromNode": "island:MV021003",
+   "toNode": "island:MV009005",
+   "weeklyFrequency": 4.8,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 480,
+    "end": 1016
+   },
+   "blockMinutes": 40,
+   "departures": [
+    480
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV020006-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhagethi \u2192 Hulhule",
+   "fromNode": "island:MV020006",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 4.8,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 421,
+    "end": 830
+   },
+   "blockMinutes": 95,
+   "departures": [
+    421
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009005-MV021003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Huraa \u2192 Hulhumaale",
+   "fromNode": "island:MV009005",
+   "toNode": "island:MV021003",
+   "weeklyFrequency": 4.8,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 415,
+    "end": 1288
+   },
+   "blockMinutes": 79,
+   "departures": [
+    415
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV010001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Fulidhoo",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV010001",
+   "weeklyFrequency": 4.8,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 421,
+    "end": 1084
+   },
+   "blockMinutes": 63,
+   "departures": [
+    421
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010003-MV010001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Felidhoo \u2192 Fulidhoo",
+   "fromNode": "island:MV010003",
+   "toNode": "island:MV010001",
+   "weeklyFrequency": 4.8,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 367,
+    "end": 1320
+   },
+   "blockMinutes": 30,
+   "departures": [
+    367
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009008-MV010001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maafushi \u2192 Fulidhoo",
+   "fromNode": "island:MV009008",
+   "toNode": "island:MV010001",
+   "weeklyFrequency": 4.8,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 594,
+    "end": 980
+   },
+   "blockMinutes": 110,
+   "departures": [
+    594
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV002008-MV002005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Nellaidhoo \u2192 Naivaadhoo",
+   "fromNode": "island:MV002008",
+   "toNode": "island:MV002005",
+   "weeklyFrequency": 4.5,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 565,
+    "end": 986
+   },
+   "blockMinutes": 7,
+   "departures": [
+    565
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010005-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Rakeedhoo \u2192 Hulhule",
+   "fromNode": "island:MV010005",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 4.5,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 421,
+    "end": 842
+   },
+   "blockMinutes": 92,
+   "departures": [
+    421
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009052-MV010005",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhule \u2192 Rakeedhoo",
+   "fromNode": "island:MV009052",
+   "toNode": "island:MV010005",
+   "weeklyFrequency": 4.5,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 664,
+    "end": 1034
+   },
+   "blockMinutes": 92,
+   "departures": [
+    664
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013009-MV013004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maduvvari \u2192 Mulah",
+   "fromNode": "island:MV013009",
+   "toNode": "island:MV013004",
+   "weeklyFrequency": 4.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 721,
+    "end": 996
+   },
+   "blockMinutes": 19,
+   "departures": [
+    721
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV010004-MV010001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Keyodhoo \u2192 Fulidhoo",
+   "fromNode": "island:MV010004",
+   "toNode": "island:MV010001",
+   "weeklyFrequency": 4.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 351,
+    "end": 787
+   },
+   "blockMinutes": 33,
+   "departures": [
+    351
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021003-MV009001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Hulhumaale \u2192 Kaashidhoo",
+   "fromNode": "island:MV021003",
+   "toNode": "island:MV009001",
+   "weeklyFrequency": 4.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 677,
+    "end": 925
+   },
+   "blockMinutes": 88,
+   "departures": [
+    677
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV006014-MV007003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Meedhoo \u2192 Kendhoo",
+   "fromNode": "island:MV006014",
+   "toNode": "island:MV007003",
+   "weeklyFrequency": 4.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 415,
+    "end": 883
+   },
+   "blockMinutes": 23,
+   "departures": [
+    415
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007002-MV006013",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kamadhoo \u2192 Fainu",
+   "fromNode": "island:MV007002",
+   "toNode": "island:MV006013",
+   "weeklyFrequency": 4.3,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 545,
+    "end": 983
+   },
+   "blockMinutes": 25,
+   "departures": [
+    545
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007005-MV007002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhonfanu \u2192 Kamadhoo",
+   "fromNode": "island:MV007005",
+   "toNode": "island:MV007002",
+   "weeklyFrequency": 4.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 832,
+    "end": 1108
+   },
+   "blockMinutes": 19,
+   "departures": [
+    832
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV002010-MV002012",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kuribi \u2192 Kulhudhuffushi",
+   "fromNode": "island:MV002010",
+   "toNode": "island:MV002012",
+   "weeklyFrequency": 4.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 543,
+    "end": 551
+   },
+   "blockMinutes": 15,
+   "departures": [
+    543
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007008-MV007004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Eydhafushi \u2192 Kihaadhoo",
+   "fromNode": "island:MV007008",
+   "toNode": "island:MV007004",
+   "weeklyFrequency": 4.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 491,
+    "end": 1017
+   },
+   "blockMinutes": 22,
+   "departures": [
+    491
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009007-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Gulhi \u2192 Hulhule",
+   "fromNode": "island:MV009007",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 4.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 470,
+    "end": 950
+   },
+   "blockMinutes": 27,
+   "departures": [
+    470
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014001-MV014006",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Buruni \u2192 Kadoodhoo",
+   "fromNode": "island:MV014001",
+   "toNode": "island:MV014006",
+   "weeklyFrequency": 4.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 611,
+    "end": 962
+   },
+   "blockMinutes": 36,
+   "departures": [
+    611
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008003-MV008004",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Ukulhas \u2192 Mathiveri",
+   "fromNode": "island:MV008003",
+   "toNode": "island:MV008004",
+   "weeklyFrequency": 4.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 572,
+    "end": 1208
+   },
+   "blockMinutes": 23,
+   "departures": [
+    572
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007004-MV007008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kihaadhoo \u2192 Eydhafushi",
+   "fromNode": "island:MV007004",
+   "toNode": "island:MV007008",
+   "weeklyFrequency": 4.1,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 500,
+    "end": 1143
+   },
+   "blockMinutes": 22,
+   "departures": [
+    500
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009006-MV009052",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Himmafushi \u2192 Hulhule",
+   "fromNode": "island:MV009006",
+   "toNode": "island:MV009052",
+   "weeklyFrequency": 3.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 578,
+    "end": 1136
+   },
+   "blockMinutes": 21,
+   "departures": [
+    578
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV009002",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Gaafaru",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV009002",
+   "weeklyFrequency": 3.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 543,
+    "end": 902
+   },
+   "blockMinutes": 201,
+   "departures": [
+    543
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV009003-MV021003",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhiffushi \u2192 Hulhumaale",
+   "fromNode": "island:MV009003",
+   "toNode": "island:MV021003",
+   "weeklyFrequency": 3.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 512,
+    "end": 1094
+   },
+   "blockMinutes": 46,
+   "departures": [
+    512
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV005003-MV005001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kurendhoo \u2192 Hinnavaru",
+   "fromNode": "island:MV005003",
+   "toNode": "island:MV005001",
+   "weeklyFrequency": 3.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 391,
+    "end": 779
+   },
+   "blockMinutes": 24,
+   "departures": [
+    391
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV021001-MV020001",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Maale \u2192 Hangnameedhoo",
+   "fromNode": "island:MV021001",
+   "toNode": "island:MV020001",
+   "weeklyFrequency": 3.9,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 637,
+    "end": 970
+   },
+   "blockMinutes": 88,
+   "departures": [
+    637
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV014001-MV012008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Buruni \u2192 Kudahuvadhoo",
+   "fromNode": "island:MV014001",
+   "toNode": "island:MV012008",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 497,
+    "end": 845
+   },
+   "blockMinutes": 42,
+   "departures": [
+    497
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV008006-MV008008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Feridhoo \u2192 Himandhoo",
+   "fromNode": "island:MV008006",
+   "toNode": "island:MV008008",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 498,
+    "end": 1012
+   },
+   "blockMinutes": 20,
+   "departures": [
+    498
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004001-MV003014",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Henbadhoo \u2192 Maaugoodhoo",
+   "fromNode": "island:MV004001",
+   "toNode": "island:MV003014",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 613,
+    "end": 1037
+   },
+   "blockMinutes": 15,
+   "departures": [
+    613
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013004-MV013009",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Mulah \u2192 Maduvvari",
+   "fromNode": "island:MV013004",
+   "toNode": "island:MV013009",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 488,
+    "end": 822
+   },
+   "blockMinutes": 19,
+   "departures": [
+    488
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007003-MV007007",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kendhoo \u2192 Maalhos",
+   "fromNode": "island:MV007003",
+   "toNode": "island:MV007007",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 408,
+    "end": 429
+   },
+   "blockMinutes": 19,
+   "departures": [
+    408
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV004002-MV003014",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Kedhikulhudhoo \u2192 Maaugoodhoo",
+   "fromNode": "island:MV004002",
+   "toNode": "island:MV003014",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 595,
+    "end": 1020
+   },
+   "blockMinutes": 19,
+   "departures": [
+    595
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV007005-MV007007",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Dhonfanu \u2192 Maalhos",
+   "fromNode": "island:MV007005",
+   "toNode": "island:MV007007",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 338,
+    "end": 1065
+   },
+   "blockMinutes": 11,
+   "departures": [
+    338
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
+  },
+  {
+   "id": "observed:MV013004-MV013008",
+   "kind": "frequency",
+   "mode": "sea",
+   "routeId": "observed-boats",
+   "label": "Observed boats Mulah \u2192 Dhiggaru",
+   "fromNode": "island:MV013004",
+   "toNode": "island:MV013008",
+   "weeklyFrequency": 3.6,
+   "departuresPerDay": 1,
+   "operatingWindow": {
+    "start": 499,
+    "end": 939
+   },
+   "blockMinutes": 22,
+   "departures": [
+    499
+   ],
+   "confidence": "estimated_frequency",
+   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
+   "source": "data/processed/followme/observed_sea_links.csv"
   }
  ],
  "facilities": [
@@ -13501,7 +19069,7 @@
   },
   {
    "id": "education:0001",
-   "name": "The Maldives National University — Kulhudhuffushi Campus",
+   "name": "The Maldives National University \u2014 Kulhudhuffushi Campus",
    "islandId": "MV002012",
    "kind": "education",
    "categories": [
@@ -13514,7 +19082,7 @@
   },
   {
    "id": "education:0002",
-   "name": "The Maldives National University — Male' Campus",
+   "name": "The Maldives National University \u2014 Male' Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -13527,7 +19095,7 @@
   },
   {
    "id": "education:0003",
-   "name": "The Maldives National University — Gan Campus",
+   "name": "The Maldives National University \u2014 Gan Campus",
    "islandId": "MV015013",
    "kind": "education",
    "categories": [
@@ -13540,7 +19108,7 @@
   },
   {
    "id": "education:0004",
-   "name": "The Maldives National University — Thinadhoo Campus",
+   "name": "The Maldives National University \u2014 Thinadhoo Campus",
    "islandId": "MV017010",
    "kind": "education",
    "categories": [
@@ -13553,7 +19121,7 @@
   },
   {
    "id": "education:0005",
-   "name": "The Maldives National University — Hithadhoo Campus",
+   "name": "The Maldives National University \u2014 Hithadhoo Campus",
    "islandId": "MV019002",
    "kind": "education",
    "categories": [
@@ -13566,7 +19134,7 @@
   },
   {
    "id": "education:0006",
-   "name": "The Maldives National University — Ungoofaaru Outreach Centre",
+   "name": "The Maldives National University \u2014 Ungoofaaru Outreach Centre",
    "islandId": "MV006006",
    "kind": "education",
    "categories": [
@@ -13579,7 +19147,7 @@
   },
   {
    "id": "education:0007",
-   "name": "The Maldives National University — Ihavandhoo Outreach Centre",
+   "name": "The Maldives National University \u2014 Ihavandhoo Outreach Centre",
    "islandId": "MV001007",
    "kind": "education",
    "categories": [
@@ -13592,7 +19160,7 @@
   },
   {
    "id": "education:0008",
-   "name": "The Maldives National University — Kudahuvadhoo Outreach Centre",
+   "name": "The Maldives National University \u2014 Kudahuvadhoo Outreach Centre",
    "islandId": "MV012008",
    "kind": "education",
    "categories": [
@@ -13605,7 +19173,7 @@
   },
   {
    "id": "education:0009",
-   "name": "Islamic University of Maldives — Male' Main Campus (not listed separately in register)",
+   "name": "Islamic University of Maldives \u2014 Male' Main Campus (not listed separately in register)",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -13618,7 +19186,7 @@
   },
   {
    "id": "education:0010",
-   "name": "Islamic University of Maldives — Naifaru IUM Campus",
+   "name": "Islamic University of Maldives \u2014 Naifaru IUM Campus",
    "islandId": "MV005002",
    "kind": "education",
    "categories": [
@@ -13631,7 +19199,7 @@
   },
   {
    "id": "education:0011",
-   "name": "Islamic University of Maldives — Fuvahmulah IUM Campus",
+   "name": "Islamic University of Maldives \u2014 Fuvahmulah IUM Campus",
    "islandId": "MV018001",
    "kind": "education",
    "categories": [
@@ -13644,7 +19212,7 @@
   },
   {
    "id": "education:0012",
-   "name": "Islamic University of Maldives — Meedhoo IUM Campus (Addu)",
+   "name": "Islamic University of Maldives \u2014 Meedhoo IUM Campus (Addu)",
    "islandId": "MV019001",
    "kind": "education",
    "categories": [
@@ -13657,7 +19225,7 @@
   },
   {
    "id": "education:0013",
-   "name": "Islamic University of Maldives — Fonadhoo IUM Campus",
+   "name": "Islamic University of Maldives \u2014 Fonadhoo IUM Campus",
    "islandId": "MV015008",
    "kind": "education",
    "categories": [
@@ -13670,7 +19238,7 @@
   },
   {
    "id": "education:0014",
-   "name": "Islamic University of Maldives — Ungoofaaru IUM Campus",
+   "name": "Islamic University of Maldives \u2014 Ungoofaaru IUM Campus",
    "islandId": "MV006006",
    "kind": "education",
    "categories": [
@@ -13683,7 +19251,7 @@
   },
   {
    "id": "education:0015",
-   "name": "Islamic University of Maldives — Thinadhoo IUM Campus",
+   "name": "Islamic University of Maldives \u2014 Thinadhoo IUM Campus",
    "islandId": "MV017010",
    "kind": "education",
    "categories": [
@@ -13696,7 +19264,7 @@
   },
   {
    "id": "education:0016",
-   "name": "Islamic University of Maldives — Maradhoo-Feydhoo IUM Campus (Addu)",
+   "name": "Islamic University of Maldives \u2014 Maradhoo-Feydhoo IUM Campus (Addu)",
    "islandId": "MV019005",
    "kind": "education",
    "categories": [
@@ -13709,7 +19277,7 @@
   },
   {
    "id": "education:0017",
-   "name": "Islamic University of Maldives — Hulhudhuffaaru Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Hulhudhuffaaru Outreach Centre",
    "islandId": "MV006005",
    "kind": "education",
    "categories": [
@@ -13722,7 +19290,7 @@
   },
   {
    "id": "education:0018",
-   "name": "Islamic University of Maldives — Maamigili Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Maamigili Outreach Centre",
    "islandId": "MV020010",
    "kind": "education",
    "categories": [
@@ -13735,7 +19303,7 @@
   },
   {
    "id": "education:0019",
-   "name": "Islamic University of Maldives — Dhidhdhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Dhidhdhoo Outreach Centre",
    "islandId": "MV001010",
    "kind": "education",
    "categories": [
@@ -13748,7 +19316,7 @@
   },
   {
    "id": "education:0020",
-   "name": "Islamic University of Maldives — Kulhudhuffushi Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Kulhudhuffushi Outreach Centre",
    "islandId": "MV002012",
    "kind": "education",
    "categories": [
@@ -13761,7 +19329,7 @@
   },
   {
    "id": "education:0021",
-   "name": "Islamic University of Maldives — Kudahuvadhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Kudahuvadhoo Outreach Centre",
    "islandId": "MV012008",
    "kind": "education",
    "categories": [
@@ -13774,7 +19342,7 @@
   },
   {
    "id": "education:0022",
-   "name": "Islamic University of Maldives — Maafaru Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Maafaru Outreach Centre",
    "islandId": "MV004006",
    "kind": "education",
    "categories": [
@@ -13787,7 +19355,7 @@
   },
   {
    "id": "education:0023",
-   "name": "Islamic University of Maldives — Maafushi Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Maafushi Outreach Centre",
    "islandId": "MV009008",
    "kind": "education",
    "categories": [
@@ -13800,7 +19368,7 @@
   },
   {
    "id": "education:0024",
-   "name": "Islamic University of Maldives — Manadhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Manadhoo Outreach Centre",
    "islandId": "MV004010",
    "kind": "education",
    "categories": [
@@ -13813,7 +19381,7 @@
   },
   {
    "id": "education:0025",
-   "name": "Islamic University of Maldives — Funadhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Funadhoo Outreach Centre",
    "islandId": "MV003015",
    "kind": "education",
    "categories": [
@@ -13826,7 +19394,7 @@
   },
   {
    "id": "education:0026",
-   "name": "Islamic University of Maldives — Hoadehdhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Hoadehdhoo Outreach Centre",
    "islandId": "MV017002",
    "kind": "education",
    "categories": [
@@ -13839,7 +19407,7 @@
   },
   {
    "id": "education:0027",
-   "name": "Islamic University of Maldives — Gemanafushi Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Gemanafushi Outreach Centre",
    "islandId": "MV016009",
    "kind": "education",
    "categories": [
@@ -13852,7 +19420,7 @@
   },
   {
    "id": "education:0028",
-   "name": "Islamic University of Maldives — Madaveli Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Madaveli Outreach Centre",
    "islandId": "MV017001",
    "kind": "education",
    "categories": [
@@ -13865,7 +19433,7 @@
   },
   {
    "id": "education:0029",
-   "name": "Islamic University of Maldives — Vaadhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Vaadhoo Outreach Centre",
    "islandId": "MV017006",
    "kind": "education",
    "categories": [
@@ -13878,7 +19446,7 @@
   },
   {
    "id": "education:0030",
-   "name": "Islamic University of Maldives — Keyodhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Keyodhoo Outreach Centre",
    "islandId": "MV010004",
    "kind": "education",
    "categories": [
@@ -13891,7 +19459,7 @@
   },
   {
    "id": "education:0031",
-   "name": "Islamic University of Maldives — Eydhafushi Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Eydhafushi Outreach Centre",
    "islandId": "MV007008",
    "kind": "education",
    "categories": [
@@ -13904,7 +19472,7 @@
   },
   {
    "id": "education:0032",
-   "name": "Islamic University of Maldives — Hithadhoo Outreach Centre",
+   "name": "Islamic University of Maldives \u2014 Hithadhoo Outreach Centre",
    "islandId": "MV019002",
    "kind": "education",
    "categories": [
@@ -13917,7 +19485,7 @@
   },
   {
    "id": "education:0033",
-   "name": "Villa College — QI Campus (Main Campus)",
+   "name": "Villa College \u2014 QI Campus (Main Campus)",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -13930,7 +19498,7 @@
   },
   {
    "id": "education:0034",
-   "name": "Villa College — Naifaru Campus",
+   "name": "Villa College \u2014 Naifaru Campus",
    "islandId": "MV005002",
    "kind": "education",
    "categories": [
@@ -13943,7 +19511,7 @@
   },
   {
    "id": "education:0035",
-   "name": "Villa College — Kulhudhuffushi Campus",
+   "name": "Villa College \u2014 Kulhudhuffushi Campus",
    "islandId": "MV002012",
    "kind": "education",
    "categories": [
@@ -13956,7 +19524,7 @@
   },
   {
    "id": "education:0036",
-   "name": "Villa College — Meedhoo Campus",
+   "name": "Villa College \u2014 Meedhoo Campus",
    "islandId": "MV006014",
    "kind": "education",
    "categories": [
@@ -13969,7 +19537,7 @@
   },
   {
    "id": "education:0037",
-   "name": "Villa College — Mahibadhoo Campus",
+   "name": "Villa College \u2014 Mahibadhoo Campus",
    "islandId": "MV020004",
    "kind": "education",
    "categories": [
@@ -13982,7 +19550,7 @@
   },
   {
    "id": "education:0038",
-   "name": "Villa College — Gan Campus",
+   "name": "Villa College \u2014 Gan Campus",
    "islandId": "MV015013",
    "kind": "education",
    "categories": [
@@ -13995,7 +19563,7 @@
   },
   {
    "id": "education:0039",
-   "name": "Villa College — Hithadhoo Campus",
+   "name": "Villa College \u2014 Hithadhoo Campus",
    "islandId": "MV019002",
    "kind": "education",
    "categories": [
@@ -14008,7 +19576,7 @@
   },
   {
    "id": "education:0040",
-   "name": "Villa College — Eydhafushi Campus",
+   "name": "Villa College \u2014 Eydhafushi Campus",
    "islandId": "MV007008",
    "kind": "education",
    "categories": [
@@ -14021,7 +19589,7 @@
   },
   {
    "id": "education:0041",
-   "name": "Villa College — Kudahuvadhoo Campus",
+   "name": "Villa College \u2014 Kudahuvadhoo Campus",
    "islandId": "MV012008",
    "kind": "education",
    "categories": [
@@ -14034,7 +19602,7 @@
   },
   {
    "id": "education:0042",
-   "name": "Villa College — Muli Campus",
+   "name": "Villa College \u2014 Muli Campus",
    "islandId": "MV013005",
    "kind": "education",
    "categories": [
@@ -14047,7 +19615,7 @@
   },
   {
    "id": "education:0043",
-   "name": "Villa College — Villingili Campus",
+   "name": "Villa College \u2014 Villingili Campus",
    "islandId": "MV016002",
    "kind": "education",
    "categories": [
@@ -14060,7 +19628,7 @@
   },
   {
    "id": "education:0044",
-   "name": "Villa College — Dhihdhoo Campus",
+   "name": "Villa College \u2014 Dhihdhoo Campus",
    "islandId": "MV001010",
    "kind": "education",
    "categories": [
@@ -14073,7 +19641,7 @@
   },
   {
    "id": "education:0045",
-   "name": "Villa College — Nilandhoo Campus",
+   "name": "Villa College \u2014 Nilandhoo Campus",
    "islandId": "MV011005",
    "kind": "education",
    "categories": [
@@ -14086,7 +19654,7 @@
   },
   {
    "id": "education:0046",
-   "name": "Villa College — Ungoofaaru Campus",
+   "name": "Villa College \u2014 Ungoofaaru Campus",
    "islandId": "MV006006",
    "kind": "education",
    "categories": [
@@ -14099,7 +19667,7 @@
   },
   {
    "id": "education:0047",
-   "name": "Villa College — Veymandoo Campus",
+   "name": "Villa College \u2014 Veymandoo Campus",
    "islandId": "MV014011",
    "kind": "education",
    "categories": [
@@ -14112,7 +19680,7 @@
   },
   {
    "id": "education:0048",
-   "name": "Villa College — Thinadhoo Campus",
+   "name": "Villa College \u2014 Thinadhoo Campus",
    "islandId": "MV017010",
    "kind": "education",
    "categories": [
@@ -14125,7 +19693,7 @@
   },
   {
    "id": "education:0049",
-   "name": "Clique College — Main Campus",
+   "name": "Clique College \u2014 Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14138,7 +19706,7 @@
   },
   {
    "id": "education:0050",
-   "name": "Cyryx College — Main Campus",
+   "name": "Cyryx College \u2014 Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14151,7 +19719,7 @@
   },
   {
    "id": "education:0051",
-   "name": "Cyryx College — Galolhu Campus",
+   "name": "Cyryx College \u2014 Galolhu Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14164,7 +19732,7 @@
   },
   {
    "id": "education:0052",
-   "name": "Mandhu College — Main Campus",
+   "name": "Mandhu College \u2014 Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14177,7 +19745,7 @@
   },
   {
    "id": "education:0053",
-   "name": "MAPS College — Main Campus",
+   "name": "MAPS College \u2014 Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14190,7 +19758,7 @@
   },
   {
    "id": "education:0054",
-   "name": "Avid College — Diamond Campus",
+   "name": "Avid College \u2014 Diamond Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14203,7 +19771,7 @@
   },
   {
    "id": "education:0055",
-   "name": "Avid College — Ruby Campus",
+   "name": "Avid College \u2014 Ruby Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14216,7 +19784,7 @@
   },
   {
    "id": "education:0056",
-   "name": "Avid College — Thinadhoo Campus",
+   "name": "Avid College \u2014 Thinadhoo Campus",
    "islandId": "MV017010",
    "kind": "education",
    "categories": [
@@ -14229,7 +19797,7 @@
   },
   {
    "id": "education:0057",
-   "name": "Maldives Business School — Main Campus",
+   "name": "Maldives Business School \u2014 Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14242,7 +19810,7 @@
   },
   {
    "id": "education:0058",
-   "name": "MIANZ College (formerly MI College) — Main Campus",
+   "name": "MIANZ College (formerly MI College) \u2014 Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14255,7 +19823,7 @@
   },
   {
    "id": "education:0059",
-   "name": "MIANZ College (formerly MI College) — Kulhudhuffushi Campus",
+   "name": "MIANZ College (formerly MI College) \u2014 Kulhudhuffushi Campus",
    "islandId": "MV002012",
    "kind": "education",
    "categories": [
@@ -14268,7 +19836,7 @@
   },
   {
    "id": "education:0060",
-   "name": "MIANZ College (formerly MI College) — Hulhumale' Campus",
+   "name": "MIANZ College (formerly MI College) \u2014 Hulhumale' Campus",
    "islandId": "MV021003",
    "kind": "education",
    "categories": [
@@ -14281,7 +19849,7 @@
   },
   {
    "id": "education:0062",
-   "name": "MIANZ College (formerly MI College) — Dhuvaafaru Campus",
+   "name": "MIANZ College (formerly MI College) \u2014 Dhuvaafaru Campus",
    "islandId": "MV006019",
    "kind": "education",
    "categories": [
@@ -14294,7 +19862,7 @@
   },
   {
    "id": "education:0063",
-   "name": "MIANZ College (formerly MI College) — Fuvahmulah Campus",
+   "name": "MIANZ College (formerly MI College) \u2014 Fuvahmulah Campus",
    "islandId": "MV018001",
    "kind": "education",
    "categories": [
@@ -14307,7 +19875,7 @@
   },
   {
    "id": "education:0064",
-   "name": "Zikura International College — Male' Campus",
+   "name": "Zikura International College \u2014 Male' Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14320,7 +19888,7 @@
   },
   {
    "id": "education:0065",
-   "name": "Maldives Institute of Technology — MIT Main Campus",
+   "name": "Maldives Institute of Technology \u2014 MIT Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14333,7 +19901,7 @@
   },
   {
    "id": "education:0066",
-   "name": "Maldives Institute of Technology — MIT Hulhumale' Campus",
+   "name": "Maldives Institute of Technology \u2014 MIT Hulhumale' Campus",
    "islandId": "MV021003",
    "kind": "education",
    "categories": [
@@ -14346,7 +19914,7 @@
   },
   {
    "id": "education:0067",
-   "name": "Maldives Institute of Technology — MIT Refrigeration and Air-conditioning Lab Campus",
+   "name": "Maldives Institute of Technology \u2014 MIT Refrigeration and Air-conditioning Lab Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14359,7 +19927,7 @@
   },
   {
    "id": "education:0068",
-   "name": "Maldives Institute of Technology — MIT Annex Engineering Campus",
+   "name": "Maldives Institute of Technology \u2014 MIT Annex Engineering Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14372,7 +19940,7 @@
   },
   {
    "id": "education:0069",
-   "name": "National College of Policing and Law Enforcement — Hithadhoo Campus (Main Campus)",
+   "name": "National College of Policing and Law Enforcement \u2014 Hithadhoo Campus (Main Campus)",
    "islandId": "MV019002",
    "kind": "education",
    "categories": [
@@ -14385,7 +19953,7 @@
   },
   {
    "id": "education:0070",
-   "name": "National College of Policing and Law Enforcement — Male' Campus",
+   "name": "National College of Policing and Law Enforcement \u2014 Male' Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14398,7 +19966,7 @@
   },
   {
    "id": "education:0072",
-   "name": "College of Defence and Security Studies — Main Campus",
+   "name": "College of Defence and Security Studies \u2014 Main Campus",
    "islandId": "MV021001",
    "kind": "education",
    "categories": [
@@ -14411,7 +19979,7 @@
   },
   {
    "id": "education:0075",
-   "name": "College of Defence and Security Studies — Kahdhoo Campus",
+   "name": "College of Defence and Security Studies \u2014 Kahdhoo Campus",
    "islandId": "MV015045",
    "kind": "education",
    "categories": [
@@ -14424,7 +19992,7 @@
   },
   {
    "id": "education:0076",
-   "name": "College of Defence and Security Studies — Villimale' Campus",
+   "name": "College of Defence and Security Studies \u2014 Villimale' Campus",
    "islandId": "MV021002",
    "kind": "education",
    "categories": [
@@ -14437,7 +20005,7 @@
   },
   {
    "id": "education:0077",
-   "name": "College of Defence and Security Studies — Kihaadhoo Campus",
+   "name": "College of Defence and Security Studies \u2014 Kihaadhoo Campus",
    "islandId": "MV007004",
    "kind": "education",
    "categories": [
@@ -14450,7 +20018,7 @@
   },
   {
    "id": "education:0078",
-   "name": "College of Defence and Security Studies — Gan Campus",
+   "name": "College of Defence and Security Studies \u2014 Gan Campus",
    "islandId": "MV019033",
    "kind": "education",
    "categories": [
@@ -14463,7 +20031,7 @@
   },
   {
    "id": "education:0102",
-   "name": "Marine Research and Higher Education Centre (Univ. Milano-Bicocca) — MaRHE Centre",
+   "name": "Marine Research and Higher Education Centre (Univ. Milano-Bicocca) \u2014 MaRHE Centre",
    "islandId": "MV011003",
    "kind": "education",
    "categories": [
@@ -14476,7 +20044,7 @@
   },
   {
    "id": "education:0137",
-   "name": "Island Institute of Tertiary Education — Villingili Outreach Centre",
+   "name": "Island Institute of Tertiary Education \u2014 Villingili Outreach Centre",
    "islandId": "MV016002",
    "kind": "education",
    "categories": [
@@ -14489,7 +20057,7 @@
   },
   {
    "id": "education:0138",
-   "name": "Island Institute of Tertiary Education — Kulhudhuffushi Outreach Centre",
+   "name": "Island Institute of Tertiary Education \u2014 Kulhudhuffushi Outreach Centre",
    "islandId": "MV002012",
    "kind": "education",
    "categories": [
@@ -14502,7 +20070,7 @@
   },
   {
    "id": "education:0150",
-   "name": "Eupheus Collegiate — Kulhudhuffushi Outreach Centre",
+   "name": "Eupheus Collegiate \u2014 Kulhudhuffushi Outreach Centre",
    "islandId": "MV002012",
    "kind": "education",
    "categories": [
@@ -14515,7 +20083,7 @@
   },
   {
    "id": "education:0151",
-   "name": "Eupheus Collegiate — Maamigili Outreach Centre",
+   "name": "Eupheus Collegiate \u2014 Maamigili Outreach Centre",
    "islandId": "MV020010",
    "kind": "education",
    "categories": [
@@ -14528,7 +20096,7 @@
   },
   {
    "id": "education:0152",
-   "name": "Eupheus Collegiate — Landhoo Outreach Centre",
+   "name": "Eupheus Collegiate \u2014 Landhoo Outreach Centre",
    "islandId": "MV004005",
    "kind": "education",
    "categories": [
@@ -14541,7 +20109,7 @@
   },
   {
    "id": "education:0157",
-   "name": "ILM Institute for Islamic Studies — Hulhumale' Outreach Centre",
+   "name": "ILM Institute for Islamic Studies \u2014 Hulhumale' Outreach Centre",
    "islandId": "MV021003",
    "kind": "education",
    "categories": [
@@ -16453,7 +22021,7 @@
   },
   {
    "id": "education:0389",
-   "name": "Meemu Atoll Education CentreÂ",
+   "name": "Meemu Atoll Education Centre\u00c2",
    "islandId": "MV013005",
    "kind": "education",
    "categories": [

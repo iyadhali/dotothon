@@ -1,0 +1,304 @@
+{
+ "schemaVersion": 1,
+ "currency": "MVR",
+ "usdMvr": 15.42,
+ "generatedAt": "2026-10-24",
+ "airRoutes": {
+  "DDD-MLE": {
+   "mvr": 1595,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1111
+  },
+  "DRV-IFU": {
+   "mvr": 745,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 518
+  },
+  "DRV-MLE": {
+   "mvr": 1435,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1002
+  },
+  "FMT-KDM": {
+   "mvr": 610,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 426
+  },
+  "FMT-MLE": {
+   "mvr": 1625,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1133
+  },
+  "FND-HDK": {
+   "mvr": 715,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 498
+  },
+  "FND-HRF": {
+   "mvr": 955,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 667
+  },
+  "FND-MLE": {
+   "mvr": 1515,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1055
+  },
+  "FVM-GKK": {
+   "mvr": 930,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 650
+  },
+  "FVM-KDM": {
+   "mvr": 930,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 650
+  },
+  "FVM-KDO": {
+   "mvr": 1775,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1237
+  },
+  "FVM-MLE": {
+   "mvr": 1656,
+   "basis": "Resident one-way, lowest fare x 1.43 regular/promo ratio",
+   "confidence": "estimated",
+   "source": "https://maldivian.aero/assets/files/Press%20Statement%20-%20Promotional%20Fares_14_03_2024%281%29.pdf",
+   "lowestMvr": 1155
+  },
+  "GAN-GKK": {
+   "mvr": 1290,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 900
+  },
+  "GAN-KDM": {
+   "mvr": 1290,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 900
+  },
+  "GAN-MLE": {
+   "mvr": 1750,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1222
+  },
+  "GKK-KDM": {
+   "mvr": 705,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 490
+  },
+  "GKK-KDO": {
+   "mvr": 1105,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 772
+  },
+  "GKK-MLE": {
+   "mvr": 1595,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1111
+  },
+  "HAQ-HDK": {
+   "mvr": 480,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 333
+  },
+  "HAQ-MLE": {
+   "mvr": 1595,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1111
+  },
+  "HDK-MLE": {
+   "mvr": 1595,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1111
+  },
+  "HRF-MLE": {
+   "mvr": 1625,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1133
+  },
+  "IFU-MLE": {
+   "mvr": 1435,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 999
+  },
+  "KDM-MLE": {
+   "mvr": 1910,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1333
+  },
+  "KDM-MUM": {
+   "mvr": 1980,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1381
+  },
+  "KDM-RUL": {
+   "mvr": 725,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 507
+  },
+  "KDO-MLE": {
+   "mvr": 1515,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1055
+  },
+  "KDO-MUM": {
+   "mvr": 1060,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 738
+  },
+  "KDO-TMF": {
+   "mvr": 710,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 494
+  },
+  "LMV-MLE": {
+   "mvr": 1377,
+   "basis": "Resident one-way, regular fare",
+   "confidence": "sourced",
+   "source": "https://corporatemaldives.com/maldivian-slashes-prices-for-madivaru-flights/",
+   "lowestMvr": 949
+  },
+  "LMV-NMF": {
+   "mvr": 620,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 434
+  },
+  "MLE-MUM": {
+   "mvr": 1377,
+   "basis": "Resident one-way, regular fare",
+   "confidence": "sourced",
+   "source": "https://corporatemaldives.com/maldivian-expands-domestic-network-with-muli-route/",
+   "lowestMvr": 1017
+  },
+  "MLE-NMF": {
+   "mvr": 1435,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 999
+  },
+  "MLE-RUL": {
+   "mvr": 1625,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1133
+  },
+  "MLE-TMF": {
+   "mvr": 1595,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1111
+  },
+  "MLE-VAM": {
+   "mvr": 1435,
+   "basis": "Resident one-way, regular fare (estimated)",
+   "confidence": "estimated",
+   "source": "model: see research/12_air_fares.md",
+   "lowestMvr": 1000
+  }
+ },
+ "airModel": {
+  "aMvr": 1348.25,
+  "bMvrPerKm": 0.77,
+  "basis": "Resident one-way, distance model (no published fare for this pair)",
+  "confidence": "estimated",
+  "source": "data/external/fares/air_fares_model.json"
+ },
+ "seaDetour": 1.1,
+ "notes": [
+  "Non-emergency resident fares, MVR. Approved emergency transport is paid by Aasandha.",
+  "Air fares are Maldivian resident fares (2024-2026); estimated rows are labelled.",
+  "Sea and road fares from data/external/fares/sea_land_fares_model.json.",
+  "Free ferry and bus travel applies to people aged 65+, children under 3, disabled people and (Greater Malé) students; this estimate is the full resident fare."
+ ],
+ "ferry": {
+  "aMvr": 33.82,
+  "bMvrPerKm": 1.794,
+  "basis": "RTL resident one-way, gazette tariff fit (n=1837, r²=0.872)",
+  "confidence": "sourced",
+  "source": "data/external/fares/sea_land_fares_model.json"
+ },
+ "serviceFares": {
+  "ferry:MV021001-MV021002": {
+   "aMvr": 3.0,
+   "bMvrPerKm": 0.0,
+   "basis": "Malé–Vilimalé ferry, flat fare",
+   "confidence": "sourced",
+   "source": "data/external/fares/sea_land_fares_model.json"
+  },
+  "ferry:MV021002-MV021001": {
+   "aMvr": 3.0,
+   "bMvrPerKm": 0.0,
+   "basis": "Malé–Vilimalé ferry, flat fare",
+   "confidence": "sourced",
+   "source": "data/external/fares/sea_land_fares_model.json"
+  }
+ },
+ "road": {
+  "aMvr": 59.9,
+  "bMvrPerKm": 3.673,
+  "basis": "Taxi, fit to the regulated Greater Malé fares (gazette 2024)",
+  "confidence": "estimated",
+  "source": "data/external/fares/sea_land_fares_model.json"
+ }
+}

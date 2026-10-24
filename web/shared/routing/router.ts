@@ -54,6 +54,7 @@ import type {
   Island,
   Journey,
   JourneyPlan,
+  OriginAccessStatus,
   JourneyLeg,
   JourneyRequest,
   MultimodalNetwork,
@@ -534,10 +535,24 @@ interface DestinationSearch {
   category: string
   departureMinute: number
   maxArrivalMinute: number
+  /** When set, these islands are the destinations instead of the category's facilities. */
+  targetIslands?: Set<string>
 }
 
 function findEarliestDestination(graph: RoutingGraph, search: DestinationSearch): Label | null {
-  const destinationIslands = graph.destinationFacilities.get(search.category)
+  return searchDestinations(graph, search, 1)[0] ?? null
+}
+
+/**
+ * Earliest-arrival labels for up to `limit` distinct destination islands, in arrival order.
+ * The search keeps expanding past a found destination, so a later island reached through an
+ * earlier one is still found.
+ */
+function searchDestinations(graph: RoutingGraph, search: DestinationSearch, limit: number): Label[] {
+  const found: Label[] = []
+  const foundIslands = new Set<string>()
+  const destinationIslands: { has(islandId: string): boolean } | undefined =
+    search.targetIslands ?? graph.destinationFacilities.get(search.category)
   const defaults = graph.defaults
   const startKey = labelKey(search.originNode, null)
   const start: Label = {
@@ -602,8 +617,15 @@ function findEarliestDestination(graph: RoutingGraph, search: DestinationSearch)
     // Dijkstra pops labels in non-decreasing time, so the first destination island is the
     // earliest-arriving one. The origin cannot appear here (it is handled before the search).
     const nodeIslandId = islandIdFromNode(label.node)
-    if (nodeIslandId && nodeIslandId !== search.originIslandId && destinationIslands?.has(nodeIslandId)) {
-      return label
+    if (
+      nodeIslandId &&
+      nodeIslandId !== search.originIslandId &&
+      destinationIslands?.has(nodeIslandId) &&
+      !foundIslands.has(nodeIslandId)
+    ) {
+      foundIslands.add(nodeIslandId)
+      found.push(label)
+      if (found.length >= limit) return found
     }
 
     // 1) Physical access / road edges (undirected, fixed minutes).
@@ -753,7 +775,7 @@ function findEarliestDestination(graph: RoutingGraph, search: DestinationSearch)
     }
   }
 
-  return null
+  return found
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -883,6 +905,102 @@ function planWithGraph(input: PlanningInput): JourneyPlan {
   const destinationIslandId = islandIdFromNode(label.node)
   if (!destinationIslandId) return { status: 'not_reachable', journey: null }
   return { status: 'reachable', journey: buildJourney(graph, request, label, destinationIslandId) }
+}
+
+/** Result of a nearest-destinations plan: the status plus up to `limit` journeys. */
+export interface NearestPlan {
+  status: OriginAccessStatus
+  journeys: Journey[]
+}
+
+/**
+ * Journeys to the `limit` earliest-reachable destination islands for one category, in
+ * arrival order. When the origin itself hosts a facility, the 0-minute journey comes first.
+ */
+export function planNearestDestinations(
+  network: MultimodalNetwork,
+  request: JourneyRequest,
+  limit = 3,
+): NearestPlan {
+  if (!Number.isFinite(request.departureMinute)) {
+    throw new TypeError('departureMinute must be a finite number of minutes after midnight')
+  }
+  const defaults = getRoutingDefaults(network)
+  const effectiveNetwork: MultimodalNetwork = request.scenario ? applyScenario(network, request.scenario) : network
+  const selection = resolveSelection(request)
+  const graph = getGraph(effectiveNetwork, { ...selection, allowNextDay: request.allowNextDay === true })
+  const destinationIslands = graph.destinationFacilities.get(request.category)
+  if (!destinationIslands || destinationIslands.size === 0) return { status: 'no_destination', journeys: [] }
+
+  const base = {
+    originIslandId: request.originIslandId,
+    category: request.category,
+    departureMinute: request.departureMinute,
+  }
+  const journeys: Journey[] = []
+  if ((destinationIslands.get(request.originIslandId)?.length ?? 0) > 0) journeys.push(zeroJourney(graph, base))
+  const remaining = limit - journeys.length
+  const originNode = toIslandNode(request.originIslandId)
+  if (remaining > 0 && graph.islandsWithOutgoingConnectivity.has(originNode)) {
+    const labels = searchDestinations(
+      graph,
+      {
+        originNode,
+        originIslandId: request.originIslandId,
+        category: request.category,
+        departureMinute: request.departureMinute,
+        maxArrivalMinute: request.departureMinute + (request.maxJourneyMinutes ?? defaults.maxJourneyMinutes),
+      },
+      remaining,
+    )
+    for (const label of labels) {
+      const islandId = islandIdFromNode(label.node)
+      if (islandId) journeys.push(buildJourney(graph, base, label, islandId))
+    }
+  }
+  if (journeys.length > 0) return { status: 'reachable', journeys }
+  return {
+    status: graph.islandsWithOutgoingConnectivity.has(originNode) ? 'not_reachable' : 'no_origin_access',
+    journeys: [],
+  }
+}
+
+/**
+ * Earliest journey from one island to another specific island (e.g. the trip home from a
+ * facility). Returns `null` when no itinerary arrives within `maxJourneyMinutes`.
+ */
+export function planIslandToIsland(
+  network: MultimodalNetwork,
+  request: NetworkSelection & {
+    fromIslandId: string
+    toIslandId: string
+    departureMinute: number
+    allowNextDay?: boolean
+    scenario?: Scenario
+    maxJourneyMinutes?: number
+  },
+): Journey | null {
+  const defaults = getRoutingDefaults(network)
+  const effectiveNetwork: MultimodalNetwork = request.scenario ? applyScenario(network, request.scenario) : network
+  const selection = resolveSelection(request)
+  const graph = getGraph(effectiveNetwork, { ...selection, allowNextDay: request.allowNextDay === true })
+  const base = { originIslandId: request.fromIslandId, category: `island:${request.toIslandId}`, departureMinute: request.departureMinute }
+  if (request.fromIslandId === request.toIslandId) return zeroJourney(graph, base)
+  const originNode = toIslandNode(request.fromIslandId)
+  if (!graph.islandsWithOutgoingConnectivity.has(originNode)) return null
+  const [label] = searchDestinations(
+    graph,
+    {
+      originNode,
+      originIslandId: request.fromIslandId,
+      category: base.category,
+      departureMinute: request.departureMinute,
+      maxArrivalMinute: request.departureMinute + (request.maxJourneyMinutes ?? defaults.maxJourneyMinutes),
+      targetIslands: new Set([request.toIslandId]),
+    },
+    1,
+  )
+  return label ? buildJourney(graph, base, label, request.toIslandId) : null
 }
 
 /** Plan a journey, or `null` when the category/origin cannot produce one. */

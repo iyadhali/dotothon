@@ -40,6 +40,7 @@ const {
   selectedOriginFilteredOut,
   filterActive,
   selectOrigin,
+  regionSplit,
 } = store
 
 const runtimeConfig = useRuntimeConfig()
@@ -163,6 +164,8 @@ const displaySummary = computed(() =>
             @select-origin="selectOrigin"
           />
 
+          <IslandAccessPanel class="mm-grid__wide" :store="store" />
+
           <JourneyCard
             :origin="selectedOrigin"
             :access="selectedOriginAccess"
@@ -181,6 +184,7 @@ const displaySummary = computed(() =>
 
           <NationalMetrics
             :summary="displaySummary"
+            :split="regionSplit"
             :loading="metricsLoading"
             :error="metricsError"
             :threshold="threshold"
@@ -224,7 +228,7 @@ const displaySummary = computed(() =>
             <summary>Caveats, sources & publishing</summary>
             <p>
               MTCC passenger counts are synthetic, not observed demand. Missing coverage is not
-              evidence that an island has no transport. Fares and fuel are out of scope. Island
+              evidence that an island has no transport. Fares are full resident fares from published tariffs (estimated where labelled); fuel and charter costs are out of scope. Island
               names follow source records; times are integer minutes after midnight, Maldives time
               (UTC+5).
             </p>

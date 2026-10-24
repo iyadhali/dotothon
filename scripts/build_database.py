@@ -172,6 +172,7 @@ KEYS = {
     "service": ["service_id"], "service_access": ["node_id", "service_type"],
     "service_summary": ["category", "service_type"], "priority_gaps": ["node_id"],
     "placement": ["service_type", "k"],
+    "travel_time": ["from_id", "to_id"], "link_candidates": ["service_type", "rank"],
 "dataset": ["id"], "meta": ["key"],
 }
 
@@ -241,6 +242,16 @@ def main() -> None:
         changes["placement"] = upsert(con, "placement", placement, ["service_type", "k"],
                                       "greedy placement ranking")
 
+    # ---------------------------------------------------------------- build page -------------
+    travel = read("travel_time.csv")
+    if len(travel):
+        changes["travel_time"] = upsert(con, "travel_time", travel, ["from_id", "to_id"],
+                                        "island-to-island travel time")
+    links = read("link_candidates.csv")
+    if len(links):
+        changes["link_candidates"] = upsert(con, "link_candidates", links, ["service_type", "rank"],
+                                            "candidate crossings and their measured impact")
+
     # ---------------------------------------------------------------- provenance --------------
     dataset = build_dataset(con)
     if len(dataset):
@@ -266,8 +277,8 @@ def main() -> None:
     touched = {k: v for k, v in changes.items() if any(v)}
     counts = {t: con.execute(f"select count(*) from {t}").fetchone()[0]
               for t in ["island", "sea_edge", "service", "service_access",
-                        "service_summary", "priority_gaps", "placement", "dataset", "meta",
-                        "data_change"]}
+                        "service_summary", "priority_gaps", "placement", "travel_time",
+                        "link_candidates", "dataset", "meta", "data_change"]}
     print(f"wrote {OUT.relative_to(ROOT)}  ({OUT.stat().st_size/1e6:.2f} MB)")
     print("  " + "  ".join(f"{k}={v:,}" for k, v in counts.items()))
     if touched:

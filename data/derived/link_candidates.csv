@@ -1,0 +1,77 @@
+service_type,rank,a_id,a_island,a_atoll,b_id,b_island,b_atoll,km,hours_if_direct,newly_islands,newly_people,newly_children,newly_ids,coverage_after,population_after,islands_saved,people_saved,person_hours_saved,types_helped
+hospital,1,MV018001,Fuvahmulah,Gnaviyani,MV019002,Hithadhoo,Seenu,51.2,1.88,1,9177,2761,MV018001,31,271889,0,0,0,2
+hospital,2,MV019002,Hithadhoo,Seenu,MV019004,Feydhoo,Seenu,8.7,0.74,1,4289,914,MV019004,31,267001,0,0,0,4
+hospital,3,MV015008,Fonadhoo,Laamu,MV015013,Gan,Laamu,9.3,0.75,1,2986,986,MV015008,31,265698,4,5574,14733,2
+hospital,4,MV011005,Nilandhoo,Faafu,MV020010,Maamin'gili,Alifu Dhaalu,46.9,1.77,1,2798,833,MV020010,31,265510,2,3798,3898,1
+hospital,5,MV019002,Hithadhoo,Seenu,MV019003,Maradhoo,Seenu,6.1,0.66,1,2542,712,MV019003,31,265254,0,0,0,4
+hospital,6,MV019001,Meedhoo,Seenu,MV019002,Hithadhoo,Seenu,15.6,0.92,1,1892,541,MV019001,31,264604,0,0,0,3
+hospital,7,MV019002,Hithadhoo,Seenu,MV019005,Maradhoofeydhoo,Seenu,7.3,0.7,1,1398,407,MV019005,31,264110,0,0,0,3
+hospital,8,MV015007,Maavah,Laamu,MV015013,Gan,Laamu,33.2,1.4,1,1379,472,MV015007,31,264091,1,1379,4372,2
+hospital,9,MV014005,Guraidhoo,Thaa,MV015013,Gan,Laamu,52.1,1.91,1,1293,443,MV014005,31,264005,3,2800,18528,2
+hospital,10,MV014010,Thimarafushi,Thaa,MV015013,Gan,Laamu,54.9,1.98,1,1229,375,MV014010,31,263941,24,27517,25652,1
+hospital,11,MV019002,Hithadhoo,Seenu,MV019006,Hulhudhoo,Seenu,14.8,0.9,1,1182,259,MV019006,31,263894,0,0,0,4
+hospital,12,MV011005,Nilandhoo,Faafu,MV020008,Fenfushi,Alifu Dhaalu,49.4,1.83,1,1000,333,MV020008,31,263712,1,1000,2437,2
+hospital,13,MV015001,Isdhoo,Laamu,MV015013,Gan,Laamu,24.3,1.15,1,929,309,MV015001,31,263641,1,929,1171,1
+hospital,14,MV011001,Feeali,Faafu,MV011005,Nilandhoo,Faafu,26.8,1.22,1,922,370,MV011001,31,263634,1,922,1492,1
+hospital,15,MV015010,Maamendhoo,Laamu,MV015013,Gan,Laamu,19.7,1.03,1,879,259,MV015010,31,263591,13,18335,22518,1
+hospital,16,MV014003,Madifushi,Thaa,MV015013,Gan,Laamu,53.8,1.95,1,858,299,MV014003,31,263570,3,2800,6816,1
+hospital,17,MV011005,Nilandhoo,Faafu,MV020007,Dhigurah,Alifu Dhaalu,52.2,1.91,1,761,153,MV020007,31,263473,0,0,128,1
+hospital,18,MV011005,Nilandhoo,Faafu,MV012007,Maaen'boodhoo,Dhaalu,41.1,1.61,1,679,208,MV012007,31,263391,1,679,1277,1
+hospital,19,MV014004,Dhiyamigili,Thaa,MV015013,Gan,Laamu,52.9,1.93,1,649,257,MV014004,31,263361,24,27749,20673,1
+hospital,20,MV015002,Dhan'bidhoo,Laamu,MV015013,Gan,Laamu,20.4,1.05,1,606,207,MV015002,31,263318,1,606,627,1
+hospital,21,MV014009,Gaadhiffushi,Thaa,MV015013,Gan,Laamu,52.7,1.92,1,317,82,MV014009,31,263029,24,27517,24958,1
+hospital,22,MV011005,Nilandhoo,Faafu,MV020009,Dhihdhoo,Alifu Dhaalu,47.6,1.79,1,141,26,MV020009,31,262853,1,141,129,1
+school_higher_secondary,1,MV015008,Fonadhoo,Laamu,MV015013,Gan,Laamu,9.3,0.75,1,4815,1457,MV015013,155,421050,1,4815,6803,2
+school_higher_secondary,2,MV015007,Maavah,Laamu,MV015013,Gan,Laamu,33.2,1.4,1,4815,1457,MV015013,155,421050,1,4815,3680,2
+school_higher_secondary,3,MV014005,Guraidhoo,Thaa,MV015013,Gan,Laamu,52.1,1.91,1,4815,1457,MV015013,155,421050,0,0,1220,2
+school_higher_secondary,4,MV018001,Fuvahmulah,Gnaviyani,MV019004,Feydhoo,Seenu,53.7,1.95,1,4289,914,MV019004,155,420524,0,0,0,2
+school_higher_secondary,5,MV019002,Hithadhoo,Seenu,MV019004,Feydhoo,Seenu,8.7,0.74,1,4289,914,MV019004,155,420524,0,0,0,4
+school_higher_secondary,6,MV018001,Fuvahmulah,Gnaviyani,MV019003,Maradhoo,Seenu,53.4,1.94,1,2542,712,MV019003,155,418777,0,0,0,2
+school_higher_secondary,7,MV019002,Hithadhoo,Seenu,MV019003,Maradhoo,Seenu,6.1,0.66,1,2542,712,MV019003,155,418777,0,0,0,4
+school_higher_secondary,8,MV018001,Fuvahmulah,Gnaviyani,MV019001,Meedhoo,Seenu,38.7,1.55,1,1892,541,MV019001,155,418127,0,0,0,1
+school_higher_secondary,9,MV019001,Meedhoo,Seenu,MV019002,Hithadhoo,Seenu,15.6,0.92,1,1892,541,MV019001,155,418127,0,0,0,3
+school_higher_secondary,10,MV018001,Fuvahmulah,Gnaviyani,MV019005,Maradhoofeydhoo,Seenu,53.6,1.95,1,1398,407,MV019005,155,417633,0,0,0,1
+school_higher_secondary,11,MV019002,Hithadhoo,Seenu,MV019005,Maradhoofeydhoo,Seenu,7.3,0.7,1,1398,407,MV019005,155,417633,0,0,0,3
+school_higher_secondary,12,MV018001,Fuvahmulah,Gnaviyani,MV019006,Hulhudhoo,Seenu,40.4,1.59,1,1182,259,MV019006,155,417417,0,0,0,2
+school_higher_secondary,13,MV019002,Hithadhoo,Seenu,MV019006,Hulhudhoo,Seenu,14.8,0.9,1,1182,259,MV019006,155,417417,0,0,0,4
+school_higher_secondary,14,MV001016,Baarah,Haa Alifu,MV002003,Hanimaadhoo,Haa Dhaalu,8.6,0.73,1,1141,406,MV001016,155,417376,1,1141,1645,1
+school_higher_secondary,15,MV001010,Dhihdhoo,Haa Alifu,MV001016,Baarah,Haa Alifu,13.5,0.86,1,1141,406,MV001016,155,417376,1,1141,1495,1
+school_higher_secondary,16,MV001016,Baarah,Haa Alifu,MV002008,Nellaidhoo,Haa Dhaalu,31.5,1.35,1,1141,406,MV001016,155,417376,1,1141,939,1
+school_higher_secondary,17,MV001007,Ihavandhoo,Haa Alifu,MV001016,Baarah,Haa Alifu,35.1,1.45,1,1141,406,MV001016,155,417376,1,1141,828,1
+school_higher_secondary,18,MV001016,Baarah,Haa Alifu,MV003007,Foakaidhoo,Shaviyani,55.0,1.98,1,1141,406,MV001016,155,417376,0,0,217,1
+school_higher_secondary,19,MV001008,Kelaa,Haa Alifu,MV002003,Hanimaadhoo,Haa Dhaalu,22.8,1.12,1,1115,327,MV001008,155,417350,2,1674,6462,1
+school_higher_secondary,20,MV001008,Kelaa,Haa Alifu,MV002008,Nellaidhoo,Haa Dhaalu,39.8,1.57,1,1115,327,MV001008,155,417350,2,1674,5695,1
+school_higher_secondary,21,MV001008,Kelaa,Haa Alifu,MV002012,Kulhudhuffushi,Haa Dhaalu,40.0,1.58,1,1115,327,MV001008,155,417350,2,1674,5686,2
+school_higher_secondary,22,MV011002,Bileiydhoo,Faafu,MV020008,Fenfushi,Alifu Dhaalu,46.8,1.76,1,1000,333,MV020008,155,417235,0,0,422,1
+school_higher_secondary,23,MV011005,Nilandhoo,Faafu,MV020008,Fenfushi,Alifu Dhaalu,49.4,1.83,1,1000,333,MV020008,155,417235,0,0,351,2
+school_higher_secondary,24,MV014005,Guraidhoo,Thaa,MV015001,Isdhoo,Laamu,36.5,1.49,1,929,309,MV015001,155,417164,1,929,1775,1
+school_higher_secondary,25,MV015001,Isdhoo,Laamu,MV015007,Maavah,Laamu,45.9,1.74,1,929,309,MV015001,155,417164,1,929,1539,1
+college,1,MV018001,Fuvahmulah,Gnaviyani,MV019002,Hithadhoo,Seenu,51.2,1.88,1,9177,2761,MV018001,46,303646,0,0,0,2
+college,2,MV019002,Hithadhoo,Seenu,MV019004,Feydhoo,Seenu,8.7,0.74,1,4289,914,MV019004,46,298758,0,0,0,4
+college,3,MV019002,Hithadhoo,Seenu,MV019003,Maradhoo,Seenu,6.1,0.66,1,2542,712,MV019003,46,297011,0,0,0,4
+college,4,MV019001,Meedhoo,Seenu,MV019002,Hithadhoo,Seenu,15.6,0.92,1,1892,541,MV019001,46,296361,0,0,0,3
+college,5,MV019002,Hithadhoo,Seenu,MV019005,Maradhoofeydhoo,Seenu,7.3,0.7,1,1398,407,MV019005,46,295867,0,0,0,3
+college,6,MV016003,Maamendhoo,Gaafu Alifu,MV017010,Thinadhoo,Gaafu Dhaalu,53.2,1.94,1,1201,391,MV016003,46,295670,1,1201,1648,1
+college,7,MV019002,Hithadhoo,Seenu,MV019006,Hulhudhoo,Seenu,14.8,0.9,1,1182,259,MV019006,46,295651,0,0,0,4
+college,8,MV001008,Kelaa,Haa Alifu,MV002012,Kulhudhuffushi,Haa Dhaalu,40.0,1.58,1,1115,327,MV001008,46,295584,2,1674,7973,2
+college,9,MV002012,Kulhudhuffushi,Haa Dhaalu,MV003011,Lhaimagu,Shaviyani,54.9,1.98,1,684,214,MV003011,46,295153,1,684,2073,1
+college,10,MV001012,Maarandhoo,Haa Alifu,MV002012,Kulhudhuffushi,Haa Dhaalu,27.2,1.23,1,668,258,MV001012,46,295137,3,2342,3195,1
+college,11,MV017003,Nadellaa,Gaafu Dhaalu,MV017010,Thinadhoo,Gaafu Dhaalu,27.0,1.23,1,581,159,MV017003,46,295050,0,0,0,1
+college,12,MV001011,Filladhoo,Haa Alifu,MV002012,Kulhudhuffushi,Haa Dhaalu,35.5,1.46,1,559,171,MV001011,46,295028,1,559,4200,1
+college,13,MV016004,Nilandhoo,Gaafu Alifu,MV017010,Thinadhoo,Gaafu Dhaalu,51.3,1.89,1,545,159,MV016004,46,295014,2,873,1043,1
+college,14,MV001015,Muraidhoo,Haa Alifu,MV002012,Kulhudhuffushi,Haa Dhaalu,26.2,1.21,1,534,207,MV001015,46,295003,0,0,0,1
+college,15,MV002012,Kulhudhuffushi,Haa Dhaalu,MV003010,Maroshi,Shaviyani,46.0,1.74,1,479,144,MV003010,46,294948,4,1849,4552,1
+college,16,MV001002,Uligamu,Haa Alifu,MV002012,Kulhudhuffushi,Haa Dhaalu,53.6,1.95,1,400,110,MV001002,46,294869,2,827,1704,1
+college,17,MV001005,Mulhadhoo,Haa Alifu,MV002012,Kulhudhuffushi,Haa Dhaalu,44.3,1.7,1,286,79,MV001005,46,294755,3,1113,1168,1
+health_centre,1,MV019002,Hithadhoo,Seenu,MV019003,Maradhoo,Seenu,6.1,0.66,1,13759,3560,MV019002,184,436352,0,0,0,4
+health_centre,2,MV019002,Hithadhoo,Seenu,MV019004,Feydhoo,Seenu,8.7,0.74,1,13759,3560,MV019002,184,436352,0,0,0,4
+health_centre,3,MV019002,Hithadhoo,Seenu,MV019006,Hulhudhoo,Seenu,14.8,0.9,1,13759,3560,MV019002,184,436352,0,0,0,4
+health_centre,4,MV018001,Fuvahmulah,Gnaviyani,MV019003,Maradhoo,Seenu,53.4,1.94,1,9177,2761,MV018001,184,431770,0,0,0,2
+health_centre,5,MV018001,Fuvahmulah,Gnaviyani,MV019004,Feydhoo,Seenu,53.7,1.95,1,9177,2761,MV018001,184,431770,0,0,0,2
+health_centre,6,MV018001,Fuvahmulah,Gnaviyani,MV019006,Hulhudhoo,Seenu,40.4,1.59,1,9177,2761,MV018001,184,431770,0,0,0,2
+health_centre,7,MV019001,Meedhoo,Seenu,MV019003,Maradhoo,Seenu,15.4,0.92,1,1892,541,MV019001,184,424485,0,0,0,1
+health_centre,8,MV019001,Meedhoo,Seenu,MV019004,Feydhoo,Seenu,15.2,0.91,1,1892,541,MV019001,184,424485,0,0,0,1
+health_centre,9,MV019001,Meedhoo,Seenu,MV019006,Hulhudhoo,Seenu,1.7,0.55,1,1892,541,MV019001,184,424485,0,0,0,1
+health_centre,10,MV019003,Maradhoo,Seenu,MV019005,Maradhoofeydhoo,Seenu,1.3,0.53,1,1398,407,MV019005,184,423991,0,0,0,1
+health_centre,11,MV019004,Feydhoo,Seenu,MV019005,Maradhoofeydhoo,Seenu,1.4,0.54,1,1398,407,MV019005,184,423991,0,0,0,1
+health_centre,12,MV019005,Maradhoofeydhoo,Seenu,MV019006,Hulhudhoo,Seenu,13.9,0.87,1,1398,407,MV019005,184,423991,0,0,0,1

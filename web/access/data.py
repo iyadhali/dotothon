@@ -9,6 +9,7 @@ islands and 5,789 crossings are small, and a live query per route would be slowe
 """
 from __future__ import annotations
 
+import base64
 import heapq
 import re
 import sqlite3
@@ -16,6 +17,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -31,6 +33,21 @@ def db_frame(sql: str, params: tuple = ()) -> pd.DataFrame:
         return pd.read_sql_query(sql, con, params=params)
     finally:
         con.close()
+
+# The four services the Build page scores, in tab order. Primary and lower-secondary schools are
+# near-universal (183 and 181 islands), so "where to build the next one" is not a useful question
+# for them; these are the services with a real placement decision.
+BUILD_TYPES = [
+    ("health", "hospital", "Hospital", "hospital"),
+    ("education", "school_higher_secondary", "Grades 11–12", "grade 11–12 school"),
+    ("education", "college", "University campus", "campus"),
+    ("health", "health_centre", "Health centre", "health centre"),
+]
+
+
+def _b64(bits) -> str:
+    """Bitmaps keep 187-island coverage sets to 24 bytes, so the page can ship every candidate."""
+    return base64.b64encode(bits.tobytes()).decode("ascii")
 
 TRANSFER_H = 1.0       # waiting for the next sailing
 MAX_HOPS = 5           # sailings per journey; a sixth is reported as not connected
@@ -292,6 +309,107 @@ class Model:
     def summary_rows(self) -> list[dict]:
         """Per service type: facilities, coverage and median travel time."""
         return db_frame("select * from service_summary order by category, service_type").to_dict("records")
+
+    # ---------------------------------------------------------------- build page ----------
+    def travel_matrix(self) -> pd.DataFrame:
+        """Inhabited island x island travel time in hours; NaN = no route on this network."""
+        if not hasattr(self, "_travel"):
+            df = db_frame("select from_id, to_id, hours from travel_time")
+            ids = self.inhabited.node_id.tolist()
+            if df.empty:
+                self._travel = pd.DataFrame(np.nan, index=ids, columns=ids)
+            else:
+                self._travel = (df.pivot(index="from_id", columns="to_id", values="hours")
+                                .reindex(index=ids, columns=ids).astype(float))
+        return self._travel
+
+    def build_payload(self, link_rows: int = 8) -> dict:
+        """Everything the Build page draws: today's coverage, every candidate's coverage set, and
+        the candidate crossings. Coverage sets travel as bitmaps (24 bytes each) so the browser
+        can re-rank greedily after a build without ever seeing the travel matrix."""
+        ids = self.inhabited.node_id.tolist()
+        idx = {nid: i for i, nid in enumerate(ids)}
+        n = len(ids)
+        pop = self.inhabited.population.fillna(0).astype(int).to_numpy()
+        kids = self.inhabited.kids_census.fillna(0).astype(int).to_numpy()
+        mat = self.travel_matrix().to_numpy(dtype=float)
+        prov = {t: set(g.node_id.dropna()) for t, g in self.services.groupby("service_type")}
+        summary = (self.service_summary.set_index("service_type")
+                   if len(self.service_summary) else pd.DataFrame())
+
+        types, links = [], {}
+        for cat, stype, label, facility in BUILD_TYPES:
+            hours = self.map_hours(stype)
+            arr = np.array([np.nan if hours.get(i) is None else hours[i] for i in ids])
+            covered = np.isfinite(arr) & (arr <= 2)
+            cands = []
+            for i, nid in enumerate(ids):
+                if nid in prov.get(stype, ()):
+                    continue
+                col = mat[:, i]
+                ok = np.isfinite(col) & (col <= 2)
+                if not ok.any():
+                    continue
+                new = ok & ~covered
+                if not new.any():
+                    continue          # coverage only grows, so this site can never become useful
+                cands.append({
+                    "i": i,
+                    "cov": _b64(np.packbits(ok, bitorder="little")),
+                    "new_people": int(pop[new].sum()),
+                    "new_islands": int(new.sum()),
+                    "new_kids": int(kids[new].sum()),
+                })
+            cands.sort(key=lambda c: (-c["new_people"], -c["new_islands"]))
+            row = summary.loc[stype] if stype in summary.index else None
+            types.append({
+                "key": stype, "cat": cat, "label": label, "facility": facility,
+                "hours": [None if not np.isfinite(h) else round(float(h), 2) for h in arr],
+                "covered": _b64(np.packbits(covered, bitorder="little")),
+                "today": {
+                    "facilities": (int(row.n_facilities) if row is not None
+                                   and pd.notna(row.n_facilities) else len(prov.get(stype, ()))),
+                    "islands": int(covered.sum()),
+                    "people": int(pop[covered].sum()),
+                    "children": int(kids[covered].sum()),
+                    "median": (None if row is None or pd.isna(row.median_hours)
+                               else round(float(row.median_hours), 2)),
+                },
+                "candidates": cands,
+            })
+
+            rows = db_frame("select * from link_candidates where service_type = ? order by rank "
+                            "limit ?", (stype, link_rows))
+            out = []
+            for r in rows.itertuples():
+                newly = np.zeros(n, dtype=bool)
+                for nid in str(r.newly_ids or "").split("|"):
+                    if nid in idx:
+                        newly[idx[nid]] = True
+                out.append({
+                    "a": idx.get(r.a_id), "b": idx.get(r.b_id),
+                    "a_name": r.a_island, "b_name": r.b_island,
+                    "a_atoll": r.a_atoll, "b_atoll": r.b_atoll,
+                    "km": float(r.km), "hours": float(r.hours_if_direct),
+                    "new_people": int(r.newly_people), "new_islands": int(r.newly_islands),
+                    "new_kids": int(r.newly_children),
+                    "newly": _b64(np.packbits(newly, bitorder="little")),
+                    "saved_people": int(r.people_saved), "saved_islands": int(r.islands_saved),
+                    "saved_hours": int(r.person_hours_saved),
+                    "types_helped": int(r.types_helped),
+                })
+            links[stype] = out
+
+        return {
+            "islands": [{"id": str(nid), "name": str(self.by_id.loc[nid, "name"]),
+                         "atoll": str(self.by_id.loc[nid, "atoll"]),
+                         "lat": float(self.by_id.loc[nid, "lat"]),
+                         "lon": float(self.by_id.loc[nid, "lon"]),
+                         "pop": int(pop[i]), "kids": int(kids[i])}
+                        for i, nid in enumerate(ids)],
+            "types": types,
+            "links": links,
+        }
 
     # ---------------------------------------------------------------- simulator ----------
     def placement(self, service_type: str) -> pd.DataFrame:

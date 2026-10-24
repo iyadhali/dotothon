@@ -826,3 +826,56 @@ main.stage { height: 100vh; }
 .brandline { margin: 0 0 7px; font-size: 13.5px; letter-spacing: .02em; color: var(--muted); }
 .brandline i { font-style: normal; opacity: .55; margin: 0 4px; }
 .brandline b { color: var(--ink); font-weight: 680; letter-spacing: .01em; }
+
+/* =====================================================================================
+   BUILD PAGE — one map, two questions: where to put the next facility, where to add a
+   crossing. The ranking and the plan are drawn by the page's own script from bitmaps.
+   ===================================================================================== */
+#typeTabs { margin: 2px 0 14px; }
+#typeTabs .tab { font-size: 12.5px; padding: 6px 13px; }
+.buildgrid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; align-items: start; }
+.buildgrid > div { min-width: 0; }
+.buildside { display: flex; flex-direction: column; gap: 8px; }
+.buildside .tabletop { margin: 0; }
+.buildside .figs-4 { margin: 0; }
+.buildside .figs-4 div { padding: 8px 10px; }
+.buildside .figs-4 b { font-size: 17px; }
+.pin.pin-sm { width: 13px; height: 13px; font-size: 8px; display: inline-grid; vertical-align: middle; }
+.pin.pin-built { width: 22px; height: 22px; font-size: 11px; background: #0f766e; box-shadow: 0 0 0 3px #cfe7e3; }
+.dot.new { background: #0f766e; box-shadow: 0 0 0 2px #cfe7e3; }
+.dot.link { background: #0b4f57; }
+.candtable tr { cursor: pointer; }
+.candtable tr:hover td:not(.rkc) { background: #faf8f2; }
+.candtable tr.is-on td:not(.rkc) { background: #eff9f7; }
+.candtable th, .candtable td { padding: 6px 7px; }
+.candtable th { font-size: 9.8px; letter-spacing: .04em; white-space: nowrap; }
+.candtable td.r, .candtable th.r { white-space: nowrap; }
+.candtable td:nth-child(2) { line-height: 1.3; }
+.candtable td:last-child { padding-right: 0; }
+.candtable td.rkc { width: 26px; padding-right: 0; }
+.candtable tr:hover td:not(.rkc) { background: #faf8f2; }
+.candtable .pin { width: 20px; height: 20px; }
+.buildbtn { padding: 4px 11px; font-size: 11.5px; border-radius: 999px; }
+.ghost.linkbtn { padding: 3px 11px; font-size: 11.5px; }
+.linktable td:first-child { min-width: 210px; }
+.planlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.planlist li { display: flex; align-items: center; gap: 9px; font-size: 13px; }
+.planlist li .pin { flex: none; }
+.planlist li .muted { font-size: 11.5px; }
+#planTotals .figs-4 { grid-template-columns: 1fr 1fr; }
+#planTotals .figs-4 b { font-size: 18px; }
+#resetPlan { padding: 4px 11px; font-size: 11.5px; border-radius: 999px; }
+@media (max-width: 980px) {
+  .buildgrid { grid-template-columns: 1fr; }
+  .simmap { height: 320px; }
+  .linktable td:first-child { min-width: 0; }
+}
+
+/* small page switcher inside the map overlay */
+.ovlnav { display: flex; gap: 4px; margin: -4px 0 2px; }
+.ovlnav a {
+  font-size: 11.5px; color: #475467; text-decoration: none; padding: 4px 10px;
+  border-radius: 999px; border: 1px solid var(--line); background: #fdfbf7;
+}
+.ovlnav a:hover { background: #f4efe4; }
+.ovlnav a.is-on { background: var(--teal); border-color: var(--teal); color: #fff; }

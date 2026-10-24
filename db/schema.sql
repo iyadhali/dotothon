@@ -138,6 +138,46 @@ CREATE TABLE IF NOT EXISTS placement (
     PRIMARY KEY (service_type, k)
 );
 
+-- ---------------------------------------------------------------- build page ---------------
+-- Every inhabited-island pair's travel time under the network we actually observe, so the Build
+-- page can answer "what if we put a facility here" without rebuilding the graph in the browser.
+CREATE TABLE IF NOT EXISTS travel_time (
+    from_id TEXT REFERENCES island(node_id),
+    to_id   TEXT REFERENCES island(node_id),
+    hours   REAL,                       -- NULL = no route within the sailing budget
+    PRIMARY KEY (from_id, to_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_travel_to ON travel_time(to_id);
+
+-- Candidate crossings that do not exist today, with the measured effect of adding each one.
+-- `newly_ids` is the pipe-joined list of island node_ids that come within two hours.
+CREATE TABLE IF NOT EXISTS link_candidates (
+    service_type       TEXT,
+    rank               INTEGER,
+    a_id               TEXT REFERENCES island(node_id),
+    a_island           TEXT,
+    a_atoll            TEXT,
+    b_id               TEXT REFERENCES island(node_id),
+    b_island           TEXT,
+    b_atoll            TEXT,
+    km                 REAL,
+    hours_if_direct    REAL,
+    newly_islands      INTEGER,
+    newly_people       INTEGER,
+    newly_children     INTEGER,
+    newly_ids          TEXT,
+    coverage_after     INTEGER,
+    population_after   INTEGER,
+    islands_saved      INTEGER,         -- islands whose trip gets >= 30 min shorter
+    people_saved       INTEGER,
+    person_hours_saved INTEGER,         -- residents x hours saved
+    types_helped       INTEGER,         -- how many of the four services this link helps
+    PRIMARY KEY (service_type, rank)
+);
+
+CREATE INDEX IF NOT EXISTS idx_link_type ON link_candidates(service_type, rank);
+
 CREATE TABLE IF NOT EXISTS priority_gaps (
     node_id        TEXT PRIMARY KEY REFERENCES island(node_id),
     island         TEXT,

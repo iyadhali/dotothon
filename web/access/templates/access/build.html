@@ -1,0 +1,433 @@
+{% extends "access/base.html" %}
+{% load fmt %}
+{% block body %}
+<header class="topbar">
+  <div class="brand">
+    <p class="eyebrow">Maldives Datathon 2026 · A Team</p>
+    <h1>Where should the next service go?</h1>
+  </div>
+  <nav class="nav" aria-label="Pages">
+    <a href="/">Map</a>
+    <a href="/build/" class="is-on" aria-current="page">Build</a>
+  </nav>
+  <div class="chips">
+    <span class="chip num"><span class="n">{{ stats.islands }}</span><span class="l">inhabited islands</span></span>
+    <span class="chip num"><span class="n">{{ stats.population|num }}</span><span class="l">residents</span></span>
+  </div>
+</header>
+
+<main class="page">
+  <section class="card">
+    <div class="cardhead">
+      <h2>Where should the next service go?</h2>
+      <span class="hint">ranked by residents who would come within 2 hours</span>
+    </div>
+    <p class="prose">
+      Pick a service, then a candidate. <em>Build here</em> puts a facility on that island and the
+      ranking updates as if it were there: everyone it brings within two hours of the service is
+      counted once, from the network we actually observe. The picks compound — the second facility
+      is scored after the first one exists.
+    </p>
+
+    <div class="tabs" id="typeTabs" role="tablist" aria-label="Service type"></div>
+
+    <div class="buildgrid">
+      <div>
+        <div id="buildmap" class="simmap" role="img"
+             aria-label="Map of the Maldives: dots are islands, numbered pins are candidate sites"></div>
+        <ul class="legend-line">
+          <li><i class="dot own"></i>already within 2 h</li>
+          <li><i class="dot unknown"></i>beyond 2 h</li>
+          <li><span class="pin pin-sm">1</span>top candidate</li>
+          <li><i class="dot new"></i>would join with this build</li>
+          <li><i class="dot link"></i>proposed crossing</li>
+        </ul>
+        <p class="hint" id="mapline">Every dot is an inhabited island, sized by population. Click a numbered pin or a row to preview what that build would add; zoom in for more candidate pins.</p>
+      </div>
+
+      <div class="buildside">
+        <div class="figs figs-4" id="figs"></div>
+        <div class="tabletop">
+          <span class="hint">Rank by</span>
+          <div class="tabs" id="rankTabs" role="group" aria-label="Rank candidates by">
+            <button class="tab is-on" data-rank="people" type="button">People</button>
+            <button class="tab" data-rank="islands" type="button">Islands</button>
+            <button class="tab" data-rank="children" type="button">Children</button>
+          </div>
+        </div>
+        <table class="mini candtable">
+          <thead>
+            <tr><th></th><th>Island</th><th class="r">Residents</th><th class="r">Islands</th>
+                <th class="r">Children</th><th></th></tr>
+          </thead>
+          <tbody id="candBody"></tbody>
+        </table>
+        <p class="hint" id="candhint">
+          Candidates are islands that do not host the service today. A site's coverage is the set of
+          islands within two hours of it, so building there covers that set.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid2" id="planrow">
+    <div class="card">
+      <div class="cardhead">
+        <h2>Your plan</h2>
+        <button class="ghost" id="resetPlan" type="button">Reset</button>
+      </div>
+      <div id="planBody"><p class="empty">Nothing built yet. Add a site from the ranking on the left.</p></div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><h2>What the plan changes</h2></div>
+      <div id="planTotals"><p class="empty">The totals appear as soon as you build.</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cardhead">
+      <h2>Where should we build connectivity?</h2>
+      <span class="hint">one new crossing, measured against the same network</span>
+    </div>
+    <p class="prose">
+      A crossing that does not exist in the GPS month, between two islands no more than
+      <em>60 km</em> apart, sailed at 20 knots plus half an hour to connect — the same assumption
+      the findings note uses. For each pair the page re-derives every island's travel time with
+      that one edge added, then counts the residents who come within two hours, and the residents
+      whose trip gets at least half an hour shorter.
+    </p>
+    <div class="tabletop">
+      <span class="hint">Sort by</span>
+      <div class="tabs" id="linkTabs" role="group" aria-label="Sort crossings by">
+        <button class="tab is-on" data-sort="new" type="button">Newly within 2 h</button>
+        <button class="tab" data-sort="saved" type="button">Time saved</button>
+      </div>
+    </div>
+    <table class="mini linktable">
+      <thead>
+        <tr><th>Proposed crossing</th><th class="r">Length</th><th class="r">If direct</th>
+            <th class="r">Residents inside 2 h</th><th class="r">Islands</th>
+            <th class="r">Trips ≥ 30 min shorter</th><th></th></tr>
+      </thead>
+      <tbody id="linkBody"></tbody>
+    </table>
+    <p class="hint" id="linkhint">Click a crossing to draw it on the map above.</p>
+  </section>
+
+  <footer class="foot">
+    <p><strong>Method.</strong> Travel time comes from the same graph the map uses: median observed
+    crossing times, a one hour connection penalty when a journey changes boat, at most five
+    sailings. The census is the 2022 count; children are 0–17. No construction cost, land, staffing
+    or demand is modelled — this ranks one question on the network we can see, nothing else.</p>
+    <p><strong>Keeping it current.</strong> The pipeline recomputes this page's tables on every
+    ingest: drop a new file in <code>data/incoming</code> (or replace a source file) and
+    <code>scripts/watch_data.py</code> rebuilds <code>data/platform.sqlite</code>; this page reads
+    that file on each request, so the numbers move with the data.
+    {% if db_meta.built_local %}Database rebuilt {{ db_meta.built_local }} ·{% endif %}
+    {{ db_meta.changes|default:0 }} logged change{{ db_meta.changes|default:0|pluralize }} ·
+    network: {{ n_links }} observed crossings.</p>
+  </footer>
+</main>
+
+{{ payload|json_script:"build-data" }}
+<script>
+/* Two questions, one map. The server ships today's coverage and the coverage set of every
+   candidate site as 24-byte bitmaps; the browser does the set arithmetic when a site is built,
+   so re-ranking is instant and never needs another round trip. */
+const DATA = JSON.parse(document.getElementById("build-data").textContent);
+const ISLES = DATA.islands, N = ISLES.length, TYPES = DATA.types;
+const BAND = {own:"#0f766e", under2:"#2f855a", under4:"#d69e2e", under8:"#dd6b20",
+              over8:"#c53030", unknown:"#9aa5b1"};
+const fmt = n => (n == null ? "—" : Number(n).toLocaleString("en-US"));
+const el = id => document.getElementById(id);
+
+/* ---- bitmaps ---------------------------------------------------------------------------- */
+function bits(str) {
+  const bin = atob(str), u = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i);
+  return u;
+}
+const has = (u, i) => (u[i >> 3] >> (i & 7)) & 1;
+function orInto(dst, src) { for (let i = 0; i < dst.length; i++) dst[i] |= src[i]; }
+function totals(cov) {
+  let people = 0, kids = 0, islands = 0;
+  for (let i = 0; i < N; i++) if (has(cov, i)) {
+    islands++; people += ISLES[i].pop; kids += ISLES[i].kids;
+  }
+  return {islands, people, kids};
+}
+
+TYPES.forEach(t => {
+  t.base = bits(t.covered);
+  t.cands = t.candidates.map(c => ({...c, cb: bits(c.cov)}));
+  t.byIndex = new Map(t.cands.map(c => [c.i, c]));
+});
+
+const state = {ti: 0, rank: "people", built: [], sel: null, linkSort: "new", link: null,
+               linkByType: {}};
+TYPES.forEach(t => { state.linkByType[t.key] = null; });
+
+const type = () => TYPES[state.ti];
+function coveredNow() {
+  const t = type(), cov = Uint8Array.from(t.base);
+  for (const i of state.built) {
+    const c = t.byIndex.get(i);
+    if (c) orInto(cov, c.cb);
+  }
+  return cov;
+}
+
+/* ---- ranking ---------------------------------------------------------------------------- */
+function ranking() {
+  const t = type(), cov = coveredNow(), built = new Set(state.built), out = [];
+  for (const c of t.cands) {
+    if (built.has(c.i)) continue;
+    let people = 0, kids = 0, islands = 0;
+    for (let i = 0; i < N; i++) if (!has(cov, i) && has(c.cb, i)) {
+      people += ISLES[i].pop; kids += ISLES[i].kids; islands++;
+    }
+    out.push({c, people, kids, islands});
+  }
+  const key = state.rank === "people" ? "people"
+            : state.rank === "islands" ? "islands" : "kids";
+  out.sort((a, b) => b[key] - a[key] || b.people - a.people || b.islands - a.islands);
+  return out;
+}
+
+/* ---- map -------------------------------------------------------------------------------- */
+const map = L.map("buildmap", {zoomSnap: .25, minZoom: 5, maxZoom: 12, zoomControl: false,
+                               attributionControl: false}).setView([3.6, 73.3], 7);
+L.control.zoom({position: "bottomright"}).addTo(map);
+L.control.scale({imperial: false, position: "bottomleft", maxWidth: 90}).addTo(map);
+map.fitBounds(L.latLngBounds(ISLES.map(p => [p.lat, p.lon])), {padding: [14, 14], maxZoom: 7});
+setTimeout(() => map.invalidateSize(), 0);
+fetch("/static/access/atolls.geojson").then(r => r.json()).then(gj => {
+  L.geoJSON(gj, {interactive: false, style: {color: "#9fb6bf", weight: .7, opacity: .55,
+                                             fill: false}}).addTo(map).bringToBack();
+}).catch(() => {});
+map.on("zoomend", () => renderMap());
+
+const baseLayer = L.layerGroup().addTo(map), hiLayer = L.layerGroup().addTo(map),
+      pinLayer = L.layerGroup().addTo(map), linkLayer = L.layerGroup().addTo(map);
+
+const radius = pop => Math.max(2.2, 2 + Math.log10(1 + Math.max(0, pop)) * 1.15);
+function bandOf(h) {
+  if (h === 0) return "own";
+  if (h == null) return "unknown";
+  if (h <= 2) return "under2";
+  if (h <= 4) return "under4";
+  if (h <= 8) return "under8";
+  return "over8";
+}
+
+function renderMap() {
+  baseLayer.clearLayers(); hiLayer.clearLayers(); pinLayer.clearLayers(); linkLayer.clearLayers();
+  const t = type(), cov = coveredNow(), rank = ranking();
+  ISLES.forEach((p, i) => {
+    const inside = has(cov, i), was = has(t.base, i);
+    L.circleMarker([p.lat, p.lon], {
+      radius: radius(p.pop), weight: 0, fillOpacity: inside ? .92 : .55,
+      fillColor: inside ? (was ? BAND[bandOf(t.hours[i])] : "#2f855a") : "#b8c2cc"
+    }).addTo(baseLayer).bindTooltip(
+      `${p.name} · ${p.atoll} · ${fmt(p.pop)} residents · ` +
+      (inside ? (was ? "within 2 h" : "newly within 2 h") : "beyond 2 h"), {direction: "top"});
+  });
+
+  if (state.sel != null) {
+    const c = t.byIndex.get(state.sel);
+    if (c) for (let i = 0; i < N; i++) if (!has(cov, i) && has(c.cb, i)) {
+      L.circleMarker([ISLES[i].lat, ISLES[i].lon], {
+        radius: radius(ISLES[i].pop) + 3, color: "#0f766e", weight: 2.5, fill: false
+      }).addTo(hiLayer).bindTooltip(`${ISLES[i].name} would join`, {direction: "top"});
+    }
+  }
+
+  const used = [];
+  state.built.forEach((i, n) => {
+    const p = ISLES[i], at = map.latLngToContainerPoint([p.lat, p.lon]);
+    used.push(at);
+    L.marker([p.lat, p.lon], {
+      icon: L.divIcon({className: "", html: `<div class="pin pin-built">✓</div>`,
+                       iconSize: [22, 22], iconAnchor: [11, 11]}),
+      riseOnHover: true, zIndexOffset: 900
+    }).addTo(pinLayer).bindTooltip(`${p.name} · built (${n + 1})`, {direction: "top"});
+  });
+  const pinCount = map.getZoom() >= 6.75 ? 10 : 4;
+  rank.slice(0, pinCount).forEach((r, n) => {
+    const p = ISLES[r.c.i], at = map.latLngToContainerPoint([p.lat, p.lon]);
+    if (used.some(q => q.distanceTo(at) < 18)) return;   // the table still ranks it; the pin waits
+    used.push(at);
+    L.marker([p.lat, p.lon], {
+      icon: L.divIcon({className: "", html: `<div class="pin">${n + 1}</div>`,
+                       iconSize: [18, 18], iconAnchor: [9, 9]}),
+      riseOnHover: true, zIndexOffset: 500
+    }).on("click", () => { state.sel = r.c.i; renderSide(); renderMap(); }).addTo(pinLayer)
+      .bindTooltip(`${p.name} · +${fmt(r.people)} residents`, {direction: "top"});
+  });
+
+  const link = state.linkByType[t.key];
+  if (link) {
+    const a = ISLES[link.a], b = ISLES[link.b];
+    L.polyline([[a.lat, a.lon], [b.lat, b.lon]], {
+      color: "#0b4f57", weight: 2.5, dashArray: "6 5", opacity: .9
+    }).addTo(linkLayer);
+    [a, b].forEach(p => L.circleMarker([p.lat, p.lon], {
+      radius: 5, color: "#0b4f57", weight: 2, fillColor: "#fff", fillOpacity: 1
+    }).addTo(linkLayer));
+    const nb = bits(link.newly);
+    const frame = [[a.lat, a.lon], [b.lat, b.lon]];
+    for (let i = 0; i < N; i++) if (has(nb, i)) {
+      frame.push([ISLES[i].lat, ISLES[i].lon]);
+      L.circleMarker([ISLES[i].lat, ISLES[i].lon], {
+        radius: radius(ISLES[i].pop) + 4, color: "#c05621", weight: 2, fill: false
+      }).addTo(linkLayer).bindTooltip(`${ISLES[i].name}: inside 2 h with this crossing`, 
+                                      {direction: "top"});
+    }
+    if (!link.framed) {
+      link.framed = true;
+      map.flyToBounds(L.latLngBounds(frame), {padding: [70, 70], maxZoom: 8.5, duration: .6});
+    }
+  }
+}
+
+/* ---- side panel ------------------------------------------------------------------------- */
+function renderTabs() {
+  el("typeTabs").innerHTML = TYPES.map((t, i) =>
+    `<button class="tab${i === state.ti ? " is-on" : ""}" type="button" data-t="${i}"
+      role="tab" aria-selected="${i === state.ti}">${t.label}</button>`).join("");
+}
+
+function renderFigs() {
+  const t = type(), cov = coveredNow(), now = totals(cov), before = t.today;
+  const more = now.people - before.people, moreI = now.islands - before.islands;
+  const tiles = [
+    [`${before.facilities + state.built.length}`, "facilities on the islands"],
+    [`${fmt(now.islands)}`, `islands within 2 h${moreI ? ` (+${moreI})` : ""}`],
+    [`${fmt(now.people)}`, `residents within 2 h${more ? ` (+${fmt(more)})` : ""}`],
+    [`${fmt(now.kids)}`, "children within 2 h"],
+  ];
+  el("figs").innerHTML = tiles.map(([n, l]) =>
+    `<div><b>${n}</b><span>${l}</span></div>`).join("");
+}
+
+function renderTable() {
+  const rank = ranking(), t = type();
+  el("candBody").innerHTML = rank.slice(0, 12).map((r, n) => {
+    const p = ISLES[r.c.i];
+    return `<tr data-i="${r.c.i}" class="${state.sel === r.c.i ? "is-on" : ""}">
+      <td class="rkc"><span class="pin">${n + 1}</span></td>
+      <td>${p.name}<span class="muted"> · ${p.atoll}</span></td>
+      <td class="r">+${fmt(r.people)}</td>
+      <td class="r">+${r.islands}</td>
+      <td class="r">+${fmt(r.kids)}</td>
+      <td class="r"><button class="buildbtn" type="button" data-i="${r.c.i}">Build here</button></td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="6" class="empty">Every candidate is built. Reset the plan to start again.</td></tr>`;
+  el("candhint").textContent = state.built.length
+    ? `${state.built.length} built · the ranking now scores each site against the updated coverage.`
+    : "Candidates are islands that do not host the service today. A site's coverage is the set of islands within two hours of it, so building there covers that set.";
+}
+
+function renderPlan() {
+  const t = type();
+  if (!state.built.length) {
+    el("planBody").innerHTML = `<p class="empty">Nothing built yet. Add a site from the ranking on the left.</p>`;
+    el("planTotals").innerHTML = `<p class="empty">The totals appear as soon as you build.</p>`;
+    return;
+  }
+  el("planBody").innerHTML = `<ol class="planlist">` + state.built.map((i, n) => {
+    const p = ISLES[i];
+    return `<li><span class="pin">${n + 1}</span><b>${p.name}</b>
+      <span class="muted">${p.atoll} · ${fmt(p.pop)} residents</span></li>`;
+  }).join("") + `</ol>`;
+  const cov = coveredNow(), now = totals(cov), before = t.today;
+  el("planTotals").innerHTML = `
+    <div class="figs figs-4">
+      <div><b>+${fmt(now.people - before.people)}</b><span>residents newly within 2 h</span></div>
+      <div><b>+${now.islands - before.islands}</b><span>islands newly within 2 h</span></div>
+      <div><b>+${fmt(now.kids - before.children)}</b><span>children newly within 2 h</span></div>
+      <div><b>${fmt(now.people)}</b><span>residents within 2 h in total</span></div>
+    </div>`;
+}
+
+function renderLinks() {
+  const t = type();
+  let links = (DATA.links[t.key] || []).slice();
+  if (state.linkSort === "saved") links.sort((a, b) => b.saved_hours - a.saved_hours);
+  el("linkBody").innerHTML = links.map((l, n) => {
+    const on = state.linkByType[t.key] && state.linkByType[t.key].a === l.a
+            && state.linkByType[t.key].b === l.b;
+    return `<tr data-link="${n}" class="${on ? "is-on" : ""}">
+      <td><b>${l.a_name}</b> – <b>${l.b_name}</b>
+          <span class="muted"> · ${l.a_atoll}${l.a_atoll !== l.b_atoll ? " – " + l.b_atoll : ""}</span></td>
+      <td class="r">${l.km.toFixed(1)} km</td>
+      <td class="r">${l.hours.toFixed(2)} h</td>
+      <td class="r">${l.new_people ? "+" + fmt(l.new_people) : "—"}</td>
+      <td class="r">${l.new_islands ? "+" + l.new_islands : "—"}</td>
+      <td class="r">${l.saved_people ? fmt(l.saved_people) + " people" : "—"}</td>
+      <td class="r"><button class="ghost linkbtn" type="button" data-link="${n}">Draw</button></td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="7" class="empty">No crossing under 60 km improves this service.</td></tr>`;
+  el("linkhint").textContent = state.linkByType[t.key]
+    ? `${state.linkByType[t.key].a_name} – ${state.linkByType[t.key].b_name}: ` +
+      `+${fmt(state.linkByType[t.key].new_people)} residents within 2 h · ` +
+      (state.linkByType[t.key].saved_people
+        ? `${fmt(state.linkByType[t.key].saved_people)} people save ≥ 30 min · ` +
+          `${fmt(state.linkByType[t.key].saved_hours)} person-hours saved per trip.`
+        : "no existing trip shortens by 30 min or more.")
+    : "Click a crossing to draw it on the map above.";
+}
+
+function renderSide() { renderFigs(); renderTable(); renderPlan(); renderLinks(); }
+function renderAll() { renderTabs(); renderSide(); renderMap(); }
+
+/* ---- interactions ----------------------------------------------------------------------- */
+el("typeTabs").addEventListener("click", e => {
+  const b = e.target.closest("[data-t]");
+  if (!b) return;
+  state.ti = Number(b.dataset.t); state.built = []; state.sel = null;
+  renderAll();
+});
+el("rankTabs").addEventListener("click", e => {
+  const b = e.target.closest("[data-rank]");
+  if (!b) return;
+  state.rank = b.dataset.rank;
+  [...el("rankTabs").children].forEach(x => x.classList.toggle("is-on", x === b));
+  renderSide(); renderMap();
+});
+el("linkTabs").addEventListener("click", e => {
+  const b = e.target.closest("[data-sort]");
+  if (!b) return;
+  state.linkSort = b.dataset.sort;
+  [...el("linkTabs").children].forEach(x => x.classList.toggle("is-on", x === b));
+  renderLinks();
+});
+el("candBody").addEventListener("click", e => {
+  const btn = e.target.closest(".buildbtn");
+  if (btn) {
+    const i = Number(btn.dataset.i);
+    if (!state.built.includes(i)) state.built.push(i);
+    state.sel = i;
+    renderAll();
+    return;
+  }
+  const row = e.target.closest("tr[data-i]");
+  if (row) { state.sel = Number(row.dataset.i); renderSide(); renderMap(); }
+});
+el("linkBody").addEventListener("click", e => {
+  const b = e.target.closest("[data-link]");
+  if (!b) return;
+  const t = type();
+  let links = (DATA.links[t.key] || []).slice();
+  if (state.linkSort === "saved") links.sort((a, b2) => b2.saved_hours - a.saved_hours);
+  const chosen = links[Number(b.dataset.link)];
+  state.linkByType[t.key] = chosen;
+  renderLinks(); renderMap();
+});
+el("resetPlan").addEventListener("click", () => {
+  state.built = []; state.sel = null; renderAll();
+});
+
+renderAll();
+</script>
+{% endblock %}

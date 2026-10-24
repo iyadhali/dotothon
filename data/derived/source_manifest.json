@@ -1,59 +1,59 @@
 {
-  "generated_at": "2026-10-24 11:06 UTC",
+  "generated_at": "2026-10-24 11:29 UTC",
   "sources": {
     "followme": {
-      "files": 31,
-      "bytes": 1892689637,
-      "fingerprint": "7403ded59165b227",
-      "latest_mtime": "2026-10-14 04:59"
+      "files": 0,
+      "bytes": 0,
+      "fingerprint": "",
+      "latest_mtime": "1970-01-01 00:00"
     },
     "mtcc": {
       "files": 1,
       "bytes": 62662,
-      "fingerprint": "5ddf5391189f3ce9",
-      "latest_mtime": "2026-10-24 06:18"
+      "fingerprint": "68de476301ac6e84",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "macl": {
       "files": 2,
       "bytes": 21079234,
-      "fingerprint": "1e3432c31f625784",
-      "latest_mtime": "2026-10-14 04:56"
+      "fingerprint": "f86cacb682e4dc4a",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "avas": {
       "files": 2,
       "bytes": 42418810,
-      "fingerprint": "ff7cb50adbe4ff1d",
-      "latest_mtime": "2026-10-21 04:59"
+      "fingerprint": "65174f0c232d3142",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "census": {
       "files": 2,
       "bytes": 222945,
-      "fingerprint": "2c1aef5cd9027a92",
-      "latest_mtime": "2026-10-24 05:06"
+      "fingerprint": "216c62d4b38f96b8",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "boundaries": {
       "files": 2,
       "bytes": 17552795,
-      "fingerprint": "22468774e3d7754d",
-      "latest_mtime": "2026-10-24 05:06"
+      "fingerprint": "feb1257528828960",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "moe": {
       "files": 1,
       "bytes": 14054600,
-      "fingerprint": "d0fd1ce9504e0b52",
-      "latest_mtime": "2026-10-24 05:24"
+      "fingerprint": "ffeabf9960664645",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "moh": {
       "files": 1,
       "bytes": 265582,
-      "fingerprint": "fa614465606586e1",
-      "latest_mtime": "2026-10-24 06:31"
+      "fingerprint": "1d44602abb1607b3",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "services": {
       "files": 1,
       "bytes": 87096,
-      "fingerprint": "cb2802e78d2d5204",
-      "latest_mtime": "2026-10-24 10:03"
+      "fingerprint": "84b35241add41576",
+      "latest_mtime": "2026-10-24 11:04"
     },
     "incoming": {
       "files": 0,
@@ -73,17 +73,6 @@
     "priority_gaps.csv": 33
   },
   "stages_run": {
-    "spine": 0.7,
-    "normalise": 1.1,
-    "sea": 15.9,
-    "provision": 3.4,
-    "reachability": 12.3,
-    "services": 0.3,
-    "service_access": 12.2,
-    "simulator": 11.9,
-    "incoming": 0.3,
-    "database": 0.3,
-    "web": 0.6,
-    "check": 0.3
+    "database": 0.5
   }
 }

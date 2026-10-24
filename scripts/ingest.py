@@ -101,8 +101,10 @@ STAGES: list[tuple[str, list[str], tuple[str, ...]]] = [
     ("services", ["scripts/seed_services.py", "--if-missing"], ("services", "moh")),
     ("service_access", ["scripts/build_service_access.py"], ("services", "moh", "sea")),
     ("simulator", ["scripts/build_simulator.py"], ("service_access", "sea", "services")),
+    ("placement", ["scripts/build_placement.py"], ("service_access", "sea", "services", "simulator")),
     ("incoming", ["scripts/absorb_incoming.py"], ("incoming",)),
-    ("database", ["scripts/build_database.py"], ("simulator", "service_access", "reachability", "incoming")),
+    ("database", ["scripts/build_database.py"],
+     ("simulator", "placement", "service_access", "reachability", "incoming")),
     ("web", ["web/build_web_data.py"], ("service_access", "sea", "provision")),
     ("check", ["scripts/check_outputs.py"], ()),          # always last, always cheap
 ]
@@ -116,6 +118,7 @@ OUTPUTS = {
     "services": ["services_placed.csv"],
     "service_access": ["service_access.csv", "service_summary.csv"],
     "simulator": ["placement.csv"],
+    "placement": ["travel_time.csv", "link_candidates.csv"],
     "database": ["platform.sqlite"],
     "web": ["islands_points.json"],
 }

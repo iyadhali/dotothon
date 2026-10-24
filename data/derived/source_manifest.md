@@ -1,18 +1,17 @@
 # Source manifest
 
-Generated 2026-10-24 11:06 UTC by `scripts/ingest.py`.
+Generated 2026-10-24 11:29 UTC by `scripts/ingest.py`.
 
 | source | files | size | last touched | fingerprint |
 |---|---:|---:|---|---|
-| followme | 31 | 1,893 MB | 2026-10-14 04:59 | `7403ded59165b227` |
-| mtcc | 1 | 63 kB | 2026-10-24 06:18 | `5ddf5391189f3ce9` |
-| macl | 2 | 21 MB | 2026-10-14 04:56 | `1e3432c31f625784` |
-| avas | 2 | 42 MB | 2026-10-21 04:59 | `ff7cb50adbe4ff1d` |
-| census | 2 | 223 kB | 2026-10-24 05:06 | `2c1aef5cd9027a92` |
-| boundaries | 2 | 18 MB | 2026-10-24 05:06 | `22468774e3d7754d` |
-| moe | 1 | 14 MB | 2026-10-24 05:24 | `d0fd1ce9504e0b52` |
-| moh | 1 | 266 kB | 2026-10-24 06:31 | `fa614465606586e1` |
-| services | 1 | 87 kB | 2026-10-24 10:03 | `cb2802e78d2d5204` |
+| mtcc | 1 | 63 kB | 2026-10-24 11:04 | `68de476301ac6e84` |
+| macl | 2 | 21 MB | 2026-10-24 11:04 | `f86cacb682e4dc4a` |
+| avas | 2 | 42 MB | 2026-10-24 11:04 | `65174f0c232d3142` |
+| census | 2 | 223 kB | 2026-10-24 11:04 | `216c62d4b38f96b8` |
+| boundaries | 2 | 18 MB | 2026-10-24 11:04 | `feb1257528828960` |
+| moe | 1 | 14 MB | 2026-10-24 11:04 | `ffeabf9960664645` |
+| moh | 1 | 266 kB | 2026-10-24 11:04 | `1d44602abb1607b3` |
+| services | 1 | 87 kB | 2026-10-24 11:04 | `84b35241add41576` |
 
 Derived tables:
 

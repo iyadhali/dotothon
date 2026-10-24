@@ -138,6 +138,24 @@ def index(request):
 
 
 @require_GET
+def build(request):
+    """Where the next facility and the next crossing would do the most, on the network we see.
+
+    Everything the page needs is computed here, once per request, from the same SQLite file the
+    rest of the app reads: current coverage, the coverage set of every candidate site, and the
+    candidate crossings. The browser only re-ranks those sets as the user builds.
+    """
+    m = model()
+    return render(request, "access/build.html", {
+        "payload": m.build_payload(),
+        "stats": m.stats(),
+        "db_meta": db_meta(),
+        "manifest": _manifest(),
+        "n_links": m.n_edges,
+    })
+
+
+@require_GET
 def island_card(request, node_id):
     c = model().card(node_id)
     if c is None:

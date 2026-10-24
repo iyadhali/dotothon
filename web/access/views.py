@@ -3,6 +3,8 @@
 Each fragment is a plain Django template render — no JSON, no client-side router. HTMX swaps the
 HTML in, so the same code path serves the first paint and every interaction after it.
 """
+import json
+
 from django.http import Http404
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
@@ -62,6 +64,12 @@ def route(request):
             ctx["total"] = total
             ctx["hops"] = len(legs)
             ctx["conn_h"] = max(0, len(legs) - 1) * 1.0
+            # coordinates for the map polyline: the start island then every leg's destination
+            seq = [legs[0].a] + [e.b for e in legs]
+            ctx["path"] = json.dumps([
+                [round(float(m.by_id.loc[n, "lat"]), 5), round(float(m.by_id.loc[n, "lon"]), 5)]
+                for n in seq
+            ])
     return render(request, "access/_route.html", ctx)
 
 

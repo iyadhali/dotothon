@@ -86,6 +86,14 @@ def main() -> None:
             "band": f["properties"]["band"],
             "lat": f["properties"]["lat"], "lon": f["properties"]["lon"]}
            for f in feats if f["properties"]["lat"] is not None]
+    # Malé is a city, not an OCHA island polygon, so it has no feature — but without a point for
+    # it no journey to or from the capital can be drawn on the map.
+    male = acc[acc.node_id == "MLE"]
+    if len(male):
+        r = male.iloc[0]
+        pts.append({"id": "MLE", "name": "Malé City", "atoll": "Male",
+                    "pop": int(r.population), "hours": 0.0, "own": True, "band": "own",
+                    "lat": round(float(r.lat), 5), "lon": round(float(r.lon), 5)})
     (OUT.parent / "islands_points.json").write_text(json.dumps(pts, separators=(",", ":")))
     print(f"wrote islands_points.json — {len(pts)} points, "
           f"{(OUT.parent / 'islands_points.json').stat().st_size / 1e3:.0f} KB")

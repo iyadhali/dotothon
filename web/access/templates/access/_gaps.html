@@ -1,0 +1,39 @@
+{% load fmt %}
+{% if gaps %}
+<section class="card wide" id="gaps">
+  <div class="cardhead">
+    <h2>What would fix it — the {{ gaps|length }} islands beyond two hours</h2>
+    <span class="hint">ranked by children affected · “if direct” is a distance scenario at 20 kn, not an observation</span>
+  </div>
+  <p class="lede2">
+    Every island below cannot reach a grade 11–12 school within two hours on the observed
+    network. Each row names the higher-secondary school it is nearest to and what a direct
+    link to that school would cost — the concrete decision for a route planner.
+  </p>
+  <table class="rank gaps">
+    <thead>
+      <tr>
+        <th>Island</th><th>Atoll</th><th class="r">Population</th>
+        <th class="r">Children 0–17</th><th class="r">Hours now</th>
+        <th>Nearest grade 11–12</th><th class="r">km apart</th><th class="r">If direct</th>
+        <th class="r">Saves</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for g in gaps %}
+      <tr>
+        <td><a href="#" hx-get="/island/{{ g.node_id }}/" hx-target="#panel" hx-swap="innerHTML">{{ g.island }}</a></td>
+        <td class="muted">{{ g.atoll }}</td>
+        <td class="r">{{ g.population|num }}</td>
+        <td class="r">{{ g.child_0_17|num }}</td>
+        <td class="r">{% if g.hours_now %}{{ g.hours_now|floatformat:2 }} h{% else %}<span class="none">none observed</span>{% endif %}</td>
+        <td>{{ g.nearest_hs }}</td>
+        <td class="r">{{ g.distance_km|floatformat:1 }}</td>
+        <td class="r">{{ g.hours_if_direct|floatformat:2 }} h</td>
+        <td class="r save">{% if g.hours_saved %}{{ g.hours_saved|floatformat:2 }} h{% else %}n/a{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endif %}

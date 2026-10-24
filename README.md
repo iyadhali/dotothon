@@ -29,9 +29,20 @@ HTMX and Leaflet bundles are vendored, so it runs offline on venue wifi.
 
 ### What you can do in it
 
-| | |
+The home page **is** the map: 187 inhabited islands, sized by population and coloured by observed
+travel time to the nearest grade 11–12 school. Everything else floats over it.
+
+| Interaction | What it does |
 |---|---|
-| **Map** | every inhabited island, sized by population and coloured by observed travel time to the nearest grade 11–12 school. Click any island. |
+| **Hover** an island | name, atoll, residents and travel time in a tooltip |
+| **Click** an island | profile card (population, children, provision, nearest school and campus, observed crossings) |
+| **Legend chips** | filter the map to one travel-time band; click again to clear |
+| **Atoll dropdown** | fly to that atoll's bounding box |
+| **Search / list** | live filter over 187 islands; hover a row to light up its island, Enter to open the top hit |
+| **Plan a journey** | click a start island, then a destination — the best route is drawn on the map and broken down leg by leg |
+| **Reset** (or `Esc`) | clear filters, route and selection |
+| | |
+| **Decision tables** | below the map: worst-served ranking, and the 28 islands beyond two hours with the link that would fix each |
 | **Island profile** | population, children 0–17, whether the island teaches grade 7–10 and 11–12, hours to the nearest higher-secondary school and university campus, and the observed crossings out of that island with trip counts. |
 | **Island to island** | pick a start and a destination: the best journey within two sailings, broken down leg by leg, with the connection wait shown separately. |
 | **Worst served** | ranked list, filleted by atoll, by "over 2 h / over 4 h", by "no observed route", or by "hosts a school". |

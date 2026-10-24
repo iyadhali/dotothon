@@ -3,10 +3,10 @@
     {
       "id": "dialogue-session:15ti78t",
       "type": "Decision",
-      "content": "dialogue-session session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9 turns=7 tip=dialogue:15ti78t:0007",
+      "content": "dialogue-session session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9 turns=9 tip=dialogue:15ti78t:0009",
       "metadata": {
         "kind": "dialogue-session",
-        "record": "{\"id\":\"dialogue-session:15ti78t\",\"name\":\"session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9\",\"tipTurnId\":\"dialogue:15ti78t:0007\",\"turnCount\":7,\"topicTokens\":[\"10\",\"100\",\"15\",\"20\",\"2026\",\"50\",\"about\",\"access\",\"across\",\"act\",\"affordable\",\"after\",\"air\",\"all\",\"allowed\",\"also\",\"and\",\"another\",\"answers\",\"anyone\",\"anythig\",\"app\",\"are\",\"as\",\"at\",\"average\",\"be\",\"below\",\"benefits\",\"between\",\"beyond\",\"built\",\"ca\",\"can\",\"card\",\"carry\",\"challenge\",\"charts\",\"check\",\"chose\",\"clarity\",\"clear\",\"collaboration\",\"collected\",\"connectivity\",\"contribute\",\"convenient\",\"correctly\"],\"createdAt\":1792817786469,\"updatedAt\":1792821435419}",
+        "record": "{\"id\":\"dialogue-session:15ti78t\",\"name\":\"session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9\",\"tipTurnId\":\"dialogue:15ti78t:0009\",\"turnCount\":9,\"topicTokens\":[\"10\",\"100\",\"15\",\"20\",\"2026\",\"50\",\"about\",\"access\",\"across\",\"act\",\"affordable\",\"after\",\"air\",\"all\",\"allowed\",\"also\",\"and\",\"another\",\"answers\",\"anyone\",\"anythig\",\"app\",\"are\",\"as\",\"at\",\"average\",\"be\",\"below\",\"benefits\",\"between\",\"beyond\",\"built\",\"ca\",\"can\",\"card\",\"carry\",\"challenge\",\"charts\",\"check\",\"chose\",\"clarity\",\"clear\",\"collaboration\",\"collected\",\"connectivity\",\"contribute\",\"convenient\",\"correctly\"],\"createdAt\":1792817786469,\"updatedAt\":1792822140462}",
         "name": "session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9"
       }
     },
@@ -85,11 +85,35 @@
     {
       "id": "dialogue:15ti78t:0007",
       "type": "Decision",
-      "content": "dialogue-turn #7 Q: make sure anythig we do follows the Judging criteria | A: (pending)",
+      "content": "dialogue-turn #7 Q: make sure anythig we do follows the Judging criteria | A: Agreed — so I turned the rubric into an enforceable rule and then spent this turn moving the three criteria that carry 50 of the 100 points. **The rule, writte…",
       "metadata": {
         "kind": "dialogue-turn",
-        "record": "{\"id\":\"dialogue:15ti78t:0007\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":7,\"userQuery\":\"make sure anythig we do follows the Judging criteria\",\"assistantReply\":\"\",\"parentTurnId\":\"dialogue:15ti78t:0006\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792821435419,\"updatedAt\":1792821435419,\"title\":\"make sure anythig we do follo…\"}",
+        "record": "{\"id\":\"dialogue:15ti78t:0007\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":7,\"userQuery\":\"make sure anythig we do follows the Judging criteria\",\"assistantReply\":\"Agreed — so I turned the rubric into an enforceable rule and then spent this turn moving the three criteria that carry 50 of the 100 points. **The rule, written down:** [docs/criteria-map.md](docs/criteria-map.md) — every artifact must name the criterion it earns, plus an explicit list of what we *refuse* to build because it moves none (no login, no database, no fares page without fare data, no second dashboard — several of those would actively cost Innovation points). ## Impact 15 % (also tie-break #1) — built [docs/findings.md](docs/findings.md) + `data/derived/priority_gaps.csv` + a new panel in the app: ![Priority gaps](docs/app-desktop.png) **28 islands, 21,281 residents, 6,758 children** cannot reach grade 11–12 within two hours. Each row names the school island it is nearest to and prices a direct link. The finding that matters for a real decision: > **Gan (Laamu, 4,815 people, 1,457 children) is 9.3 km from Fonadhoo, which teaches grade 11–12 — and still takes 2.16 h** because the connection runs the wrong way round the atoll. That's a scheduling fix, not a capital project. Named user: **MoE Planning & Research Division** — the unit that publishes the statistics we parse — plus MTCC route planning. Named action: rank boarding/subsidy spend by children, not by island. ## Scalability 15 % (tie-break #1) — built - `make refresh GPS=<new month>` rebuilds the whole model. - `make check` asserts **13 published numbers** (5,105 students in grades 11–12, 187 islands, 159 within 2 h, 427,538 residents, 28 gaps, …) and fails loudly if one drifts. - I switched the Makefile to the default `python3` and had to `pip install openpyxl` into it — so `make` now genuinely works end to end on a clean interpreter, which was not true an hour ago. ## Technical 20 % — a real bug fixed, which changed the numbers While building the gap table I found the analysis script was counting **causeway legs as sailings**. Feydhoo (Addu) was being reported as **2.45 h** from a school that is a 25-minute drive away, because its road chain consumed the two-sailing budget. Fixed by contracting road components into single graph nodes with per-island road offsets — the same semantics the web app already used. Consequence: **156 → 159 islands within 2 h, and 427,538 residents.** Every number in README, REVIEW, findings and the app now matches, and `make check` pins them so they can't drift again. ## Where we are | | Before | Now | |---|---|---| | Impact | 3 | **4** | | Scalability | 3 | **4** | | Projected total | 76 | **82** | Remaining, in points order — all three follow the same rule: 1. **Air layer** (Technical 20 %, +4): fixes the two islands that still show \\\"no observed route\\\" and stops a judge finding a false negative. 2. **MTCC cross-check** (Data Utilization 15 %, +3): MTCC reports ridership on 8 ferry routes; we observe crossings on the same corridors. If they agree, two *organiser* datasets validate each other — the best possible answer to \\\"is the data used correctly?\\\" 3. **Slides + second speaker** (Clarity 5 %, Teamwork 10 %, +3): slide 2 must open with the GPS-reconstruction, never the dashboard. Say the word and I'll take the air layer next — it's the only one of the three that also removes a demo risk.\",\"parentTurnId\":\"dialogue:15ti78t:0006\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792821435419,\"updatedAt\":1792821850167,\"title\":\"make sure anythig we do follo…\",\"summary\":\"Agreed — so I turned the rubric into an enforceable rule and then spent this turn moving the three criteria that carry 50 of the 100 points. **The rule, written down:** [docs/criteria-map.md](docs/cr…\",\"lastSeenAt\":1792821850167}",
         "seq": 7,
+        "sessionId": "dialogue-session:15ti78t",
+        "jumped": false
+      }
+    },
+    {
+      "id": "dialogue:15ti78t:0008",
+      "type": "Decision",
+      "content": "dialogue-turn #8 Q: make the maps more interactive home page should be map | A: (pending)",
+      "metadata": {
+        "kind": "dialogue-turn",
+        "record": "{\"id\":\"dialogue:15ti78t:0008\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":8,\"userQuery\":\"make the maps more interactive home page should be map\",\"assistantReply\":\"\",\"parentTurnId\":\"dialogue:15ti78t:0007\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792821894566,\"updatedAt\":1792821894566,\"title\":\"make the maps more interactiv…\"}",
+        "seq": 8,
+        "sessionId": "dialogue-session:15ti78t",
+        "jumped": false
+      }
+    },
+    {
+      "id": "dialogue:15ti78t:0009",
+      "type": "Decision",
+      "content": "dialogue-turn #9 Q: make the maps more interactive | A: (pending)",
+      "metadata": {
+        "kind": "dialogue-turn",
+        "record": "{\"id\":\"dialogue:15ti78t:0009\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":9,\"userQuery\":\"make the maps more interactive\",\"assistantReply\":\"\",\"parentTurnId\":\"dialogue:15ti78t:0008\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792822140462,\"updatedAt\":1792822140462,\"title\":\"make the maps more interactive\"}",
+        "seq": 9,
         "sessionId": "dialogue-session:15ti78t",
         "jumped": false
       }
@@ -159,6 +183,26 @@
     {
       "from": "dialogue:15ti78t:0006",
       "to": "dialogue:15ti78t:0007",
+      "relation": "next_section"
+    },
+    {
+      "from": "dialogue:15ti78t:0008",
+      "to": "dialogue-session:15ti78t",
+      "relation": "part_of"
+    },
+    {
+      "from": "dialogue:15ti78t:0007",
+      "to": "dialogue:15ti78t:0008",
+      "relation": "next_section"
+    },
+    {
+      "from": "dialogue:15ti78t:0009",
+      "to": "dialogue-session:15ti78t",
+      "relation": "part_of"
+    },
+    {
+      "from": "dialogue:15ti78t:0008",
+      "to": "dialogue:15ti78t:0009",
       "relation": "next_section"
     }
   ]

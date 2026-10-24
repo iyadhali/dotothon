@@ -205,7 +205,7 @@ class Model:
             return None
         r = self.by_id.loc[node_id]
         links = sorted(self.adj.get(node_id, []),
-                       key=lambda e: (-1e9 if e.kind == "land" else -(e.trips or 0)))[:6]
+                       key=lambda e: (-1e9 if e.kind == "land" else -(e.trips or 0)))[:4]
         hs_h, hs_prov = self.nearest_hs.get(node_id, (None, None))
         ca_h, ca_prov = self.nearest_campus.get(node_id, (None, None))
         return {

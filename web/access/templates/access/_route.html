@@ -1,7 +1,7 @@
 {% if error %}
   <p class="note warn">{{ error }}</p>
 {% else %}
-  <div class="journey">
+  <div class="journey"{% if path %} data-path="{{ path }}"{% endif %}>
     <div class="jhead">
       <span class="jlabel">{{ frm_name }} → {{ to_name }}</span>
       <span class="jtime">{{ total|floatformat:2 }} h</span>

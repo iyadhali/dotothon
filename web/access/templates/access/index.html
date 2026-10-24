@@ -1,94 +1,95 @@
 {% extends "access/base.html" %}
 {% load fmt %}
 {% block body %}
-<header class="masthead">
-  <div class="wrap">
+<header class="topbar">
+  <div class="brand">
     <p class="eyebrow">Maldives Datathon 2026 · Team A · Sea · Land · Air</p>
     <h1>Can a student on island A reach grade 11–12 on island B?</h1>
-    <p class="lede">
-      {{ s.islands }} inhabited islands, {{ s.population|num }} residents, and one
-      question that decides who continues to higher secondary: how long does it take to get to a
-      school that teaches it? Travel times come from {{ s.edges|num }} ferry and speedboat
-      crossings reconstructed from a month of anonymised GPS, not from a timetable.
-    </p>
-    <div class="stats">
-      <div class="stat"><span class="n">{{ s.hs_islands }}</span><span class="l">islands teach<br>grade 11–12</span></div>
-      <div class="stat"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one within<br>2 hours</span></div>
-      <div class="stat hot"><span class="n">{{ s.no_service }}</span><span class="l">have no reachable<br>post-16 school</span></div>
-      <div class="stat"><span class="n">{{ s.kids|num }}</span><span class="l">children aged<br>0–17 in scope</span></div>
-    </div>
+  </div>
+  <div class="chips">
+    <div class="chip num"><span class="n">{{ s.hs_islands }}</span><span class="l">islands teach<br>grade 11–12</span></div>
+    <div class="chip num"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one within<br>2 hours</span></div>
+    <div class="chip num hot"><span class="n">{{ s.no_service }}</span><span class="l">no observed<br>route</span></div>
+    <div class="chip num"><span class="n">{{ s.kids|num }}</span><span class="l">children aged<br>0–17</span></div>
   </div>
 </header>
 
-<main class="wrap">
+<main class="stage" id="stage">
+  <div id="map"
+       data-default-from="{{ default_from }}"
+       data-default-to="{{ default_to }}"
+       data-default-island="{{ default_island }}"
+       aria-label="Map of the Maldives: circle size is population, colour is travel time to the nearest grade 11–12 school"></div>
 
-  <section class="layout">
-    <div class="card mapcard">
-      <div class="cardhead">
-        <h2>Travel time to the nearest grade 11–12 school</h2>
-        <span class="hint">size = population · colour = hours to grade 11–12</span>
-      </div>
-      <div id="map" aria-label="Map of the Maldives coloured by travel time to post-16 schooling"></div>
-      <ul class="legend">
-        <li><i style="background:#0f766e"></i>teaches here</li>
-        <li><i style="background:#2f855a"></i>under 2 h</li>
-        <li><i style="background:#d69e2e"></i>2–4 h</li>
-        <li><i style="background:#dd6b20"></i>4–8 h</li>
-        <li><i style="background:#c53030"></i>over 8 h</li>
-        <li><i style="background:#9aa5b1"></i>no observed route</li>
-      </ul>
+  <aside class="ovl ovl-left">
+    <div class="modes" role="tablist">
+      <button class="mode is-on" data-mode="explore" role="tab" type="button">Explore</button>
+      <button class="mode" data-mode="route" role="tab" type="button">Plan a journey</button>
     </div>
 
-    <aside class="side">
-      <div class="card" id="panel"
-           {% if default_island %}hx-get="/island/{{ default_island }}/" hx-trigger="load" hx-swap="innerHTML"{% endif %}>
-        <div class="cardhead"><h2>Island profile</h2></div>
-        <p class="empty">Pick an island on the map, or from the list below.</p>
-        <form class="picker"
-              onsubmit="event.preventDefault(); htmx.ajax('GET', '/island/' + document.getElementById('jump').value + '/', {target:'#panel', swap:'innerHTML'});">
-          <select id="jump">
-            {% regroup islands by atoll as pgroups %}
-            {% for g in pgroups %}
+    <div class="row2">
+      <input id="q" type="search" placeholder="Search an island…" autocomplete="off" aria-label="Search an island">
+      <select id="atoll" aria-label="Zoom to atoll">
+        <option value="">All atolls</option>
+        {% for a in atolls %}<option value="{{ a }}">{{ a }}</option>{% endfor %}
+      </select>
+    </div>
+
+    <ul class="legend" id="legend">
+      <li data-band="own"><i style="background:#0f766e"></i>teaches here</li>
+      <li data-band="under2"><i style="background:#2f855a"></i>under 2 h</li>
+      <li data-band="under4"><i style="background:#d69e2e"></i>2–4 h</li>
+      <li data-band="under8"><i style="background:#dd6b20"></i>4–8 h</li>
+      <li data-band="over8"><i style="background:#c53030"></i>over 8 h</li>
+      <li data-band="unknown"><i style="background:#9aa5b1"></i>no route</li>
+    </ul>
+
+    <p class="routehint" id="routehint" hidden></p>
+    <ol class="hitlist" id="hitlist"></ol>
+    <p class="ovlfoot">size = population · colour = hours to grade 11–12 · <a href="#tables">decision tables ↓</a></p>
+  </aside>
+
+  <aside class="ovl ovl-right">
+    <div class="card" id="panel"
+         {% if default_island %}hx-get="/island/{{ default_island }}/" hx-trigger="load" hx-swap="innerHTML"{% endif %}>
+      <div class="cardhead"><h2>Island profile</h2></div>
+      <p class="empty">Click any island on the map, or search on the left.</p>
+    </div>
+
+    <div class="card">
+      <div class="cardhead"><h2>Island to island</h2>
+        <button class="ghost" id="swap" type="button" title="Swap start and destination">⇄ swap</button>
+      </div>
+      <div id="route-out" data-default-from="{{ default_from }}" data-default-to="{{ default_to }}"></div>
+      <form class="routeform" id="routeform" hx-get="/route/" hx-target="#route-out" hx-swap="innerHTML">
+        <label>From
+          <select name="from" id="from">
+            {% regroup islands by atoll as groups %}
+            {% for g in groups %}
             <optgroup label="{{ g.grouper }}">
-              {% for i in g.list %}<option value="{{ i.node_id }}">{{ i.island }}</option>{% endfor %}
+              {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == default_from %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
             </optgroup>
             {% endfor %}
           </select>
-          <button type="submit">Open</button>
-        </form>
-      </div>
+        </label>
+        <label>To
+          <select name="to" id="to">
+            {% for g in groups %}
+            <optgroup label="{{ g.grouper }}">
+              {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == default_to %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
+            </optgroup>
+            {% endfor %}
+          </select>
+        </label>
+        <button type="submit">Find journey</button>
+      </form>
+    </div>
+  </aside>
 
-      <div class="card">
-        <div class="cardhead"><h2>Island to island</h2></div>
-        <form class="routeform" hx-get="/route/" hx-target="#route-out" hx-swap="innerHTML" hx-indicator="#route-spin">
-          <label>From
-            <select name="from" id="from">
-              {% regroup islands by atoll as groups %}
-              {% for g in groups %}
-              <optgroup label="{{ g.grouper }}">
-                {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == default_from %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
-              </optgroup>
-              {% endfor %}
-            </select>
-          </label>
-          <label>To
-            <select name="to" id="to">
-              {% for g in groups %}
-              <optgroup label="{{ g.grouper }}">
-                {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == "MLE" %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
-              </optgroup>
-              {% endfor %}
-            </select>
-          </label>
-          <button type="submit">Find journey <span id="route-spin" class="htmx-indicator">…</span></button>
-        </form>
-        <div id="route-out"
-             {% if default_from and default_to %}hx-get="/route/?from={{ default_from }}&to={{ default_to }}"
-             hx-trigger="load" hx-swap="innerHTML"{% endif %}></div>
-      </div>
-    </aside>
-  </section>
+  <button class="resetmap" id="resetmap" type="button" title="Reset view and filters">⤺ reset</button>
+</main>
 
+<main class="wrap" id="tables">
   <section class="card tablecard">
     <div class="cardhead">
       <h2>Worst served first</h2>
@@ -98,51 +99,12 @@
         <button hx-get="/ranked/?band=own" hx-target="#ranked" hx-swap="innerHTML" class="chip">Hosts a school</button>
       </div>
     </div>
-    <div id="ranked">
-      {% include "access/_ranked.html" %}
-    </div>
+    <div id="ranked">{% include "access/_ranked.html" %}</div>
   </section>
 
-  {% if gaps %}
-<section class="card wide" id="gaps">
-  <div class="cardhead">
-    <h2>What would fix it — the 28 islands beyond two hours</h2>
-    <span class="hint">ranked by children affected · “if direct” is a distance scenario at 20 kn, not an observation</span>
-  </div>
-  <p class="lede2">
-    Every island below cannot reach a grade 11–12 school within two hours on the observed
-    network. Each row names the higher-secondary school it is nearest to and what a direct
-    link to that school would cost — the concrete decision for a route planner.
-  </p>
-  <table class="rank gaps">
-    <thead>
-      <tr>
-        <th>Island</th><th>Atoll</th><th class="r">Population</th>
-        <th class="r">Children 0–17</th><th class="r">Hours now</th>
-        <th>Nearest grade 11–12</th><th class="r">km apart</th><th class="r">If direct</th>
-        <th class="r">Saves</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for g in gaps %}
-      <tr>
-        <td><a href="#" hx-get="/island/{{ g.node_id }}/" hx-target="#panel" hx-swap="innerHTML">{{ g.island }}</a></td>
-        <td class="muted">{{ g.atoll }}</td>
-        <td class="r">{{ g.population|num }}</td>
-        <td class="r">{{ g.child_0_17|num }}</td>
-        <td class="r">{% if g.hours_now %}{{ g.hours_now|floatformat:2 }} h{% else %}<span class="none">none observed</span>{% endif %}</td>
-        <td>{{ g.nearest_hs }}</td>
-        <td class="r">{{ g.distance_km|floatformat:1 }}</td>
-        <td class="r">{{ g.hours_if_direct|floatformat:2 }} h</td>
-        <td class="r save">{% if g.hours_saved %}{{ g.hours_saved|floatformat:2 }} h{% else %}n/a{% endif %}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</section>
-{% endif %}
+  {% include "access/_gaps.html" %}
 
-<footer class="foot">
+  <footer class="foot">
     <p><strong>Sources.</strong> Population: Maldives Bureau of Statistics, Census 2022 (island and
     atoll indicator sheets). School supply: Ministry of Education, <em>School Statistics 2024</em>
     (per-island enrolment by grade). Travel times: FollowMe anonymised GPS, August 2025 — crossed by
@@ -155,50 +117,227 @@
 </main>
 
 <script>
+/* Map-first explorer. One 27 KB JSON file carries everything the map needs.
+   Interactions: hover · click → profile · legend chips → filter · atoll → fly ·
+   two-click journey planning → the route is drawn on the map. */
 const BAND = {own:"#0f766e", under2:"#2f855a", under4:"#d69e2e", under8:"#dd6b20",
               over8:"#c53030", unknown:"#9aa5b1"};
+const el = id => document.getElementById(id);
+const mapEl = el("map");
 
-const map = L.map("map", {
-  zoomSnap: 0.25, minZoom: 5, worldCopyJump: false,
-  zoomControl: true, attributionControl: false
+const map = L.map(mapEl, {
+  zoomSnap: 0.25, minZoom: 5, maxZoom: 12, zoomControl: false, attributionControl: false
 }).setView([3.6, 73.3], 6);
+L.control.zoom({position: "bottomright"}).addTo(map);
 
-function radius(pop) {                      // sqrt scale, readable from 170 to 212,000 people
-  return Math.max(4.5, 3 + 2.6 * Math.log10(1 + pop) - 1.4);
+const state = {mode:"explore", from:null, to:null, band:null, atoll:"", q:"",
+               points:[], byId:new Map(), markers:new Map(), sel:null,
+               routeLayer:null, atollBounds:new Map()};
+
+const radius = pop => Math.max(4.5, 3 + 2.6 * Math.log10(1 + pop) - 1.4);
+const allBounds = () => L.latLngBounds(state.points.map(p => [p.lat, p.lon]));
+// keep the archipelago clear of the two floating panels
+const isWide = () => window.innerWidth > 900;
+// on wide screens the archipelago must sit between the two floating panels; on narrow ones it
+// can use the whole width, otherwise the padding squeezes the islands to nothing
+function fitAll() {
+  map.fitBounds(allBounds(), isWide()
+    ? {paddingTopLeft:[350, 40], paddingBottomRight:[380, 80], maxZoom:7}
+    : {padding:[22, 22], maxZoom:7});
 }
 
-let selected = null;
+requestAnimationFrame(() => map.invalidateSize());
 
-function openIsland(id) {
-  document.getElementById("jump").value = id;
-  const from = document.getElementById("from");
-  if (from) from.value = id;
-  htmx.ajax("GET", "/island/" + id + "/", {target: "#panel", swap: "innerHTML"});
-}
+fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
+  state.points = pts;
+  map.invalidateSize();
+  const group = L.layerGroup().addTo(map);
 
-fetch("/static/access/islands_points.json")
-  .then(r => r.json())
-  .then(points => {
-    points.forEach(p => {
-      const m = L.circleMarker([p.lat, p.lon], {
-        radius: radius(p.pop),
-        color: "#ffffff", weight: 0.8, opacity: 0.85,
-        fillColor: BAND[p.band] || BAND.unknown, fillOpacity: 0.92
-      }).addTo(map);
-      const hrs = p.hours === null ? "no observed route"
-                : (p.own ? "grade 11–12 taught here" : p.hours.toFixed(1) + " h to the nearest");
-      m.bindTooltip("<b>" + p.name + "</b><br>" + p.atoll + " · " +
-                    p.pop.toLocaleString() + " residents<br>" + hrs,
-                    {sticky: true, direction: "top"});
-      m.on("click", () => {
-        if (selected) selected.setStyle({weight: 0.8, color: "#ffffff"});
-        selected = m;
-        m.setStyle({weight: 2.4, color: "#0b1f2a"});
-        openIsland(p.id);
-      });
-    });
-    // frame the archipelago rather than trusting a hard-coded centre
-    map.fitBounds(L.latLngBounds(points.map(p => [p.lat, p.lon])), {padding: [24, 24], maxZoom: 7});
+  pts.forEach(p => {
+    state.byId.set(p.id, p);
+    const m = L.circleMarker([p.lat, p.lon], {
+      radius: radius(p.pop), color:"#ffffff", weight:0.8, opacity:0.85,
+      fillColor: BAND[p.band] || BAND.unknown, fillOpacity:0.92
+    }).addTo(group);
+
+    const hrs = p.hours === null ? "no observed route"
+              : (p.own ? "grade 11–12 taught here" : p.hours.toFixed(1) + " h to the nearest");
+    m.bindTooltip(`<b>${p.name}</b><br>${p.atoll} · ${p.pop.toLocaleString()} residents<br>${hrs}`,
+                  {sticky:true, direction:"top", className:"tip"});
+    m.on("mouseover", () => m.setStyle({weight:2.2, color:"#0b1f2a"}));
+    m.on("mouseout", () => { if (state.sel !== m) m.setStyle({weight:0.8, color:"#ffffff"}); });
+    m.on("click", () => onIslandClick(p.id));
+    state.markers.set(p.id, m);
+
+    if (!state.atollBounds.has(p.atoll)) state.atollBounds.set(p.atoll, L.latLngBounds([]));
+    state.atollBounds.get(p.atoll).extend([p.lat, p.lon]);
   });
+
+  fitAll();
+  renderList();
+  if (mapEl.dataset.defaultIsland) selectIsland(mapEl.dataset.defaultIsland, {fly:false, load:false});
+  setMode("explore");
+  const ro = el("route-out").dataset;
+  if (ro.defaultFrom && ro.defaultTo) submitRoute();   // show one worked journey on first paint
+});
+
+function selectIsland(id, opts = {}) {
+  const p = state.byId.get(id);
+  if (!p) return;
+  if (state.sel) state.sel.setStyle({weight:0.8, color:"#ffffff"});
+  state.sel = state.markers.get(id);
+  if (state.sel) {
+    state.sel.setStyle({weight:3, color:"#0b1f2a"});
+    if (opts.fly !== false) map.flyTo([p.lat, p.lon], Math.max(map.getZoom(), 8), {duration:0.6});
+  }
+  if (opts.load !== false) htmx.ajax("GET", `/island/${id}/`, {target:"#panel", swap:"innerHTML"});
+  history.replaceState({}, "", `?island=${id}`);
+}
+
+function onIslandClick(id) {
+  if (state.mode === "route") {
+    if (!state.from || (state.from && state.to)) {      // pick a new origin
+      state.from = id; state.to = null;
+      el("from").value = id;
+      el("routehint").hidden = false;
+      el("routehint").innerHTML = `From <b>${state.byId.get(id).name}</b> — now click the <b>destination</b>.`;
+      selectIsland(id); clearRoute(); return;
+    }
+    state.to = id;
+    el("to").value = id;
+    el("routehint").hidden = true;
+    selectIsland(id);
+    submitRoute();
+    return;
+  }
+  selectIsland(id);
+}
+
+function submitRoute() {
+  const from = el("from").value, to = el("to").value;
+  htmx.ajax("GET", `/route/?from=${from}&to=${to}`, {target:"#route-out", swap:"innerHTML"});
+  history.replaceState({}, "", `?from=${from}&to=${to}`);
+}
+
+function clearRoute() { if (state.routeLayer) { map.removeLayer(state.routeLayer); state.routeLayer = null; } }
+
+let firstRoute = true;
+function drawRoute() {
+  const node = document.querySelector("#route-out [data-path]");
+  clearRoute();
+  if (!node) return;
+  let path;
+  try { path = JSON.parse(node.dataset.path); } catch (e) { return; }
+  if (!path || path.length < 2) return;
+  state.routeLayer = L.layerGroup([
+    L.polyline(path, {color:"#ffffff", weight:9, opacity:0.55}),
+    L.polyline(path, {color:"#0b4f57", weight:4, opacity:0.95, lineCap:"round"}),
+    L.circleMarker(path[0], {radius:6, color:"#0b4f57", weight:2, fillColor:"#fff", fillOpacity:1}),
+    L.circleMarker(path[path.length-1], {radius:6, color:"#0b4f57", weight:2, fillColor:"#fff", fillOpacity:1})
+  ]).addTo(map);
+  const wasFirst = firstRoute;
+  if (!firstRoute) map.fitBounds(L.latLngBounds(path), isWide()
+    ? {paddingTopLeft:[350, 60], paddingBottomRight:[380, 60], maxZoom:9}
+    : {padding:[40, 40], maxZoom:9});
+  firstRoute = false;
+  return wasFirst;
+}
+
+document.body.addEventListener("htmx:afterSwap", e => {
+  if (e.detail.target && e.detail.target.id === "route-out") {
+    const wasFirst = drawRoute();
+    if (!wasFirst) e.detail.target.scrollIntoView({block: "nearest", behavior: "smooth"});
+  }
+});
+el("routeform").addEventListener("submit", e => { e.preventDefault(); submitRoute(); });
+el("swap").addEventListener("click", () => {
+  const f = el("from").value;
+  el("from").value = el("to").value; el("to").value = f;
+  submitRoute();
+});
+
+function setMode(m) {
+  state.mode = m;
+  document.querySelectorAll(".mode").forEach(b => b.classList.toggle("is-on", b.dataset.mode === m));
+  el("routehint").hidden = m !== "route";
+  if (m === "route") {
+    state.from = null; state.to = null;
+    el("routehint").textContent = "Click the starting island on the map.";
+  }
+}
+document.querySelectorAll(".mode").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
+
+el("legend").addEventListener("click", e => {
+  const li = e.target.closest("li"); if (!li) return;
+  const b = li.dataset.band;
+  state.band = state.band === b ? null : b;
+  document.querySelectorAll("#legend li").forEach(x => x.classList.toggle("is-off", !!state.band && x.dataset.band !== b));
+  state.markers.forEach((m, id) => {
+    const on = !state.band || state.byId.get(id).band === state.band;
+    m.setStyle({opacity: on ? 0.85 : 0.12, fillOpacity: on ? 0.92 : 0.10});
+  });
+  renderList();
+});
+
+window.addEventListener("resize", () => map.invalidateSize());
+
+el("atoll").addEventListener("change", e => {
+  state.atoll = e.target.value;
+  if (state.atoll && state.atollBounds.has(state.atoll))
+    map.fitBounds(state.atollBounds.get(state.atoll), {padding:[40,40], maxZoom:9});
+  else fitAll();
+  renderList();
+});
+
+el("q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); renderList(); });
+el("q").addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    const first = document.querySelector("#hitlist li");
+    if (first) selectIsland(first.dataset.id);
+  }
+});
+
+el("resetmap").addEventListener("click", () => {
+  state.band = null; state.atoll = ""; state.q = ""; el("q").value = ""; el("atoll").value = "";
+  document.querySelectorAll("#legend li").forEach(x => x.classList.remove("is-off"));
+  state.markers.forEach(m => m.setStyle({opacity:0.85, fillOpacity:0.92, weight:0.8, color:"#ffffff"}));
+  state.sel = null; clearRoute();
+  fitAll();
+  renderList();
+});
+
+function renderList() {
+  const rows = state.points
+    .filter(p => !state.atoll || p.atoll === state.atoll)
+    .filter(p => !state.band || p.band === state.band)
+    .filter(p => !state.q || p.name.toLowerCase().includes(state.q) || p.atoll.toLowerCase().includes(state.q))
+    .sort((a, b) => (b.hours === null ? 1e9 : b.hours) - (a.hours === null ? 1e9 : a.hours));
+  el("hitlist").innerHTML = rows.slice(0, 40).map(p => `
+    <li data-id="${p.id}">
+      <i style="background:${BAND[p.band]}"></i>
+      <span class="nm">${p.name}</span>
+      <span class="at">${p.atoll}</span>
+      <span class="hr">${p.hours === null ? "no route" : (p.own ? "teaches" : p.hours.toFixed(1) + " h")}</span>
+    </li>`).join("");
+  document.querySelectorAll("#hitlist li").forEach(li => {
+    li.addEventListener("click", () => selectIsland(li.dataset.id));
+    li.addEventListener("mouseenter", () => {
+      const m = state.markers.get(li.dataset.id);
+      if (m && m !== state.sel) m.setStyle({weight: 3, color: "#0b1f2a"});
+    });
+    li.addEventListener("mouseleave", () => {
+      const m = state.markers.get(li.dataset.id);
+      if (m && m !== state.sel) m.setStyle({weight: 0.8, color: "#ffffff"});
+    });
+  });
+}
+
+map.on("zoomend", () => {
+  const z = map.getZoom();
+  state.markers.forEach((m, id) => {
+    m.setRadius(z >= 8 ? radius(state.byId.get(id).pop) * 1.5 : radius(state.byId.get(id).pop));
+  });
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") el("resetmap").click(); });
 </script>
 {% endblock %}

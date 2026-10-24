@@ -117,11 +117,21 @@ class Model:
                 if (a, b) not in best or r.med_hours < best[(a, b)].hours:
                     best[(a, b)] = Edge(a, b, float(r.med_hours), float(r.med_km),
                                         float(r.med_knots), int(r.trips))
-        for aa, an, ab, bn, h in LAND_LINKS:
-            a, b = self._pid(aa, an), self._pid(ab, bn)
-            if a and b:
-                for x, y in ((a, b), (b, a)):
-                    best[(x, y)] = Edge(x, y, h, None, None, None, "land")
+        # the Addu causeway lives in the database with the boat edges it has to be combined with;
+        # the Python constant is only a fallback for a database built before that table existed
+        land = db_frame("select * from land_edge")
+        if len(land):
+            for r in land.itertuples():
+                if not (self._known(r.a) and self._known(r.b)):
+                    continue
+                for x, y in ((r.a, r.b), (r.b, r.a)):
+                    best[(x, y)] = Edge(x, y, float(r.hours), None, None, None, "land")
+        else:
+            for aa, an, ab, bn, h in LAND_LINKS:
+                a, b = self._pid(aa, an), self._pid(ab, bn)
+                if a and b:
+                    for x, y in ((a, b), (b, a)):
+                        best[(x, y)] = Edge(x, y, h, None, None, None, "land")
         for (a, b), e in best.items():
             self.adj.setdefault(a, []).append(e)
         self.n_edges = len(best)

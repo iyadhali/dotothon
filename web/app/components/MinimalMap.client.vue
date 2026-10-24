@@ -19,6 +19,12 @@ const props = defineProps<{
   view: 'access' | 'underserved' | 'recommended'
   underserved: Record<string, string>
   sites: { rank: number; islandId: string; newlyCoveredIslandIds: string[] }[]
+  /** Where-to-build: journeys from newly covered islands to the proposed sites. */
+  siteRoutes: { rank: number; mode: string; points: [number, number][] }[]
+  /** Labels on newly covered islands, e.g. "Kandoodhoo · 3 h 10 → 38 min". */
+  siteLabels: Destination[]
+  /** Proposed site the camera should focus on; null shows all. */
+  focusSiteId: string | null
 }>()
 
 const emit = defineEmits<{ select: [islandId: string | null]; fallback: [reason: string] }>()
@@ -125,6 +131,53 @@ function pointFeatures(points: { lon: number; lat: number; label?: string; rank?
   )
 }
 
+function siteRouteFeatures(): FeatureCollection {
+  return fc(
+    props.siteRoutes.map((route) => ({
+      type: 'Feature',
+      geometry: { type: 'LineString', coordinates: route.points },
+      properties: { rank: route.rank, mode: route.mode },
+    })),
+  )
+}
+
+const ROUTE_GREEN = '#16a34a'
+let animationFrame = 0
+
+/** Draw the site routes on from origin to the new site, then hold them solid. */
+function animateSiteRoutes(): void {
+  if (!map || !ready) return
+  cancelAnimationFrame(animationFrame)
+  const started = performance.now()
+  const duration = 1600
+  const step = (now: number) => {
+    if (!map) return
+    const t = Math.min(1, (now - started) / duration)
+    const p = Math.max(0.0001, 1 - Math.pow(1 - t, 3))
+    const gradient =
+      t >= 1
+        ? ['interpolate', ['linear'], ['line-progress'], 0, ROUTE_GREEN, 1, ROUTE_GREEN]
+        : ['interpolate', ['linear'], ['line-progress'], 0, ROUTE_GREEN, p, ROUTE_GREEN, Math.min(1, p + 0.0001), 'rgba(22,163,74,0)']
+    map.setPaintProperty('am-site-routes', 'line-gradient', gradient as unknown as string)
+    map.setPaintProperty('am-site-routes-glow', 'line-gradient', gradient as unknown as string)
+    if (t < 1) animationFrame = requestAnimationFrame(step)
+  }
+  animationFrame = requestAnimationFrame(step)
+}
+
+function fitToSite(): void {
+  if (!map || !ready || props.view !== 'recommended') return
+  if (!props.focusSiteId) {
+    fitAll()
+    return
+  }
+  const site = props.islands.find((island) => island.id === props.focusSiteId)
+  if (!site) return
+  const bounds = new LngLatBounds([site.lon, site.lat], [site.lon, site.lat])
+  for (const route of props.siteRoutes) for (const point of route.points) bounds.extend(point)
+  map.fitBounds(bounds, { padding: { top: 120, bottom: 100, left: 100, right: 420 }, maxZoom: 10.5, duration: 900 })
+}
+
 function setData(id: string, data: FeatureCollection): void {
   const source = map?.getSource(id) as { setData?: (d: FeatureCollection) => void } | undefined
   source?.setData?.(data)
@@ -141,6 +194,8 @@ function refresh(): void {
   setData('am-journey', journeyFeatures())
   setData('am-selected', pointFeatures(selected ? [selected] : []))
   setData('am-destinations', pointFeatures(props.destinations))
+  setData('am-site-routes', siteRouteFeatures())
+  setData('am-site-labels', pointFeatures(props.view === 'recommended' ? props.siteLabels : []))
   setData(
     'am-sites',
     pointFeatures(
@@ -181,9 +236,11 @@ function fitAll(): void {
 
 function addLayers(): void {
   if (!map) return
-  for (const id of ['am-islands', 'am-routes', 'am-land', 'am-facilities', 'am-journey', 'am-selected', 'am-destinations', 'am-sites']) {
+  for (const id of ['am-islands', 'am-routes', 'am-land', 'am-facilities', 'am-journey', 'am-selected', 'am-destinations', 'am-sites', 'am-site-labels']) {
     map.addSource(id, { type: 'geojson', data: fc([]) })
   }
+  // lineMetrics enables line-progress, which drives the draw-on animation.
+  map.addSource('am-site-routes', { type: 'geojson', data: fc([]), lineMetrics: true })
   map.addLayer({
     id: 'am-routes-ferry',
     type: 'line',
@@ -278,6 +335,33 @@ function addLayers(): void {
     paint: { 'text-color': '#0f172a', 'text-halo-color': '#ffffff', 'text-halo-width': 1.6 },
   })
   map.addLayer({
+    id: 'am-site-routes-glow',
+    type: 'line',
+    source: 'am-site-routes',
+    layout: { 'line-cap': 'round', 'line-join': 'round' },
+    paint: { 'line-width': 9, 'line-blur': 6, 'line-opacity': 0.35, 'line-gradient': ROUTE_GREEN as unknown as string },
+  })
+  map.addLayer({
+    id: 'am-site-routes',
+    type: 'line',
+    source: 'am-site-routes',
+    layout: { 'line-cap': 'round', 'line-join': 'round' },
+    paint: { 'line-width': 2.6, 'line-gradient': ROUTE_GREEN as unknown as string },
+  })
+  map.addLayer({
+    id: 'am-site-labels',
+    type: 'symbol',
+    source: 'am-site-labels',
+    layout: {
+      'text-field': ['get', 'label'],
+      'text-size': 11.5,
+      'text-offset': [0, 1.1],
+      'text-anchor': 'top',
+      'text-max-width': 14,
+    },
+    paint: { 'text-color': '#14532d', 'text-halo-color': '#ffffff', 'text-halo-width': 1.6 },
+  })
+  map.addLayer({
     id: 'am-sites',
     type: 'circle',
     source: 'am-sites',
@@ -362,6 +446,20 @@ watch(
   () => refresh(),
 )
 watch(
+  () => [props.siteRoutes, props.focusSiteId],
+  () => {
+    refresh()
+    animateSiteRoutes()
+    fitToSite()
+  },
+)
+watch(
+  () => props.view,
+  (view) => {
+    if (view !== 'recommended') fitAll()
+  },
+)
+watch(
   () => [props.selectedIslandId, props.destinations],
   () => {
     refresh()
@@ -370,6 +468,7 @@ watch(
 )
 
 onBeforeUnmount(() => {
+  cancelAnimationFrame(animationFrame)
   popup.remove()
   map?.remove()
   map = null

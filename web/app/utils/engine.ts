@@ -62,6 +62,20 @@ export interface MultimodalEngine {
       dayOfWeek?: string
     },
   ) => TravelMatrix
+  /** Earliest journey between two specific islands (optional). */
+  planIslandToIsland?: (
+    network: MultimodalNetwork,
+    request: {
+      fromIslandId: string
+      toIslandId: string
+      departureMinute: number
+      allowedModes?: TravelMode[]
+      disabledRouteIds?: string[]
+      disabledServiceIds?: string[]
+      dayOfWeek?: string
+      allowNextDay?: boolean
+    },
+  ) => Journey | null
   recommendSites?: (
     network: MultimodalNetwork,
     matrix: TravelMatrix,

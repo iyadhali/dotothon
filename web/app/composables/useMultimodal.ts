@@ -188,6 +188,21 @@ const ACCESS_REPORT_OVERNIGHT_MVR = 950
 
 export type MapView = 'access' | 'underserved' | 'recommended'
 export type FacilityType = 'all' | 'health' | 'education'
+export interface SiteRoute {
+  originId: string
+  originName: string
+  journey: Journey | null
+  /** Travel time to the new site. */
+  minutes: number | null
+  /** Travel time to the nearest existing facility before (null when not reachable). */
+  beforeMinutes: number | null
+  beforeStatus: OriginAccessStatus | null
+}
+export interface SiteRoutes {
+  rank: number
+  siteId: string
+  routes: SiteRoute[]
+}
 export interface ImpactStep {
   label: string
   reachable: number
@@ -230,6 +245,8 @@ export function useMultimodal() {
   /** Fare rules: adult resident, 65+/disabled, student or approved emergency. */
   const traveller = ref<Traveller>('adult')
   const siting = shallowRef<SitingResult | null>(null)
+  /** For each recommended site: the journey from every newly covered island, before vs after. */
+  const sitingRoutes = shallowRef<SiteRoutes[]>([])
   /** What each mode adds: residents reaching the category by road only, + sea, + air. */
   const impact = shallowRef<ImpactStep[]>([])
   const sitingError = ref<string | null>(null)
@@ -875,6 +892,7 @@ export function useMultimodal() {
     const active = activeNetwork.value
     if (mapView.value !== 'recommended' || !engine?.buildTravelMatrix || !engine.recommendSites || !active || !category.value) {
       siting.value = null
+      sitingRoutes.value = []
       return
     }
     try {
@@ -891,6 +909,32 @@ export function useMultimodal() {
         thresholdMinutes: threshold.value,
         picks: 5,
       })
+      sitingRoutes.value = engine.planIslandToIsland
+        ? siting.value.sites.map((site) => ({
+            rank: site.rank,
+            siteId: site.islandId,
+            routes: site.newlyCoveredIslandIds.map((originId) => {
+              const journey = engine.planIslandToIsland!(active, {
+                fromIslandId: originId,
+                toIslandId: site.islandId,
+                departureMinute: departureMinute.value,
+                allowedModes: allowedModes.value,
+                disabledRouteIds: disabledRouteIds.value,
+                disabledServiceIds: evidenceDisabledServiceIds.value,
+                dayOfWeek: dayOfWeek.value,
+              })
+              const before = displayAccessibility.value?.perOrigin[originId]
+              return {
+                originId,
+                originName: active.islands.find((island) => island.id === originId)?.name ?? originId,
+                journey,
+                minutes: journey?.elapsedMinutes ?? null,
+                beforeMinutes: before?.status === 'reachable' ? (before.journey?.elapsedMinutes ?? null) : null,
+                beforeStatus: before?.status ?? null,
+              }
+            }),
+          }))
+        : []
       sitingError.value = null
     } catch (error) {
       siting.value = null
@@ -1514,6 +1558,7 @@ export function useMultimodal() {
     // map stories
     mapView,
     impact,
+    sitingRoutes,
     facilityType,
     dayOfWeek,
     evidenceLayers,

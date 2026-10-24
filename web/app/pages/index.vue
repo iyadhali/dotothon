@@ -28,7 +28,52 @@ const {
   evidenceLayers,
   traveller,
   impact,
+  sitingRoutes,
 } = store
+
+/** Where-to-build: the proposed site in focus (null = all five). */
+const focusRank = ref<number | null>(null)
+watch(siting, () => {
+  // Deep link: ?view=recommended&site=2 opens with that site in focus.
+  const site = import.meta.client ? Number(new URLSearchParams(window.location.search).get('site')) : NaN
+  focusRank.value = Number.isInteger(site) && site > 0 && focusRank.value === null ? site : null
+})
+
+const focusSite = computed(() => siting.value?.sites.find((site) => site.rank === focusRank.value) ?? null)
+const shownSiteRoutes = computed(() =>
+  sitingRoutes.value.filter((site) => focusRank.value === null || site.rank === focusRank.value),
+)
+
+const siteRoutePaths = computed(() => {
+  const net = network.value
+  if (!net || mapView.value !== 'recommended') return []
+  return shownSiteRoutes.value.flatMap((site) =>
+    site.routes.flatMap((route) =>
+      route.journey ? journeyPaths(net, route.journey).filter((path) => path.mode !== 'walk').map((path) => ({ rank: site.rank, mode: path.mode, points: path.points })) : [],
+    ),
+  )
+})
+
+function beforeText(route: { beforeMinutes: number | null; beforeStatus: string | null }): string {
+  if (route.beforeMinutes !== null) return formatDuration(route.beforeMinutes)
+  return route.beforeStatus === 'no_origin_access' ? 'no transport data' : 'no same-day trip'
+}
+
+const siteLabels = computed<Destination[]>(() => {
+  const net = network.value
+  if (!net || focusRank.value === null) return []
+  return shownSiteRoutes.value.flatMap((site) =>
+    site.routes.flatMap((route) => {
+      const island = net.islands.find((candidate) => candidate.id === route.originId)
+      if (!island || route.minutes === null) return []
+      return [{ islandId: island.id, lon: island.lon, lat: island.lat, label: `${island.name}\n${beforeText(route)} → ${formatDuration(route.minutes)}` }]
+    }),
+  )
+})
+
+function toggleSite(rank: number): void {
+  focusRank.value = focusRank.value === rank ? null : rank
+}
 
 const impactMax = computed(() => Math.max(1, ...impact.value.map((step) => step.atollTotal)))
 const pct = (value: number, total: number) => (total > 0 ? `${Math.round((100 * value) / total)}%` : '—')
@@ -353,6 +398,9 @@ function homeText(destination: DestinationAccess): string {
           :view="mapView"
           :underserved="underservedClasses"
           :sites="siting?.sites ?? []"
+          :site-routes="siteRoutePaths"
+          :site-labels="siteLabels"
+          :focus-site-id="focusSite?.islandId ?? null"
           @select="select"
         />
         <MinimalMap
@@ -367,6 +415,9 @@ function homeText(destination: DestinationAccess): string {
           :view="mapView"
           :underserved="underservedClasses"
           :sites="siting?.sites ?? []"
+          :site-routes="siteRoutePaths"
+          :site-labels="siteLabels"
+          :focus-site-id="focusSite?.islandId ?? null"
           @select="select"
           @fallback="(reason) => (mapFailed = reason)"
         />
@@ -501,12 +552,23 @@ function homeText(destination: DestinationAccess): string {
           </div>
         </div>
         <ol v-if="siting" class="am-sites">
-          <li v-for="site in siting.sites" :key="site.islandId">
-            <span class="am-rank">{{ site.rank }}</span>
-            <span class="am-site__name">{{ site.name }}<small>{{ site.atollName }}</small></span>
-            <span class="am-site__gain">+{{ formatPopulation(site.gainPopulation) }}</span>
+          <li v-for="site in siting.sites" :key="site.islandId" :class="{ 'is-focus': focusRank === site.rank }">
+            <button type="button" class="am-site__btn" :aria-pressed="focusRank === site.rank" @click="toggleSite(site.rank)">
+              <span class="am-rank">{{ site.rank }}</span>
+              <span class="am-site__name">{{ site.name }}<small>{{ site.atollName }} · {{ site.newlyCoveredIslandIds.length }} island{{ site.newlyCoveredIslandIds.length === 1 ? '' : 's' }}</small></span>
+              <span class="am-site__gain">+{{ formatPopulation(site.gainPopulation) }}</span>
+            </button>
+            <ul v-if="focusRank === site.rank" class="am-site__routes">
+              <li v-for="route in sitingRoutes.find((s) => s.rank === site.rank)?.routes ?? []" :key="route.originId">
+                <span>{{ route.originName }}</span>
+                <span class="am-site__change">
+                  <s>{{ beforeText(route) }}</s> → <b>{{ route.minutes !== null ? formatDuration(route.minutes) : '—' }}</b>
+                </span>
+              </li>
+            </ul>
           </li>
         </ol>
+        <p v-if="siting && focusRank === null" class="am-muted">Click a site to fly to it and see each island's new journey.</p>
         <p v-if="siting" class="am-foot">
           {{ formatPopulation(siting.coveredBefore) }} →
           {{ formatPopulation(siting.sites.at(-1)?.coveredAfter ?? siting.coveredBefore) }} residents within
@@ -961,13 +1023,51 @@ function homeText(destination: DestinationAccess): string {
   font-size: 11px;
   color: var(--am-muted);
 }
-.am-sites li {
+.am-sites > li {
+  border-bottom: 1px solid var(--am-line);
+}
+.am-sites > li.is-focus {
+  background: #f0fdf4;
+}
+.am-site__btn {
+  width: 100%;
   display: grid;
   grid-template-columns: 26px 1fr auto;
   align-items: center;
   gap: 10px;
   padding: 9px 16px;
-  border-bottom: 1px solid var(--am-line);
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.am-site__btn:hover {
+  background: #f8fafc;
+}
+.am-site__routes {
+  list-style: none;
+  margin: 0;
+  padding: 0 16px 10px 52px;
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+}
+.am-site__routes li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.am-site__change {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.am-site__change s {
+  color: var(--am-muted);
+}
+.am-site__change b {
+  color: #15803d;
 }
 .am-rank {
   width: 22px;

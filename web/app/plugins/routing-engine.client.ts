@@ -3,6 +3,7 @@ import {
   computeAccessibility,
   createServiceFromPattern,
   planJourney,
+  planIslandToIsland,
   planJourneyWithStatus,
 } from '../../shared/routing/router'
 import { buildAccessReport } from '../../shared/routing/nearby'
@@ -23,5 +24,6 @@ export default defineNuxtPlugin(() => {
     buildAccessReport,
     buildTravelMatrix,
     recommendSites,
+    planIslandToIsland,
   })
 })

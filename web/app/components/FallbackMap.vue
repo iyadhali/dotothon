@@ -19,6 +19,9 @@ const props = defineProps<{
   view: 'access' | 'underserved' | 'recommended'
   underserved: Record<string, string>
   sites: { rank: number; islandId: string; newlyCoveredIslandIds: string[] }[]
+  siteRoutes: { rank: number; mode: string; points: [number, number][] }[]
+  siteLabels: Destination[]
+  focusSiteId: string | null
 }>()
 
 const emit = defineEmits<{ select: [islandId: string | null] }>()
@@ -142,6 +145,21 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
       />
     </template>
     <template v-if="view === 'recommended'">
+      <g :key="`routes-${focusSiteId ?? 'all'}-${siteRoutes.length}`">
+        <path
+          v-for="(route, index) in siteRoutes"
+          :key="`sr-${index}`"
+          :d="path(route.points)"
+          pathLength="1"
+          class="am-fallback__site-route"
+          :style="{ animationDelay: `${(index % 12) * 60}ms` }"
+        />
+      </g>
+      <g v-for="label in siteLabels" :key="`sl-${label.islandId}`">
+        <text :x="project(label.lon, label.lat)[0] + 8" :y="project(label.lon, label.lat)[1] + 16" class="am-fallback__site-label">
+          {{ label.label.replace('\n', ' · ') }}
+        </text>
+      </g>
       <g v-for="site in sites" :key="`s-${site.islandId}`">
         <template v-if="byId.get(site.islandId)">
           <circle :cx="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[0]" :cy="project(byId.get(site.islandId)!.lon, byId.get(site.islandId)!.lat)[1]" r="11" fill="#0f172a" stroke="#ffffff" stroke-width="2" />
@@ -166,6 +184,28 @@ const focused = computed(() => props.view === 'access' && props.selectedIslandId
 .am-fallback__label {
   font: 600 13px Inter, ui-sans-serif, system-ui, sans-serif;
   fill: #0f172a;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+}
+.am-fallback__site-route {
+  fill: none;
+  stroke: #16a34a;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 4px rgba(22, 163, 74, 0.55));
+  animation: am-draw 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes am-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.am-fallback__site-label {
+  font: 600 12px Inter, ui-sans-serif, system-ui, sans-serif;
+  fill: #14532d;
   paint-order: stroke;
   stroke: #ffffff;
   stroke-width: 3px;

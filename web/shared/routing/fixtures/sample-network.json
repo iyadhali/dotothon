@@ -1,0 +1,575 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-10-24T00:00:00+05:00",
+    "timezone": "Indian/Maldives",
+    "referenceDay": "2026-10-10",
+    "serviceDayAssumption": "FIXTURE ONLY. All recorded RTL trips are treated as operating on the reference day; calendars are unverified.",
+    "population": {
+      "origins": 214669,
+      "republic2022": 515132,
+      "originCount": 8,
+      "note": "Fixture population, not the real origin scope."
+    },
+    "assumptions": [
+      {
+        "id": "walk_speed",
+        "value": "4.5 km/h",
+        "confidence": "assumption",
+        "source": "research/03_transport_network_and_methods.md"
+      },
+      {
+        "id": "ferry_board",
+        "value": "15 min",
+        "confidence": "assumption",
+        "source": "research/03_transport_network_and_methods.md"
+      },
+      {
+        "id": "air_board",
+        "value": "45 min outer, 60 min MLE",
+        "confidence": "assumption",
+        "source": "research/03_transport_network_and_methods.md"
+      }
+    ],
+    "counts": {
+      "islands": 8,
+      "origins": 8,
+      "stops": 3,
+      "airports": 2,
+      "ferryTrips": 2,
+      "airServices": 2,
+      "facilities": 5,
+      "categories": 6
+    },
+    "routingDefaults": {
+      "ferryBoardMinutes": 15,
+      "ferryAlightMinutes": 2,
+      "airBoardMinutes": 45,
+      "airBoardMinutesMle": 60,
+      "airAlightMinutes": 15,
+      "transferPenaltyMinutes": 10,
+      "additionalBoardPenaltyMinutes": 5,
+      "maxJourneyMinutes": 1440
+    },
+    "coverageNotes": [
+      "Fixture network for router and UI development; no real-world claims."
+    ]
+  },
+  "islands": [
+    {
+      "id": "MV007006",
+      "name": "Dharavandhoo",
+      "atoll": "B",
+      "atollName": "Baa",
+      "lat": 5.156763,
+      "lon": 73.131534,
+      "population": 997,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": "DRV"
+    },
+    {
+      "id": "MV007007",
+      "name": "Maalhos",
+      "atoll": "B",
+      "atollName": "Baa",
+      "lat": 5.134748,
+      "lon": 73.107786,
+      "population": 572,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": null
+    },
+    {
+      "id": "MV007008",
+      "name": "Eydhafushi",
+      "atoll": "B",
+      "atollName": "Baa",
+      "lat": 5.102709,
+      "lon": 73.070265,
+      "population": 2581,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": null
+    },
+    {
+      "id": "MV021001",
+      "name": "Maale",
+      "atoll": "MLE",
+      "atollName": "Male",
+      "lat": 4.174686,
+      "lon": 73.51017,
+      "population": 137238,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": null
+    },
+    {
+      "id": "MV021002",
+      "name": "Vilin'gili",
+      "atoll": "MLE",
+      "atollName": "Male",
+      "lat": 4.173538,
+      "lon": 73.48482,
+      "population": 6755,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": null
+    },
+    {
+      "id": "MV021003",
+      "name": "Hulhumaale",
+      "atoll": "MLE",
+      "atollName": "Male",
+      "lat": 4.221028,
+      "lon": 73.542532,
+      "population": 65714,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": null
+    },
+    {
+      "id": "MV009052",
+      "name": "Hulhule",
+      "atoll": "K",
+      "atollName": "Kaafu",
+      "lat": 4.197097,
+      "lon": 73.52994,
+      "population": 802,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": "MLE"
+    },
+    {
+      "id": "MV007999",
+      "name": "Test Islet",
+      "atoll": "B",
+      "atollName": "Baa",
+      "lat": 5.0,
+      "lon": 73.0,
+      "population": 10,
+      "status": "inhabited",
+      "isOrigin": true,
+      "airportIata": null
+    }
+  ],
+  "stops": [
+    {
+      "id": "207",
+      "code": "207",
+      "name": "B.Dharavandhoo",
+      "islandId": "MV007006",
+      "lat": 5.159260786,
+      "lon": 73.1340855,
+      "scheduled": true
+    },
+    {
+      "id": "208",
+      "code": "208",
+      "name": "B.Maalhos",
+      "islandId": "MV007007",
+      "lat": 5.134668358,
+      "lon": 73.10516218,
+      "scheduled": true
+    },
+    {
+      "id": "209",
+      "code": "209",
+      "name": "B.Eydhafushi",
+      "islandId": "MV007008",
+      "lat": 5.104212748,
+      "lon": 73.07224655,
+      "scheduled": true
+    }
+  ],
+  "airports": [
+    {
+      "id": "MLE",
+      "iata": "MLE",
+      "name": "Velana International Airport",
+      "islandId": "MV009052",
+      "lat": 4.19183,
+      "lon": 73.529099
+    },
+    {
+      "id": "DRV",
+      "iata": "DRV",
+      "name": "Dharavandhoo Airport",
+      "islandId": "MV007006",
+      "lat": 5.1561,
+      "lon": 73.1302
+    }
+  ],
+  "accessEdges": [
+    {
+      "from": "island:MV007006",
+      "to": "stop:207",
+      "mode": "walk",
+      "minutes": 2,
+      "confidence": "estimated_access",
+      "basis": "fixture access",
+      "distanceKm": 0.3
+    },
+    {
+      "from": "island:MV007007",
+      "to": "stop:208",
+      "mode": "walk",
+      "minutes": 2,
+      "confidence": "estimated_access",
+      "basis": "fixture access",
+      "distanceKm": 0.3
+    },
+    {
+      "from": "island:MV007008",
+      "to": "stop:209",
+      "mode": "walk",
+      "minutes": 2,
+      "confidence": "estimated_access",
+      "basis": "fixture access",
+      "distanceKm": 0.3
+    },
+    {
+      "from": "island:MV007006",
+      "to": "airport:DRV",
+      "mode": "walk",
+      "minutes": 5,
+      "confidence": "estimated_access",
+      "basis": "fixture access",
+      "distanceKm": 0.7
+    },
+    {
+      "from": "island:MV009052",
+      "to": "airport:MLE",
+      "mode": "walk",
+      "minutes": 2,
+      "confidence": "estimated_access",
+      "basis": "fixture access",
+      "distanceKm": 0.3
+    },
+    {
+      "from": "island:MV021001",
+      "to": "island:MV009052",
+      "mode": "road",
+      "minutes": 15,
+      "confidence": "estimated_access",
+      "basis": "Sinamale Bridge, fixture road time",
+      "distanceKm": 3.0
+    },
+    {
+      "from": "island:MV021003",
+      "to": "island:MV009052",
+      "mode": "road",
+      "minutes": 10,
+      "confidence": "estimated_access",
+      "basis": "Hulhule-Hulhumale road, fixture road time",
+      "distanceKm": 2.0
+    }
+  ],
+  "services": [
+    {
+      "id": "ferry:259:1",
+      "kind": "timetabled",
+      "mode": "ferry",
+      "operator": "RTL",
+      "routeId": "259",
+      "routeCode": "Z2R18",
+      "zone": "Zone 2",
+      "confidence": "verified_timetable",
+      "calendar": "reference_day_all_recorded_trips",
+      "source": "fixture (mirrors data/team-kandu/rtl_trips.csv route 259)",
+      "stops": [
+        {
+          "stopId": "207",
+          "name": "B.Dharavandhoo",
+          "sequence": 1,
+          "arrival": 905,
+          "departure": 905
+        },
+        {
+          "stopId": "208",
+          "name": "B.Maalhos",
+          "sequence": 2,
+          "arrival": 915,
+          "departure": 915
+        },
+        {
+          "stopId": "209",
+          "name": "B.Eydhafushi",
+          "sequence": 3,
+          "arrival": 930,
+          "departure": 930
+        }
+      ]
+    },
+    {
+      "id": "fixture:ferry:reverse",
+      "kind": "timetabled",
+      "mode": "ferry",
+      "operator": "FIXTURE",
+      "routeId": "259R",
+      "routeCode": "Z2R18R",
+      "zone": "Zone 2",
+      "confidence": "verified_timetable",
+      "calendar": "reference_day_all_recorded_trips",
+      "source": "fixture only: synthetic reverse trip for last-departure tests",
+      "stops": [
+        {
+          "stopId": "209",
+          "name": "B.Eydhafushi",
+          "sequence": 1,
+          "arrival": 960,
+          "departure": 960
+        },
+        {
+          "stopId": "208",
+          "name": "B.Maalhos",
+          "sequence": 2,
+          "arrival": 975,
+          "departure": 975
+        },
+        {
+          "stopId": "207",
+          "name": "B.Dharavandhoo",
+          "sequence": 3,
+          "arrival": 990,
+          "departure": 990
+        }
+      ]
+    },
+    {
+      "id": "air:MLE-DRV",
+      "kind": "frequency",
+      "mode": "air",
+      "fromNode": "airport:MLE",
+      "toNode": "airport:DRV",
+      "fromAirport": "MLE",
+      "toAirport": "DRV",
+      "airline": "Maldivian",
+      "weeklyFrequency": 14,
+      "departuresPerDay": 2,
+      "operatingWindow": {
+        "start": 360,
+        "end": 1080
+      },
+      "blockMinutes": 40,
+      "departures": [
+        480,
+        720
+      ],
+      "confidence": "estimated_frequency",
+      "status": "operating (fixture)",
+      "source": "fixture"
+    },
+    {
+      "id": "air:DRV-MLE",
+      "kind": "frequency",
+      "mode": "air",
+      "fromNode": "airport:DRV",
+      "toNode": "airport:MLE",
+      "fromAirport": "DRV",
+      "toAirport": "MLE",
+      "airline": "Maldivian",
+      "weeklyFrequency": 14,
+      "departuresPerDay": 2,
+      "operatingWindow": {
+        "start": 360,
+        "end": 1080
+      },
+      "blockMinutes": 40,
+      "departures": [
+        510,
+        750
+      ],
+      "confidence": "estimated_frequency",
+      "status": "operating (fixture)",
+      "source": "fixture"
+    },
+    {
+      "id": "frequency:ferry:male-villimale",
+      "kind": "frequency",
+      "mode": "ferry",
+      "fromNode": "island:MV021001",
+      "toNode": "island:MV021002",
+      "weeklyFrequency": 98,
+      "departuresPerDay": 14,
+      "operatingWindow": {
+        "start": 360,
+        "end": 1320
+      },
+      "blockMinutes": 7,
+      "departures": [
+        420,
+        435,
+        450,
+        465,
+        480,
+        495,
+        510,
+        525,
+        540,
+        555,
+        570,
+        585,
+        600,
+        615
+      ],
+      "confidence": "estimated_frequency",
+      "status": "published frequent ferry (fixture)",
+      "source": "fixture"
+    },
+    {
+      "id": "frequency:ferry:villimale-male",
+      "kind": "frequency",
+      "mode": "ferry",
+      "fromNode": "island:MV021002",
+      "toNode": "island:MV021001",
+      "weeklyFrequency": 98,
+      "departuresPerDay": 14,
+      "operatingWindow": {
+        "start": 360,
+        "end": 1320
+      },
+      "blockMinutes": 7,
+      "departures": [
+        420,
+        435,
+        450,
+        465,
+        480,
+        495,
+        510,
+        525,
+        540,
+        555,
+        570,
+        585,
+        600,
+        615
+      ],
+      "confidence": "estimated_frequency",
+      "status": "published frequent ferry (fixture)",
+      "source": "fixture"
+    }
+  ],
+  "facilities": [
+    {
+      "id": "health:fixture:baa-atoll-hospital",
+      "name": "Baa Atoll Hospital (fixture)",
+      "islandId": "MV007008",
+      "kind": "health",
+      "categories": [
+        "health_any",
+        "health_hospital"
+      ],
+      "tier": "3_atoll_hospital",
+      "precision": "island",
+      "source": "fixture",
+      "reviewed": true
+    },
+    {
+      "id": "health:fixture:drv-health-centre",
+      "name": "Dharavandhoo Health Centre (fixture)",
+      "islandId": "MV007006",
+      "kind": "health",
+      "categories": [
+        "health_any"
+      ],
+      "tier": "4_health_centre",
+      "precision": "island",
+      "source": "fixture",
+      "reviewed": true
+    },
+    {
+      "id": "health:fixture:igmh",
+      "name": "Indira Gandhi Memorial Hospital (fixture)",
+      "islandId": "MV021001",
+      "kind": "health",
+      "categories": [
+        "health_any",
+        "health_hospital",
+        "health_regional_tertiary"
+      ],
+      "tier": "1_tertiary",
+      "precision": "island",
+      "source": "fixture",
+      "reviewed": true
+    },
+    {
+      "id": "edu:fixture:baa-school",
+      "name": "Baa Eydhafushi School (fixture)",
+      "islandId": "MV007008",
+      "kind": "education",
+      "categories": [
+        "education_school",
+        "education_grade_11_12"
+      ],
+      "type": "school",
+      "precision": "island",
+      "source": "fixture",
+      "reviewed": true
+    },
+    {
+      "id": "edu:fixture:mnu-male",
+      "name": "MNU Male Campus (fixture)",
+      "islandId": "MV021001",
+      "kind": "education",
+      "categories": [
+        "education_higher_ed"
+      ],
+      "type": "university campus",
+      "precision": "island",
+      "source": "fixture",
+      "reviewed": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "health_any",
+      "label": "Any public health facility",
+      "definition": "fixture",
+      "facilityCount": 3,
+      "islandCount": 3,
+      "confidenceNote": "Island-level location only."
+    },
+    {
+      "id": "health_hospital",
+      "label": "Hospitals (atoll, regional, tertiary)",
+      "definition": "fixture",
+      "facilityCount": 2,
+      "islandCount": 2,
+      "confidenceNote": "Island-level location only."
+    },
+    {
+      "id": "health_regional_tertiary",
+      "label": "Regional and tertiary hospitals",
+      "definition": "fixture",
+      "facilityCount": 1,
+      "islandCount": 1,
+      "confidenceNote": "Island-level location only."
+    },
+    {
+      "id": "education_school",
+      "label": "Schools",
+      "definition": "fixture",
+      "facilityCount": 1,
+      "islandCount": 1,
+      "confidenceNote": "Island-level location only."
+    },
+    {
+      "id": "education_grade_11_12",
+      "label": "Schools teaching grades 11\u201312",
+      "definition": "fixture",
+      "facilityCount": 1,
+      "islandCount": 1,
+      "confidenceNote": "Island-level location only."
+    },
+    {
+      "id": "education_higher_ed",
+      "label": "Higher-education campuses",
+      "definition": "fixture",
+      "facilityCount": 1,
+      "islandCount": 1,
+      "confidenceNote": "Island-level location only."
+    }
+  ]
+}

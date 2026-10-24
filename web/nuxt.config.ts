@@ -1,7 +1,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-24',
   modules: ['@nuxt/ui'],
-  css: ['~/assets/css/main.css', 'mapbox-gl/dist/mapbox-gl.css'],
+  css: [
+    '~/assets/css/main.css',
+    'mapbox-gl/dist/mapbox-gl.css',
+    '~/assets/css/multimodal.css',
+  ],
   devtools: { enabled: false },
   ui: { fonts: false, colorMode: false },
   icon: { serverBundle: { collections: ['lucide'] } },
@@ -13,8 +17,15 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Maldives Mobility — Starter',
-      meta: [{ name: 'description', content: 'Nuxt, Nuxt UI and Mapbox starter for a Maldives facilities map and transport simulator.' }],
+      title: 'Island Access Atlas — Maldives multimodal accessibility',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Reference-day access to health and education facilities across the Maldives: verified ferry timetables, estimated air frequencies and explicit coverage limits.',
+        },
+        { name: 'theme-color', content: '#faf9f5' },
+      ],
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
       htmlAttrs: { lang: 'en' },
     },

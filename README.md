@@ -8,19 +8,61 @@ Global accessibility datasets such as HeiGIT/HDX route by car only. For the Mald
 
 See [`MULTI_MODAL_ACCESSIBILITY_PLAN.md`](MULTI_MODAL_ACCESSIBILITY_PLAN.md) for the full plan.
 
+A working prototype implements the first slice of that plan: a reference-day ferry
+timetable, an estimated domestic-air layer, island access links, 48 destination
+categories (health, education and 42 intervention services), a timetable-aware router,
+selectable land/sea/air modes and specific routes, intervention coverage, an
+add-facility / add-route / add-trip / cancel / delay simulator, an HDX land-only
+benchmark panel, and a QGIS export. See [`VALIDATION.md`](VALIDATION.md) for checks,
+numbers and limitations, and [`MULTIMODAL_IMPLEMENTATION.md`](MULTIMODAL_IMPLEMENTATION.md)
+for the build contract.
+
 ---
 
 ## Approach
 
 1. **Nodes:** 191 inhabited islands (Census 2022 population) plus airports, harbours and facility islands.
 2. **Edges:**
-   - **Sea:** RTL fast-ferry timetable (149 stops, 102 daily trips), with travel speeds measured from FollowMe boat GPS (about 110k trips; speedboats around 43 km/h, slow boats around 13 km/h).
-   - **Air:** 20 operating airports and 40 domestic routes, with flight times and weekly frequencies.
-   - **Land:** Greater Malé road times (Avas ride data: about 85 s per km + 71 s), plus the Addu and Laamu link roads.
-   - **Transfers:** waiting time of half the interval between departures, plus boarding and check-in time.
-3. **Destinations:** schools by highest grade taught (only 44 of 184 atoll islands teach grades 11–12), higher-education campuses, and health facilities by level of care and specialty.
-4. **Outputs:** travel time and cost to the nearest service for each island, population beyond time thresholds, which travel modes reach which islands, and capacity-weighted access (2SFCA, which scores access against facility capacity).
-5. **Economics:** generalized cost (fare + value of time + overnight stays), affordability as a share of income, and scenario testing for new routes or clinics.
+   - **Sea:** RTL fast-ferry snapshot (149 recorded stops, of which 117 have a scheduled trip; 102 trips), with travel speeds measured from FollowMe boat GPS (about 110k trips; speedboats around 43 km/h, slow boats around 13 km/h).
+   - **Air:** 20 operating airports; 31 operating airport pairs from the 40-row estimated domestic-route table, with block times and weekly frequencies.
+   - **Land:** prototype access is walking at 4.5 km/h with a 1.25 detour factor, local transport at 25 km/h beyond 1.5 km, and explicit Addu/Laamu/Sinamalé road links at 40 km/h. Avas ride data informs future urban calibration.
+   - **Transfers:** waiting comes from the next recorded departure, not half the interval, because these services are infrequent; boarding/check-in buffers are explicit (ferry 15 min, domestic air 45 min, 60 min at Velana).
+3. **Destinations:** schools by highest grade taught (only 44 of 184 atoll islands teach grades 11–12), higher-education campuses, health facilities by level of care, and 42 diagnostic/specialist/dental intervention categories. The prototype serves 945 facilities (501 base facilities + 444 facilities with intervention claims) across 48 categories.
+4. **Outputs implemented:** travel time to the nearest listed facility or intervention provider for each island, population within 60/120/240 minutes, reachable/unreachable/no-access/not-selected states, mode/confidence breakdowns, selectable land/sea/air modes and routes, service/facility simulator deltas, and an HDX land-only comparison. Cost, 2SFCA capacity weighting and demand modelling remain planned.
+5. **Economics (planned):** generalized cost (fare + value of time + overnight stays), affordability as a share of income, and scenario testing for new routes or clinics.
+
+## Working prototype
+
+The prototype is served from prepared static artifacts, so no database or live
+operator feed is needed. It runs on Node 24+ locally (the package declares Node 24+
+and CI uses Node 24; Node 22 also runs with an engine warning).
+
+```bash
+cd web
+npm install
+npm run dev          # http://127.0.0.1:3000
+```
+
+No Mapbox token is required: without `NUXT_PUBLIC_MAPBOX_TOKEN` the app renders a
+functional schematic map from `islands.geojson`. With a token it uses the Mapbox
+polygon choropleth and the same data. Prepared artifacts:
+
+- `web/public/data/multimodal.json` — 200 islands, 191 origins, 117 ferry stops,
+  102 ferry trips, 20 airports, 62 estimated air services, 153 access edges,
+  945 facilities, 48 categories; 1,120,880 B.
+- `web/public/data/islands.geojson` — island polygons for the map.
+- `web/public/data/heigit-baseline.json` — HDX/HeiGIT land-only benchmark (34 national
+  and 43 unit rows), shown separately and never merged.
+- `web/public/data/qgis/` — QGIS GeoJSON + QML export and landing page.
+- `data/processed/multimodal/report.json` — join counts, exclusions, intervention
+  reconciliation, coverage notes and every assumption.
+
+Headline result at 08:00 on the reference day, hospital tier 1–3, all modelled modes:
+**327,354 of 447,420 residents (73.2%)** can reach the nearest listed hospital;
+land + sea without air is **322,715 (72.1%)**, and land-only is **297,008 (66.4%)**.
+At 06:00 the land+sea figure is 83.5%, which shows how strongly the result depends on
+the departure time. These are physical access to a listed facility's island, not
+confirmed service availability. See [`VALIDATION.md`](VALIDATION.md).
 
 ## Repository layout
 
@@ -34,7 +76,7 @@ See [`MULTI_MODAL_ACCESSIBILITY_PLAN.md`](MULTI_MODAL_ACCESSIBILITY_PLAN.md) for
 | `data/MACL`, `MTCC`, `Avas_Ride`, `FollowMe` | Official datathon datasets ([MBS release v1.0](https://github.com/mbs-datathon/maldives-datathon-2026-datasets/releases/tag/v1.0)). The large FollowMe CSVs are not versioned; download them from the release |
 | `data/team-kandu/` | Team-shared RTL ferry and bus timetables and yearbook tables (from the MBS datasets repo) |
 | `data/hdx-heigit-access/` | HeiGIT car-only accessibility indicators from [HDX](https://data.humdata.org/dataset/maldives-accessibility-indicators) (CC BY-SA) |
-| `web/` | Interactive map app (Nuxt + Mapbox), in progress |
+| `web/` | Working accessibility prototype (Nuxt + Vue + TypeScript + Mapbox GL JS) with a token-free schematic fallback |
 
 ## Research index
 
@@ -66,6 +108,10 @@ See [`MULTI_MODAL_ACCESSIBILITY_PLAN.md`](MULTI_MODAL_ACCESSIBILITY_PLAN.md) for
 - **Avas** trip times look like booking-time estimates rather than observed trips.
 - **FollowMe** has no vessel type, and contains GPS glitches and duplicate rows.
 - **Island names** vary between sources. Always join on atoll code + normalised island name; see `scripts/census_island_join.py`.
+- **Reference day, not a calendar.** The prototype treats all 102 recorded RTL trips as operating on 10 October 2026. The local snapshot has no weekday/exception calendar and no Kaafu/Zone 3 ferry stops.
+- **Air is an estimate.** Domestic departures are generated from weekly frequency; they are not observed schedules and are never counted as verified.
+- **Facility locations are island-level.** Results mean physical access to a listed facility's island, not confirmed opening hours, clinical services or capacity.
+- **Missing coverage is not zero access.** 67 of 191 origin islands have no fixed access edge or frequency service in the prepared network. A category-specific result can report a lower no-access count because an origin that already hosts the selected facility returns a zero-minute journey instead of "no access".
 
 ## Setup
 
@@ -79,25 +125,34 @@ python -m venv .venv
 
 Maldives Bureau of Statistics (datathon datasets, Census 2022, Statistical Yearbook) · HeiGIT/HDX (CC BY-SA) · OpenStreetMap contributors (ODbL) · HDX COD-AB · geoBoundaries · WorldPop · OurAirports (public domain) · Ministry of Health · Ministry of Education / Ministry of Higher Education · WHO GHO · World Bank WDI. Per-file sources are listed in `data/external/README.md` and in each research note.
 
-## Application boilerplate and agent tools
+## Prototype documentation and agent tools
 
-The current web deliverable is a **basic scaffold**, not an implemented transport simulator. It uses Nuxt, Vue, TypeScript, Nuxt UI and Mapbox GL JS. QGIS is optional. See [web/README.md](web/README.md) for setup, environment configuration, stack decisions and validation status.
+The web app implements the reference-day multimodal prototype, not the full
+economic/demand model. Read its setup and architecture notes in
+[web/README.md](web/README.md); the prepared-data schema and rebuild steps are in
+[data/README.md](data/README.md). QGIS remains optional and is not a runtime
+dependency.
 
-```powershell
+```bash
 cd web
-pnpm install
-Copy-Item .env.example .env
-# Set NUXT_PUBLIC_MAPBOX_TOKEN in .env
-pnpm dev
+npm install             # or: pnpm install
+cp .env.example .env    # optional Mapbox token
+npm run dev
 ```
 
-Read-only agent tools discover local datasets, inspect schemas, return bounded CSV samples and read research caveats. They can run as a dependency-free Python CLI or local MCP stdio server; see [tools/README.md](tools/README.md) and [mcp.example.json](mcp.example.json). Raw data remains local; see [data/README.md](data/README.md).
+Read-only agent tools discover local datasets, inspect schemas, return bounded CSV
+samples and read research caveats. They can run as a dependency-free Python CLI or
+local MCP stdio server; see [tools/README.md](tools/README.md) and
+[mcp.example.json](mcp.example.json). Raw data remains local; see
+[data/README.md](data/README.md).
 
-```powershell
+```bash
 python tools/data_mcp.py --call data_list_datasets
 python tools/data_mcp.py --call data_describe_dataset --dataset-id rtl_trips
 python -m unittest discover -s tools/tests -v
 ```
 
-The research describes possible future analysis. The starter does not validate or produce those analytical results; in particular, low-frequency ferry waiting should use the actual timetable where available, not automatically half the interval between departures.
+The research still describes future analysis (fares, demand, capacity, 2SFCA).
+The prototype's scope, assumptions and verified numbers are recorded in
+[VALIDATION.md](VALIDATION.md).
 

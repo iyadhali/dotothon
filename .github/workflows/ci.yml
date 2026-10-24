@@ -1,4 +1,4 @@
-name: Starter checks
+name: Prototype checks
 on:
   push:
     branches: [main]
@@ -14,18 +14,26 @@ jobs:
         with:
           python-version: '3.13'
       - run: python -m unittest discover -s tools/tests -v
+      - name: Multimodal pipeline tests
+        run: python -m unittest discover -s scripts/multimodal/tests -v
       - uses: pnpm/action-setup@v4
         with:
           version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Install starter dependencies
+      - name: Install dependencies
         working-directory: web
         run: pnpm install --no-frozen-lockfile
       - name: Type check
         working-directory: web
         run: pnpm typecheck
+      - name: Routing tests
+        working-directory: web
+        run: pnpm test:routing
+      - name: Routing checks (national summary and pilot corridor)
+        working-directory: web
+        run: pnpm check:routing
       - name: Production build
         working-directory: web
         run: pnpm build

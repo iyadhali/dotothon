@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maldives multimodal QGIS export</title>
+  <style>
+    body { margin: 2rem auto; max-width: 52rem; padding: 0 1rem; font: 16px/1.55 system-ui, sans-serif; color: #233d36; background: #faf9f5; }
+    h1 { font-family: Georgia, serif; font-weight: 500; }
+    code { background: #eee9df; padding: .1rem .3rem; border-radius: .25rem; }
+    li { margin: .45rem 0; }
+    .note { border-left: 3px solid #287c6f; padding-left: 1rem; color: #4c5c56; }
+  </style>
+</head>
+<body>
+  <h1>Maldives multimodal QGIS export</h1>
+  <p class="note">EPSG:4326. Facilities and access links are island-level, not building coordinates.
+  Ferry records are one reference day, not a full calendar; air frequencies are estimated.</p>
+  <ul>
+    <li><a href="./islands.geojson">islands.geojson</a> — 200 node islands (inhabited + airport-only)</li>
+    <li><a href="./facilities.geojson">facilities.geojson</a> — 945 facilities (501 source + 444 intervention layer)</li>
+    <li><a href="./ferry_routes.geojson">ferry_routes.geojson</a> — 102 recorded RTL trips</li>
+    <li><a href="./air_routes.geojson">air_routes.geojson</a> — 31 operating domestic airport pairs</li>
+    <li><a href="./access_edges.geojson">access_edges.geojson</a> — 153 access/link edges</li>
+    <li><a href="./access_style.qml">access_style.qml</a> — categorized line style by mode</li>
+    <li><a href="./README.md">README.md</a> — QGIS and Mapbox workflow</li>
+  </ul>
+</body>
+</html>

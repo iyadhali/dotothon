@@ -18,6 +18,7 @@ These notes support the planned Maldives facilities atlas and transport simulato
 | [09c](09c_specialist_services.md) | Specialist services |
 | [11](11_economic_models.md) | Economic modelling options |
 | [12](12_air_fares.md) | Air fares |
+| [13](13_data_opportunities_and_ml.md) | Data value audit, evidentiary findings, data traps and ML specification cards |
 
 The [multimodal data readiness plan](../MULTIMODAL_DATA_READINESS_PLAN.md) prioritizes remaining data gaps, the pilot implementation sequence and validation checks. The earlier [multi-modal accessibility plan](../MULTI_MODAL_ACCESSIBILITY_PLAN.md) remains available. Both describe proposed work; the current implemented web scope is only the [basic Nuxt/Mapbox starter](../web/README.md).
 

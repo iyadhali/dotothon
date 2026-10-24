@@ -1,0 +1,471 @@
+{
+  "source": "HeiGIT accessibility indicators, Maldives baseline (data/processed/heigit)",
+  "method": "Values copied directly from the HeiGIT headline (national) and unit summary tables; no interpolation or re-estimation.",
+  "warning": "Baseline context only. Population shares describe modelled access within a distance or travel-time threshold; they are not observed journeys and should not be used as demand or service-quality measurements.",
+  "national": [
+    {
+      "category": "education",
+      "threshold": "5 km",
+      "share": 46.92,
+      "population": 207761
+    },
+    {
+      "category": "education",
+      "threshold": "10 km",
+      "share": 47.57,
+      "population": 210601
+    },
+    {
+      "category": "education",
+      "threshold": "15 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "education",
+      "threshold": "20 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "education",
+      "threshold": "25 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "education",
+      "threshold": "30 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "education",
+      "threshold": "35 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "education",
+      "threshold": "40 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "education",
+      "threshold": "45 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "education",
+      "threshold": "50 km",
+      "share": 47.87,
+      "population": 211946
+    },
+    {
+      "category": "hospitals",
+      "threshold": "10 min",
+      "share": 45.24,
+      "population": 200318
+    },
+    {
+      "category": "hospitals",
+      "threshold": "20 min",
+      "share": 45.37,
+      "population": 200901
+    },
+    {
+      "category": "hospitals",
+      "threshold": "30 min",
+      "share": 45.39,
+      "population": 200960
+    },
+    {
+      "category": "hospitals",
+      "threshold": "40 min",
+      "share": 45.66,
+      "population": 202182
+    },
+    {
+      "category": "hospitals",
+      "threshold": "50 min",
+      "share": 45.69,
+      "population": 202316
+    },
+    {
+      "category": "hospitals",
+      "threshold": "60 min",
+      "share": 45.76,
+      "population": 202609
+    },
+    {
+      "category": "hospitals",
+      "threshold": "70 min",
+      "share": 45.8,
+      "population": 202775
+    },
+    {
+      "category": "hospitals",
+      "threshold": "80 min",
+      "share": 45.82,
+      "population": 202857
+    },
+    {
+      "category": "hospitals",
+      "threshold": "90 min",
+      "share": 45.87,
+      "population": 203091
+    },
+    {
+      "category": "hospitals",
+      "threshold": "100 min",
+      "share": 45.88,
+      "population": 203140
+    },
+    {
+      "category": "hospitals",
+      "threshold": "110 min",
+      "share": 45.88,
+      "population": 203152
+    },
+    {
+      "category": "hospitals",
+      "threshold": "120 min",
+      "share": 45.89,
+      "population": 203183
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "10 min",
+      "share": 38.51,
+      "population": 170485
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "20 min",
+      "share": 38.51,
+      "population": 170518
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "30 min",
+      "share": 38.52,
+      "population": 170537
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "40 min",
+      "share": 38.68,
+      "population": 171278
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "50 min",
+      "share": 38.71,
+      "population": 171387
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "60 min",
+      "share": 38.75,
+      "population": 171572
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "70 min",
+      "share": 38.78,
+      "population": 171700
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "80 min",
+      "share": 38.79,
+      "population": 171750
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "90 min",
+      "share": 38.79,
+      "population": 171752
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "100 min",
+      "share": 38.85,
+      "population": 172029
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "110 min",
+      "share": 38.86,
+      "population": 172038
+    },
+    {
+      "category": "primary_healthcare",
+      "threshold": "120 min",
+      "share": 38.86,
+      "population": 172046
+    }
+  ],
+  "units": [
+    {
+      "admLevel": "ADM1",
+      "name": "Addu",
+      "category": "education",
+      "within5km": 21.04
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Addu",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Alif Alif",
+      "category": "education",
+      "within5km": 88.2
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Alif Alif",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Alif Alif",
+      "category": "primary_healthcare",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Gaafu Dhaalu",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Haa Alif",
+      "category": "education",
+      "within5km": 9.09
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Haa Alif",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Haa Dhaalu",
+      "category": "education",
+      "within5km": 42.17
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Haa Dhaalu",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Kaafu",
+      "category": "education",
+      "within5km": 90.13
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Kaafu",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Kaafu",
+      "category": "primary_healthcare",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Laamu",
+      "category": "education",
+      "within5km": 29.47
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Laamu",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Malé",
+      "category": "education",
+      "within5km": 98.97
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Malé",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Malé",
+      "category": "primary_healthcare",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Noonu",
+      "category": "education",
+      "within5km": 30.12
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Raa",
+      "category": "education",
+      "within5km": 5.3
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Thaa",
+      "category": "education",
+      "within5km": 3.26
+    },
+    {
+      "admLevel": "ADM1",
+      "name": "Thaa",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Addoo",
+      "category": "education",
+      "within5km": 27.81
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Addoo",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Hadhdhunmathee",
+      "category": "education",
+      "within5km": 18.33
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Hadhdhunmathee",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Kolhumadulu",
+      "category": "education",
+      "within5km": 3.26
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Kolhumadulu",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Male'",
+      "category": "education",
+      "within5km": 96.52
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Male'",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Male'",
+      "category": "primary_healthcare",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Male'",
+      "category": "education",
+      "within5km": 42.7
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Male'",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "Male'",
+      "category": "primary_healthcare",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "North Maalhosmadulu",
+      "category": "education",
+      "within5km": 5.3
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "North Thiladhunmathe",
+      "category": "education",
+      "within5km": 14.92
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "North Thiladhunmathe",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "South Huvadhoo",
+      "category": "education",
+      "within5km": 30.47
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "South Huvadhoo",
+      "category": "hospitals",
+      "within5km": null
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "South Maalhosmadulu",
+      "category": "education",
+      "within5km": 21.27
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "South Miladhunmadulu",
+      "category": "education",
+      "within5km": 7.69
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "South Thiladhunmathe",
+      "category": "education",
+      "within5km": 33.03
+    },
+    {
+      "admLevel": "ADM2",
+      "name": "South Thiladhunmathe",
+      "category": "hospitals",
+      "within5km": null
+    }
+  ]
+}

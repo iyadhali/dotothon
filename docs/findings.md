@@ -6,8 +6,8 @@ two questions judges ask: **who benefits**, and **what could they do differently
 ## The finding in one paragraph
 
 Of the Maldives' 187 inhabited islands, **44 teach grade 11–12**. On the network that boats
-actually sailed in August 2025, **159 islands — 427,538 people — can reach one of those schools
-within two hours**, and **28 islands cannot**. Those 28 hold **21,281 residents and 6,758 children
+actually sailed in August 2025, **154 islands — 416,235 people — can reach one of those schools
+within two hours**, and **33 islands cannot**. Those 28 hold **32,584 residents and 9,591 children
 aged 0–17**. Nationally the consequence is visible: 91.9 % of primary-age children are in school,
 but only **29.9 %** of 16–17-year-olds are enrolled in grades 11–12. The barrier is not a missing
 school; it is the last connection between an island and the school that already exists.
@@ -67,11 +67,11 @@ version of the same finding:
 
 | Service | Islands with one | Islands within 2 h | People within 2 h | Median hours |
 |---|---|---|---|---|
-| Health centre | 155 | 186 | 439,642 | 0.0 |
-| Hospital | 4 | 35 | 274,015 | 4.56 |
+| Health centre | 155 | 186 | 422,593 | 0.0 |
+| Hospital | 4 | 35 | 262,712 | 4.56 |
 
 Primary care is effectively universal — 186 of 187 inhabited islands reach a health centre within
-two hours. Secondary care is not: **only 35 islands, 274,015 residents and 51,601 children can reach
+two hours. Secondary care is not: **only 30 islands, 262,712 residents and 51,601 children can reach
 a hospital within two hours, and the median island is 4.6 hours away.** Four islands hold all five
 hospitals (Malé has two).
 

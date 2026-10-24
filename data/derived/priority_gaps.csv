@@ -1,12 +1,17 @@
 node_id,island,atoll,population,child_0_17,hours_now,nearest_hs_id,nearest_hs,distance_km,hours_if_direct,hours_saved
 MV015013,Gan,Laamu,4815,1457,2.16,MV015008,Fonadhoo,9.3,0.75,1.41
+MV019004,Feydhoo,Seenu,4289,914,,MV019002,Hithadhoo,8.7,0.74,
+MV019003,Maradhoo,Seenu,2542,712,,MV019002,Hithadhoo,6.1,0.66,
+MV019001,Meedhoo,Seenu,1892,541,,MV019002,Hithadhoo,15.6,0.92,
 MV009002,Gaafaru,Kaafu,1294,503,3.02,MLE,Malé City,62.4,2.18,0.84
+MV019005,Maradhoofeydhoo,Seenu,1398,407,,MV019002,Hithadhoo,7.3,0.7,
 MV001016,Baarah,Haa Alifu,1141,406,2.17,MV002003,Hanimaadhoo,8.6,0.73,1.44
 MV020008,Fenfushi,Alifu Dhaalu,1000,333,2.19,MV020004,Mahibadhoo,36.1,1.48,0.71
 MV001008,Kelaa,Haa Alifu,1115,327,4.98,MV001010,Dhihdhoo,13.4,0.86,4.12
 MV015001,Isdhoo,Laamu,929,309,3.4,MV015008,Fonadhoo,33.3,1.4,2.0
 MV003004,Feydhoo,Shaviyani,854,306,2.13,MV003007,Foakaidhoo,11.7,0.82,1.31
 MV004003,Maalhendhoo,Noonu,724,264,2.9,MV004002,Ken'dhikulhudhoo,7.1,0.69,2.21
+MV019006,Hulhudhoo,Seenu,1182,259,,MV019002,Hithadhoo,14.8,0.9,
 MV005004,Olhuvelifushi,Lhaviyani,703,246,2.31,MV005001,Hinnavaru,32.1,1.37,0.94
 MV001015,Muraidhoo,Haa Alifu,534,207,,MV001010,Dhihdhoo,8.0,0.72,
 MV015002,Dhan'bidhoo,Laamu,606,207,2.42,MV015008,Fonadhoo,29.1,1.29,1.13

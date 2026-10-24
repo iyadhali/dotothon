@@ -25,7 +25,6 @@ D = ROOT / "data" / "derived"
 OUT = ROOT / "data" / "platform.sqlite"
 SCHEMA = ROOT / "db" / "schema.sql"
 
-from graph_core import LAND_LINKS  # noqa: E402  (the same road links the travel model uses)
 
 
 def norm(s) -> str:
@@ -154,16 +153,6 @@ def build_islands() -> pd.DataFrame:
     return islands[cols]
 
 
-def build_land_edges() -> pd.DataFrame:
-    spine = pd.read_csv(ROOT / "data/external/island_spine.csv")
-    by_key = {(r.atoll_name, norm(r.island)): r.island_pcode for r in spine.itertuples()}
-    rows = []
-    for aa, a, ab, b, h in LAND_LINKS:
-        pa, pb = by_key.get((aa, norm(a))), by_key.get((ab, norm(b)))
-        if pa and pb:
-            rows.append({"a": pa, "b": pb, "hours": h, "note": "causeway (model assumption)"})
-    return pd.DataFrame(rows)
-
 
 def build_dataset(con) -> pd.DataFrame:
     """Logical source rows from the manifest, plus a per-file row for everything on disk."""
@@ -179,11 +168,11 @@ def build_dataset(con) -> pd.DataFrame:
 
 
 KEYS = {
-    "island": ["node_id"], "sea_edge": ["from_id", "to_id"], "land_edge": ["a", "b"],
+    "island": ["node_id"], "sea_edge": ["from_id", "to_id"],
     "service": ["service_id"], "service_access": ["node_id", "service_type"],
     "service_summary": ["category", "service_type"], "priority_gaps": ["node_id"],
     "placement": ["service_type", "k"],
-    "air_edge": ["a", "b"], "dataset": ["id"], "meta": ["key"],
+"dataset": ["id"], "meta": ["key"],
 }
 
 
@@ -227,7 +216,6 @@ def main() -> None:
     changes["island"] = upsert(con, "island", build_islands(), ["node_id"], "sea_nodes + island_access")
     changes["sea_edge"] = upsert(con, "sea_edge", read("sea_edges.csv"), ["from_id", "to_id"],
                                  "median observed crossing per island pair")
-    changes["land_edge"] = upsert(con, "land_edge", build_land_edges(), ["a", "b"], "causeway model links")
 
     # ---------------------------------------------------------------- services ----------------
     services = read("services_placed.csv")
@@ -277,9 +265,9 @@ def main() -> None:
     con.commit()
     touched = {k: v for k, v in changes.items() if any(v)}
     counts = {t: con.execute(f"select count(*) from {t}").fetchone()[0]
-              for t in ["island", "sea_edge", "land_edge", "service", "service_access",
+              for t in ["island", "sea_edge", "service", "service_access",
                         "service_summary", "priority_gaps", "placement", "dataset", "meta",
-                        "air_edge", "data_change"]}
+                        "data_change"]}
     print(f"wrote {OUT.relative_to(ROOT)}  ({OUT.stat().st_size/1e6:.2f} MB)")
     print("  " + "  ".join(f"{k}={v:,}" for k, v in counts.items()))
     if touched:
@@ -291,7 +279,7 @@ def main() -> None:
 
     if "--inspect" in sys.argv:
         con = sqlite3.connect(OUT)
-        for t in ["island", "service", "sea_edge", "air_edge", "data_change"]:
+        for t in ["island", "service", "sea_edge", "data_change"]:
             print(f"\n{t}:")
             for row in con.execute(f"select * from {t} limit 3"):
                 print("   ", row)

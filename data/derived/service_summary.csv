@@ -1,7 +1,7 @@
 category,service_type,n_facilities,islands_with_local,islands_within_2h,islands_unreachable,population_within_2h,children_within_2h,median_hours
-education,college,4.0,4.0,50.0,3.0,305772.0,62793.0,3.34
-education,school_higher_secondary,44.0,44.0,159.0,2.0,427538.0,101819.0,0.56
-education,school_lower_secondary,181.0,181.0,187.0,0.0,448819.0,108577.0,0.0
-education,school_primary,183.0,183.0,187.0,0.0,448819.0,108577.0,0.0
-health,health_centre,155.0,155.0,186.0,1.0,439642.0,105816.0,0.0
-health,hospital,4.0,4.0,35.0,3.0,274015.0,51601.0,4.56
+education,college,4.0,4.0,45.0,8.0,294469.0,59960.0,3.47
+education,school_higher_secondary,44.0,44.0,154.0,7.0,416235.0,98986.0,0.56
+education,school_lower_secondary,181.0,181.0,185.0,2.0,446239.0,107911.0,0.0
+education,school_primary,183.0,183.0,185.0,2.0,446239.0,107911.0,0.0
+health,health_centre,155.0,155.0,183.0,4.0,422593.0,101308.0,0.0
+health,hospital,4.0,4.0,30.0,8.0,262712.0,48768.0,4.79

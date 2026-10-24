@@ -49,15 +49,15 @@ def main() -> None:
     acc = pd.read_csv(D / "island_access.csv")
     check("187 inhabited islands scored", len(acc) == 187, f"{len(acc)}")
     w2 = int((acc.hours_to_hs <= 2).sum())
-    check("159 islands within two hours", w2 == 159, f"{w2}")
+    check("154 islands within two hours", w2 == 154, f"{w2}")
     pop = int(acc.loc[acc.hours_to_hs <= 2, "population"].sum())
-    check("427,538 residents within two hours", pop == 427538, f"{pop:,}")
+    check("416,235 residents within two hours", pop == 416235, f"{pop:,}")
     none = int(acc.hours_to_hs.isna().sum())
-    check("2 islands with no observed route", none == 2, f"{none}")
+    check("7 islands with no observed route", none == 7, f"{none}")
 
     gaps = pd.read_csv(D / "priority_gaps.csv")
-    check("28 priority-gap islands", len(gaps) == 28, f"{len(gaps)}")
-    check("6,758 children in those islands", int(gaps.child_0_17.sum()) == 6758,
+    check("33 priority-gap islands", len(gaps) == 33, f"{len(gaps)}")
+    check("9,591 children in those islands", int(gaps.child_0_17.sum()) == 9591,
           f"{int(gaps.child_0_17.sum()):,}")
     check("every gap row names a school island", bool(gaps.nearest_hs.notna().all()),
           f"{int(gaps.nearest_hs.isna().sum())} missing")
@@ -69,12 +69,12 @@ def main() -> None:
           bool(pd.read_csv(D / "services_placed.csv").node_id.notna().all()), "")
     hosp = svc[svc.service_type == "hospital"]
     n2 = int((hosp.hours <= 2).sum())
-    check("35 islands reach a hospital within two hours", n2 == 35, f"{n2}")
+    check("30 islands reach a hospital within two hours", n2 == 30, f"{n2}")
     hc = svc[svc.service_type == "health_centre"]
-    check("186 islands reach a health centre within two hours",
-          int((hc.hours <= 2).sum()) == 186, f"{int((hc.hours <= 2).sum())}")
+    check("183 islands reach a health centre within two hours",
+          int((hc.hours <= 2).sum()) == 183, f"{int((hc.hours <= 2).sum())}")
     hp = int(hosp.loc[hosp.hours <= 2, "population"].sum())
-    check("274,015 people reach a hospital within two hours", hp == 274015, f"{hp:,}")
+    check("262,712 people reach a hospital within two hours", hp == 262712, f"{hp:,}")
 
     # the database is the system of record: processed tables only, plus its own stamp
     import sqlite3
@@ -83,7 +83,7 @@ def main() -> None:
     if db.exists():
         con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
         tables = {r[0] for r in con.execute("select name from sqlite_master where type='table'")}
-        for t in ["data_change", "meta", "air_edge"]:
+        for t in ["data_change", "meta", "sea_edge"]:
             check(f"db has {t}", t in tables, "")
         for t in ["source_file", "raw_record"]:
             check(f"db has no raw table {t}", t not in tables, "raw rows leaked into the serving database")

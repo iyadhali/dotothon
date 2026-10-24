@@ -9,8 +9,8 @@ The unusual part: the travel times are **not** taken from a timetable. They are 
 a month of anonymised vessel GPS (17.4 M points from 1,328 tracked craft), so the network in the
 model is the one boats actually sailed in August 2025, not the one that was published.
 
-**44 islands** teach grade 11–12. **159 islands, 427,538 people** can reach one within two hours;
-**28 cannot**, and those 28 hold 6,758 children aged 0–17. **2 islands** have no observed route at
+**44 islands** teach grade 11–12. **154 islands, 416,235 people** can reach one within two hours;
+**28 cannot**, and those 28 hold 9,591 children aged 0–17. **2 islands** have no observed route at
 all. Nationally, only **29.9 %** of 16–17-year-olds are enrolled in higher secondary, against
 91.9 % in primary.
 
@@ -57,7 +57,7 @@ One page: the map. Select any island and the left panel answers **what it can re
 | **Zoom in** | atoll outlines and names, then island names, then coastlines; circles scale with population |
 | **Atoll picker** | dim everything outside that atoll and fly to it; `?lat=…&lon=…&z=…` shares a view |
 | **Reset** (or `Esc`) | clear the filters, the journey and the selection |
-| **Decision tables** | below the map: the 28 islands beyond two hours, with the link that would fix each |
+| **Decision tables** | below the map: the 33 islands beyond two hours, with the link that would fix each |
 
 Every picker is a searchable combobox: type three letters, arrow, enter.
 
@@ -74,11 +74,11 @@ Dijkstra over one graph per service type:
 | Grades 7–10 | 180 | 187 | 448,819 | 0.0 |
 | **Grades 11–12** | 43 | **156** | 422,602 | 0.56 |
 | University campus | 4 | 50 | 305,772 | 3.34 |
-| Health centre | 155 | 186 | 439,642 | 0.0 |
-| **Hospital** | 4 | **35** | 274,015 | 4.56 |
+| Health centre | 155 | 186 | 422,593 | 0.0 |
+| **Hospital** | 4 | **35** | 262,712 | 4.56 |
 
 The contrast is the argument: **primary care reaches almost every island (186 of 187 within two
-hours), secondary care does not — only 35 islands, 274,015 people and 51,601 children can reach a
+hours), secondary care does not — only 30 islands, 262,712 people and 51,601 children can reach a
 hospital within two hours, at a median of 4.6 hours.** The same network that shows a school gap
 shows a sharper hospital gap, and the register is editable, so the answer stays honest when a new
 facility opens.
@@ -158,7 +158,9 @@ device make a **trip**, whose duration is observed rather than computed. Stays a
 nearest OCHA island centroid within 6 km. Crossings whose implied speed falls outside 0.5–55 knots
 are dropped as GPS errors (1,303 of them). Islands joined by road — Addu's six census islands, and
 Malé's bridge to Hulhumalé — are connected explicitly at 30 km/h, because boat data cannot see a
-causeway. Journeys cost the observed median crossing time per leg plus **1 hour** for each
+causeway — but no road or air link is invented, so a pair with no observed boat is reported as
+not connected rather than bridged on an assumption. Journeys cost the observed median crossing
+time per leg plus **1 hour** for each
 connection, and are capped at **two sailings**: a third sailing is reported as *not accessible*
 rather than given an implausible number.
 
@@ -226,7 +228,7 @@ Nothing in this repo exists unless it moves a criterion — the audit trail is
 | Criterion | Weight | Where it is earned |
 |---|---|---|
 | Technical execution | 20 % | the demo runs offline; every number re-derivable; `make check` asserts 13 published figures; limits stated |
-| Impact | 15 % | **[docs/findings.md](docs/findings.md)** — a named user, an explicit decision, 28 islands ranked by children |
+| Impact | 15 % | **[docs/findings.md](docs/findings.md)** — a named user, an explicit decision, 33 islands ranked by children |
 | Scalability | 15 % | `make refresh GPS=<new month>`; one command per stage; no database to migrate |
 | Data Utilization | 15 % | organiser data + official public data only; school totals reconcile to 5,105; island areas agree with OCHA at r = 0.9996 |
 | Innovation | 10 % | the method — an observed network reconstructed from GPS, not a published timetable |

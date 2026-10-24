@@ -68,14 +68,6 @@ SERVICE_LABEL = {
 DEFAULT_ISLAND = "MLE"
 
 
-def _has_air() -> bool:
-    """True once an air timetable has been loaded — the footer says so without a code change."""
-    try:
-        return int(db_frame("select count(*) c from air_edge").c.iloc[0]) > 0
-    except Exception:
-        return False
-
-
 def db_meta() -> dict:
     """What the database says about itself — the panel footer shows this, not a CSV's mtime."""
     try:
@@ -118,7 +110,6 @@ def index(request):
         "gaps": m.gaps,
         "manifest": _manifest(),
         "db_meta": db_meta(),
-        "has_air": _has_air(),
         "default_from": island,
         "default_to": "",
         "default_from_name": m.name_of(island) or island,

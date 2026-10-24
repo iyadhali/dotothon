@@ -169,12 +169,12 @@ MV017007,Fiyoari,Gaafu Dhaalu,education,college,4,False,1.9,MV017010,Thinadhoo,M
 MV017008,Faresmaathodaa,Gaafu Dhaalu,education,college,4,False,1.65,MV017010,Thinadhoo,MNU Thinadhoo Campus,858,235
 MV017010,Thinadhoo,Gaafu Dhaalu,education,college,4,True,0.0,MV017010,Thinadhoo,MNU Thinadhoo Campus,6217,2134
 MV018001,Fuvahmulah,Gnaviyani,education,college,4,False,,,,,9177,2761
-MV019001,Meedhoo,Seenu,education,college,4,False,0.0,MV019002,Hithadhoo,MNU Hithadhoo Campus,1892,541
+MV019001,Meedhoo,Seenu,education,college,4,False,,,,,1892,541
 MV019002,Hithadhoo,Seenu,education,college,4,True,0.0,MV019002,Hithadhoo,MNU Hithadhoo Campus,13759,3560
-MV019003,Maradhoo,Seenu,education,college,4,False,0.45,MV019002,Hithadhoo,MNU Hithadhoo Campus,2542,712
-MV019004,Feydhoo,Seenu,education,college,4,False,0.25,MV019002,Hithadhoo,MNU Hithadhoo Campus,4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,college,4,False,0.35,MV019002,Hithadhoo,MNU Hithadhoo Campus,1398,407
-MV019006,Hulhudhoo,Seenu,education,college,4,False,0.1,MV019002,Hithadhoo,MNU Hithadhoo Campus,1182,259
+MV019003,Maradhoo,Seenu,education,college,4,False,,,,,2542,712
+MV019004,Feydhoo,Seenu,education,college,4,False,,,,,4289,914
+MV019005,Maradhoofeydhoo,Seenu,education,college,4,False,,,,,1398,407
+MV019006,Hulhudhoo,Seenu,education,college,4,False,,,,,1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,education,college,4,False,1.7,MLE,Malé City,The Maldives National University,484,148
 MV020002,Omadhoo,Alifu Dhaalu,education,college,4,False,1.48,MLE,Malé City,The Maldives National University,913,344
 MV020003,Kun'burudhoo,Alifu Dhaalu,education,college,4,False,2.88,MLE,Malé City,The Maldives National University,509,173
@@ -356,12 +356,12 @@ MV017007,Fiyoari,Gaafu Dhaalu,education,school_higher_secondary,44,False,1.9,MV0
 MV017008,Faresmaathodaa,Gaafu Dhaalu,education,school_higher_secondary,44,False,0.9,MV017004,Gahdhoo,Gadhdhoo — higher secondary (Gr 11-12),858,235
 MV017010,Thinadhoo,Gaafu Dhaalu,education,school_higher_secondary,44,True,0.0,MV017010,Thinadhoo,Thinadhoo — higher secondary (Gr 11-12),6217,2134
 MV018001,Fuvahmulah,Gnaviyani,education,school_higher_secondary,44,True,0.0,MV018001,Fuvahmulah,Fuvahmulah — higher secondary (Gr 11-12),9177,2761
-MV019001,Meedhoo,Seenu,education,school_higher_secondary,44,False,0.0,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1892,541
+MV019001,Meedhoo,Seenu,education,school_higher_secondary,44,False,,,,,1892,541
 MV019002,Hithadhoo,Seenu,education,school_higher_secondary,44,True,0.0,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),13759,3560
-MV019003,Maradhoo,Seenu,education,school_higher_secondary,44,False,0.45,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),2542,712
-MV019004,Feydhoo,Seenu,education,school_higher_secondary,44,False,0.25,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_higher_secondary,44,False,0.35,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_higher_secondary,44,False,0.1,MV019002,Hithadhoo,Hithadhoo — higher secondary (Gr 11-12),1182,259
+MV019003,Maradhoo,Seenu,education,school_higher_secondary,44,False,,,,,2542,712
+MV019004,Feydhoo,Seenu,education,school_higher_secondary,44,False,,,,,4289,914
+MV019005,Maradhoofeydhoo,Seenu,education,school_higher_secondary,44,False,,,,,1398,407
+MV019006,Hulhudhoo,Seenu,education,school_higher_secondary,44,False,,,,,1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,0.59,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),484,148
 MV020002,Omadhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,0.28,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),913,344
 MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_higher_secondary,44,False,0.3,MV020004,Mahibadhoo,Mahibadhoo — higher secondary (Gr 11-12),509,173
@@ -547,8 +547,8 @@ MV019001,Meedhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019001,Me
 MV019002,Hithadhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),13759,3560
 MV019003,Maradhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),2542,712
 MV019004,Feydhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019004,Feydhoo,Feydhoo — lower secondary (Gr 7-10),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_lower_secondary,181,False,0.35,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_lower_secondary,181,False,0.1,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),1182,259
+MV019005,Maradhoofeydhoo,Seenu,education,school_lower_secondary,181,False,,,,,1398,407
+MV019006,Hulhudhoo,Seenu,education,school_lower_secondary,181,False,,,,,1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — lower secondary (Gr 7-10),484,148
 MV020002,Omadhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020002,Omadhoo,Omadhoo — lower secondary (Gr 7-10),913,344
 MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — lower secondary (Gr 7-10),509,173
@@ -734,8 +734,8 @@ MV019001,Meedhoo,Seenu,education,school_primary,183,True,0.0,MV019001,Meedhoo,Me
 MV019002,Hithadhoo,Seenu,education,school_primary,183,True,0.0,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),13759,3560
 MV019003,Maradhoo,Seenu,education,school_primary,183,True,0.0,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),2542,712
 MV019004,Feydhoo,Seenu,education,school_primary,183,True,0.0,MV019004,Feydhoo,Feydhoo — primary school (Gr 1-6),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_primary,183,False,0.35,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_primary,183,False,0.1,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),1182,259
+MV019005,Maradhoofeydhoo,Seenu,education,school_primary,183,False,,,,,1398,407
+MV019006,Hulhudhoo,Seenu,education,school_primary,183,False,,,,,1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — primary school (Gr 1-6),484,148
 MV020002,Omadhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020002,Omadhoo,Omadhoo — primary school (Gr 1-6),913,344
 MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — primary school (Gr 1-6),509,173
@@ -917,11 +917,11 @@ MV017007,Fiyoari,Gaafu Dhaalu,health,health_centre,155,True,0.0,MV017007,Fiyoari
 MV017008,Faresmaathodaa,Gaafu Dhaalu,health,health_centre,155,True,0.0,MV017008,Faresmaathodaa,Gaafu Dhaalu Faresmaathodaa Health Centre,858,235
 MV017010,Thinadhoo,Gaafu Dhaalu,health,health_centre,155,False,0.51,MV017001,Madaveli,Gaafu Dhaalu Madaveli Health Centre,6217,2134
 MV018001,Fuvahmulah,Gnaviyani,health,health_centre,155,False,,,,,9177,2761
-MV019001,Meedhoo,Seenu,health,health_centre,155,False,0.0,MV019003,Maradhoo,Seenu Maradhoo Health Centre,1892,541
-MV019002,Hithadhoo,Seenu,health,health_centre,155,False,0.7,MV019003,Maradhoo,Seenu Maradhoo Health Centre,13759,3560
+MV019001,Meedhoo,Seenu,health,health_centre,155,False,,,,,1892,541
+MV019002,Hithadhoo,Seenu,health,health_centre,155,False,,,,,13759,3560
 MV019003,Maradhoo,Seenu,health,health_centre,155,True,0.0,MV019003,Maradhoo,Seenu Maradhoo Health Centre,2542,712
 MV019004,Feydhoo,Seenu,health,health_centre,155,True,0.0,MV019004,Feydhoo,Seenu Feydhoo Health Centre,4289,914
-MV019005,Maradhoofeydhoo,Seenu,health,health_centre,155,False,0.35,MV019003,Maradhoo,Seenu Maradhoo Health Centre,1398,407
+MV019005,Maradhoofeydhoo,Seenu,health,health_centre,155,False,,,,,1398,407
 MV019006,Hulhudhoo,Seenu,health,health_centre,155,True,0.0,MV019006,Hulhudhoo,Seenu Hulhumeedhoo Health Centre,1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,health,health_centre,155,True,0.0,MV020001,Hangnaameedhoo,Alifu Dhaalu Hangnaameedhoo Health Centre,484,148
 MV020002,Omadhoo,Alifu Dhaalu,health,health_centre,155,True,0.0,MV020002,Omadhoo,Alifu Dhaalu Omadhoo Health Centre,913,344
@@ -1104,12 +1104,12 @@ MV017007,Fiyoari,Gaafu Dhaalu,health,hospital,4,False,15.34,MV011005,Nilandhoo,F
 MV017008,Faresmaathodaa,Gaafu Dhaalu,health,hospital,4,False,15.78,MV011005,Nilandhoo,Faafu Atoll Hospital,858,235
 MV017010,Thinadhoo,Gaafu Dhaalu,health,hospital,4,False,13.16,MV011005,Nilandhoo,Faafu Atoll Hospital,6217,2134
 MV018001,Fuvahmulah,Gnaviyani,health,hospital,4,False,,,,,9177,2761
-MV019001,Meedhoo,Seenu,health,hospital,4,False,0.0,MV019002,Hithadhoo,Addu Equatorial Hospital,1892,541
+MV019001,Meedhoo,Seenu,health,hospital,4,False,,,,,1892,541
 MV019002,Hithadhoo,Seenu,health,hospital,4,True,0.0,MV019002,Hithadhoo,Addu Equatorial Hospital,13759,3560
-MV019003,Maradhoo,Seenu,health,hospital,4,False,0.45,MV019002,Hithadhoo,Addu Equatorial Hospital,2542,712
-MV019004,Feydhoo,Seenu,health,hospital,4,False,0.25,MV019002,Hithadhoo,Addu Equatorial Hospital,4289,914
-MV019005,Maradhoofeydhoo,Seenu,health,hospital,4,False,0.35,MV019002,Hithadhoo,Addu Equatorial Hospital,1398,407
-MV019006,Hulhudhoo,Seenu,health,hospital,4,False,0.1,MV019002,Hithadhoo,Addu Equatorial Hospital,1182,259
+MV019003,Maradhoo,Seenu,health,hospital,4,False,,,,,2542,712
+MV019004,Feydhoo,Seenu,health,hospital,4,False,,,,,4289,914
+MV019005,Maradhoofeydhoo,Seenu,health,hospital,4,False,,,,,1398,407
+MV019006,Hulhudhoo,Seenu,health,hospital,4,False,,,,,1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,health,hospital,4,False,1.7,MLE,Malé City,Indira Gandhi Memorial Hospital,484,148
 MV020002,Omadhoo,Alifu Dhaalu,health,hospital,4,False,1.48,MLE,Malé City,Indira Gandhi Memorial Hospital,913,344
 MV020003,Kun'burudhoo,Alifu Dhaalu,health,hospital,4,False,2.53,MV011005,Nilandhoo,Faafu Atoll Hospital,509,173

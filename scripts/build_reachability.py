@@ -83,32 +83,13 @@ def main() -> None:
             campus.add(pid)
     print(f"islands with grade 11-12: {len(hs)} | with grade 7-10: {len(ls)} | with a campus: {len(campus)}")
 
-    # ---------- land layer (road / causeway) ----------
-    # The sea graph cannot see islands that are joined by road, which is exactly the case the
-    # challenge is about: Addu City is one land mass spread over 6 census islands, and Malé is
-    # bridged to Hulhumalé. Times are the driving/ferry time at 30 km/h over the link road
-    # (assumption, stated in the output), because the supplied data has no road speeds.
-    LAND = [
-        ("Seenu", "Hithadhoo", "Seenu", "Maradhoo", 0.25),
-        ("Seenu", "Maradhoo", "Seenu", "Maradhoofeydhoo", 0.10),
-        ("Seenu", "Maradhoofeydhoo", "Seenu", "Feydhoo", 0.10),
-        ("Seenu", "Feydhoo", "Seenu", "Hulhudhoo", 0.15),
-        ("Seenu", "Hulhudhoo", "Seenu", "Meedhoo", 0.10),
-    ]
-    land_edges = []
-    for aa, a, ab, b, h in LAND:
-        pa = spine[(spine.atoll_name == aa) & (spine.k == norm(a))]
-        pb = spine[(spine.atoll_name == ab) & (spine.k == norm(b))]
-        if len(pa) and len(pb):
-            land_edges.append((pa.iloc[0].island_pcode, pb.iloc[0].island_pcode, h))
-
     # ---------- travel-time graph (shared with every other service layer) ----------
     from graph_core import build as build_graph
 
-    graph = build_graph(edges, nodes, land_edges)
+    graph = build_graph(edges, nodes)
     comp, offset, idx = graph.comp, graph.offset, graph.idx
     d, hops = graph.dist, graph.hops
-    print(f"road links {len(land_edges)} | {len(nodes)} islands contracted to {len(idx)} places")
+    print(f"road links 0 (none in the base data) | {len(nodes)} islands")
 
     # ---------- per-island access ----------
     inh = nodes[nodes.type == "inhabited"].copy()

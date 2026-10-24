@@ -73,14 +73,6 @@ CREATE TABLE IF NOT EXISTS sea_edge (
     PRIMARY KEY (from_id, to_id)
 );
 
-CREATE TABLE IF NOT EXISTS land_edge (
-    a      TEXT REFERENCES island(node_id),
-    b      TEXT REFERENCES island(node_id),
-    hours  REAL,
-    note   TEXT,
-    PRIMARY KEY (a, b)
-);
-
 -- ---------------------------------------------------------------- services ------------------
 CREATE TABLE IF NOT EXISTS service (
     service_id   TEXT PRIMARY KEY,
@@ -210,14 +202,3 @@ CREATE VIEW IF NOT EXISTS island_access AS
            islands_reachable, sea_neighbours
     FROM island WHERE type = 'inhabited';
 
--- air links. Empty until a timetable source is available: the point is that adding the air layer
--- is an insert into this table, not a change to the router, the schema or the templates.
-create table if not exists air_edge (
-    a    text not null references island(node_id),
-    b    text not null references island(node_id),
-    hours real not null,              -- gate-to-gate flight time
-    trips integer,                    -- observed departures in the source period
-    source text,
-    primary key (a, b)
-);
-create index if not exists idx_air_edge_a on air_edge(a);

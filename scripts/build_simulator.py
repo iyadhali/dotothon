@@ -31,7 +31,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from graph_core import build as build_graph, LAND_LINKS
+from graph_core import build as build_graph
 
 ROOT = Path(__file__).resolve().parents[1]
 D = ROOT / "data" / "derived"
@@ -50,13 +50,6 @@ def norm(s) -> str:
     return re.sub(r"[^a-z]", "", str(s).lower())
 
 
-def land_edges_for(spine: pd.DataFrame) -> list[tuple]:
-    out, by_key = [], {(r.atoll_name, r.k): r.island_pcode for r in spine.itertuples()}
-    for aa, a, ab, b, h in LAND_LINKS:
-        pa, pb = by_key.get((aa, norm(a))), by_key.get((ab, norm(b)))
-        if pa and pb:
-            out.append((pa, pb, h))
-    return out
 
 
 def main() -> None:
@@ -69,7 +62,7 @@ def main() -> None:
     edges = pd.read_csv(D / "sea_edges.csv")
     spine = pd.read_csv(ROOT / "data/external/island_spine.csv")
     spine["k"] = spine.island.map(norm)
-    graph = build_graph(edges, nodes, land_edges_for(spine))
+    graph = build_graph(edges, nodes)
 
     attended = nodes[nodes.type == "inhabited"].copy().reset_index(drop=True)
     pop = attended.set_index("node_id").population.fillna(0).astype(int).to_dict()

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24 10:52 UTC",
+  "generated_at": "2026-10-24 11:03 UTC",
   "sources": {
     "followme": {
       "files": 31,
@@ -56,10 +56,10 @@
       "latest_mtime": "2026-10-24 10:03"
     },
     "incoming": {
-      "files": 1,
-      "bytes": 49,
-      "fingerprint": "f9f52d50da863f29",
-      "latest_mtime": "2026-10-24 10:52"
+      "files": 0,
+      "bytes": 0,
+      "fingerprint": "",
+      "latest_mtime": "1970-01-01 00:00"
     }
   },
   "derived_rows": {
@@ -73,8 +73,7 @@
     "priority_gaps.csv": 28
   },
   "stages_run": {
-    "incoming": 0.3,
-    "database": 0.3,
+    "database": 0.4,
     "check": 0.3
   }
 }

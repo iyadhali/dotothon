@@ -29558,36 +29558,6 @@ MV017010,MV020008,18.91236111111111,9,Thinadhoo,Fenfushi,Gaafu Dhaalu
 MV017010,MV020009,17.180694444444445,8,Thinadhoo,Dhihdhoo,Gaafu Dhaalu
 MV017010,MV020010,16.79861111111111,7,Thinadhoo,Maamin'gili,Gaafu Dhaalu
 MV017010,MLE,13.870277777777776,4,Thinadhoo,Malé City,Gaafu Dhaalu
-MV019001,MV019002,0.7,0,Meedhoo,Hithadhoo,Seenu
-MV019001,MV019003,0.44999999999999996,0,Meedhoo,Maradhoo,Seenu
-MV019001,MV019004,0.25,0,Meedhoo,Feydhoo,Seenu
-MV019001,MV019005,0.35,0,Meedhoo,Maradhoofeydhoo,Seenu
-MV019001,MV019006,0.1,0,Meedhoo,Hulhudhoo,Seenu
-MV019002,MV019001,0.7,0,Hithadhoo,Meedhoo,Seenu
-MV019002,MV019003,1.15,0,Hithadhoo,Maradhoo,Seenu
-MV019002,MV019004,0.95,0,Hithadhoo,Feydhoo,Seenu
-MV019002,MV019005,1.0499999999999998,0,Hithadhoo,Maradhoofeydhoo,Seenu
-MV019002,MV019006,0.7999999999999999,0,Hithadhoo,Hulhudhoo,Seenu
-MV019003,MV019001,0.44999999999999996,0,Maradhoo,Meedhoo,Seenu
-MV019003,MV019002,1.15,0,Maradhoo,Hithadhoo,Seenu
-MV019003,MV019004,0.7,0,Maradhoo,Feydhoo,Seenu
-MV019003,MV019005,0.7999999999999999,0,Maradhoo,Maradhoofeydhoo,Seenu
-MV019003,MV019006,0.5499999999999999,0,Maradhoo,Hulhudhoo,Seenu
-MV019004,MV019001,0.25,0,Feydhoo,Meedhoo,Seenu
-MV019004,MV019002,0.95,0,Feydhoo,Hithadhoo,Seenu
-MV019004,MV019003,0.7,0,Feydhoo,Maradhoo,Seenu
-MV019004,MV019005,0.6,0,Feydhoo,Maradhoofeydhoo,Seenu
-MV019004,MV019006,0.35,0,Feydhoo,Hulhudhoo,Seenu
-MV019005,MV019001,0.35,0,Maradhoofeydhoo,Meedhoo,Seenu
-MV019005,MV019002,1.0499999999999998,0,Maradhoofeydhoo,Hithadhoo,Seenu
-MV019005,MV019003,0.7999999999999999,0,Maradhoofeydhoo,Maradhoo,Seenu
-MV019005,MV019004,0.6,0,Maradhoofeydhoo,Feydhoo,Seenu
-MV019005,MV019006,0.44999999999999996,0,Maradhoofeydhoo,Hulhudhoo,Seenu
-MV019006,MV019001,0.1,0,Hulhudhoo,Meedhoo,Seenu
-MV019006,MV019002,0.7999999999999999,0,Hulhudhoo,Hithadhoo,Seenu
-MV019006,MV019003,0.5499999999999999,0,Hulhudhoo,Maradhoo,Seenu
-MV019006,MV019004,0.35,0,Hulhudhoo,Feydhoo,Seenu
-MV019006,MV019005,0.44999999999999996,0,Hulhudhoo,Maradhoofeydhoo,Seenu
 MV020001,MV001001,15.122777777777777,6,Hangnaameedhoo,Thuraakunu,Alifu Dhaalu
 MV020001,MV001002,13.795277777777779,5,Hangnaameedhoo,Uligamu,Alifu Dhaalu
 MV020001,MV001005,15.659444444444444,6,Hangnaameedhoo,Mulhadhoo,Alifu Dhaalu

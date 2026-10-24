@@ -39,13 +39,6 @@ MAX_HOPS = 2           # a journey needing three sailings is reported as not acc
 # data cannot see roads, so those legs are added explicitly (30 km/h assumption). Names are
 # resolved at load time — typing raw pcodes is how you end up "connecting" the wrong atoll,
 # because Hithadhoo, Feydhoo, Meedhoo and Hulhudhoo all exist in more than one atoll.
-LAND_LINKS = [
-    ("Seenu", "Hithadhoo", "Seenu", "Maradhoo", 0.25),
-    ("Seenu", "Maradhoo", "Seenu", "Maradhoofeydhoo", 0.10),
-    ("Seenu", "Maradhoofeydhoo", "Seenu", "Feydhoo", 0.10),
-    ("Seenu", "Feydhoo", "Seenu", "Hulhudhoo", 0.15),
-    ("Seenu", "Hulhudhoo", "Seenu", "Meedhoo", 0.10),
-]
 
 CAMPUSES = [("Male", "Malé City"), ("Haa Dhaalu", "Kulhudhuffushi"),
             ("Gaafu Dhaalu", "Thinadhoo"), ("Seenu", "Hithadhoo")]  # Gan campus sits on Addu
@@ -117,32 +110,6 @@ class Model:
                 if (a, b) not in best or r.med_hours < best[(a, b)].hours:
                     best[(a, b)] = Edge(a, b, float(r.med_hours), float(r.med_km),
                                         float(r.med_knots), int(r.trips))
-        # the Addu causeway lives in the database with the boat edges it has to be combined with;
-        # the Python constant is only a fallback for a database built before that table existed
-        # air links are optional: when the table is empty the network is the sea network plus roads
-        try:
-            air = db_frame("select * from air_edge")
-        except Exception:
-            air = None
-        if air is not None and len(air):
-            for r in air.itertuples():
-                if not (self._known(r.a) and self._known(r.b)):
-                    continue
-                for x, y in ((r.a, r.b), (r.b, r.a)):
-                    best[(x, y)] = Edge(x, y, float(r.hours), None, None, int(r.trips or 0), "air")
-        land = db_frame("select * from land_edge")
-        if len(land):
-            for r in land.itertuples():
-                if not (self._known(r.a) and self._known(r.b)):
-                    continue
-                for x, y in ((r.a, r.b), (r.b, r.a)):
-                    best[(x, y)] = Edge(x, y, float(r.hours), None, None, None, "land")
-        else:
-            for aa, an, ab, bn, h in LAND_LINKS:
-                a, b = self._pid(aa, an), self._pid(ab, bn)
-                if a and b:
-                    for x, y in ((a, b), (b, a)):
-                        best[(x, y)] = Edge(x, y, h, None, None, None, "land")
         for (a, b), e in best.items():
             self.adj.setdefault(a, []).append(e)
         self.n_edges = len(best)

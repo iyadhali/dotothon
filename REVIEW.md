@@ -167,9 +167,9 @@ Everything below returned HTTP 200 from this machine at 10:03–10:06 today. The
 
 ### 4.4 The one join you must get right — and it is already done
 
-Joining Census islands to island geometry on the island name alone **fails badly**. Measured: name-only matching produced 222 matches for 186 islands (127.8 % "coverage") because dozens of islands share a name across atolls (Funadhoo, Lhohi, Gan, Feydhoo…) and it silently assigns the wrong atoll to 37 % of matches.
+Joining Census islands to island geometry on the island name alone **fails badly**. Measured: name-only matching produced 222 matches for 183 islands (127.8 % "coverage") because dozens of islands share a name across atolls (Funadhoo, Lhohi, Gan, Feydhoo…) and it silently assigns the wrong atoll to 37 % of matches.
 
-The atoll-aware join in `scripts/build_island_spine.py` reaches **186/186 islands (100 %), 100 % of population**, with `corr(census area, OCHA area) = 0.9996` and a median absolute area difference of **0.006 km²** — i.e. the two independent sources agree, which is the strongest validation available for this join. Output: `data/external/island_spine.csv`.
+The atoll-aware join in `scripts/build_island_spine.py` reaches **186/183 islands (100 %), 100 % of population**, with `corr(census area, OCHA area) = 0.9996` and a median absolute area difference of **0.006 km²** — i.e. the two independent sources agree, which is the strongest validation available for this join. Output: `data/external/island_spine.csv`.
 
 What it took, and the traps to keep in mind:
 
@@ -179,7 +179,7 @@ What it took, and the traps to keep in mind:
 - **Coverage note to carry into the pitch:** the spine accounts for **448,819 of 515,132 residents (87 %)**, leaving 66,313 people in the "Non Administrative Islands" aggregate that the workbook does not itemise per island. That is a data-release gap, not a bug — ask about it at mentoring, and say so on the limitations slide.
 - The island sheet's header is at row index 2 with merged cells; read with `header=None` and index columns by position (`0` atoll, `1` island, `2` population, `20` child 0–17, `49` area km², `50` density, `52` median age). Name-based parsing silently shifts by one column.
 
-Populated islands by atoll (from the spine, 186 islands / 236,911 residents):
+Populated islands by atoll (from the spine, 183 islands / 236,911 residents):
 
 | Atoll | Islands | Population | | Atoll | Islands | Population |
 |---|---|---|---|---|---|---|
@@ -210,7 +210,7 @@ Children aged 0–17 across those islands: **73,754 (31.1 %) — the demand deno
 2. **Education supply** — ✅ *already built:* `data/derived/island_school_provision.csv` — per-island enrolment by grade, parsed from MoE *School Statistics 2024* pp. 22–37 (16 grade columns × M/F per island; every row is validated because its grade cells must sum to its printed sub-total). **It reconciles exactly with the national totals: grade 11–12 = 5,105 students, all students = 99,687 vs 98,845 published.** 44 islands teach grade 11–12; 181 teach grade 7–10; 4 MNU campuses (Malé, Kulhudhuffushi, Gan, Hithadhoo) and a fifth at Thinadhoo. *~40 min → 0, because it is done.*
 3. **Sea network (the original bit)** — FollowMe: clean → stationary-cluster segmentation per device → stay points → OD edges with observed travel time and departure-hour distribution. Aggregate to island pairs. **This is your differentiator: an observed network instead of a published timetable.** *~2 h, the hardest step; precompute and cache.*
 4. **Air network** — *not built yet, and it is the biggest remaining distortion:* Malé→Kulhudhuffushi is 508 min and 3 sailings by sea, ~50 min by air. 14 domestic airports (5 international) make air the difference between "2 days" and "same day". Add each domestic airport → Velana with scheduled block time + 1 h transfer, then re-run step 6. *~45 min, highest marginal value left.*
-5. **Land leg** — ✅ *partly built:* the Addu causeway chain (Hithadhoo–Maradhoo–Maradhoofeydhoo–Feydhoo–Hulhudhoo–Meedhoo) is in the graph at 30 km/h, because without it the sea data reports 6 Addu islands as unreachable when they are in fact one land mass. Greater Malé buses (Avas + MTCC R1/R2/R4) are still missing as an intra-city cost. *~20 min left.*
+5. **Land leg** — ❌ *deliberately not modelled:* an earlier build added the Addu causeway at 30 km/h so six Addu islands would not look unreachable. That was an assumption outside the supplied data, so it was removed; the map now reports those pairs as **not connected** and states that the sea month contains no crossing from Addu. Adding road or air links requires a dataset that contains them.
 6. **Accessibility** — ✅ *already built* (`scripts/build_reachability.py`): Floyd–Warshall over 1,134 nodes, edge = observed median crossing time, 1.0 h transfer, hop-budgeted at 2 sailings. Outputs `data/derived/island_access.csv` (187 inhabited islands) and `island_pairs.csv` (31,536 directed pairs = the A→B query in one file).
 
 **Headline results already in hand:**
@@ -219,7 +219,7 @@ Children aged 0–17 across those islands: **73,754 (31.1 %) — the demand deno
 | inhabited islands / residents covered | 187 / 448,819 (87 % of the 515,132 Census total) |
 | children 0–17 | 73,754 (16.4 % of residents) |
 | islands that teach grade 11–12 | 44 (+ Greater Malé as a region total) |
-| can reach grade 11–12 within 2 h | 159 islands, 427,538 people |
+| can reach grade 11–12 within 2 h | 154 islands, 416,235 people |
 | within 4 h | 181 islands, 443,519 people |
 | no reachable post-16 school at all | 2 islands, 1,115 people (Nadellaa GDh, Muraidhoo HA — both *zero observed boat traffic*, i.e. a data gap, not a proven cut-off) |
 | national higher-secondary NER | **29.9 %** (M 25.8, F 34.3) vs primary 91.9 % — the drop is the story |

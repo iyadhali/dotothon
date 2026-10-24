@@ -7,7 +7,7 @@ must not spend the two-sailing budget; each island keeps its road-time offset in
 Everything downstream — school access, hospital access, any new service category — reads from the
 same graph, so adding a service never means re-deriving the network.
 
-    graph = build(edges, nodes, land_edges)
+    graph = build(edges, nodes)
     graph.hours_to(node_id, provider_ids)     # best time to reach any provider
 """
 from __future__ import annotations
@@ -23,13 +23,6 @@ MAX_HOPS = 2          # sailings per journey
 # Road/causeway links the boat data cannot see. Addu City is one land mass spread over six census
 # islands; times are driving at 30 km/h over the link road (stated assumption, no road speeds in
 # the supplied data). (atoll_a, island_a, atoll_b, island_b, hours)
-LAND_LINKS = [
-    ("Seenu", "Hithadhoo", "Seenu", "Maradhoo", 0.25),
-    ("Seenu", "Maradhoo", "Seenu", "Maradhoofeydhoo", 0.10),
-    ("Seenu", "Maradhoofeydhoo", "Seenu", "Feydhoo", 0.10),
-    ("Seenu", "Feydhoo", "Seenu", "Hulhudhoo", 0.15),
-    ("Seenu", "Hulhudhoo", "Seenu", "Meedhoo", 0.10),
-]
 
 
 @dataclass
@@ -62,7 +55,7 @@ class Graph:
         return best, who
 
 
-def build(edges: pd.DataFrame, nodes: pd.DataFrame, land_edges: list[tuple],
+def build(edges: pd.DataFrame, nodes: pd.DataFrame,
           transfer_h: float = TRANSFER_H, max_hops: int = MAX_HOPS) -> Graph:
     parent = {n: n for n in nodes.node_id}
 
@@ -72,6 +65,7 @@ def build(edges: pd.DataFrame, nodes: pd.DataFrame, land_edges: list[tuple],
             x = parent[x]
         return x
 
+    land_edges: list[tuple] = []          # no road links exist in the base data
     for a, b, _h in land_edges:
         ra, rb = find(a), find(b)
         if ra != rb:

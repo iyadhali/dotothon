@@ -1,23 +1,6 @@
 {% extends "access/base.html" %}
 {% load fmt %}
 {% block body %}
-<header class="topbar">
-  <div class="brand">
-    <p class="eyebrow">Maldives Datathon 2026 · Team A</p>
-    <h1>What can each island reach?</h1>
-    <p class="lede">44 of 187 islands teach grade 11–12. 159 reach one within two hours;
-      {{ n_beyond }} hold {{ gap_children|num }} children. Times come from 20,960 observed trips, not a timetable.</p>
-  </div>
-  <div class="topright">
-    <div class="chips">
-    <div class="chip num"><span class="n">{{ s.hs_islands }}</span><span class="l">teach<br>grade 11–12</span></div>
-    <div class="chip num"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one<br>in 2 h</span></div>
-    <div class="chip num hot"><span class="n">{{ n_beyond }}</span><span class="l">islands<br>beyond 2 h</span></div>
-    <div class="chip num"><span class="n">{{ n_services }}</span><span class="l">services<br>mapped</span></div>
-    </div>
-  </div>
-</header>
-
 <main class="stage" id="stage">
   <div id="map"
        data-default-from="{{ default_from }}"
@@ -26,6 +9,9 @@
        aria-label="Map of the Maldives: circle size is population, colour is travel time to the nearest grade 11–12 school"></div>
 
   <aside class="ovl ovl-left">
+    <p class="brandline">Maldives Datathon 2026 <i>·</i> <b>A Team</b></p>
+    <p class="natl"><b>{{ s.hs_islands }}</b>/{{ s.islands }} teach 11–12 · <b>{{ s.within2_islands }}</b> within 2 h<br>
+      <b>{{ n_beyond }}</b> islands beyond · <b>{{ n_services }}</b> services mapped</p>
     <div class="row2">
       <div class="combo wide" id="islandCombo">
         <input id="islandText" class="combotext" type="text" placeholder="Select an island…"

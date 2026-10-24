@@ -1,6 +1,6 @@
 # Access to upper-secondary education across the Maldives
 
-**Maldives Datathon 2026 · Team A · Sea · Land · Air**
+**Maldives Datathon 2026 · A Team · Sea · Land · Air**
 
 187 inhabited islands, 448,819 residents, and one question: **how long does it take a student on
 island A to reach a school that teaches grade 11–12 — and which islands are worst served?**

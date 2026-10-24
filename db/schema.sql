@@ -1,28 +1,17 @@
 -- Maldives Accessibility Platform — SQLite schema
 --
--- The pipeline writes typed CSV artifacts (reproducible, diffable, one per stage); this database
--- is the queryable system of record the web app reads. Every table is rebuilt from those
--- artifacts, so the database is never hand-edited — it is a projection of the pipeline.
+-- This database is the system of record: the web app reads only from here, and the pipeline
+-- upserts into it instead of replacing it. Typed CSV artifacts under data/derived/ remain the
+-- reproducible, diffable stage outputs; each build reconciles the database to them by key, so a
+-- re-run is idempotent and every change is logged in data_change.
 --
 --   data/derived/*.csv  --(scripts/build_database.py)-->  data/platform.sqlite
 
 PRAGMA foreign_keys = ON;
 
-DROP TABLE IF EXISTS dataset;
-DROP TABLE IF EXISTS ingest_run;
-DROP TABLE IF EXISTS ingest_stage;
-DROP TABLE IF EXISTS island;
-DROP TABLE IF EXISTS sea_edge;
-DROP TABLE IF EXISTS land_edge;
-DROP TABLE IF EXISTS service;
-DROP TABLE IF EXISTS service_access;
-DROP TABLE IF EXISTS service_summary;
-DROP TABLE IF EXISTS placement;
-DROP TABLE IF EXISTS priority_gaps;
-DROP TABLE IF EXISTS meta;
 
 -- ---------------------------------------------------------------- provenance ----------------
-CREATE TABLE dataset (
+CREATE TABLE IF NOT EXISTS dataset (
     id           TEXT PRIMARY KEY,      -- macl | avas | followme | mtcc | census | boundaries | moe | moh | services
     files        INTEGER NOT NULL,
     bytes        INTEGER NOT NULL,
@@ -32,7 +21,7 @@ CREATE TABLE dataset (
     last_seen    TEXT
 );
 
-CREATE TABLE ingest_run (
+CREATE TABLE IF NOT EXISTS ingest_run (
     run_id     INTEGER PRIMARY KEY,
     started    TEXT,
     finished   TEXT,
@@ -41,7 +30,7 @@ CREATE TABLE ingest_run (
     stages     TEXT
 );
 
-CREATE TABLE ingest_stage (
+CREATE TABLE IF NOT EXISTS ingest_stage (
     run_id  INTEGER REFERENCES ingest_run(run_id),
     stage   TEXT,
     status  TEXT,                       -- ok | skipped | failed
@@ -50,7 +39,7 @@ CREATE TABLE ingest_stage (
 );
 
 -- ---------------------------------------------------------------- the network ---------------
-CREATE TABLE island (
+CREATE TABLE IF NOT EXISTS island (
     node_id                TEXT PRIMARY KEY,
     name                   TEXT NOT NULL,
     atoll                  TEXT,
@@ -69,7 +58,7 @@ CREATE TABLE island (
     sea_neighbours         INTEGER
 );
 
-CREATE TABLE sea_edge (
+CREATE TABLE IF NOT EXISTS sea_edge (
     from_id    TEXT REFERENCES island(node_id),
     to_id      TEXT REFERENCES island(node_id),
     trips      INTEGER,
@@ -84,7 +73,7 @@ CREATE TABLE sea_edge (
     PRIMARY KEY (from_id, to_id)
 );
 
-CREATE TABLE land_edge (
+CREATE TABLE IF NOT EXISTS land_edge (
     a      TEXT REFERENCES island(node_id),
     b      TEXT REFERENCES island(node_id),
     hours  REAL,
@@ -93,7 +82,7 @@ CREATE TABLE land_edge (
 );
 
 -- ---------------------------------------------------------------- services ------------------
-CREATE TABLE service (
+CREATE TABLE IF NOT EXISTS service (
     service_id   TEXT PRIMARY KEY,
     category     TEXT NOT NULL,         -- education | health
     service_type TEXT NOT NULL,         -- school_primary | school_lower_secondary | ... | hospital
@@ -108,7 +97,7 @@ CREATE TABLE service (
     added_at     TEXT
 );
 
-CREATE TABLE service_access (
+CREATE TABLE IF NOT EXISTS service_access (
     node_id         TEXT REFERENCES island(node_id),
     island          TEXT,
     atoll           TEXT,
@@ -125,7 +114,7 @@ CREATE TABLE service_access (
     PRIMARY KEY (node_id, service_type)
 );
 
-CREATE TABLE service_summary (
+CREATE TABLE IF NOT EXISTS service_summary (
     category            TEXT,
     service_type        TEXT,
     n_facilities        INTEGER,
@@ -141,7 +130,7 @@ CREATE TABLE service_summary (
 -- ---------------------------------------------------------------- simulator -----------------
 -- Greedy placement: for each service type, the best k-th facility to add, with the impact of
 -- adding it to the network that already contains the previous k-1 picks.
-CREATE TABLE placement (
+CREATE TABLE IF NOT EXISTS placement (
     service_type       TEXT,
     k                  INTEGER,         -- 1 = first facility added, 2 = second, ...
     node_id            TEXT REFERENCES island(node_id),
@@ -157,8 +146,8 @@ CREATE TABLE placement (
     PRIMARY KEY (service_type, k)
 );
 
-CREATE TABLE priority_gaps (
-    node_id        TEXT REFERENCES island(node_id),
+CREATE TABLE IF NOT EXISTS priority_gaps (
+    node_id        TEXT PRIMARY KEY REFERENCES island(node_id),
     island         TEXT,
     atoll          TEXT,
     population     INTEGER,
@@ -171,16 +160,51 @@ CREATE TABLE priority_gaps (
     hours_saved    REAL
 );
 
-CREATE TABLE meta (
+-- ---------------------------------------------------------------- landing zone ----------------
+-- One row per file ever seen, with its content hash, so a re-drop of the same bytes is a no-op.
+CREATE TABLE IF NOT EXISTS source_file (
+    path       TEXT PRIMARY KEY,        -- relative to the repo root
+    sha256     TEXT NOT NULL,
+    bytes      INTEGER NOT NULL,
+    rows       INTEGER,
+    kind       TEXT,                    -- services | mtcc | macl | avas | followme | census | moh | moe | raw
+    stage      TEXT,                    -- the pipeline stage it feeds, NULL when nothing consumes it yet
+    first_seen TEXT,
+    last_seen  TEXT
+);
+
+-- Files the pipeline does not understand yet are still kept: one row per record as JSON, so a new
+-- dataset is queryable the moment it is dropped, before any stage knows what to do with it.
+CREATE TABLE IF NOT EXISTS raw_record (
+    source_file TEXT NOT NULL,          -- FK to source_file(path)
+    row_no      INTEGER NOT NULL,
+    payload     TEXT NOT NULL,          -- the record as a JSON object
+    PRIMARY KEY (source_file, row_no)
+);
+
+-- Every reconciliation writes one row per table it touched, so "who changed what, when" is a query.
+CREATE TABLE IF NOT EXISTS data_change (
+    change_id     INTEGER PRIMARY KEY AUTOINCREMENT,
+    changed_at    TEXT NOT NULL,
+    table_name    TEXT NOT NULL,
+    inserted      INTEGER NOT NULL DEFAULT 0,
+    updated       INTEGER NOT NULL DEFAULT 0,
+    deleted       INTEGER NOT NULL DEFAULT 0,
+    note          TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_change_at ON data_change(changed_at DESC);
+
+CREATE TABLE IF NOT EXISTS meta (
     key   TEXT PRIMARY KEY,
     value TEXT
 );
 
-CREATE INDEX idx_island_pop      ON island(population DESC);
-CREATE INDEX idx_access_type     ON service_access(service_type, hours);
-CREATE INDEX idx_service_node    ON service(node_id);
-CREATE INDEX idx_edge_from       ON sea_edge(from_id);
-CREATE INDEX idx_placement_k     ON placement(service_type, k);
+CREATE INDEX IF NOT EXISTS idx_island_pop      ON island(population DESC);
+CREATE INDEX IF NOT EXISTS idx_access_type     ON service_access(service_type, hours);
+CREATE INDEX IF NOT EXISTS idx_service_node    ON service(node_id);
+CREATE INDEX IF NOT EXISTS idx_edge_from       ON sea_edge(from_id);
+CREATE INDEX IF NOT EXISTS idx_placement_k     ON placement(service_type, k);
 
 -- ---------------------------------------------------------------- views ----------------------
 -- The web app reads these names, which is also what the pipeline stages are called, so a

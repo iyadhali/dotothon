@@ -13,6 +13,12 @@ file), not by content hashing: FollowMe alone is 1.8 GB, and re-reading it to de
 re-read it would defeat the purpose. The fingerprint is recorded in `data/derived/.ingest.json`,
 so the next run knows exactly which inputs produced which outputs.
 
+New data is dropped in the same way it was delivered, or into `data/incoming/` when it is a new
+dataset rather than a replacement: anything left there is registered in `source_file` and, if no
+stage understands it yet, its records are kept in `raw_record`:
+
+    data/incoming/<anything>.csv|xlsx|json   absorbed into SQLite, queryable immediately
+
 New data is dropped in the same way it was delivered:
     data/FollowMe_<month>/   any new folder matching data/FollowMe* is picked up automatically
     data/MTCC.xlsx           overwrite
@@ -54,6 +60,9 @@ def source_files() -> dict[str, list[Path]]:
         "moe": sorted((DATA / "external").glob("schoolstats*.pdf")),
         "moh": sorted((DATA / "external").glob("moh_health_facilities*")),
         "services": [DATA / "services.csv"],      # hand-edited, or added through the app
+        # anything dropped here is absorbed into SQLite even if no stage understands it yet
+        "incoming": sorted(p for p in (DATA / "incoming").rglob("*")
+                           if p.is_file() and not p.name.startswith(".")),
     }
 
 
@@ -92,7 +101,8 @@ STAGES: list[tuple[str, list[str], tuple[str, ...]]] = [
     ("services", ["scripts/seed_services.py", "--if-missing"], ("services", "moh")),
     ("service_access", ["scripts/build_service_access.py"], ("services", "moh", "sea")),
     ("simulator", ["scripts/build_simulator.py"], ("service_access", "sea", "services")),
-    ("database", ["scripts/build_database.py"], ("simulator", "service_access", "reachability")),
+    ("incoming", ["scripts/absorb_incoming.py"], ("incoming",)),
+    ("database", ["scripts/build_database.py"], ("simulator", "service_access", "reachability", "incoming")),
     ("web", ["web/build_web_data.py"], ("service_access", "sea", "provision")),
     ("check", ["scripts/check_outputs.py"], ()),          # always last, always cheap
 ]

@@ -17,3 +17,7 @@ venv/
 # build artefacts
 *.log
 db.sqlite3
+
+# dropped datasets are absorbed into data/platform.sqlite, not committed
+/data/incoming/*
+!/data/incoming/.gitkeep

@@ -50,6 +50,9 @@ watch:
 	$(PY) scripts/watch_data.py --every 10
 
 # assert the numbers we publish still hold
+absorb:
+	python3 scripts/absorb_incoming.py
+
 check:
 	$(PY) scripts/check_outputs.py
 

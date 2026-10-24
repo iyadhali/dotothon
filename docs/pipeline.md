@@ -5,11 +5,24 @@ the old one lived and the pipeline rebuilds itself.** Nothing to re-wire, no cod
 restart of the web app.
 
 ```
+data/incoming/<file>      any csv, xlsx or json                 → SQLite: source_file + raw_record
 data/FollowMe_<month>/    any folder matching data/FollowMe*  → sea network (the travel-time model)
 data/MTCC.xlsx            overwrite                            → tidy bus + ferry tables
 data/MACL/*.csv           overwrite                            → monthly airport traffic
 data/Avas_Ride/*.csv      overwrite                            → daily ride demand + fare matrix
 ```
+
+## The database is reconciled, not rebuilt
+
+`scripts/build_database.py` upserts every table on its natural key, prunes rows the artifacts no
+longer contain, and writes one `data_change` row per touched table. The second run in a row prints
+`nothing changed`, which is the test that it is a projection and not an append log. `--rebuild`
+remains available when you really want a clean file.
+
+`scripts/absorb_incoming.py` (stage `incoming`) is what makes a *new* dataset land in the database:
+it registers each file in `source_file` with its sha256, routes known filenames to the stage that
+consumes them, and stores everything else row-by-row in `raw_record` so it is queryable before any
+stage understands it. Re-dropping the same bytes is a no-op.
 
 ## Three ways to run it
 

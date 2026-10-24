@@ -102,6 +102,45 @@ MoE School Statistics 2024 ──► scripts/build_school_provision.py ──►
 Each stage is a standalone script that reads CSVs from `data/` and writes CSVs to `data/derived/`.
 Re-running any stage is safe; nothing is mutated in place.
 
+### The database is the system of record
+
+`data/platform.sqlite` is what the app reads — no page touches a CSV. The pipeline **reconciles**
+the database rather than replacing it:
+
+```
+data/derived/*.csv  ──► scripts/build_database.py ──► data/platform.sqlite  ──► Django (read-only)
+                              upsert by natural key        + data_change log
+```
+
+- every table has a natural key (`island.node_id`, `sea_edge(from_id,to_id)`, `service.service_id`,
+  `service_access(node_id,service_type)` …), so a build inserts what is new, updates what moved,
+  deletes what disappeared, and **writes nothing when nothing changed**;
+- each reconciliation logs one row per touched table into `data_change` (`inserted, updated,
+  deleted`), so "who changed what, when" is a query, not a guess;
+- `source_file` records every input file ever seen with its sha256, and `data_change` plus
+  `meta.built_at` are surfaced in the app footer (`SQLite · rebuilt 24 Oct 15:31 · 1 new file`).
+
+### New data
+
+Drop it in `data/incoming/` and run `make ingest`:
+
+```bash
+cp ~/Downloads/new_health_post.csv data/incoming/
+make ingest           # fingerprints → absorbs → reconciles → rebuilds the web payloads → checks
+```
+
+- files whose name maps to a known source (`services`, `mtcc`, `macl`, `avas`, `followme`, `census`,
+  `moh`, `moe`) are routed to that source and the stage that consumes it re-runs;
+- anything else is still kept: its rows land in `raw_record` as JSON, one row per record, so a new
+  dataset is queryable from the database the moment it arrives, before any stage understands it;
+- a re-drop of the same bytes is a no-op (sha256 match), and `python scripts/absorb_incoming.py
+  --dry-run` says what would happen without touching anything.
+
+```bash
+make absorb           # only the data/incoming pass
+python scripts/build_database.py --rebuild   # throw the file away and start clean
+```
+
 ```bash
 python scripts/build_island_spine.py        # Census 2022 ⋈ OCHA boundaries  → 187 islands
 python scripts/build_sea_network.py         # 31 GPS files → stays → crossings   (~4 min)

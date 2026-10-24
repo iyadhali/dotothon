@@ -67,6 +67,26 @@ SERVICE_LABEL = {
 DEFAULT_ISLAND = "MLE"
 
 
+def db_meta() -> dict:
+    """What the database says about itself — the panel footer shows this, not a CSV's mtime."""
+    try:
+        rows = db_frame("select key, value from meta")
+        meta = dict(zip(rows.key, rows.value))
+        try:
+            from datetime import datetime
+            from zoneinfo import ZoneInfo
+            meta["built_local"] = (datetime.fromisoformat(meta["built_at"])
+                                   .astimezone(ZoneInfo("Indian/Maldives"))
+                                   .strftime("%d %b %H:%M"))
+        except Exception:
+            pass
+        meta["files"] = int(db_frame("select count(*) c from source_file").c.iloc[0])
+        meta["changes"] = int(db_frame("select count(*) c from data_change").c.iloc[0])
+        return meta
+    except Exception:
+        return {}
+
+
 @require_GET
 def index(request):
     m = model()
@@ -81,6 +101,7 @@ def index(request):
         "rows": rows,
         "gaps": m.gaps,
         "manifest": _manifest(),
+        "db_meta": db_meta(),
         "default_from": island,
         "default_to": "",
         "default_from_name": m.name_of(island) or island,

@@ -76,6 +76,25 @@ def main() -> None:
     hp = int(hosp.loc[hosp.hours <= 2, "population"].sum())
     check("274,015 people reach a hospital within two hours", hp == 274015, f"{hp:,}")
 
+    # the database is the system of record: it must carry the landing tables and its own stamp
+    import sqlite3
+    db = ROOT / "data" / "platform.sqlite"
+    check("platform.sqlite exists", db.exists(), f"{db.stat().st_size/1e6:.2f} MB" if db.exists() else "missing")
+    if db.exists():
+        con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+        tables = {r[0] for r in con.execute("select name from sqlite_master where type='table'")}
+        for t in ["source_file", "raw_record", "data_change", "meta"]:
+            check(f"db has {t}", t in tables, "")
+        built = con.execute("select value from meta where key='built_at'").fetchone()
+        check("db records when it was built", bool(built and built[0]), built[0] if built else "missing")
+        changes = con.execute("select count(*) from data_change").fetchone()[0]
+        check("db logs its reconciliations", changes > 0, f"{changes} rows")
+        con.close()
+
+    # and it must be the only thing the app reads
+    src = (ROOT / "web/access/data.py").read_text()
+    check("the app reads no CSV", "read_csv" not in src, "db_frame only")
+
     if failures:
         print(f"\n{len(failures)} check(s) failed: {', '.join(failures)}")
         sys.exit(1)

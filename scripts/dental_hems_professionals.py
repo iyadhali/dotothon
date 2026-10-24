@@ -15,7 +15,7 @@ import time
 import urllib.request
 
 BASE = "https://hems.health.gov.mv"
-UA = {"User-Agent": "Mozilla/5.0 (datathon research; contact hello@looth.xyz)"}
+UA = {"User-Agent": "Mozilla/5.0 (datathon research; contact see project README)"}
 DENTAL_KEYS = ("dent", "orthodon", "oral", "maxillo", "periodon", "endodon", "prosthodon",
                "pedodon", "paedodon")
 

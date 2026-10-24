@@ -20,7 +20,7 @@ import time
 import urllib.request
 
 BASE = "https://hems.health.gov.mv"
-UA = {"User-Agent": "Mozilla/5.0 (datathon research; contact hello@looth.xyz)"}
+UA = {"User-Agent": "Mozilla/5.0 (datathon research; contact see project README)"}
 
 ATOLL_PREFIX = {
     # normalised prefix -> (atoll code used by MBS, atoll name)

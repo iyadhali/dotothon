@@ -9,6 +9,7 @@ import csv
 import html as H
 import re
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -27,8 +28,15 @@ def get(url, path):
     if path.exists() and path.stat().st_size > 1000:
         return path.read_text(encoding="utf-8")
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (datathon research)"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        s = r.read().decode("utf-8", errors="replace")
+    for attempt in range(8):  # server returns intermittent HTTP 500s
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                s = r.read().decode("utf-8", errors="replace")
+            break
+        except urllib.error.HTTPError:
+            time.sleep(2 + 2 * attempt)
+    else:
+        raise RuntimeError(f"failed after retries: {url}")
     path.write_text(s, encoding="utf-8")
     time.sleep(0.4)
     return s

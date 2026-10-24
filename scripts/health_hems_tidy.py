@@ -69,6 +69,8 @@ CURATED = {
     "Thaa Atoll Hospital": ("Th", "Veymandoo"),
     "Gaafu Alifu Atoll Hospital": ("GA", "Villingili"),
     "Amina Dhiyo Health Centre": ("HA", "Ihavandhoo"),
+    # by elimination: MHS 2020 lists HA Baarah + HA Ihavandhoo HCs; HEMS names only these two
+    "Amina Rehendhi Health Centre": ("HA", "Baarah"),
     "I.M.D.C Multi Speciality Hospital": ("S", "Hithadhoo"),
     "M.C.S. Medical Center 2": ("", ""),  # prison clinic, island not stated
 }

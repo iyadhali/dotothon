@@ -64,7 +64,7 @@
     <div class="card" id="paircard">
       <div class="cardhead">
         <h2>Journey from <span id="fromName">{{ default_from_name }}</span></h2>
-        <span class="hint">pick a second island</span>
+        <button class="ghost" id="clearTo" type="button" hidden title="Remove the second island">✕ clear</button>
       </div>
       <div id="route-out" data-default-to="{{ default_to }}">
 
@@ -432,10 +432,28 @@ function onIslandClick(id) {
 }
 
 let autoRoute = true;
+function clearTo() {
+  setPicker("to", "");
+  el("to").value = "";
+  el("clearTo").hidden = true;
+  el("route-out").innerHTML = "";
+  clearRoute();
+  const q = new URLSearchParams(location.search);
+  q.delete("to");
+  history.replaceState({}, "", q.toString() ? "?" + q.toString() : location.pathname);
+  drawConnect();                 // the service web comes back when the second island goes away
+}
+
 function submitRoute() {
   const wasAuto = autoRoute;
   autoRoute = false;
   const from = state.selId || el("from").value, to = el("to").value;
+  if (!to || to === from) {                    // nothing picked yet: open the picker instead of failing quietly
+    const t = el("toCombo") && el("toCombo").querySelector(".combotext");
+    if (t) { t.focus(); t.dispatchEvent(new Event("input", {bubbles: true})); }
+    return;
+  }
+  el("clearTo").hidden = false;
   htmx.ajax("GET", `/route/?from=${from}&to=${to}`, {target:"#route-out", swap:"innerHTML"});
   if (!wasAuto) history.replaceState({}, "", `?from=${from}&to=${to}`);
 }

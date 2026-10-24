@@ -9,4 +9,5 @@ urlpatterns = [
     path("ranked/", views.ranked, name="ranked"),
     path("connect/", views.connect, name="connect"),
     path("build/", views.build, name="build"),
+    path("simulator/", views.build, name="simulator"),
 ]

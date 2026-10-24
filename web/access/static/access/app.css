@@ -917,12 +917,13 @@ main.stage { height: 100vh; }
   text-transform: uppercase; color: var(--muted);
 }
 
-.ovl-build-right { width: 524px; }
+.ovl-build-right { width: 562px; }
 .ovl-build-right .card { padding: 12px 12px 10px; display: flex; flex-direction: column; gap: 8px; }
 .ovl-build-right .cardhead { align-items: center; gap: 8px; flex-wrap: wrap; }
 .ovl-build-right .cardhead h2 { font-size: 15px; }
 .ovl-build-right .candtable { margin: 0; }
 .candscroll { overflow: auto; overscroll-behavior: contain; margin: 0 -4px; padding: 0 4px; max-height: calc(100vh - 300px); }
+.candscroll table { width: 100%; }
 .candscroll thead th {
   position: sticky; top: 0; z-index: 2;
   background: rgba(255,255,255,.98); box-shadow: 0 1px 0 var(--line);
@@ -977,12 +978,76 @@ main.stage, main.stage.stage-build { height: calc(100dvh - var(--topbar-h)); min
 
 /* candidate table: six fixed columns so the header never collides with the numbers */
 .ovl-build-right .candtable { table-layout: fixed; width: 100%; }
-.ovl-build-right .candtable th:nth-child(1), .ovl-build-right .candtable td:nth-child(1) { width: 24px; }
-.ovl-build-right .candtable th:nth-child(3), .ovl-build-right .candtable td:nth-child(3) { width: 78px; }
-.ovl-build-right .candtable th:nth-child(4), .ovl-build-right .candtable td:nth-child(4) { width: 56px; }
-.ovl-build-right .candtable th:nth-child(5), .ovl-build-right .candtable td:nth-child(5) { width: 64px; }
-.ovl-build-right .candtable th:nth-child(6), .ovl-build-right .candtable td:nth-child(6) { width: 76px; }
+.ovl-build-right .candtable th:nth-child(1), .ovl-build-right .candtable td:nth-child(1) { width: 24px; padding-right: 0; }
+.ovl-build-right .candtable th:nth-child(3), .ovl-build-right .candtable td:nth-child(3) { width: 74px; }
+.ovl-build-right .candtable th:nth-child(4), .ovl-build-right .candtable td:nth-child(4) { width: 50px; }
+.ovl-build-right .candtable th:nth-child(5), .ovl-build-right .candtable td:nth-child(5) { width: 66px; }
+.ovl-build-right .candtable th:nth-child(6), .ovl-build-right .candtable td:nth-child(6) { width: 88px; padding-left: 2px; padding-right: 0; }
 .ovl-build-right .candtable td:nth-child(2) { line-height: 1.3; }
 .ovl-build-right .candtable td:nth-child(2) .muted { font-size: 10.5px; }
 .ovl-build-right .candtable th:nth-child(3), .ovl-build-right .candtable th:nth-child(4),
 .ovl-build-right .candtable th:nth-child(5) { font-size: 9.2px; letter-spacing: .02em; }
+
+/* =====================================================================================
+   IMPACT, DRAWN — coverage meters that fill as the plan grows, a bar per build so the
+   diminishing returns are visible, and inline bars so a ranking reads at a glance.
+   ===================================================================================== */
+.coverage { display: flex; flex-direction: column; gap: 9px; margin: 2px 0 4px; }
+.covlabel {
+  margin: 10px 0 0; font-size: 9.5px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted);
+}
+.covrow .covtop {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  font-size: 10px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted);
+}
+.covrow .covtop b {
+  font-size: 12.5px; letter-spacing: 0; text-transform: none; color: var(--ink);
+  font-variant-numeric: tabular-nums; font-weight: 660;
+}
+.covrow .covtop b em { font-style: normal; font-weight: 500; font-size: 10.5px; color: var(--muted); }
+.covbar {
+  position: relative; height: 10px; border-radius: 99px; background: #ece6da;
+  overflow: hidden; margin: 5px 0 3px;
+}
+.covbar i {
+  position: absolute; top: 0; bottom: 0; border-radius: 99px;
+  transition: width .38s ease, left .38s ease;
+}
+.covbar i.base { left: 0; background: var(--teal); }
+.covbar i.add { background: #5fb8ad; }
+.covcap { font-size: 10px; line-height: 1.4; color: var(--muted); }
+.covcap em { font-style: normal; color: var(--teal); font-weight: 640; }
+
+.planline { margin: 8px 0 0; font-size: 10.5px; line-height: 1.5; color: var(--muted); }
+.planline b { color: var(--ink); font-variant-numeric: tabular-nums; font-weight: 640; }
+
+.planlist li { align-items: flex-start; }
+.pinfo { flex: 1; min-width: 0; }
+.pline { font-size: 12px; line-height: 1.3; }
+.pline .muted { font-size: 10.5px; }
+.pbarrow { display: flex; align-items: center; gap: 7px; margin-top: 4px; }
+.pbar { flex: 1; height: 5px; border-radius: 99px; background: #ece6da; overflow: hidden; }
+.pbar i { display: block; height: 100%; background: var(--teal); border-radius: 99px;
+          transition: width .35s ease; }
+.pgain { font-size: 9.5px; color: var(--muted); font-variant-numeric: tabular-nums;
+         min-width: 46px; text-align: right; }
+
+.candtable td.r, .linktable td.r { position: relative; padding-bottom: 9px; }
+.nfill {
+  position: absolute; left: 5px; bottom: 3px; height: 3px; border-radius: 99px;
+  background: #a9d8ce; pointer-events: none; transition: width .3s ease;
+}
+.nfill.warm { background: #f0b98a; }
+.candtable td.r .v, .linktable td.r .v { position: relative; z-index: 1; }
+
+.leaflet-tooltip.tipline {
+  background: #0b4f57; color: #fff; border: 0; border-radius: 8px;
+  font-size: 11px; font-weight: 560; padding: 4px 8px; box-shadow: 0 4px 14px rgba(8,48,46,.25);
+}
+.leaflet-tooltip.tipline::before { display: none; }
+
+.todayline {
+  margin: 12px 0 2px; font-size: 11px; line-height: 1.5; color: var(--muted);
+}
+.todayline b { color: var(--ink); font-weight: 640; font-variant-numeric: tabular-nums; }

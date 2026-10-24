@@ -7,11 +7,11 @@
        aria-label="Map of the Maldives: dots are inhabited islands, numbered pins are candidate sites"></div>
 
   <aside class="ovl ovl-left wide ovl-build">
-    <h2 class="ovltitle">Where should the next service go?</h2>
-    <p class="ovlsub">Ranked by the residents each site would bring within 2 hours of the service.</p>
+    <h2 class="ovltitle">Plan a build</h2>
+    <p class="ovlsub">Pick a service and a site. Each pick is scored on the network we actually observe, and the next pick is scored after it.</p>
 
     <div class="tabs" id="typeTabs" role="tablist" aria-label="Service type"></div>
-    <div class="figs figs-4" id="figs"></div>
+    <p class="todayline" id="figs"></p>
 
     <div class="planhead">
       <h3>Your plan</h3>
@@ -24,7 +24,7 @@
       <li><i class="dot own"></i>within 2 h</li>
       <li><i class="dot unknown"></i>beyond 2 h</li>
       <li><span class="pin pin-sm">1</span>candidate</li>
-      <li><i class="dot new"></i>would join</li>
+      <li><i class="dot new"></i>newly within 2 h</li>
       <li><i class="dot link"></i>crossing</li>
     </ul>
     <p class="ovlfoot">
@@ -37,7 +37,7 @@
   <aside class="ovl ovl-right ovl-build-right">
     <div class="card">
       <div class="cardhead">
-        <h2>Where to build next</h2>
+        <h2>Recommended next builds</h2>
         <div class="tabs" id="rankTabs" role="group" aria-label="Rank candidates by">
           <button class="tab is-on" data-rank="people" type="button">People</button>
           <button class="tab" data-rank="islands" type="button">Islands</button>
@@ -142,8 +142,12 @@ TYPES.forEach(t => {
   t.byIndex = new Map(t.cands.map(c => [c.i, c]));
 });
 
-const state = {ti: 0, rank: "people", built: [], sel: null, linkSort: "new", link: null,
-               linkByType: {}};
+const state = {ti: 0, rank: "people", built: [], gains: [], sel: null, linkSort: "new",
+               link: null, linkByType: {}};
+
+const TOTAL_POP = ISLES.reduce((sum, p) => sum + (p.pop || 0), 0);
+const TOTAL_KIDS = ISLES.reduce((sum, p) => sum + (p.kids || 0), 0);
+const TOTAL_ISL = ISLES.length;
 TYPES.forEach(t => { state.linkByType[t.key] = null; });
 
 const type = () => TYPES[state.ti];
@@ -256,7 +260,9 @@ function renderMap() {
     const a = ISLES[link.a], b = ISLES[link.b];
     L.polyline([[a.lat, a.lon], [b.lat, b.lon]], {
       color: "#0b4f57", weight: 2.5, dashArray: "6 5", opacity: .9
-    }).addTo(linkLayer);
+    }).addTo(linkLayer).bindTooltip(
+      `+${fmt(link.new_people)} residents within 2 h · ${link.hours.toFixed(2)} h crossing`,
+      {permanent: true, direction: "center", className: "tipline", opacity: 1});
     [a, b].forEach(p => L.circleMarker([p.lat, p.lon], {
       radius: 5, color: "#0b4f57", weight: 2, fillColor: "#fff", fillOpacity: 1
     }).addTo(linkLayer));
@@ -284,26 +290,47 @@ function renderTabs() {
 }
 
 function renderFigs() {
-  const t = type(), cov = coveredNow(), now = totals(cov), before = t.today;
-  const more = now.people - before.people, moreI = now.islands - before.islands;
-  const tiles = [
-    [`${before.facilities + state.built.length}`, "facilities on the islands"],
-    [`${fmt(now.islands)}`, `islands within 2 h${moreI ? ` (+${moreI})` : ""}`],
-    [`${fmt(now.people)}`, `residents within 2 h${more ? ` (+${fmt(more)})` : ""}`],
-    [`${fmt(now.kids)}`, "children within 2 h"],
+  const t = type(), n = t.today.facilities + state.built.length;
+  const what = t.facility === "campus" ? "campuses" : t.facility + "s";
+  const plan = state.built.length ? ` · <b>${state.built.length}</b> in your plan` : "";
+  el("figs").innerHTML = `<b>${t.today.facilities}</b> ${what} today${plan} · median ` +
+    `<b>${t.today.median.toFixed(1)} h</b> to the nearest`;
+}
+
+function coverageHtml(now, before) {
+  const rows = [
+    {label: "Residents within 2 h", base: before.people, add: now.people - before.people,
+     total: TOTAL_POP},
+    {label: "Islands within 2 h", base: before.islands, add: now.islands - before.islands,
+     total: TOTAL_ISL},
+    {label: "Children within 2 h", base: before.children, add: now.kids - before.children,
+     total: TOTAL_KIDS},
   ];
-  el("figs").innerHTML = tiles.map(([n, l]) =>
-    `<div><b>${n}</b><span>${l}</span></div>`).join("");
+  const n = state.built.length;
+  return `<p class="covlabel">Share of the country within 2 h of the service</p>` +
+    `<div class="coverage">` + rows.map((r, x) => {
+    const b = 100 * r.base / r.total, a = 100 * Math.max(0, r.add) / r.total;
+    return `<div class="covrow">
+      <div class="covtop"><span>${r.label}</span><b>${fmt(r.base + r.add)}<em> / ${fmt(r.total)}</em></b></div>
+      <div class="covbar"><i class="base" style="width:${b.toFixed(2)}%"></i>${r.add
+        ? `<i class="add" style="left:${b.toFixed(2)}%;width:${a.toFixed(2)}%"></i>` : ""}</div>
+      <div class="covcap">${b.toFixed(0)}% today${r.add
+        ? ` · <em>+${a.toFixed(1)} pts</em> from ${n} build${n > 1 ? "s" : ""}`
+        : (x === 0 ? " · build a site and the bars fill in" : "")}</div>
+    </div>`;
+  }).join("") + `</div>`;
 }
 
 function renderTable() {
   const rank = ranking(), t = type();
-  el("candBody").innerHTML = rank.slice(0, 12).map((r, n) => {
+  const top = rank.slice(0, 12), max = Math.max(1, ...top.map(r => r.people));
+  el("candBody").innerHTML = top.map((r, n) => {
     const p = ISLES[r.c.i];
     return `<tr data-i="${r.c.i}" class="${state.sel === r.c.i ? "is-on" : ""}">
       <td class="rkc"><span class="pin">${n + 1}</span></td>
       <td>${p.name}<span class="muted"> · ${p.atoll}</span></td>
-      <td class="r">+${fmt(r.people)}</td>
+      <td class="r"><span class="nfill" style="width:${(100 * r.people / max).toFixed(1)}%"></span>
+        <span class="v">+${fmt(r.people)}</span></td>
       <td class="r">+${r.islands}</td>
       <td class="r">+${fmt(r.kids)}</td>
       <td class="r"><button class="buildbtn" type="button" data-i="${r.c.i}">Build here</button></td>
@@ -315,31 +342,30 @@ function renderTable() {
 }
 
 function renderPlan() {
-  const t = type();
+  const t = type(), now = totals(coveredNow()), before = t.today;
+  el("planTotals").innerHTML = coverageHtml(now, before);
   if (!state.built.length) {
-    el("planBody").innerHTML = `<p class="empty">Nothing built yet — add a site from the list on the right.</p>`;
-    el("planTotals").innerHTML = `<p class="empty">The totals appear here once you build.</p>`;
+    el("planBody").innerHTML = `<p class="empty">Nothing built yet — pick a site on the right and its share of the country fills in below.</p>`;
     return;
   }
+  const maxGain = Math.max(1, ...state.gains);
   el("planBody").innerHTML = `<ol class="planlist">` + state.built.map((i, n) => {
-    const p = ISLES[i];
-    return `<li><span class="pin">${n + 1}</span><b>${p.name}</b>
-      <span class="muted">${p.atoll} · ${fmt(p.pop)} residents</span></li>`;
+    const p = ISLES[i], g = state.gains[n] || 0;
+    return `<li><span class="pin">${n + 1}</span>
+      <div class="pinfo">
+        <div class="pline"><b>${p.name}</b> <span class="muted">${p.atoll} · ${fmt(p.pop)} residents</span></div>
+        <div class="pbarrow"><span class="pbar"><i style="width:${(100 * g / maxGain).toFixed(1)}%"></i></span>
+          <span class="pgain">+${fmt(g)}</span></div>
+      </div></li>`;
   }).join("") + `</ol>`;
-  const cov = coveredNow(), now = totals(cov), before = t.today;
-  el("planTotals").innerHTML = `
-    <div class="figs figs-4">
-      <div><b>+${fmt(now.people - before.people)}</b><span>residents newly within 2 h</span></div>
-      <div><b>+${now.islands - before.islands}</b><span>islands newly within 2 h</span></div>
-      <div><b>+${fmt(now.kids - before.children)}</b><span>children newly within 2 h</span></div>
-      <div><b>${fmt(now.people)}</b><span>residents within 2 h in total</span></div>
-    </div>`;
 }
 
 function renderLinks() {
   const t = type();
   let links = (DATA.links[t.key] || []).slice();
   if (state.linkSort === "saved") links.sort((a, b) => b.saved_hours - a.saved_hours);
+  const maxNew = Math.max(1, ...links.map(l => l.new_people));
+  const maxSaved = Math.max(1, ...links.map(l => l.saved_people));
   el("linkBody").innerHTML = links.map((l, n) => {
     const on = state.linkByType[t.key] && state.linkByType[t.key].a === l.a
             && state.linkByType[t.key].b === l.b;
@@ -348,9 +374,11 @@ function renderLinks() {
           <span class="muted"> · ${l.a_atoll}${l.a_atoll !== l.b_atoll ? " – " + l.b_atoll : ""}</span></td>
       <td class="r">${l.km.toFixed(1)} km</td>
       <td class="r">${l.hours.toFixed(2)} h</td>
-      <td class="r">${l.new_people ? "+" + fmt(l.new_people) : "—"}</td>
+      <td class="r"><span class="nfill" style="width:${(100 * l.new_people / maxNew).toFixed(1)}%"></span>
+        <span class="v">${l.new_people ? "+" + fmt(l.new_people) : "—"}</span></td>
       <td class="r">${l.new_islands ? "+" + l.new_islands : "—"}</td>
-      <td class="r">${l.saved_people ? fmt(l.saved_people) + " people" : "—"}</td>
+      <td class="r"><span class="nfill warm" style="width:${(100 * l.saved_people / maxSaved).toFixed(1)}%"></span>
+        <span class="v">${l.saved_people ? fmt(l.saved_people) + " people" : "—"}</span></td>
       <td class="r"><button class="ghost linkbtn" type="button" data-link="${n}">Draw</button></td>
     </tr>`;
   }).join("") || `<tr><td colspan="7" class="empty">No crossing under 60 km improves this service.</td></tr>`;
@@ -371,7 +399,7 @@ function renderAll() { renderTabs(); renderSide(); renderMap(); }
 el("typeTabs").addEventListener("click", e => {
   const b = e.target.closest("[data-t]");
   if (!b) return;
-  state.ti = Number(b.dataset.t); state.built = []; state.sel = null;
+  state.ti = Number(b.dataset.t); state.built = []; state.gains = []; state.sel = null;
   renderAll();
 });
 el("rankTabs").addEventListener("click", e => {
@@ -392,7 +420,11 @@ el("candBody").addEventListener("click", e => {
   const btn = e.target.closest(".buildbtn");
   if (btn) {
     const i = Number(btn.dataset.i);
-    if (!state.built.includes(i)) state.built.push(i);
+    if (!state.built.includes(i)) {
+      const before = totals(coveredNow()).people;
+      state.built.push(i);
+      state.gains.push(totals(coveredNow()).people - before);
+    }
     state.sel = i;
     renderAll();
     return;
@@ -411,7 +443,7 @@ el("linkBody").addEventListener("click", e => {
   renderLinks(); renderMap();
 });
 el("resetPlan").addEventListener("click", () => {
-  state.built = []; state.sel = null; renderAll();
+  state.built = []; state.gains = []; state.sel = null; renderAll();
 });
 
 renderAll();

@@ -520,6 +520,7 @@ function setMode(m, opts = {}) {
   el("metricrow").hidden = m === "service";
   el("legend").hidden = m === "service";
   el("hitlist").hidden = m === "service";
+  el("atollCombo").hidden = m === "service";
   el("footnote").hidden = m === "service";
   el("listhead").hidden = m === "service";
   document.querySelector(".ovl-right").hidden = m === "service";

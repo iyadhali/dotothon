@@ -744,3 +744,18 @@ table.bars.tight th, table.bars.tight td { padding: 2px 0; font-size: 11px; }
 .bigrow div { background: #f8f5ee; border-radius: 10px; padding: 9px 11px; }
 .bigrow b { display: block; font-size: 19px; font-weight: 690; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
 .bigrow span { display: block; font-size: 10.5px; color: var(--muted); line-height: 1.3; margin-top: 3px; }
+
+/* compact hour meter inside a row */
+ul.svcroute li { display: grid; grid-template-columns: 104px 1fr auto; align-items: center; }
+.meter { height: 6px; border-radius: 3px; background: #eef1ee; overflow: hidden; }
+.meter > span { display: block; height: 100%; border-radius: 3px; }
+.meter.own > span { background: #0f766e; }
+.meter.under2 > span { background: #2f855a; }
+.meter.under4 > span { background: #d69e2e; }
+.meter.under8 > span { background: #dd6b20; }
+.meter.over8 > span { background: #c53030; }
+.meter.unknown > span { background: #cbd5d9; }
+ul.svcroute .to { text-align: right; min-width: 132px; }
+
+ul.svcroute li { grid-template-columns: 118px 1fr auto; }
+ul.svcroute .who { font-size: 12px; }

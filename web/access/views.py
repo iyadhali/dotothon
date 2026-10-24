@@ -143,6 +143,14 @@ def connect(request):
                        for n in seq]
                 row["path"] = pts
                 paths.append(pts)
+        if row["local"]:
+            row["pct"], row["band"] = 100, "own"
+        elif row["hours"] is None:
+            row["pct"], row["band"] = 0, "unknown"
+        else:
+            row["pct"] = max(6, min(100, round(100 * row["hours"] / 8)))
+            row["band"] = ("under2" if row["hours"] <= 2 else "under4" if row["hours"] <= 4
+                           else "under8" if row["hours"] <= 8 else "over8")
         rows.append(row)
 
     rows.sort(key=lambda r: (0 if r["local"] else 1, r["hours"] if r["hours"] is not None else 999))

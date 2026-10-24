@@ -23,6 +23,7 @@
   {% for r in rows %}
   <li class="{% if r.local %}is-local{% endif %}">
     <span class="who">{{ r.label }}</span>
+    <span class="meter {{ r.band }}"><span style="width:{{ r.pct }}%"></span></span>
     <span class="to">
       {% if r.local %}
         <b class="yes">on the island</b>

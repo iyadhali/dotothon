@@ -130,13 +130,16 @@ def snap(df: pd.DataFrame, nodes: pd.DataFrame, lat_col: str, lon_col: str) -> n
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="process only the first N day files")
+    ap.add_argument("--gps", type=Path, default=GPS, help="folder of daily FollowMe CSVs")
     args = ap.parse_args()
 
     nodes_all = load_islands()
     nodes = nodes_all[nodes_all.is_island].reset_index(drop=True)
     print(f"island nodes: {len(nodes):,} ({int((nodes.type=='inhabited').sum())} inhabited) "
           f"of {len(nodes_all):,} ADM2 features")
-    files = sorted(GPS.glob("*.csv"), key=lambda p: int(p.stem))
+    files = sorted(args.gps.glob("*.csv"), key=lambda p: int(p.stem))
+    if not files:
+        raise SystemExit(f"no CSVs in {args.gps}")
     if args.limit:
         files = files[: args.limit]
 

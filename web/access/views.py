@@ -19,6 +19,7 @@ def index(request):
         "islands": m.picker,
         "atolls": m.atolls,
         "rows": rows,
+        "gaps": m.gaps,
         "default_from": "MV002012",   # Kulhudhuffushi: the demo journey that works
         "default_to": "MLE",
         "default_island": request.GET.get("island", "MV002012"),

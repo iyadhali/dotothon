@@ -1,6 +1,5 @@
-# The web app and the analysis pipeline share one interpreter.
-# Python >= 3.12 (tested on 3.14).
+# One interpreter runs the whole project (tested on Python 3.14, macOS).
 Django==5.2
 pandas>=3.0
-# only needed to rebuild the data from source (scripts/):
-# pdfplumber>=0.11        # MoE School Statistics 2024 table extraction
+openpyxl>=3.1        # reads the MBS Census 2022 workbooks
+pdfplumber>=0.11     # reads the MoE School Statistics 2024 tables

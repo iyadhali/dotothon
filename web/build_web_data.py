@@ -42,7 +42,8 @@ def round_coords(c, dp=5):
 def main() -> None:
     acc = pd.read_csv(ROOT / "data" / "derived" / "island_access.csv")
     nodes = pd.read_csv(ROOT / "data" / "derived" / "sea_nodes.csv")
-    acc = acc.merge(nodes[["node_id", "lat", "lon"]], on="node_id", how="left")
+    if "lat" not in acc.columns:            # island_access carries its own coordinates
+        acc = acc.merge(nodes[["node_id", "lat", "lon"]], on="node_id", how="left")
     by_id = acc.set_index("node_id")
 
     src = json.loads((ROOT / "data" / "external" / "mdv_admin2_islands.geojson").read_text())

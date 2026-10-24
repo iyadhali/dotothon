@@ -9,9 +9,10 @@ The unusual part: the travel times are **not** taken from a timetable. They are 
 a month of anonymised vessel GPS (17.4 M points from 1,328 tracked craft), so the network in the
 model is the one boats actually sailed in August 2025, not the one that was published.
 
-**44 islands** teach grade 11–12. **156 islands, 420,175 people** can reach one within two hours.
-**2 islands** have no observed route at all. Nationally, only **29.9 %** of 16–17-year-olds are
-enrolled in higher secondary, against 91.9 % in primary.
+**44 islands** teach grade 11–12. **159 islands, 427,538 people** can reach one within two hours;
+**28 cannot**, and those 28 hold 6,758 children aged 0–17. **2 islands** have no observed route at
+all. Nationally, only **29.9 %** of 16–17-year-olds are enrolled in higher secondary, against
+91.9 % in primary.
 
 ---
 
@@ -106,13 +107,33 @@ to OCHA FIS; OpenStreetMap data (not used in the served map) is ODbL.
   (Addu, Fuvahmulah, Thinadhoo) come back as unreachable by sea, which is exactly the gap air
   would fill.
 
+## How this maps to the judging criteria
+
+Nothing in this repo exists unless it moves a criterion — the audit trail is
+**[docs/criteria-map.md](docs/criteria-map.md)**.
+
+| Criterion | Weight | Where it is earned |
+|---|---|---|
+| Technical execution | 20 % | the demo runs offline; every number re-derivable; `make check` asserts 13 published figures; limits stated |
+| Impact | 15 % | **[docs/findings.md](docs/findings.md)** — a named user, an explicit decision, 28 islands ranked by children |
+| Scalability | 15 % | `make refresh GPS=<new month>`; one command per stage; no database to migrate |
+| Data Utilization | 15 % | organiser data + official public data only; school totals reconcile to 5,105; island areas agree with OCHA at r = 0.9996 |
+| Innovation | 10 % | the method — an observed network reconstructed from GPS, not a published timetable |
+| Relevance | 10 % | island-to-island access to post-16 education, 187 islands |
+| Clarity | 5 % | one question, one map, one number |
+| Teamwork | 10 % | five separable pipeline stages for five people |
+
 ## Repository layout
 
 ```
 data/                     provided datasets + external/ (open data, downloaded) + derived/ (pipeline output)
 scripts/                  the pipeline: spine → sea network → school provision → reachability → query
 web/                      Django + HTMX explorer (config/, access/, templates/, static/)
-REVIEW.md                 the full review: challenge card, dataset teardown, rubric mapping, risks
+REVIEW.md                 the review: challenge card, dataset teardown, risks
+docs/judging-criteria.md  the actual rubric, our self-assessment and ranked actions
+docs/criteria-map.md      which artifact earns which criterion, and what we refuse to build
+docs/findings.md          the decision brief: who benefits, what they could do differently
+Makefile                  make / make refresh GPS=<dir> / make check / make run
 ```
 
 ## AI assistance

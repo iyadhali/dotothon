@@ -36,7 +36,8 @@ This supersedes the summary in the team briefing. Keep it open while building th
 
 ## Self-assessment — where we stand
 
-Scores are our own honest guess at what a judge would write today, before any further work.
+Scores are our own honest guess at what a judge would write today, updated after actions 1–2 landed
+(`docs/findings.md`, `make check`). Was 76.0 before them.
 `contribution = score / 5 × weight × 100`.
 
 | Criterion | Weight | Score | Points | Evidence we can point at | Gap |
@@ -45,23 +46,22 @@ Scores are our own honest guess at what a judge would write today, before any fu
 | Data Utilization | 15 % | 4 | 12.0 | 4 organiser datasets + 3 public sources; school table reconciles to the published 5,105 students; island areas match OCHA at r = 0.9996 | **FollowMe carries the model; MTCC, MACL and Avas are only context.** Add one cross-validation (see action 4) |
 | Innovation | 10 % | 4 | 8.0 | observed network from GPS; 1,303 physically impossible crossings rejected; road links added because boats cannot see a causeway | must be *stated* as the innovation, or a judge reads it as "another dashboard" and scores 2 |
 | Technical execution | 20 % | 4 | 16.0 | live demo, runs offline, pipeline re-runnable, limits named in-app and in the README | **three capital routes return "no observed journey"** (Addu, Fuvahmulah, Thinadhoo) — correct, but reads as a bug. Air layer fixes it |
-| Impact | 15 % | 3 | 9.0 | 156 islands within 2 h; 27 beyond; 2 with nothing observed; NER 29.9 % vs 91.9 % | **no named decision-maker and no concrete action yet** — the single biggest weakness |
-| Scalability & readiness | 15 % | 3 | 9.0 | scripted pipeline, CSV in / CSV out, no database | **no documented refresh path and no maintenance note**; "works with updated data" is asserted, not shown |
+| Impact | 15 % | 4 | 12.0 | `docs/findings.md`: named user (MoE Planning & Research), 28-island decision table ranked by children, named schools and km; NER 29.9 % vs 91.9 % | boarding/subsidy costing not modelled |
+| Scalability & readiness | 15 % | 4 | 12.0 | `Makefile` with `make refresh GPS=…`; `make check` asserts 13 published numbers; one command per stage | no hosted instance; maintainer note still thin |
 | Clarity | 5 % | 4 | 4.0 | one question, one map, one number | 8-slide story not built yet |
 | Teamwork | 10 % | 4 | 8.0 | five cleanly separable stages | needs two speakers minimum and a visible split of roles |
-| **Total** | | | **76.0** | | |
+| **Total** | | | **82.0** | after actions 1 and 2 (Impact 3→4, Scalability 3→4) |
 
 ## The five actions, ranked by points at stake
 
 1. **Name the decision-maker and ship one decision output (Impact, 15 %, first tie-break).**
    User: the Planning and Research Division at the Ministry of Education — the unit that publishes
    the School Statistics we already parse — plus MTCC/RTL route scheduling. Deliverable: a table of
-   the **27 islands beyond 2 h**, with population, children, hours, and *the specific link whose
-   addition would fix each*. That turns "interesting map" into "here is the decision".
+   the **28 islands beyond 2 h**, with population, children, hours, and *the specific link whose
+   addition would fix each*. **Done — see `docs/findings.md` and `data/derived/priority_gaps.csv`.**
 2. **Prove the model refreshes (Scalability, 15 %, first tie-break).**
-   One command: `make refresh GPS=/path/to/next-month`. Document what a maintainer must change,
-   and show the same pipeline run on a *subset* (one week) to demonstrate data-sensitivity rather
-   than asserting it.
+   `make refresh GPS=/path/to/next-month` now exists, and `make check` asserts the published
+   numbers after every rebuild. Still to demonstrate: the same pipeline run on a one-week subset.
 3. **Add the air layer (Technical, 20 %).** 14 domestic airports; the three failing capital routes
    become reachable, and "unreachable" stops being a false negative in front of a judge.
 4. **Cross-validate FollowMe against MTCC (Data Utilization, 15 %).** MTCC reports monthly

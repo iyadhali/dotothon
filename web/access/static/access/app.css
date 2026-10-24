@@ -247,3 +247,17 @@ html, body { overflow-x: hidden; }
   .legs .legrow { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .picker select { min-width: 0; }
 }
+
+/* priority-gap decision table */
+.card.wide { margin-top: 16px; }
+.lede2 { margin: 0 0 12px; font-size: 13px; color: var(--muted); max-width: 96ch; line-height: 1.5; }
+table.gaps td, table.gaps th { font-size: 12.5px; }
+table.gaps td a { color: #0b4f57; text-decoration: none; border-bottom: 1px solid #cfe0dd; }
+table.gaps td a:hover { border-bottom-color: #0b4f57; }
+.save { color: #1a7f5a; font-weight: 560; }
+.none { color: #b42318; }
+.muted { color: var(--muted); }
+@media (max-width: 900px) {
+  table.gaps th:nth-child(7), table.gaps td:nth-child(7),
+  table.gaps th:nth-child(9), table.gaps td:nth-child(9) { display: none; }
+}

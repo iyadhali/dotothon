@@ -219,7 +219,7 @@ Children aged 0–17 across those islands: **73,754 (31.1 %) — the demand deno
 | inhabited islands / residents covered | 187 / 448,819 (87 % of the 515,132 Census total) |
 | children 0–17 | 73,754 (16.4 % of residents) |
 | islands that teach grade 11–12 | 44 (+ Greater Malé as a region total) |
-| can reach grade 11–12 within 2 h | 156 islands, 420,175 people |
+| can reach grade 11–12 within 2 h | 159 islands, 427,538 people |
 | within 4 h | 181 islands, 443,519 people |
 | no reachable post-16 school at all | 2 islands, 1,115 people (Nadellaa GDh, Muraidhoo HA — both *zero observed boat traffic*, i.e. a data gap, not a proven cut-off) |
 | national higher-secondary NER | **29.9 %** (M 25.8, F 34.3) vs primary 91.9 % — the drop is the story |

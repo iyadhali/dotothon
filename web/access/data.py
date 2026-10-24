@@ -81,7 +81,7 @@ class Model:
         # keep the Census-derived child count (Malé's is imputed at the national share) under a
         # separate name, because sea_nodes.csv has no children for the hand-added Malé row
         acc = acc.rename(columns={"child_0_17": "kids_census"})
-        acc = acc.drop(columns=[c for c in ("island", "atoll", "population")
+        acc = acc.drop(columns=[c for c in ("island", "atoll", "population", "lat", "lon")
                                 if c in acc.columns])
         self.nodes = nodes.merge(acc, on="node_id", how="left")
         self.by_id = self.nodes.set_index("node_id", drop=False)
@@ -112,6 +112,12 @@ class Model:
         self.nearest_hs = self._multi_source(self.hs_ids)
         campus_ids = {i for i in (self._pid(a, n) for a, n in CAMPUSES) if i}
         self.nearest_campus = self._multi_source(campus_ids)
+
+        gaps_path = DERIVED / "priority_gaps.csv"
+        self.gaps = [] if not gaps_path.exists() else [
+            {k: (None if pd.isna(v) else v) for k, v in r._asdict().items()}
+            for r in pd.read_csv(gaps_path).itertuples()
+        ]
 
         self.atolls = sorted(self.inhabited.atoll.dropna().unique().tolist())
         self.picker = [{"node_id": r.node_id, "island": r.name, "atoll": r.atoll}

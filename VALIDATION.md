@@ -310,3 +310,21 @@ PORT=3000 node .output/server/index.mjs
 The pipeline test suite skips source-dependent tests when the local source CSVs
 (`data/team-kandu/`, `data/external/`) are absent, but the committed prepared
 artifacts are sufficient to run the web app and the routing CLI.
+
+## SQLite v2: analysis tables
+
+`web/server/assets/maldives.sqlite` is now schema `user_version = 2`. On top of the v1 network tables it holds curated analysis tables compiled by `web/scripts/build-db.ts` from `web/public/data/extras/*.json`, which `python scripts/multimodal/build_extras.py` writes from the local research datasets (`data/` is gitignored, so the extras JSON is the committed copy; about 2.7 MB in total). The extras directory is optional: if it is missing the tables are created empty and the build logs a skip line. Each file's `meta.rowCount` is checked against its records and against the database by `db:build`, `db:check` and `test:db`.
+
+| Table | Rows | Source |
+| --- | ---: | --- |
+| `fares_air` | 36 | `web/public/data/fares.json`, `data/external/fares/air_fares.csv` |
+| `fare_models` | 3 | `data/external/fares/sea_land_fares_model.json` |
+| `island_profile` | 200 | `multimodal.json` + `island_education_supply.csv` + `health_atoll_summary.csv` (atoll code join; 179 islands have an education row, unmatched rows listed in the file's `meta.notes`) |
+| `health_facilities` | 197 | `data/external/health/_derived/public_health_facility_master.csv` (181 matched to an island id; the rest are Male' / Greater Male region or blank rows) |
+| `economics` | 109 | `data/external/economics/value_of_time.json`, `key_figures.csv` |
+| `observed_sea_links` | 481 | `data/processed/followme/observed_sea_links.csv` (core columns) |
+| `validation_atoll` | 42 | `data/processed/validation/atoll_access_vs_outcomes.csv` (21 atolls x estimated_air 0/1) |
+| `island_access` | 13,752 | `web/scripts/export-accessibility.ts`: 191 origins x 12 categories x departures 06:00/08:00/14:00 x estimated_air 0/1, plus best-of-day `best_elapsed_minutes` |
+| `extras_meta` | 8 | per-table `meta` blocks |
+
+Endpoints (read-only, `503 database_unavailable` when the database is missing): `/api/fares`, `/api/islands/[id]/profile`, `/api/access?category=&departure=` (departure 360, 480 or 840; optional `estimatedAir`; bad input is a 400), `/api/economics`, `/api/validation`, `/api/sea-links` (optional `island`). `/api/health` reports the extras row counts.

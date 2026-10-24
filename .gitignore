@@ -41,3 +41,6 @@ data/mbs-datasets/
 
 # macOS metadata
 .DS_Store
+
+# Vercel project link
+web/.vercel/

@@ -3,7 +3,7 @@
 -- The database is read-only at runtime. Bump user_version for breaking changes.
 
 PRAGMA application_id = 1297105733; -- 'IAA1'
-PRAGMA user_version = 1;
+PRAGMA user_version = 2;
 
 CREATE TABLE meta (
   id INTEGER PRIMARY KEY CHECK (id = 1),
@@ -167,3 +167,156 @@ CREATE TABLE hdx_units (
   within5km REAL,
   payload_json TEXT NOT NULL CHECK (json_valid(payload_json))
 );
+
+-- ---------------------------------------------------------------------------
+-- v2: analysis tables compiled from web/public/data/extras/*.json
+-- (written by scripts/multimodal/build_extras.py). Optional at build time: when
+-- the extras directory is absent the tables exist but are empty.
+-- ---------------------------------------------------------------------------
+
+CREATE TABLE extras_meta (
+  name TEXT PRIMARY KEY,
+  row_count INTEGER NOT NULL,
+  generated_at TEXT,
+  payload_json TEXT NOT NULL CHECK (json_valid(payload_json))
+);
+
+CREATE TABLE fares_air (
+  pair TEXT PRIMARY KEY,
+  origin TEXT NOT NULL,
+  destination TEXT NOT NULL,
+  resident_one_way_mvr REAL,
+  lowest_mvr REAL,
+  confidence TEXT,
+  basis TEXT,
+  source_url TEXT
+);
+
+CREATE TABLE fare_models (
+  mode TEXT PRIMARY KEY,
+  a_mvr REAL,
+  b_mvr_per_km REAL,
+  n INTEGER,
+  r2 REAL,
+  thin INTEGER NOT NULL CHECK (thin IN (0, 1))
+);
+
+CREATE TABLE island_profile (
+  island_id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  atoll_code TEXT,
+  atoll_name TEXT,
+  population INTEGER,
+  highest_grade TEXT,
+  school_enrolment INTEGER,
+  higher_secondary_on_island INTEGER CHECK (higher_secondary_on_island IN (0, 1)),
+  hei_campuses INTEGER,
+  beds_per_1000 REAL,
+  staff_per_10k REAL,
+  evacuations_per_1000 REAL,
+  aasandha_per_person_mvr REAL,
+  FOREIGN KEY (island_id) REFERENCES islands (id)
+);
+CREATE INDEX island_profile_atoll_idx ON island_profile (atoll_code);
+
+CREATE TABLE health_facilities (
+  facility_key INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  island TEXT,
+  atoll_code TEXT,
+  island_id TEXT,
+  tier TEXT,
+  grade INTEGER,
+  type TEXT,
+  level_2026 TEXT,
+  owner TEXT,
+  FOREIGN KEY (island_id) REFERENCES islands (id)
+);
+CREATE INDEX health_facilities_island_idx ON health_facilities (island_id);
+
+CREATE TABLE economics (
+  id INTEGER PRIMARY KEY,
+  kind TEXT NOT NULL,
+  key TEXT NOT NULL,
+  value REAL,
+  unit TEXT,
+  year INTEGER,
+  geography TEXT,
+  note TEXT,
+  source_url TEXT
+);
+CREATE INDEX economics_kind_idx ON economics (kind, key);
+
+CREATE TABLE observed_sea_links (
+  id INTEGER PRIMARY KEY,
+  from_island_id TEXT NOT NULL,
+  to_island_id TEXT NOT NULL,
+  from_name TEXT,
+  to_name TEXT,
+  trips_per_day REAL,
+  active_days INTEGER,
+  vessels INTEGER,
+  median_min REAL,
+  p80_min REAL,
+  distance_km REAL,
+  speed_class TEXT,
+  first_dep_hour_p10 REAL,
+  last_dep_hour_p90 REAL,
+  rtl_served INTEGER NOT NULL CHECK (rtl_served IN (0, 1)),
+  FOREIGN KEY (from_island_id) REFERENCES islands (id),
+  FOREIGN KEY (to_island_id) REFERENCES islands (id)
+);
+CREATE INDEX observed_sea_links_from_idx ON observed_sea_links (from_island_id);
+CREATE INDEX observed_sea_links_to_idx ON observed_sea_links (to_island_id);
+
+CREATE TABLE validation_atoll (
+  atoll_code TEXT NOT NULL,
+  pop_model REAL,
+  n_islands INTEGER,
+  hosp_pct_nodata REAL,
+  hosp_pct_noroute_of_covered REAL,
+  hosp_pct_noroute_of_total REAL,
+  hosp_min_reachable REAL,
+  hosp_min_penalised REAL,
+  reg_pct_nodata REAL,
+  reg_pct_noroute_of_covered REAL,
+  reg_pct_noroute_of_total REAL,
+  reg_min_reachable REAL,
+  reg_min_penalised REAL,
+  g1112_pct_nodata REAL,
+  g1112_pct_noroute_of_covered REAL,
+  g1112_pct_noroute_of_total REAL,
+  g1112_min_reachable REAL,
+  g1112_min_penalised REAL,
+  estimated_air INTEGER NOT NULL CHECK (estimated_air IN (0, 1)),
+  pop2022_resident REAL,
+  evacuations_per_1000_2023 REAL,
+  op_visits_per_capita_2023 REAL,
+  aasandha_exp_per_capita_2025_mvr REAL,
+  inpatient_beds_per_1000 REAL,
+  pct_16_19_studying REAL,
+  maldivian_pop_all_ages REAL,
+  hs_attending_residents REAL,
+  registered_here_living_in_male REAL,
+  male_resident_per_1000_pop REAL,
+  g11_12_per_100_16_19 REAL,
+  is_greater_male INTEGER NOT NULL CHECK (is_greater_male IN (0, 1)),
+  PRIMARY KEY (atoll_code, estimated_air)
+);
+
+CREATE TABLE island_access (
+  origin_island_id TEXT NOT NULL,
+  category TEXT NOT NULL,
+  departure_minute INTEGER NOT NULL CHECK (departure_minute IN (360, 480, 840)),
+  estimated_air INTEGER NOT NULL CHECK (estimated_air IN (0, 1)),
+  status TEXT NOT NULL,
+  elapsed_minutes REAL,
+  modes TEXT,
+  destination_island_id TEXT,
+  best_elapsed_minutes REAL,
+  PRIMARY KEY (origin_island_id, category, departure_minute, estimated_air),
+  FOREIGN KEY (origin_island_id) REFERENCES islands (id),
+  FOREIGN KEY (destination_island_id) REFERENCES islands (id)
+);
+CREATE INDEX island_access_category_idx ON island_access (category, departure_minute, estimated_air);
+CREATE INDEX island_access_destination_idx ON island_access (destination_island_id);

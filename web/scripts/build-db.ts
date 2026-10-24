@@ -21,6 +21,43 @@ const WEB_ROOT = resolve(HERE, '..')
 const DEFAULT_SOURCE_DIR = resolve(WEB_ROOT, 'public/data')
 const DEFAULT_OUTPUT = resolve(WEB_ROOT, 'server/assets/maldives.sqlite')
 const SCHEMA_PATH = resolve(HERE, 'sqlite-schema.sql')
+export const SCHEMA_VERSION = 2
+
+/**
+ * Analysis tables compiled from web/public/data/extras/<name>.json
+ * (scripts/multimodal/build_extras.py). Each file is { meta: { rowCount, ... }, records: [...] }.
+ * `idColumn` is generated from the record position where the table has no natural key.
+ */
+export const EXTRA_TABLES: ReadonlyArray<{ name: string; columns: readonly string[]; idColumn?: string }> = [
+  { name: 'fares_air', columns: ['pair', 'origin', 'destination', 'resident_one_way_mvr', 'lowest_mvr', 'confidence', 'basis', 'source_url'] },
+  { name: 'fare_models', columns: ['mode', 'a_mvr', 'b_mvr_per_km', 'n', 'r2', 'thin'] },
+  {
+    name: 'island_profile',
+    columns: ['island_id', 'name', 'atoll_code', 'atoll_name', 'population', 'highest_grade', 'school_enrolment', 'higher_secondary_on_island', 'hei_campuses', 'beds_per_1000', 'staff_per_10k', 'evacuations_per_1000', 'aasandha_per_person_mvr'],
+  },
+  { name: 'health_facilities', columns: ['facility_key', 'name', 'island', 'atoll_code', 'island_id', 'tier', 'grade', 'type', 'level_2026', 'owner'] },
+  { name: 'economics', idColumn: 'id', columns: ['kind', 'key', 'value', 'unit', 'year', 'geography', 'note', 'source_url'] },
+  {
+    name: 'observed_sea_links',
+    idColumn: 'id',
+    columns: ['from_island_id', 'to_island_id', 'from_name', 'to_name', 'trips_per_day', 'active_days', 'vessels', 'median_min', 'p80_min', 'distance_km', 'speed_class', 'first_dep_hour_p10', 'last_dep_hour_p90', 'rtl_served'],
+  },
+  {
+    name: 'validation_atoll',
+    columns: ['atoll_code', 'pop_model', 'n_islands', 'hosp_pct_nodata', 'hosp_pct_noroute_of_covered', 'hosp_pct_noroute_of_total', 'hosp_min_reachable', 'hosp_min_penalised', 'reg_pct_nodata', 'reg_pct_noroute_of_covered', 'reg_pct_noroute_of_total', 'reg_min_reachable', 'reg_min_penalised', 'g1112_pct_nodata', 'g1112_pct_noroute_of_covered', 'g1112_pct_noroute_of_total', 'g1112_min_reachable', 'g1112_min_penalised', 'estimated_air', 'pop2022_resident', 'evacuations_per_1000_2023', 'op_visits_per_capita_2023', 'aasandha_exp_per_capita_2025_mvr', 'inpatient_beds_per_1000', 'pct_16_19_studying', 'maldivian_pop_all_ages', 'hs_attending_residents', 'registered_here_living_in_male', 'male_resident_per_1000_pop', 'g11_12_per_100_16_19', 'is_greater_male'],
+  },
+  {
+    name: 'island_access',
+    columns: ['origin_island_id', 'category', 'departure_minute', 'estimated_air', 'status', 'elapsed_minutes', 'modes', 'destination_island_id', 'best_elapsed_minutes'],
+  },
+]
+
+interface ExtrasFile {
+  meta: { rowCount: number; [key: string]: unknown }
+  records: Array<Record<string, unknown>>
+}
+
+type BuildOptions = { sourceDir?: string; outputPath?: string; extrasDir?: string }
 
 export const EXPECTED = {
   islands: 200,
@@ -184,6 +221,8 @@ export interface DatabaseSummary {
     hdxNational: number
     hdxUnits: number
   }
+  /** Row counts of the optional analysis tables (0 when the extras files were absent). */
+  extras: Record<string, number>
   bytes: number
   digest: string
 }
@@ -271,12 +310,61 @@ function validateSources(network: Network, geojson: { features?: GeoFeature[] },
   }
 }
 
+function readExtras(extrasDir: string): Map<string, ExtrasFile> {
+  const loaded = new Map<string, ExtrasFile>()
+  if (!existsSync(extrasDir)) {
+    console.log(`build-db: extras directory not found (${extrasDir}); skipping analysis tables`)
+    return loaded
+  }
+  for (const spec of EXTRA_TABLES) {
+    const path = resolve(extrasDir, `${spec.name}.json`)
+    if (!existsSync(path)) {
+      console.log(`build-db: extras/${spec.name}.json not found; skipping table ${spec.name}`)
+      continue
+    }
+    const file = readJson<ExtrasFile>(path)
+    assert(Array.isArray(file.records), `extras/${spec.name}.json: records must be an array`)
+    assertCount(`extras ${spec.name} (meta.rowCount)`, file.records.length, Number(file.meta?.rowCount))
+    loaded.set(spec.name, file)
+  }
+  return loaded
+}
+
+function extraValue(value: unknown): string | number | null {
+  if (value === undefined || value === null) return null
+  if (typeof value === 'boolean') return value ? 1 : 0
+  if (typeof value === 'number' || typeof value === 'string') return value
+  return JSON.stringify(value)
+}
+
+function insertExtras(db: DatabaseSync, loaded: Map<string, ExtrasFile>): void {
+  for (const spec of EXTRA_TABLES) {
+    const file = loaded.get(spec.name)
+    if (!file) continue
+    const columns = spec.idColumn ? [spec.idColumn, ...spec.columns] : [...spec.columns]
+    const insert = db.prepare(
+      `INSERT INTO ${spec.name} (${columns.join(', ')}) VALUES (${columns.map(() => '?').join(', ')})`,
+    )
+    file.records.forEach((record, index) => {
+      const values = spec.columns.map((column) => extraValue(record[column]))
+      insert.run(...(spec.idColumn ? [index + 1, ...values] : values))
+    })
+    db.prepare('INSERT INTO extras_meta (name, row_count, generated_at, payload_json) VALUES (?, ?, ?, ?)').run(
+      spec.name,
+      file.records.length,
+      typeof file.meta.generatedAt === 'string' ? file.meta.generatedAt : null,
+      JSON.stringify(file.meta),
+    )
+  }
+}
+
 function featureMap(geojson: { features?: GeoFeature[] }): Map<string, GeoFeature> {
   return new Map((geojson.features ?? []).map((feature) => [feature.properties.islandId, feature]))
 }
 
-function buildDatabaseInternal(options: { sourceDir?: string; outputPath?: string } = {}): DatabaseSummary {
+function buildDatabaseInternal(options: BuildOptions = {}): DatabaseSummary {
   const sourceDir = options.sourceDir ?? DEFAULT_SOURCE_DIR
+  const extrasDir = options.extrasDir ?? resolve(sourceDir, 'extras')
   const outputPath = options.outputPath ?? DEFAULT_OUTPUT
   const networkPath = resolve(sourceDir, 'multimodal.json')
   const geojsonPath = resolve(sourceDir, 'islands.geojson')
@@ -290,6 +378,7 @@ function buildDatabaseInternal(options: { sourceDir?: string; outputPath?: strin
   const geojson = readJson<{ features?: GeoFeature[] }>(geojsonPath)
   const hdx = readJson<HdxBaseline>(hdxPath)
   validateSources(network, geojson, hdx)
+  const extras = readExtras(extrasDir)
 
   mkdirSync(dirname(outputPath), { recursive: true })
   const temporaryPath = `${outputPath}.tmp-${process.pid}`
@@ -306,7 +395,7 @@ function buildDatabaseInternal(options: { sourceDir?: string; outputPath?: strin
     db.prepare(
       'INSERT INTO meta (id, schema_version, generated_at, reference_day, payload_json) VALUES (1, ?, ?, ?, ?)',
     ).run(
-      1,
+      SCHEMA_VERSION,
       typeof network.meta.generatedAt === 'string' ? network.meta.generatedAt : null,
       typeof network.meta.referenceDay === 'string' ? network.meta.referenceDay : null,
       JSON.stringify(network.meta),
@@ -503,6 +592,8 @@ function buildDatabaseInternal(options: { sourceDir?: string; outputPath?: strin
       )
     })
 
+    insertExtras(db, extras)
+
     db.exec('COMMIT')
     const integrity = db.prepare('PRAGMA integrity_check').get() as
       | { integrity_check?: string }
@@ -551,6 +642,22 @@ function tableCounts(db: DatabaseSync): DatabaseSummary['counts'] {
   }
 }
 
+/** Row counts per analysis table; verifies each table matches the row count recorded in extras_meta. */
+function extraCounts(db: DatabaseSync): Record<string, number> {
+  const counts: Record<string, number> = {}
+  const recorded = new Map(
+    (db.prepare('SELECT name, row_count FROM extras_meta').all() as Array<{ name: string; row_count: number }>).map(
+      (row) => [row.name, Number(row.row_count)],
+    ),
+  )
+  for (const spec of EXTRA_TABLES) {
+    const row = db.prepare(`SELECT count(*) AS count FROM ${spec.name}`).get() as { count: number }
+    counts[spec.name] = Number(row.count)
+    assertCount(`extras ${spec.name}`, counts[spec.name], recorded.get(spec.name) ?? 0)
+  }
+  return counts
+}
+
 function digestFile(path: string): string {
   return createHash('sha256').update(readFileSync(path)).digest('hex')
 }
@@ -560,7 +667,7 @@ function inspectDatabase(outputPath: string): Omit<DatabaseSummary, 'outputPath'
   try {
     const versionRow = db.prepare('PRAGMA user_version').get() as { user_version?: number }
     const schemaVersion = Number(versionRow.user_version ?? 0)
-    assert(schemaVersion === 1, `unsupported schema user_version ${schemaVersion}`)
+    assert(schemaVersion === SCHEMA_VERSION, `unsupported schema user_version ${schemaVersion}`)
     const counts = tableCounts(db)
     assertCount('islands', counts.islands, EXPECTED.islands)
     assertCount('stops', counts.stops, EXPECTED.stops)
@@ -571,9 +678,11 @@ function inspectDatabase(outputPath: string): Omit<DatabaseSummary, 'outputPath'
     assertCount('categories', counts.categories, EXPECTED.categories)
     assertCount('hdx national rows', counts.hdxNational, EXPECTED.hdxNational)
     assertCount('hdx unit rows', counts.hdxUnits, EXPECTED.hdxUnits)
+    const extras = extraCounts(db)
     return {
       schemaVersion,
       counts,
+      extras,
       bytes: statSync(outputPath).size,
       digest: digestFile(outputPath),
     }
@@ -604,8 +713,9 @@ function assertPayloadEqual(label: string, source: unknown, actual: unknown): vo
   assert(canonical(source) === canonical(actual), `${label}: database payload does not match source JSON`)
 }
 
-function checkDatabaseInternal(options: { sourceDir?: string; outputPath?: string } = {}): DatabaseSummary {
+function checkDatabaseInternal(options: BuildOptions = {}): DatabaseSummary {
   const sourceDir = options.sourceDir ?? DEFAULT_SOURCE_DIR
+  const extrasDir = options.extrasDir ?? resolve(sourceDir, 'extras')
   const outputPath = options.outputPath ?? DEFAULT_OUTPUT
   assert(existsSync(outputPath), `database not found: ${outputPath}; run build-db first`)
   assert(existsSync(resolve(sourceDir, 'multimodal.json')), `missing source: ${resolve(sourceDir, 'multimodal.json')}`)
@@ -620,7 +730,7 @@ function checkDatabaseInternal(options: { sourceDir?: string; outputPath?: strin
   const db = new DatabaseSync(outputPath, { readOnly: true })
   try {
     const versionRow = db.prepare('PRAGMA user_version').get() as { user_version?: number }
-    assert(Number(versionRow.user_version ?? 0) === 1, 'unsupported schema user_version')
+    assert(Number(versionRow.user_version ?? 0) === SCHEMA_VERSION, 'unsupported schema user_version')
     const integrity = db.prepare('PRAGMA integrity_check').get() as
       | { integrity_check?: string }
       | undefined
@@ -681,6 +791,12 @@ function checkDatabaseInternal(options: { sourceDir?: string; outputPath?: strin
       0,
     )
     assertCount('facility categories', associations.length, expectedAssociations)
+
+    // Analysis tables: every extras file present on disk must be fully loaded with the row count in its meta.
+    for (const [name, file] of readExtras(extrasDir)) {
+      const row = db.prepare(`SELECT count(*) AS count FROM ${name}`).get() as { count: number }
+      assertCount(`extras ${name} vs source file`, Number(row.count), file.records.length)
+    }
   } finally {
     db.close()
   }
@@ -688,11 +804,11 @@ function checkDatabaseInternal(options: { sourceDir?: string; outputPath?: strin
   return { ...inspectDatabase(outputPath), outputPath }
 }
 
-export function buildDatabase(options: { sourceDir?: string; outputPath?: string } = {}): DatabaseSummary {
+export function buildDatabase(options: BuildOptions = {}): DatabaseSummary {
   return buildDatabaseInternal(options)
 }
 
-export function checkDatabase(options: { sourceDir?: string; outputPath?: string } = {}): DatabaseSummary {
+export function checkDatabase(options: BuildOptions = {}): DatabaseSummary {
   return checkDatabaseInternal(options)
 }
 
@@ -718,6 +834,7 @@ if (isMain) {
           outputPath: summary.outputPath,
           schemaVersion: summary.schemaVersion,
           counts: summary.counts,
+          extras: summary.extras,
           bytes: summary.bytes,
           digest: summary.digest,
         },

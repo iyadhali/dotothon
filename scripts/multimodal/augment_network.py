@@ -11,14 +11,26 @@
    added as estimated-frequency `sea` services under one route id so the whole layer can be
    switched off. These are observed movements of any tracked boat, not a public timetable.
 
-Idempotent: earlier MTCC/observed entries are removed before adding. Writes the browser copy
-and, when present, data/processed/multimodal/network.json.
+3. Gap fixes (research/18_data_gaps.md):
+   - T6: domestic air services with fewer than 7 weekly flights run on that many weekdays
+     (`days`) instead of daily, removing the generated-departure inflation.
+   - T5: observed boat departures are placed at the hours boats were seen leaving (FollowMe
+     departure-hour histogram), and links with no weekend traffic do not run Fri/Sat.
+   - T4: RTL trips with no trip back between the same two islands get an inferred return
+     (reverse stop order after a 30-minute turnaround), id prefix `inferred:`, switchable.
+4. Build manifest: `meta.build.id` is a content hash of the network; fares and extras record
+   it so the database build can refuse mismatched artifacts.
+
+Idempotent: earlier MTCC/observed/inferred entries are removed and air departures regenerated
+from the weekly frequency. Writes the browser copy and, when present,
+data/processed/multimodal/network.json.
 """
 
 from __future__ import annotations
 
 import csv
 import difflib
+import hashlib
 import json
 import re
 import unicodedata
@@ -38,6 +50,8 @@ JETTY_WALK_MIN = 5
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 OBSERVED_ROUTE_ID = "observed-boats"
 MAX_OBSERVED_DEPARTURES = 12
+TURNAROUND_MIN = 30
+WEEK = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
 
 
 def norm(name: str) -> str:
@@ -74,7 +88,7 @@ class IslandIndex:
 def strip_previous(network: dict) -> None:
     network["services"] = [
         s for s in network["services"]
-        if not (s["id"].startswith("mtcc:") or s["id"].startswith("observed:"))
+        if not (s["id"].startswith("mtcc:") or s["id"].startswith("observed:") or s["id"].startswith("inferred:"))
     ]
     network["stops"] = [s for s in network["stops"] if not s["id"].startswith("MTCC:")]
     network["accessEdges"] = [
@@ -82,7 +96,8 @@ def strip_previous(network: dict) -> None:
         if not (e["from"].startswith("stop:MTCC:") or e["to"].startswith("stop:MTCC:"))
     ]
     network["meta"]["assumptions"] = [
-        a for a in network["meta"].get("assumptions", []) if a.get("id") not in {"mtcc_2023_trips", "observed_boat_links"}
+        a for a in network["meta"].get("assumptions", [])
+        if a.get("id") not in {"mtcc_2023_trips", "observed_boat_links", "air_weekday_calendar", "inferred_returns"}
     ]
 
 
@@ -179,8 +194,9 @@ def add_observed(network: dict) -> dict:
             start = int(round(float(row["first_dep_hour_p10"]) * 60))
             end = int(round(float(row["last_dep_hour_p90"]) * 60))
             start, end = max(300, min(start, 1260)), max(300, min(max(end, start), 1320))
-            step = (end - start) / per_day if per_day > 1 else 0
-            departures = sorted({int(start + step * k) for k in range(per_day)})
+            departures = observed_departures(row.get("dep_hour_hist", ""), per_day, start, end)
+            weekend = float(row.get("tpd_weekend") or 0)
+            days = None if weekend >= 0.5 else [d for d in WEEK if d not in ("Fri", "Sat")]
             network["services"].append({
                 "id": f"observed:{a}-{b}", "kind": "frequency", "mode": "sea", "routeId": OBSERVED_ROUTE_ID,
                 "label": f"Observed boats {row['from_name']} → {row['to_name']}",
@@ -190,6 +206,7 @@ def add_observed(network: dict) -> dict:
                 "departures": departures, "confidence": "estimated_frequency",
                 "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
                 "source": "data/processed/followme/observed_sea_links.csv",
+                **({"days": days} if days else {}),
             })
             added += 1
     network["meta"]["assumptions"].append({
@@ -197,9 +214,100 @@ def add_observed(network: dict) -> dict:
         "value": f"{added} regular boat links observed in FollowMe GPS (Aug 2025) are added as estimated sea services where an island has no RTL/MTCC service.",
         "confidence": "estimated",
         "source": "data/processed/followme/observed_sea_links.csv",
-        "note": "Any tracked boat (public, private, fishing); departures spread evenly over the observed hours. Switch off with route 'observed-boats'.",
+        "note": "Any tracked boat (public, private, fishing). Departures sit at the busiest observed departure hours; links with no weekend traffic do not run Fri/Sat. Switch off with route 'observed-boats'.",
     })
     return {"links": added}
+
+
+def observed_departures(hist_text: str, per_day: int, start: int, end: int) -> list[int]:
+    """Departures at the busiest observed hours (FollowMe histogram), within the observed window."""
+    try:
+        hist = {int(h): int(c) for h, c in json.loads(hist_text or "{}").items()}
+    except (ValueError, TypeError):
+        hist = {}
+    hours = sorted(
+        (h for h in hist if start <= h * 60 + 30 <= max(end, start + 60)),
+        key=lambda h: (-hist[h], h),
+    )[:per_day]
+    if not hours:  # no histogram: fall back to an even spread over the window
+        step = (end - start) / per_day if per_day > 1 else 0
+        return sorted({int(start + step * k) for k in range(per_day)})
+    return sorted(h * 60 + 30 for h in hours)
+
+
+def fix_air_calendar(network: dict) -> int:
+    """Air services: departures per day from weekly frequency; < 7 a week run on chosen weekdays."""
+    changed = 0
+    for service in network["services"]:
+        if service["mode"] != "air" or service["kind"] != "frequency":
+            continue
+        weekly = float(service.get("weeklyFrequency") or 0)
+        window = service.get("operatingWindow") or {"start": 360, "end": 1080}
+        per_day = max(1, round(weekly / 7))
+        step = (window["end"] - window["start"]) / per_day
+        service["departures"] = [int(window["start"] + step * (k + 0.5)) for k in range(per_day)]
+        service["departuresPerDay"] = per_day
+        if weekly < 7:
+            count = max(1, round(weekly))
+            # Spread the flying days across the week, deterministically.
+            service["days"] = [WEEK[int(i * 7 / count)] for i in range(count)]
+            changed += 1
+        else:
+            service.pop("days", None)
+    network["meta"]["assumptions"].append({
+        "id": "air_weekday_calendar",
+        "value": f"{changed} domestic air services with fewer than 7 estimated weekly flights run on that many weekdays instead of daily.",
+        "confidence": "estimated",
+        "source": "data/external/air/domestic_routes.csv",
+        "note": "Removes the departure inflation from rounding weekly frequency up to daily (research/18_data_gaps.md T6).",
+    })
+    return changed
+
+
+def add_inferred_returns(network: dict) -> int:
+    """RTL trips with no trip back between the same two islands get a mirrored return trip."""
+    stop_island = {stop["id"]: stop["islandId"] for stop in network["stops"]}
+    rtl = [s for s in network["services"] if s["kind"] == "timetabled" and s.get("operator") == "RTL"]
+    pairs = {(stop_island.get(t["stops"][0]["stopId"]), stop_island.get(t["stops"][-1]["stopId"])) for t in rtl}
+    added = []
+    for trip in rtl:
+        first = stop_island.get(trip["stops"][0]["stopId"])
+        last = stop_island.get(trip["stops"][-1]["stopId"])
+        if (last, first) in pairs:
+            continue
+        stops = trip["stops"]
+        clock = stops[-1]["arrival"] + TURNAROUND_MIN
+        mirrored = []
+        for index, stop in enumerate(reversed(stops)):
+            if index > 0:
+                prev = stops[len(stops) - index]
+                gap = prev["arrival"] - stop["departure"]
+                clock += max(1, gap)
+            mirrored.append({"stopId": stop["stopId"], "name": stop["name"], "sequence": index + 1, "arrival": clock, "departure": clock})
+        added.append({
+            **{k: v for k, v in trip.items() if k != "stops"},
+            "id": f"inferred:{trip['id']}",
+            "calendar": "inferred return: reverse stop order after a 30-minute turnaround",
+            "source": f"{trip.get('source', '')} (inferred return)",
+            "stops": mirrored,
+        })
+    network["services"].extend(added)
+    network["meta"]["assumptions"].append({
+        "id": "inferred_returns",
+        "value": f"{len(added)} RTL trips recorded in one direction only get an inferred return trip (reverse stops, {TURNAROUND_MIN}-minute turnaround).",
+        "confidence": "assumption",
+        "source": "data/team-kandu/rtl_trips.csv",
+        "note": "Evidence layer 'inferred'; switch off in the Data menu (research/18_data_gaps.md T4).",
+    })
+    return len(added)
+
+
+def stamp_build(network: dict) -> str:
+    """Content hash of the network (without the build block) as a shared build id."""
+    network["meta"].pop("build", None)
+    digest = hashlib.sha256(json.dumps(network, sort_keys=True).encode("utf-8")).hexdigest()[:16]
+    network["meta"]["build"] = {"id": digest, "script": "scripts/multimodal/augment_network.py"}
+    return digest
 
 
 def main() -> None:
@@ -209,10 +317,16 @@ def main() -> None:
     index = IslandIndex(network["islands"])
     mtcc = add_mtcc(network, index, weekday)
     observed = add_observed(network)
+    inferred = add_inferred_returns(network)
+    air_days = fix_air_calendar(network)
     counts = network["meta"].setdefault("counts", {})
     counts["stops"] = len(network["stops"])
     counts["ferryTrips"] = sum(1 for s in network["services"] if s["kind"] == "timetabled")
     counts["observedSeaLinks"] = observed["links"]
+    counts["accessEdges"] = len(network["accessEdges"])
+    counts["services"] = len(network["services"])
+    counts["inferredReturns"] = inferred
+    build_id = stamp_build(network)
     text = json.dumps(network, indent=1) + "\n"  # same layout as build_network.py output
     WEB_NETWORK.write_text(text, encoding="utf-8")
     if PROCESSED_NETWORK.parent.exists():
@@ -220,7 +334,8 @@ def main() -> None:
     print(f"MTCC: {mtcc['trips']} trips, {mtcc['stops']} stops; {mtcc['otherDays']} do not run on {weekday}s")
     if mtcc["unmatched"]:
         print("  unmatched MTCC islands:", ", ".join(mtcc["unmatched"]))
-    print(f"Observed boat links: {observed['links']}")
+    print(f"Observed boat links: {observed['links']}; inferred returns: {inferred}; air services on weekdays: {air_days}")
+    print(f"build id {build_id}")
 
 
 if __name__ == "__main__":

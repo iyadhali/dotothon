@@ -3,6 +3,7 @@
  "currency": "MVR",
  "usdMvr": 15.42,
  "generatedAt": "2026-10-24",
+ "networkBuildId": "dbf24506f7fd5db9",
  "airRoutes": {
   "DDD-MLE": {
    "mvr": 1595,

@@ -170,8 +170,9 @@ function applyTraveller(leg: JourneyLeg, cost: Omit<LegCost, 'leg'>, traveller: 
   }
   const id = leg.serviceId ?? ''
   const maleFerry = id !== '' && fares.serviceFares?.[id] !== undefined
-  // RTL timetabled ferries use `ferry:<route>:<trip>` ids; MTCC and observed boats are excluded.
-  const rtlFerry = leg.kind === 'ferry' && id.startsWith('ferry:') && !maleFerry
+  // RTL ferries use `ferry:<route>:<trip>` ids (inferred returns add an `inferred:` prefix);
+  // MTCC and observed boats are excluded.
+  const rtlFerry = leg.kind === 'ferry' && (id.startsWith('ferry:') || id.startsWith('inferred:ferry:')) && !maleFerry
   if (traveller === 'senior' && (rtlFerry || maleFerry)) {
     return { mvr: 0, basis: 'Free for people aged 65+ and disabled people (RTL)', confidence: 'sourced' }
   }

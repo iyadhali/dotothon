@@ -8,7 +8,7 @@
  */
 import type { Journey, MultimodalNetwork, Service } from './types'
 
-export type EvidenceKey = 'rtl' | 'mtcc' | 'observed' | 'air' | 'male_ferry'
+export type EvidenceKey = 'rtl' | 'mtcc' | 'inferred' | 'observed' | 'air' | 'male_ferry'
 
 export interface EvidenceLayer {
   key: EvidenceKey
@@ -22,6 +22,7 @@ export interface EvidenceLayer {
 export const EVIDENCE_LAYERS: EvidenceLayer[] = [
   { key: 'rtl', label: 'RTL ferries (2026 timetable)', tag: 'RTL timetable', verified: true },
   { key: 'mtcc', label: 'MTCC ferries (2023 timetable)', tag: 'MTCC 2023', verified: true },
+  { key: 'inferred', label: 'Inferred RTL return trips', tag: 'Inferred return', verified: false },
   { key: 'observed', label: 'Observed boats (GPS, Aug 2025)', tag: 'Observed boats', verified: false },
   { key: 'air', label: 'Domestic flights (estimated)', tag: 'Estimated flight', verified: false },
   { key: 'male_ferry', label: 'Malé–Vilimalé ferry', tag: 'Malé ferry', verified: false },
@@ -30,6 +31,7 @@ export const EVIDENCE_LAYERS: EvidenceLayer[] = [
 export function serviceEvidence(service: Pick<Service, 'id' | 'kind' | 'mode'> & { operator?: string; routeId?: string }): EvidenceKey {
   if (service.mode === 'air') return 'air'
   if (service.id.startsWith('observed:') || service.routeId === 'observed-boats') return 'observed'
+  if (service.id.startsWith('inferred:')) return 'inferred'
   if (service.kind === 'timetabled') return service.operator === 'MTCC' || service.id.startsWith('mtcc:') ? 'mtcc' : 'rtl'
   return 'male_ferry'
 }

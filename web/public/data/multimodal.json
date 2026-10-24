@@ -105,7 +105,21 @@
     "value": "154 regular boat links observed in FollowMe GPS (Aug 2025) are added as estimated sea services where an island has no RTL/MTCC service.",
     "confidence": "estimated",
     "source": "data/processed/followme/observed_sea_links.csv",
-    "note": "Any tracked boat (public, private, fishing); departures spread evenly over the observed hours. Switch off with route 'observed-boats'."
+    "note": "Any tracked boat (public, private, fishing). Departures sit at the busiest observed departure hours; links with no weekend traffic do not run Fri/Sat. Switch off with route 'observed-boats'."
+   },
+   {
+    "id": "inferred_returns",
+    "value": "2 RTL trips recorded in one direction only get an inferred return trip (reverse stops, 30-minute turnaround).",
+    "confidence": "assumption",
+    "source": "data/team-kandu/rtl_trips.csv",
+    "note": "Evidence layer 'inferred'; switch off in the Data menu (research/18_data_gaps.md T4)."
+   },
+   {
+    "id": "air_weekday_calendar",
+    "value": "24 domestic air services with fewer than 7 estimated weekly flights run on that many weekdays instead of daily.",
+    "confidence": "estimated",
+    "source": "data/external/air/domestic_routes.csv",
+    "note": "Removes the departure inflation from rounding weekly frequency up to daily (research/18_data_gaps.md T6)."
    }
   ],
   "counts": {
@@ -113,11 +127,14 @@
    "origins": 191,
    "stops": 163,
    "airports": 20,
-   "ferryTrips": 132,
+   "ferryTrips": 134,
    "airServices": 62,
    "facilities": 945,
    "categories": 48,
-   "observedSeaLinks": 154
+   "observedSeaLinks": 154,
+   "accessEdges": 199,
+   "services": 352,
+   "inferredReturns": 2
   },
   "routingDefaults": {
    "ferryBoardMinutes": 15,
@@ -209,6 +226,10 @@
     "diagnostics": 396,
     "specialist": 787
    }
+  },
+  "build": {
+   "id": "dbf24506f7fd5db9",
+   "script": "scripts/multimodal/augment_network.py"
   }
  },
  "islands": [
@@ -5972,7 +5993,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:FMT-MLE",
@@ -5995,7 +6022,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:FND-HDK",
@@ -6018,7 +6051,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:FND-HRF",
@@ -6041,7 +6078,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:FND-MLE",
@@ -6112,7 +6153,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:GAN-MLE",
@@ -6160,7 +6205,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:GKK-KDM",
@@ -6183,7 +6232,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:GKK-KDO",
@@ -6206,7 +6259,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:GKK-MLE",
@@ -6302,7 +6361,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:HDK-HAQ",
@@ -6372,7 +6435,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:HRF-MLE",
@@ -6395,7 +6462,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:IFU-DRV",
@@ -6467,7 +6540,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:KDM-GKK",
@@ -6490,7 +6569,11 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Tue"
+   ]
   },
   {
    "id": "air:KDM-MLE",
@@ -6560,7 +6643,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:KDO-MLE",
@@ -6608,7 +6697,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:KDO-TMF",
@@ -6631,7 +6726,14 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "air:LMV-MLE",
@@ -6654,7 +6756,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:LMV-NMF",
@@ -6750,7 +6858,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:MLE-FND",
@@ -6920,7 +7034,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:MLE-IFU",
@@ -7016,7 +7136,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:MLE-MUM",
@@ -7108,7 +7234,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:MLE-VAM",
@@ -7155,7 +7287,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:MUM-MLE",
@@ -7293,7 +7431,14 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "air:TMF-MLE",
@@ -7316,7 +7461,13 @@
    ],
    "confidence": "estimated_frequency",
    "status": "operating",
-   "source": "data/external/air/domestic_routes.csv"
+   "source": "data/external/air/domestic_routes.csv",
+   "days": [
+    "Sat",
+    "Sun",
+    "Tue",
+    "Thu"
+   ]
   },
   {
    "id": "air:VAM-MLE",
@@ -13388,18 +13539,18 @@
    },
    "blockMinutes": 30,
    "departures": [
-    563,
-    618,
-    674,
-    730,
-    786,
-    842,
-    898,
-    953,
-    1009,
-    1065,
-    1121,
-    1177
+    570,
+    630,
+    690,
+    750,
+    810,
+    870,
+    930,
+    990,
+    1050,
+    1110,
+    1170,
+    1230
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13421,14 +13572,14 @@
    },
    "blockMinutes": 43,
    "departures": [
-    580,
-    672,
-    765,
-    857,
-    950,
-    1042,
-    1135,
-    1227
+    630,
+    690,
+    810,
+    870,
+    930,
+    990,
+    1170,
+    1230
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13450,14 +13601,14 @@
    },
    "blockMinutes": 30,
    "departures": [
-    480,
-    566,
-    652,
-    739,
-    825,
-    911,
-    998,
-    1084
+    510,
+    630,
+    690,
+    870,
+    930,
+    990,
+    1050,
+    1170
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13479,12 +13630,12 @@
    },
    "blockMinutes": 8,
    "departures": [
-    587,
-    671,
-    755,
-    840,
-    924,
-    1008
+    630,
+    750,
+    870,
+    930,
+    990,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13506,11 +13657,11 @@
    },
    "blockMinutes": 7,
    "departures": [
-    441,
-    561,
-    681,
-    802,
-    922
+    450,
+    510,
+    570,
+    630,
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13532,11 +13683,11 @@
    },
    "blockMinutes": 72,
    "departures": [
-    631,
-    704,
-    778,
-    851,
-    925
+    690,
+    750,
+    810,
+    870,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13558,11 +13709,11 @@
    },
    "blockMinutes": 67,
    "departures": [
-    361,
-    463,
-    565,
-    667,
-    769
+    390,
+    450,
+    570,
+    810,
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13584,11 +13735,11 @@
    },
    "blockMinutes": 5,
    "departures": [
-    367,
-    504,
-    641,
-    779,
-    916
+    510,
+    690,
+    930,
+    990,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13610,11 +13761,11 @@
    },
    "blockMinutes": 5,
    "departures": [
-    440,
-    566,
-    692,
-    818,
-    944
+    450,
+    690,
+    930,
+    990,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13636,10 +13787,10 @@
    },
    "blockMinutes": 33,
    "departures": [
-    458,
-    643,
-    829,
-    1015
+    510,
+    630,
+    870,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13661,10 +13812,10 @@
    },
    "blockMinutes": 34,
    "departures": [
-    550,
-    742,
-    935,
-    1127
+    570,
+    750,
+    990,
+    1110
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13686,10 +13837,10 @@
    },
    "blockMinutes": 27,
    "departures": [
-    451,
-    668,
-    885,
-    1102
+    510,
+    690,
+    1050,
+    1110
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13711,10 +13862,10 @@
    },
    "blockMinutes": 67,
    "departures": [
-    409,
-    504,
-    599,
-    694
+    450,
+    510,
+    570,
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13736,10 +13887,10 @@
    },
    "blockMinutes": 26,
    "departures": [
-    391,
-    623,
-    855,
-    1087
+    570,
+    630,
+    690,
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13754,17 +13905,16 @@
    "fromNode": "island:MV009052",
    "toNode": "island:MV010001",
    "weeklyFrequency": 27.3,
-   "departuresPerDay": 4,
+   "departuresPerDay": 3,
    "operatingWindow": {
     "start": 635,
     "end": 980
    },
    "blockMinutes": 63,
    "departures": [
-    635,
-    721,
-    807,
-    893
+    690,
+    750,
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13786,10 +13936,10 @@
    },
    "blockMinutes": 43,
    "departures": [
-    380,
-    551,
-    723,
-    895
+    390,
+    450,
+    810,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13811,10 +13961,10 @@
    },
    "blockMinutes": 75,
    "departures": [
-    627,
-    717,
-    808,
-    899
+    630,
+    690,
+    930,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13836,10 +13986,10 @@
    },
    "blockMinutes": 82,
    "departures": [
-    408,
-    567,
-    726,
-    885
+    630,
+    690,
+    810,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13861,10 +14011,10 @@
    },
    "blockMinutes": 61,
    "departures": [
-    398,
-    507,
-    617,
-    726
+    450,
+    510,
+    570,
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13886,9 +14036,9 @@
    },
    "blockMinutes": 39,
    "departures": [
-    480,
-    760,
-    1040
+    510,
+    870,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13910,9 +14060,9 @@
    },
    "blockMinutes": 8,
    "departures": [
-    517,
-    715,
-    914
+    690,
+    750,
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13934,9 +14084,9 @@
    },
    "blockMinutes": 81,
    "departures": [
-    332,
-    551,
-    770
+    390,
+    930,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13958,9 +14108,9 @@
    },
    "blockMinutes": 8,
    "departures": [
-    449,
-    689,
-    929
+    450,
+    570,
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13982,9 +14132,9 @@
    },
    "blockMinutes": 7,
    "departures": [
-    430,
-    563,
-    697
+    450,
+    510,
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14006,9 +14156,9 @@
    },
    "blockMinutes": 12,
    "departures": [
-    588,
-    747,
-    906
+    930,
+    990,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14030,9 +14180,9 @@
    },
    "blockMinutes": 7,
    "departures": [
-    628,
-    755,
-    882
+    630,
+    690,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14054,9 +14204,9 @@
    },
    "blockMinutes": 12,
    "departures": [
-    428,
-    617,
-    807
+    450,
+    690,
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14078,9 +14228,9 @@
    },
    "blockMinutes": 12,
    "departures": [
-    410,
-    526,
-    643
+    450,
+    510,
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14102,8 +14252,8 @@
    },
    "blockMinutes": 7,
    "departures": [
-    814,
-    931
+    930,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14125,8 +14275,8 @@
    },
    "blockMinutes": 36,
    "departures": [
-    391,
-    855
+    750,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14148,8 +14298,8 @@
    },
    "blockMinutes": 11,
    "departures": [
-    393,
-    717
+    870,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14172,7 +14322,7 @@
    "blockMinutes": 11,
    "departures": [
     450,
-    744
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14194,8 +14344,8 @@
    },
    "blockMinutes": 5,
    "departures": [
-    706,
-    895
+    750,
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14217,8 +14367,8 @@
    },
    "blockMinutes": 10,
    "departures": [
-    376,
-    684
+    390,
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14240,8 +14390,8 @@
    },
    "blockMinutes": 11,
    "departures": [
-    460,
-    641
+    510,
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14263,8 +14413,8 @@
    },
    "blockMinutes": 5,
    "departures": [
-    579,
-    718
+    630,
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14286,8 +14436,8 @@
    },
    "blockMinutes": 6,
    "departures": [
-    366,
-    673
+    390,
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14309,8 +14459,8 @@
    },
    "blockMinutes": 9,
    "departures": [
-    604,
-    785
+    630,
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14332,8 +14482,8 @@
    },
    "blockMinutes": 9,
    "departures": [
-    437,
-    628
+    450,
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14355,8 +14505,8 @@
    },
    "blockMinutes": 5,
    "departures": [
-    478,
-    743
+    510,
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14378,8 +14528,8 @@
    },
    "blockMinutes": 5,
    "departures": [
-    634,
-    827
+    930,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14401,8 +14551,8 @@
    },
    "blockMinutes": 10,
    "departures": [
-    472,
-    766
+    510,
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14424,8 +14574,8 @@
    },
    "blockMinutes": 5,
    "departures": [
-    587,
-    775
+    630,
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14447,8 +14597,8 @@
    },
    "blockMinutes": 74,
    "departures": [
-    442,
-    631
+    450,
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14470,8 +14620,8 @@
    },
    "blockMinutes": 12,
    "departures": [
-    619,
-    790
+    630,
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14493,8 +14643,8 @@
    },
    "blockMinutes": 14,
    "departures": [
-    828,
-    924
+    930,
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14517,7 +14667,7 @@
    "blockMinutes": 14,
    "departures": [
     390,
-    585
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14539,8 +14689,8 @@
    },
    "blockMinutes": 34,
    "departures": [
-    387,
-    827
+    450,
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14563,7 +14713,7 @@
    "blockMinutes": 5,
    "departures": [
     450,
-    628
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14585,7 +14735,7 @@
    },
    "blockMinutes": 80,
    "departures": [
-    642
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14607,7 +14757,7 @@
    },
    "blockMinutes": 37,
    "departures": [
-    522
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14629,7 +14779,7 @@
    },
    "blockMinutes": 57,
    "departures": [
-    385
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14651,7 +14801,7 @@
    },
    "blockMinutes": 139,
    "departures": [
-    471
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14673,7 +14823,7 @@
    },
    "blockMinutes": 21,
    "departures": [
-    536
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14695,7 +14845,7 @@
    },
    "blockMinutes": 10,
    "departures": [
-    527
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14717,7 +14867,7 @@
    },
    "blockMinutes": 4,
    "departures": [
-    485
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14739,7 +14889,7 @@
    },
    "blockMinutes": 50,
    "departures": [
-    543
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14761,7 +14911,7 @@
    },
    "blockMinutes": 103,
    "departures": [
-    659
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14783,7 +14933,7 @@
    },
    "blockMinutes": 36,
    "departures": [
-    550
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14805,7 +14955,7 @@
    },
    "blockMinutes": 74,
    "departures": [
-    598
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14827,7 +14977,7 @@
    },
    "blockMinutes": 4,
    "departures": [
-    493
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14849,7 +14999,7 @@
    },
    "blockMinutes": 49,
    "departures": [
-    436
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14871,7 +15021,7 @@
    },
    "blockMinutes": 63,
    "departures": [
-    422
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14893,7 +15043,7 @@
    },
    "blockMinutes": 75,
    "departures": [
-    423
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14915,7 +15065,7 @@
    },
    "blockMinutes": 139,
    "departures": [
-    370
+    390
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14937,7 +15087,7 @@
    },
    "blockMinutes": 22,
    "departures": [
-    567
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14959,7 +15109,7 @@
    },
    "blockMinutes": 15,
    "departures": [
-    547
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14981,7 +15131,7 @@
    },
    "blockMinutes": 31,
    "departures": [
-    545
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15003,7 +15153,7 @@
    },
    "blockMinutes": 24,
    "departures": [
-    578
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15025,7 +15175,7 @@
    },
    "blockMinutes": 17,
    "departures": [
-    503
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15047,7 +15197,7 @@
    },
    "blockMinutes": 64,
    "departures": [
-    677
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15069,7 +15219,7 @@
    },
    "blockMinutes": 12,
    "departures": [
-    435
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15091,7 +15241,7 @@
    },
    "blockMinutes": 126,
    "departures": [
-    507
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15113,7 +15263,7 @@
    },
    "blockMinutes": 25,
    "departures": [
-    634
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15135,7 +15285,7 @@
    },
    "blockMinutes": 17,
    "departures": [
-    300
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15157,7 +15307,7 @@
    },
    "blockMinutes": 19,
    "departures": [
-    399
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15179,7 +15329,7 @@
    },
    "blockMinutes": 29,
    "departures": [
-    710
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15201,7 +15351,7 @@
    },
    "blockMinutes": 13,
    "departures": [
-    470
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15223,11 +15373,18 @@
    },
    "blockMinutes": 27,
    "departures": [
-    604
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV009052-MV008003",
@@ -15245,7 +15402,7 @@
    },
    "blockMinutes": 78,
    "departures": [
-    598
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15267,7 +15424,7 @@
    },
    "blockMinutes": 96,
    "departures": [
-    403
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15289,7 +15446,7 @@
    },
    "blockMinutes": 23,
    "departures": [
-    552
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15311,7 +15468,7 @@
    },
    "blockMinutes": 71,
    "departures": [
-    300
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15333,7 +15490,7 @@
    },
    "blockMinutes": 24,
    "departures": [
-    364
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15355,7 +15512,7 @@
    },
    "blockMinutes": 148,
    "departures": [
-    563
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15377,7 +15534,7 @@
    },
    "blockMinutes": 17,
    "departures": [
-    611
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15421,7 +15578,7 @@
    },
    "blockMinutes": 12,
    "departures": [
-    624
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15443,7 +15600,7 @@
    },
    "blockMinutes": 34,
    "departures": [
-    527
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15465,7 +15622,7 @@
    },
    "blockMinutes": 16,
    "departures": [
-    498
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15487,7 +15644,7 @@
    },
    "blockMinutes": 61,
    "departures": [
-    630
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15509,7 +15666,7 @@
    },
    "blockMinutes": 138,
    "departures": [
-    770
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15531,7 +15688,7 @@
    },
    "blockMinutes": 117,
    "departures": [
-    575
+    870
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15553,7 +15710,7 @@
    },
    "blockMinutes": 28,
    "departures": [
-    510
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15575,7 +15732,7 @@
    },
    "blockMinutes": 19,
    "departures": [
-    415
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15597,7 +15754,7 @@
    },
    "blockMinutes": 15,
    "departures": [
-    615
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15619,7 +15776,7 @@
    },
    "blockMinutes": 135,
    "departures": [
-    374
+    390
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15641,7 +15798,7 @@
    },
    "blockMinutes": 71,
    "departures": [
-    402
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15663,7 +15820,7 @@
    },
    "blockMinutes": 25,
    "departures": [
-    519
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15685,7 +15842,7 @@
    },
    "blockMinutes": 28,
    "departures": [
-    357
+    390
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15707,7 +15864,7 @@
    },
    "blockMinutes": 34,
    "departures": [
-    525
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15729,7 +15886,7 @@
    },
    "blockMinutes": 29,
    "departures": [
-    472
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15751,7 +15908,7 @@
    },
    "blockMinutes": 20,
    "departures": [
-    543
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15773,7 +15930,7 @@
    },
    "blockMinutes": 38,
    "departures": [
-    727
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15795,11 +15952,18 @@
    },
    "blockMinutes": 24,
    "departures": [
-    695
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV021001-MV005003",
@@ -15817,7 +15981,7 @@
    },
    "blockMinutes": 141,
    "departures": [
-    454
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15839,11 +16003,18 @@
    },
    "blockMinutes": 19,
    "departures": [
-    1004
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV002005-MV002008",
@@ -15861,7 +16032,7 @@
    },
    "blockMinutes": 8,
    "departures": [
-    506
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15883,7 +16054,7 @@
    },
    "blockMinutes": 20,
    "departures": [
-    486
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15905,7 +16076,7 @@
    },
    "blockMinutes": 20,
    "departures": [
-    440
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15927,7 +16098,7 @@
    },
    "blockMinutes": 24,
    "departures": [
-    701
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15949,7 +16120,7 @@
    },
    "blockMinutes": 33,
    "departures": [
-    357
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15971,7 +16142,7 @@
    },
    "blockMinutes": 21,
    "departures": [
-    897
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15993,7 +16164,7 @@
    },
    "blockMinutes": 17,
    "departures": [
-    411
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16015,7 +16186,7 @@
    },
    "blockMinutes": 16,
    "departures": [
-    709
+    1050
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16037,7 +16208,7 @@
    },
    "blockMinutes": 25,
    "departures": [
-    665
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16059,7 +16230,7 @@
    },
    "blockMinutes": 81,
    "departures": [
-    432
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16081,7 +16252,7 @@
    },
    "blockMinutes": 17,
    "departures": [
-    503
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16103,11 +16274,18 @@
    },
    "blockMinutes": 110,
    "departures": [
-    406
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV007003-MV007008",
@@ -16125,11 +16303,18 @@
    },
    "blockMinutes": 23,
    "departures": [
-    428
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV009005-MV009052",
@@ -16147,7 +16332,7 @@
    },
    "blockMinutes": 25,
    "departures": [
-    508
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16169,7 +16354,7 @@
    },
    "blockMinutes": 24,
    "departures": [
-    360
+    390
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16191,7 +16376,7 @@
    },
    "blockMinutes": 40,
    "departures": [
-    480
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16213,7 +16398,7 @@
    },
    "blockMinutes": 95,
    "departures": [
-    421
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16235,7 +16420,7 @@
    },
    "blockMinutes": 79,
    "departures": [
-    415
+    810
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16257,7 +16442,7 @@
    },
    "blockMinutes": 63,
    "departures": [
-    421
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16279,7 +16464,7 @@
    },
    "blockMinutes": 30,
    "departures": [
-    367
+    390
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16301,11 +16486,18 @@
    },
    "blockMinutes": 7,
    "departures": [
-    565
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV010005-MV009052",
@@ -16323,7 +16515,7 @@
    },
    "blockMinutes": 92,
    "departures": [
-    421
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16345,7 +16537,7 @@
    },
    "blockMinutes": 92,
    "departures": [
-    664
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16367,7 +16559,7 @@
    },
    "blockMinutes": 19,
    "departures": [
-    721
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16389,7 +16581,7 @@
    },
    "blockMinutes": 33,
    "departures": [
-    351
+    390
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16411,11 +16603,18 @@
    },
    "blockMinutes": 88,
    "departures": [
-    677
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV006014-MV007003",
@@ -16433,7 +16632,7 @@
    },
    "blockMinutes": 23,
    "departures": [
-    415
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16455,7 +16654,7 @@
    },
    "blockMinutes": 25,
    "departures": [
-    545
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16477,7 +16676,7 @@
    },
    "blockMinutes": 19,
    "departures": [
-    832
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16499,11 +16698,18 @@
    },
    "blockMinutes": 15,
    "departures": [
-    543
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV007008-MV007004",
@@ -16521,7 +16727,7 @@
    },
    "blockMinutes": 22,
    "departures": [
-    491
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16543,7 +16749,7 @@
    },
    "blockMinutes": 27,
    "departures": [
-    470
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16565,7 +16771,7 @@
    },
    "blockMinutes": 36,
    "departures": [
-    611
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16587,7 +16793,7 @@
    },
    "blockMinutes": 23,
    "departures": [
-    572
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16609,7 +16815,7 @@
    },
    "blockMinutes": 22,
    "departures": [
-    500
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16631,11 +16837,18 @@
    },
    "blockMinutes": 21,
    "departures": [
-    578
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV009003-MV021003",
@@ -16653,11 +16866,18 @@
    },
    "blockMinutes": 46,
    "departures": [
-    512
+    750
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV005003-MV005001",
@@ -16675,7 +16895,7 @@
    },
    "blockMinutes": 24,
    "departures": [
-    391
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16697,11 +16917,18 @@
    },
    "blockMinutes": 88,
    "departures": [
-    637
+    930
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV014001-MV012008",
@@ -16719,7 +16946,7 @@
    },
    "blockMinutes": 42,
    "departures": [
-    497
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16741,7 +16968,7 @@
    },
    "blockMinutes": 20,
    "departures": [
-    498
+    990
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16763,11 +16990,18 @@
    },
    "blockMinutes": 15,
    "departures": [
-    613
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV013004-MV013009",
@@ -16785,7 +17019,7 @@
    },
    "blockMinutes": 19,
    "departures": [
-    488
+    510
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16807,11 +17041,18 @@
    },
    "blockMinutes": 19,
    "departures": [
-    408
+    450
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV004002-MV003014",
@@ -16829,7 +17070,7 @@
    },
    "blockMinutes": 19,
    "departures": [
-    595
+    690
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -16851,11 +17092,18 @@
    },
    "blockMinutes": 11,
    "departures": [
-    338
+    630
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
   },
   {
    "id": "observed:MV013004-MV013008",
@@ -16873,11 +17121,109 @@
    },
    "blockMinutes": 22,
    "departures": [
-    499
+    570
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
+   "source": "data/processed/followme/observed_sea_links.csv",
+   "days": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+   ]
+  },
+  {
+   "id": "inferred:ferry:247:1",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "RTL",
+   "routeId": "247",
+   "routeCode": "Z2R11",
+   "zone": "Zone 2",
+   "confidence": "verified_timetable",
+   "calendar": "inferred return: reverse stop order after a 30-minute turnaround",
+   "source": "data/team-kandu/rtl_trips.csv (inferred return)",
+   "stops": [
+    {
+     "stopId": "RTL:200",
+     "name": "R.Maduvvari",
+     "sequence": 1,
+     "arrival": 1105,
+     "departure": 1105
+    },
+    {
+     "stopId": "RTL:199",
+     "name": "R.Meedhoo",
+     "sequence": 2,
+     "arrival": 1125,
+     "departure": 1125
+    },
+    {
+     "stopId": "RTL:198",
+     "name": "R.Kinolhas",
+     "sequence": 3,
+     "arrival": 1140,
+     "departure": 1140
+    },
+    {
+     "stopId": "RTL:197",
+     "name": "R.Fainu",
+     "sequence": 4,
+     "arrival": 1150,
+     "departure": 1150
+    },
+    {
+     "stopId": "RTL:196",
+     "name": "R.Inguraidhoo",
+     "sequence": 5,
+     "arrival": 1160,
+     "departure": 1160
+    },
+    {
+     "stopId": "RTL:192",
+     "name": "R.Ungoofaaru",
+     "sequence": 6,
+     "arrival": 1190,
+     "departure": 1190
+    }
+   ]
+  },
+  {
+   "id": "inferred:ferry:259:1",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "RTL",
+   "routeId": "259",
+   "routeCode": "Z2R18",
+   "zone": "Zone 2",
+   "confidence": "verified_timetable",
+   "calendar": "inferred return: reverse stop order after a 30-minute turnaround",
+   "source": "data/team-kandu/rtl_trips.csv (inferred return)",
+   "stops": [
+    {
+     "stopId": "RTL:209",
+     "name": "B.Eydhafushi",
+     "sequence": 1,
+     "arrival": 960,
+     "departure": 960
+    },
+    {
+     "stopId": "RTL:208",
+     "name": "B.Maalhos",
+     "sequence": 2,
+     "arrival": 975,
+     "departure": 975
+    },
+    {
+     "stopId": "RTL:207",
+     "name": "B.Dharavandhoo",
+     "sequence": 3,
+     "arrival": 985,
+     "departure": 985
+    }
+   ]
   }
  ],
  "facilities": [

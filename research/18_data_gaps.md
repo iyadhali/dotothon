@@ -278,6 +278,18 @@ Everything below is the evidence for these rows and for the smaller gaps behind 
 
 ---
 
+## 6a. Gaps reduced in the app with data already in hand (24 Oct, evening)
+
+| Gap | Change | Effect |
+|---|---|---|
+| T6 air inflation | Air services with fewer than 7 estimated weekly flights fly only on that many weekdays (`days`), using the router's weekday calendar. | Generated departures go from +15.9% to +1.9% over the estimated weekly frequency (24 of 62 services). |
+| T5 observed boats | Departures are placed at the busiest hours seen in the FollowMe departure histogram, not spread evenly. Links with under 0.5 weekend trips a day do not run Fri/Sat. | Fewer early-morning boats that were never observed; 06:00 results become less optimistic. |
+| T4 one-direction trips | RTL trips with no trip back between the same two islands get an inferred return (reverse stops, 30-min turnaround). Evidence layer "Inferred return", switchable off in the Data menu. | 2 trips added: Eydhafushi → Maalhos → Dharavandhoo and Maduvvari → Ungoofaaru. Maalhos now has a trip home. |
+| V3 metadata drift | `meta.build.id` (content hash) is stamped on the network; `fares.json` and every `extras/*.json` record `networkBuildId`; `build-db` rejects extras built from a different network. Expected stops, access edges and services come from the network's own `meta.counts`, not hand-edited numbers. | Stale artifacts now fail the database build instead of drifting silently. |
+| Transparency | "Data limits" panel in the app: each main gap, what the app does about it, and the data needed. | Judges see the limits next to the results. |
+
+Re-run order: `augment_network.py` → `build_fares.py` → `build_extras.py` → `npm run db:build`.
+
 ## 7. Top 10 data asks
 
 Effort: S = a few days, M = weeks, L = months or a formal data-sharing agreement.

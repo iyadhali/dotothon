@@ -17,6 +17,11 @@ import {
 } from '../server/utils/database.ts'
 
 const SOURCE_DIR = fileURLToPath(new URL('../public/data/', import.meta.url))
+/** The prepared network; its meta.counts is the manifest the database is checked against. */
+const NETWORK = JSON.parse(readFileSync(join(SOURCE_DIR, 'multimodal.json'), 'utf8')) as {
+  meta: { counts: { stops: number; accessEdges: number; services: number } }
+  services: { kind: string; stops?: unknown[] }[]
+}
 
 function temporaryDatabase(): { directory: string; outputPath: string } {
   const directory = mkdtempSync(join(tmpdir(), 'island-access-db-'))
@@ -30,14 +35,14 @@ test('builds every source entity into the serving database', () => {
     assert.equal(summary.schemaVersion, 2)
     assert.deepEqual(summary.counts, {
       islands: EXPECTED.islands,
-      stops: EXPECTED.stops,
+      stops: NETWORK.meta.counts.stops,
       airports: EXPECTED.airports,
-      accessEdges: EXPECTED.accessEdges,
-      services: EXPECTED.services,
+      accessEdges: NETWORK.meta.counts.accessEdges,
+      services: NETWORK.meta.counts.services,
       facilities: EXPECTED.facilities,
       categories: EXPECTED.categories,
       facilityCategories: 1858,
-      serviceStops: 548, // 390 RTL + 158 MTCC 2023 stop-times (augment_network.py)
+      serviceStops: NETWORK.services.reduce((sum, s) => sum + (s.stops?.length ?? 0), 0),
       hdxNational: EXPECTED.hdxNational,
       hdxUnits: EXPECTED.hdxUnits,
     })
@@ -57,13 +62,13 @@ test('builds every source entity into the serving database', () => {
         (db.prepare('SELECT count(*) AS count FROM services WHERE kind = ?').get('timetabled') as {
           count: number
         }).count,
-        132, // 102 RTL + 30 MTCC 2023 trips
+        NETWORK.services.filter((s) => s.kind === 'timetabled').length,
       )
       assert.equal(
         (db.prepare('SELECT count(*) AS count FROM services WHERE kind = ?').get('frequency') as {
           count: number
         }).count,
-        218, // 64 air/ferry frequency services + 154 observed boat links
+        NETWORK.services.filter((s) => s.kind === 'frequency').length,
       )
     } finally {
       db.close()

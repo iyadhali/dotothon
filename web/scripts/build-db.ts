@@ -252,26 +252,48 @@ function assertCount(name: string, actual: number, expected: number): void {
   assert(actual === expected, `${name}: expected ${expected}, found ${actual}`)
 }
 
+/**
+ * Counts the network itself declares (meta.counts, written by augment_network.py) take the place
+ * of the hand-edited stops / access edges / services expectations, so the builder checks the
+ * database against the network's own manifest instead of numbers that drift.
+ */
+let expected: { -readonly [K in keyof typeof EXPECTED]: number } = { ...EXPECTED }
+/** Network build id (meta.build.id); fares.json and extras must have been built from it. */
+let networkBuildId: string | null = null
+
+function useManifest(network: Network): void {
+  const counts = (network.meta.counts ?? {}) as Record<string, number>
+  expected = {
+    ...EXPECTED,
+    stops: Number.isFinite(counts.stops) ? counts.stops : EXPECTED.stops,
+    accessEdges: Number.isFinite(counts.accessEdges) ? counts.accessEdges : EXPECTED.accessEdges,
+    services: Number.isFinite(counts.services) ? counts.services : EXPECTED.services,
+  }
+  const build = (network.meta as { build?: { id?: string } }).build
+  networkBuildId = typeof build?.id === 'string' ? build.id : null
+}
+
 function validateSources(network: Network, geojson: { features?: GeoFeature[] }, hdx: HdxBaseline): void {
-  assertCount('islands', network.islands.length, EXPECTED.islands)
-  assertCount('origins', network.islands.filter((island) => island.isOrigin).length, EXPECTED.origins)
-  assertCount('stops', network.stops.length, EXPECTED.stops)
-  assertCount('airports', network.airports.length, EXPECTED.airports)
-  assertCount('access edges', network.accessEdges.length, EXPECTED.accessEdges)
-  assertCount('services', network.services.length, EXPECTED.services)
-  assertCount('facilities', network.facilities.length, EXPECTED.facilities)
-  assertCount('categories', network.categories.length, EXPECTED.categories)
-  assertCount('geojson features', geojson.features?.length ?? 0, EXPECTED.geojsonFeatures)
-  assertCount('hdx national rows', hdx.national.length, EXPECTED.hdxNational)
-  assertCount('hdx unit rows', hdx.units.length, EXPECTED.hdxUnits)
+  useManifest(network)
+  assertCount('islands', network.islands.length, expected.islands)
+  assertCount('origins', network.islands.filter((island) => island.isOrigin).length, expected.origins)
+  assertCount('stops', network.stops.length, expected.stops)
+  assertCount('airports', network.airports.length, expected.airports)
+  assertCount('access edges', network.accessEdges.length, expected.accessEdges)
+  assertCount('services', network.services.length, expected.services)
+  assertCount('facilities', network.facilities.length, expected.facilities)
+  assertCount('categories', network.categories.length, expected.categories)
+  assertCount('geojson features', geojson.features?.length ?? 0, expected.geojsonFeatures)
+  assertCount('hdx national rows', hdx.national.length, expected.hdxNational)
+  assertCount('hdx unit rows', hdx.units.length, expected.hdxUnits)
 
   const metaCounts = network.meta.counts as Record<string, number> | undefined
   if (metaCounts) {
-    assertCount('meta islands', metaCounts.islands, EXPECTED.islands)
-    assertCount('meta stops', metaCounts.stops, EXPECTED.stops)
-    assertCount('meta airports', metaCounts.airports, EXPECTED.airports)
-    assertCount('meta facilities', metaCounts.facilities, EXPECTED.facilities)
-    assertCount('meta categories', metaCounts.categories, EXPECTED.categories)
+    assertCount('meta islands', metaCounts.islands, expected.islands)
+    assertCount('meta stops', metaCounts.stops, expected.stops)
+    assertCount('meta airports', metaCounts.airports, expected.airports)
+    assertCount('meta facilities', metaCounts.facilities, expected.facilities)
+    assertCount('meta categories', metaCounts.categories, expected.categories)
   }
 
   const islandIds = new Set(network.islands.map((island) => island.id))
@@ -305,7 +327,7 @@ function validateSources(network: Network, geojson: { features?: GeoFeature[] },
   }
 
   const featureIslands = new Set((geojson.features ?? []).map((feature) => feature.properties.islandId))
-  assert(featureIslands.size === EXPECTED.geojsonFeatures, 'geojson features do not have unique island ids')
+  assert(featureIslands.size === expected.geojsonFeatures, 'geojson features do not have unique island ids')
   for (const islandId of islandIds) {
     assert(featureIslands.has(islandId), `island ${islandId} has no geojson feature`)
   }
@@ -326,6 +348,11 @@ function readExtras(extrasDir: string): Map<string, ExtrasFile> {
     const file = readJson<ExtrasFile>(path)
     assert(Array.isArray(file.records), `extras/${spec.name}.json: records must be an array`)
     assertCount(`extras ${spec.name} (meta.rowCount)`, file.records.length, Number(file.meta?.rowCount))
+    const extrasBuild = (file.meta as { networkBuildId?: string } | undefined)?.networkBuildId
+    assert(
+      !networkBuildId || !extrasBuild || extrasBuild === networkBuildId,
+      `extras/${spec.name}.json was built from network ${extrasBuild}, but multimodal.json is ${networkBuildId}; re-run scripts/multimodal/build_extras.py`,
+    )
     loaded.set(spec.name, file)
   }
   return loaded
@@ -671,10 +698,10 @@ function inspectDatabase(outputPath: string): Omit<DatabaseSummary, 'outputPath'
     assert(schemaVersion === SCHEMA_VERSION, `unsupported schema user_version ${schemaVersion}`)
     const counts = tableCounts(db)
     assertCount('islands', counts.islands, EXPECTED.islands)
-    assertCount('stops', counts.stops, EXPECTED.stops)
+    assertCount('stops', counts.stops, expected.stops)
     assertCount('airports', counts.airports, EXPECTED.airports)
-    assertCount('access edges', counts.accessEdges, EXPECTED.accessEdges)
-    assertCount('services', counts.services, EXPECTED.services)
+    assertCount('access edges', counts.accessEdges, expected.accessEdges)
+    assertCount('services', counts.services, expected.services)
     assertCount('facilities', counts.facilities, EXPECTED.facilities)
     assertCount('categories', counts.categories, EXPECTED.categories)
     assertCount('hdx national rows', counts.hdxNational, EXPECTED.hdxNational)

@@ -105,6 +105,7 @@ def main() -> None:
         "currency": "MVR",
         "usdMvr": float(air_model.get("usd_mvr", 15.42)),
         "generatedAt": date.today().isoformat(),
+        "networkBuildId": (json.loads(NETWORK.read_text(encoding="utf-8"))["meta"].get("build") or {}).get("id"),
         "airRoutes": air_routes(rows, ratio),
         "airModel": {
             "aMvr": round(trunk["a"] * ratio, 2),

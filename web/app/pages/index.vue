@@ -96,6 +96,47 @@ const impactMax = computed(() => Math.max(1, ...impact.value.map((step) => step.
 const pct = (value: number, total: number) => (total > 0 ? `${Math.round((100 * value) / total)}%` : '—')
 
 const DAYS = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+const limitsOpen = ref(false)
+
+/** Main data gaps (research/18_data_gaps.md): what is missing, what the app does, who can close it. */
+const LIMITS = [
+  {
+    title: 'Ferry calendars',
+    gap: 'RTL is a one-day snapshot with no weekly calendar; the central atolls rely on the 2023 MTCC timetable (52,783 residents have no RTL stop).',
+    now: 'MTCC trips run only on their published days (no Friday). Two one-way RTL routes get an inferred return trip, tagged and switchable.',
+    ask: 'RTL / MTCC timetable export (GTFS) with calendars',
+  },
+  {
+    title: 'Observed boats',
+    gap: 'FollowMe GPS mixes public, private and fishing boats (Aug 2025).',
+    now: 'Used only where no timetable exists, placed at the hours boats were seen leaving, tagged as estimated and switchable.',
+    ask: 'Passenger-boat register and speedboat schedules and fares',
+  },
+  {
+    title: 'Departure time',
+    gap: 'Results change sharply with the hour you leave, because many ferries run once or twice a day.',
+    now: 'Pick 06:00, 08:00 or 14:00 and a weekday; same-day return is checked for every trip.',
+    ask: 'Full timetables (as above)',
+  },
+  {
+    title: 'Flights',
+    gap: 'Domestic frequencies are estimated from four days of departure boards; no published schedule.',
+    now: 'Routes with fewer than 7 weekly flights fly only on that many weekdays; flight legs are tagged estimated.',
+    ask: 'MACL / airline weekly schedule',
+  },
+  {
+    title: 'Facilities',
+    gap: 'Island-level locations, 2020 tiers; no beds, staff, opening hours or appointments. All 24 hospitals are treated alike.',
+    now: '"Reachable" means the facility island can be reached, not that a patient is seen.',
+    ask: 'MoH facility registry with services, capacity and hours',
+  },
+  {
+    title: 'Demand and referrals',
+    gap: 'No observed patient or student flows; MTCC passenger counts are synthetic.',
+    now: 'Results are counted over the 447,420 residents of the 191 inhabited islands (Census 2022).',
+    ask: 'Aasandha / MoH referral origin-destination data',
+  },
+]
 
 /** Which route networks are drawn on the map (display only; routing uses the Data menu). */
 const showRoutes = ref({ sea: true, air: true, land: true })
@@ -396,6 +437,7 @@ function homeText(destination: DestinationAccess): string {
             </li>
           </ul>
         </div>
+        <button type="button" class="am-link am-link--btn" @click="limitsOpen = true">Data limits</button>
         <NuxtLink to="/details" class="am-link">Full analysis</NuxtLink>
       </div>
     </header>
@@ -603,6 +645,29 @@ function homeText(destination: DestinationAccess): string {
           {{ threshold }} min. Capacity and cost not modelled.
         </p>
       </aside>
+      <div v-if="limitsOpen" class="am-modal" role="dialog" aria-modal="true" aria-labelledby="am-limits-title" @click.self="limitsOpen = false">
+        <div class="am-modal__card">
+          <div class="am-panel__head">
+            <div>
+              <h2 id="am-limits-title">Data limits</h2>
+              <p>What the data cannot show yet, what this app does about it, and who could close the gap.</p>
+            </div>
+            <button type="button" class="am-close" aria-label="Close" @click="limitsOpen = false">×</button>
+          </div>
+          <ul class="am-limits">
+            <li v-for="item in LIMITS" :key="item.title">
+              <strong>{{ item.title }}</strong>
+              <p>{{ item.gap }}</p>
+              <p class="am-limits__now"><span>In this app</span> {{ item.now }}</p>
+              <p class="am-limits__ask"><span>Data needed</span> {{ item.ask }}</p>
+            </li>
+          </ul>
+          <p class="am-foot">
+            Full register with effect sizes:
+            <a href="https://github.com/iyadhali/dotothon/blob/main/research/18_data_gaps.md" target="_blank" rel="noopener">research/18_data_gaps.md</a>
+          </p>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -783,6 +848,68 @@ function homeText(destination: DestinationAccess): string {
 }
 .am-link:hover {
   text-decoration: underline;
+}
+.am-link--btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.am-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.35);
+}
+.am-modal__card {
+  width: min(640px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.25);
+}
+.am-modal__card h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.am-limits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.am-limits li {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--am-line);
+}
+.am-limits strong {
+  font-size: 13px;
+}
+.am-limits p {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+.am-limits span {
+  display: inline-block;
+  min-width: 82px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--am-muted);
+}
+.am-limits__now {
+  color: #0f172a;
+}
+.am-limits__ask {
+  color: #92400e;
 }
 .am-stage {
   position: relative;

@@ -89,7 +89,14 @@ function validateJourney(label: string, journey: Journey): void {
   }
   const first = journey.legs[0]!
   const last = journey.legs[journey.legs.length - 1]!
-  check(`${label}: first leg starts at departure`, close(first.departureMinute, journey.departureMinute), `leg=${first.departureMinute} journey=${journey.departureMinute}`)
+  // A journey may board a service straight from the origin island (e.g. an island-to-island boat),
+  // so the first leg can start after the departure time; that initial wait counts as a gap below.
+  const boardsAtOrigin = first.kind !== 'access' && first.kind !== 'road'
+  check(
+    `${label}: first leg starts at departure`,
+    boardsAtOrigin ? first.departureMinute >= journey.departureMinute - 1e-6 : close(first.departureMinute, journey.departureMinute),
+    `leg=${first.departureMinute} journey=${journey.departureMinute}`,
+  )
   // Alighting is reported on the journey total, so a final transit leg ends before the journey.
   const finalAlight = last.kind === 'ferry' || last.kind === 'sea' ? 2 : last.kind === 'air' ? 15 : 0
   check(
@@ -97,7 +104,7 @@ function validateJourney(label: string, journey: Journey): void {
     close(last.arrivalMinute + finalAlight, journey.arrivalMinute),
     `leg=${last.arrivalMinute}+alight${finalAlight} journey=${journey.arrivalMinute}`,
   )
-  let gapSum = 0
+  let gapSum = boardsAtOrigin ? first.departureMinute - journey.departureMinute : 0
   for (let index = 0; index < journey.legs.length; index += 1) {
     const leg = journey.legs[index]!
     check(`${label}: leg ${index} ride spans departure→arrival`, close(leg.departureMinute + leg.rideMinutes, leg.arrivalMinute), `${leg.departureMinute}+${leg.rideMinutes}!=${leg.arrivalMinute}`)
@@ -111,7 +118,9 @@ function validateJourney(label: string, journey: Journey): void {
   }
   check(
     `${label}: leg gaps sum to wait + transfer`,
-    close(gapSum, journey.waitMinutes + journey.transferMinutes),
+    // The final alighting buffer is part of transferMinutes but lies after the last leg, not
+    // between legs; it only appears when the journey ends on a transit leg at the island.
+    close(gapSum, journey.waitMinutes + journey.transferMinutes - (last.toNode.startsWith('island:') ? finalAlight : 0)),
     `gaps=${gapSum} wait+transfer=${journey.waitMinutes + journey.transferMinutes}`,
   )
 }

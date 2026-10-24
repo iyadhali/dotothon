@@ -52,10 +52,19 @@ def clean(v):
     return v
 
 
+def network_build_id() -> str | None:
+    """Build id stamped by augment_network.py, so build-db can reject stale extras."""
+    path = WEB / "public" / "data" / "multimodal.json"
+    if not path.exists():
+        return None
+    return (json.loads(path.read_text(encoding="utf8")).get("meta", {}).get("build") or {}).get("id")
+
+
 def write(name: str, records: list, sources: list[str], notes: list[str], extra: dict | None = None) -> None:
     meta = {
         "table": name,
         "generatedAt": TODAY,
+        "networkBuildId": network_build_id(),
         "rowCount": len(records),
         "sources": sources,
         "notes": notes,

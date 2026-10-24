@@ -1,290 +1,656 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useMultimodal } from '../composables/useMultimodal'
-import { formatDuration } from '../utils/format'
-import type { MapHighlight } from '../utils/routes'
+import { computed, ref, watch } from 'vue'
+import { useMultimodal, type FacilityType, type MapView } from '../composables/useMultimodal'
+import type { DestinationAccess } from '../../shared/routing/nearby'
+import { formatClock, formatClockWithDay, formatDuration, formatPopulation } from '../utils/format'
+import { journeyPaths, type Destination, type FacilityIsland, type JourneyPath } from '../utils/routes'
 
 const store = useMultimodal()
-
 const {
   dataStatus,
-  dataSource,
-  loadNote,
-  fatalError,
   network,
-  meta,
-  islandsGeojson,
-  geojsonLoaded,
-  engineReady,
-  originIslandId,
+  origins,
+  routePaths,
+  accessReport,
+  accessReportLoading,
+  facilityType,
+  mapView,
+  category,
   departureMinute,
   threshold,
-  selectedOrigin,
-  selectedCategory,
-  journey,
-  journeyStatus,
-  nextDayJourney,
-  journeyLoading,
-  journeyError,
-  metricsLoading,
-  metricsError,
-  baselineSummary,
-  scenarioSummary,
-  unfilteredSummary,
-  scenarioActive,
-  scenarioDescription,
-  comparison,
-  islandBands,
-  routePaths,
-  airportPoints,
-  facilityPoints,
-  selectedOriginAccess,
-  selectedOriginFilteredOut,
-  filterActive,
-  selectOrigin,
-  regionSplit,
-  accessReport,
-  mapView,
-  siting,
   underservedClasses,
+  siting,
+  selectOrigin,
 } = store
 
-const SHORT_LABELS: Record<string, string> = {
+/** null = nothing selected: show the whole network. */
+const selectedId = ref<string | null>(null)
+const search = ref('')
+const mapFailed = ref('')
+
+const TYPES: { key: FacilityType; label: string }[] = [
+  { key: 'all', label: 'All' },
+  { key: 'health', label: 'Health' },
+  { key: 'education', label: 'Education' },
+]
+const VIEWS: { key: MapView; label: string }[] = [
+  { key: 'access', label: 'Access' },
+  { key: 'underserved', label: 'Underserved' },
+  { key: 'recommended', label: 'Where to build' },
+]
+const DEPARTURES = [6 * 60, 8 * 60, 14 * 60]
+const SHORT: Record<string, string> = {
+  health_any: 'Health centre',
   health_hospital: 'Hospital',
   health_regional_tertiary: 'Regional hospital',
+  education_school: 'School',
   education_grade_11_12: 'Grade 11–12',
   education_higher_ed: 'Higher education',
 }
+/** The service the Underserved / Where-to-build views are computed for. */
+const VIEW_CATEGORY: Record<FacilityType, string> = {
+  all: 'health_hospital',
+  health: 'health_hospital',
+  education: 'education_grade_11_12',
+}
 
-/** Nearest destination per service for the selected island, merged by island for the map. */
-const mapHighlights = computed<MapHighlight[]>(() => {
+watch(
+  facilityType,
+  (type) => {
+    category.value = VIEW_CATEGORY[type]
+  },
+  { immediate: true },
+)
+
+const selected = computed(() => network.value?.islands.find((island) => island.id === selectedId.value) ?? null)
+
+function select(islandId: string | null): void {
+  selectedId.value = islandId
+  if (islandId) selectOrigin(islandId)
+}
+
+function onSearch(): void {
+  const name = search.value.trim().toLowerCase()
+  const match = origins.value.find((island) => island.name.toLowerCase() === name)
+  if (match) {
+    select(match.id)
+    search.value = ''
+  }
+}
+
+const facilityIslands = computed<FacilityIsland[]>(() => {
   const net = network.value
   if (!net) return []
-  const byIsland = new Map<string, { labels: string[]; minutes: number }>()
-  for (const row of accessReport.value) {
-    const first = row.destinations[0]
-    if (!first || first.journey.elapsedMinutes === 0) continue
-    const label = SHORT_LABELS[row.category] ?? net.categories.find((c) => c.id === row.category)?.label ?? row.category
-    const entry = byIsland.get(first.journey.destinationIslandId) ?? { labels: [], minutes: first.journey.elapsedMinutes }
-    entry.labels.push(label)
-    byIsland.set(first.journey.destinationIslandId, entry)
+  const islands = new Map(net.islands.map((island) => [island.id, island]))
+  const byIsland = new Map<string, { health: number; education: number }>()
+  for (const facility of net.facilities) {
+    if (facility.serviceCategories?.length && !facility.categories.some((c) => !c.startsWith('service:'))) continue
+    if (facilityType.value !== 'all' && facility.kind !== facilityType.value) continue
+    const entry = byIsland.get(facility.islandId) ?? { health: 0, education: 0 }
+    entry[facility.kind] += 1
+    byIsland.set(facility.islandId, entry)
   }
-  const islandsById = new Map(net.islands.map((island) => [island.id, island]))
-  return [...byIsland.entries()].flatMap(([islandId, entry]) => {
-    const island = islandsById.get(islandId)
+  return [...byIsland.entries()].flatMap(([islandId, counts]) => {
+    const island = islands.get(islandId)
     if (!island) return []
-    return [{ islandId, lon: island.lon, lat: island.lat, label: `${island.name}
-${entry.labels.join(', ')} · ${formatDuration(entry.minutes)}` }]
+    const kind: FacilityIsland['kind'] = counts.health && counts.education ? 'both' : counts.health ? 'health' : 'education'
+    return [{ islandId, lon: island.lon, lat: island.lat, kind, count: counts.health + counts.education }]
   })
 })
 
-const runtimeConfig = useRuntimeConfig()
+/** Nearest destination per service for the selected island. */
+const rows = computed(() => {
+  if (!selectedId.value) return []
+  return accessReport.value.map((row) => ({
+    category: row.category,
+    label: SHORT[row.category] ?? row.category,
+    status: row.status,
+    best: row.destinations[0] ?? null,
+  }))
+})
 
-const hasMapboxToken = computed(() => Boolean(runtimeConfig.public.mapboxToken))
+const journeys = computed<JourneyPath[]>(() => {
+  const net = network.value
+  if (!net) return []
+  return rows.value.flatMap((row) => (row.best && row.best.journey.elapsedMinutes > 0 ? journeyPaths(net, row.best.journey) : []))
+})
 
-const islands = computed(() => network.value?.islands ?? [])
+const destinations = computed<Destination[]>(() => {
+  const net = network.value
+  if (!net) return []
+  const merged = new Map<string, { labels: string[]; minutes: number }>()
+  for (const row of rows.value) {
+    const journey = row.best?.journey
+    if (!journey || journey.elapsedMinutes === 0) continue
+    const entry = merged.get(journey.destinationIslandId) ?? { labels: [], minutes: journey.elapsedMinutes }
+    entry.labels.push(row.label)
+    merged.set(journey.destinationIslandId, entry)
+  }
+  return [...merged.entries()].flatMap(([islandId, entry]) => {
+    const island = net.islands.find((candidate) => candidate.id === islandId)
+    if (!island) return []
+    return [{ islandId, lon: island.lon, lat: island.lat, label: `${island.name}\n${entry.labels.join(' · ')} · ${formatDuration(entry.minutes)}` }]
+  })
+})
 
-const referenceDay = computed(() => meta.value?.referenceDay ?? '')
+const facilityCount = computed(() => facilityIslands.value.reduce((sum, item) => sum + item.count, 0))
 
-const generatedAt = computed(() => meta.value?.generatedAt ?? null)
+const underservedLegend = computed(() => {
+  const totals: Record<string, number> = { served: 0, over_threshold: 0, no_trip: 0, no_data: 0 }
+  for (const island of network.value?.islands ?? []) {
+    const cls = underservedClasses.value[island.id]
+    if (island.isOrigin && cls) totals[cls] = (totals[cls] ?? 0) + island.population
+  }
+  return [
+    { key: 'served', label: `Within ${threshold.value} min`, value: totals.served },
+    { key: 'over_threshold', label: 'Reachable, slower', value: totals.over_threshold },
+    { key: 'no_trip', label: 'No same-day trip', value: totals.no_trip },
+    { key: 'no_data', label: 'No transport data', value: totals.no_data },
+  ]
+})
 
-const categoryLabel = computed(() => selectedCategory.value?.label ?? 'selected category')
+function fare(destination: DestinationAccess): string {
+  if (destination.journey.elapsedMinutes === 0) return 'On island'
+  const value = destination.cost.knownMvr
+  if (value === 0 && !destination.cost.complete) return 'Fare n/a'
+  return `MVR ${Math.round(value).toLocaleString('en-US')}${destination.cost.complete ? '' : '+'}`
+}
 
-const originName = computed(() => selectedOrigin.value?.name ?? '')
+function modes(destination: DestinationAccess): string {
+  const names: Record<string, string> = { ferry: 'Ferry', sea: 'Boat', air: 'Flight', road: 'Road', speedboat: 'Speedboat' }
+  const list = destination.journey.modes.filter((mode) => mode !== 'walk').map((mode) => names[mode] ?? mode)
+  return list.length ? list.join(' → ') : 'Walk'
+}
 
-const maxJourneyMinutes = computed(
-  () => meta.value?.routingDefaults.maxJourneyMinutes ?? 1440,
-)
-
-const displaySummary = computed(() =>
-  scenarioActive.value ? (scenarioSummary.value ?? baselineSummary.value) : baselineSummary.value,
-)
+function homeText(destination: DestinationAccess): string {
+  if (destination.journey.elapsedMinutes === 0) return ''
+  if (destination.sameDayReturn && destination.returnJourney) return `Home by ${formatClock(destination.returnJourney.arrivalMinute)}`
+  return destination.returnJourney ? 'Overnight stay needed' : 'No return trip in data'
+}
 </script>
 
 <template>
-  <div class="mm-page">
-    <MultimodalHeader
-      :data-source="dataSource"
-      :data-status="dataStatus"
-      :reference-day="referenceDay"
-      :generated-at="generatedAt"
-    />
+  <div class="am-app">
+    <header class="am-bar">
+      <div class="am-brand">
+        <strong>Island Access Atlas</strong>
+        <span>Maldives · health &amp; education access by ferry, boat and air</span>
+      </div>
+      <div class="am-controls">
+        <div class="am-seg" role="group" aria-label="Facility type">
+          <button
+            v-for="item in TYPES"
+            :key="item.key"
+            type="button"
+            :class="{ 'is-on': facilityType === item.key }"
+            @click="facilityType = item.key"
+          >
+            {{ item.label }}
+          </button>
+        </div>
+        <select v-model.number="departureMinute" class="am-select" aria-label="Departure time">
+          <option v-for="minute in DEPARTURES" :key="minute" :value="minute">Leave {{ formatClock(minute) }}</option>
+        </select>
+        <form class="am-search" @submit.prevent="onSearch">
+          <input v-model="search" list="am-islands" placeholder="Find an island" aria-label="Find an island" @change="onSearch" />
+          <datalist id="am-islands">
+            <option v-for="island in origins" :key="island.id" :value="island.name">{{ island.atollName }}</option>
+          </datalist>
+        </form>
+        <NuxtLink to="/details" class="am-link">Full analysis</NuxtLink>
+      </div>
+    </header>
 
-    <div v-if="dataStatus === 'loading'" class="mm-page-loading" role="status" aria-live="polite">
-      <span class="mm-spinner" aria-hidden="true" />
-      <strong>Loading the prepared network…</strong>
-    </div>
+    <main class="am-stage">
+      <div v-if="dataStatus === 'loading'" class="am-loading">Loading network…</div>
+      <ClientOnly v-else>
+        <MinimalMap
+          :islands="network?.islands ?? []"
+          :routes="routePaths"
+          :facilities="facilityIslands"
+          :selected-island-id="mapView === 'access' ? selectedId : null"
+          :journeys="mapView === 'access' ? journeys : []"
+          :destinations="mapView === 'access' ? destinations : []"
+          :view="mapView"
+          :underserved="underservedClasses"
+          :sites="siting?.sites ?? []"
+          @select="select"
+          @fallback="(reason) => (mapFailed = reason)"
+        />
+      </ClientOnly>
+      <p v-if="mapFailed" class="am-error">Map unavailable: {{ mapFailed }}</p>
 
-    <div v-else-if="dataStatus === 'error'" class="mm-page-error" role="alert">
-      <h2>No network loaded</h2>
-      <p>{{ fatalError ?? 'Unknown data error.' }}</p>
-      <p>Reload to retry, or check that the prepared data was published.</p>
-    </div>
+      <div class="am-views" role="tablist" aria-label="Map view">
+        <button
+          v-for="item in VIEWS"
+          :key="item.key"
+          type="button"
+          role="tab"
+          :aria-selected="mapView === item.key"
+          :class="{ 'is-on': mapView === item.key }"
+          @click="mapView = item.key"
+        >
+          {{ item.label }}
+        </button>
+      </div>
 
-    <div v-else class="mm-shell">
-      <aside class="mm-rail-column" aria-label="Model controls">
-        <ControlRail :store="store" />
+      <!-- Legend / context, bottom-left -->
+      <div class="am-legend">
+        <template v-if="mapView === 'access'">
+          <span v-if="facilityType !== 'education'"><i class="dot health" /> Health</span>
+          <span v-if="facilityType !== 'health'"><i class="dot education" /> Education</span>
+          <span v-if="facilityType === 'all'"><i class="dot both" /> Both</span>
+          <span><i class="line ferry" /> Ferry / boat</span>
+          <span><i class="line air" /> Flight</span>
+        </template>
+        <template v-else-if="mapView === 'underserved'">
+          <strong class="am-legend__title">{{ SHORT[category] ?? 'Facility' }}, leaving {{ formatClock(departureMinute) }}</strong>
+          <span v-for="item in underservedLegend" :key="item.key">
+            <i class="dot" :class="item.key" /> {{ item.label }} <b>{{ formatPopulation(item.value) }}</b>
+          </span>
+        </template>
+        <template v-else>
+          <span><i class="dot site" /> Proposed site</span>
+          <span><i class="dot covered" /> Newly within {{ threshold }} min</span>
+        </template>
+      </div>
+
+      <!-- Right panel -->
+      <aside v-if="mapView === 'access' && selected" class="am-panel" aria-live="polite">
+        <div class="am-panel__head">
+          <div>
+            <h2>{{ selected.name }}</h2>
+            <p>{{ selected.atollName }} · {{ formatPopulation(selected.population) }} residents</p>
+          </div>
+          <button type="button" class="am-close" aria-label="Clear selection" @click="select(null)">×</button>
+        </div>
+        <p v-if="accessReportLoading && !rows.length" class="am-muted">Planning trips…</p>
+        <ul class="am-list">
+          <li v-for="row in rows" :key="row.category">
+            <div class="am-row__top">
+              <span class="am-row__label">{{ row.label }}</span>
+              <span v-if="row.best" class="am-row__time">
+                {{ row.best.journey.elapsedMinutes === 0 ? 'Here' : formatDuration(row.best.journey.elapsedMinutes) }}
+              </span>
+            </div>
+            <template v-if="row.best">
+              <div class="am-row__place">{{ row.best.journey.destinationIslandName }}</div>
+              <div v-if="row.best.journey.elapsedMinutes > 0" class="am-row__meta">
+                {{ modes(row.best) }} · arrive {{ formatClockWithDay(row.best.journey.arrivalMinute) }}
+              </div>
+              <div class="am-row__facts">
+                <span>{{ fare(row.best) }}</span>
+                <span v-if="homeText(row.best)" :class="row.best.sameDayReturn ? 'ok' : 'warn'">{{ homeText(row.best) }}</span>
+              </div>
+            </template>
+            <div v-else class="am-row__meta">
+              {{ row.status === 'no_origin_access' ? 'No transport data for this island' : 'No same-day connection' }}
+            </div>
+          </li>
+        </ul>
+        <p class="am-foot">One-way resident fares. Times from the reference-day timetable.</p>
       </aside>
 
-      <main class="mm-main">
-        <div v-if="dataSource === 'fixture'" class="mm-banner mm-banner--fixture" role="status">
-          <strong>Fixture data — test values.</strong>
-          <span>Bundled sample network; no national claims.</span>
-          <details v-if="loadNote">
-            <summary>Why</summary>
-            <code>{{ loadNote }}</code>
-          </details>
+      <aside v-else-if="mapView === 'access'" class="am-hint">
+        Click an island to see its closest facilities, travel time and fare.
+        <span>{{ facilityCount }} facilities on {{ facilityIslands.length }} islands shown</span>
+      </aside>
+
+      <aside v-else-if="mapView === 'recommended'" class="am-panel">
+        <div class="am-panel__head">
+          <div>
+            <h2>Where to build next</h2>
+            <p>New {{ (SHORT[category] ?? 'facility').toLowerCase() }}: most residents brought within {{ threshold }} min</p>
+          </div>
         </div>
-
-        <div v-else-if="dataSource === 'static'" class="mm-banner mm-banner--fixture" role="status">
-          <strong>Static fallback.</strong>
-          <span>Same prepared network, served as JSON; results are unchanged.</span>
-          <details v-if="loadNote">
-            <summary>Why</summary>
-            <code>{{ loadNote }}</code>
-          </details>
-        </div>
-
-        <div v-if="!engineReady" class="mm-banner mm-banner--engine" role="status">
-          <strong>Routing engine not wired.</strong>
-          <span>Map states render; journeys and metrics need the router.</span>
-        </div>
-
-        <div v-if="filterActive" class="mm-banner mm-banner--filter" role="status">
-          <strong>Network filter active.</strong>
-          <span>Not selected ≠ no infrastructure.</span>
-          <details>
-            <summary>What this means</summary>
-            <p>
-              Islands removed by your Land/Sea/Air or route selection are labelled “Not selected by
-              network filter”. Headline figures include only the selected network.
-            </p>
-          </details>
-        </div>
-
-        <KpiStrip
-          :summary="displaySummary"
-          :threshold="threshold"
-          :loading="metricsLoading"
-          :error="metricsError"
-          :scenario-active="scenarioActive"
-          :filter-active="filterActive"
-        />
-
-        <InsightStrip
-          :summary="displaySummary"
-          :unfiltered-summary="unfilteredSummary"
-          :comparison="comparison"
-          :threshold="threshold"
-          :filter-active="filterActive"
-          :scenario-active="scenarioActive"
-          :loading="metricsLoading"
-        />
-
-        <div class="mm-hero">
-          <MapPanel
-            :islands="islands"
-            :bands="islandBands"
-            :routes="routePaths"
-            :airports="airportPoints"
-            :facilities="facilityPoints"
-            :origin-island-id="originIslandId"
-            :origin-name="originName"
-            :category-label="categoryLabel"
-            :departure-minute="departureMinute"
-            :geojson="islandsGeojson"
-            :metrics-loading="metricsLoading"
-            :has-mapbox-token="hasMapboxToken"
-            :filter-active="filterActive"
-            :highlights="mapHighlights"
-            :map-view="mapView"
-            :underserved="underservedClasses"
-            :siting="siting"
-            :threshold-minutes="threshold"
-            @select-origin="selectOrigin"
-            @set-view="(next) => (mapView = next)"
-          />
-
-          <IslandAccessPanel class="mm-hero__panel" :store="store" />
-        </div>
-
-        <div class="mm-grid">
-          <JourneyCard
-            :origin="selectedOrigin"
-            :access="selectedOriginAccess"
-            :category="selectedCategory"
-            :journey="journey"
-            :status="journeyStatus"
-            :next-day-journey="nextDayJourney"
-            :loading="journeyLoading"
-            :error="journeyError"
-            :scenario-description="scenarioDescription"
-            :scenario-active="scenarioActive"
-            :reference-day="referenceDay"
-            :max-journey-minutes="maxJourneyMinutes"
-            :filtered-out="selectedOriginFilteredOut"
-          />
-
-          <NationalMetrics
-            :summary="displaySummary"
-            :split="regionSplit"
-            :loading="metricsLoading"
-            :error="metricsError"
-            :threshold="threshold"
-            :category-label="categoryLabel"
-            :departure-minute="departureMinute"
-            :scenario-active="scenarioActive"
-            :filter-active="filterActive"
-          />
-
-          <ScenarioComparison
-            :scenario-active="scenarioActive"
-            :scenario-description="scenarioDescription"
-            :comparison="comparison"
-            :threshold="threshold"
-            :loading="metricsLoading"
-          />
-
-          <InterventionPanel class="mm-grid__wide" :store="store" />
-
-          <CoveragePanel
-            class="mm-grid__wide"
-            :meta="meta"
-            :data-source="dataSource ?? 'api'"
-            :geojson-loaded="geojsonLoaded"
-            :load-note="loadNote ?? ''"
-          />
-
-          <HdxPanel
-            class="mm-grid__wide"
-            :summary="displaySummary"
-            :threshold="threshold"
-          />
-        </div>
-
-        <footer class="mm-footer">
-          <p class="mm-footer__line">
-            <strong>Prototype.</strong> Modelled physical access on one reference day — not
-            confirmed services, demand or a verified calendar.
-          </p>
-          <details class="mm-footer__more">
-            <summary>Caveats, sources & publishing</summary>
-            <p>
-              MTCC passenger counts are synthetic, not observed demand. Missing coverage is not
-              evidence that an island has no transport. Fares are full resident fares from published tariffs (estimated where labelled); fuel and charter costs are out of scope. Island
-              names follow source records; times are integer minutes after midnight, Maldives time
-              (UTC+5).
-            </p>
-            <p>
-              QGIS-ready layers are exported to <a href="/data/qgis/">/data/qgis/</a> when the
-              pipeline publishes them; a missing link means the export is not published. To publish
-              in Mapbox, upload the exported GeoJSON as a tileset in Mapbox Studio and point a style
-              at it. QGIS and Mapbox Studio are authoring tools only — this app reads
-              <code>/data/multimodal.json</code> and <code>/data/islands.geojson</code> at runtime.
-            </p>
-          </details>
-        </footer>
-      </main>
-    </div>
+        <ol v-if="siting" class="am-sites">
+          <li v-for="site in siting.sites" :key="site.islandId">
+            <span class="am-rank">{{ site.rank }}</span>
+            <span class="am-site__name">{{ site.name }}<small>{{ site.atollName }}</small></span>
+            <span class="am-site__gain">+{{ formatPopulation(site.gainPopulation) }}</span>
+          </li>
+        </ol>
+        <p v-if="siting" class="am-foot">
+          {{ formatPopulation(siting.coveredBefore) }} →
+          {{ formatPopulation(siting.sites.at(-1)?.coveredAfter ?? siting.coveredBefore) }} residents within
+          {{ threshold }} min. Capacity and cost not modelled.
+        </p>
+      </aside>
+    </main>
   </div>
 </template>
+
+<style>
+.am-app {
+  --am-text: #0f172a;
+  --am-muted: #64748b;
+  --am-line: #e2e8f0;
+  --am-accent: #2563eb;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: var(--am-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+}
+.am-app h2 {
+  font-family: inherit;
+}
+.am-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--am-line);
+  flex-wrap: wrap;
+}
+.am-brand strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.am-brand span {
+  font-size: 12px;
+  color: var(--am-muted);
+}
+.am-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.am-seg,
+.am-views {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--am-line);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+.am-seg button,
+.am-views button {
+  border: 0;
+  background: transparent;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--am-muted);
+  cursor: pointer;
+}
+.am-seg button.is-on,
+.am-views button.is-on {
+  background: #ffffff;
+  color: var(--am-text);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+}
+.am-select,
+.am-search input {
+  height: 32px;
+  border: 1px solid var(--am-line);
+  border-radius: 8px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--am-text);
+  background: #ffffff;
+}
+.am-search input {
+  width: 180px;
+}
+.am-link {
+  font-size: 13px;
+  color: var(--am-accent);
+  text-decoration: none;
+}
+.am-link:hover {
+  text-decoration: underline;
+}
+.am-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+.am-map {
+  position: absolute;
+  inset: 0;
+}
+.am-loading,
+.am-error {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  color: var(--am-muted);
+}
+.am-views {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+  background: #ffffff;
+}
+.am-legend {
+  position: absolute;
+  left: 16px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--am-line);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--am-muted);
+}
+.am-legend b {
+  color: var(--am-text);
+  font-weight: 600;
+  margin-left: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.am-legend__title {
+  color: var(--am-text);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.am-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.15);
+}
+.dot.health { background: #e11d48; }
+.dot.education { background: #2563eb; }
+.dot.both { background: #7c3aed; }
+.dot.served { background: #cbd5e1; }
+.dot.over_threshold { background: #f59e0b; }
+.dot.no_trip { background: #dc2626; }
+.dot.no_data { background: #ffffff; box-shadow: 0 0 0 1.4px #64748b; }
+.dot.site { background: #0f172a; }
+.dot.covered { background: #16a34a; }
+.line {
+  width: 18px;
+  height: 0;
+  display: inline-block;
+  border-top: 2px solid #94a3b8;
+}
+.line.air {
+  border-top: 2px dashed #a5b4fc;
+}
+.am-panel,
+.am-hint {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 340px;
+  max-height: calc(100% - 32px);
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+.am-hint {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--am-text);
+}
+.am-hint span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--am-muted);
+}
+.am-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--am-line);
+}
+.am-panel__head h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.am-panel__head p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--am-muted);
+}
+.am-close {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--am-muted);
+  cursor: pointer;
+}
+.am-list,
+.am-sites {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.am-list li {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--am-line);
+}
+.am-row__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.am-row__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--am-muted);
+}
+.am-row__time {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.am-row__place {
+  margin-top: 2px;
+  font-weight: 600;
+}
+.am-row__meta {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--am-muted);
+}
+.am-row__facts {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.am-row__facts .ok { color: #15803d; }
+.am-row__facts .warn { color: #b45309; }
+.am-foot,
+.am-muted {
+  margin: 0;
+  padding: 10px 16px 14px;
+  font-size: 11px;
+  color: var(--am-muted);
+}
+.am-sites li {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--am-line);
+}
+.am-rank {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #0f172a;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+.am-site__name small {
+  display: block;
+  font-size: 11px;
+  color: var(--am-muted);
+}
+.am-site__gain {
+  font-weight: 600;
+  color: #15803d;
+  font-variant-numeric: tabular-nums;
+}
+.am-popup .mapboxgl-popup-content {
+  padding: 6px 9px;
+  border-radius: 6px;
+  font: 12px Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+}
+.am-popup strong {
+  display: block;
+}
+.am-popup span {
+  color: #64748b;
+}
+@media (max-width: 760px) {
+  .am-panel,
+  .am-hint {
+    top: auto;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-height: 55%;
+  }
+  .am-legend {
+    display: none;
+  }
+  .am-search input {
+    width: 140px;
+  }
+}
+</style>

@@ -184,6 +184,14 @@ const ACCESS_REPORT_CATEGORIES = [
 const ACCESS_REPORT_OVERNIGHT_MVR = 950
 
 export type MapView = 'access' | 'underserved' | 'recommended'
+export type FacilityType = 'all' | 'health' | 'education'
+
+/** Report categories per facility type, nearest-first services that matter most. */
+const TYPE_CATEGORIES: Record<FacilityType, string[]> = {
+  all: ['health_hospital', 'health_regional_tertiary', 'education_grade_11_12', 'education_higher_ed'],
+  health: ['health_any', 'health_hospital', 'health_regional_tertiary'],
+  education: ['education_school', 'education_grade_11_12', 'education_higher_ed'],
+}
 export type UnderservedClass = 'served' | 'over_threshold' | 'no_trip' | 'no_data'
 
 export function useMultimodal() {
@@ -201,6 +209,8 @@ export function useMultimodal() {
   const overnightMvr = ref(ACCESS_REPORT_OVERNIGHT_MVR)
   /** Map story: current access, underserved residents, or recommended new sites. */
   const mapView = ref<MapView>('access')
+  /** Facility type filter for the minimal map and the island access report. */
+  const facilityType = ref<FacilityType>('all')
   const siting = shallowRef<SitingResult | null>(null)
   const sitingError = ref<string | null>(null)
   const islandsGeojson = shallowRef<FeatureCollection | null>(null)
@@ -768,8 +778,10 @@ export function useMultimodal() {
   /** Report categories: the core services, plus the selected category when it is a service. */
   function accessReportCategories(): string[] {
     const known = new Set(categories.value.map((definition) => definition.id))
-    const list = ACCESS_REPORT_CATEGORIES.filter((id) => known.has(id))
-    if (category.value && known.has(category.value) && !list.includes(category.value)) list.push(category.value)
+    const list = TYPE_CATEGORIES[facilityType.value].filter((id) => known.has(id))
+    if (facilityType.value === 'all' && category.value && known.has(category.value) && !list.includes(category.value)) {
+      list.push(category.value)
+    }
     return list
   }
 
@@ -1015,7 +1027,7 @@ export function useMultimodal() {
     if (!controlsReady.value) return
     scheduleJourney.run()
   })
-  watch([originIslandId, category, departureMinute, selectionKey, scenarioView, overnightMvr, fares], () => {
+  watch([originIslandId, category, departureMinute, selectionKey, scenarioView, overnightMvr, fares, facilityType], () => {
     if (!controlsReady.value) return
     scheduleAccessReport.run()
   })
@@ -1454,6 +1466,7 @@ export function useMultimodal() {
     regionSplit,
     // map stories
     mapView,
+    facilityType,
     siting,
     sitingError,
     underservedClasses,

@@ -24,7 +24,7 @@ export default defineNuxtConfig({
           content:
             'Reference-day access to health and education facilities across the Maldives: verified ferry timetables, estimated air frequencies and explicit coverage limits.',
         },
-        { name: 'theme-color', content: '#faf9f5' },
+        { name: 'theme-color', content: '#ffffff' },
       ],
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
       htmlAttrs: { lang: 'en' },

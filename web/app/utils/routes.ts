@@ -7,6 +7,7 @@
 import type {
   Airport,
   FrequencyService,
+  Journey,
   MultimodalNetwork,
   TimetabledService,
 } from '../../shared/routing/types'
@@ -258,5 +259,60 @@ export interface MapHighlight {
   lon: number
   lat: number
   /** Short label, e.g. "Hospital · 2 h 20". */
+  label: string
+}
+
+/** One drawable piece of a journey: a leg's path and its mode. */
+export interface JourneyPath {
+  mode: 'ferry' | 'air' | 'sea' | 'road' | 'walk' | 'speedboat'
+  points: LonLat[]
+}
+
+/**
+ * Map geometry for a planned journey. Timetabled ferry legs follow the stop sequence between
+ * boarding and alighting; other legs are straight lines between their end nodes.
+ */
+export function journeyPaths(network: MultimodalNetwork, journey: Journey): JourneyPath[] {
+  const coordinates = new Map<string, LonLat>()
+  for (const island of network.islands) coordinates.set(`island:${island.id}`, [island.lon, island.lat])
+  for (const stop of network.stops) coordinates.set(`stop:${stop.id}`, [stop.lon, stop.lat])
+  for (const airport of network.airports) coordinates.set(`airport:${airport.iata}`, [airport.lon, airport.lat])
+  const services = new Map(network.services.map((service) => [service.id, service]))
+
+  const paths: JourneyPath[] = []
+  for (const leg of journey.legs) {
+    const from = coordinates.get(leg.fromNode)
+    const to = coordinates.get(leg.toNode)
+    if (!from || !to) continue
+    const mode = (leg.kind === 'access' ? leg.mode : leg.kind) as JourneyPath['mode']
+    let points: LonLat[] = [from, to]
+    const service = leg.serviceId ? services.get(leg.serviceId) : undefined
+    if (service?.kind === 'timetabled') {
+      const ids = service.stops.map((stop) => `stop:${stop.stopId}`)
+      const start = ids.indexOf(leg.fromNode)
+      const end = ids.indexOf(leg.toNode, start + 1)
+      if (start >= 0 && end > start) {
+        points = ids.slice(start, end + 1).map((id) => coordinates.get(id) ?? null).filter(isLonLat)
+      }
+    }
+    if (points.length >= 2) paths.push({ mode, points })
+  }
+  return paths
+}
+
+/** An island with facilities of the selected type, for the minimal map. */
+export interface FacilityIsland {
+  islandId: string
+  lon: number
+  lat: number
+  kind: 'health' | 'education' | 'both'
+  count: number
+}
+
+/** A labelled destination island for the selected origin. */
+export interface Destination {
+  islandId: string
+  lon: number
+  lat: number
   label: string
 }

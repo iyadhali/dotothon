@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div id="connect-out">{% with c=first_panel.c rows=first_panel.rows category=first_panel.category paths=first_panel.paths local_n=first_panel.local_n within2=first_panel.within2 total_n=first_panel.total_n worst=first_panel.worst cat_label=first_panel.cat_label %}{% include "access/_connect.html" %}{% endwith %}</div>
+    <div id="connect-out">{% with c=first_panel.c rows=first_panel.rows category=first_panel.category paths=first_panel.paths local_n=first_panel.local_n within2=first_panel.within2 total_n=first_panel.total_n worst=first_panel.worst cat_label=first_panel.cat_label local_services=first_panel.local_services n_local_services=first_panel.n_local_services %}{% include "access/_connect.html" %}{% endwith %}</div>
 
     <div class="mapctl">
       <label class="metricrow" id="metricrow">
@@ -66,7 +66,7 @@
   <aside class="ovl ovl-right">
     <div class="card" id="paircard">
       <div class="cardhead">
-        <h2>Journey from <span id="fromName">{{ default_from_name }}</span></h2>
+        <h2>Journey from <span id="fromName">{{ default_from_name|default:"this island" }}</span></h2>
         <button class="ghost" id="clearTo" type="button" hidden title="Remove the second island">✕ clear</button>
       </div>
       <div id="route-out" data-default-to="{{ default_to }}">
@@ -419,7 +419,7 @@ function selectIsland(id, opts = {}) {
   htmx.ajax("GET", `/connect/?island=${id}`, {target:"#connect-out", swap:"innerHTML"});
   setPicker("from", id);
   if (el("islandPick")) setPicker("islandPick", id);
-  if (el("fromName")) el("fromName").textContent = state.byId.get(id).name;
+  if (el("fromName")) el("fromName").textContent = p.name || p.id;
   const q = new URLSearchParams(location.search);
   q.set("island", id);
   history.replaceState({}, "", "?" + q.toString());
@@ -612,6 +612,9 @@ el("metric").addEventListener("change", e => {
   applyMetric();
 });
 
+
+el("clearTo").addEventListener("click", clearTo);
+el("netToggle").addEventListener("click", toggleLinks);
 
 el("resetmap").addEventListener("click", () => {
   state.band = null;

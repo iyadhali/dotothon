@@ -83,7 +83,7 @@ def index(request):
         "manifest": _manifest(),
         "default_from": island,
         "default_to": "",
-        "default_from_name": m.name_of(island),
+        "default_from_name": m.name_of(island) or island,
         "default_to_name": "",
         "default_island": island,
         "n_rows": len(m.inhabited),

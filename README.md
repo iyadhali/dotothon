@@ -61,9 +61,7 @@ travel time to the nearest grade 11–12 school. Everything else floats over it.
 | **Decision tables** | below the map: worst-served ranking, and the 28 islands beyond two hours with the link that would fix each |
 | **Provenance** | the footer prints when the data was last built and from how much of it |
 | **Colour by** | switch the whole map between education (grade 11–12, university campus, grade 7–10) and health (health centre, hospital) — same network, any service category |
-| **Services on the island** | every school, college, health centre and hospital the register places on that island |
 | **Travel time to the nearest** | hours to the nearest provider of *each* service type, and the island that provides it |
-| **Services register** (`/services/`) | the full register, a per-type national roll-up, and a form to **add a service by category** — the access table rebuilds itself |
 
 ### Services, not just schools
 
@@ -150,11 +148,7 @@ Drop a new `MACL/*.csv` or a new `FollowMe_*/` month, run `make ingest`, and the
 register and the simulator all move together. The app opens the database read-only and reloads
 itself when the file changes, so nothing needs restarting.
 
-**Placement** (`/placement/`) is the "so what" of the platform: for each service
-type it greedily adds one facility at a time to the island that moves the most people inside two
-hours. One hospital on Kulhudhuffushi connects **+33,399 people and +11,855 children**, taking
-hospital coverage from 35 to 54 islands — more than every school and campus decision in the same
-table combined.
+**Placement ranking** is computed by `scripts/build_simulator.py` and stored in the `placement` table; it is the "so what" layer behind the map's decision tables.
 
 ## Data sources
 

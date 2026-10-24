@@ -5,7 +5,6 @@
     {% for a in atolls %}<option value="{{ a }}"{% if a == sel_atoll %} selected{% endif %}>{{ a }}</option>{% endfor %}
   </select>
   <input type="hidden" name="band" value="{{ sel_band }}">
-  <button class="chip" hx-get="/ranked/" hx-target="#ranked" hx-swap="innerHTML" hx-include="[name='atoll']">Apply</button>
   <span class="count">{{ rows|length }} of {{ n_rows }} islands</span>
 </div>
 

@@ -5,19 +5,15 @@
   <div class="brand">
     <p class="eyebrow">Maldives Datathon 2026 · Team A</p>
     <h1>What can each island reach?</h1>
-    <p class="lede"><b>{{ s.hs_islands }} of {{ s.islands }}</b> inhabited islands teach grade 11–12;
-      <b>{{ s.within2_islands }}</b> reach one within two hours. The remaining
-      <b>{{ n_beyond }}</b> hold <b>{{ gap_children|num }} children</b>, and the median one is
-      a two-and-a-half hour crossing away. Times are measured from
-      <b>{{ s.edges|num }}</b> observed sailings, not a timetable.</p>
+    <p class="lede">44 of 187 islands teach grade 11–12. 159 reach one within two hours;
+      {{ n_beyond }} hold {{ gap_children|num }} children. Times come from 8,274 observed sailings.</p>
   </div>
   <div class="topright">
-    {% include "access/_nav.html" with active="map" %}
     <div class="chips">
     <div class="chip num"><span class="n">{{ s.hs_islands }}</span><span class="l">teach<br>grade 11–12</span></div>
     <div class="chip num"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one<br>in 2 h</span></div>
     <div class="chip num hot"><span class="n">{{ n_beyond }}</span><span class="l">islands<br>beyond 2 h</span></div>
-    <a class="chip num link" href="/services/"><span class="n">{{ n_services }}</span><span class="l">services<br>mapped →</span></a>
+    <div class="chip num"><span class="n">{{ n_services }}</span><span class="l">services<br>mapped</span></div>
     </div>
   </div>
 </header>
@@ -37,10 +33,12 @@
 
     <div class="row2">
       <input id="q" type="search" placeholder="Search an island…" autocomplete="off" aria-label="Search an island">
-      <select id="atoll" aria-label="Zoom to atoll">
-        <option value="">All atolls</option>
-        {% for a in atolls %}<option value="{{ a }}">{{ a }}</option>{% endfor %}
-      </select>
+      <div class="combo" id="atollCombo">
+        <input id="atollText" class="combotext" type="text" placeholder="All atolls"
+               autocomplete="off" aria-label="Filter by atoll">
+        <input id="atoll" type="hidden" value="">
+        <ul class="combopop" hidden></ul>
+      </div>
     </div>
 
     <div id="svcblock" hidden>
@@ -75,29 +73,26 @@
 
   <aside class="ovl ovl-right">
     <div class="card" id="paircard">
-      <div class="cardhead"><h2>Island to island</h2>
+      <div class="cardhead"><h2>Island → island</h2>
         <button class="ghost" id="swap" type="button" title="Swap start and destination">⇄ swap</button>
       </div>
       <div id="route-out" data-default-from="{{ default_from }}" data-default-to="{{ default_to }}"></div>
       <form class="routeform" id="routeform" hx-get="/route/" hx-target="#route-out" hx-swap="innerHTML">
         <label>From
-          <select name="from" id="from">
-            {% regroup islands by atoll as groups %}
-            {% for g in groups %}
-            <optgroup label="{{ g.grouper }}">
-              {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == default_from %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
-            </optgroup>
-            {% endfor %}
-          </select>
+          <div class="combo" id="fromCombo">
+            <input id="fromText" class="combotext" type="text" value="{{ default_from_name }}"
+                   autocomplete="off" placeholder="Search an island">
+            <input name="from" id="from" type="hidden" value="{{ default_from }}">
+            <ul class="combopop" hidden></ul>
+          </div>
         </label>
         <label>To
-          <select name="to" id="to">
-            {% for g in groups %}
-            <optgroup label="{{ g.grouper }}">
-              {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == default_to %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
-            </optgroup>
-            {% endfor %}
-          </select>
+          <div class="combo" id="toCombo">
+            <input id="toText" class="combotext" type="text" value="{{ default_to_name }}"
+                   autocomplete="off" placeholder="Search an island">
+            <input name="to" id="to" type="hidden" value="{{ default_to }}">
+            <ul class="combopop" hidden></ul>
+          </div>
         </label>
         <button type="submit">Find journey</button>
       </form>
@@ -293,6 +288,22 @@ map.on("zoomend", syncZoom);
 
 fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   state.points = pts;
+  pts.forEach(p => state.byId.set(p.id, p));
+
+  // searchable pickers: islands for the journey, atolls for the filter
+  const islandItems = pts.map(p => ({value:p.id, label:p.name, sub:p.atoll}))
+                          .sort((a, b) => a.label.localeCompare(b.label));
+  const atollItems = [...new Set(pts.map(p => p.atoll))].sort();
+  makeCombo("fromCombo", islandItems, {onPick: () => { if (el("to").value) submitRoute(); }});
+  makeCombo("toCombo", islandItems, {onPick: () => { if (el("from").value) submitRoute(); }});
+  makeCombo("atollCombo", atollItems.map(a => ({value:a, label:a})), {
+    allowEmpty: true, emptyLabel: "All atolls",
+    onPick: r => { state.atoll = r.value; },
+  });
+  setPicker("from", el("from").value);
+  setPicker("to", el("to").value);
+  initRankedFilter();
+
   map.invalidateSize();
   const group = L.layerGroup().addTo(map);
 
@@ -338,6 +349,66 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   if (VIEW) { pendingView = VIEW; map.setView([VIEW.lat, VIEW.lon], VIEW.z, {animate:false}); }
 });
 
+// ---------------------------------------------------------------- pickers ----------
+// a combobox instead of a 187-option <select>: type two letters, arrow, enter
+function makeCombo(target, items, {onPick, allowEmpty = false, emptyLabel = ""} = {}) {
+  const box = typeof target === "string" ? el(target) : target;
+  const text = box.querySelector(".combotext");
+  const list = box.querySelector(".combopop");
+  const hidden = box.querySelector("input[type=hidden]");
+  let active = -1, rows = [];
+
+  function render() {
+    const q = text.value.trim().toLowerCase();
+    rows = items.filter(it => !q || it.label.toLowerCase().includes(q) || (it.sub || "").toLowerCase().includes(q)).slice(0, 40);
+    if (allowEmpty && !q) rows = [{value:"", label: emptyLabel, sub:""}, ...rows];
+    list.innerHTML = rows.map((r, i) =>
+      `<li data-i="${i}" class="${i === active ? "is-active" : ""}">
+         <span>${r.label}</span>${r.sub ? `<em>${r.sub}</em>` : ""}
+       </li>`).join("") || `<li class="empty">No match</li>`;
+    list.hidden = false;
+  }
+  function pick(i) {
+    const r = rows[i]; if (!r) return;
+    hidden.value = r.value;
+    text.value = r.value ? r.label : "";
+    list.hidden = true;
+    if (onPick) onPick(r);
+    hidden.dispatchEvent(new Event("change", {bubbles:true}));
+  }
+  text.addEventListener("focus", () => { active = -1; render(); });
+  text.addEventListener("input", () => { active = -1; render(); });
+  text.addEventListener("keydown", e => {
+    if (e.key === "ArrowDown") { e.preventDefault(); active = Math.min(active + 1, rows.length - 1); render(); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); active = Math.max(active - 1, 0); render(); }
+    else if (e.key === "Enter") { e.preventDefault(); pick(active >= 0 ? active : 0); }
+    else if (e.key === "Escape") { list.hidden = true; text.blur(); }
+  });
+  list.addEventListener("mousedown", e => {
+    const li = e.target.closest("li[data-i]"); if (!li) return;
+    e.preventDefault(); pick(+li.dataset.i);
+  });
+  text.addEventListener("blur", () => setTimeout(() => {
+    list.hidden = true;
+    // a typed name that no longer matches falls back to the last real choice
+    const cur = items.find(i => i.value === hidden.value);
+    text.value = cur ? cur.label : "";
+  }, 120));
+  return { pickIndex: pick };
+}
+
+// keep the visible text in step when code sets a value directly
+function setPicker(hiddenId, value) {
+  const hidden = el(hiddenId);
+  hidden.value = value;
+  const combo = hidden.closest(".combo");
+  if (!combo) return;
+  const text = combo.querySelector(".combotext");
+  const point = state.byId.get(value);
+  if (hiddenId === "atoll") text.value = value || "";
+  else text.value = point ? point.name : "";
+}
+
 function selectIsland(id, opts = {}) {
   const p = state.byId.get(id);
   if (!p) return;
@@ -360,13 +431,13 @@ function onIslandClick(id) {
   if (state.mode === "route") {
     if (!state.from || (state.from && state.to)) {      // pick a new origin
       state.from = id; state.to = null;
-      el("from").value = id;
+      setPicker("from", id);
       el("routehint").hidden = false;
       el("routehint").innerHTML = `From <b>${state.byId.get(id).name}</b> — now click the <b>destination</b>.`;
       selectIsland(id); clearRoute(); return;
     }
     state.to = id;
-    el("to").value = id;
+    setPicker("to", id);
     el("routehint").hidden = true;
     selectIsland(id);
     submitRoute();
@@ -417,8 +488,8 @@ document.addEventListener("click", e => {
   const btn = e.target.closest("[data-route-from]");
   if (!btn) return;
   e.preventDefault();
-  el("from").value = btn.dataset.routeFrom;
-  el("to").value = btn.dataset.routeTo;
+  setPicker("from", btn.dataset.routeFrom);
+  setPicker("to", btn.dataset.routeTo);
   state.from = btn.dataset.routeFrom;
   state.to = btn.dataset.routeTo;
   setMode("pair", {keep: true});
@@ -434,8 +505,8 @@ document.body.addEventListener("htmx:afterSwap", e => {
 });
 el("routeform").addEventListener("submit", e => { e.preventDefault(); submitRoute(); });
 el("swap").addEventListener("click", () => {
-  const f = el("from").value;
-  el("from").value = el("to").value; el("to").value = f;
+  const f = el("from").value, g = el("to").value;
+  setPicker("from", g); setPicker("to", f);
   submitRoute();
 });
 
@@ -503,6 +574,30 @@ function drawConnect() {
 }
 document.querySelectorAll(".mode").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
 
+// the ranked table is swapped by htmx, so its picker is rebuilt after every swap
+function initRankedFilter() {
+  const sel = document.querySelector('#ranked select[name="atoll"]');
+  if (!sel) return;
+  const atolls = [...new Set(state.points.map(p => p.atoll))].sort();
+  const wrap = document.createElement("div");
+  wrap.className = "combo";
+  wrap.innerHTML = `<input class="combotext" type="text" placeholder="All atolls" autocomplete="off">
+    <ul class="combopop" hidden></ul>`;
+  const hidden = document.createElement("input");
+  hidden.type = "hidden"; hidden.name = "atoll"; hidden.value = "";
+  wrap.appendChild(hidden);
+  sel.replaceWith(wrap);
+  makeCombo(wrap, atolls.map(a => ({value: a, label: a})), {
+    allowEmpty: true, emptyLabel: "All atolls",
+    onPick: r => htmx.ajax("GET", `/ranked/?atoll=${encodeURIComponent(r.value)}`,
+                           {target: "#ranked", swap: "innerHTML"}),
+  });
+}
+document.body.addEventListener("htmx:afterSwap", e => {
+  if (e.detail.target && e.detail.target.id === "ranked") initRankedFilter();
+});
+
+
 el("legend").addEventListener("click", e => {
   const li = e.target.closest("li"); if (!li) return;
   const b = li.dataset.band;
@@ -552,7 +647,7 @@ el("q").addEventListener("keydown", e => {
 });
 
 el("resetmap").addEventListener("click", () => {
-  state.band = null; state.atoll = ""; state.q = ""; el("q").value = ""; el("atoll").value = "";
+  state.band = null; state.atoll = ""; state.q = ""; el("q").value = ""; setPicker("atoll", "");
   document.querySelectorAll("#legend li").forEach(x => x.classList.remove("is-off"));
   state.markers.forEach(m => m.setStyle({opacity:0.85, fillOpacity:0.92, weight:0.8, color:"#ffffff"}));
   state.sel = null; clearRoute();

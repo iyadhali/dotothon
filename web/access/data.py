@@ -279,6 +279,28 @@ class Model:
                         "n": int(g.n_providers.iloc[0])})
         return sorted(out, key=lambda d: (d["category"], -d["n"]))
 
+    def band_population(self) -> list[dict]:
+        """People and children in each travel-time band, for the stacked bar."""
+        rows = db_frame("""
+            select case
+                     when hours_to_hs is null then 'unknown'
+                     when hours_to_hs = 0 then 'own'
+                     when hours_to_hs <= 2 then 'under2'
+                     when hours_to_hs <= 4 then 'under4'
+                     when hours_to_hs <= 8 then 'under8'
+                     else 'over8' end as band,
+                   sum(population) as people, sum(child_0_17) as kids
+            from island_access group by band""")
+        order = ["own", "under2", "under4", "under8", "over8", "unknown"]
+        got = {r.band: (int(r.people or 0), int(r.kids or 0)) for r in rows.itertuples()}
+        total = sum(v[0] for v in got.values()) or 1
+        label = {"own": "on the island", "under2": "under 2 h", "under4": "2–4 h",
+                 "under8": "4–8 h", "over8": "over 8 h", "unknown": "no route"}
+        return [{"band": b, "label": label[b], "people": got.get(b, (0, 0))[0],
+                 "kids": got.get(b, (0, 0))[1],
+                 "share": round(100 * got.get(b, (0, 0))[0] / total, 1)}
+                for b in order if got.get(b, (0, 0))[0]]
+
     def summary_rows(self) -> list[dict]:
         """Per service type: facilities, coverage and median travel time."""
         return db_frame("select * from service_summary order by category, service_type").to_dict("records")

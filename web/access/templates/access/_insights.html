@@ -2,28 +2,49 @@
 <section class="insights">
   <div class="card">
     <div class="cardhead">
+      <h2>Who is left out</h2>
+      <span class="hint">population by travel time to grade 11–12</span>
+    </div>
+    <div class="stack">
+      {% for b in bands %}
+      <span class="seg {{ b.band }}" style="width:{{ b.share }}%" title="{{ b.people|num }} people · {{ b.kids|num }} children"></span>
+      {% endfor %}
+    </div>
+    <div class="stacklegend">
+      {% for b in bands %}
+      <span><i class="seg {{ b.band }}"></i>{{ b.people|num }}<em>{{ b.label }}</em></span>
+      {% endfor %}
+    </div>
+    <div class="bigrow">
+      <div><b>{{ beyond2_pct }}%</b><span>of people are over two hours away</span></div>
+      <div><b>{{ gap_children|num }}</b><span>children in those islands</span></div>
+      <div><b>{{ median_h }}</b><span>median island</span></div>
+      <div><b>{{ worst_h }}</b><span>worst island</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cardhead">
       <h2>Coverage ladder</h2>
-      <span class="hint">grade 11–12 · {{ s.islands }} inhabited islands</span>
+      <span class="hint">{{ s.islands }} inhabited islands</span>
     </div>
     <div class="ladder">
       {% for row in funnel %}
       <div class="rung">
         <div class="rlabel">{{ row.label }}</div>
         <div class="track"><span style="width:{% widthratio row.value row.of 100 %}%"></span></div>
-        <div class="rvalue">{{ row.value }}<em>{{ row.note }}</em></div>
+        <div class="rvalue">{{ row.value }}</div>
       </div>
       {% endfor %}
     </div>
-    <p class="note">The drop happens at the transition, not in primary schooling: almost every island
-      teaches up to grade 10, and four in five islands are two hours from a school that continues.</p>
   </div>
 
   <div class="card">
     <div class="cardhead">
-      <h2>Within two hours, by atoll</h2>
-      <span class="hint">worst first · {{ atoll_rows|length }} atolls</span>
+      <h2>By atoll</h2>
+      <span class="hint">islands within 2 h · worst first</span>
     </div>
-    <table class="bars">
+    <table class="bars tight">
       {% for a in atoll_rows %}
       <tr class="{% if a.within2 == 0 %}is-zero{% endif %}">
         <th>{{ a.atoll }}</th>

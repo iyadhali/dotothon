@@ -8,7 +8,4 @@ urlpatterns = [
     path("route/", views.route, name="route"),
     path("ranked/", views.ranked, name="ranked"),
     path("connect/", views.connect, name="connect"),
-    path("services/", views.services, name="services"),
-    path("placement/", views.placement, name="placement"),
-    path("data/", views.data_room, name="data"),
 ]

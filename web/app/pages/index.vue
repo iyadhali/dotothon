@@ -69,13 +69,53 @@ function select(islandId: string | null): void {
   if (islandId) selectOrigin(islandId)
 }
 
-function onSearch(): void {
-  const name = search.value.trim().toLowerCase()
-  const match = origins.value.find((island) => island.name.toLowerCase() === name)
-  if (match) {
-    select(match.id)
-    search.value = ''
+const searchOpen = ref(false)
+const searchIndex = ref(0)
+
+/** Islands matching the query by island or atoll name; largest first when the query is empty. */
+const matches = computed(() => {
+  const query = search.value.trim().toLowerCase()
+  const list = query
+    ? origins.value.filter(
+        (island) => island.name.toLowerCase().includes(query) || island.atollName.toLowerCase().includes(query),
+      )
+    : [...origins.value].sort((a, b) => b.population - a.population)
+  return [...list]
+    .sort((a, b) => Number(b.name.toLowerCase().startsWith(query)) - Number(a.name.toLowerCase().startsWith(query)))
+    .slice(0, 8)
+})
+
+watch(search, () => {
+  searchIndex.value = 0
+  searchOpen.value = true
+})
+
+function pick(islandId: string): void {
+  select(islandId)
+  search.value = ''
+  searchOpen.value = false
+}
+
+function onSearchKey(event: KeyboardEvent): void {
+  if (event.key === 'ArrowDown') {
+    event.preventDefault()
+    searchOpen.value = true
+    searchIndex.value = Math.min(searchIndex.value + 1, matches.value.length - 1)
+  } else if (event.key === 'ArrowUp') {
+    event.preventDefault()
+    searchIndex.value = Math.max(searchIndex.value - 1, 0)
+  } else if (event.key === 'Enter') {
+    event.preventDefault()
+    const choice = matches.value[searchIndex.value]
+    if (choice) pick(choice.id)
+  } else if (event.key === 'Escape') {
+    searchOpen.value = false
   }
+}
+
+function onSearchBlur(): void {
+  // Let a click on an option land before the list closes.
+  setTimeout(() => (searchOpen.value = false), 150)
 }
 
 const facilityIslands = computed<FacilityIsland[]>(() => {
@@ -191,12 +231,36 @@ function homeText(destination: DestinationAccess): string {
         <select v-model.number="departureMinute" class="am-select" aria-label="Departure time">
           <option v-for="minute in DEPARTURES" :key="minute" :value="minute">Leave {{ formatClock(minute) }}</option>
         </select>
-        <form class="am-search" @submit.prevent="onSearch">
-          <input v-model="search" list="am-islands" placeholder="Find an island" aria-label="Find an island" @change="onSearch" />
-          <datalist id="am-islands">
-            <option v-for="island in origins" :key="island.id" :value="island.name">{{ island.atollName }}</option>
-          </datalist>
-        </form>
+        <div class="am-search">
+          <input
+            v-model="search"
+            type="search"
+            placeholder="Find an island"
+            aria-label="Find an island"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-controls="am-search-list"
+            :aria-expanded="searchOpen && matches.length > 0"
+            autocomplete="off"
+            @focus="searchOpen = true"
+            @blur="onSearchBlur"
+            @keydown="onSearchKey"
+          />
+          <ul v-if="searchOpen && matches.length" id="am-search-list" class="am-search__list" role="listbox">
+            <li
+              v-for="(island, index) in matches"
+              :key="island.id"
+              role="option"
+              :aria-selected="index === searchIndex"
+              :class="{ 'is-active': index === searchIndex }"
+              @mousedown.prevent="pick(island.id)"
+              @mouseenter="searchIndex = index"
+            >
+              <span>{{ island.name }}</span>
+              <small>{{ island.atollName }} · {{ formatPopulation(island.population) }}</small>
+            </li>
+          </ul>
+        </div>
         <NuxtLink to="/details" class="am-link">Full analysis</NuxtLink>
       </div>
     </header>
@@ -399,8 +463,43 @@ function homeText(destination: DestinationAccess): string {
   color: var(--am-text);
   background: #ffffff;
 }
+.am-search {
+  position: relative;
+}
 .am-search input {
-  width: 180px;
+  width: 200px;
+}
+.am-search__list {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 20;
+  width: 260px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+.am-search__list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.am-search__list li small {
+  font-size: 11px;
+  color: var(--am-muted);
+  white-space: nowrap;
+}
+.am-search__list li.is-active {
+  background: #f1f5f9;
 }
 .am-link {
   font-size: 13px;

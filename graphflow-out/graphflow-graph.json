@@ -3,10 +3,10 @@
     {
       "id": "dialogue-session:15ti78t",
       "type": "Decision",
-      "content": "dialogue-session session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9 turns=9 tip=dialogue:15ti78t:0009",
+      "content": "dialogue-session session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9 turns=10 tip=dialogue:15ti78t:0010",
       "metadata": {
         "kind": "dialogue-session",
-        "record": "{\"id\":\"dialogue-session:15ti78t\",\"name\":\"session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9\",\"tipTurnId\":\"dialogue:15ti78t:0009\",\"turnCount\":9,\"topicTokens\":[\"10\",\"100\",\"15\",\"20\",\"2026\",\"50\",\"about\",\"access\",\"across\",\"act\",\"affordable\",\"after\",\"air\",\"all\",\"allowed\",\"also\",\"and\",\"another\",\"answers\",\"anyone\",\"anythig\",\"app\",\"are\",\"as\",\"at\",\"average\",\"be\",\"below\",\"benefits\",\"between\",\"beyond\",\"built\",\"ca\",\"can\",\"card\",\"carry\",\"challenge\",\"charts\",\"check\",\"chose\",\"clarity\",\"clear\",\"collaboration\",\"collected\",\"connectivity\",\"contribute\",\"convenient\",\"correctly\"],\"createdAt\":1792817786469,\"updatedAt\":1792822140462}",
+        "record": "{\"id\":\"dialogue-session:15ti78t\",\"name\":\"session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9\",\"tipTurnId\":\"dialogue:15ti78t:0010\",\"turnCount\":10,\"topicTokens\":[\"10\",\"100\",\"15\",\"20\",\"2026\",\"50\",\"about\",\"access\",\"across\",\"act\",\"added\",\"affordable\",\"after\",\"air\",\"all\",\"allowed\",\"also\",\"and\",\"another\",\"answers\",\"anyone\",\"anythig\",\"app\",\"are\",\"as\",\"at\",\"automatically\",\"avas_ride\",\"average\",\"base\",\"be\",\"below\",\"benefits\",\"between\",\"beyond\",\"built\",\"ca\",\"can\",\"card\",\"carry\",\"challenge\",\"charts\",\"check\",\"chose\",\"clarity\",\"clear\",\"collaboration\",\"collected\"],\"createdAt\":1792817786469,\"updatedAt\":1792823204798}",
         "name": "session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9"
       }
     },
@@ -109,11 +109,23 @@
     {
       "id": "dialogue:15ti78t:0009",
       "type": "Decision",
-      "content": "dialogue-turn #9 Q: make the maps more interactive | A: (pending)",
+      "content": "dialogue-turn #9 Q: make the maps more interactive | A: The home page **is** the map now — full viewport, with the controls floating over it. ![Map-first home page](docs/app-desktop.png) ## What became interactive |…",
       "metadata": {
         "kind": "dialogue-turn",
-        "record": "{\"id\":\"dialogue:15ti78t:0009\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":9,\"userQuery\":\"make the maps more interactive\",\"assistantReply\":\"\",\"parentTurnId\":\"dialogue:15ti78t:0008\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792822140462,\"updatedAt\":1792822140462,\"title\":\"make the maps more interactive\"}",
+        "record": "{\"id\":\"dialogue:15ti78t:0009\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":9,\"userQuery\":\"make the maps more interactive\",\"assistantReply\":\"The home page **is** the map now — full viewport, with the controls floating over it. ![Map-first home page](docs/app-desktop.png) ## What became interactive | Gesture | Result | |---|---| | **Hover** | tooltip: name, atoll, residents, hours to grade 11–12 | | **Click** | profile card slides into the right panel; the marker takes a dark ring and the map flies to it | | **Legend chips** | filter the map to one travel-time band (click again to clear); the list and markers update together | | **Atoll dropdown** | flies to that atoll's bounding box | | **Search** | live filter over 187 islands — hover a row and its island lights up on the map, Enter opens the top hit | | **Plan a journey** | click a **start** island, then a **destination**; the route is drawn on the map as a line with endpoints, and the legs appear above the form | | **Reset / `Esc`** | clears filters, route and selection | | **Deep links** | `?island=MV002012`, `?from=…&to=…` — the first paint already shows a real island and a real journey | The default view opens on Kulhudhuffushi → Malé: **7.68 h, two sailings, one hour of waiting**, drawn as a line down the archipelago. ## Two bugs worth knowing about (both classic) 1. **The route line was created but never added to the map.** `L.layerGroup([...])` returns a layer; without `.addTo(map)` it exists in memory and draws nothing. I only caught it by instrumenting the function and dumping the DOM — the code path was \\\"succeeding\\\" silently. 2. **htmx strips `<script type=\\\"application/json\\\">` on swap.** I originally carried the polyline coordinates in a JSON script tag inside the fragment; htmx removes script tags when it injects HTML, so `querySelector` found nothing. The path now travels in a `data-path` attribute, which is inert and survives the swap. Also fixed: the map was cropping the southern atolls because Leaflet fitted bounds before the flex layout settled — `map.invalidateSize()` plus layout-aware padding fixed it, and narrow screens now drop the panel padding so the islands aren't squeezed to a sliver. ## Why this follows the criteria - **Technical execution (20 %)** — \\\"does your demo work live\\\": the route drawing is the demo moment, it's explainable in one sentence (\\\"these are observed crossings, not a timetable\\\"), and it still runs offline with no tile server. - **Clarity (5 %)** — one screen, one question, one number. The decision tables are still there, one scroll below, so the Impact artifact isn't lost. - **Nothing else was added.** No 3D, no animation layer, no second dashboard — per the rule in [docs/criteria-map.md](docs/criteria-map.md). Next best move is still the **air layer**: it would make the two grey islands and the three failing capital routes resolve in the same map, which is the last visible weakness a judge can click into.\",\"parentTurnId\":\"dialogue:15ti78t:0008\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792822140462,\"updatedAt\":1792822608798,\"title\":\"make the maps more interactive\",\"summary\":\"The home page **is** the map now — full viewport, with the controls floating over it. ![Map-first home page](docs/app-desktop.png) ## What became interactive | Gesture | Result | |---|---| | **Hover*…\",\"lastSeenAt\":1792822608798}",
         "seq": 9,
+        "sessionId": "dialogue-session:15ti78t",
+        "jumped": false
+      }
+    },
+    {
+      "id": "dialogue:15ti78t:0010",
+      "type": "Decision",
+      "content": "dialogue-turn #10 Q: base data we provided macl, avas_ride, follow_me, mtcc when new data is added it need to be process automatically | A: (pending)",
+      "metadata": {
+        "kind": "dialogue-turn",
+        "record": "{\"id\":\"dialogue:15ti78t:0010\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":10,\"userQuery\":\"base data we provided macl, avas_ride, follow_me, mtcc when new data is added it need to be process automatically\",\"assistantReply\":\"\",\"parentTurnId\":\"dialogue:15ti78t:0009\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792822612692,\"updatedAt\":1792822612692,\"title\":\"base data we provided macl, a…\",\"lastSeenAt\":1792823204798}",
+        "seq": 10,
         "sessionId": "dialogue-session:15ti78t",
         "jumped": false
       }
@@ -203,6 +215,16 @@
     {
       "from": "dialogue:15ti78t:0008",
       "to": "dialogue:15ti78t:0009",
+      "relation": "next_section"
+    },
+    {
+      "from": "dialogue:15ti78t:0010",
+      "to": "dialogue-session:15ti78t",
+      "relation": "part_of"
+    },
+    {
+      "from": "dialogue:15ti78t:0009",
+      "to": "dialogue:15ti78t:0010",
       "relation": "next_section"
     }
   ]

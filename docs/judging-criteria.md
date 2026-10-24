@@ -47,10 +47,10 @@ Scores are our own honest guess at what a judge would write today, updated after
 | Innovation | 10 % | 4 | 8.0 | observed network from GPS; 1,303 physically impossible crossings rejected; road links added because boats cannot see a causeway | must be *stated* as the innovation, or a judge reads it as "another dashboard" and scores 2 |
 | Technical execution | 20 % | 4 | 16.0 | live demo, runs offline, pipeline re-runnable, limits named in-app and in the README | **three capital routes return "no observed journey"** (Addu, Fuvahmulah, Thinadhoo) — correct, but reads as a bug. Air layer fixes it |
 | Impact | 15 % | 4 | 12.0 | `docs/findings.md`: named user (MoE Planning & Research), 28-island decision table ranked by children, named schools and km; NER 29.9 % vs 91.9 % | boarding/subsidy costing not modelled |
-| Scalability & readiness | 15 % | 4 | 12.0 | `Makefile` with `make refresh GPS=…`; `make check` asserts 13 published numbers; one command per stage | no hosted instance; maintainer note still thin |
+| Scalability & readiness | 15 % | 5 | 15.0 | `make ingest` / `make watch`: a dropped file triggers only the affected stages, measured at 6 s; `source_manifest.md` records provenance; the web app hot-reloads rebuilt tables; `make check` asserts 13 published numbers | no hosted instance (runs locally by design) |
 | Clarity | 5 % | 4 | 4.0 | one question, one map, one number | 8-slide story not built yet |
 | Teamwork | 10 % | 4 | 8.0 | five cleanly separable stages | needs two speakers minimum and a visible split of roles |
-| **Total** | | | **82.0** | after actions 1 and 2 (Impact 3→4, Scalability 3→4) |
+| **Total** | | | **85.0** | after actions 1–2 and the automatic ingest (Scalability 4→5) |
 
 ## The five actions, ranked by points at stake
 

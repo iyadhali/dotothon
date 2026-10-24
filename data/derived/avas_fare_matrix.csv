@@ -1,0 +1,37 @@
+city,from_zone,to_zone,fare_mvr
+Male City,Male,Male,30.0
+Male City,Hulhumale Phase 1,Male,85.0
+Male City,Velana International Airport,Male,70.0
+Male City,Hulhumale Phase 2,Male,100.0
+Male City,Sea Plane,Male,110.0
+Male City,Domestic Terminal,Male,80.0
+Male City,Male,Hulhumale Phase 1,85.0
+Male City,Hulhumale Phase 1,Hulhumale Phase 1,30.0
+Male City,Velana International Airport,Hulhumale Phase 1,80.0
+Male City,Hulhumale Phase 2,Hulhumale Phase 1,40.0
+Male City,Sea Plane,Hulhumale Phase 1,110.0
+Male City,Domestic Terminal,Hulhumale Phase 1,90.0
+Male City,Male,Velana International Airport,70.0
+Male City,Hulhumale Phase 1,Velana International Airport,80.0
+Male City,Velana International Airport,Velana International Airport,30.0
+Male City,Hulhumale Phase 2,Velana International Airport,85.0
+Male City,Sea Plane,Velana International Airport,60.0
+Male City,Domestic Terminal,Velana International Airport,30.0
+Male City,Male,Hulhumale Phase 2,100.0
+Male City,Hulhumale Phase 1,Hulhumale Phase 2,40.0
+Male City,Velana International Airport,Hulhumale Phase 2,85.0
+Male City,Hulhumale Phase 2,Hulhumale Phase 2,30.0
+Male City,Sea Plane,Hulhumale Phase 2,120.0
+Male City,Domestic Terminal,Hulhumale Phase 2,95.0
+Male City,Male,Sea Plane,110.0
+Male City,Hulhumale Phase 1,Sea Plane,110.0
+Male City,Velana International Airport,Sea Plane,60.0
+Male City,Hulhumale Phase 2,Sea Plane,120.0
+Male City,Sea Plane,Sea Plane,30.0
+Male City,Domestic Terminal,Sea Plane,70.0
+Male City,Male,Domestic Terminal,80.0
+Male City,Hulhumale Phase 1,Domestic Terminal,90.0
+Male City,Velana International Airport,Domestic Terminal,30.0
+Male City,Hulhumale Phase 2,Domestic Terminal,95.0
+Male City,Sea Plane,Domestic Terminal,70.0
+Male City,Domestic Terminal,Domestic Terminal,30.0

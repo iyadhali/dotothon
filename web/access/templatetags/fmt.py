@@ -22,3 +22,16 @@ def hours(value) -> str:
         return f"{float(value):.1f} h"
     except (TypeError, ValueError):
         return "—"
+
+
+@register.filter
+def filesize(value) -> str:
+    """Bytes -> '1.9 GB' / '164 kB'. Used for the data-provenance line."""
+    try:
+        n = float(value)
+    except (TypeError, ValueError):
+        return "—"
+    for unit, scale in (("GB", 1e9), ("MB", 1e6), ("kB", 1e3)):
+        if n >= scale:
+            return f"{n / scale:,.1f} {unit}".replace(".0 ", " ")
+    return f"{n:,.0f} B"

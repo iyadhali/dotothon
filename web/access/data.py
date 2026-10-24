@@ -263,6 +263,20 @@ class Model:
         }
 
 
-@lru_cache(maxsize=1)
-def model() -> Model:
+def data_version() -> tuple:
+    """Cheap fingerprint of the derived tables: any rebuild changes it, so the next request
+    picks up new data without restarting the server (no manual cache clear needed)."""
+    files = ("island_access.csv", "priority_gaps.csv", "sea_edges.csv",
+             "sea_nodes.csv", "island_school_provision.csv")
+    return tuple((name, (DERIVED / name).stat().st_mtime_ns)
+                 for name in files if (DERIVED / name).exists())
+
+
+@lru_cache(maxsize=2)
+def _model_for(version: tuple) -> Model:
     return Model()
+
+
+def model() -> Model:
+    """Always the model for the current data on disk."""
+    return _model_for(data_version())

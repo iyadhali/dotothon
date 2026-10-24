@@ -395,3 +395,6 @@ table.gaps td a:hover { border-bottom-color: #0b4f57; }
 .ovl-right .row { padding: 5px 0; font-size: 12.5px; }
 .ovl-right .mini th, .ovl-right .mini td { padding: 4px 0; }
 .ovl-right .cardhead { margin-bottom: 8px; }
+
+.manifest { margin: 0; padding-top: 8px; border-top: 1px dashed #e4ded1; font-size: 11px; }
+.manifest code { background: #f3efe6; padding: 1px 4px; border-radius: 4px; font-size: 10.5px; }

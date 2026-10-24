@@ -1,0 +1,21 @@
+{
+  "last_run": "2026-10-24 06:27 UTC",
+  "sources": {
+    "avas": "ff7cb50adbe4ff1d",
+    "boundaries": "22468774e3d7754d",
+    "census": "2c1aef5cd9027a92",
+    "followme": "7403ded59165b227",
+    "macl": "1e3432c31f625784",
+    "moe": "d0fd1ce9504e0b52",
+    "mtcc": "5ddf5391189f3ce9"
+  },
+  "stages": {
+    "check": "run",
+    "normalise": "run",
+    "provision": "run",
+    "reachability": "run",
+    "sea": "run",
+    "spine": "run",
+    "web": "run"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-10-24 06:27 UTC",
+  "sources": {
+    "followme": {
+      "files": 31,
+      "bytes": 1892689637,
+      "fingerprint": "7403ded59165b227",
+      "latest_mtime": "2026-10-14 04:59"
+    },
+    "mtcc": {
+      "files": 1,
+      "bytes": 62662,
+      "fingerprint": "5ddf5391189f3ce9",
+      "latest_mtime": "2026-10-24 06:18"
+    },
+    "macl": {
+      "files": 2,
+      "bytes": 21079234,
+      "fingerprint": "1e3432c31f625784",
+      "latest_mtime": "2026-10-14 04:56"
+    },
+    "avas": {
+      "files": 2,
+      "bytes": 42418810,
+      "fingerprint": "ff7cb50adbe4ff1d",
+      "latest_mtime": "2026-10-21 04:59"
+    },
+    "census": {
+      "files": 2,
+      "bytes": 222945,
+      "fingerprint": "2c1aef5cd9027a92",
+      "latest_mtime": "2026-10-24 05:06"
+    },
+    "boundaries": {
+      "files": 2,
+      "bytes": 17552795,
+      "fingerprint": "22468774e3d7754d",
+      "latest_mtime": "2026-10-24 05:06"
+    },
+    "moe": {
+      "files": 1,
+      "bytes": 14054600,
+      "fingerprint": "d0fd1ce9504e0b52",
+      "latest_mtime": "2026-10-24 05:24"
+    }
+  },
+  "derived_rows": {
+    "mtcc_bus_monthly.csv": 180,
+    "mtcc_bus_daily.csv": 1095,
+    "mtcc_ferry_monthly.csv": 258,
+    "macl_monthly.csv": 175,
+    "avas_daily.csv": 61,
+    "sea_edges.csv": 5789,
+    "island_access.csv": 187,
+    "priority_gaps.csv": 28
+  },
+  "stages_run": {
+    "check": 0.3
+  }
+}

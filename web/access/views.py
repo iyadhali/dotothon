@@ -9,7 +9,17 @@ from django.http import Http404
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 
-from .data import model
+from .data import DERIVED, model
+
+
+def _manifest() -> dict | None:
+    path = DERIVED / "source_manifest.json"
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text())
+    except json.JSONDecodeError:
+        return None
 
 
 @require_GET
@@ -22,6 +32,7 @@ def index(request):
         "atolls": m.atolls,
         "rows": rows,
         "gaps": m.gaps,
+        "manifest": _manifest(),
         "default_from": "MV002012",   # Kulhudhuffushi: the demo journey that works
         "default_to": "MLE",
         "default_island": request.GET.get("island", "MV002012"),

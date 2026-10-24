@@ -10,7 +10,7 @@ PY      ?= python3
 GPS     ?= data/FollowMe_august_2025
 PORT    ?= 8000
 
-.PHONY: all setup external spine gps schools provision model webdata check run clean-web
+.PHONY: all ingest watch setup external spine gps schools provision model webdata check run refresh
 
 all: external spine gps provision model webdata check
 
@@ -40,6 +40,14 @@ model:
 # map points for the Django app
 webdata:
 	$(PY) web/build_web_data.py
+
+# incremental ingest: fingerprint the four supplied datasets, rebuild only what changed
+ingest:
+	$(PY) scripts/ingest.py
+
+# same, but watch forever: new files dropped into data/ are processed automatically
+watch:
+	$(PY) scripts/watch_data.py --every 10
 
 # assert the numbers we publish still hold
 check:

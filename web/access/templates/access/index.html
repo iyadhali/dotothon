@@ -113,6 +113,13 @@
     between two stays; the edge weight is the median observed crossing time. Journeys add a 1 hour
     connection penalty and are capped at two sailings. Addu's six census islands are joined by
     causeway in the model, which the boat data alone cannot see.</p>
+    {% if manifest %}
+    <p class="manifest">Built {{ manifest.generated_at }} by <code>scripts/ingest.py</code> —
+      FollowMe {{ manifest.sources.followme.files }} files /
+      {{ manifest.sources.followme.bytes|filesize }},
+      MTCC, MACL and Avas normalised, then re-scored. Drop new data in and the watcher rebuilds
+      this page.</p>
+    {% endif %}
   </footer>
 </main>
 

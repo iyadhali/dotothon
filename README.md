@@ -20,9 +20,23 @@ all. Nationally, only **29.9 %** of 16–17-year-olds are enrolled in higher sec
 
 ```bash
 pip install -r requirements.txt
-python web/build_web_data.py                 # regenerate the map points from data/derived
+make ingest                  # fingerprint the four datasets, rebuild what changed
 cd web && python manage.py runserver 8000
 ```
+
+**New data is processed automatically.** Drop a file where the old one lived
+(`data/MTCC.xlsx`, `data/MACL/*.csv`, `data/Avas_Ride/*.csv`, or a new
+`data/FollowMe_<month>/` folder) and the pipeline rebuilds only the stages that depend on it:
+
+```bash
+make watch                   # poll every 10 s, ingest on change
+make ingest                  # or one incremental pass
+python scripts/ingest.py --dry-run   # show what would rebuild
+```
+
+Each run writes `data/derived/source_manifest.md` — what was ingested, when, how big, and how many
+rows came out — and the web app picks up rebuilt tables without a restart. Full detail:
+[docs/pipeline.md](docs/pipeline.md).
 
 Open <http://127.0.0.1:8000>. No database, no migrations, no API keys, no network calls — the
 HTMX and Leaflet bundles are vendored, so it runs offline on venue wifi.
@@ -43,6 +57,7 @@ travel time to the nearest grade 11–12 school. Everything else floats over it.
 | **Reset** (or `Esc`) | clear filters, route and selection |
 | | |
 | **Decision tables** | below the map: worst-served ranking, and the 28 islands beyond two hours with the link that would fix each |
+| **Provenance** | the footer prints when the data was last built and from how much of it |
 | **Island profile** | population, children 0–17, whether the island teaches grade 7–10 and 11–12, hours to the nearest higher-secondary school and university campus, and the observed crossings out of that island with trip counts. |
 | **Island to island** | pick a start and a destination: the best journey within two sailings, broken down leg by leg, with the connection wait shown separately. |
 | **Worst served** | ranked list, filleted by atoll, by "over 2 h / over 4 h", by "no observed route", or by "hosts a school". |
@@ -144,6 +159,7 @@ REVIEW.md                 the review: challenge card, dataset teardown, risks
 docs/judging-criteria.md  the actual rubric, our self-assessment and ranked actions
 docs/criteria-map.md      which artifact earns which criterion, and what we refuse to build
 docs/findings.md          the decision brief: who benefits, what they could do differently
+docs/pipeline.md          automatic ingestion: fingerprints, stages, manifest, what rebuilds when
 Makefile                  make / make refresh GPS=<dir> / make check / make run
 ```
 

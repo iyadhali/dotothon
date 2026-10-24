@@ -13,6 +13,7 @@ Impact and Scalability are 50 of the 100 points; **Impact + Scalability also bre
 |---|---|---|
 | `docs/findings.md` + `data/derived/priority_gaps.csv` | **Impact 15 %** | named user, named decision, 28-island table ranked by children with the school island and km to it |
 | `make refresh` + `scripts/check_outputs.py` | **Scalability 15 %** | proves the pipeline runs on new data and that 13 published numbers still hold |
+| `scripts/ingest.py` + `scripts/watch_data.py` + `source_manifest.md` | **Scalability 15 %**, **Data Utilization 15 %** | **new data is processed automatically**: fingerprints decide which stages rebuild, the watcher reacts to a dropped file in seconds (measured: 6 s from `touch` to rebuilt tables), and every run records provenance |
 | `scripts/build_sea_network.py` (GPS → stays → crossings) | **Innovation 10 %** *and* **Technical 20 %** | the method itself: the network is observed, not published |
 | Django app (`web/`) | **Technical 20 %**, **Clarity 5 %** | live demo, offline, one screen that answers the question — **not** the innovation |
 | `scripts/build_school_provision.py`, grade totals reconciled to 5,105 | **Data Utilization 15 %** | official MoE table, used correctly, self-checking |

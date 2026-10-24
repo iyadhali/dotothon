@@ -243,7 +243,7 @@ def route(request):
         ctx["to_name"] = m.name_of(to)
         if legs is None:
             ctx["connected"] = False
-            ctx["error"] = ("Not connected on the observed network. No route using at most two "
+            ctx["error"] = ("Not connected on the observed network. No route using at most five "
                             "sailings was captured in the August 2025 GPS month.")
         else:
             atoll_of = lambda n: (m.by_id.loc[n, "atoll"] if n in m.by_id.index else "")

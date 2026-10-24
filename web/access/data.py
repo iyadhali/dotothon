@@ -33,7 +33,7 @@ def db_frame(sql: str, params: tuple = ()) -> pd.DataFrame:
         con.close()
 
 TRANSFER_H = 1.0       # waiting for the next sailing
-MAX_HOPS = 2           # a journey needing three sailings is reported as not accessible
+MAX_HOPS = 5           # sailings per journey; a sixth is reported as not connected
 
 # Addu City is one land mass across six census islands, joined by the Addu link road; the boat
 # data cannot see roads, so those legs are added explicitly (30 km/h assumption). Names are

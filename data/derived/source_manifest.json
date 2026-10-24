@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24 11:03 UTC",
+  "generated_at": "2026-10-24 11:06 UTC",
   "sources": {
     "followme": {
       "files": 31,
@@ -70,10 +70,20 @@
     "avas_daily.csv": 61,
     "sea_edges.csv": 5789,
     "island_access.csv": 187,
-    "priority_gaps.csv": 28
+    "priority_gaps.csv": 33
   },
   "stages_run": {
-    "database": 0.4,
+    "spine": 0.7,
+    "normalise": 1.1,
+    "sea": 15.9,
+    "provision": 3.4,
+    "reachability": 12.3,
+    "services": 0.3,
+    "service_access": 12.2,
+    "simulator": 11.9,
+    "incoming": 0.3,
+    "database": 0.3,
+    "web": 0.6,
     "check": 0.3
   }
 }

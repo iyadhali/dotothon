@@ -156,13 +156,12 @@ Only `build_sea_network.py` is slow (it reads 1.8 GB of GPS). Everything else fi
 A **stay** is five or more consecutive GPS polls at or below 2 knots; two consecutive stays of one
 device make a **trip**, whose duration is observed rather than computed. Stays are snapped to the
 nearest OCHA island centroid within 6 km. Crossings whose implied speed falls outside 0.5–55 knots
-are dropped as GPS errors (1,303 of them). Islands joined by road — Addu's six census islands, and
-Malé's bridge to Hulhumalé — are connected explicitly at 30 km/h, because boat data cannot see a
-causeway — but no road or air link is invented, so a pair with no observed boat is reported as
-not connected rather than bridged on an assumption. Journeys cost the observed median crossing
-time per leg plus **1 hour** for each
-connection, and are capped at **two sailings**: a third sailing is reported as *not accessible*
-rather than given an implausible number.
+are dropped as GPS errors (1,303 of them). Every edge is an observed crossing — no road or air link
+is invented, so a pair with no boat in the month is reported as *not connected* rather than bridged
+on an assumption. Journeys cost the observed median crossing time per leg plus **1 hour** for each
+connection, and may use **up to five sailings** (long chains such as Baa → Lhaviyani → Kaafu →
+Malé are real itineraries, not errors); a sixth is reported as not connected rather than given an
+implausible number.
 
 
 ### A platform, not a dashboard

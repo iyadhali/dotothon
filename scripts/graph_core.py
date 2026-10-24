@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 TRANSFER_H = 1.0      # waiting for the next sailing
-MAX_HOPS = 2          # sailings per journey
+MAX_HOPS = 5          # sailings per journey
 
 # Road/causeway links the boat data cannot see. Addu City is one land mass spread over six census
 # islands; times are driving at 30 km/h over the link road (stated assumption, no road speeds in

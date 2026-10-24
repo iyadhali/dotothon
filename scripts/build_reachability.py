@@ -36,7 +36,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 D = ROOT / "data" / "derived"
 TRANSFER_H = 1.0
-MAX_HOPS = 2
+MAX_HOPS = 5
 MALE_ID = "MLE"
 
 

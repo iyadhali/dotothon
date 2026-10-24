@@ -109,8 +109,9 @@
     1,328 devices; base geometry: OCHA administrative boundaries (CC BY).</p>
     <p><strong>Method.</strong> A stay is ≥5 consecutive polls below 2 knots; a trip is the leg
     between two stays; the edge weight is the median observed crossing time. Journeys add a 1 hour
-    connection penalty and are capped at two sailings. Addu's six census islands are joined by
-    causeway in the model, which the boat data alone cannot see.</p>
+    connection penalty per new sailing and are capped at five sailings. Only observed crossings are
+    edges: an island pair with no boat in the month is reported as not connected, not bridged on an
+    assumption.</p>
     {% if manifest %}
     <p class="manifest">Built {{ manifest.generated_at }} by <code>scripts/ingest.py</code> —
       FollowMe {{ manifest.sources.followme.files }} files /

@@ -1,6 +1,6 @@
 # Source manifest
 
-Generated 2026-10-24 11:03 UTC by `scripts/ingest.py`.
+Generated 2026-10-24 11:06 UTC by `scripts/ingest.py`.
 
 | source | files | size | last touched | fingerprint |
 |---|---:|---:|---|---|
@@ -25,4 +25,4 @@ Derived tables:
 | `avas_daily.csv` | 61 |
 | `sea_edges.csv` | 5,789 |
 | `island_access.csv` | 187 |
-| `priority_gaps.csv` | 28 |
+| `priority_gaps.csv` | 33 |

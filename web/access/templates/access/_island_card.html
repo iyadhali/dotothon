@@ -10,19 +10,8 @@
   <div><span class="n">{{ c.nbrs }}</span><span class="l">sea links</span></div>
 </div>
 
-<h3 class="sub">Services on this island</h3>
-{% if c.services %}
-<ul class="svclist">
-  {% for s in c.services %}
-    <li><i class="dot {{ s.category }}"></i><span>{{ s.name }}</span><em>{{ s.type|svclabel }}</em></li>
-  {% endfor %}
-</ul>
-{% else %}
-<p class="empty">No services in the register for this island.</p>
-{% endif %}
-
-{% if c.links %}
 <h3 class="sub">Observed crossings from {{ c.name }}</h3>
+{% if c.links %}
 <table class="mini">
   <thead><tr><th>To</th><th class="r">Hours</th><th class="r">Trips</th></tr></thead>
   <tbody>

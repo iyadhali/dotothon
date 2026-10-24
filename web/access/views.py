@@ -159,6 +159,18 @@ def connect_context(m, node: str, category: str = "") -> dict:
                            else "under8" if row["hours"] <= 8 else "over8")
         rows.append(row)
 
+    # the facilities that actually sit on this island, by name
+    own = m.services[m.services.node_id == card["id"]]
+    if category:
+        own = own[own.category == category]
+    local_services = [{"name": r.name, "label": TYPE_LABEL.get(r.service_type, r.service_type),
+                       "category": r.category}
+                      for r in own.sort_values(["category", "service_type", "name"]).itertuples()]
+
+    for row in rows:
+        pid = (card["access"].get(row["type"]) or {}).get("provider_id")
+        row["place_atoll"] = (m.by_id.loc[pid, "atoll"] if pid and pid in m.by_id.index else "")
+
     rows.sort(key=lambda r: (0 if r["local"] else 1, r["hours"] if r["hours"] is not None else 999))
     local_n = sum(1 for r in rows if r["local"])
     within2 = sum(1 for r in rows if r["hours"] is not None and r["hours"] <= 2)
@@ -170,6 +182,7 @@ def connect_context(m, node: str, category: str = "") -> dict:
         "paths": json.dumps(paths),
         "local_n": local_n, "within2": within2, "total_n": len(rows),
         "worst": worst, "categories": ["education", "health"],
+        "local_services": local_services, "n_local_services": len(local_services),
         "cat_label": {"education": "Education", "health": "Health"},
     }
 
@@ -204,7 +217,9 @@ def route(request):
             ctx["error"] = ("Not connected on the observed network. No route using at most two "
                             "sailings was captured in the August 2025 GPS month.")
         else:
+            atoll_of = lambda n: (m.by_id.loc[n, "atoll"] if n in m.by_id.index else "")
             ctx["legs"] = [{"a": e.a, "b": e.b, "a_name": m.name_of(e.a), "b_name": m.name_of(e.b),
+                            "a_atoll": atoll_of(e.a), "b_atoll": atoll_of(e.b),
                             "hours": round(e.hours, 2), "kind": e.kind, "trips": e.trips}
                            for e in legs]
             ctx["connected"] = True

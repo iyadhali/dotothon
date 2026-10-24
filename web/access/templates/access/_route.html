@@ -22,12 +22,12 @@
     <ol class="legs">
       {% for l in legs %}
       <li>
-        <span class="legfrom">{{ l.a_name }}</span>
+        <span class="legfrom">{{ l.a_name }}{% if l.a_atoll %} <i>{{ l.a_atoll }}</i>{% endif %}</span>
         <span class="legmid">
           <i></i>
           {% if l.kind == "land" %}causeway / road{% else %}{{ l.hours|floatformat:2 }} h{% endif %}
         </span>
-        <span class="legto">{{ l.b_name }}</span>
+        <span class="legto">{{ l.b_name }}{% if l.b_atoll %} <i>{{ l.b_atoll }}</i>{% endif %}</span>
         {% if l.trips %}<span class="legtrips">{{ l.trips }} trip{{ l.trips|pluralize }} observed</span>{% endif %}
       </li>
       {% endfor %}

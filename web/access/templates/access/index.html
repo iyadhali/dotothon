@@ -27,10 +27,10 @@
 
   <aside class="ovl ovl-left">
     <div class="row2">
-      <div class="combo" id="atollCombo">
-        <input id="atollText" class="combotext" type="text" placeholder="All atolls"
-               autocomplete="off" aria-label="Filter by atoll">
-        <input id="atoll" type="hidden" value="">
+      <div class="combo wide" id="islandCombo">
+        <input id="islandText" class="combotext" type="text" placeholder="Select an island…"
+               autocomplete="off" aria-label="Select an island">
+        <input id="islandPick" type="hidden" value="">
         <ul class="combopop" hidden></ul>
       </div>
     </div>
@@ -281,18 +281,9 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
                           .sort((a, b) => a.label.localeCompare(b.label));
   const atollItems = [...new Set(pts.map(p => p.atoll))].sort();
   makeCombo("toCombo", islandItems, {onPick: () => { if (el("from").value) submitRoute(); }});
-  makeCombo("atollCombo", atollItems.map(a => ({value:a, label:a})), {
-    allowEmpty: true, emptyLabel: "All atolls",
-    onPick: r => {
-      state.atoll = r.value;
-      state.markers.forEach((m, id) => {
-        const on = !r.value || state.byId.get(id).atoll === r.value;
-        m.setStyle({opacity: on ? 0.85 : 0.10, fillOpacity: on ? 0.92 : 0.08});
-      });
-      if (r.value && state.atollBounds.has(r.value))
-        map.fitBounds(state.atollBounds.get(r.value), {padding:[60, 60], maxZoom:9});
-      else fitAll();
-    },
+  // the top box picks the island itself; the atoll rides along as a reference
+  makeCombo("islandCombo", islandItems, {
+    onPick: r => { if (r && r.value) selectIsland(r.value); },
   });
   setPicker("from", el("from").value);
   setPicker("to", el("to").value);
@@ -410,8 +401,7 @@ function setPicker(hiddenId, value) {
   if (!combo) return;
   const text = combo.querySelector(".combotext");
   const point = state.byId.get(value);
-  if (hiddenId === "atoll") text.value = value || "";
-  else text.value = point ? point.name : "";
+  text.value = point ? (point.atoll ? `${point.name} · ${point.atoll}` : point.name) : "";
 }
 
 function selectIsland(id, opts = {}) {
@@ -428,6 +418,7 @@ function selectIsland(id, opts = {}) {
   if (opts.load !== false) htmx.ajax("GET", `/island/${id}/`, {target:"#panel", swap:"innerHTML"});
   htmx.ajax("GET", `/connect/?island=${id}`, {target:"#connect-out", swap:"innerHTML"});
   setPicker("from", id);
+  if (el("islandPick")) setPicker("islandPick", id);
   if (el("fromName")) el("fromName").textContent = state.byId.get(id).name;
   const q = new URLSearchParams(location.search);
   q.set("island", id);
@@ -604,13 +595,6 @@ el("legend").addEventListener("click", e => {
 
 window.addEventListener("resize", () => map.invalidateSize());
 
-el("atoll").addEventListener("change", e => {
-  state.atoll = e.target.value;
-  if (state.atoll && state.atollBounds.has(state.atoll))
-    map.fitBounds(state.atollBounds.get(state.atoll), {padding:[40,40], maxZoom:9});
-  else fitAll();
-});
-
 function applyMetric() {
   el("metricname").textContent = METRIC_NAME[state.metric];
   state.points.forEach(p => { p.band = bandOf(metricHours(p)); });
@@ -630,7 +614,7 @@ el("metric").addEventListener("change", e => {
 
 
 el("resetmap").addEventListener("click", () => {
-  state.band = null; state.atoll = ""; setPicker("atoll", "");
+  state.band = null;
   state.markers.forEach(m => m.setStyle({opacity: 0.85, fillOpacity: 0.92}));
   document.querySelectorAll("#legend li").forEach(x => x.classList.remove("is-off"));
   state.markers.forEach(m => m.setStyle({opacity:0.85, fillOpacity:0.92, weight:0.8, color:"#ffffff"}));

@@ -1,0 +1,1 @@
+Access to key services such as universities and primary healthcare facilities remains uneven across Maldives due to geographical fragmentation. Many islands lack convenient and affordable transport links, limiting equitable access to essential services.

@@ -3,9 +3,26 @@
 __pycache__/
 *.pyc
 
-# Datasets: only the public-source AIR network folder is versioned.
-# Datathon-provided datasets (MACL, FollowMe, MTCC, Avas, team-kandu, raw zips, etc.) stay local.
-data/*
-!data/external/
-data/external/*
-!data/external/air/
+# Web app build/dependency output
+web/node_modules/
+web/.nuxt/
+web/.output/
+web/.env
+web/.pnpm-store/
+web/.cache/
+web/test-results/
+web/output/
+qgis/*.qgd
+qgis/*.gpkg-shm
+qgis/*.gpkg-wal
+qgis/*.qgs~
+tools/.deps/
+
+# Too large for GitHub — download links in README.md ("Large files not in this repo")
+# FollowMe daily CSVs (46–69 MB each, 1.8 GB total): see data/FollowMe/README.md
+data/FollowMe/FollowMe_august_2025/*.csv
+data/raw-zips/FollowMe.zip
+# MoH facility annual-report PDFs (200 files, 561 MB): per-file URLs in moh_annual_reports_index.tsv; extracted text kept in _text/
+data/external/health/moh_annual_reports/*.pdf
+# Upstream MBS datasets repo clone (nested git repo): https://github.com/mbs-datathon/maldives-datathon-2026-datasets
+data/mbs-datasets/

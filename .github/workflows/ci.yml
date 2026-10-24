@@ -1,0 +1,31 @@
+name: Starter checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m unittest discover -s tools/tests -v
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install starter dependencies
+        working-directory: web
+        run: pnpm install --no-frozen-lockfile
+      - name: Type check
+        working-directory: web
+        run: pnpm typecheck
+      - name: Production build
+        working-directory: web
+        run: pnpm build

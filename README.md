@@ -78,3 +78,26 @@ python -m venv .venv
 ## Sources and licences
 
 Maldives Bureau of Statistics (datathon datasets, Census 2022, Statistical Yearbook) · HeiGIT/HDX (CC BY-SA) · OpenStreetMap contributors (ODbL) · HDX COD-AB · geoBoundaries · WorldPop · OurAirports (public domain) · Ministry of Health · Ministry of Education / Ministry of Higher Education · WHO GHO · World Bank WDI. Per-file sources are listed in `data/external/README.md` and in each research note.
+
+## Application boilerplate and agent tools
+
+The current web deliverable is a **basic scaffold**, not an implemented transport simulator. It uses Nuxt, Vue, TypeScript, Nuxt UI and Mapbox GL JS. QGIS is optional. See [web/README.md](web/README.md) for setup, environment configuration, stack decisions and validation status.
+
+```powershell
+cd web
+pnpm install
+Copy-Item .env.example .env
+# Set NUXT_PUBLIC_MAPBOX_TOKEN in .env
+pnpm dev
+```
+
+Read-only agent tools discover local datasets, inspect schemas, return bounded CSV samples and read research caveats. They can run as a dependency-free Python CLI or local MCP stdio server; see [tools/README.md](tools/README.md) and [mcp.example.json](mcp.example.json). Raw data remains local; see [data/README.md](data/README.md).
+
+```powershell
+python tools/data_mcp.py --call data_list_datasets
+python tools/data_mcp.py --call data_describe_dataset --dataset-id rtl_trips
+python -m unittest discover -s tools/tests -v
+```
+
+The research describes possible future analysis. The starter does not validate or produce those analytical results; in particular, low-frequency ferry waiting should use the actual timetable where available, not automatically half the interval between departures.
+

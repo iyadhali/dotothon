@@ -63,11 +63,12 @@ export const EXPECTED = {
   islands: 200,
   origins: 191,
   // Includes the gap-filling layers from scripts/multimodal/augment_network.py:
-  // 45 MTCC 2023 stops (+45 jetty access edges), 21 MTCC trips and 162 observed boat links.
-  stops: 162,
+  // 46 MTCC 2023 stops (+46 jetty access edges), 30 MTCC trips (with running days) and 154
+  // observed boat links.
+  stops: 163,
   airports: 20,
-  accessEdges: 198,
-  services: 349,
+  accessEdges: 199,
+  services: 350,
   facilities: 945,
   categories: 48,
   geojsonFeatures: 200,

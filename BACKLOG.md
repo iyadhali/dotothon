@@ -2,26 +2,34 @@
 
 Open work items for the Island Access Atlas, highest priority first. Each item lists what is wrong today and what "done" means.
 
-## 1. Fix evidence switching, transfer rules, calendars and fare applicability
+## 1. Fix evidence switching, transfer rules, calendars and fare applicability — **done (24 Oct)**
 
-- **Now:**
-  - Evidence types sit in one network without explicit precedence. These are the RTL 2026 snapshot, MTCC 2023 trips, observed FollowMe boat links and estimated air.
-  - Transfers use flat penalties.
-  - Every trip is assumed to run on the reference day.
-  - Fares are full resident fares on every leg.
-- **Done when:**
-  - [ ] Per-route evidence precedence is defined (RTL > MTCC > observed boats > estimated), with a user switch. Results label which evidence each journey used.
-  - [ ] Transfer rules are realistic: minimum connection time per mode and jetty-to-airport links. No same-vehicle double counting.
-  - [ ] Service calendars by weekday. MTCC `days_of_week` is honoured, there is no Friday service, and a day-of-week picker replaces the single reference day.
-  - [ ] Fares apply correctly: concessions (65+, under 3, disabled, students), Aasandha-covered emergency trips, return vs one-way pricing, and observed-boat legs flagged as estimated.
+- [x] **Evidence:** the evidence layers are RTL 2026, MTCC 2023, observed boats, estimated flights and the Malé ferry (`web/shared/routing/evidence.ts`).
+  - Each can be switched off from the "Data" menu.
+  - Every journey row shows the evidence it used (verified vs estimated tags).
+  - Precedence is structural: MTCC only where RTL has no stop, and observed boats only where no timetable serves the pair.
+- [~] **Transfer rules:** made explicit in the UI:
+  - 15 min ferry boarding
+  - 45 min air check-in (60 min at Velana)
+  - 10 min change of mode
+  - same-vehicle stops are not re-boarded
+  
+  Per-jetty minimum connection times are still open.
+- [x] **Calendars:**
+  - Day-of-week picker.
+  - All 30 MTCC 2023 trips carry their published `days`; none run on Friday, so the router drops them on other days.
+  - RTL, flights and observed boats have no published calendar and are treated as daily (flagged).
+- [x] **Fares:**
+  - Traveller selector: adult resident, 65+ or disabled (RTL and Malé ferries free), student (Malé ferry free), and approved emergency (MVR 0, Aasandha pays).
+  - Observed-boat legs are priced at the RTL tariff and flagged as estimated.
+  - Return trips are still priced as two one-ways.
+- Tests: 3 new router tests (calendar, concessions, evidence); 53/53 pass.
 
-## 2. Make map classifications and fallback stories consistent
+## 2. Make map classifications and fallback stories consistent — **done (24 Oct)**
 
-- **Now:** the minimal map, `/details`, the schematic fallback and the Mapbox view classify islands slightly differently (bands, "no transport data", underserved classes). The fallback map does not show the Underserved and Where-to-build stories.
-- **Done when:**
-  - [ ] One shared classification function feeds every view and legend.
-  - [ ] The schematic or static fallback renders the same three stories when Mapbox or WebGL is unavailable.
-  - [ ] Wording is consistent everywhere: "No transport data" vs "No same-day trip".
+- [x] One classification module (`web/app/utils/classify.ts`) sets the classes, labels and colours for the minimal map, the fallback map, the legend and the store.
+- [x] Token-free SVG fallback (`FallbackMap.vue`) with the same props and all three stories. It is used automatically when Mapbox or WebGL fails, and can be forced with `?map=svg`.
+- [x] Wording is unified everywhere: "No transport data" and "No same-day trip". This covers the KPI strip, bands, the intervention panel and the access panel.
 
 ## 3. Require version-matched artifact validation and QGIS exports
 

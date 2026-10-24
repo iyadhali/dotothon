@@ -203,6 +203,7 @@ interface GraphOptions {
   allowedModes: TravelMode[]
   disabledRouteIds: string[]
   disabledServiceIds: string[]
+  dayOfWeek: string | null
   allowNextDay: boolean
 }
 
@@ -210,6 +211,7 @@ interface ResolvedSelection {
   allowedModes: TravelMode[]
   disabledRouteIds: string[]
   disabledServiceIds: string[]
+  dayOfWeek: string | null
 }
 
 const graphCache = new WeakMap<MultimodalNetwork, Map<string, RoutingGraph>>()
@@ -218,7 +220,7 @@ function graphCacheKey(options: GraphOptions): string {
   const modes = options.allowedModes.slice().sort().join(',')
   const routes = options.disabledRouteIds.slice().sort().join(',')
   const services = options.disabledServiceIds.slice().sort().join(',')
-  return `m:${modes}|r:${routes}|s:${services}|${options.allowNextDay ? 'nextday' : 'sameday'}`
+  return `m:${modes}|r:${routes}|s:${services}|d:${options.dayOfWeek ?? '*'}|${options.allowNextDay ? 'nextday' : 'sameday'}`
 }
 
 /**
@@ -236,6 +238,7 @@ function resolveSelection(request: NetworkSelection & { includeEstimatedAir?: bo
     allowedModes,
     disabledRouteIds: (request.disabledRouteIds ?? []).filter((id) => typeof id === 'string' && id.length > 0),
     disabledServiceIds: (request.disabledServiceIds ?? []).filter((id) => typeof id === 'string' && id.length > 0),
+    dayOfWeek: typeof request.dayOfWeek === 'string' && request.dayOfWeek.length > 0 ? request.dayOfWeek : null,
   }
 }
 
@@ -244,8 +247,15 @@ function resolveSelection(request: NetworkSelection & { includeEstimatedAir?: bo
  * its route id is in `disabledRouteIds`. For frequency services the route id defaults to
  * the service id, and a new-style `routeId` grouping is honoured as well.
  */
-function isServiceDisabled(service: Service, disabledRouteIds: Set<string>, disabledServiceIds: Set<string>): boolean {
+function isServiceDisabled(
+  service: Service,
+  disabledRouteIds: Set<string>,
+  disabledServiceIds: Set<string>,
+  dayOfWeek: string | null = null,
+): boolean {
   if (disabledServiceIds.has(service.id)) return true
+  // Calendar: a service with known running days is absent on other days.
+  if (dayOfWeek && service.days && !service.days.includes(dayOfWeek)) return true
   if (isTimetabledService(service)) return disabledRouteIds.has(service.routeId)
   if (disabledRouteIds.has(service.id)) return true
   return service.routeId !== undefined && disabledRouteIds.has(service.routeId)
@@ -350,7 +360,7 @@ function buildGraph(network: MultimodalNetwork, options: GraphOptions): RoutingG
   for (const service of network.services) {
     if (!isTimetabledService(service)) continue
     if (!allowedModes.has('sea')) continue
-    if (isServiceDisabled(service, disabledRouteIds, disabledServiceIds)) continue
+    if (isServiceDisabled(service, disabledRouteIds, disabledServiceIds, options.dayOfWeek)) continue
     const stops = sortedStops(service)
     if (stops.length < 2) continue
     const shifts = options.allowNextDay ? [0, NEXT_DAY_MINUTES] : [0]
@@ -382,7 +392,7 @@ function buildGraph(network: MultimodalNetwork, options: GraphOptions): RoutingG
     if (service.kind !== 'frequency') continue
     const travelMode: TravelMode = service.mode === 'air' ? 'air' : 'sea'
     if (!allowedModes.has(travelMode)) continue
-    if (isServiceDisabled(service, disabledRouteIds, disabledServiceIds)) continue
+    if (isServiceDisabled(service, disabledRouteIds, disabledServiceIds, options.dayOfWeek)) continue
     const departures = service.departures.slice().sort((a, b) => a - b)
     const option: FrequencyOption = {
       service,

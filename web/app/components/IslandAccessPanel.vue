@@ -121,7 +121,7 @@ function onOvernight(event: Event): void {
       <article v-for="row in report" :key="row.category" class="mm-access__card">
         <h3 class="mm-subhead">{{ row.label }}</h3>
         <p v-if="!row.destinations.length" class="mm-access__status">
-          {{ statusText[row.status] ?? 'Not reachable.' }}
+          {{ statusText[row.status] ?? 'No same-day trip.' }}
         </p>
         <ol v-else class="mm-access__list">
           <li v-for="destination in row.destinations" :key="destination.journey.destinationIslandId" class="mm-access__item">

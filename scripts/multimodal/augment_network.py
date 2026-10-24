@@ -3,8 +3,9 @@
 
 1. MTCC public ferry trips (2023 all-atolls timetable, recovered from the Wayback Machine;
    data/external/ferry_timetables/supplementary_trips.csv) for the atolls the RTL snapshot
-   does not cover at all: Kaafu, Alif Alif, Alif Dhaalu, Vaavu, Meemu and Lhaviyani. Only
-   trips that run on the reference day's weekday are added.
+   does not cover at all: Kaafu, Alif Alif, Alif Dhaalu, Vaavu, Meemu and Lhaviyani. Every
+   trip is added with its published running days (`days`), so the router can apply the
+   weekday calendar; no MTCC route runs on Friday.
 2. Observed boat links from FollowMe GPS (data/processed/followme/observed_sea_links.csv):
    regular island-to-island boat traffic touching an island the RTL network cannot reach,
    added as estimated-frequency `sea` services under one route id so the whole layer can be
@@ -101,9 +102,9 @@ def add_mtcc(network: dict, index: IslandIndex, weekday: str) -> dict:
         first = trip_rows[0]
         if not route_atolls[first["route_code"]] <= MTCC_ATOLLS:
             continue
-        if weekday not in first["days_of_week"].split(","):
-            skipped_day += 1
-            continue
+        days = [d.strip() for d in first["days_of_week"].split(",") if d.strip()]
+        if weekday not in days:
+            skipped_day += 1  # still added; counted for the reference-day summary
         stop_times = []
         for row in sorted(trip_rows, key=lambda r: int(r["stop_sequence"])):
             island = index.find(row["island_name"], row["atoll"])
@@ -131,8 +132,9 @@ def add_mtcc(network: dict, index: IslandIndex, weekday: str) -> dict:
             "id": f"mtcc:{trip_id}", "kind": "timetabled", "mode": "ferry", "operator": "MTCC",
             "routeId": first["route_code"], "routeCode": first["route_code"].replace("MTCC-", "MTCC "),
             "zone": first["zone"], "confidence": "verified_timetable",
-            "calendar": f"MTCC 2023 timetable; runs {first['days_of_week']}; included for {weekday}",
+            "calendar": f"MTCC 2023 timetable; runs {first['days_of_week']}",
             "source": "data/external/ferry_timetables/supplementary_trips.csv", "stops": stop_times,
+            "days": days,
         })
 
     network["stops"].extend(stops.values())
@@ -145,7 +147,7 @@ def add_mtcc(network: dict, index: IslandIndex, weekday: str) -> dict:
     network["services"].extend(services)
     network["meta"]["assumptions"].append({
         "id": "mtcc_2023_trips",
-        "value": f"{len(services)} MTCC trips from the 2023 all-atolls timetable run on {weekday}s in atolls with no RTL coverage (AA, ADh, K, V, M, Lh).",
+        "value": f"{len(services)} MTCC trips from the 2023 all-atolls timetable, with their running days, in atolls with no RTL coverage (AA, ADh, K, V, M, Lh); {len(services) - skipped_day} run on {weekday}s.",
         "confidence": "source",
         "source": "data/external/ferry_timetables/supplementary_trips.csv",
         "note": "Timetable dated 2023 (Wayback copy of mtcc.mv PDF); services may have changed since.",
@@ -215,7 +217,7 @@ def main() -> None:
     WEB_NETWORK.write_text(text, encoding="utf-8")
     if PROCESSED_NETWORK.parent.exists():
         PROCESSED_NETWORK.write_text(text, encoding="utf-8")
-    print(f"MTCC: {mtcc['trips']} trips, {mtcc['stops']} stops ({weekday}); {mtcc['otherDays']} trips run other days")
+    print(f"MTCC: {mtcc['trips']} trips, {mtcc['stops']} stops; {mtcc['otherDays']} do not run on {weekday}s")
     if mtcc["unmatched"]:
         print("  unmatched MTCC islands:", ", ".join(mtcc["unmatched"]))
     print(f"Observed boat links: {observed['links']}")

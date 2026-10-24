@@ -53,7 +53,14 @@ export interface MultimodalEngine {
   /** Same-day island-to-island travel times for siting (optional). */
   buildTravelMatrix?: (
     network: MultimodalNetwork,
-    options: { departureMinute: number; maxJourneyMinutes: number; allowedModes?: TravelMode[]; disabledRouteIds?: string[] },
+    options: {
+      departureMinute: number
+      maxJourneyMinutes: number
+      allowedModes?: TravelMode[]
+      disabledRouteIds?: string[]
+      disabledServiceIds?: string[]
+      dayOfWeek?: string
+    },
   ) => TravelMatrix
   recommendSites?: (
     network: MultimodalNetwork,

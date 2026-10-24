@@ -29,9 +29,12 @@ import type {
 } from '../../shared/routing/types'
 import fixtureNetwork from '#shared/routing/fixtures/sample-network.json'
 import { getMultimodalEngine } from '../utils/engine'
+import { classifyAccess, type AccessClass } from '../utils/classify'
 import type { CategoryAccess } from '../../shared/routing/nearby'
 import type { FareTable } from '../../shared/routing/cost'
 import type { SitingResult } from '../../shared/routing/recommend'
+import type { Traveller } from '../../shared/routing/cost'
+import { disabledByEvidence, EVIDENCE_LAYERS, type EvidenceKey } from '#shared/routing/evidence'
 import {
   buildAirportPoints,
   buildFacilityPoints,
@@ -185,6 +188,15 @@ const ACCESS_REPORT_OVERNIGHT_MVR = 950
 
 export type MapView = 'access' | 'underserved' | 'recommended'
 export type FacilityType = 'all' | 'health' | 'education'
+export interface ImpactStep {
+  label: string
+  reachable: number
+  within: number
+  total: number
+  /** Atoll residents (outside Greater Malé) reaching the category the same day. */
+  atollReachable: number
+  atollTotal: number
+}
 
 /** Report categories per facility type, nearest-first services that matter most. */
 const TYPE_CATEGORIES: Record<FacilityType, string[]> = {
@@ -192,7 +204,7 @@ const TYPE_CATEGORIES: Record<FacilityType, string[]> = {
   health: ['health_any', 'health_hospital', 'health_regional_tertiary'],
   education: ['education_school', 'education_grade_11_12', 'education_higher_ed'],
 }
-export type UnderservedClass = 'served' | 'over_threshold' | 'no_trip' | 'no_data'
+export type UnderservedClass = AccessClass
 
 export function useMultimodal() {
   // ---------------------------------------------------------------- data load
@@ -211,7 +223,15 @@ export function useMultimodal() {
   const mapView = ref<MapView>('access')
   /** Facility type filter for the minimal map and the island access report. */
   const facilityType = ref<FacilityType>('all')
+  /** Weekday the timetable is read for; MTCC trips only run on their published days. */
+  const dayOfWeek = ref<string>('Sat')
+  /** Evidence layers in use (RTL, MTCC 2023, observed boats, estimated flights, Malé ferry). */
+  const evidenceLayers = ref<EvidenceKey[]>(EVIDENCE_LAYERS.map((layer) => layer.key))
+  /** Fare rules: adult resident, 65+/disabled, student or approved emergency. */
+  const traveller = ref<Traveller>('adult')
   const siting = shallowRef<SitingResult | null>(null)
+  /** What each mode adds: residents reaching the category by road only, + sea, + air. */
+  const impact = shallowRef<ImpactStep[]>([])
   const sitingError = ref<string | null>(null)
   const islandsGeojson = shallowRef<FeatureCollection | null>(null)
   const geojsonLoaded = ref(false)
@@ -339,7 +359,10 @@ export function useMultimodal() {
   )
   const selectionKey = computed(
     () =>
-      `${landEnabled.value}|${seaEnabled.value}|${airEnabled.value}|${disabledFerryRouteIds.value.join(',')}|${disabledAirPairIds.value.join(',')}`,
+      `${landEnabled.value}|${seaEnabled.value}|${airEnabled.value}|${disabledFerryRouteIds.value.join(',')}|${disabledAirPairIds.value.join(',')}|${dayOfWeek.value}|${evidenceLayers.value.join(',')}`,
+  )
+  const evidenceDisabledServiceIds = computed(() =>
+    network.value ? disabledByEvidence(network.value, new Set(evidenceLayers.value)) : [],
   )
   const selectedOriginHasInfrastructure = computed(() =>
     hasInfrastructure.value.has(originIslandId.value),
@@ -654,6 +677,8 @@ export function useMultimodal() {
     return {
       allowedModes: allowedModes.value,
       disabledRouteIds: disabledRouteIds.value,
+      disabledServiceIds: evidenceDisabledServiceIds.value,
+      dayOfWeek: dayOfWeek.value,
       includeEstimatedAir: airEnabled.value,
     }
   }
@@ -688,6 +713,28 @@ export function useMultimodal() {
     try {
       const request = accessibilityRequest()
       const baseline = engine.computeAccessibility(baselineNetwork, request)
+      const steps: { label: string; modes: TravelMode[] }[] = [
+        { label: 'Road only', modes: ['land'] },
+        { label: '+ Ferries & boats', modes: ['land', 'sea'] },
+        { label: '+ Flights', modes: ['land', 'sea', 'air'] },
+      ]
+      impact.value = steps.map((step) => {
+        const result = engine.computeAccessibility(baselineNetwork, {
+          ...request,
+          allowedModes: step.modes,
+          includeEstimatedAir: step.modes.includes('air'),
+        })
+        const summary = result.summary
+        const atolls = splitByRegion(result, baselineNetwork.islands)?.atolls
+        return {
+          label: step.label,
+          reachable: summary.populationReachable,
+          within: summary[`within${threshold.value}` as 'within60'],
+          total: summary.populationTotal,
+          atollReachable: atolls ? atolls.onIsland + atolls.byTransport : 0,
+          atollTotal: atolls?.population ?? 0,
+        }
+      })
       const unfiltered = filterActive.value
         ? engine.computeAccessibility(baselineNetwork, {
             departureMinute: departureMinute.value,
@@ -806,7 +853,10 @@ export function useMultimodal() {
         categories: accessReportCategories(),
         allowedModes: allowedModes.value,
         disabledRouteIds: disabledRouteIds.value,
+        disabledServiceIds: evidenceDisabledServiceIds.value,
+        dayOfWeek: dayOfWeek.value,
         overnightMvr: overnightMvr.value,
+        traveller: traveller.value,
       })
       if (token !== accessReportToken) return
       accessReport.value = report
@@ -833,6 +883,8 @@ export function useMultimodal() {
         maxJourneyMinutes: threshold.value,
         allowedModes: allowedModes.value,
         disabledRouteIds: disabledRouteIds.value,
+        disabledServiceIds: evidenceDisabledServiceIds.value,
+        dayOfWeek: dayOfWeek.value,
       })
       siting.value = engine.recommendSites(active, matrix, {
         category: category.value,
@@ -852,13 +904,8 @@ export function useMultimodal() {
     const out: Record<string, UnderservedClass> = {}
     if (!result) return out
     for (const [islandId, access] of Object.entries(result.perOrigin)) {
-      if (access.status === 'reachable') {
-        out[islandId] = (access.journey?.elapsedMinutes ?? 0) <= threshold.value ? 'served' : 'over_threshold'
-      } else if (access.status === 'no_origin_access') {
-        out[islandId] = 'no_data'
-      } else if (access.status === 'not_reachable') {
-        out[islandId] = 'no_trip'
-      }
+      const cls = classifyAccess(access, threshold.value)
+      if (cls) out[islandId] = cls
     }
     return out
   })
@@ -1019,7 +1066,7 @@ export function useMultimodal() {
     seaEnabled.value = flags.sea
     airEnabled.value = flags.air
   })
-  watch([category, departureMinute, selectionKey, scenarioView], () => {
+  watch([category, departureMinute, selectionKey, scenarioView, threshold], () => {
     if (!controlsReady.value) return
     scheduleMetrics.run()
   })
@@ -1027,7 +1074,7 @@ export function useMultimodal() {
     if (!controlsReady.value) return
     scheduleJourney.run()
   })
-  watch([originIslandId, category, departureMinute, selectionKey, scenarioView, overnightMvr, fares, facilityType], () => {
+  watch([originIslandId, category, departureMinute, selectionKey, scenarioView, overnightMvr, fares, facilityType, traveller], () => {
     if (!controlsReady.value) return
     scheduleAccessReport.run()
   })
@@ -1466,7 +1513,11 @@ export function useMultimodal() {
     regionSplit,
     // map stories
     mapView,
+    impact,
     facilityType,
+    dayOfWeek,
+    evidenceLayers,
+    traveller,
     siting,
     sitingError,
     underservedClasses,

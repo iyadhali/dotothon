@@ -95,14 +95,14 @@
    },
    {
     "id": "mtcc_2023_trips",
-    "value": "21 MTCC trips from the 2023 all-atolls timetable run on Sats in atolls with no RTL coverage (AA, ADh, K, V, M, Lh).",
+    "value": "30 MTCC trips from the 2023 all-atolls timetable, with their running days, in atolls with no RTL coverage (AA, ADh, K, V, M, Lh); 21 run on Sats.",
     "confidence": "source",
     "source": "data/external/ferry_timetables/supplementary_trips.csv",
     "note": "Timetable dated 2023 (Wayback copy of mtcc.mv PDF); services may have changed since."
    },
    {
     "id": "observed_boat_links",
-    "value": "162 regular boat links observed in FollowMe GPS (Aug 2025) are added as estimated sea services where an island has no RTL/MTCC service.",
+    "value": "154 regular boat links observed in FollowMe GPS (Aug 2025) are added as estimated sea services where an island has no RTL/MTCC service.",
     "confidence": "estimated",
     "source": "data/processed/followme/observed_sea_links.csv",
     "note": "Any tracked boat (public, private, fishing); departures spread evenly over the observed hours. Switch off with route 'observed-boats'."
@@ -111,13 +111,13 @@
   "counts": {
    "islands": 200,
    "origins": 191,
-   "stops": 162,
+   "stops": 163,
    "airports": 20,
-   "ferryTrips": 123,
+   "ferryTrips": 132,
    "airServices": 62,
    "facilities": 945,
    "categories": 48,
-   "observedSeaLinks": 162
+   "observedSeaLinks": 154
   },
   "routingDefaults": {
    "ferryBoardMinutes": 15,
@@ -3650,6 +3650,15 @@
    "scheduled": true
   },
   {
+   "id": "MTCC:MV021001",
+   "code": "MV021001",
+   "name": "Maale",
+   "islandId": "MV021001",
+   "lat": 4.174686,
+   "lon": 73.51017,
+   "scheduled": true
+  },
+  {
    "id": "MTCC:MV020008",
    "code": "MV020008",
    "name": "Fenfushi",
@@ -3692,15 +3701,6 @@
    "islandId": "MV020006",
    "lat": 3.60761,
    "lon": 72.955746,
-   "scheduled": true
-  },
-  {
-   "id": "MTCC:MV021001",
-   "code": "MV021001",
-   "name": "Maale",
-   "islandId": "MV021001",
-   "lat": 4.174686,
-   "lon": 73.51017,
    "scheduled": true
   },
   {
@@ -3890,6 +3890,15 @@
    "islandId": "MV013006",
    "lat": 2.895561,
    "lon": 73.577563,
+   "scheduled": true
+  },
+  {
+   "id": "MTCC:MV013007",
+   "code": "MV013007",
+   "name": "Kolhufushi",
+   "islandId": "MV013007",
+   "lat": 2.777073,
+   "lon": 73.424982,
    "scheduled": true
   }
  ],
@@ -5614,6 +5623,15 @@
    "distanceKm": 0.3
   },
   {
+   "from": "island:MV021001",
+   "to": "stop:MTCC:MV021001",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
    "from": "island:MV020008",
    "to": "stop:MTCC:MV020008",
    "mode": "walk",
@@ -5652,15 +5670,6 @@
   {
    "from": "island:MV020006",
    "to": "stop:MTCC:MV020006",
-   "mode": "walk",
-   "minutes": 5,
-   "confidence": "estimated_access",
-   "basis": "island to MTCC jetty (island-level location)",
-   "distanceKm": 0.3
-  },
-  {
-   "from": "island:MV021001",
-   "to": "stop:MTCC:MV021001",
    "mode": "walk",
    "minutes": 5,
    "confidence": "estimated_access",
@@ -5850,6 +5859,15 @@
   {
    "from": "island:MV013006",
    "to": "stop:MTCC:MV013006",
+   "mode": "walk",
+   "minutes": 5,
+   "confidence": "estimated_access",
+   "basis": "island to MTCC jetty (island-level location)",
+   "distanceKm": 0.3
+  },
+  {
+   "from": "island:MV013007",
+   "to": "stop:MTCC:MV013007",
    "mode": "walk",
    "minutes": 5,
    "confidence": "estimated_access",
@@ -11657,7 +11675,7 @@
    "routeCode": "MTCC 207",
    "zone": "Zone 2",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -11709,6 +11727,14 @@
      "arrival": 580,
      "departure": 580
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -11720,7 +11746,7 @@
    "routeCode": "MTCC 207",
    "zone": "Zone 2",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -11772,6 +11798,14 @@
      "arrival": 1030,
      "departure": 1030
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -11783,7 +11817,7 @@
    "routeCode": "MTCC 301",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -11835,6 +11869,14 @@
      "arrival": 655,
      "departure": 655
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -11846,7 +11888,7 @@
    "routeCode": "MTCC 301",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -11898,6 +11940,14 @@
      "arrival": 1030,
      "departure": 1030
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -11909,7 +11959,7 @@
    "routeCode": "MTCC 302",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -11954,6 +12004,14 @@
      "arrival": 610,
      "departure": 610
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -11965,7 +12023,7 @@
    "routeCode": "MTCC 302",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12010,6 +12068,14 @@
      "arrival": 1030,
      "departure": 1030
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12021,7 +12087,7 @@
    "routeCode": "MTCC 303",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Tue; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Tue",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12038,6 +12104,10 @@
      "arrival": 490,
      "departure": 490
     }
+   ],
+   "days": [
+    "Sat",
+    "Tue"
    ]
   },
   {
@@ -12049,7 +12119,7 @@
    "routeCode": "MTCC 303",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Tue; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Tue",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12066,6 +12136,116 @@
      "arrival": 980,
      "departure": 980
     }
+   ],
+   "days": [
+    "Sat",
+    "Tue"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC303-03",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-303",
+   "routeCode": "MTCC 303",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sun,Wed",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV008001",
+     "name": "Thoddoo",
+     "sequence": 1,
+     "arrival": 390,
+     "departure": 390
+    },
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 2,
+     "arrival": 460,
+     "departure": 465
+    },
+    {
+     "stopId": "MTCC:MV008003",
+     "name": "Ukulhas",
+     "sequence": 3,
+     "arrival": 515,
+     "departure": 585
+    },
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 4,
+     "arrival": 635,
+     "departure": 660
+    },
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 5,
+     "arrival": 850,
+     "departure": 850
+    }
+   ],
+   "days": [
+    "Sun",
+    "Wed"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC303-04",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-303",
+   "routeCode": "MTCC 303",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Mon,Thu",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 1,
+     "arrival": 540,
+     "departure": 540
+    },
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 2,
+     "arrival": 730,
+     "departure": 735
+    },
+    {
+     "stopId": "MTCC:MV008003",
+     "name": "Ukulhas",
+     "sequence": 3,
+     "arrival": 785,
+     "departure": 840
+    },
+    {
+     "stopId": "MTCC:MV008002",
+     "name": "Rasdhoo",
+     "sequence": 4,
+     "arrival": 890,
+     "departure": 910
+    },
+    {
+     "stopId": "MTCC:MV008001",
+     "name": "Thoddoo",
+     "sequence": 5,
+     "arrival": 980,
+     "departure": 980
+    }
+   ],
+   "days": [
+    "Mon",
+    "Thu"
    ]
   },
   {
@@ -12077,7 +12257,7 @@
    "routeCode": "MTCC 304",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12122,6 +12302,14 @@
      "arrival": 580,
      "departure": 580
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12133,7 +12321,7 @@
    "routeCode": "MTCC 304",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12178,6 +12366,14 @@
      "arrival": 1000,
      "departure": 1000
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12189,7 +12385,7 @@
    "routeCode": "MTCC 305",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12206,6 +12402,44 @@
      "arrival": 760,
      "departure": 760
     }
+   ],
+   "days": [
+    "Sat",
+    "Mon",
+    "Wed"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC305-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-305",
+   "routeCode": "MTCC 305",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sun,Tue,Thu",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV020004",
+     "name": "Mahibadhoo",
+     "sequence": 1,
+     "arrival": 660,
+     "departure": 660
+    },
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 2,
+     "arrival": 920,
+     "departure": 920
+    }
+   ],
+   "days": [
+    "Sun",
+    "Tue",
+    "Thu"
    ]
   },
   {
@@ -12217,7 +12451,7 @@
    "routeCode": "MTCC 306",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12269,6 +12503,79 @@
      "arrival": 845,
      "departure": 845
     }
+   ],
+   "days": [
+    "Sat",
+    "Mon",
+    "Wed"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC306-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-306",
+   "routeCode": "MTCC 306",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sun,Tue,Thu",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 1,
+     "arrival": 600,
+     "departure": 600
+    },
+    {
+     "stopId": "MTCC:MV009008",
+     "name": "Maafushi",
+     "sequence": 2,
+     "arrival": 690,
+     "departure": 695
+    },
+    {
+     "stopId": "MTCC:MV010001",
+     "name": "Fulidhoo",
+     "sequence": 3,
+     "arrival": 800,
+     "departure": 810
+    },
+    {
+     "stopId": "MTCC:MV010002",
+     "name": "Thinadhoo",
+     "sequence": 4,
+     "arrival": 900,
+     "departure": 905
+    },
+    {
+     "stopId": "MTCC:MV010003",
+     "name": "Felidhoo",
+     "sequence": 5,
+     "arrival": 915,
+     "departure": 920
+    },
+    {
+     "stopId": "MTCC:MV010004",
+     "name": "Keyodhoo",
+     "sequence": 6,
+     "arrival": 930,
+     "departure": 935
+    },
+    {
+     "stopId": "MTCC:MV010005",
+     "name": "Rakeedhoo",
+     "sequence": 7,
+     "arrival": 1010,
+     "departure": 1010
+    }
+   ],
+   "days": [
+    "Sun",
+    "Tue",
+    "Thu"
    ]
   },
   {
@@ -12280,7 +12587,7 @@
    "routeCode": "MTCC 307",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Mon,Wed",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12304,6 +12611,51 @@
      "arrival": 710,
      "departure": 710
     }
+   ],
+   "days": [
+    "Sat",
+    "Mon",
+    "Wed"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC307-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-307",
+   "routeCode": "MTCC 307",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Sun,Tue,Thu",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV021001",
+     "name": "Maale",
+     "sequence": 1,
+     "arrival": 645,
+     "departure": 645
+    },
+    {
+     "stopId": "MTCC:MV009002",
+     "name": "Gaafaru",
+     "sequence": 2,
+     "arrival": 845,
+     "departure": 855
+    },
+    {
+     "stopId": "MTCC:MV009001",
+     "name": "Kaashidhoo",
+     "sequence": 3,
+     "arrival": 935,
+     "departure": 935
+    }
+   ],
+   "days": [
+    "Sun",
+    "Tue",
+    "Thu"
    ]
   },
   {
@@ -12315,7 +12667,7 @@
    "routeCode": "MTCC 308",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12353,6 +12705,14 @@
      "arrival": 520,
      "departure": 520
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12364,7 +12724,7 @@
    "routeCode": "MTCC 308",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12402,6 +12762,14 @@
      "arrival": 1000,
      "departure": 1000
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12413,7 +12781,7 @@
    "routeCode": "MTCC 309",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12444,6 +12812,14 @@
      "arrival": 545,
      "departure": 545
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12455,7 +12831,7 @@
    "routeCode": "MTCC 309",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12486,6 +12862,14 @@
      "arrival": 1025,
      "departure": 1025
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12497,7 +12881,7 @@
    "routeCode": "MTCC 310",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12528,6 +12912,14 @@
      "arrival": 550,
      "departure": 550
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12539,7 +12931,7 @@
    "routeCode": "MTCC 310",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun,Mon,Tue,Wed,Thu",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12570,6 +12962,14 @@
      "arrival": 1000,
      "departure": 1000
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
    ]
   },
   {
@@ -12581,7 +12981,7 @@
    "routeCode": "MTCC 401",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12640,6 +13040,10 @@
      "arrival": 610,
      "departure": 610
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun"
    ]
   },
   {
@@ -12651,7 +13055,7 @@
    "routeCode": "MTCC 401",
    "zone": "Zone 3",
    "confidence": "verified_timetable",
-   "calendar": "MTCC 2023 timetable; runs Sat,Sun; included for Sat",
+   "calendar": "MTCC 2023 timetable; runs Sat,Sun",
    "source": "data/external/ferry_timetables/supplementary_trips.csv",
    "stops": [
     {
@@ -12696,6 +13100,276 @@
      "arrival": 975,
      "departure": 975
     }
+   ],
+   "days": [
+    "Sat",
+    "Sun"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC402-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-402",
+   "routeCode": "MTCC 402",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Mon",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV013008",
+     "name": "Dhiggaru",
+     "sequence": 1,
+     "arrival": 420,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV013009",
+     "name": "Maduvvari",
+     "sequence": 2,
+     "arrival": 435,
+     "departure": 440
+    },
+    {
+     "stopId": "MTCC:MV013001",
+     "name": "Raimandhoo",
+     "sequence": 3,
+     "arrival": 470,
+     "departure": 480
+    },
+    {
+     "stopId": "MTCC:MV013003",
+     "name": "Veyvah",
+     "sequence": 4,
+     "arrival": 535,
+     "departure": 540
+    },
+    {
+     "stopId": "MTCC:MV013004",
+     "name": "Mulah",
+     "sequence": 5,
+     "arrival": 555,
+     "departure": 560
+    },
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 6,
+     "arrival": 575,
+     "departure": 660
+    },
+    {
+     "stopId": "MTCC:MV013006",
+     "name": "Naalaafushi",
+     "sequence": 7,
+     "arrival": 675,
+     "departure": 680
+    },
+    {
+     "stopId": "MTCC:MV013007",
+     "name": "Kolhufushi",
+     "sequence": 8,
+     "arrival": 770,
+     "departure": 770
+    }
+   ],
+   "days": [
+    "Mon"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC403-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-403",
+   "routeCode": "MTCC 403",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Tue,Wed",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV013007",
+     "name": "Kolhufushi",
+     "sequence": 1,
+     "arrival": 420,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV013006",
+     "name": "Naalaafushi",
+     "sequence": 2,
+     "arrival": 510,
+     "departure": 515
+    },
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 3,
+     "arrival": 525,
+     "departure": 530
+    },
+    {
+     "stopId": "MTCC:MV013003",
+     "name": "Veyvah",
+     "sequence": 4,
+     "arrival": 550,
+     "departure": 555
+    },
+    {
+     "stopId": "MTCC:MV013004",
+     "name": "Mulah",
+     "sequence": 5,
+     "arrival": 570,
+     "departure": 575
+    },
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 6,
+     "arrival": 590,
+     "departure": 590
+    }
+   ],
+   "days": [
+    "Tue",
+    "Wed"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC403-02",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-403",
+   "routeCode": "MTCC 403",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Tue,Wed",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 1,
+     "arrival": 750,
+     "departure": 750
+    },
+    {
+     "stopId": "MTCC:MV013004",
+     "name": "Mulah",
+     "sequence": 2,
+     "arrival": 765,
+     "departure": 770
+    },
+    {
+     "stopId": "MTCC:MV013003",
+     "name": "Veyvah",
+     "sequence": 3,
+     "arrival": 795,
+     "departure": 800
+    },
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 4,
+     "arrival": 815,
+     "departure": 825
+    },
+    {
+     "stopId": "MTCC:MV013006",
+     "name": "Naalaafushi",
+     "sequence": 5,
+     "arrival": 840,
+     "departure": 845
+    },
+    {
+     "stopId": "MTCC:MV013007",
+     "name": "Kolhufushi",
+     "sequence": 6,
+     "arrival": 935,
+     "departure": 935
+    }
+   ],
+   "days": [
+    "Tue",
+    "Wed"
+   ]
+  },
+  {
+   "id": "mtcc:MTCC404-01",
+   "kind": "timetabled",
+   "mode": "ferry",
+   "operator": "MTCC",
+   "routeId": "MTCC-404",
+   "routeCode": "MTCC 404",
+   "zone": "Zone 3",
+   "confidence": "verified_timetable",
+   "calendar": "MTCC 2023 timetable; runs Thu",
+   "source": "data/external/ferry_timetables/supplementary_trips.csv",
+   "stops": [
+    {
+     "stopId": "MTCC:MV013007",
+     "name": "Kolhufushi",
+     "sequence": 1,
+     "arrival": 420,
+     "departure": 420
+    },
+    {
+     "stopId": "MTCC:MV013006",
+     "name": "Naalaafushi",
+     "sequence": 2,
+     "arrival": 510,
+     "departure": 515
+    },
+    {
+     "stopId": "MTCC:MV013005",
+     "name": "Muli",
+     "sequence": 3,
+     "arrival": 525,
+     "departure": 600
+    },
+    {
+     "stopId": "MTCC:MV013004",
+     "name": "Mulah",
+     "sequence": 4,
+     "arrival": 615,
+     "departure": 625
+    },
+    {
+     "stopId": "MTCC:MV013003",
+     "name": "Veyvah",
+     "sequence": 5,
+     "arrival": 645,
+     "departure": 650
+    },
+    {
+     "stopId": "MTCC:MV013001",
+     "name": "Raimandhoo",
+     "sequence": 6,
+     "arrival": 705,
+     "departure": 710
+    },
+    {
+     "stopId": "MTCC:MV013009",
+     "name": "Maduvvari",
+     "sequence": 7,
+     "arrival": 735,
+     "departure": 740
+    },
+    {
+     "stopId": "MTCC:MV013008",
+     "name": "Dhiggaru",
+     "sequence": 8,
+     "arrival": 755,
+     "departure": 755
+    }
+   ],
+   "days": [
+    "Thu"
    ]
   },
   {
@@ -12726,35 +13400,6 @@
     1065,
     1121,
     1177
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
-   "id": "observed:MV021001-MV009008",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Maale \u2192 Maafushi",
-   "fromNode": "island:MV021001",
-   "toNode": "island:MV009008",
-   "weeklyFrequency": 55.1,
-   "departuresPerDay": 8,
-   "operatingWindow": {
-    "start": 544,
-    "end": 1320
-   },
-   "blockMinutes": 30,
-   "departures": [
-    544,
-    641,
-    738,
-    835,
-    932,
-    1029,
-    1126,
-    1223
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -13394,30 +14039,6 @@
    "source": "data/processed/followme/observed_sea_links.csv"
   },
   {
-   "id": "observed:MV010001-MV010002",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Fulidhoo \u2192 Thinadhoo",
-   "fromNode": "island:MV010001",
-   "toNode": "island:MV010002",
-   "weeklyFrequency": 18.8,
-   "departuresPerDay": 3,
-   "operatingWindow": {
-    "start": 669,
-    "end": 1051
-   },
-   "blockMinutes": 27,
-   "departures": [
-    669,
-    796,
-    923
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
    "id": "observed:MV005001-MV005002",
    "kind": "frequency",
    "mode": "sea",
@@ -13811,29 +14432,6 @@
    "source": "data/processed/followme/observed_sea_links.csv"
   },
   {
-   "id": "observed:MV009002-MV009001",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Gaafaru \u2192 Kaashidhoo",
-   "fromNode": "island:MV009002",
-   "toNode": "island:MV009001",
-   "weeklyFrequency": 11.5,
-   "departuresPerDay": 2,
-   "operatingWindow": {
-    "start": 673,
-    "end": 1126
-   },
-   "blockMinutes": 37,
-   "departures": [
-    673,
-    899
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
    "id": "observed:MV020001-MV021001",
    "kind": "frequency",
    "mode": "sea",
@@ -14164,28 +14762,6 @@
    "blockMinutes": 103,
    "departures": [
     659
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
-   "id": "observed:MV008002-MV021001",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Rasdhoo \u2192 Maale",
-   "fromNode": "island:MV008002",
-   "toNode": "island:MV021001",
-   "weeklyFrequency": 8.3,
-   "departuresPerDay": 1,
-   "operatingWindow": {
-    "start": 395,
-    "end": 796
-   },
-   "blockMinutes": 61,
-   "departures": [
-    395
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -14758,28 +15334,6 @@
    "blockMinutes": 24,
    "departures": [
     364
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
-   "id": "observed:MV020004-MV021001",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Mahibadhoo \u2192 Maale",
-   "fromNode": "island:MV020004",
-   "toNode": "island:MV021001",
-   "weeklyFrequency": 6.6,
-   "departuresPerDay": 1,
-   "operatingWindow": {
-    "start": 436,
-    "end": 875
-   },
-   "blockMinutes": 94,
-   "departures": [
-    436
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
@@ -15380,28 +15934,6 @@
    "source": "data/processed/followme/observed_sea_links.csv"
   },
   {
-   "id": "observed:MV021001-MV008002",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Maale \u2192 Rasdhoo",
-   "fromNode": "island:MV021001",
-   "toNode": "island:MV008002",
-   "weeklyFrequency": 5.2,
-   "departuresPerDay": 1,
-   "operatingWindow": {
-    "start": 604,
-    "end": 1011
-   },
-   "blockMinutes": 73,
-   "departures": [
-    604
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
    "id": "observed:MV021003-MV009004",
    "kind": "frequency",
    "mode": "sea",
@@ -15754,28 +16286,6 @@
    "source": "data/processed/followme/observed_sea_links.csv"
   },
   {
-   "id": "observed:MV009008-MV010001",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Maafushi \u2192 Fulidhoo",
-   "fromNode": "island:MV009008",
-   "toNode": "island:MV010001",
-   "weeklyFrequency": 4.8,
-   "departuresPerDay": 1,
-   "operatingWindow": {
-    "start": 594,
-    "end": 980
-   },
-   "blockMinutes": 110,
-   "departures": [
-    594
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
    "id": "observed:MV002008-MV002005",
    "kind": "frequency",
    "mode": "sea",
@@ -16122,28 +16632,6 @@
    "blockMinutes": 21,
    "departures": [
     578
-   ],
-   "confidence": "estimated_frequency",
-   "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",
-   "source": "data/processed/followme/observed_sea_links.csv"
-  },
-  {
-   "id": "observed:MV021001-MV009002",
-   "kind": "frequency",
-   "mode": "sea",
-   "routeId": "observed-boats",
-   "label": "Observed boats Maale \u2192 Gaafaru",
-   "fromNode": "island:MV021001",
-   "toNode": "island:MV009002",
-   "weeklyFrequency": 3.9,
-   "departuresPerDay": 1,
-   "operatingWindow": {
-    "start": 543,
-    "end": 902
-   },
-   "blockMinutes": 201,
-   "departures": [
-    543
    ],
    "confidence": "estimated_frequency",
    "status": "observed boat traffic (FollowMe GPS, Aug 2025); not a public timetable",

@@ -152,7 +152,7 @@ const rowsByIsland = computed(() => {
               <span v-if="group.reachable" class="mm-tag mm-tag--good">
                 {{ group.minutes !== null ? formatDuration(group.minutes) : 'Reachable' }}
               </span>
-              <span v-else class="mm-tag mm-tag--muted">Not reachable</span>
+              <span v-else class="mm-tag mm-tag--muted">No same-day trip</span>
             </div>
             <ul class="mm-intervention__facilities">
               <li v-for="row in group.rows" :key="row.facilityId" class="mm-intervention__facility">

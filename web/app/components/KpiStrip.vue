@@ -165,13 +165,13 @@ function barStyle(share: number): Record<string, string> {
 
       <article
         class="mm-kpi"
-        :aria-label="`No origin access: ${formatPopulation(summary.noOriginAccessPopulation)} residents, ${formatPercent(noAccessShare)} of the origin population`"
+        :aria-label="`No transport data: ${formatPopulation(summary.noOriginAccessPopulation)} residents, ${formatPercent(noAccessShare)} of the origin population`"
       >
         <span class="mm-kpi__visual" aria-hidden="true">
           <span class="mm-bar mm-bar--gap"><span :style="barStyle(noAccessShare)" /></span>
         </span>
         <div class="mm-kpi__body">
-          <span class="mm-kpi__label">No origin access</span>
+          <span class="mm-kpi__label">No transport data</span>
           <strong class="mm-kpi__value">{{ formatPopulation(summary.noOriginAccessPopulation) }}</strong>
           <span class="mm-kpi__insight">{{ noAccessInsight }}</span>
         </div>

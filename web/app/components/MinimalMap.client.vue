@@ -5,6 +5,7 @@ import type { Feature, FeatureCollection } from 'geojson'
 import type { Island } from '../../shared/routing/types'
 import type { Destination, FacilityIsland, JourneyPath, RoutePath } from '../utils/routes'
 import { formatPopulation } from '../utils/format'
+import { ACCESS_CLASS_COLORS } from '../utils/classify'
 
 const props = defineProps<{
   islands: Island[]
@@ -36,10 +37,7 @@ const COLORS = {
   journeyFerry: '#0284c7',
   journeyAir: '#7c3aed',
   journeyOther: '#475569',
-  served: '#cbd5e1',
-  over_threshold: '#f59e0b',
-  no_trip: '#dc2626',
-  no_data: '#ffffff',
+  ...ACCESS_CLASS_COLORS,
   covered: '#16a34a',
 }
 
@@ -90,7 +88,7 @@ function facilityFeatures(): FeatureCollection {
     props.facilities.map((facility) => ({
       type: 'Feature',
       geometry: { type: 'Point', coordinates: [facility.lon, facility.lat] },
-      properties: { kind: facility.kind, count: facility.count },
+      properties: { kind: facility.kind, count: facility.count, major: facility.major ? 1 : 0 },
     })),
   )
 }
@@ -206,7 +204,9 @@ function addLayers(): void {
     paint: {
       'circle-color': ['match', ['get', 'kind'], 'health', COLORS.health, 'education', COLORS.education,
         COLORS.both] as unknown as string,
-      'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 3, 9, 6] as unknown as number,
+      'circle-radius': ['interpolate', ['linear'], ['zoom'],
+        5, ['case', ['==', ['get', 'major'], 1], 4.5, 2.5],
+        9, ['case', ['==', ['get', 'major'], 1], 8, 5]] as unknown as number,
       'circle-stroke-color': '#ffffff',
       'circle-stroke-width': 1,
       'circle-opacity': 0.95,

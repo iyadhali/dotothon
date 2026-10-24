@@ -53,6 +53,7 @@ export function buildTravelMatrix(
         allowedModes: options.allowedModes,
         disabledRouteIds: options.disabledRouteIds,
         disabledServiceIds: options.disabledServiceIds,
+        dayOfWeek: options.dayOfWeek,
       }),
     )
   }

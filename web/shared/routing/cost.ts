@@ -11,6 +11,19 @@ import type { Journey, JourneyLeg, MultimodalNetwork } from './types'
 
 export type FareConfidence = 'sourced' | 'estimated' | 'assumption'
 
+/**
+ * Who is travelling. Concessions are zero-fare rules from the RTL / Greater Malé tariffs
+ * (research/13_sea_land_fares.md); approved emergency transfers are paid by Aasandha.
+ */
+export type Traveller = 'adult' | 'senior' | 'student' | 'emergency'
+
+export const TRAVELLERS: { key: Traveller; label: string; note: string }[] = [
+  { key: 'adult', label: 'Adult resident', note: 'Full resident fares' },
+  { key: 'senior', label: '65+ or disabled', note: 'RTL and Malé ferries free; flights full fare' },
+  { key: 'student', label: 'Student', note: 'Malé ferry free; atoll ferries and flights full fare' },
+  { key: 'emergency', label: 'Emergency patient', note: 'Approved emergency transfer: Aasandha pays' },
+]
+
 /** Fare as `a + b × km`, or a flat amount when `b` is 0. */
 export interface FareModel {
   aMvr: number
@@ -149,9 +162,36 @@ function priceLeg(network: MultimodalNetwork, fares: FareTable, leg: JourneyLeg)
   return { mvr: null, basis: `No fare rule for ${leg.mode}`, confidence: 'unknown' }
 }
 
+/** Apply a traveller's concession to a priced leg. */
+function applyTraveller(leg: JourneyLeg, cost: Omit<LegCost, 'leg'>, traveller: Traveller, fares: FareTable): Omit<LegCost, 'leg'> {
+  if (cost.confidence === 'free') return cost
+  if (traveller === 'emergency') {
+    return { mvr: 0, basis: 'Approved emergency transfer: paid by Aasandha', confidence: 'sourced' }
+  }
+  const id = leg.serviceId ?? ''
+  const maleFerry = id !== '' && fares.serviceFares?.[id] !== undefined
+  // RTL timetabled ferries use `ferry:<route>:<trip>` ids; MTCC and observed boats are excluded.
+  const rtlFerry = leg.kind === 'ferry' && id.startsWith('ferry:') && !maleFerry
+  if (traveller === 'senior' && (rtlFerry || maleFerry)) {
+    return { mvr: 0, basis: 'Free for people aged 65+ and disabled people (RTL)', confidence: 'sourced' }
+  }
+  if (traveller === 'student' && maleFerry) {
+    return { mvr: 0, basis: 'Free for students on Greater Malé ferries', confidence: 'sourced' }
+  }
+  return cost
+}
+
 /** Price every leg of `journey`. A 0-minute (same island) journey costs nothing. */
-export function estimateJourneyCost(network: MultimodalNetwork, fares: FareTable, journey: Journey): JourneyCost {
-  const legs: LegCost[] = journey.legs.map((leg) => ({ leg, ...priceLeg(network, fares, leg) }))
+export function estimateJourneyCost(
+  network: MultimodalNetwork,
+  fares: FareTable,
+  journey: Journey,
+  traveller: Traveller = 'adult',
+): JourneyCost {
+  const legs: LegCost[] = journey.legs.map((leg) => ({
+    leg,
+    ...applyTraveller(leg, priceLeg(network, fares, leg), traveller, fares),
+  }))
   let knownMvr = 0
   let unknownLegs = 0
   let worst: FareConfidence | 'free' = 'free'

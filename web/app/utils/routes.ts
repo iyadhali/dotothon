@@ -307,6 +307,8 @@ export interface FacilityIsland {
   lat: number
   kind: 'health' | 'education' | 'both'
   count: number
+  /** Has a key service (hospital, grade 11-12 or higher education): drawn larger. */
+  major?: boolean
 }
 
 /** A labelled destination island for the selected origin. */

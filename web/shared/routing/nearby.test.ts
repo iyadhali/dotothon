@@ -191,3 +191,52 @@ test('siting: picks never cover the same residents twice and gains add up', asyn
     assert.ok((result.sites[i]?.gainPopulation ?? 0) <= (result.sites[i - 1]?.gainPopulation ?? 0))
   }
 })
+
+test('calendar: a service that does not run on the chosen weekday is removed', () => {
+  const network = loadFixture()
+  for (const service of network.services) if (service.id === 'ferry:259:1') service.days = ['Mon']
+  const request = { originIslandId: DHARAVANDHOO, departureMinute: 14 * 60 + 5, category: 'health_hospital', includeEstimatedAir: false }
+  const monday = planJourney(network, { ...request, dayOfWeek: 'Mon' })
+  const saturday = planJourney(network, { ...request, dayOfWeek: 'Sat' })
+  assert.ok(monday, 'runs on Monday')
+  assert.ok(!saturday || saturday.arrivalMinute > monday.arrivalMinute, 'Saturday cannot use the Monday-only ferry')
+})
+
+test('fares: 65+ ride RTL ferries free, emergencies cost nothing, flights stay full fare', async () => {
+  const network = loadFixture()
+  const ferryJourney = planJourney(network, {
+    originIslandId: DHARAVANDHOO,
+    departureMinute: 14 * 60 + 5,
+    category: 'health_hospital',
+    includeEstimatedAir: false,
+  }) as Journey
+  const adult = estimateJourneyCost(network, FARES, ferryJourney, 'adult')
+  const senior = estimateJourneyCost(network, FARES, ferryJourney, 'senior')
+  assert.ok(adult.knownMvr > 0)
+  assert.equal(senior.knownMvr, 0)
+  assert.equal(estimateJourneyCost(network, FARES, ferryJourney, 'emergency').knownMvr, 0)
+
+  const flight = planJourney(network, {
+    originIslandId: DHARAVANDHOO,
+    departureMinute: 6 * 60,
+    category: 'health_regional_tertiary',
+    includeEstimatedAir: true,
+  }) as Journey
+  const seniorFlight = estimateJourneyCost(network, FARES, flight, 'senior')
+  assert.ok(seniorFlight.legs.some((leg) => leg.leg.kind === 'air' && leg.mvr === 1435), 'no air concession')
+})
+
+test('evidence: journeys are labelled and layers can be switched off', async () => {
+  const { journeyEvidence, disabledByEvidence } = await import('./evidence.ts')
+  const network = loadFixture()
+  const journey = planJourney(network, {
+    originIslandId: DHARAVANDHOO,
+    departureMinute: 14 * 60 + 5,
+    category: 'health_hospital',
+    includeEstimatedAir: false,
+  }) as Journey
+  assert.deepEqual(journeyEvidence(network, journey).map((layer) => layer.key), ['rtl'])
+  const noAir = disabledByEvidence(network, new Set(['rtl', 'mtcc', 'observed', 'male_ferry']))
+  assert.ok(noAir.length > 0 && noAir.every((id) => network.services.find((s) => s.id === id)?.mode === 'air'))
+  assert.deepEqual(disabledByEvidence(network, new Set(['rtl', 'mtcc', 'observed', 'air', 'male_ferry'])), [])
+})

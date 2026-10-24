@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useMultimodal, type FacilityType, type MapView } from '../composables/useMultimodal'
 import type { DestinationAccess } from '../../shared/routing/nearby'
 import { formatClock, formatClockWithDay, formatDuration, formatPopulation } from '../utils/format'
 import { journeyPaths, type Destination, type FacilityIsland, type JourneyPath } from '../utils/routes'
+import { ACCESS_CLASSES, accessClassLabel, type AccessClass } from '../utils/classify'
+import { EVIDENCE_LAYERS, journeyEvidence } from '#shared/routing/evidence'
+import { TRAVELLERS } from '#shared/routing/cost'
 
 const store = useMultimodal()
 const {
@@ -21,7 +24,45 @@ const {
   underservedClasses,
   siting,
   selectOrigin,
+  dayOfWeek,
+  evidenceLayers,
+  traveller,
+  impact,
 } = store
+
+const impactMax = computed(() => Math.max(1, ...impact.value.map((step) => step.atollTotal)))
+const pct = (value: number, total: number) => (total > 0 ? `${Math.round((100 * value) / total)}%` : '—')
+
+const DAYS = ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri']
+const layersOpen = ref(false)
+/** `?map=svg` forces the token-free fallback map (also used when Mapbox / WebGL fails). */
+const forceSvg = ref(false)
+onMounted(() => {
+  forceSvg.value = new URLSearchParams(window.location.search).get('map') === 'svg'
+  const island = new URLSearchParams(window.location.search).get('island')
+  if (island) {
+    const match = origins.value.find((candidate) => candidate.name.toLowerCase() === island.toLowerCase())
+    if (match) select(match.id)
+  }
+})
+watch(origins, (list) => {
+  const island = import.meta.client ? new URLSearchParams(window.location.search).get('island') : null
+  if (island && !selectedId.value) {
+    const match = list.find((candidate) => candidate.name.toLowerCase() === island.toLowerCase())
+    if (match) select(match.id)
+  }
+})
+const useSvg = computed(() => forceSvg.value || mapFailed.value !== '')
+
+function toggleLayer(key: (typeof EVIDENCE_LAYERS)[number]['key']): void {
+  evidenceLayers.value = evidenceLayers.value.includes(key)
+    ? evidenceLayers.value.filter((item) => item !== key)
+    : [...evidenceLayers.value, key]
+}
+
+function evidenceTags(destination: DestinationAccess) {
+  return network.value ? journeyEvidence(network.value, destination.journey) : []
+}
 
 /** null = nothing selected: show the whole network. */
 const selectedId = ref<string | null>(null)
@@ -122,19 +163,26 @@ const facilityIslands = computed<FacilityIsland[]>(() => {
   const net = network.value
   if (!net) return []
   const islands = new Map(net.islands.map((island) => [island.id, island]))
-  const byIsland = new Map<string, { health: number; education: number }>()
+  // "All" highlights key services (hospitals; grade 11-12 or higher education) because almost
+  // every island has a health centre and a school. Health / Education show every facility.
+  const KEY_HEALTH = ['health_hospital', 'health_regional_tertiary']
+  const KEY_EDUCATION = ['education_grade_11_12', 'education_higher_ed']
+  const byIsland = new Map<string, { health: number; education: number; major: boolean }>()
   for (const facility of net.facilities) {
     if (facility.serviceCategories?.length && !facility.categories.some((c) => !c.startsWith('service:'))) continue
     if (facilityType.value !== 'all' && facility.kind !== facilityType.value) continue
-    const entry = byIsland.get(facility.islandId) ?? { health: 0, education: 0 }
+    const key = facility.categories.some((c) => (facility.kind === 'health' ? KEY_HEALTH : KEY_EDUCATION).includes(c))
+    if (facilityType.value === 'all' && !key) continue
+    const entry = byIsland.get(facility.islandId) ?? { health: 0, education: 0, major: false }
     entry[facility.kind] += 1
+    entry.major = entry.major || key
     byIsland.set(facility.islandId, entry)
   }
   return [...byIsland.entries()].flatMap(([islandId, counts]) => {
     const island = islands.get(islandId)
     if (!island) return []
     const kind: FacilityIsland['kind'] = counts.health && counts.education ? 'both' : counts.health ? 'health' : 'education'
-    return [{ islandId, lon: island.lon, lat: island.lat, kind, count: counts.health + counts.education }]
+    return [{ islandId, lon: island.lon, lat: island.lat, kind, count: counts.health + counts.education, major: counts.major }]
   })
 })
 
@@ -176,17 +224,12 @@ const destinations = computed<Destination[]>(() => {
 const facilityCount = computed(() => facilityIslands.value.reduce((sum, item) => sum + item.count, 0))
 
 const underservedLegend = computed(() => {
-  const totals: Record<string, number> = { served: 0, over_threshold: 0, no_trip: 0, no_data: 0 }
+  const totals: Record<AccessClass, number> = { served: 0, over_threshold: 0, no_trip: 0, no_data: 0 }
   for (const island of network.value?.islands ?? []) {
     const cls = underservedClasses.value[island.id]
-    if (island.isOrigin && cls) totals[cls] = (totals[cls] ?? 0) + island.population
+    if (island.isOrigin && cls) totals[cls] += island.population
   }
-  return [
-    { key: 'served', label: `Within ${threshold.value} min`, value: totals.served },
-    { key: 'over_threshold', label: 'Reachable, slower', value: totals.over_threshold },
-    { key: 'no_trip', label: 'No same-day trip', value: totals.no_trip },
-    { key: 'no_data', label: 'No transport data', value: totals.no_data },
-  ]
+  return ACCESS_CLASSES.map((key) => ({ key, label: accessClassLabel(key, threshold.value), value: totals[key] }))
 })
 
 function fare(destination: DestinationAccess): string {
@@ -228,9 +271,27 @@ function homeText(destination: DestinationAccess): string {
             {{ item.label }}
           </button>
         </div>
+        <select v-model="dayOfWeek" class="am-select" aria-label="Day of week">
+          <option v-for="day in DAYS" :key="day" :value="day">{{ day }}</option>
+        </select>
         <select v-model.number="departureMinute" class="am-select" aria-label="Departure time">
           <option v-for="minute in DEPARTURES" :key="minute" :value="minute">Leave {{ formatClock(minute) }}</option>
         </select>
+        <select v-model="traveller" class="am-select" aria-label="Traveller">
+          <option v-for="item in TRAVELLERS" :key="item.key" :value="item.key">{{ item.label }}</option>
+        </select>
+        <div class="am-layers">
+          <button type="button" class="am-select am-layers__btn" :aria-expanded="layersOpen" @click="layersOpen = !layersOpen">
+            Data {{ evidenceLayers.length }}/{{ EVIDENCE_LAYERS.length }}
+          </button>
+          <div v-if="layersOpen" class="am-layers__menu">
+            <label v-for="layer in EVIDENCE_LAYERS" :key="layer.key">
+              <input type="checkbox" :checked="evidenceLayers.includes(layer.key)" @change="toggleLayer(layer.key)" />
+              <span>{{ layer.label }}</span>
+            </label>
+            <p>Precedence: RTL, then MTCC 2023 where RTL does not run, then observed boats where no timetable exists.</p>
+          </div>
+        </div>
         <div class="am-search">
           <input
             v-model="search"
@@ -268,7 +329,21 @@ function homeText(destination: DestinationAccess): string {
     <main class="am-stage">
       <div v-if="dataStatus === 'loading'" class="am-loading">Loading network…</div>
       <ClientOnly v-else>
+        <FallbackMap
+          v-if="useSvg"
+          :islands="network?.islands ?? []"
+          :routes="routePaths"
+          :facilities="facilityIslands"
+          :selected-island-id="mapView === 'access' ? selectedId : null"
+          :journeys="mapView === 'access' ? journeys : []"
+          :destinations="mapView === 'access' ? destinations : []"
+          :view="mapView"
+          :underserved="underservedClasses"
+          :sites="siting?.sites ?? []"
+          @select="select"
+        />
         <MinimalMap
+          v-else
           :islands="network?.islands ?? []"
           :routes="routePaths"
           :facilities="facilityIslands"
@@ -282,7 +357,7 @@ function homeText(destination: DestinationAccess): string {
           @fallback="(reason) => (mapFailed = reason)"
         />
       </ClientOnly>
-      <p v-if="mapFailed" class="am-error">Map unavailable: {{ mapFailed }}</p>
+      <p v-if="mapFailed" class="am-error">Basemap unavailable ({{ mapFailed }}); showing the offline map.</p>
 
       <div class="am-views" role="tablist" aria-label="Map view">
         <button
@@ -301,9 +376,13 @@ function homeText(destination: DestinationAccess): string {
       <!-- Legend / context, bottom-left -->
       <div class="am-legend">
         <template v-if="mapView === 'access'">
-          <span v-if="facilityType !== 'education'"><i class="dot health" /> Health</span>
-          <span v-if="facilityType !== 'health'"><i class="dot education" /> Education</span>
-          <span v-if="facilityType === 'all'"><i class="dot both" /> Both</span>
+          <template v-if="facilityType === 'all'">
+            <span><i class="dot health" /> Hospital</span>
+            <span><i class="dot education" /> Grade 11–12 / higher ed</span>
+            <span><i class="dot both" /> Both</span>
+          </template>
+          <span v-else-if="facilityType === 'health'"><i class="dot health" /> Health facility (large = hospital)</span>
+          <span v-else><i class="dot education" /> School (large = grade 11–12 / higher ed)</span>
           <span><i class="line ferry" /> Ferry / boat</span>
           <span><i class="line air" /> Flight</span>
         </template>
@@ -346,18 +425,43 @@ function homeText(destination: DestinationAccess): string {
                 <span>{{ fare(row.best) }}</span>
                 <span v-if="homeText(row.best)" :class="row.best.sameDayReturn ? 'ok' : 'warn'">{{ homeText(row.best) }}</span>
               </div>
+              <div v-if="evidenceTags(row.best).length" class="am-row__tags">
+                <span v-for="tag in evidenceTags(row.best)" :key="tag.key" :class="tag.verified ? 'is-verified' : 'is-estimated'">
+                  {{ tag.tag }}
+                </span>
+              </div>
             </template>
             <div v-else class="am-row__meta">
               {{ row.status === 'no_origin_access' ? 'No transport data for this island' : 'No same-day connection' }}
             </div>
           </li>
         </ul>
-        <p class="am-foot">One-way resident fares. Times from the reference-day timetable.</p>
+        <p class="am-foot">
+          One-way fares for {{ TRAVELLERS.find((t) => t.key === traveller)?.label.toLowerCase() }}
+          ({{ TRAVELLERS.find((t) => t.key === traveller)?.note.toLowerCase() }}). {{ dayOfWeek }} timetable. Transfers allow 15 min
+          to board a ferry, 45 min to check in (60 at Velana) and 10 min to change mode.
+        </p>
       </aside>
 
       <aside v-else-if="mapView === 'access'" class="am-hint">
-        Click an island to see its closest facilities, travel time and fare.
-        <span>{{ facilityCount }} facilities on {{ facilityIslands.length }} islands shown</span>
+        <strong class="am-hint__title">What boats and flights add</strong>
+        <span class="am-hint__sub">
+          Atoll residents (outside Greater Malé) who can reach a
+          {{ (SHORT[category] ?? 'facility').toLowerCase() }} the same day · {{ dayOfWeek }}, leave
+          {{ formatClock(departureMinute) }}
+        </span>
+        <ul class="am-impact">
+          <li v-for="step in impact" :key="step.label">
+            <span class="am-impact__label">{{ step.label }}</span>
+            <span class="am-impact__bar"><i :style="{ width: `${(100 * step.atollReachable) / impactMax}%` }" /></span>
+            <span class="am-impact__value">{{ pct(step.atollReachable, step.atollTotal) }}</span>
+          </li>
+        </ul>
+        <span v-if="impact.length === 3" class="am-hint__sub">
+          +{{ formatPopulation(impact[2]!.atollReachable - impact[0]!.atollReachable) }} atoll residents reached beyond
+          road-only (national {{ pct(impact[0]!.reachable, impact[0]!.total) }} →
+          {{ pct(impact[2]!.reachable, impact[2]!.total) }}). Click an island to see its routes, time and fare.
+        </span>
       </aside>
 
       <aside v-else-if="mapView === 'recommended'" class="am-panel">
@@ -501,6 +605,58 @@ function homeText(destination: DestinationAccess): string {
 .am-search__list li.is-active {
   background: #f1f5f9;
 }
+.am-layers {
+  position: relative;
+}
+.am-layers__btn {
+  cursor: pointer;
+}
+.am-layers__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 20;
+  width: 280px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+.am-layers__menu label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 13px;
+}
+.am-layers__menu p {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: var(--am-muted);
+}
+.am-row__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+.am-row__tags span {
+  font-size: 10.5px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  border: 1px solid var(--am-line);
+}
+.am-row__tags .is-verified {
+  color: #0369a1;
+  border-color: #bae6fd;
+  background: #f0f9ff;
+}
+.am-row__tags .is-estimated {
+  color: #92400e;
+  border-color: #fde68a;
+  background: #fffbeb;
+}
 .am-link {
   font-size: 13px;
   color: var(--am-accent);
@@ -610,11 +766,47 @@ function homeText(destination: DestinationAccess): string {
   font-size: 13px;
   color: var(--am-text);
 }
-.am-hint span {
+.am-hint__title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+.am-hint__sub {
   display: block;
   margin-top: 4px;
   font-size: 12px;
   color: var(--am-muted);
+}
+.am-impact {
+  list-style: none;
+  margin: 10px 0 6px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.am-impact li {
+  display: grid;
+  grid-template-columns: 112px 1fr 38px;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+.am-impact__bar {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.am-impact__bar i {
+  display: block;
+  height: 100%;
+  background: var(--am-accent);
+  border-radius: 999px;
+}
+.am-impact__value {
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 .am-panel__head {
   display: flex;

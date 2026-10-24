@@ -37,7 +37,7 @@ test('builds every source entity into the serving database', () => {
       facilities: EXPECTED.facilities,
       categories: EXPECTED.categories,
       facilityCategories: 1858,
-      serviceStops: 498, // 390 RTL + 108 MTCC 2023 stop-times (augment_network.py)
+      serviceStops: 548, // 390 RTL + 158 MTCC 2023 stop-times (augment_network.py)
       hdxNational: EXPECTED.hdxNational,
       hdxUnits: EXPECTED.hdxUnits,
     })
@@ -57,13 +57,13 @@ test('builds every source entity into the serving database', () => {
         (db.prepare('SELECT count(*) AS count FROM services WHERE kind = ?').get('timetabled') as {
           count: number
         }).count,
-        123, // 102 RTL + 21 MTCC 2023 trips
+        132, // 102 RTL + 30 MTCC 2023 trips
       )
       assert.equal(
         (db.prepare('SELECT count(*) AS count FROM services WHERE kind = ?').get('frequency') as {
           count: number
         }).count,
-        226, // 64 air/ferry frequency services + 162 observed boat links
+        218, // 64 air/ferry frequency services + 154 observed boat links
       )
     } finally {
       db.close()

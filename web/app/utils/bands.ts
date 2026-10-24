@@ -101,8 +101,8 @@ export const BAND_STYLES: readonly BandStyle[] = [
   },
   {
     key: 'not_reachable',
-    label: 'Not reachable (no itinerary)',
-    shortLabel: 'Not reachable',
+    label: 'No same-day trip',
+    shortLabel: 'No same-day trip',
     color: '#b9bcb4',
     ink: '#26332c',
     pattern: 'diagonal',

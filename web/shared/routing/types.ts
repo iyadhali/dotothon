@@ -26,6 +26,8 @@ export interface NetworkSelection {
   disabledRouteIds?: string[]
   /** Exact service ids to remove (wins over route exclusions). */
   disabledServiceIds?: string[]
+  /** Weekday to route on (`Mon` … `Sun`); services whose `days` exclude it are removed. */
+  dayOfWeek?: string
 }
 
 export interface Assumption {
@@ -161,6 +163,8 @@ export interface TimetabledService {
   calendar: string
   source: string
   stops: StopTime[]
+  /** Weekdays the trip runs (`Mon` … `Sun`). Omitted means every day (calendar unknown). */
+  days?: string[]
 }
 
 export interface FrequencyService {
@@ -185,6 +189,8 @@ export interface FrequencyService {
   confidence: 'estimated_frequency'
   status: string
   source: string
+  /** Weekdays the service runs. Omitted means every day (calendar unknown). */
+  days?: string[]
 }
 
 export type Service = TimetabledService | FrequencyService

@@ -1,0 +1,15 @@
+{% load fmt %}
+<header class="topbar">
+  <div class="brand">
+    <p class="eyebrow">Maldives Datathon 2026 · A Team</p>
+    <h1>{% if active == "build" %}Where should we build next?{% else %}How far is the nearest school or hospital?{% endif %}</h1>
+  </div>
+  <nav class="nav" aria-label="Pages">
+    <a href="/" {% if active != "build" %}class="is-on" aria-current="page"{% endif %}>Map</a>
+    <a href="/build/" {% if active == "build" %}class="is-on" aria-current="page"{% endif %}>Where to build</a>
+  </nav>
+  <div class="chips">
+    <span class="chip num"><span class="n">{{ stats.islands }}</span><span class="l">inhabited islands</span></span>
+    <span class="chip num"><span class="n">{{ stats.population|num }}</span><span class="l">residents</span></span>
+  </div>
+</header>

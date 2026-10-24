@@ -1,60 +1,50 @@
 {% extends "access/base.html" %}
 {% load fmt %}
 {% block body %}
-<header class="topbar">
-  <div class="brand">
-    <p class="eyebrow">Maldives Datathon 2026 · A Team</p>
-    <h1>Where should the next service go?</h1>
-  </div>
-  <nav class="nav" aria-label="Pages">
-    <a href="/">Map</a>
-    <a href="/build/" class="is-on" aria-current="page">Build</a>
-  </nav>
-  <div class="chips">
-    <span class="chip num"><span class="n">{{ stats.islands }}</span><span class="l">inhabited islands</span></span>
-    <span class="chip num"><span class="n">{{ stats.population|num }}</span><span class="l">residents</span></span>
-  </div>
-</header>
+{% include "access/_topbar.html" with active="build" %}
+<main class="stage stage-build" id="stage">
+  <div id="buildmap" role="img"
+       aria-label="Map of the Maldives: dots are inhabited islands, numbered pins are candidate sites"></div>
 
-<main class="page">
-  <section class="card">
-    <div class="cardhead">
-      <h2>Where should the next service go?</h2>
-      <span class="hint">ranked by residents who would come within 2 hours</span>
-    </div>
-    <p class="prose">
-      Pick a service, then a candidate. <em>Build here</em> puts a facility on that island and the
-      ranking updates as if it were there: everyone it brings within two hours of the service is
-      counted once, from the network we actually observe. The picks compound — the second facility
-      is scored after the first one exists.
-    </p>
+  <aside class="ovl ovl-left wide ovl-build">
+    <h2 class="ovltitle">Where should the next service go?</h2>
+    <p class="ovlsub">Ranked by the residents each site would bring within 2 hours of the service.</p>
 
     <div class="tabs" id="typeTabs" role="tablist" aria-label="Service type"></div>
+    <div class="figs figs-4" id="figs"></div>
 
-    <div class="buildgrid">
-      <div>
-        <div id="buildmap" class="simmap" role="img"
-             aria-label="Map of the Maldives: dots are islands, numbered pins are candidate sites"></div>
-        <ul class="legend-line">
-          <li><i class="dot own"></i>already within 2 h</li>
-          <li><i class="dot unknown"></i>beyond 2 h</li>
-          <li><span class="pin pin-sm">1</span>top candidate</li>
-          <li><i class="dot new"></i>would join with this build</li>
-          <li><i class="dot link"></i>proposed crossing</li>
-        </ul>
-        <p class="hint" id="mapline">Every dot is an inhabited island, sized by population. Click a numbered pin or a row to preview what that build would add; zoom in for more candidate pins.</p>
-      </div>
+    <div class="planhead">
+      <h3>Your plan</h3>
+      <button class="ghost" id="resetPlan" type="button">Reset</button>
+    </div>
+    <div id="planBody"><p class="empty">Nothing built yet — add a site from the list on the right.</p></div>
+    <div id="planTotals"></div>
 
-      <div class="buildside">
-        <div class="figs figs-4" id="figs"></div>
-        <div class="tabletop">
-          <span class="hint">Rank by</span>
-          <div class="tabs" id="rankTabs" role="group" aria-label="Rank candidates by">
-            <button class="tab is-on" data-rank="people" type="button">People</button>
-            <button class="tab" data-rank="islands" type="button">Islands</button>
-            <button class="tab" data-rank="children" type="button">Children</button>
-          </div>
+    <ul class="legend-line">
+      <li><i class="dot own"></i>within 2 h</li>
+      <li><i class="dot unknown"></i>beyond 2 h</li>
+      <li><span class="pin pin-sm">1</span>candidate</li>
+      <li><i class="dot new"></i>would join</li>
+      <li><i class="dot link"></i>crossing</li>
+    </ul>
+    <p class="ovlfoot">
+      {{ stats.islands }} inhabited islands · {{ stats.population|num }} residents. Every dot is an
+      island, sized by population; click a pin or a row to preview that build.
+      Crossings are <a href="#connectivity">further down ↓</a>
+    </p>
+  </aside>
+
+  <aside class="ovl ovl-right ovl-build-right">
+    <div class="card">
+      <div class="cardhead">
+        <h2>Where to build next</h2>
+        <div class="tabs" id="rankTabs" role="group" aria-label="Rank candidates by">
+          <button class="tab is-on" data-rank="people" type="button">People</button>
+          <button class="tab" data-rank="islands" type="button">Islands</button>
+          <button class="tab" data-rank="children" type="button">Children</button>
         </div>
+      </div>
+      <div class="candscroll">
         <table class="mini candtable">
           <thead>
             <tr><th></th><th>Island</th><th class="r">Residents</th><th class="r">Islands</th>
@@ -62,29 +52,17 @@
           </thead>
           <tbody id="candBody"></tbody>
         </table>
-        <p class="hint" id="candhint">
-          Candidates are islands that do not host the service today. A site's coverage is the set of
-          islands within two hours of it, so building there covers that set.
-        </p>
       </div>
+      <p class="hint" id="candhint">
+        Candidates are islands that do not host the service today. A site's coverage is the set of
+        islands within two hours of it, so building there covers that set.
+      </p>
     </div>
-  </section>
+  </aside>
+</main>
 
-  <section class="grid2" id="planrow">
-    <div class="card">
-      <div class="cardhead">
-        <h2>Your plan</h2>
-        <button class="ghost" id="resetPlan" type="button">Reset</button>
-      </div>
-      <div id="planBody"><p class="empty">Nothing built yet. Add a site from the ranking on the left.</p></div>
-    </div>
-    <div class="card">
-      <div class="cardhead"><h2>What the plan changes</h2></div>
-      <div id="planTotals"><p class="empty">The totals appear as soon as you build.</p></div>
-    </div>
-  </section>
-
-  <section class="card">
+<main class="page page-build">
+  <section class="card" id="connectivity">
     <div class="cardhead">
       <h2>Where should we build connectivity?</h2>
       <span class="hint">one new crossing, measured against the same network</span>
@@ -102,6 +80,7 @@
         <button class="tab is-on" data-sort="new" type="button">Newly within 2 h</button>
         <button class="tab" data-sort="saved" type="button">Time saved</button>
       </div>
+      <a class="hint back-top" href="#stage">Back to the map ↑</a>
     </div>
     <table class="mini linktable">
       <thead>
@@ -200,7 +179,8 @@ const map = L.map("buildmap", {zoomSnap: .25, minZoom: 5, maxZoom: 12, zoomContr
 L.control.zoom({position: "bottomright"}).addTo(map);
 L.control.scale({imperial: false, position: "bottomleft", maxWidth: 90}).addTo(map);
 map.fitBounds(L.latLngBounds(ISLES.map(p => [p.lat, p.lon])), {padding: [14, 14], maxZoom: 7});
-setTimeout(() => map.invalidateSize(), 0);
+window.addEventListener("resize", () => { map.invalidateSize(); renderMap(); });
+setTimeout(() => { map.invalidateSize(); }, 60);
 fetch("/static/access/atolls.geojson").then(r => r.json()).then(gj => {
   L.geoJSON(gj, {interactive: false, style: {color: "#9fb6bf", weight: .7, opacity: .55,
                                              fill: false}}).addTo(map).bringToBack();
@@ -337,8 +317,8 @@ function renderTable() {
 function renderPlan() {
   const t = type();
   if (!state.built.length) {
-    el("planBody").innerHTML = `<p class="empty">Nothing built yet. Add a site from the ranking on the left.</p>`;
-    el("planTotals").innerHTML = `<p class="empty">The totals appear as soon as you build.</p>`;
+    el("planBody").innerHTML = `<p class="empty">Nothing built yet — add a site from the list on the right.</p>`;
+    el("planTotals").innerHTML = `<p class="empty">The totals appear here once you build.</p>`;
     return;
   }
   el("planBody").innerHTML = `<ol class="planlist">` + state.built.map((i, n) => {

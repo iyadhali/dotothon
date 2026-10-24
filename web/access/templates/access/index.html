@@ -1,6 +1,7 @@
 {% extends "access/base.html" %}
 {% load fmt %}
 {% block body %}
+{% include "access/_topbar.html" with active="map" %}
 <main class="stage" id="stage">
   <div id="map"
        data-default-from="{{ default_from }}"
@@ -9,11 +10,6 @@
        aria-label="Map of the Maldives: circle size is population, colour is travel time to the nearest grade 11–12 school"></div>
 
   <aside class="ovl ovl-left">
-    <p class="brandline">Maldives Datathon 2026 <i>·</i> <b>A Team</b></p>
-    <nav class="ovlnav" aria-label="Pages">
-      <a href="/" class="is-on" aria-current="page">Map</a>
-      <a href="/build/">Where to build</a>
-    </nav>
     <div class="row2">
       <div class="combo wide" id="islandCombo">
         <input id="islandText" class="combotext" type="text" placeholder="Select an island…"

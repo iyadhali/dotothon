@@ -879,3 +879,110 @@ main.stage { height: 100vh; }
 }
 .ovlnav a:hover { background: #f4efe4; }
 .ovlnav a.is-on { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* =====================================================================================
+   BUILD PAGE, FULL-BLEED — same skeleton as the home map: the map is the page, the
+   ranking and the plan sit in overlay panels, the crossings table scrolls below it.
+   ===================================================================================== */
+.stage-build { height: 100vh; min-height: 620px; }
+.stage-build #buildmap {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(120% 90% at 50% 0%, #eaf5f9 0%, #d8ebf2 48%, #c8e0eb 100%);
+}
+.stage-build #buildmap.leaflet-container { font: inherit; }
+
+.ovl-build { overflow: auto; overscroll-behavior: contain; bottom: auto; max-height: calc(100% - 28px); }
+.ovl-build::-webkit-scrollbar { width: 8px; }
+.ovl-build::-webkit-scrollbar-thumb { background: #d9d2c4; border-radius: 99px; }
+.ovltitle { margin: 4px 0 3px; font-size: 17px; line-height: 1.25; letter-spacing: -.01em; }
+.ovlsub { margin: 0 0 11px; font-size: 11.5px; line-height: 1.45; color: var(--muted); }
+.ovl-build #typeTabs { margin: 0 0 12px; gap: 5px; }
+.ovl-build #typeTabs .tab { font-size: 11.5px; padding: 5px 10px; }
+.ovl-build .figs-4 { grid-template-columns: 1fr 1fr; gap: 7px; margin: 0 0 4px; }
+.ovl-build .figs-4 div { padding: 7px 9px; border-radius: 9px; }
+.ovl-build .figs-4 .n { font-size: 16px; }
+.ovl-build .figs-4 .l { font-size: 9px; letter-spacing: .03em; }
+.ovl-build .planhead { margin: 12px 0 7px; }
+.ovl-build .planlist li { font-size: 12px; gap: 7px; }
+.ovl-build .planlist .pin { width: 18px; height: 18px; font-size: 10px; }
+.ovl-build #planTotals .figs-4 { margin-top: 9px; }
+.ovl-build #planTotals .figs-4 .n { font-size: 14.5px; }
+.ovl-build .legend-line { margin: 11px 0 0; gap: 4px 10px; font-size: 10.5px; }
+.ovl-build .ovlfoot { margin: 10px 0 0; font-size: 10.5px; line-height: 1.5; color: var(--muted); }
+.ovl-build .ovlfoot a { color: var(--teal); text-decoration: none; white-space: nowrap; }
+.ovl-build .ovlfoot a:hover { text-decoration: underline; }
+.planhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.planhead h3 {
+  margin: 0; font-size: 10.5px; font-weight: 640; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+.ovl-build-right { width: 524px; }
+.ovl-build-right .card { padding: 12px 12px 10px; display: flex; flex-direction: column; gap: 8px; }
+.ovl-build-right .cardhead { align-items: center; gap: 8px; flex-wrap: wrap; }
+.ovl-build-right .cardhead h2 { font-size: 15px; }
+.ovl-build-right .candtable { margin: 0; }
+.candscroll { overflow: auto; overscroll-behavior: contain; margin: 0 -4px; padding: 0 4px; max-height: calc(100vh - 300px); }
+.candscroll thead th {
+  position: sticky; top: 0; z-index: 2;
+  background: rgba(255,255,255,.98); box-shadow: 0 1px 0 var(--line);
+}
+.ovl-build-right #candhint { margin: 0; font-size: 10.5px; line-height: 1.45; }
+
+.page-build { margin-top: 20px; }
+.back-top { margin-left: auto; text-decoration: none; white-space: nowrap; }
+.back-top:hover { color: var(--teal); }
+
+@media (max-height: 760px) {
+  .ovl-build .figs-4 { grid-template-columns: repeat(4, 1fr); }
+  .ovl-build .figs-4 .l { font-size: 8.5px; }
+}
+
+@media (max-width: 1180px) {
+  .ovl-build-right { width: 420px; }
+  .ovl-build-right .candtable th, .ovl-build-right .candtable td { padding: 6px 5px; }
+}
+
+@media (max-width: 980px) {
+  .stage-build { height: auto; min-height: 0; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+  .stage-build #buildmap {
+    position: relative; inset: auto; height: 58vh; min-height: 340px;
+    border-radius: 13px; border: 1px solid var(--line); overflow: hidden;
+  }
+  .stage-build .ovl {
+    position: static; width: auto; max-height: none; overflow: visible;
+    background: #fff; border: 1px solid var(--line); box-shadow: none; padding: 12px;
+  }
+  .ovl-build-right { width: auto; }
+  .candscroll { max-height: 46vh; }
+  .back-top { display: none; }
+}
+
+/* =====================================================================================
+   ONE SHELL — both pages start with the same masthead and the same page switcher; the
+   map fills exactly the viewport that is left, so the two pages read as one product.
+   ===================================================================================== */
+:root { --topbar-h: 64px; }
+.topbar { position: relative; z-index: 800; }
+.topbar h1 { font-size: 17.5px; }
+main.stage, main.stage.stage-build { height: calc(100dvh - var(--topbar-h)); min-height: 540px; }
+.stage-build { min-height: 600px; }
+
+@media (max-width: 980px) {
+  :root { --topbar-h: 0px; }
+  .topbar { position: static; }
+  main.stage, main.stage.stage-build { height: auto; min-height: 0; }
+  .stage #map, .stage-build #buildmap { height: 62vh; min-height: 340px; }
+}
+
+/* candidate table: six fixed columns so the header never collides with the numbers */
+.ovl-build-right .candtable { table-layout: fixed; width: 100%; }
+.ovl-build-right .candtable th:nth-child(1), .ovl-build-right .candtable td:nth-child(1) { width: 24px; }
+.ovl-build-right .candtable th:nth-child(3), .ovl-build-right .candtable td:nth-child(3) { width: 78px; }
+.ovl-build-right .candtable th:nth-child(4), .ovl-build-right .candtable td:nth-child(4) { width: 56px; }
+.ovl-build-right .candtable th:nth-child(5), .ovl-build-right .candtable td:nth-child(5) { width: 64px; }
+.ovl-build-right .candtable th:nth-child(6), .ovl-build-right .candtable td:nth-child(6) { width: 76px; }
+.ovl-build-right .candtable td:nth-child(2) { line-height: 1.3; }
+.ovl-build-right .candtable td:nth-child(2) .muted { font-size: 10.5px; }
+.ovl-build-right .candtable th:nth-child(3), .ovl-build-right .candtable th:nth-child(4),
+.ovl-build-right .candtable th:nth-child(5) { font-size: 9.2px; letter-spacing: .02em; }

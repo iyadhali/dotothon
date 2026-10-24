@@ -104,6 +104,7 @@ def index(request):
         island = DEFAULT_ISLAND
     return render(request, "access/index.html", {
         "s": m.stats(),
+        "stats": m.stats(),
         "islands": m.picker,
         "atolls": m.atolls,
         "rows": rows,

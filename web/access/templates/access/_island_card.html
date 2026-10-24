@@ -1,0 +1,61 @@
+{% load fmt %}
+<div class="cardhead">
+  <h2>{{ c.name }}</h2>
+  <span class="pill">{{ c.atoll }}</span>
+</div>
+
+<div class="figs">
+  <div><span class="n">{{ c.population|num }}</span><span class="l">residents</span></div>
+  <div><span class="n">{{ c.kids|num }}</span><span class="l">children 0–17</span></div>
+  <div><span class="n">{{ c.nbrs }}</span><span class="l">direct sea links</span></div>
+</div>
+
+<div class="rows">
+  <div class="row">
+    <span class="k">Grade 11–12 on the island</span>
+    <span class="v">{% if c.own_hs %}<span class="yes">yes</span>{% else %}<span class="no">no</span>{% endif %}</span>
+  </div>
+  <div class="row">
+    <span class="k">Grade 7–10 on the island</span>
+    <span class="v">{% if c.own_ls %}<span class="yes">yes</span>{% else %}<span class="no">no</span>{% endif %}</span>
+  </div>
+  <div class="row">
+    <span class="k">Nearest post-16 school</span>
+    <span class="v">
+      {% if c.own_hs %}<span class="yes">here</span>
+      {% elif c.hs_hours is not None %}<strong>{{ c.hs_hours }} h</strong> <em>to {{ c.hs_place }}</em>
+      {% else %}<span class="no">no observed route</span>{% endif %}
+    </span>
+  </div>
+  <div class="row">
+    <span class="k">Nearest university campus</span>
+    <span class="v">
+      {% if c.campus_hours is not None %}
+        {% if c.campus_hours == 0 %}<span class="yes">on the island</span>
+        {% else %}<strong>{{ c.campus_hours }} h</strong> <em>to {{ c.campus_place }}</em>{% endif %}
+      {% else %}<span class="no">no observed route</span>{% endif %}
+    </span>
+  </div>
+  <div class="row">
+    <span class="k">Islands reachable</span>
+    <span class="v">{{ c.reach }} <em>within two sailings</em></span>
+  </div>
+</div>
+
+{% if c.links %}
+<h3 class="sub">Observed crossings from {{ c.name }}</h3>
+<table class="mini">
+  <thead><tr><th>To</th><th class="r">Hours</th><th class="r">Trips</th></tr></thead>
+  <tbody>
+  {% for l in c.links %}
+    <tr>
+      <td>{% if l.kind == "land" %}{{ l.to }} <span class="tag">causeway</span>{% else %}{{ l.to }}{% endif %}</td>
+      <td class="r">{{ l.hours }}</td>
+      <td class="r">{% if l.trips %}{{ l.trips }}{% else %}—{% endif %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty">No crossings observed from this island in August 2025.</p>
+{% endif %}

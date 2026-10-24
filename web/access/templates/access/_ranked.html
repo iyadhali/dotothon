@@ -1,0 +1,34 @@
+{% load fmt %}
+<div class="tabletop">
+  <select name="atoll" hx-get="/ranked/" hx-target="#ranked" hx-swap="innerHTML" hx-include="[name='band']">
+    <option value="">All atolls</option>
+    {% for a in atolls %}<option value="{{ a }}"{% if a == sel_atoll %} selected{% endif %}>{{ a }}</option>{% endfor %}
+  </select>
+  <input type="hidden" name="band" value="{{ sel_band }}">
+  <button class="chip" hx-get="/ranked/" hx-target="#ranked" hx-swap="innerHTML" hx-include="[name='atoll']">Apply</button>
+  <span class="count">{{ rows|length }} of {{ n_rows }} islands</span>
+</div>
+
+<table class="rank">
+  <thead>
+    <tr><th>Island</th><th>Atoll</th><th class="r">Population</th><th class="r">Children 0–17</th>
+        <th class="r">Hours to grade 11–12</th></tr>
+  </thead>
+  <tbody>
+  {% for r in rows %}
+    <tr hx-get="/island/{{ r.id }}/" hx-target="#panel" hx-swap="innerHTML" class="clickable">
+      <td class="name"><i class="dot {{ r.band }}"></i>{{ r.name }}</td>
+      <td class="muted">{{ r.atoll }}</td>
+      <td class="r">{{ r.pop|num }}</td>
+      <td class="r">{{ r.kids|num }}</td>
+      <td class="r">
+        {% if r.own %}<span class="yes">taught here</span>
+        {% elif r.hours is None %}<span class="no">none observed</span>
+        {% else %}{{ r.hours }} h{% endif %}
+      </td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="5" class="empty">No island matches that filter.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>

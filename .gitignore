@@ -1,0 +1,19 @@
+# data that must never be committed
+data/FollowMe_august_2025/
+data/derived/raw_school_pages/
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# build artefacts
+*.log
+db.sqlite3

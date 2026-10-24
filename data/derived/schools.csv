@@ -1,0 +1,221 @@
+school_id,school_name,atoll,island,students,teachers,grade_max,grade_min,url
+533,Aa. Atoll Education Centre,Alifu Alifu,Aa. Atoll,231,28,,,https://www.moe.gov.mv/en/schools/533
+534,Aa. Atoll School,Alifu Alifu,Aa. Atoll,123,24,10.0,1.0,https://www.moe.gov.mv/en/schools/534
+538,Bodufolhudhoo School,Alifu Alifu,Bodufolhudhoo,185,28,4.0,1.0,https://www.moe.gov.mv/en/schools/538
+540,Himandhoo School,Alifu Alifu,Himandhoo,194,31,,,https://www.moe.gov.mv/en/schools/540
+539,Maalhohu School,Alifu Alifu,Maalhohu,106,25,10.0,1.0,https://www.moe.gov.mv/en/schools/539
+537,Mathiveri School,Alifu Alifu,Mathiveri,211,31,,,https://www.moe.gov.mv/en/schools/537
+536,Thoddoo School,Alifu Alifu,Thoddoo,410,51,,,https://www.moe.gov.mv/en/schools/536
+535,Ukulhahu School,Alifu Alifu,Ukulhahu,383,46,,,https://www.moe.gov.mv/en/schools/535
+541,ADh. Atoll Education Centre,Alifu Dhaalu,ADh. Atoll,592,61,,,https://www.moe.gov.mv/en/schools/541
+542,ADh. Atoll School,Alifu Dhaalu,ADh. Atoll,548,57,,,https://www.moe.gov.mv/en/schools/542
+548,ADh. Dhidhdhoo School,Alifu Dhaalu,ADh. Dhidhdhoo,17,5,10.0,,https://www.moe.gov.mv/en/schools/548
+544,ADh. Omadhoo School,Alifu Dhaalu,ADh. Omadhoo,235,29,,,https://www.moe.gov.mv/en/schools/544
+547,Dhangethee School,Alifu Dhaalu,Dhangethee,197,28,,,https://www.moe.gov.mv/en/schools/547
+549,Dhigurah School,Alifu Dhaalu,Dhigurah,122,27,10.0,1.0,https://www.moe.gov.mv/en/schools/549
+550,Fenfushee School,Alifu Dhaalu,Fenfushee,264,36,,,https://www.moe.gov.mv/en/schools/550
+543,Hangnaameedhoo School,Alifu Dhaalu,Hangnaameedhoo,109,27,,,https://www.moe.gov.mv/en/schools/543
+545,Kunburudhoo School,Alifu Dhaalu,Kunburudhoo,115,25,,,https://www.moe.gov.mv/en/schools/545
+546,Mandhoo School,Alifu Dhaalu,Mandhoo,61,18,,,https://www.moe.gov.mv/en/schools/546
+507,B. Atoll Education Centre,Baa,B. Atoll,742,80,,,https://www.moe.gov.mv/en/schools/507
+508,B. Atoll School,Baa,B. Atoll,217,33,10.0,,https://www.moe.gov.mv/en/schools/508
+511,B. Goidhoo School,Baa,B. Goidhoo,121,27,10.0,,https://www.moe.gov.mv/en/schools/511
+509,Dhonfanu School,Baa,Dhonfanu,93,27,,,https://www.moe.gov.mv/en/schools/509
+518,Fehendhoo School,Baa,Fehendhoo,26,3,10.0,1.0,https://www.moe.gov.mv/en/schools/518
+510,Fulhadhoo School,Baa,Fulhadhoo,37,12,,,https://www.moe.gov.mv/en/schools/510
+512,Hithaadhoo School,Baa,Hithaadhoo,199,34,10.0,1.0,https://www.moe.gov.mv/en/schools/512
+513,Kamadhoo School,Baa,Kamadhoo,74,18,,,https://www.moe.gov.mv/en/schools/513
+514,Kendhoo School,Baa,Kendhoo,238,38,,,https://www.moe.gov.mv/en/schools/514
+515,Kihaadhoo School,Baa,Kihaadhoo,129,29,10.0,,https://www.moe.gov.mv/en/schools/515
+516,Kudarikilu School,Baa,Kudarikilu,111,25,10.0,,https://www.moe.gov.mv/en/schools/516
+517,Maalhohu School,Baa,Maalhohu,154,25,,,https://www.moe.gov.mv/en/schools/517
+519,Thulhaadhoo School,Baa,Thulhaadhoo,335,56,,,https://www.moe.gov.mv/en/schools/519
+573,Bandidhoo School,Dhaalu,Bandidhoo,143,27,10.0,1.0,https://www.moe.gov.mv/en/schools/573
+569,Dh. Atoll Education Centre,Dhaalu,Dh. Atoll,776,82,,,https://www.moe.gov.mv/en/schools/569
+570,Dh. Atoll School,Dhaalu,Dh. Atoll,224,36,,,https://www.moe.gov.mv/en/schools/570
+571,Hulhudheli School,Dhaalu,Hulhudheli,195,32,,,https://www.moe.gov.mv/en/schools/571
+574,Maaenboodhoo School,Dhaalu,Maaenboodhoo,142,31,10.0,1.0,https://www.moe.gov.mv/en/schools/574
+572,Rinbudhoo School,Dhaalu,Rinbudhoo,65,25,10.0,1.0,https://www.moe.gov.mv/en/schools/572
+567,Bilehdhoo School,Faafu,Bilehdhoo,256,35,,,https://www.moe.gov.mv/en/schools/567
+568,Dharanboodhoo School,Faafu,Dharanboodhoo,125,21,,,https://www.moe.gov.mv/en/schools/568
+564,F. Atoll Education Centre,Faafu,F. Atoll,596,67,,,https://www.moe.gov.mv/en/schools/564
+565,F. Atoll School,Faafu,F. Atoll,264,31,,,https://www.moe.gov.mv/en/schools/565
+566,F. Magoodhoo School,Faafu,F. Magoodhoo,213,33,,,https://www.moe.gov.mv/en/schools/566
+607,Dhaandhoo School,Gaafu Alifu,Dhaandhoo,234,40,11.0,,https://www.moe.gov.mv/en/schools/607
+601,GA. Atoll Education Centre,Gaafu Alifu,GA. Atoll,649,71,,,https://www.moe.gov.mv/en/schools/601
+602,GA. Atoll School,Gaafu Alifu,GA. Atoll,115,27,10.0,,https://www.moe.gov.mv/en/schools/602
+606,GA. Maamendhoo School,Gaafu Alifu,GA. Maamendhoo,222,36,,,https://www.moe.gov.mv/en/schools/606
+603,GA. Nilandhoo School,Gaafu Alifu,GA. Nilandhoo,87,23,5.0,,https://www.moe.gov.mv/en/schools/603
+609,Gemanafushi School,Gaafu Alifu,Gemanafushi,302,46,,,https://www.moe.gov.mv/en/schools/609
+605,Kanduhulhudhoo School,Gaafu Alifu,Kanduhulhudhoo,131,27,,,https://www.moe.gov.mv/en/schools/605
+604,Kondey School,Gaafu Alifu,Kondey,51,12,,,https://www.moe.gov.mv/en/schools/604
+608,Sulthan Mohamed School,Gaafu Alifu,Sulthan Mohamed,71,18,,,https://www.moe.gov.mv/en/schools/608
+612,Aboobakuru School,Gaafu Dhaalu,Aboobakuru,405,40,,,https://www.moe.gov.mv/en/schools/612
+619,Fiyoaree School,Gaafu Dhaalu,Fiyoaree,142,27,,,https://www.moe.gov.mv/en/schools/619
+610,GDh. Atoll Education Centre,Gaafu Dhaalu,GDh. Atoll,482,55,,,https://www.moe.gov.mv/en/schools/610
+611,GDh. Atoll School,Gaafu Dhaalu,GDh. Atoll,308,52,11.0,,https://www.moe.gov.mv/en/schools/611
+613,Hoadedhdhoo School,Gaafu Dhaalu,Hoadedhdhoo,201,39,,,https://www.moe.gov.mv/en/schools/613
+618,Huvadhoo School,Gaafu Dhaalu,Huvadhoo,177,33,,,https://www.moe.gov.mv/en/schools/618
+617,Madaveli School,Gaafu Dhaalu,Madaveli,294,39,,,https://www.moe.gov.mv/en/schools/617
+614,Nadella School,Gaafu Dhaalu,Nadella,148,27,,,https://www.moe.gov.mv/en/schools/614
+615,Rathafandhoo School,Gaafu Dhaalu,Rathafandhoo,100,27,,,https://www.moe.gov.mv/en/schools/615
+620,Thinadhoo School,Gaafu Dhaalu,Thinadhoo,374,37,,,https://www.moe.gov.mv/en/schools/620
+616,Vaadhoo Jamaluddeen School,Gaafu Dhaalu,Vaadhoo Jamaluddeen,101,26,,,https://www.moe.gov.mv/en/schools/616
+622,Fuvahmulaku School,Gnaviyani,Fuvahmulaku,212,46,10.0,1.0,https://www.moe.gov.mv/en/schools/622
+621,Gn. Atoll Education Centre,Gnaviyani,Gn. Atoll,400,51,6.0,,https://www.moe.gov.mv/en/schools/621
+624,Hafiz Ahmed School,Gnaviyani,Hafiz Ahmed,468,74,1.0,1.0,https://www.moe.gov.mv/en/schools/624
+623,Mohamed Jamaluddin School,Gnaviyani,Mohamed Jamaluddin,801,76,10.0,1.0,https://www.moe.gov.mv/en/schools/623
+442,Baarashu School,Haa Alifu,Baarashu,238,34,,,https://www.moe.gov.mv/en/schools/442
+438,Filladhoo School,Haa Alifu,Filladhoo,113,26,,,https://www.moe.gov.mv/en/schools/438
+436,Ghaazee Bandaarain School,Haa Alifu,Ghaazee Bandaarain,152,31,,,https://www.moe.gov.mv/en/schools/436
+439,Ha. Atoll Education Centre,Haa Alifu,Ha. Atoll,917,82,,,https://www.moe.gov.mv/en/schools/439
+440,Ha. Atoll school,Haa Alifu,Ha. Atoll school,406,53,,,https://www.moe.gov.mv/en/schools/440
+441,Ihavandhoo School,Haa Alifu,Ihavandhoo,815,83,5.0,,https://www.moe.gov.mv/en/schools/441
+443,Maarandhoo School,Haa Alifu,Maarandhoo,167,33,10.0,1.0,https://www.moe.gov.mv/en/schools/443
+445,Molhadhoo School,Haa Alifu,Molhadhoo,58,19,,,https://www.moe.gov.mv/en/schools/445
+446,Muraidhoo School,Haa Alifu,Muraidhoo,165,24,10.0,1.0,https://www.moe.gov.mv/en/schools/446
+437,Shaheed Ali Thakurufaanu School,Haa Alifu,Shaheed Ali Thakurufaanu,24,12,,,https://www.moe.gov.mv/en/schools/437
+435,Sheikh Ibrahim School,Haa Alifu,Sheikh Ibrahim,221,36,,,https://www.moe.gov.mv/en/schools/435
+447,Thuraakunu School,Haa Alifu,Thuraakunu,75,25,,,https://www.moe.gov.mv/en/schools/447
+448,Uligamu School,Haa Alifu,Uligamu,74,23,10.0,,https://www.moe.gov.mv/en/schools/448
+444,Vashafaru School,Haa Alifu,Vashafaru,85,23,,,https://www.moe.gov.mv/en/schools/444
+449,Afeefudin School,Haa Dhaalu,Afeefudin,1016,91,,,https://www.moe.gov.mv/en/schools/449
+454,Finey School,Haa Dhaalu,Finey,98,24,10.0,,https://www.moe.gov.mv/en/schools/454
+453,Hanimaadhoo School,Haa Dhaalu,Hanimaadhoo,478,56,7.0,,https://www.moe.gov.mv/en/schools/453
+451,Hdh. Atoll Education Centre,Haa Dhaalu,Hdh. Atoll,120,100,,,https://www.moe.gov.mv/en/schools/451
+452,Hdh. Atoll School,Haa Dhaalu,Hdh. Atoll,160,32,,,https://www.moe.gov.mv/en/schools/452
+459,Hirimaradhoo School,Haa Dhaalu,Hirimaradhoo,37,17,,,https://www.moe.gov.mv/en/schools/459
+450,Jalaaludin school,Haa Dhaalu,Jalaaludin school,726,79,,,https://www.moe.gov.mv/en/schools/450
+455,Kumundhoo School,Haa Dhaalu,Kumundhoo,223,32,,,https://www.moe.gov.mv/en/schools/455
+456,Kurinbee School,Haa Dhaalu,Kurinbee,120,26,8.0,,https://www.moe.gov.mv/en/schools/456
+460,Makunudhoo School,Haa Dhaalu,Makunudhoo,352,38,10.0,1.0,https://www.moe.gov.mv/en/schools/460
+457,Naivaadhoo School,Haa Dhaalu,Naivaadhoo,113,26,8.0,1.0,https://www.moe.gov.mv/en/schools/457
+461,Nellaidhoo School,Haa Dhaalu,Nellaidhoo,307,37,11.0,,https://www.moe.gov.mv/en/schools/461
+462,Neykurendhoo School,Haa Dhaalu,Neykurendhoo,141,25,10.0,1.0,https://www.moe.gov.mv/en/schools/462
+458,Nolhivaram School,Haa Dhaalu,Nolhivaram,571,55,,,https://www.moe.gov.mv/en/schools/458
+463,Nolhivaranfaru School,Haa Dhaalu,Nolhivaranfaru,300,0,,,https://www.moe.gov.mv/en/schools/463
+531,Dhiffushi School,Kaafu,Dhiffushi,248,32,,,https://www.moe.gov.mv/en/schools/531
+530,Gaafaru School,Kaafu,Gaafaru,349,39,,,https://www.moe.gov.mv/en/schools/530
+532,Gulhee School,Kaafu,Gulhee,199,28,,,https://www.moe.gov.mv/en/schools/532
+529,Guraidhoo School,Kaafu,Guraidhoo,302,36,7.0,,https://www.moe.gov.mv/en/schools/529
+528,Himmafushi School,Kaafu,Himmafushi,250,34,10.0,,https://www.moe.gov.mv/en/schools/528
+527,Huraa School,Kaafu,Huraa,311,36,,,https://www.moe.gov.mv/en/schools/527
+524,K. Atoll Education Centre,Kaafu,K. Atoll,261,33,8.0,,https://www.moe.gov.mv/en/schools/524
+525,K. Atoll School,Kaafu,K. Atoll,415,48,,,https://www.moe.gov.mv/en/schools/525
+526,Maafushi School,Kaafu,Maafushi,512,54,12.0,1.0,https://www.moe.gov.mv/en/schools/526
+598,Dhanbidhoo School,Laamu,Dhanbidhoo,139,27,,,https://www.moe.gov.mv/en/schools/598
+591,Hamad Bin Khaleefa Al Thani School,Laamu,Hamad Bin Khaleefa Al Thani,806,67,11.0,1.0,https://www.moe.gov.mv/en/schools/591
+592,Hithadhoo School,Laamu,Hithadhoo,229,35,,,https://www.moe.gov.mv/en/schools/592
+600,Ihadhdhoo School,Laamu,Ihadhdhoo,355,56,10.0,1.0,https://www.moe.gov.mv/en/schools/600
+594,Isdhoo School,Laamu,Isdhoo,191,37,10.0,1.0,https://www.moe.gov.mv/en/schools/594
+593,Kunahandhoo School,Laamu,Kunahandhoo,142,29,,,https://www.moe.gov.mv/en/schools/593
+588,L. Atoll Education Centre,Laamu,L. Atoll,795,85,8.0,1.0,https://www.moe.gov.mv/en/schools/588
+589,L. Atoll School,Laamu,L. Atoll,110,27,,,https://www.moe.gov.mv/en/schools/589
+597,L. Maamendhoo School,Laamu,L. Maamendhoo,144,31,10.0,1.0,https://www.moe.gov.mv/en/schools/597
+590,Maavashu School,Laamu,Maavashu,315,41,,,https://www.moe.gov.mv/en/schools/590
+599,Mukurimagu School,Laamu,Mukurimagu,63,13,,,https://www.moe.gov.mv/en/schools/599
+596,Mundoo School,Laamu,Mundoo,34,13,,,https://www.moe.gov.mv/en/schools/596
+595,kalaidhoo School,Laamu,kalaidhoo,140,33,10.0,,https://www.moe.gov.mv/en/schools/595
+520,Lh. Atoll Education Centre,Lhaviyani,Lh. Atoll,537,57,,,https://www.moe.gov.mv/en/schools/520
+521,Lh. Atoll school,Lhaviyani,Lh. Atoll school,246,41,,,https://www.moe.gov.mv/en/schools/521
+523,Madrasathul Ifthithaah,Lhaviyani,Madrasathul Ifthithaah,1051,95,,,https://www.moe.gov.mv/en/schools/523
+522,Olhuvelifushi School,Lhaviyani,Olhuvelifushi,173,33,,,https://www.moe.gov.mv/en/schools/522
+559,Dhiggaru School,Meemu,Dhiggaru,309,40,8.0,1.0,https://www.moe.gov.mv/en/schools/559
+557,M. Atoll School,Meemu,M. Atoll,170,33,,,https://www.moe.gov.mv/en/schools/557
+556,M. Atoll Education Center,Meemu,M. Atoll Education Center,223,38,4.0,1.0,https://www.moe.gov.mv/en/schools/556
+563,M. Maduvvaree School,Meemu,M. Maduvvaree,60,25,,,https://www.moe.gov.mv/en/schools/563
+558,Mulaku School,Meemu,Mulaku,367,44,,,https://www.moe.gov.mv/en/schools/558
+562,Naalaafushi School,Meemu,Naalaafushi,68,20,,,https://www.moe.gov.mv/en/schools/562
+560,Raiymandhoo School,Meemu,Raiymandhoo,7,5,,,https://www.moe.gov.mv/en/schools/560
+561,Veyvashu School,Meemu,Veyvashu,66,18,9.0,1.0,https://www.moe.gov.mv/en/schools/561
+480,Fodhdhoo School,Noonu,Fodhdhoo,54,20,,,https://www.moe.gov.mv/en/schools/480
+481,Henbadhoo School,Noonu,Henbadhoo,180,30,,,https://www.moe.gov.mv/en/schools/481
+490,Hidhaya School,Noonu,Hidhaya,217,30,,,https://www.moe.gov.mv/en/schools/490
+483,Kendhikulhudhoo School,Noonu,Kendhikulhudhoo,440,62,,,https://www.moe.gov.mv/en/schools/483
+484,Kudafaree School,Noonu,Kudafaree,159,34,,,https://www.moe.gov.mv/en/schools/484
+485,Landhoo School,Noonu,Landhoo,237,31,,,https://www.moe.gov.mv/en/schools/485
+486,Lhohee School,Noonu,Lhohee,186,30,,,https://www.moe.gov.mv/en/schools/486
+487,Maafaru School,Noonu,Maafaru,217,34,1.0,1.0,https://www.moe.gov.mv/en/schools/487
+488,Maalhendhoo School,Noonu,Maalhendhoo,190,31,,,https://www.moe.gov.mv/en/schools/488
+482,Meyna School,Noonu,Meyna,506,61,,,https://www.moe.gov.mv/en/schools/482
+478,N. Atoll Education Centre,Noonu,N. Atoll,356,47,1.0,1.0,https://www.moe.gov.mv/en/schools/478
+479,N. Atoll school,Noonu,N. Atoll school,357,45,,,https://www.moe.gov.mv/en/schools/479
+489,N. Magoodhoo School,Noonu,N. Magoodhoo,87,24,10.0,1.0,https://www.moe.gov.mv/en/schools/489
+501,Alifushi School,Raa,Alifushi,457,59,,,https://www.moe.gov.mv/en/schools/501
+493,Angolhitheemu School,Raa,Angolhitheemu,93,28,10.0,,https://www.moe.gov.mv/en/schools/493
+506,Duvaafaru Primary School,Raa,Duvaafaru Primary,529,46,,,https://www.moe.gov.mv/en/schools/506
+494,Fainu School,Raa,Fainu,98,26,10.0,,https://www.moe.gov.mv/en/schools/494
+503,Hulhudhuffaaru School,Raa,Hulhudhuffaaru,371,49,,,https://www.moe.gov.mv/en/schools/503
+495,Inguraidhoo School,Raa,Inguraidhoo,345,43,,,https://www.moe.gov.mv/en/schools/495
+496,Innamaadhoo School,Raa,Innamaadhoo,125,27,8.0,,https://www.moe.gov.mv/en/schools/496
+497,Kinolhahu School,Raa,Kinolhahu,163,30,10.0,1.0,https://www.moe.gov.mv/en/schools/497
+498,Maakurathu School,Raa,Maakurathu,206,26,10.0,1.0,https://www.moe.gov.mv/en/schools/498
+505,Maduvvaree School,Raa,Maduvvaree,424,53,,,https://www.moe.gov.mv/en/schools/505
+491,R. Atoll Education Centre,Raa,R. Atoll,506,59,,,https://www.moe.gov.mv/en/schools/491
+492,R. Atoll school,Raa,R. Atoll school,250,26,7.0,,https://www.moe.gov.mv/en/schools/492
+499,Rasgetheemu School,Raa,Rasgetheemu,95,27,10.0,,https://www.moe.gov.mv/en/schools/499
+500,Rasmaadhoo School,Raa,Rasmaadhoo,118,30,,,https://www.moe.gov.mv/en/schools/500
+502,Ungoofaaru School,Raa,Ungoofaaru,412,46,8.0,,https://www.moe.gov.mv/en/schools/502
+504,Vaadhoo School,Raa,Vaadhoo,94,26,7.0,,https://www.moe.gov.mv/en/schools/504
+628,Addu High School,Seenu,Addu High,342,69,,,https://www.moe.gov.mv/en/schools/628
+631,Feydhoo School,Seenu,Feydhoo,503,68,,,https://www.moe.gov.mv/en/schools/631
+626,Hithadhoo School,Seenu,Hithadhoo,904,88,10.0,,https://www.moe.gov.mv/en/schools/626
+630,Irushadhiyya School,Seenu,Irushadhiyya,250,45,,,https://www.moe.gov.mv/en/schools/630
+629,Maradhoo School,Seenu,Maradhoo,386,49,,,https://www.moe.gov.mv/en/schools/629
+627,Nooraanee School,Seenu,Nooraanee,205,37,,,https://www.moe.gov.mv/en/schools/627
+632,S. Atoll School,Seenu,S. Atoll,501,62,10.0,,https://www.moe.gov.mv/en/schools/632
+625,Sharafuddin School,Seenu,Sharafuddin,1050,114,,,https://www.moe.gov.mv/en/schools/625
+470,Bileffahee School,Shaviyani,Bileffahee,133,30,10.0,1.0,https://www.moe.gov.mv/en/schools/470
+467,Feevaku School,Shaviyani,Feevaku,165,29,,,https://www.moe.gov.mv/en/schools/467
+468,Foakaidhoo School,Shaviyani,Foakaidhoo,495,55,,,https://www.moe.gov.mv/en/schools/468
+476,Funadhoo School,Shaviyani,Funadhoo,550,55,,,https://www.moe.gov.mv/en/schools/476
+473,Lhaimagu School,Shaviyani,Lhaimagu,158,34,,,https://www.moe.gov.mv/en/schools/473
+477,Maaungoodhoo School,Shaviyani,Maaungoodhoo,245,30,,,https://www.moe.gov.mv/en/schools/477
+469,Milandhoo School,Shaviyani,Milandhoo,689,73,12.0,1.0,https://www.moe.gov.mv/en/schools/469
+464,Munavvara School,Shaviyani,Munavvara,85,25,,,https://www.moe.gov.mv/en/schools/464
+474,Narudhoo School,Shaviyani,Narudhoo,129,29,,,https://www.moe.gov.mv/en/schools/474
+475,Noomaraa School,Shaviyani,Noomaraa,91,22,,,https://www.moe.gov.mv/en/schools/475
+465,Sh. Atoll Education Centre,Shaviyani,Sh. Atoll,198,38,,,https://www.moe.gov.mv/en/schools/465
+466,Sh. Atoll School,Shaviyani,Sh. Atoll,306,44,10.0,,https://www.moe.gov.mv/en/schools/466
+471,Sh. Feydhoo School,Shaviyani,Sh. Feydhoo,204,25,,,https://www.moe.gov.mv/en/schools/471
+472,Sh. Goidhoo School,Shaviyani,Sh. Goidhoo,148,26,7.0,,https://www.moe.gov.mv/en/schools/472
+582,Burunee School,Thaa,Burunee,101,23,,,https://www.moe.gov.mv/en/schools/582
+577,Dhiyamigili School,Thaa,Dhiyamigili,190,33,,,https://www.moe.gov.mv/en/schools/577
+587,Gaadhiffushi School,Thaa,Gaadhiffushi,55,18,10.0,1.0,https://www.moe.gov.mv/en/schools/587
+580,Hirilandhoo School,Thaa,Hirilandhoo,203,40,,,https://www.moe.gov.mv/en/schools/580
+583,Kandoodhoo School,Thaa,Kandoodhoo,102,28,10.0,1.0,https://www.moe.gov.mv/en/schools/583
+578,Kinbidhoo School,Thaa,Kinbidhoo,182,34,,,https://www.moe.gov.mv/en/schools/578
+585,Madifushi School,Thaa,Madifushi,211,33,10.0,,https://www.moe.gov.mv/en/schools/585
+575,Th. Atoll Education Centre,Thaa,Th. Atoll,35,38,,,https://www.moe.gov.mv/en/schools/575
+576,Th. Atoll School,Thaa,Th. Atoll,351,94,,,https://www.moe.gov.mv/en/schools/576
+586,Th. Omadhoo School,Thaa,Th. Omadhoo,97,26,,,https://www.moe.gov.mv/en/schools/586
+584,Vandhoo School,Thaa,Vandhoo,59,19,,,https://www.moe.gov.mv/en/schools/584
+579,Veymandoo School,Thaa,Veymandoo,358,47,,,https://www.moe.gov.mv/en/schools/579
+581,Vilufushee School,Thaa,Vilufushee,310,43,,,https://www.moe.gov.mv/en/schools/581
+553,Keyodhoo School,Vaavu,Keyodhoo,212,29,,,https://www.moe.gov.mv/en/schools/553
+555,Rakeedhoo School,Vaavu,Rakeedhoo,0,0,,,https://www.moe.gov.mv/en/schools/555
+554,Thinadhoo School,Vaavu,Thinadhoo,0,0,,,https://www.moe.gov.mv/en/schools/554
+551,V. Atoll Education Centre,Vaavu,V. Atoll,132,22,10.0,1.0,https://www.moe.gov.mv/en/schools/551
+552,V. Atoll School,Vaavu,V. Atoll,51,22,,,https://www.moe.gov.mv/en/schools/552
+633,,,,1815,136,,,https://www.moe.gov.mv/en/schools/633
+634,,,,1760,131,,,https://www.moe.gov.mv/en/schools/634
+635,,,,1419,120,,,https://www.moe.gov.mv/en/schools/635
+636,,,,1422,134,,,https://www.moe.gov.mv/en/schools/636
+637,,,,1231,140,,,https://www.moe.gov.mv/en/schools/637
+638,,,,1944,181,,,https://www.moe.gov.mv/en/schools/638
+639,,,,1271,129,,,https://www.moe.gov.mv/en/schools/639
+640,,,,1457,114,,,https://www.moe.gov.mv/en/schools/640
+641,,,,1346,115,1.0,1.0,https://www.moe.gov.mv/en/schools/641
+642,,,,795,100,,,https://www.moe.gov.mv/en/schools/642
+643,,,,1628,137,,,https://www.moe.gov.mv/en/schools/643
+644,,,,1056,70,,,https://www.moe.gov.mv/en/schools/644
+645,,,,851,106,12.0,1.0,https://www.moe.gov.mv/en/schools/645
+646,,,,2416,196,,,https://www.moe.gov.mv/en/schools/646
+647,,,,2202,209,,,https://www.moe.gov.mv/en/schools/647
+648,,,,0,0,,,https://www.moe.gov.mv/en/schools/648
+649,,,,364,38,,,https://www.moe.gov.mv/en/schools/649
+650,,,,1049,54,,,https://www.moe.gov.mv/en/schools/650
+651,,,,2560,202,,,https://www.moe.gov.mv/en/schools/651
+652,,,,410,39,,,https://www.moe.gov.mv/en/schools/652
+653,,,,2179,147,,,https://www.moe.gov.mv/en/schools/653
+654,,,,60,0,,,https://www.moe.gov.mv/en/schools/654

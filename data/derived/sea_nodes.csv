@@ -1,0 +1,1135 @@
+node_id,name,atoll,type,population,child_0_17,lat,lon
+MV001001,Thuraakunu,Haa Alifu,inhabited,427.0,109.0,7.10404833,72.89868172
+MV001002,Uligamu,Haa Alifu,inhabited,400.0,110.0,7.08399477,72.92698048
+MV001003,Berinmadhoo,Haa Alifu,uninhabited,,,7.04712773,72.97164588
+MV001004,Hathifushi,Haa Alifu,uninhabited,,,7.02007799,72.83092494
+MV001005,Mulhadhoo,Haa Alifu,inhabited,286.0,79.0,7.01544875,72.99716662
+MV001006,Huvarafushi,Haa Alifu,inhabited,1841.0,547.0,6.98226598,72.89605839
+MV001007,Ihavandhoo,Haa Alifu,inhabited,2873.0,1124.0,6.95278925,72.92591234
+MV001008,Kelaa,Haa Alifu,inhabited,1115.0,327.0,6.95179433,73.21707563
+MV001009,Vashafaru,Haa Alifu,inhabited,476.0,138.0,6.89775249,73.16239166
+MV001010,Dhihdhoo,Haa Alifu,inhabited,3412.0,1260.0,6.88741094,73.11403809
+MV001011,Filladhoo,Haa Alifu,inhabited,559.0,171.0,6.89699529,73.23524767
+MV001012,Maarandhoo,Haa Alifu,inhabited,668.0,258.0,6.85224645,72.98412486
+MV001013,Thakandhoo,Haa Alifu,inhabited,279.0,42.0,6.84445444,72.99542537
+MV001014,Utheemu,Haa Alifu,inhabited,612.0,213.0,6.83448965,73.11271799
+MV001015,Muraidhoo,Haa Alifu,inhabited,534.0,207.0,6.83795892,73.16710486
+MV001016,Baarah,Haa Alifu,inhabited,1141.0,406.0,6.81692056,73.21313902
+MV001017,Maafahi,Haa Alifu,uninhabited,,,6.82933597,73.15468794
+MV001018,Alidhoo,Haa Alifu,uninhabited,,,6.84901952,73.15231052
+MV001019,Alidhuffarufinolhu,Haa Alifu,uninhabited,,,6.86137386,73.10416606
+MV001020,Beenaafushi,Haa Alifu,uninhabited,,,6.92815299,73.13583412
+MV001021,Dhapparuhuraa,Haa Alifu,resort_or_small,,,6.91521789,73.2113071
+MV001022,Dhigufaruhuraa,Haa Alifu,resort_or_small,,,6.92554529,72.97010849
+MV001023,Dhonakulhi,Haa Alifu,uninhabited,,,6.84410369,73.05051631
+MV001024,Gaamathikulhudhoo,Haa Alifu,uninhabited,,,7.03870549,72.98534764
+MV001025,Gallandhoo,Haa Alifu,uninhabited,,,6.94693676,72.98293692
+MV001026,Govvaafushi,Haa Alifu,resort_or_small,,,7.01265417,72.91928198
+MV001027,Huvahandhoo,Haa Alifu,uninhabited,,,6.96038415,72.90483215
+MV001028,Innafinolhu,Haa Alifu,uninhabited,,,7.07448671,72.81145536
+MV001029,Kan'daalifinolhu,Haa Alifu,uninhabited,,,6.92567538,73.13033333
+MV001030,Kudafinolhu,Haa Alifu,uninhabited,,,6.98915461,72.88436928
+MV001032,Maafinolhu,Haa Alifu,uninhabited,,,7.00214,72.8627813
+MV001033,Maarandhoofarufinolhu,Haa Alifu,resort_or_small,,,6.82892737,72.97194329
+MV001034,Madulu,Haa Alifu,uninhabited,,,7.05495433,72.95345397
+MV001035,Manafaru,Haa Alifu,uninhabited,,,6.99704105,72.94008154
+MV001036,Matheerah,Haa Alifu,uninhabited,,,7.02762313,72.81889258
+MV001037,Medhafushi,Haa Alifu,uninhabited,,,7.01097039,72.93473983
+MV001038,Mulidhoo,Haa Alifu,uninhabited,,,6.83597043,73.01118991
+MV001039,Naridhoo,Haa Alifu,uninhabited,,,6.89507712,73.12689173
+MV001040,Umuraifinolhu,Haa Alifu,resort_or_small,,,7.00949518,72.85113287
+MV001041,Un'gulifinolhu,Haa Alifu,uninhabited,,,6.97035989,72.90144992
+MV001042,Van'gaaru,Haa Alifu,uninhabited,,,7.09333903,72.87815594
+MV001043,Velifinolhu,Haa Alifu,uninhabited,,,6.99399671,72.87493278
+MV002001,Faridhoo,Haa Dhaalu,uninhabited,,,6.78493602,73.05404096
+MV002002,Hon'daidhoo,Haa Dhaalu,uninhabited,,,6.76979713,73.08750234
+MV002003,Hanimaadhoo,Haa Dhaalu,inhabited,2664.0,667.0,6.7514191,73.1716974
+MV002004,Finey,Haa Dhaalu,inhabited,409.0,135.0,6.74597072,73.05328518
+MV002005,Naivaadhoo,Haa Dhaalu,inhabited,495.0,159.0,6.74707778,72.93491128
+MV002006,Hirimaradhoo,Haa Dhaalu,inhabited,293.0,67.0,6.72489301,73.02371115
+MV002007,Nolhivaranfaru,Haa Dhaalu,inhabited,1254.0,426.0,6.69330536,73.12065025
+MV002008,Nellaidhoo,Haa Dhaalu,inhabited,1038.0,393.0,6.71482131,72.94685266
+MV002009,Nolhivaramu,Haa Dhaalu,inhabited,1985.0,842.0,6.66248999,73.08229114
+MV002010,Kurin'bee,Haa Dhaalu,inhabited,492.0,172.0,6.66552645,72.99672346
+MV002011,Kun'burudhoo,Haa Dhaalu,uninhabited,,,6.65825171,73.02743878
+MV002012,Kulhudhuffushi,Haa Dhaalu,inhabited,10131.0,3601.0,6.62318612,73.06940636
+MV002013,Kumundhoo,Haa Dhaalu,inhabited,997.0,324.0,6.57106615,73.05257311
+MV002014,Neykurendhoo,Haa Dhaalu,inhabited,641.0,206.0,6.54306465,72.97996253
+MV002015,Vaikaradhoo,Haa Dhaalu,inhabited,776.0,253.0,6.54985472,72.95306265
+MV002016,Maavaidhoo,Haa Dhaalu,uninhabited,,,6.51539924,73.05391402
+MV002017,Makunudhoo,Haa Dhaalu,inhabited,1265.0,486.0,6.40918225,72.70542313
+MV002018,Dhipparufushi,Haa Dhaalu,uninhabited,,,6.31928035,72.64084766
+MV002019,Fenboahuraa,Haa Dhaalu,uninhabited,,,6.39671876,72.6942643
+MV002020,Hirinaidhoo,Haa Dhaalu,uninhabited,,,6.70160914,72.94832984
+MV002021,Hon'daafushi,Haa Dhaalu,uninhabited,,,6.77933823,73.12086433
+MV002022,Innafushi,Haa Dhaalu,uninhabited,,,6.40892459,72.64546058
+MV002023,Kanamana,Haa Dhaalu,uninhabited,,,6.70528878,72.89959098
+MV002024,Kattalafushi,Haa Dhaalu,uninhabited,,,6.56648837,72.9830102
+MV002025,Keylakunu,Haa Dhaalu,uninhabited,,,6.60275624,73.00907222
+MV002026,Kudafarufasgandu,Haa Dhaalu,resort_or_small,,,6.7118869,72.9250506
+MV002027,Kudamuraidhoo,Haa Dhaalu,uninhabited,,,6.64271751,72.91978608
+MV002028,Kuredhigan'du,Haa Dhaalu,resort_or_small,,,6.67851463,73.10510584
+MV002031,Muiri,Haa Dhaalu,uninhabited,,,6.65809283,72.93636354
+MV002032,Naagoashi,Haa Dhaalu,uninhabited,,,6.67020884,72.89699633
+MV002033,Ruffushi,Haa Dhaalu,resort_or_small,,,6.75900167,72.93902616
+MV002034,Theefaridhoo,Haa Dhaalu,uninhabited,,,6.74016169,73.03379048
+MV002035,Vaikaramuraidhoo,Haa Dhaalu,uninhabited,,,6.54122416,72.90072476
+MV002036,Veligan'du,Haa Dhaalu,resort_or_small,,,6.75424151,72.93820467
+MV003001,Kan'ditheemu,Shaviyani,inhabited,1193.0,460.0,6.44075306,72.9171335
+MV003002,Noomaraa,Shaviyani,inhabited,371.0,127.0,6.43423514,73.06910075
+MV003003,Goidhoo,Shaviyani,inhabited,592.0,194.0,6.4301002,72.92991695
+MV003004,Feydhoo,Shaviyani,inhabited,854.0,306.0,6.36045517,73.04859193
+MV003005,Feevah,Shaviyani,inhabited,694.0,235.0,6.34887515,73.20996601
+MV003006,Bileiyfahi,Shaviyani,inhabited,502.0,178.0,6.337895,72.97563034
+MV003007,Foakaidhoo,Shaviyani,inhabited,1571.0,635.0,6.32672062,73.14926594
+MV003008,Narudhoo,Shaviyani,inhabited,544.0,200.0,6.2643398,73.21818248
+MV003009,Maakan'doodhoo,Shaviyani,uninhabited,,,6.23487931,73.26750998
+MV003010,Maroshi,Shaviyani,inhabited,479.0,144.0,6.20976625,73.06056755
+MV003011,Lhaimagu,Shaviyani,inhabited,684.0,214.0,6.16394525,73.25126654
+MV003012,Firun'baidhoo,Shaviyani,uninhabited,,,6.11433181,73.22768249
+MV003013,Komandoo,Shaviyani,inhabited,921.0,286.0,6.05428233,73.05431414
+MV003014,Maaun'goodhoo,Shaviyani,inhabited,944.0,326.0,6.03667529,73.28373394
+MV003015,Funadhoo,Shaviyani,inhabited,2255.0,766.0,6.15406932,73.28905473
+MV003016,Milandhoo,Shaviyani,inhabited,2094.0,802.0,6.28690977,73.24527186
+MV003017,Bis Alhaahuraa,Shaviyani,resort_or_small,,,6.15510446,73.29248249
+MV003018,Boduhuraa,Shaviyani,resort_or_small,,,6.07165211,73.04371295
+MV003019,Bolissafaru,Shaviyani,uninhabited,,,5.98105917,73.11093851
+MV003020,Dhigurah,Shaviyani,uninhabited,,,6.02968237,73.06822341
+MV003021,Dhiguvelidhoomairah,Shaviyani,uninhabited,,,6.01954537,73.08756218
+MV003022,Dholhiyadhoo,Shaviyani,uninhabited,,,5.99317201,73.21079921
+MV003023,Dholhiyadhookudarah,Shaviyani,resort_or_small,,,5.99034808,73.2242344
+MV003024,Dhonvelihuraa,Shaviyani,uninhabited,,,6.1846445,73.29888328
+MV003025,Ekasdhoo,Shaviyani,uninhabited,,,6.07089921,73.28436755
+MV003026,Eriadhoo,Shaviyani,uninhabited,,,6.10354324,73.28933913
+MV003027,Farukolhu,Shaviyani,uninhabited,,,6.18998307,73.2984089
+MV003028,Fushifaru,Shaviyani,uninhabited,,,6.39560445,72.92608081
+MV003029,Gaakoshibi,Shaviyani,uninhabited,,,6.28709393,73.01233384
+MV003030,Gallaidhoo,Shaviyani,uninhabited,,,5.96912592,73.12438903
+MV003031,Hirubadhoo,Shaviyani,uninhabited,,,6.18784885,73.24537207
+MV003032,Hurasfaru,Shaviyani,uninhabited,,,6.14082989,73.03897699
+MV003033,Kakaaeriyadhoo,Shaviyani,uninhabited,,,6.47809663,72.90237517
+MV003034,Kan'baalifaru,Shaviyani,uninhabited,,,6.12452113,73.25460974
+MV003035,Keekimini,Shaviyani,uninhabited,,,6.00737766,73.11197509
+MV003036,Kudadhoo,Shaviyani,uninhabited,,,6.4359643,72.90745932
+MV003037,Kudafarufinolhu,Shaviyani,resort_or_small,,,6.06399387,73.04430542
+MV003038,Kudalhaimendhoo,Shaviyani,uninhabited,,,6.01463656,73.29730047
+MV003047,Madidhoo,Shaviyani,uninhabited,,,6.30230164,73.10875883
+MV003048,Madikuredhdhoo,Shaviyani,uninhabited,,,6.28442533,73.15104777
+MV003049,Mathikomandoo,Shaviyani,uninhabited,,,6.057182,73.04617129
+MV003050,Medhukun'burudhoo,Shaviyani,uninhabited,,,6.19713089,73.03038874
+MV003051,Medhurah,Shaviyani,uninhabited,,,6.02426029,73.07655993
+MV003052,Migoodhoo,Shaviyani,uninhabited,,,6.22879001,73.24128986
+MV003053,Naainfarufinolhu,Shaviyani,uninhabited,,,6.2034415,72.99858191
+MV003054,Naalaahuraa,Shaviyani,resort_or_small,,,6.12784146,73.03605676
+MV003055,Nalandhoo,Shaviyani,uninhabited,,,6.32518572,73.22969659
+MV003056,Narurin'budhoo,Shaviyani,uninhabited,,,6.27918568,73.19579459
+MV003057,Neyo,Shaviyani,uninhabited,,,6.45035684,73.05969022
+MV003058,Raggan'duhuraa,Shaviyani,resort_or_small,,,6.11195908,73.03826594
+MV003059,Van'garu,Shaviyani,uninhabited,,,6.08940981,73.20382578
+MV004001,Hen'badhoo,Noonu,inhabited,638.0,227.0,5.96754197,73.39284833
+MV004002,Ken'dhikulhudhoo,Noonu,inhabited,1556.0,583.0,5.95238109,73.4156616
+MV004003,Maalhendhoo,Noonu,inhabited,724.0,264.0,5.90251666,73.45593602
+MV004004,Kudafari,Noonu,inhabited,628.0,231.0,5.88276343,73.4003025
+MV004005,Landhoo,Noonu,inhabited,757.0,278.0,5.88184716,73.46618422
+MV004006,Maafaru,Noonu,inhabited,919.0,283.0,5.82403699,73.47667968
+MV004007,Lhohi,Noonu,inhabited,692.0,231.0,5.81585075,73.37782509
+MV004008,Miladhoo,Noonu,inhabited,934.0,337.0,5.79054089,73.3623259
+MV004009,Magoodhoo,Noonu,inhabited,305.0,112.0,5.77636494,73.36245912
+MV004010,Manadhoo,Noonu,inhabited,1745.0,519.0,5.76626371,73.41119266
+MV004011,Holhudhoo,Noonu,inhabited,1428.0,460.0,5.75135742,73.24942843
+MV004012,Fohdhoo,Noonu,inhabited,345.0,80.0,5.74385666,73.21587249
+MV004013,Velidhoo,Noonu,inhabited,1832.0,536.0,5.66421675,73.2734465
+MV004014,Ban'daidhihdhoo,Noonu,uninhabited,,,5.68490954,73.25756688
+MV004015,Bodufushi,Noonu,resort_or_small,,,5.69920699,73.41024473
+MV004016,Bodulhaimendhoo,Noonu,uninhabited,,,6.00008295,73.30258467
+MV004017,Bomasdhoo,Noonu,uninhabited,,,5.97153259,73.34494536
+MV004018,Burehifasdhoo,Noonu,uninhabited,,,5.96552536,73.36809191
+MV004019,Dheefuram,Noonu,uninhabited,,,5.88775187,73.31878385
+MV004020,Dhekenanfaru,Noonu,uninhabited,,,5.9200921,73.15718001
+MV004021,Dhelibeyruhelhihuraa,Noonu,resort_or_small,,,5.80726769,73.45667914
+MV004022,Dhigurah,Noonu,uninhabited,,,5.73170772,73.35963592
+MV004023,Dhonaerikan'doodhoo,Noonu,uninhabited,,,5.6463646,73.32966732
+MV004024,Ehdhuffarumairah,Noonu,uninhabited,,,5.69565358,73.40878293
+MV004025,Ekulhivaru,Noonu,uninhabited,,,5.949919,73.30674078
+MV004026,Farumuli,Noonu,resort_or_small,,,5.86461596,73.47518871
+MV004027,Felivaru,Noonu,uninhabited,,,5.83598882,73.30655713
+MV004028,Fohdhipparu,Noonu,resort_or_small,,,5.7536286,73.20860618
+MV004029,Fushivelavaru,Noonu,uninhabited,,,5.83108588,73.20934651
+MV004030,Goan'bilivaadhoo,Noonu,uninhabited,,,5.82274208,73.38743397
+MV004031,Huivani,Noonu,uninhabited,,,5.91267921,73.31504034
+MV004032,Hulhuhdhoo,Noonu,uninhabited,,,5.8151734,73.31893827
+MV004033,Huvan'dhumaavattaru,Noonu,uninhabited,,,5.84524378,73.44495343
+MV004034,In'guraidhoo,Noonu,uninhabited,,,5.79713912,73.34476211
+MV004035,Kaalhugemendhoo,Noonu,resort_or_small,,,5.78711203,73.3541597
+MV004036,Kafakomandoo,Noonu,uninhabited,,,5.96230796,73.38625884
+MV004037,Kalaidhoo,Noonu,uninhabited,,,5.98359527,73.32345671
+MV004038,Kan'dinmaahuraa,Noonu,resort_or_small,,,5.85780283,73.4801993
+MV004039,Karinma,Noonu,resort_or_small,,,5.65859178,73.37255502
+MV004040,Karinmavattaru,Noonu,uninhabited,,,5.66942829,73.38660944
+MV004041,Kedhivaru,Noonu,uninhabited,,,5.85223679,73.33637909
+MV004042,Kudafunafaru,Noonu,uninhabited,,,5.88465567,73.37786055
+MV004043,Kudafushi,Noonu,resort_or_small,,,5.70273453,73.41314844
+MV004044,Kunnamalei,Noonu,uninhabited,,,5.95303525,73.132771
+MV004045,Kuramaadhoo,Noonu,uninhabited,,,5.87324641,73.14388436
+MV004046,Kuredhivaru,Noonu,uninhabited,,,5.87536192,73.3431611
+MV004061,Loafaru,Noonu,uninhabited,,,5.78607699,73.27641906
+MV004062,Maafunafaru,Noonu,uninhabited,,,5.86118666,73.36619222
+MV004063,Maakanaafushi,Noonu,resort_or_small,,,5.72779418,73.4161572
+MV004064,Maakurehdhoo,Noonu,uninhabited,,,5.69651077,73.31198362
+MV004065,Maavahdhoo,Noonu,uninhabited,,,5.81497361,73.32629015
+MV004066,Maavelavaru,Noonu,uninhabited,,,5.8059696,73.17199902
+MV004067,Medhafushi,Noonu,uninhabited,,,5.74459321,73.32410279
+MV004068,Medhufaru,Noonu,uninhabited,,,5.71388915,73.41500908
+MV004069,Minaavaru,Noonu,uninhabited,,,5.76874369,73.34354802
+MV004070,Orimasvaru,Noonu,uninhabited,,,5.86325508,73.20740167
+MV004071,Orivaru,Noonu,uninhabited,,,5.80211482,73.29763409
+MV004072,Orivarukudarah,Noonu,resort_or_small,,,5.80101001,73.29366585
+MV004073,Raafushi,Noonu,uninhabited,,,5.6475493,73.29900759
+MV004074,Raalhulaakolhu,Noonu,resort_or_small,,,5.68687041,73.40456397
+MV004075,Randheli,Noonu,uninhabited,,,5.69188096,73.34103346
+MV004076,Than'burudhoo,Noonu,uninhabited,,,5.71649125,73.2348816
+MV004077,Than'burudhuffushi,Noonu,uninhabited,,,5.70831227,73.24336725
+MV004078,Tholhendhoo,Noonu,uninhabited,,,5.92083062,73.43666247
+MV004079,Thoshigan'dukolhu,Noonu,uninhabited,,,5.73239598,73.41400037
+MV004080,Vavathi,Noonu,uninhabited,,,5.79641094,73.22745922
+MV005001,Hinnavaru,Lhaviyani,inhabited,2286.0,702.0,5.49238766,73.41179738
+MV005002,Naifaru,Lhaviyani,inhabited,4832.0,1437.0,5.4452329,73.36510267
+MV005003,Kurendhoo,Lhaviyani,inhabited,1171.0,364.0,5.33419965,73.46384025
+MV005004,Olhuvelifushi,Lhaviyani,inhabited,703.0,246.0,5.27842027,73.60683669
+MV005005,Maafilaafushi,Lhaviyani,uninhabited,,,5.36299062,73.41528186
+MV005006,Aligau,Lhaviyani,resort_or_small,,,5.2440915,73.51684345
+MV005007,Boamandhipparu Huraagan'du,Lhaviyani,resort_or_small,,,5.49824099,73.51055573
+MV005008,Bodufaahuraa,Lhaviyani,resort_or_small,,,5.33254368,73.6570324
+MV005009,Bodufinolhu,Lhaviyani,uninhabited,,,5.27072306,73.57133693
+MV005010,Dhashugirifinolhu,Lhaviyani,resort_or_small,,,5.42169999,73.42501239
+MV005011,Dhehuraa Evvihuraa,Lhaviyani,resort_or_small,,,5.55469386,73.48951983
+MV005012,Dheruffinolhu,Lhaviyani,uninhabited,,,5.3243197,73.64714266
+MV005013,Dhiffushi,Lhaviyani,uninhabited,,,5.38658208,73.64961711
+MV005014,Dhihdhoo,Lhaviyani,uninhabited,,,5.37619578,73.38301888
+MV005015,Dhirun'baahuraa,Lhaviyani,resort_or_small,,,5.35397005,73.65859638
+MV005016,Faadhoo,Lhaviyani,uninhabited,,,5.431602,73.63075653
+MV005017,Faadhoohuraagan'du,Lhaviyani,resort_or_small,,,5.43592724,73.61967749
+MV005018,Fainuaadhanuhuraa,Lhaviyani,resort_or_small,,,5.35852899,73.65777722
+MV005019,Fehigili,Lhaviyani,resort_or_small,,,5.55734282,73.48134019
+MV005020,Felivaru,Lhaviyani,uninhabited,,,5.47702613,73.38548257
+MV005021,Fushifaru,Lhaviyani,uninhabited,,,5.49115299,73.51513223
+MV005022,Gaaerifaru,Lhaviyani,uninhabited,,,5.48544211,73.40361917
+MV005023,Govvaafushi,Lhaviyani,resort_or_small,,,5.35715772,73.65849688
+MV005024,Hiriyadhoo,Lhaviyani,uninhabited,,,5.41190929,73.64466217
+MV005025,Hudhufushi,Lhaviyani,uninhabited,,,5.36198548,73.65643617
+MV005026,Huravalhi,Lhaviyani,uninhabited,,,5.52116207,73.44176278
+MV005027,Innahuraa,Lhaviyani,uninhabited,,,5.34994596,73.65399803
+MV005028,Kalhumanjehuraa,Lhaviyani,resort_or_small,,,5.55350708,73.48329409
+MV005029,Kanifushi,Lhaviyani,uninhabited,,,5.36675362,73.34187132
+MV005030,Kanuhuraa,Lhaviyani,uninhabited,,,5.53261991,73.50642201
+MV005031,Komandoo,Lhaviyani,uninhabited,,,5.49332228,73.42427049
+MV005032,Kudadhoo,Lhaviyani,uninhabited,,,5.50292514,73.43358076
+MV005033,Kurehdhoo,Lhaviyani,uninhabited,,,5.54923803,73.46538096
+MV005061,Lhohi,Lhaviyani,uninhabited,,,5.32148725,73.47281961
+MV005062,Lhossalafushi,Lhaviyani,uninhabited,,,5.30741377,73.48287659
+MV005063,Maabinhuraa,Lhaviyani,uninhabited,,,5.33739514,73.65253703
+MV005064,Maakoa,Lhaviyani,uninhabited,,,5.35755968,73.43008744
+MV005065,Madhiriguraidhoo,Lhaviyani,uninhabited,,,5.47003588,73.55902651
+MV005066,Madivaru,Lhaviyani,uninhabited,,,5.45883485,73.37018766
+MV005067,Maduvvari,Lhaviyani,uninhabited,,,5.28495973,73.50230511
+MV005068,Maidhoo,Lhaviyani,uninhabited,,,5.39699447,73.64859856
+MV005069,Masleggihuraa,Lhaviyani,resort_or_small,,,5.54364083,73.50074961
+MV005070,Medha Adihuraa,Lhaviyani,uninhabited,,,5.54068724,73.50281644
+MV005071,Medhafushi,Lhaviyani,resort_or_small,,,5.35561459,73.42693169
+MV005072,Meedhaahuraa,Lhaviyani,uninhabited,,,5.36929247,73.407685
+MV005073,Meyyafushi,Lhaviyani,uninhabited,,,5.44224541,73.60689398
+MV005074,Ookolhufinolhu,Lhaviyani,uninhabited,,,5.2823147,73.62340259
+MV005075,Sehlhifushi,Lhaviyani,uninhabited,,,5.4207698,73.64328801
+MV005076,Thilamaafushi,Lhaviyani,uninhabited,,,5.27319063,73.58692604
+MV005077,Varihuraa,Lhaviyani,resort_or_small,,,5.30360278,73.4879973
+MV005078,Vavvaru,Lhaviyani,uninhabited,,,5.41732129,73.35492332
+MV005079,Veligan'du,Lhaviyani,resort_or_small,,,5.52854587,73.43787142
+MV005080,Veyvah,Lhaviyani,uninhabited,,,5.42518879,73.36133059
+MV005081,Vihafarufinolhu,Lhaviyani,resort_or_small,,,5.4558355,73.58189019
+MV006001,Alifushi,Raa,inhabited,1859.0,576.0,5.96718534,72.9531469
+MV006002,Vaadhoo,Raa,inhabited,452.0,148.0,5.85573223,72.992059
+MV006003,Rasgetheemu,Raa,inhabited,537.0,168.0,5.8077119,73.00297567
+MV006004,An'golhitheemu,Raa,inhabited,381.0,118.0,5.79305344,73.00639727
+MV006005,Hulhudhuffaaru,Raa,inhabited,1228.0,426.0,5.76599469,73.01185317
+MV006006,Un'goofaaru,Raa,inhabited,1754.0,571.0,5.66838364,73.02997299
+MV006007,Kan'dholhudhoo,Raa,uninhabited,,,5.61882117,72.85501167
+MV006008,Maakurathu,Raa,inhabited,956.0,330.0,5.60609434,73.04330521
+MV006009,Rasmaadhoo,Raa,inhabited,554.0,163.0,5.56304719,73.04380999
+MV006010,Innamaadhoo,Raa,inhabited,663.0,183.0,5.54932301,73.0439488
+MV006011,Maduvvari,Raa,inhabited,1760.0,594.0,5.48646896,72.89600437
+MV006012,In'guraidhoo,Raa,inhabited,1278.0,478.0,5.47692207,73.03685651
+MV006013,Fainu,Raa,inhabited,423.0,133.0,5.46345704,73.03411405
+MV006014,Meedhoo,Raa,inhabited,1872.0,615.0,5.45811884,72.95495248
+MV006015,Kinolhas,Raa,inhabited,543.0,211.0,5.44840151,73.02902037
+MV006016,Boduhuraa,Raa,resort_or_small,,,5.41809835,73.02250075
+MV006017,Gaaun'doodhoo,Raa,uninhabited,,,5.74949175,73.01561874
+MV006018,Un'gulu,Raa,uninhabited,,,5.69090054,73.02640312
+MV006019,Dhuvaafaru,Raa,inhabited,3321.0,1214.0,5.62977388,73.04112903
+MV006020,Aarah,Raa,uninhabited,,,5.44767635,72.94096949
+MV006021,Angaagiri,Raa,uninhabited,,,5.55641608,72.9460447
+MV006022,Arilundhoo,Raa,uninhabited,,,5.66016716,72.95778322
+MV006023,Ban'daveri,Raa,uninhabited,,,5.62275893,72.85228641
+MV006024,Bodufarufinolhu,Raa,uninhabited,,,5.5298544,72.80479809
+MV006025,Bodufenmaaen'boodhoo,Raa,uninhabited,,,5.62973948,72.92421386
+MV006026,Bodufushi,Raa,uninhabited,,,5.50763884,72.96893495
+MV006027,Boduhaiykodi,Raa,uninhabited,,,5.61141228,72.96949938
+MV006028,Dheburidheythereyvaadhoo,Raa,uninhabited,,,5.40067812,72.99143253
+MV006029,Dhekunumaafarufinolhu,Raa,resort_or_small,,,5.43219871,72.89666751
+MV006030,Dhigali,Raa,uninhabited,,,5.47534327,72.9548191
+MV006031,Dhikkurehdhoo,Raa,uninhabited,,,5.57684175,72.95718691
+MV006032,Dhinnaafushi,Raa,resort_or_small,,,5.58908752,72.83331721
+MV006033,Dhoragali,Raa,uninhabited,,,5.49407111,72.99737968
+MV006034,Dhuvaafaruhuraa,Raa,resort_or_small,,,5.63987548,73.04158772
+MV006035,Ehthigili,Raa,uninhabited,,,5.97881994,72.9380184
+MV006036,Ethigan'dujehihuraa,Raa,resort_or_small,,,5.42411787,73.02977561
+MV006037,Faarufushi,Raa,uninhabited,,,5.76799098,72.96539707
+MV006038,Fasgan'dufaru,Raa,resort_or_small,,,5.757912,72.93984759
+MV006039,Fasmendhoo,Raa,uninhabited,,,5.49418947,72.88164554
+MV006040,Fenfushi,Raa,uninhabited,,,5.38260888,72.90267274
+MV006041,Filaidhoo,Raa,uninhabited,,,5.4917968,72.9384061
+MV006042,Fuggiri,Raa,uninhabited,,,5.72441383,72.85418565
+MV006043,Furaveri,Raa,uninhabited,,,5.44064941,72.90823754
+MV006044,Gemana,Raa,uninhabited,,,5.53706683,72.98495845
+MV006045,Giraavaru,Raa,resort_or_small,,,5.58829297,72.86117478
+MV006046,Goboshi,Raa,resort_or_small,,,5.55165936,72.8841847
+MV006047,Goiymaru,Raa,uninhabited,,,5.6302321,72.88808977
+MV006048,Goyyafaru,Raa,uninhabited,,,5.56495679,72.92830455
+MV006049,Hiboodhoo,Raa,uninhabited,,,5.61264748,72.91906833
+MV006050,Hiraveri,Raa,resort_or_small,,,5.57163545,72.86942312
+MV006051,Hulhudhoo,Raa,resort_or_small,,,5.73855116,73.01898803
+MV006052,Huruvalhi,Raa,uninhabited,,,5.3919435,72.9789556
+MV006053,Ifuru,Raa,uninhabited,,,5.70824814,73.023916
+MV006054,Kandhoomeehunge Lhaan'bugali,Raa,resort_or_small,,,5.7312679,72.9202008
+MV006055,Kan'doogan'du,Raa,uninhabited,,,5.78080754,72.87599305
+MV006056,Kothaifaru,Raa,uninhabited,,,5.524756,72.8423117
+MV006057,Kottefaru,Raa,uninhabited,,,5.51011523,73.04120288
+MV006058,Kudafenmaaen'boodhoo,Raa,resort_or_small,,,5.62518328,72.935868
+MV006059,Kudafushi,Raa,uninhabited,,,5.51065928,72.98037952
+MV006060,Kudakurathu,Raa,uninhabited,,,5.58358705,73.04429715
+MV006061,Kudalhosgiri,Raa,resort_or_small,,,5.60217383,72.91390625
+MV006062,Kudathulhaadhoo,Raa,resort_or_small,,,5.40763755,72.89898086
+MV006063,Kukulhudhoo,Raa,uninhabited,,,5.45918385,72.87114817
+MV006064,Kukulhudhuffaru,Raa,uninhabited,,,5.4734378,72.84401967
+MV006065,Kurehdhoo,Raa,uninhabited,,,5.64047744,72.89463276
+MV006066,Kuroshigiri,Raa,resort_or_small,,,5.51398421,72.85031833
+MV006092,Lhaan'bugali,Raa,uninhabited,,,5.55275508,72.87676113
+MV006093,Lhohi,Raa,uninhabited,,,5.46150669,72.88522925
+MV006094,Lin'boakandhoo,Raa,uninhabited,,,5.73064145,72.93422776
+MV006095,Lun'dhufushi,Raa,uninhabited,,,5.64364794,72.98682859
+MV006096,Maamin'gili,Raa,uninhabited,,,5.65133463,72.88449058
+MV006097,Maamunagau,Raa,uninhabited,,,5.35983529,72.91921807
+MV006098,Maamunagaufinolhu,Raa,resort_or_small,,,5.36961561,72.87619701
+MV006099,Maanenfushi,Raa,uninhabited,,,5.75111797,72.96113643
+MV006100,Maashigiri,Raa,uninhabited,,,5.51390701,72.82689707
+MV006101,Madivaafaru,Raa,resort_or_small,,,5.6082745,72.98951444
+MV006102,Mahidhoo,Raa,resort_or_small,,,5.53751462,72.94428889
+MV006103,Meedhupparu,Raa,uninhabited,,,5.45589173,72.97991097
+MV006104,Minaadhoo,Raa,resort_or_small,,,5.58815577,72.92747783
+MV006105,Mullaafushi,Raa,resort_or_small,,,5.51989239,72.90747673
+MV006106,Muravandhoo,Raa,uninhabited,,,5.60805968,72.95264594
+MV006107,Neyo,Raa,uninhabited,,,5.49257444,73.0388057
+MV006108,Orimasfushi,Raa,resort_or_small,,,5.58119164,72.90675798
+MV006109,Thaavathaa,Raa,uninhabited,,,5.48522104,72.97577153
+MV006110,Ufulandhoo,Raa,uninhabited,,,5.46438153,72.91337426
+MV006111,Uthurumaafaru,Raa,uninhabited,,,5.6699748,72.84569618
+MV006112,Vaffushi,Raa,resort_or_small,,,5.62939204,72.86279587
+MV006113,Vaffushihuraa,Raa,resort_or_small,,,5.64283245,72.83986808
+MV006114,Vakkarufaru,Raa,resort_or_small,,,5.5151363,72.92691367
+MV006115,Vandhoo,Raa,uninhabited,,,5.53150171,73.04212751
+MV006116,Veyvah,Raa,resort_or_small,,,5.76729016,72.89336359
+MV006117,Vilin'gili,Raa,uninhabited,,,5.37668849,72.95498259
+MV007001,Kudarikilu,Baa,inhabited,557.0,162.0,5.30045002,73.07110877
+MV007002,Kamadhoo,Baa,inhabited,552.0,113.0,5.28215598,73.13691455
+MV007003,Kendhoo,Baa,inhabited,1002.0,346.0,5.27540116,73.01029096
+MV007004,Kihaadhoo,Baa,inhabited,481.0,196.0,5.21529419,73.12476282
+MV007005,Dhonfanu,Baa,inhabited,398.0,128.0,5.18809517,73.12264789
+MV007006,Dharavandhoo,Baa,inhabited,997.0,286.0,5.15674962,73.13152931
+MV007007,Maalhos,Baa,inhabited,572.0,201.0,5.13475433,73.1077837
+MV007008,Eydhafushi,Baa,inhabited,2581.0,844.0,5.10269487,73.07027965
+MV007009,Thulhaadhoo,Baa,inhabited,1625.0,502.0,5.02206048,72.84076678
+MV007010,Hithaadhoo,Baa,inhabited,744.0,282.0,5.00761931,72.92318889
+MV007011,Fulhadhoo,Baa,inhabited,341.0,66.0,4.88454299,72.93504532
+MV007012,Fehendhoo,Baa,inhabited,198.0,51.0,4.88197679,72.96735538
+MV007013,Goidhoo,Baa,inhabited,583.0,171.0,4.87107887,72.99762402
+MV007014,Ahivaffushi,Baa,resort_or_small,,,5.22849678,72.85694721
+MV007015,Aidhoo,Baa,uninhabited,,,5.18729011,73.16350634
+MV007016,An'gaafaru,Baa,resort_or_small,,,5.17759289,73.09927218
+MV007017,Anhenunfushi,Baa,uninhabited,,,5.34216533,72.96877765
+MV007018,Bathalaa,Baa,resort_or_small,,,5.35333953,73.06855658
+MV007019,Bathalaahuraa,Baa,resort_or_small,,,5.35740826,73.06198622
+MV007020,Boadhaafushifinolhu,Baa,uninhabited,,,4.88157786,72.89333842
+MV007021,Bodufinolhu,Baa,uninhabited,,,5.00948554,72.85587799
+MV007022,Boifushi,Baa,resort_or_small,,,5.29777992,72.99414308
+MV007023,Dhakandhoo,Baa,uninhabited,,,5.24838295,72.89365315
+MV007024,Dhandhoo,Baa,uninhabited,,,5.23593486,73.16838182
+MV007025,Dhashufaruhuraa,Baa,resort_or_small,,,4.81734805,72.90982987
+MV007026,Dhigudhefaru,Baa,uninhabited,,,5.23506777,73.13898574
+MV007027,Dhigufaruvinagan'du,Baa,uninhabited,,,5.35246871,72.99029086
+MV007028,Dhoogan'dufinolhu,Baa,resort_or_small,,,5.24744392,73.15187961
+MV007029,Dhunikolhu,Baa,uninhabited,,,5.03964515,72.88160875
+MV007030,En'boodhoo,Baa,uninhabited,,,5.06388041,72.85621234
+MV007031,Fares,Baa,uninhabited,,,5.23211451,72.8771414
+MV007032,Finolhas,Baa,uninhabited,,,5.23391664,73.1136521
+MV007033,Finolhufaru,Baa,resort_or_small,,,5.18393265,72.93463971
+MV007034,Fonimagoodhoo,Baa,uninhabited,,,5.25524817,73.16340592
+MV007035,Funadhoo,Baa,uninhabited,,,5.27463892,73.03310628
+MV007036,Gaagan'dufaruhuraa,Baa,resort_or_small,,,5.3692308,73.06082779
+MV007037,Gaavilin'gili,Baa,resort_or_small,,,5.06210025,72.83736742
+MV007038,Gemendhoo,Baa,resort_or_small,,,5.27559888,73.01979597
+MV007039,Hanifaru,Baa,uninhabited,,,5.18309381,73.13312625
+MV007040,Hanifaruhuraa,Baa,resort_or_small,,,5.17288669,73.1514493
+MV007041,Hibalhidhoo,Baa,uninhabited,,,5.14133712,73.11481965
+MV007042,Hirundhoo,Baa,uninhabited,,,5.21710281,73.15350073
+MV007043,Horubadhoo,Baa,uninhabited,,,5.16266568,73.05290362
+MV007044,Hulhudhoo,Baa,uninhabited,,,5.2749037,73.02515194
+MV007045,Huraafaru,Baa,uninhabited,,,5.20698582,73.1537965
+MV007046,Innafushi,Baa,uninhabited,,,4.87733432,72.87784435
+MV007047,Kanufusheegaathufinolhu,Baa,uninhabited,,,5.01362411,72.96227239
+MV007048,Kanufushi,Baa,uninhabited,,,5.01173009,72.95183941
+MV007049,Kashidhoo,Baa,uninhabited,,,5.29718431,72.9687041
+MV007050,Keyodhoo,Baa,uninhabited,,,5.27658121,72.99600198
+MV007051,Kihaadhuffaru,Baa,uninhabited,,,5.19105863,73.13215376
+MV007052,Kihavahhuravalhi,Baa,uninhabited,,,5.2963347,73.0568617
+MV007053,Kudadhoo,Baa,resort_or_small,,,5.02868952,72.99178745
+MV007054,Kunfunadhoo,Baa,uninhabited,,,5.11264532,73.07707798
+MV007055,Lan'daagiraavaru,Baa,uninhabited,,,5.28593333,73.11209714
+MV007094,Maaddoo,Baa,uninhabited,,,5.09277453,73.06296229
+MV007095,Maaddoohulhudhoo,Baa,uninhabited,,,5.07130681,73.03177689
+MV007096,Maafusheefinolhu,Baa,resort_or_small,,,5.23136226,73.19104649
+MV007097,Maamaduvvari,Baa,uninhabited,,,5.00966235,72.94308774
+MV007098,Maarikilu,Baa,uninhabited,,,5.33502336,72.95245374
+MV007099,Madhirivaadhoo,Baa,uninhabited,,,5.26888607,73.16113993
+MV007100,Mathifaru,Baa,resort_or_small,,,4.81605472,72.8905074
+MV007101,Medhufinolhugaathufinolhu,Baa,uninhabited,,,5.01573817,72.96649804
+MV007102,Mendhoo,Baa,uninhabited,,,5.1749663,72.99544068
+MV007103,Milaidhoo,Baa,uninhabited,,,5.26710035,73.12855597
+MV007104,Miriandhoo,Baa,uninhabited,,,5.06322435,73.03114366
+MV007105,Mudhdhoo,Baa,uninhabited,,,5.20664617,73.08467672
+MV007106,Muthaafushi,Baa,uninhabited,,,5.07846982,72.87803931
+MV007107,Nelivarufinolhu,Baa,resort_or_small,,,5.1259764,73.08601426
+MV007108,Nibiligaa,Baa,resort_or_small,,,5.17423177,72.94411641
+MV007109,Olhugiri,Baa,uninhabited,,,5.00137872,72.90588088
+MV007110,Thiladhoo,Baa,uninhabited,,,5.26211118,73.15517491
+MV007111,Ufuligiri,Baa,resort_or_small,,,5.01703475,72.97043762
+MV007112,Un'doodhoo,Baa,uninhabited,,,5.27467686,73.04242673
+MV007113,Vakkaru,Baa,uninhabited,,,5.13340661,72.91043041
+MV007114,Vandhuhmaafarufinolhu,Baa,resort_or_small,,,5.23734407,73.19089447
+MV007115,Velavaru,Baa,resort_or_small,,,5.20669877,72.9211877
+MV007116,Veyofushi,Baa,resort_or_small,,,5.22948221,73.1566567
+MV007117,Vinaneiyfaruhuraa,Baa,resort_or_small,,,5.34617564,73.0786289
+MV007118,Voavah,Baa,uninhabited,,,5.31630928,73.07758951
+MV008001,Thoddoo,Alifu Alifu,inhabited,1924.0,552.0,4.43699657,72.95898231
+MV008002,Rasdhoo,Alifu Alifu,inhabited,1282.0,352.0,4.26319908,72.9916609
+MV008003,Ukulhas,Alifu Alifu,inhabited,1284.0,462.0,4.21478853,72.8645542
+MV008004,Mathiveri,Alifu Alifu,inhabited,878.0,317.0,4.19205185,72.74561648
+MV008005,Bodufolhudhoo,Alifu Alifu,inhabited,704.0,254.0,4.18583589,72.77352636
+MV008006,Feridhoo,Alifu Alifu,inhabited,544.0,167.0,4.05105863,72.72551646
+MV008007,Maalhos,Alifu Alifu,inhabited,516.0,166.0,3.98645453,72.71898658
+MV008008,Himendhoo,Alifu Alifu,inhabited,885.0,321.0,3.92125904,72.74440281
+MV008009,Vihamaafaru,Alifu Alifu,uninhabited,,,4.12228078,72.74628424
+MV008010,Alikoirah,Alifu Alifu,resort_or_small,,,3.94333422,72.88000015
+MV008011,Bathalaa,Alifu Alifu,uninhabited,,,4.07033481,72.94573093
+MV008012,Dhinnolhufinolhu,Alifu Alifu,resort_or_small,,,4.13853745,72.73272343
+MV008013,Ellaidhoo,Alifu Alifu,uninhabited,,,4.00621268,72.94921126
+MV008014,Etheremadivaru,Alifu Alifu,uninhabited,,,4.11902343,72.93782506
+MV008015,Fesdhoo,Alifu Alifu,uninhabited,,,4.00691663,72.81122928
+MV008016,Fusfinolhu,Alifu Alifu,resort_or_small,,,4.01899397,72.95842294
+MV008017,Fushi,Alifu Alifu,resort_or_small,,,4.21566062,72.88360077
+MV008018,Gaagan'du,Alifu Alifu,resort_or_small,,,4.23270774,72.86497592
+MV008019,Gaathafushi,Alifu Alifu,resort_or_small,,,4.02380337,72.81081503
+MV008020,Gangehi,Alifu Alifu,uninhabited,,,4.21991095,72.75525364
+MV008021,Halaveli,Alifu Alifu,uninhabited,,,4.03850425,72.91968869
+MV008022,Kan'dholhudhoo,Alifu Alifu,uninhabited,,,4.00262756,72.88177118
+MV008023,Kudafolhudhoo,Alifu Alifu,uninhabited,,,4.18143661,72.76697608
+MV008024,Kuramathi,Alifu Alifu,uninhabited,,,4.26025196,72.98411218
+MV008037,Maagau,Alifu Alifu,uninhabited,,,3.98923085,72.95693806
+MV008038,Maayafushi,Alifu Alifu,uninhabited,,,4.07362942,72.88751719
+MV008039,Madivaru,Alifu Alifu,resort_or_small,,,4.26563635,73.00036416
+MV008040,Madivarufinolhu,Alifu Alifu,resort_or_small,,,4.26968967,73.00119377
+MV008041,Madoogali,Alifu Alifu,uninhabited,,,4.09618646,72.75291271
+MV008042,Mathivereefinolhu,Alifu Alifu,uninhabited,,,4.18588591,72.7500616
+MV008043,Mushimasmigili,Alifu Alifu,uninhabited,,,3.95904562,72.91337252
+MV008044,Velidhoo,Alifu Alifu,uninhabited,,,4.19449016,72.81913448
+MV008045,Velifinolhu,Alifu Alifu,resort_or_small,,,4.29343254,73.00961123
+MV008046,Veligan'du,Alifu Alifu,uninhabited,,,4.29855854,73.01164909
+MV009001,Kaashidhoo,Kaafu,inhabited,2528.0,682.0,4.95701569,73.46397725
+MV009002,Gaafaru,Kaafu,inhabited,1294.0,503.0,4.73626916,73.50045254
+MV009003,Dhiffushi,Kaafu,inhabited,1270.0,373.0,4.44209594,73.7140563
+MV009004,Thulusdhoo,Kaafu,inhabited,1801.0,390.0,4.37334827,73.64854368
+MV009005,Huraa,Kaafu,inhabited,1654.0,410.0,4.33379937,73.6019994
+MV009006,Hinmafushi,Kaafu,inhabited,2012.0,330.0,4.30849391,73.57147497
+MV009007,Gulhi,Kaafu,inhabited,976.0,280.0,3.99109302,73.50926434
+MV009008,Maafushi,Kaafu,inhabited,4471.0,736.0,3.9412024,73.48989855
+MV009009,Guraidhoo,Kaafu,inhabited,1743.0,471.0,3.90062674,73.46750492
+MV009010,Aanugan'dufinolhu,Kaafu,uninhabited,,,4.30649249,73.50610927
+MV009011,Aanugan'duhuraa,Kaafu,uninhabited,,,4.30794804,73.50078867
+MV009012,Aarah,Kaafu,uninhabited,,,4.22999797,73.49432466
+MV009013,Akasdhoo,Kaafu,uninhabited,,,4.12389412,73.47290143
+MV009014,Akirifushi,Kaafu,uninhabited,,,4.63763259,73.40156344
+MV009015,Asdhoo,Kaafu,uninhabited,,,4.46645135,73.6616951
+MV009016,Baros,Kaafu,uninhabited,,,4.28471316,73.42727791
+MV009017,Biyaadhoo,Kaafu,uninhabited,,,3.92236142,73.45640674
+MV009018,Boduban'dos,Kaafu,uninhabited,,,4.26941068,73.4913899
+MV009019,Bodubis,Kaafu,resort_or_small,,,4.27548031,73.41452018
+MV009020,Bodufinolhu,Kaafu,uninhabited,,,3.85772847,73.45660939
+MV009021,Boduhithi,Kaafu,uninhabited,,,4.43098504,73.38430252
+MV009022,Boduhuraa,Kaafu,uninhabited,,,3.96749227,73.50540856
+MV009023,Bolifushi,Kaafu,uninhabited,,,4.0972112,73.40009339
+MV009024,Bulhifushi,Kaafu,resort_or_small,,,3.98004057,73.50146694
+MV009025,Dhigufinolhu,Kaafu,uninhabited,,,3.97242784,73.5021217
+MV009026,Dhonfushi,Kaafu,resort_or_small,,,4.60862567,73.4071434
+MV009027,Dhoonidhoo,Kaafu,uninhabited,,,4.19718531,73.51377996
+MV009028,Ehmafushi,Kaafu,uninhabited,,,4.12034431,73.46839131
+MV009029,En'boodhoo,Kaafu,uninhabited,,,4.08407921,73.51230835
+MV009030,En'boodhoofinolhu,Kaafu,uninhabited,,,4.10272392,73.52555146
+MV009031,Eriadhoo,Kaafu,uninhabited,,,4.58985766,73.41456745
+MV009032,Erruhhuraa,Kaafu,resort_or_small,,,3.81514454,73.41631591
+MV009033,Fariiruhuraa,Kaafu,uninhabited,,,4.59476987,73.5853098
+MV009034,Farikan'duhuraa,Kaafu,uninhabited,,,4.6065724,73.57988674
+MV009035,Faritharihuraa,Kaafu,uninhabited,,,4.61396659,73.57008621
+MV009036,Farivelihuraa,Kaafu,uninhabited,,,4.62485277,73.57279547
+MV009038,Feydhoofinolhu,Kaafu,uninhabited,,,4.21296437,73.48469438
+MV009039,Fihaalhohi,Kaafu,uninhabited,,,3.87725952,73.36698772
+MV009040,Funadhoo,Kaafu,uninhabited,,,4.18378442,73.51796264
+MV009041,Funfinolhu,Kaafu,resort_or_small,,,3.97621803,73.50455453
+MV009042,Furanafushi,Kaafu,uninhabited,,,4.24960565,73.54539137
+MV009043,Gaagan'du,Kaafu,resort_or_small,,,4.24936307,73.53688874
+MV009044,Gasfinolhu,Kaafu,uninhabited,,,4.36125215,73.62619891
+MV009045,Giraavaru,Kaafu,uninhabited,,,4.20053379,73.41280625
+MV009046,Girifushi,Kaafu,uninhabited,,,4.31815874,73.57917503
+MV009047,Gulhigaathuhuraa,Kaafu,uninhabited,,,3.9768141,73.50693767
+MV009048,Hastheem,Kaafu,uninhabited,,,4.62193302,73.4166856
+MV009049,Hathaafinolhu,Kaafu,uninhabited,,,4.089828,73.52384002
+MV009050,Helen'geli,Kaafu,uninhabited,,,4.63433779,73.56344681
+MV009051,Hen'badhoo,Kaafu,uninhabited,,,4.48169436,73.39316829
+MV009052,Hulhule,Kaafu,uninhabited,,,4.19709682,73.52993898
+MV009053,Ihuru,Kaafu,uninhabited,,,4.30678354,73.41600861
+MV009054,Ithaafinolhu,Kaafu,resort_or_small,,,4.00078207,73.39127844
+MV009055,Ithaafushi,Kaafu,uninhabited,,,4.0118994,73.38283092
+MV009056,Kagi,Kaafu,uninhabited,,,4.67674218,73.50126649
+MV009057,Kalhuhuraa,Kaafu,resort_or_small,,,4.00959902,73.37196448
+MV009058,Kan'baashaa,Kaafu,uninhabited,,,4.62049725,73.39586762
+MV009059,Kan'doomaafushi,Kaafu,uninhabited,,,3.90317165,73.47377701
+MV009060,Kan'duoiygiri,Kaafu,uninhabited,,,4.25785451,73.54044017
+MV009061,Kanifinolhu,Kaafu,uninhabited,,,4.3435927,73.60845273
+MV009062,Kanuoiyhuraa,Kaafu,uninhabited,,,4.31923011,73.59109817
+MV009063,Kassanfushi,Kaafu,uninhabited,,,4.51853942,73.66163138
+MV009064,Kohdhipparu,Kaafu,uninhabited,,,4.25945637,73.37966895
+MV009065,Kudaban'dos,Kaafu,uninhabited,,,4.26381006,73.4997019
+MV009066,Kudafinolhu,Kaafu,resort_or_small,,,3.86505134,73.45845648
+MV009067,Kudagiri,Kaafu,uninhabited,,,4.2266434,73.42609197
+MV009068,Kudahithi,Kaafu,resort_or_small,,,4.41738495,73.38010085
+MV009069,Kudahuraa,Kaafu,uninhabited,,,4.32826175,73.59771585
+MV009070,Lankanfinolhu,Kaafu,uninhabited,,,4.2857321,73.55394007
+MV009071,Lankanfushi,Kaafu,uninhabited,,,4.29512845,73.55836885
+MV009158,Lhohifushi,Kaafu,uninhabited,,,4.35112019,73.61807695
+MV009159,Lhosfushi,Kaafu,resort_or_small,,,3.89723096,73.47017918
+MV009160,Maadhoo,Kaafu,uninhabited,,,3.86863407,73.46070574
+MV009161,Maaranfushi,Kaafu,uninhabited,,,4.61044046,73.42112408
+MV009162,Madivaru,Kaafu,uninhabited,,,4.50063001,73.36855874
+MV009163,Mahaanaelhihuraa,Kaafu,uninhabited,,,3.81223543,73.41129977
+MV009164,Maifalhuhuraa,Kaafu,resort_or_small,,,4.63011496,73.5704832
+MV009165,Makunudhoo,Kaafu,uninhabited,,,4.54247929,73.4057907
+MV009166,Makunufushi,Kaafu,uninhabited,,,3.91778147,73.4697179
+MV009167,Maniyafushi,Kaafu,resort_or_small,,,4.05557316,73.41114407
+MV009168,Medhufinolhu,Kaafu,uninhabited,,,4.51054138,73.37009469
+MV009169,Meerufenfushi,Kaafu,uninhabited,,,4.4541931,73.71694
+MV009170,Nakahchaahuraa,Kaafu,resort_or_small,,,4.34203814,73.38686398
+MV009171,Nakaiychaafushi,Kaafu,uninhabited,,,4.36844955,73.37007809
+MV009172,Nashvilu,Kaafu,uninhabited,,,4.62443367,73.40654207
+MV009173,Noofinolhu,Kaafu,resort_or_small,,,3.96872168,73.50307296
+MV009174,Olhigan'dufinolhu,Kaafu,resort_or_small,,,3.81196354,73.41750515
+MV009175,Olhuhali,Kaafu,uninhabited,,,4.68990752,73.45113229
+MV009176,Olhuveli,Kaafu,uninhabited,,,3.85030478,73.45520884
+MV009177,Rannaalhi,Kaafu,uninhabited,,,3.90321765,73.35807383
+MV009178,Rasfari,Kaafu,resort_or_small,,,4.39465985,73.35149692
+MV009179,Than'burudhoo,Kaafu,uninhabited,,,4.31598089,73.58424817
+MV009180,Thilafushi,Kaafu,uninhabited,,,4.18240476,73.43516939
+MV009181,Tholhimaraahuraa,Kaafu,resort_or_small,,,3.82463413,73.37512651
+MV009182,Thulhaagiri,Kaafu,uninhabited,,,4.31173503,73.48708431
+MV009183,Thulusdhoo Irumathee Huraagan'du,Kaafu,resort_or_small,,,4.3716954,73.65455406
+MV009184,Thun'bafushi,Kaafu,uninhabited,,,4.58973766,73.58926651
+MV009185,Vaadhoo,Kaafu,uninhabited,,,4.12412137,73.45721618
+MV009186,Vaagali,Kaafu,resort_or_small,,,3.94863543,73.35595062
+MV009187,Vabbinfaru,Kaafu,uninhabited,,,4.30967247,73.42392282
+MV009188,Vabboahuraa,Kaafu,resort_or_small,,,4.31940802,73.59657303
+MV009189,Vammaafushi,Kaafu,resort_or_small,,,3.94854405,73.49611835
+MV009190,Velassaru,Kaafu,uninhabited,,,4.12143716,73.43670118
+MV009191,Veligan'duhuraa,Kaafu,uninhabited,,,3.97170743,73.50646812
+MV009192,Vihamanaafushi,Kaafu,uninhabited,,,4.22645217,73.51970227
+MV009193,Vilin'gilimathidhahuraa,Kaafu,uninhabited,,,4.37757691,73.66259319
+MV009194,Villivaru,Kaafu,uninhabited,,,3.91444786,73.45578996
+MV009195,Ziyaaraiyfushi,Kaafu,uninhabited,,,4.53273192,73.37252659
+MV010001,Fulidhoo,Vaavu,inhabited,400.0,86.0,3.68034191,73.41581659
+MV010002,Thinadhoo,Vaavu,inhabited,258.0,6.0,3.48777379,73.53867814
+MV010003,Felidhoo,Vaavu,inhabited,620.0,170.0,3.47198016,73.54747538
+MV010004,Keyodhoo,Vaavu,inhabited,641.0,183.0,3.4621036,73.54997866
+MV010005,Rakeedhoo,Vaavu,inhabited,76.0,4.0,3.31489119,73.46991342
+MV010006,Aarah,Vaavu,uninhabited,,,3.49973848,73.52901627
+MV010007,Alimathaa,Vaavu,uninhabited,,,3.5937615,73.49797962
+MV010008,Anbaraa,Vaavu,resort_or_small,,,3.37225816,73.43967557
+MV010009,Bodumohoraa,Vaavu,uninhabited,,,3.34321442,73.5209054
+MV010010,Dhiggiri,Vaavu,uninhabited,,,3.64500245,73.48758938
+MV010011,Fohtheyobodufushi,Vaavu,uninhabited,,,3.45575193,73.75845466
+MV010012,Hulhidhoo,Vaavu,uninhabited,,,3.49339027,73.53277622
+MV010013,Kuda Anbaraa,Vaavu,resort_or_small,,,3.4270593,73.42482976
+MV010014,Kudamohoraa,Vaavu,resort_or_small,,,3.34201088,73.5106701
+MV010015,Kunaaveshi,Vaavu,resort_or_small,,,3.63672376,73.36485083
+MV010046,Thun'duhuraa,Vaavu,resort_or_small,,,3.34265866,73.50617307
+MV010047,Vashugiri,Vaavu,resort_or_small,,,3.62999173,73.3773003
+MV010048,Vattaru,Vaavu,resort_or_small,,,3.22215961,73.42651819
+MV011001,Feeali,Faafu,inhabited,922.0,370.0,3.26995444,73.00146499
+MV011002,Bileiydhoo,Faafu,inhabited,967.0,372.0,3.11837928,72.98408925
+MV011003,Magoodhoo,Faafu,inhabited,702.0,278.0,3.0794619,72.96509343
+MV011004,Dharan'boodhoo,Faafu,inhabited,455.0,170.0,3.06301875,72.92645675
+MV011005,Nilandhoo,Faafu,inhabited,1823.0,680.0,3.0570998,72.88845939
+MV011006,Adhangau,Faafu,resort_or_small,,,3.13867119,73.00844231
+MV011007,Dhiguvarufinolhu,Faafu,resort_or_small,,,3.24657364,73.02499491
+MV011008,En'bulufushi,Faafu,uninhabited,,,3.13348169,73.01785851
+MV011009,Faanumaahuraa,Faafu,resort_or_small,,,3.21311457,72.98204169
+MV011010,Filitheyo,Faafu,uninhabited,,,3.21318179,73.03665588
+MV011011,Himithi,Faafu,uninhabited,,,3.25593391,72.81971763
+MV011012,Jinnathugau,Faafu,resort_or_small,,,3.20067743,72.99805062
+MV011013,Kan'dumoonufushi,Faafu,resort_or_small,,,3.31514649,72.8970741
+MV011028,Maafushi,Faafu,uninhabited,,,3.24304781,72.97884233
+MV011029,Madivaruhuraa,Faafu,resort_or_small,,,3.26677831,73.01087651
+MV011030,Magoodhoobodufinolhu,Faafu,resort_or_small,,,3.07525665,72.95576683
+MV011031,Makunueri,Faafu,resort_or_small,,,3.25840963,72.92878692
+MV011032,Minimasgali,Faafu,uninhabited,,,3.24258502,72.83570923
+MV011033,Vilin'gilivarufinolhu,Faafu,resort_or_small,,,3.27427383,72.99887513
+MV012001,Meedhoo,Dhaalu,inhabited,1118.0,306.0,2.99810184,73.00783129
+MV012002,Ban'didhoo,Dhaalu,inhabited,629.0,216.0,2.93679153,72.99044653
+MV012003,Rin'budhoo,Dhaalu,inhabited,316.0,98.0,2.92458282,72.89547751
+MV012004,Hulhudheli,Dhaalu,inhabited,764.0,250.0,2.85840536,72.84704655
+MV012005,Gemendhoo,Dhaalu,uninhabited,,,2.7978027,73.02542299
+MV012006,Vaanee,Dhaalu,uninhabited,,,2.72547086,73.0031249
+MV012007,Maaen'boodhoo,Dhaalu,inhabited,679.0,208.0,2.69574615,72.9645643
+MV012008,Kudahuvadhoo,Dhaalu,inhabited,3131.0,1002.0,2.67062121,72.89080405
+MV012009,Aluvifushi,Dhaalu,uninhabited,,,2.93094636,72.95807314
+MV012010,Ayyakaloahuraa,Dhaalu,resort_or_small,,,2.79074075,73.02578716
+MV012011,Boarikifinolhu,Dhaalu,resort_or_small,,,2.92328831,72.97065775
+MV012012,Bodufushi,Dhaalu,resort_or_small,,,2.7028168,72.84740828
+MV012013,Bulhalafushi,Dhaalu,resort_or_small,,,2.80658029,73.02579919
+MV012014,Dhebaidhoo,Dhaalu,uninhabited,,,2.78754581,73.02561709
+MV012015,Dhoores,Dhaalu,uninhabited,,,2.91784144,72.88383523
+MV012016,En'boodhoofushi,Dhaalu,uninhabited,,,2.67717712,72.92777102
+MV012017,Faandhoo,Dhaalu,uninhabited,,,2.96278592,72.94691085
+MV012018,Fenfushi,Dhaalu,uninhabited,,,2.80121566,73.02606611
+MV012019,Hinaidhoo,Dhaalu,uninhabited,,,2.80370308,73.02624293
+MV012020,Hiriyafushi,Dhaalu,uninhabited,,,2.71194934,72.98764055
+MV012021,Hudhufusheefinolhu,Dhaalu,resort_or_small,,,2.89355542,72.90552242
+MV012022,Hulhuvahi,Dhaalu,uninhabited,,,2.85654421,73.02539448
+MV012023,Issari,Dhaalu,resort_or_small,,,2.70662673,72.9826394
+MV012024,Kan'dinmaa,Dhaalu,uninhabited,,,2.74114657,73.01776678
+MV012025,Kanneiyfaru,Dhaalu,resort_or_small,,,2.92422866,73.02717558
+MV012026,Kedhigan'du,Dhaalu,uninhabited,,,2.69633734,72.85119039
+MV012027,Kiraidhoo,Dhaalu,uninhabited,,,2.78044327,73.02523936
+MV012028,Kudathilabolhufushi,Dhaalu,resort_or_small,,,2.75670387,73.02309677
+MV012052,Lhohi,Dhaalu,uninhabited,,,2.95707638,72.98538249
+MV012053,Maadheli,Dhaalu,uninhabited,,,2.88422161,72.83743746
+MV012054,Maafushi,Dhaalu,uninhabited,,,2.68793759,72.85943058
+MV012055,Maagau,Dhaalu,uninhabited,,,2.94769332,72.91440001
+MV012056,Maalefaru,Dhaalu,resort_or_small,,,2.88209044,73.02563686
+MV012057,Meedhuffushi,Dhaalu,uninhabited,,,3.00317176,73.00045231
+MV012058,Minimasgali,Dhaalu,uninhabited,,,2.75023955,72.88752957
+MV012059,Olhufushi,Dhaalu,resort_or_small,,,2.81368468,73.0265047
+MV012060,Olhuveli,Dhaalu,uninhabited,,,2.68226554,72.93441196
+MV012061,Sarakafushi,Dhaalu,resort_or_small,,,2.92288997,72.96126113
+MV012062,Than'balhaidhoo,Dhaalu,uninhabited,,,2.79400595,73.02580151
+MV012063,Thilabolhufushi,Dhaalu,uninhabited,,,2.75614632,73.02195919
+MV012064,Thinhuraa,Dhaalu,uninhabited,,,2.76746825,73.02396058
+MV012065,Uhdhoo,Dhaalu,uninhabited,,,2.9706398,72.9907036
+MV012066,Valla,Dhaalu,resort_or_small,,,2.70446676,72.88279811
+MV012067,Vallalhohi,Dhaalu,uninhabited,,,2.7305535,72.88797052
+MV012068,Velavaru,Dhaalu,uninhabited,,,2.97963425,73.01581223
+MV012069,Vommuli,Dhaalu,uninhabited,,,2.91132746,72.86602816
+MV013001,Raiymandhoo,Meemu,inhabited,171.0,22.0,3.0890427,73.63949759
+MV013002,Madifushi,Meemu,uninhabited,,,3.0811198,73.63851443
+MV013003,Veyvah,Meemu,inhabited,304.0,78.0,2.9563702,73.60017996
+MV013004,Mulah,Meemu,inhabited,1426.0,447.0,2.94656976,73.58492792
+MV013005,Muli,Meemu,inhabited,949.0,257.0,2.91813392,73.58142528
+MV013006,Naalaafushi,Meemu,inhabited,430.0,118.0,2.8955616,73.57756264
+MV013007,Kolhufushi,Meemu,inhabited,793.0,251.0,2.77705858,73.42497919
+MV013008,Dhiggaru,Meemu,inhabited,1099.0,349.0,3.11177243,73.5654374
+MV013009,Maduvvari,Meemu,inhabited,318.0,79.0,3.10467854,73.57319876
+MV013010,Boahuraa,Meemu,resort_or_small,,,2.92587747,73.58563722
+MV013011,Bodukan'duhuraa,Meemu,resort_or_small,,,2.82490838,73.36912042
+MV013012,Dhekunuboduveli,Meemu,uninhabited,,,2.82586932,73.45239251
+MV013013,Dhihthun'di,Meemu,uninhabited,,,2.76663333,73.42131099
+MV013014,Erruhhuraa,Meemu,resort_or_small,,,3.07003541,73.64197386
+MV013015,Etherefasgan'du,Meemu,resort_or_small,,,2.77885495,73.41778801
+MV013016,Fenfuraaveli,Meemu,uninhabited,,,2.78802257,73.42719044
+MV013017,Gaakurali,Meemu,uninhabited,,,2.78055416,73.37326694
+MV013018,Gasveli,Meemu,uninhabited,,,2.81866483,73.44383488
+MV013019,Gongalihuraa,Meemu,resort_or_small,,,2.85402558,73.55083386
+MV013020,Hakuraahuraa,Meemu,uninhabited,,,2.85536507,73.53639383
+MV013021,Hudhuveli,Meemu,resort_or_small,,,3.03640574,73.6195577
+MV013022,Hurasveli,Meemu,resort_or_small,,,3.01897274,73.61809421
+MV013023,Kakaahuraa,Meemu,uninhabited,,,2.85272525,73.53476635
+MV013024,Kekuraalhuveli,Meemu,resort_or_small,,,2.82998434,73.45844717
+MV013025,Kudausfushi,Meemu,uninhabited,,,2.80442432,73.43414858
+MV013026,Kuradhigan'du,Meemu,resort_or_small,,,2.77419122,73.37259641
+MV013056,Maahuraa,Meemu,uninhabited,,,2.79366304,73.42819149
+MV013057,Maalhaveli,Meemu,resort_or_small,,,2.90453753,73.57896743
+MV013058,Maausfushi,Meemu,uninhabited,,,2.79833287,73.43239431
+MV013059,Medhufushi,Meemu,uninhabited,,,2.88629435,73.57581122
+MV013060,Raaban'dhihuraa,Meemu,resort_or_small,,,3.09197542,73.38889983
+MV013061,Seedheehuraa,Meemu,resort_or_small,,,2.85822816,73.5574898
+MV013062,Seedheehuraaveligan'du,Meemu,uninhabited,,,2.86033069,73.55417422
+MV013063,Thuvaru,Meemu,uninhabited,,,2.89854953,73.37916624
+MV013064,Thuvaru Uthuruhuraa,Meemu,resort_or_small,,,2.94669829,73.37659691
+MV013065,Uthuruboduveli,Meemu,uninhabited,,,3.02563342,73.61850637
+MV013066,Uthurugaseveli,Meemu,resort_or_small,,,3.03096179,73.61898446
+MV013067,Vannanerufasgan'du,Meemu,resort_or_small,,,2.78091772,73.41032879
+MV014001,Burunee,Thaa,inhabited,414.0,136.0,2.55872619,73.10616802
+MV014002,Vilufushi,Thaa,inhabited,1081.0,367.0,2.50306528,73.30894398
+MV014003,Madifushi,Thaa,inhabited,858.0,299.0,2.35724426,73.3557683
+MV014004,Dhiyamigili,Thaa,inhabited,649.0,257.0,2.34022234,73.33786649
+MV014005,Guraidhoo,Thaa,inhabited,1293.0,443.0,2.32232267,73.31748258
+MV014006,Kan'doodhoo,Thaa,inhabited,456.0,139.0,2.32159827,72.91677149
+MV014007,Vandhoo,Thaa,inhabited,364.0,97.0,2.29174531,72.94181377
+MV014008,Hirilandhoo,Thaa,inhabited,1146.0,328.0,2.26969007,72.9318222
+MV014009,Gaadhiffushi,Thaa,inhabited,317.0,82.0,2.25283123,73.21319666
+MV014010,Thimarafushi,Thaa,inhabited,1229.0,375.0,2.20965013,73.14893135
+MV014011,Veymandoo,Thaa,inhabited,1321.0,452.0,2.1874276,73.09543879
+MV014012,Kin'bidhoo,Thaa,inhabited,715.0,266.0,2.16808714,73.06492336
+MV014013,Omadhoo,Thaa,inhabited,417.0,137.0,2.16745421,73.02393544
+MV014014,Bodufinolhu,Thaa,uninhabited,,,2.31586392,73.30532702
+MV014015,Bodurehaa,Thaa,resort_or_small,,,2.26801112,73.22925435
+MV014016,Dhiffushi,Thaa,uninhabited,,,2.51482413,73.2324758
+MV014017,Dhonanfushi,Thaa,resort_or_small,,,2.49002917,73.31503137
+MV014018,Dhururehaa,Thaa,uninhabited,,,2.1691387,73.01239848
+MV014019,Ekuruffushi,Thaa,uninhabited,,,2.26618202,73.22659448
+MV014020,Elaa,Thaa,uninhabited,,,2.17267215,73.08004179
+MV014021,Fenfushi,Thaa,resort_or_small,,,2.29169,73.26994115
+MV014022,Fenmeerufushi,Thaa,resort_or_small,,,2.27074696,73.23361854
+MV014023,Fondhoo,Thaa,resort_or_small,,,2.31495673,72.98275207
+MV014024,Fonidhaani,Thaa,resort_or_small,,,2.3012035,73.28498339
+MV014025,Funaddu,Thaa,uninhabited,,,2.19829758,73.12867163
+MV014026,Fushi,Thaa,uninhabited,,,2.19318521,72.96850587
+MV014027,Gaalee,Thaa,uninhabited,,,2.54655471,73.15453417
+MV014028,Gaathurehaa,Thaa,uninhabited,,,2.17034982,73.01566054
+MV014029,Hathifushi,Thaa,resort_or_small,,,2.2873489,73.26307056
+MV014030,Hikan'dhilhohi,Thaa,uninhabited,,,2.52041837,73.22662646
+MV014032,Hon'delifushi,Thaa,resort_or_small,,,2.49497294,73.31265837
+MV014033,Hulhiyanfushi,Thaa,uninhabited,,,2.25884802,73.21841439
+MV014034,Kaaddoo,Thaa,uninhabited,,,2.28190806,73.25432148
+MV014035,Kafidhoo,Thaa,uninhabited,,,2.32661614,72.96203983
+MV014036,Kakolhas,Thaa,uninhabited,,,2.31550839,72.94380484
+MV014037,Kalhudheyfushi,Thaa,uninhabited,,,2.29507518,73.27644774
+MV014038,Kalhufahalafushi,Thaa,uninhabited,,,2.41166752,73.35981062
+MV014039,Kan'dufushi,Thaa,uninhabited,,,2.53122996,72.98752093
+MV014040,Kani,Thaa,resort_or_small,,,2.18984038,72.97369073
+MV014041,Kanimeedhoo,Thaa,uninhabited,,,2.19603197,73.11058189
+MV014042,Kolafushi,Thaa,resort_or_small,,,2.26391007,73.22374191
+MV014043,Kolhufushi,Thaa,uninhabited,,,2.36495293,73.36299155
+MV014044,Kudadhoo,Thaa,resort_or_small,,,2.30894467,72.9516166
+MV014045,Kudakaaddoo,Thaa,resort_or_small,,,2.28539406,73.259143
+MV014046,Kudakin'bidhoo,Thaa,resort_or_small,,,2.16456326,73.06303512
+MV014047,Kuran'dhuvaru,Thaa,uninhabited,,,2.53930047,73.17611214
+MV014048,Kuredhifushi,Thaa,uninhabited,,,2.16810183,73.03373705
+MV014062,Lhavaddoo,Thaa,uninhabited,,,2.30582673,73.29147438
+MV014063,Maagulhi,Thaa,uninhabited,,,2.53828903,73.17951087
+MV014064,Maalefushi,Thaa,uninhabited,,,2.3111817,73.29861289
+MV014065,Mathidhoo,Thaa,uninhabited,,,2.34696356,73.34278151
+MV014066,Medhafushi,Thaa,uninhabited,,,2.34349578,73.34079045
+MV014067,Olhudhiyafushi,Thaa,resort_or_small,,,2.27235827,73.23597995
+MV014068,Olhufushi,Thaa,uninhabited,,,2.36579327,72.90871659
+MV014069,Olhufushifinolhu,Thaa,resort_or_small,,,2.37220062,72.90809793
+MV014070,Olhugiri,Thaa,uninhabited,,,2.5056154,73.25617712
+MV014071,Rihaamaafushi,Thaa,resort_or_small,,,2.28956266,73.26661568
+MV014072,Ruhthibirah,Thaa,uninhabited,,,2.16915878,73.05423593
+MV014073,Ufuriyaa,Thaa,uninhabited,,,2.36193281,73.36180376
+MV014074,Usfushi,Thaa,resort_or_small,,,2.24666441,73.20504729
+MV014075,Vanbadhi,Thaa,uninhabited,,,2.18743835,72.97496498
+MV015001,Isdhoo,Laamu,inhabited,929.0,309.0,2.12477739,73.57998274
+MV015002,Dhan'bidhoo,Laamu,inhabited,606.0,207.0,2.09377508,73.54525058
+MV015003,Maabaidhoo,Laamu,inhabited,565.0,203.0,2.02962818,73.53376291
+MV015004,Mundoo,Laamu,inhabited,176.0,48.0,2.01122351,73.5344018
+MV015005,Kalaidhoo,Laamu,inhabited,655.0,221.0,2.11351766,73.55991448
+MV015007,Maavah,Laamu,inhabited,1379.0,472.0,1.8853361,73.24324749
+MV015008,Fonadhoo,Laamu,inhabited,2986.0,986.0,1.83558865,73.50360358
+MV015009,Gaadhoo,Laamu,uninhabited,,,1.82145067,73.45188321
+MV015010,Maamendhoo,Laamu,inhabited,879.0,259.0,1.81831705,73.38901036
+MV015011,Hithadhoo,Laamu,inhabited,1108.0,380.0,1.79658893,73.3885107
+MV015012,Kunahandhoo,Laamu,inhabited,601.0,211.0,1.78386045,73.36814803
+MV015013,Gan,Laamu,inhabited,4815.0,1457.0,1.91007479,73.54112926
+MV015014,Aarahaa,Laamu,resort_or_small,,,1.82853478,73.27470388
+MV015015,Athahendhu,Laamu,resort_or_small,,,1.82801369,73.27386702
+MV015016,Baresdhoo,Laamu,uninhabited,,,1.96801644,73.54030012
+MV015017,Bodufenrahaa,Laamu,uninhabited,,,1.82706557,73.27107938
+MV015018,Bodufinolhu,Laamu,uninhabited,,,1.94548125,73.54059644
+MV015019,Bodufinolhu,Laamu,resort_or_small,,,2.02779176,73.37232857
+MV015020,Boduhuraa,Laamu,resort_or_small,,,1.84457037,73.5156536
+MV015021,Boduhuraa,Laamu,uninhabited,,,1.80158251,73.29364756
+MV015022,Bodumaabulhali,Laamu,uninhabited,,,1.84925653,73.25549472
+MV015023,Bodumahigulhi,Laamu,resort_or_small,,,1.78705751,73.32631152
+MV015024,Bodumungnafushi,Laamu,uninhabited,,,1.98872572,73.30860248
+MV015025,Bokaiyfushi,Laamu,uninhabited,,,1.99904173,73.53485148
+MV015026,Burrahaa,Laamu,uninhabited,,,1.82684259,73.27802815
+MV015027,Dhekunuvinagan'du,Laamu,uninhabited,,,1.81717247,73.27964892
+MV015028,Dhonberahaa,Laamu,resort_or_small,,,2.071528,73.53575141
+MV015029,Enberahaa,Laamu,resort_or_small,,,1.84183171,73.25750549
+MV015030,Fares,Laamu,uninhabited,,,1.7988901,73.30110965
+MV015031,Fenboahuraa,Laamu,resort_or_small,,,2.06422083,73.53819202
+MV015032,Fenboarahaa,Laamu,uninhabited,,,1.81056101,73.28578969
+MV015033,Fonagaadhoo,Laamu,uninhabited,,,2.11516228,73.54139626
+MV015034,Fushi,Laamu,uninhabited,,,2.04970506,73.53234274
+MV015035,Gasgan'dufinolhu,Laamu,uninhabited,,,1.95243368,73.54006421
+MV015036,Guraidhoo,Laamu,uninhabited,,,1.90838708,73.25481307
+MV015037,Haiythoshi,Laamu,resort_or_small,,,1.84204693,73.25860618
+MV015038,Hanhushi,Laamu,uninhabited,,,1.95161694,73.26173503
+MV015039,Hendha,Laamu,uninhabited,,,1.8216069,73.27438521
+MV015040,Hikan'dhirahaa,Laamu,uninhabited,,,2.05836551,73.5365456
+MV015041,Holhurahaa,Laamu,uninhabited,,,2.06852629,73.53899093
+MV015042,Hulhimendhoo,Laamu,uninhabited,,,1.8231071,73.39423092
+MV015043,Hulhisdhoo,Laamu,resort_or_small,,,1.7852251,73.38765764
+MV015044,Hulhiyandhoo,Laamu,uninhabited,,,2.08094491,73.54198044
+MV015045,Kadhdhoo,Laamu,uninhabited,,,1.86237778,73.52218835
+MV015046,Kalhaidhoo,Laamu,uninhabited,,,1.98870664,73.53686793
+MV015047,Kalhurahaa,Laamu,uninhabited,,,1.84446889,73.25684491
+MV015048,Kandaru,Laamu,uninhabited,,,2.06085234,73.53644521
+MV015049,Kanuhuraa,Laamu,resort_or_small,,,2.04596709,73.53244373
+MV015050,Kashidhoo,Laamu,uninhabited,,,1.91950877,73.25351914
+MV015051,Kokurahaa,Laamu,resort_or_small,,,1.85404357,73.25501268
+MV015052,Kudafenrehaa,Laamu,uninhabited,,,1.80994755,73.28834722
+MV015053,Kudafushi,Laamu,uninhabited,,,1.78860101,73.3317482
+MV015054,Kudamaabulhali,Laamu,resort_or_small,,,1.84720505,73.25269372
+MV015055,Kudamahigulhi,Laamu,resort_or_small,,,1.78722707,73.32814713
+MV015056,Kudamungnafushi,Laamu,resort_or_small,,,1.99335946,73.31403212
+MV015057,Kudarah,Laamu,uninhabited,,,2.06514787,73.53653012
+MV015058,Kudaveshi,Laamu,uninhabited,,,1.82399086,73.28186589
+MV015059,Kuredhirehaa,Laamu,uninhabited,,,1.78119942,73.3551054
+MV015076,Maafushi,Laamu,uninhabited,,,1.79175718,73.33423492
+MV015077,Maakalhuveli,Laamu,uninhabited,,,1.7883602,73.33891746
+MV015078,Maandhoo,Laamu,uninhabited,,,1.87450523,73.52652214
+MV015079,Maaveshi,Laamu,uninhabited,,,1.83307907,73.27124634
+MV015080,Mahakanfushi,Laamu,uninhabited,,,1.95865207,73.54044719
+MV015081,Medhuvinagan'du,Laamu,resort_or_small,,,1.81645037,73.2782067
+MV015082,Mendhoo,Laamu,uninhabited,,,1.7872059,73.38293039
+MV015083,Olhutholhu,Laamu,uninhabited,,,1.78805364,73.3518215
+MV015084,Olhuveli,Laamu,uninhabited,,,1.81681748,73.40505463
+MV015085,Rahaa,Laamu,uninhabited,,,2.05684823,73.53594078
+MV015086,Thathunrahaa,Laamu,resort_or_small,,,1.8306731,73.26840638
+MV015087,Thun'buri,Laamu,uninhabited,,,2.07497001,73.54035681
+MV015088,Uthuruvinagan'du,Laamu,resort_or_small,,,1.81754047,73.27838033
+MV015089,Uvadhevifushi,Laamu,uninhabited,,,1.9793415,73.53729847
+MV015090,Vadinolhu,Laamu,uninhabited,,,2.01766515,73.35886792
+MV015091,Veligan'dufinolhu,Laamu,resort_or_small,,,1.82892029,73.40857735
+MV016001,Kolamaafushi,Gaafu Alifu,inhabited,636.0,148.0,0.83724829,73.18399476
+MV016002,Vilin'gili,Gaafu Alifu,inhabited,2900.0,889.0,0.75617268,73.43551625
+MV016003,Maamendhoo,Gaafu Alifu,inhabited,1201.0,391.0,0.7134349,73.43952304
+MV016004,Nilandhoo,Gaafu Alifu,inhabited,545.0,159.0,0.63649705,73.44659214
+MV016005,Dhaandhoo,Gaafu Alifu,inhabited,1044.0,269.0,0.62072077,73.4620816
+MV016006,Dhevvadhoo,Gaafu Alifu,inhabited,599.0,143.0,0.55678059,73.24257463
+MV016007,Kon'dey,Gaafu Alifu,inhabited,328.0,95.0,0.49973749,73.54805019
+MV016008,Dhiyadhoo,Gaafu Alifu,uninhabited,,,0.47680352,73.55877414
+MV016009,Gemanafushi,Gaafu Alifu,inhabited,1318.0,464.0,0.44222132,73.5687286
+MV016010,Kan'duhulhudhoo,Gaafu Alifu,inhabited,619.0,192.0,0.3514898,73.53985862
+MV016011,Araigahthaa,Gaafu Alifu,uninhabited,,,0.45211822,73.53514694
+MV016012,Baaberehutta,Gaafu Alifu,resort_or_small,,,0.84105826,73.1813644
+MV016013,Baavanadhoo,Gaafu Alifu,uninhabited,,,0.52132159,73.54000271
+MV016014,Bakehthaa,Gaafu Alifu,uninhabited,,,0.38112192,73.49748869
+MV016015,Beyrumauddoo,Gaafu Alifu,uninhabited,,,0.79546792,73.22470843
+MV016016,Bihurehaa,Gaafu Alifu,uninhabited,,,0.42185834,73.57122899
+MV016017,Boadduvaa,Gaafu Alifu,resort_or_small,,,0.70608291,73.3310102
+MV016018,Bodehuttaa,Gaafu Alifu,resort_or_small,,,0.85520649,73.4030035
+MV016019,Bodubon'deyyaa,Gaafu Alifu,uninhabited,,,0.41050785,73.56789773
+MV016020,Boduhuttaa,Gaafu Alifu,uninhabited,,,0.41248715,73.57209282
+MV016021,Dhevvaamaagalaa,Gaafu Alifu,uninhabited,,,0.57117743,73.19177453
+MV016022,Dhevvalaabadhoo,Gaafu Alifu,uninhabited,,,0.60471158,73.30944249
+MV016023,Dhigudhoo,Gaafu Alifu,uninhabited,,,0.54217766,73.53475405
+MV016024,Dhigurah,Gaafu Alifu,uninhabited,,,0.69113146,73.44129255
+MV016025,Falhumaafushi,Gaafu Alifu,uninhabited,,,0.67186689,73.43836067
+MV016026,Faruhulhedhoo,Gaafu Alifu,uninhabited,,,0.87246684,73.24451072
+MV016027,Faruhulhudhoo,Gaafu Alifu,uninhabited,,,0.87436745,73.25535345
+MV016028,Fenfuttaa,Gaafu Alifu,uninhabited,,,0.71393626,73.28539093
+MV016029,Fenrehaa,Gaafu Alifu,resort_or_small,,,0.41530291,73.57251348
+MV016030,Fulan'gi,Gaafu Alifu,uninhabited,,,0.6840835,73.20192762
+MV016031,Funadhoo,Gaafu Alifu,uninhabited,,,0.56251954,73.52608465
+MV016032,Funadhooviligillaa,Gaafu Alifu,uninhabited,,,0.56980676,73.51984629
+MV016033,Funamauddaa,Gaafu Alifu,uninhabited,,,0.53389127,73.1901483
+MV016034,Galamedhuvaa,Gaafu Alifu,uninhabited,,,0.5291922,73.53747587
+MV016035,Han'dahaa,Gaafu Alifu,uninhabited,,,0.50570091,73.45388782
+MV016036,Hinaamaagalaa,Gaafu Alifu,uninhabited,,,0.63016677,73.34459723
+MV016037,Hirihuttaa,Gaafu Alifu,uninhabited,,,0.54058931,73.34628627
+MV016038,Hithaadhoo,Gaafu Alifu,uninhabited,,,0.84950014,73.24227608
+MV016039,Hithaadhoogalaa,Gaafu Alifu,resort_or_small,,,0.82668983,73.25231432
+MV016040,Hulhimendhoo,Gaafu Alifu,uninhabited,,,0.70351598,73.44009153
+MV016041,Hurendhoo,Gaafu Alifu,resort_or_small,,,0.84657096,73.20776788
+MV016042,Idhimaa,Gaafu Alifu,uninhabited,,,0.40798449,73.56984224
+MV016043,Innarehaa,Gaafu Alifu,uninhabited,,,0.37958505,73.55688092
+MV016044,Kalhehuttaa,Gaafu Alifu,resort_or_small,,,0.84843495,73.17860076
+MV016045,Kaludirehaa,Gaafu Alifu,uninhabited,,,0.43408621,73.56942028
+MV016046,Kan'duvilin'gili,Gaafu Alifu,uninhabited,,,0.86622319,73.19032298
+MV016047,Kendheraa,Gaafu Alifu,uninhabited,,,0.72694699,73.28516022
+MV016048,Keredhdhoo,Gaafu Alifu,uninhabited,,,0.65981109,73.43826737
+MV016049,Kisserahaa,Gaafu Alifu,resort_or_small,,,0.64906587,73.13589219
+MV016050,Kodagehuttaa,Gaafu Alifu,resort_or_small,,,0.84293463,73.18071394
+MV016051,Kodahuttaa,Gaafu Alifu,resort_or_small,,,0.67860839,73.43960622
+MV016052,Kodeyvilin'gili,Gaafu Alifu,uninhabited,,,0.51363649,73.54224386
+MV016053,Kon'deymatheelaabadhoo,Gaafu Alifu,uninhabited,,,0.50573133,73.49789061
+MV016054,Kooddoo,Gaafu Alifu,uninhabited,,,0.73367722,73.43332276
+MV016055,Kudalafari,Gaafu Alifu,uninhabited,,,0.89644534,73.34969538
+MV016082,Lhossaa,Gaafu Alifu,uninhabited,,,0.82013235,73.20183868
+MV016083,Maadhigavara,Gaafu Alifu,uninhabited,,,0.68846679,73.26667025
+MV016084,Maadhigavara,Gaafu Alifu,resort_or_small,,,0.67180294,73.28334121
+MV016085,Maafehelaa,Gaafu Alifu,uninhabited,,,0.38156656,73.55273288
+MV016086,Maagihuttaa,Gaafu Alifu,uninhabited,,,0.84558363,73.17968488
+MV016087,Maakanaarataa,Gaafu Alifu,resort_or_small,,,0.81193135,73.20713445
+MV016088,Maamutaa,Gaafu Alifu,uninhabited,,,0.84627929,73.40835736
+MV016089,Maarandhoo,Gaafu Alifu,uninhabited,,,0.85367288,73.20918929
+MV016090,Maarehaa,Gaafu Alifu,uninhabited,,,0.46143992,73.5639044
+MV016091,Mahahdhoo,Gaafu Alifu,uninhabited,,,0.58428409,73.51288376
+MV016092,Mahthidhoo,Gaafu Alifu,resort_or_small,,,0.66941241,73.36817015
+MV016093,Mahthurehaa,Gaafu Alifu,uninhabited,,,0.36854619,73.55305832
+MV016094,Matu,Gaafu Alifu,uninhabited,,,0.88512913,73.33665907
+MV016095,Medharehaa,Gaafu Alifu,uninhabited,,,0.36356562,73.54574249
+MV016096,Medhehuttaa,Gaafu Alifu,uninhabited,,,0.46717655,73.56181748
+MV016097,Medhuburiyaa,Gaafu Alifu,resort_or_small,,,0.37274007,73.55341472
+MV016098,Melaimaa,Gaafu Alifu,resort_or_small,,,0.85750027,73.17933907
+MV016099,Meradhoo,Gaafu Alifu,uninhabited,,,0.5867179,73.0935311
+MV016100,Minimessaa,Gaafu Alifu,uninhabited,,,0.54129902,73.12413061
+MV016101,Munandhuvaa,Gaafu Alifu,uninhabited,,,0.59568486,73.5005459
+MV016102,Raaverrehaa,Gaafu Alifu,uninhabited,,,0.76767621,73.42917051
+MV016103,Viligalaa,Gaafu Alifu,uninhabited,,,0.51879345,73.21646
+MV016104,Vodamulaa,Gaafu Alifu,uninhabited,,,0.604424,73.48583969
+MV017001,Madaveli,Gaafu Dhaalu,inhabited,1219.0,407.0,0.4590512,72.99828625
+MV017002,Hoadehdhoo,Gaafu Dhaalu,inhabited,885.0,304.0,0.44430967,73.00358437
+MV017003,Nadellaa,Gaafu Dhaalu,inhabited,581.0,159.0,0.2936949,73.04055842
+MV017004,Gahdhoo,Gaafu Dhaalu,inhabited,1414.0,403.0,0.29029242,73.45770775
+MV017005,Rathafandhoo,Gaafu Dhaalu,inhabited,431.0,97.0,0.25283793,73.10507016
+MV017006,Vaadhoo,Gaafu Dhaalu,inhabited,516.0,100.0,0.22728603,73.27337889
+MV017007,Fiyoari,Gaafu Dhaalu,inhabited,637.0,206.0,0.22116883,73.13673253
+MV017008,Faresmaathodaa,Gaafu Dhaalu,inhabited,858.0,235.0,0.19917777,73.18983237
+MV017009,Dhoonirehaa,Gaafu Dhaalu,uninhabited,,,0.19160598,73.20177706
+MV017010,Thinadhoo,Gaafu Dhaalu,inhabited,6217.0,2134.0,0.53238187,72.99707594
+MV017011,Thelehuttaa,Gaafu Dhaalu,uninhabited,,,0.28800625,73.05252765
+MV017013,Kaadehdhoo,Gaafu Dhaalu,uninhabited,,,0.48771552,72.99343441
+MV017014,Aakirahuttaa,Gaafu Dhaalu,uninhabited,,,0.26410176,73.09250961
+MV017015,Aakirahuttaa,Gaafu Dhaalu,uninhabited,,,0.23078596,73.12804554
+MV017016,Anhenerehaa,Gaafu Dhaalu,resort_or_small,,,0.40244622,73.00496654
+MV017017,Athihuttaa,Gaafu Dhaalu,uninhabited,,,0.28004724,73.06269289
+MV017018,Badefodiyaa,Gaafu Dhaalu,uninhabited,,,0.28133413,73.0604794
+MV017019,Baulhegalla,Gaafu Dhaalu,uninhabited,,,0.49493181,73.17250524
+MV017020,Beeraahuttaa,Gaafu Dhaalu,resort_or_small,,,0.28042911,73.06067324
+MV017021,Bodehuttaa,Gaafu Dhaalu,uninhabited,,,0.26137738,73.34470974
+MV017022,Bodehuttaa,Gaafu Dhaalu,resort_or_small,,,0.19520582,73.19980846
+MV017023,Bodehuttaa,Gaafu Dhaalu,resort_or_small,,,0.29927969,73.04054142
+MV017024,Bodeinsa,Gaafu Dhaalu,uninhabited,,,0.23889805,73.11967209
+MV017025,Boderehaa,Gaafu Dhaalu,uninhabited,,,0.38643595,73.01253335
+MV017026,Bolimathaidhoo,Gaafu Dhaalu,uninhabited,,,0.23329003,73.1263476
+MV017027,Bolimathaidhua,Gaafu Dhaalu,uninhabited,,,0.31016396,73.0248145
+MV017028,Dhatekarunahuttaa,Gaafu Dhaalu,resort_or_small,,,0.39658466,73.00774962
+MV017029,Dhatemulaidhua,Gaafu Dhaalu,resort_or_small,,,0.30990254,73.02665576
+MV017030,Dhathaidhuaa,Gaafu Dhaalu,uninhabited,,,0.23735896,73.12243366
+MV017031,Dhekaamba,Gaafu Dhaalu,uninhabited,,,0.38385718,73.01565632
+MV017032,Dherukerehaa,Gaafu Dhaalu,resort_or_small,,,0.24929495,73.1080521
+MV017033,Dhigelaabadhuvaa,Gaafu Dhaalu,uninhabited,,,0.21383596,73.15386823
+MV017034,Dhigurehaa,Gaafu Dhaalu,uninhabited,,,0.42138257,73.00472931
+MV017035,Dhinmanaa,Gaafu Dhaalu,resort_or_small,,,0.45014346,72.99794452
+MV017036,Dhiyanegili,Gaafu Dhaalu,uninhabited,,,0.30200994,73.02900259
+MV017037,Dhiyanigillaa,Gaafu Dhaalu,uninhabited,,,0.25622684,73.10092816
+MV017038,Dhoonirehaa,Gaafu Dhaalu,uninhabited,,,0.26860848,73.0839937
+MV017039,Dhoonirehaa,Gaafu Dhaalu,uninhabited,,,0.32489358,73.49398483
+MV017040,Ehivakaa,Gaafu Dhaalu,uninhabited,,,0.2868091,73.05447852
+MV017041,Ekelondaa,Gaafu Dhaalu,uninhabited,,,0.20768862,73.1752773
+MV017042,Ekurukerataa,Gaafu Dhaalu,resort_or_small,,,0.23941148,73.11852144
+MV017043,Faahuttaa,Gaafu Dhaalu,uninhabited,,,0.24706096,73.10990653
+MV017044,Faanehuttaa,Gaafu Dhaalu,resort_or_small,,,0.29990274,73.40409118
+MV017045,Faathiyehuttaa,Gaafu Dhaalu,resort_or_small,,,0.1935607,73.21406434
+MV017046,Faredhoo,Gaafu Dhaalu,resort_or_small,,,0.40141812,73.00482498
+MV017047,Farehalehuttaa,Gaafu Dhaalu,resort_or_small,,,0.3406302,73.02641478
+MV017048,Farehulhehdhoo,Gaafu Dhaalu,uninhabited,,,0.32835977,73.49729111
+MV017049,Farukolhuhuttaa,Gaafu Dhaalu,resort_or_small,,,0.19580921,73.22630701
+MV017050,Fatefandhoo,Gaafu Dhaalu,uninhabited,,,0.30627769,73.0274163
+MV017051,Femunaidhoo,Gaafu Dhaalu,uninhabited,,,0.24432584,73.11391625
+MV017052,Fenevenehuttaa,Gaafu Dhaalu,uninhabited,,,0.26660403,73.08758377
+MV017053,Fereythavilin'gili,Gaafu Dhaalu,resort_or_small,,,0.3720217,73.02402546
+MV017054,Filaarataa,Gaafu Dhaalu,resort_or_small,,,0.30016001,73.03940549
+MV017055,Fonehigillaa,Gaafu Dhaalu,uninhabited,,,0.2835085,73.05991297
+MV017056,Gahevelegalaa,Gaafu Dhaalu,uninhabited,,,0.35763457,73.31970607
+MV017057,Gan,Gaafu Dhaalu,uninhabited,,,0.27501845,73.43092811
+MV017058,Gazeeraa,Gaafu Dhaalu,uninhabited,,,0.26692121,73.37648924
+MV017059,Golhaallaa,Gaafu Dhaalu,uninhabited,,,0.32101794,73.48657112
+MV017060,Goshi,Gaafu Dhaalu,uninhabited,,,0.5109253,73.14779396
+MV017061,Haadhoo,Gaafu Dhaalu,uninhabited,,,0.44906468,72.99831924
+MV017062,Haadhuaa,Gaafu Dhaalu,uninhabited,,,0.23918676,73.12200367
+MV017063,Hadahahuttaa,Gaafu Dhaalu,uninhabited,,,0.26087493,73.096097
+MV017064,Hakandoo,Gaafu Dhaalu,uninhabited,,,0.2996685,73.03225886
+MV017066,Han'dhebalanerehaa,Gaafu Dhaalu,resort_or_small,,,0.39239187,73.01163519
+MV017067,Haveyyerataa,Gaafu Dhaalu,resort_or_small,,,0.29801061,73.03648285
+MV017068,Haveyyerataa,Gaafu Dhaalu,resort_or_small,,,0.28420465,73.05848946
+MV017069,Havoddaa,Gaafu Dhaalu,uninhabited,,,0.54041907,73.09527206
+MV017070,Havodigalaa,Gaafu Dhaalu,uninhabited,,,0.52322289,73.07437578
+MV017071,Hevaahulhudhoo,Gaafu Dhaalu,uninhabited,,,0.30123059,73.0313667
+MV017072,Hiyanigilihuttaa,Gaafu Dhaalu,uninhabited,,,0.26227997,73.09455917
+MV017073,Hoothodeyaa,Gaafu Dhaalu,resort_or_small,,,0.20276936,73.18166984
+MV017074,Hulhehdhoo,Gaafu Dhaalu,uninhabited,,,0.40063694,73.0065045
+MV017075,Hulhuvaarulaa,Gaafu Dhaalu,uninhabited,,,0.32643702,73.48453626
+MV017076,Hunigoderehaa,Gaafu Dhaalu,resort_or_small,,,0.43491179,73.00238197
+MV017077,Huttaa,Gaafu Dhaalu,resort_or_small,,,0.2874657,73.05655967
+MV017078,Isdhuhuttaa,Gaafu Dhaalu,resort_or_small,,,0.1943607,73.21862874
+MV017079,Kaafarataa,Gaafu Dhaalu,resort_or_small,,,0.30819408,73.0252451
+MV017080,Kaalhehuttaa,Gaafu Dhaalu,uninhabited,,,0.22713578,73.13109343
+MV017081,Kaashidhoo,Gaafu Dhaalu,uninhabited,,,0.33528741,73.43656328
+MV017082,Kadelerataa,Gaafu Dhaalu,uninhabited,,,0.31332362,73.02485628
+MV017083,Kadevaarehaa,Gaafu Dhaalu,uninhabited,,,0.42810473,73.00358073
+MV017084,Kadhefala,Gaafu Dhaalu,uninhabited,,,0.36798758,73.02549583
+MV017085,Kafena,Gaafu Dhaalu,uninhabited,,,0.5171571,72.9929026
+MV017086,Kalhehamalaa,Gaafu Dhaalu,resort_or_small,,,0.31771194,73.48225255
+MV017087,Kalhehigillaa,Gaafu Dhaalu,uninhabited,,,0.29704283,73.03371328
+MV017088,Kalhehuttaa,Gaafu Dhaalu,uninhabited,,,0.32909425,73.02558285
+MV017089,Kalherehaa,Gaafu Dhaalu,uninhabited,,,0.25484395,73.33386241
+MV017090,Kanandhoo,Gaafu Dhaalu,uninhabited,,,0.27276921,73.069417
+MV017091,Kan'dahalagalaa,Gaafu Dhaalu,uninhabited,,,0.22526168,73.21676338
+MV017093,Kannigilla,Gaafu Dhaalu,uninhabited,,,0.45221798,72.9997935
+MV017094,Kautihulhadhoo,Gaafu Dhaalu,uninhabited,,,0.39535886,73.00813485
+MV017095,Kavvahuttaa,Gaafu Dhaalu,resort_or_small,,,0.2661297,73.09212495
+MV017096,Kelaihuttaa,Gaafu Dhaalu,uninhabited,,,0.20416601,73.17961419
+MV017097,Keraminthaa,Gaafu Dhaalu,uninhabited,,,0.39145816,73.01457768
+MV017098,Keredhirehaa,Gaafu Dhaalu,resort_or_small,,,0.30800107,73.02580953
+MV017099,Keyhuvadhoo,Gaafu Dhaalu,resort_or_small,,,0.35352456,73.02578808
+MV017100,Kodaanahuttaa,Gaafu Dhaalu,uninhabited,,,0.33273588,73.49810767
+MV017101,Kodedhoo,Gaafu Dhaalu,resort_or_small,,,0.41231592,73.00495592
+MV017102,Kodegalaa,Gaafu Dhaalu,uninhabited,,,0.36798462,73.39153937
+MV017103,Kodehutigalaa,Gaafu Dhaalu,resort_or_small,,,0.2894119,73.20089126
+MV017104,Kodurataa,Gaafu Dhaalu,resort_or_small,,,0.3737829,73.02262859
+MV017105,Konottaa,Gaafu Dhaalu,uninhabited,,,0.46278476,73.15472898
+MV017106,Kudhebeeraahuttaa,Gaafu Dhaalu,resort_or_small,,,0.28238106,73.06161417
+MV017107,Kudhe-ehivakaa,Gaafu Dhaalu,uninhabited,,,0.2856393,73.05706145
+MV017108,Kudhehaadhuaa,Gaafu Dhaalu,resort_or_small,,,0.24021929,73.12137642
+MV017109,Kudhehulhehdhoo,Gaafu Dhaalu,resort_or_small,,,0.45427392,72.99735467
+MV017110,Kudhemaadhoo,Gaafu Dhaalu,resort_or_small,,,0.27152466,73.08099675
+MV017111,Kudhemathaidhoo,Gaafu Dhaalu,uninhabited,,,0.30663415,73.029943
+MV017112,Kudherataa,Gaafu Dhaalu,resort_or_small,,,0.50060079,72.98954919
+MV017113,Kurehdhoo,Gaafu Dhaalu,uninhabited,,,0.25845905,73.09948748
+MV017114,Kureikeymaahuttaa,Gaafu Dhaalu,uninhabited,,,0.28934077,73.05045817
+MV017115,Laihaa,Gaafu Dhaalu,resort_or_small,,,0.25166016,73.34144238
+MV017131,Lifadhoo,Gaafu Dhaalu,uninhabited,,,0.39309108,73.00876215
+MV017132,Lonudhoo,Gaafu Dhaalu,uninhabited,,,0.30886124,73.41354305
+MV017133,Lonudhoohuttaa,Gaafu Dhaalu,uninhabited,,,0.3018253,73.4167381
+MV017134,Maadhoo,Gaafu Dhaalu,uninhabited,,,0.27009161,73.07469567
+MV017135,Maagalaa,Gaafu Dhaalu,uninhabited,,,0.36976432,73.37961659
+MV017136,Maagoderehaa,Gaafu Dhaalu,uninhabited,,,0.50632,72.99000194
+MV017137,Maahutigalaa,Gaafu Dhaalu,resort_or_small,,,0.29409291,73.19185452
+MV017138,Maakirigalla,Gaafu Dhaalu,resort_or_small,,,0.52403829,73.03974574
+MV017139,Maallaarehaa,Gaafu Dhaalu,resort_or_small,,,0.49284609,72.98813996
+MV017140,Maanaidhoo,Gaafu Dhaalu,uninhabited,,,0.24237302,73.11706272
+MV017141,Maarehaa,Gaafu Dhaalu,uninhabited,,,0.19122484,73.19727852
+MV017142,Maarehaa,Gaafu Dhaalu,resort_or_small,,,0.29075422,73.04620345
+MV017143,Maavaaruloo,Gaafu Dhaalu,uninhabited,,,0.33518053,73.5081117
+MV017144,Maavehdhoo,Gaafu Dhaalu,uninhabited,,,0.30876419,73.47255512
+MV017145,Maguhdhuvaa,Gaafu Dhaalu,uninhabited,,,0.27782211,73.35667534
+MV017146,Mathaidhoo,Gaafu Dhaalu,uninhabited,,,0.30395891,73.02677288
+MV017147,Mathihuttaa,Gaafu Dhaalu,uninhabited,,,0.25576273,73.3403367
+MV017148,Meehinethiyenehuttaa,Gaafu Dhaalu,uninhabited,,,0.26570803,73.08982599
+MV017149,Menthandhuvaa,Gaafu Dhaalu,uninhabited,,,0.32490867,73.49165923
+MV017150,Meragihuttaa,Gaafu Dhaalu,uninhabited,,,0.269212,73.08126276
+MV017151,Meyragillaa,Gaafu Dhaalu,uninhabited,,,0.24592923,73.11199077
+MV017152,Mudhimaahutta,Gaafu Dhaalu,uninhabited,,,0.25468768,73.34772014
+MV017153,Neimaahutta,Gaafu Dhaalu,uninhabited,,,0.3250674,73.02559362
+MV017154,Odagallaa,Gaafu Dhaalu,uninhabited,,,0.31952645,73.38066089
+MV017155,Oinigillaa,Gaafu Dhaalu,uninhabited,,,0.27558234,73.06477282
+MV017156,Olhimuntaa,Gaafu Dhaalu,resort_or_small,,,0.3599517,73.02587569
+MV017157,Olhurataa,Gaafu Dhaalu,resort_or_small,,,0.31612052,73.02444073
+MV017158,Raabodaafeheerataa,Gaafu Dhaalu,resort_or_small,,,0.2360085,73.12391623
+MV017159,Raaverinkolhihuttaa,Gaafu Dhaalu,resort_or_small,,,0.25052817,73.23386626
+MV017160,Rahadhuvaa,Gaafu Dhaalu,uninhabited,,,0.49695043,72.98949932
+MV017161,Rodaadhoo,Gaafu Dhaalu,uninhabited,,,0.34290989,73.02626053
+MV017163,Thinehuttaa,Gaafu Dhaalu,uninhabited,,,0.37026378,73.02470843
+MV017164,Uhehootirataa,Gaafu Dhaalu,uninhabited,,,0.20910156,73.1710383
+MV017165,Uherehaa,Gaafu Dhaalu,resort_or_small,,,0.41329752,73.0049385
+MV017166,Uhurehaa,Gaafu Dhaalu,resort_or_small,,,0.4185087,73.00598641
+MV017167,Ulegalaa,Gaafu Dhaalu,uninhabited,,,0.3986569,73.37010085
+MV017168,Vaareyadhuvaa,Gaafu Dhaalu,uninhabited,,,0.28856845,73.33740331
+MV017169,Vatavarrehaa,Gaafu Dhaalu,uninhabited,,,0.25585196,73.29645273
+MV017170,Veraaviligillaa,Gaafu Dhaalu,resort_or_small,,,0.31278783,73.44879687
+MV017171,Viligillaa,Gaafu Dhaalu,uninhabited,,,0.22962788,73.1301592
+MV018001,Fuvahmulah,Gnaviyani,inhabited,9177.0,2761.0,-0.29446615,73.42338954
+MV019001,Meedhoo,Seenu,inhabited,1892.0,541.0,-0.58446832,73.2306568
+MV019002,Hithadhoo,Seenu,inhabited,13759.0,3560.0,-0.61577332,73.09356392
+MV019003,Maradhoo,Seenu,inhabited,2542.0,712.0,-0.66488129,73.11816592
+MV019004,Feydhoo,Seenu,inhabited,4289.0,914.0,-0.68230438,73.1348735
+MV019005,Maradhoofeydhoo,Seenu,inhabited,1398.0,407.0,-0.6734004,73.1255304
+MV019006,Hulhudhoo,Seenu,inhabited,1182.0,259.0,-0.59876306,73.22548164
+MV019025,Vilin'gili,Seenu,uninhabited,,,-0.68063122,73.19381901
+MV019026,Bedhey Aurah,Seenu,resort_or_small,,,-0.58918499,73.08729194
+MV019027,Boduhajaraa,Seenu,resort_or_small,,,-0.67742014,73.12344299
+MV019028,Bolihera,Seenu,uninhabited,,,-0.61078259,73.11046154
+MV019029,Dheeron'di,Seenu,resort_or_small,,,-0.59481853,73.08726621
+MV019031,Dhonhera,Seenu,uninhabited,,,-0.58579848,73.19681457
+MV019032,Fathikedeheragan'du,Seenu,uninhabited,,,-0.61244345,73.14875045
+MV019033,Gan,Seenu,uninhabited,,,-0.69457699,73.15689352
+MV019034,Geskalhuheraa,Seenu,resort_or_small,,,-0.64612165,73.22133911
+MV019035,Gomahera,Seenu,resort_or_small,,,-0.69083071,73.1832032
+MV019036,Hankede,Seenu,uninhabited,,,-0.65583271,73.11104388
+MV019037,Hasanbeaarah,Seenu,resort_or_small,,,-0.59846587,73.22223877
+MV019038,Herethere,Seenu,uninhabited,,,-0.62652858,73.22589711
+MV019039,Hikahera,Seenu,uninhabited,,,-0.58035194,73.22229684
+MV019040,Ismehelaahera,Seenu,uninhabited,,,-0.579412,73.21697215
+MV019041,Kan'diheragan'du,Seenu,resort_or_small,,,-0.61510005,73.14213314
+MV019042,Kaohera,Seenu,uninhabited,,,-0.58856853,73.08883938
+MV019043,Kedevaahera,Seenu,resort_or_small,,,-0.57696301,73.20751053
+MV019044,Kudamaahera,Seenu,resort_or_small,,,-0.59795901,73.08920063
+MV019045,Kudhehera,Seenu,resort_or_small,,,-0.58035309,73.22336663
+MV019056,Maahera,Seenu,uninhabited,,,-0.59493402,73.09038086
+MV019057,Mulikede,Seenu,uninhabited,,,-0.65863896,73.21691129
+MV019058,Savaaheli,Seenu,uninhabited,,,-0.68117885,73.126286
+MV020001,Hangnaameedhoo,Alifu Dhaalu,inhabited,484.0,148.0,3.84932551,72.95541821
+MV020002,Omadhoo,Alifu Dhaalu,inhabited,913.0,344.0,3.79163201,72.9626135
+MV020003,Kun'burudhoo,Alifu Dhaalu,inhabited,509.0,173.0,3.77536435,72.92544489
+MV020004,Mahibadhoo,Alifu Dhaalu,inhabited,2580.0,796.0,3.75709792,72.96877854
+MV020005,Mandhoo,Alifu Dhaalu,inhabited,418.0,85.0,3.69791407,72.70972844
+MV020006,Dhan'gethi,Alifu Dhaalu,inhabited,936.0,256.0,3.60761632,72.95574507
+MV020007,Dhigurah,Alifu Dhaalu,inhabited,761.0,153.0,3.52547923,72.92326419
+MV020008,Fenfushi,Alifu Dhaalu,inhabited,1000.0,333.0,3.48894272,72.78486436
+MV020009,Dhihdhoo,Alifu Dhaalu,inhabited,141.0,26.0,3.48501138,72.87610291
+MV020010,Maamin'gili,Alifu Dhaalu,inhabited,2798.0,833.0,3.4756995,72.83659791
+MV020011,Angaagau,Alifu Dhaalu,uninhabited,,,3.65212605,72.82210104
+MV020012,Ariyadhoo,Alifu Dhaalu,uninhabited,,,3.47513486,72.85494223
+MV020013,Athulivarufinolhu,Alifu Dhaalu,resort_or_small,,,3.64782704,72.95571995
+MV020014,Athurugau,Alifu Dhaalu,uninhabited,,,3.8872447,72.81637876
+MV020015,Bodufinolhu,Alifu Dhaalu,uninhabited,,,3.49560182,72.75882557
+MV020016,Bodukaashihuraa,Alifu Dhaalu,uninhabited,,,3.87624525,72.95453844
+MV020017,Bulhalhohi,Alifu Dhaalu,uninhabited,,,3.73891846,72.73190632
+MV020018,Dhiffushi,Alifu Dhaalu,uninhabited,,,3.47532995,72.82468013
+MV020019,Dhiggiri,Alifu Dhaalu,resort_or_small,,,3.85841342,72.91474173
+MV020020,Dhihdhoofinolhu,Alifu Dhaalu,uninhabited,,,3.49859433,72.89580241
+MV020021,En'boodhoo,Alifu Dhaalu,resort_or_small,,,3.81515834,72.75256066
+MV020022,Fushidhigga,Alifu Dhaalu,resort_or_small,,,3.75790935,72.7708041
+MV020023,Heenfaru,Alifu Dhaalu,resort_or_small,,,3.8192119,72.82908536
+MV020024,Hiyafushi,Alifu Dhaalu,resort_or_small,,,3.4794869,72.86964687
+MV020025,Hukurudhoo,Alifu Dhaalu,uninhabited,,,3.57028144,72.71875165
+MV020026,Hurasdhoo,Alifu Dhaalu,uninhabited,,,3.66691678,72.774754
+MV020027,Huruelhi,Alifu Dhaalu,uninhabited,,,3.54414118,72.71992063
+MV020028,Huvahendhoo,Alifu Dhaalu,uninhabited,,,3.65372755,72.95413418
+MV020029,Innafushi,Alifu Dhaalu,uninhabited,,,3.79785236,72.73295838
+MV020030,Kalhahan'dhihuraa,Alifu Dhaalu,resort_or_small,,,3.79810766,72.71074221
+MV020031,Kudadhoo,Alifu Dhaalu,resort_or_small,,,3.47925714,72.87192485
+MV020032,Kudarah,Alifu Dhaalu,uninhabited,,,3.57392108,72.91069415
+MV020067,Lonuboi,Alifu Dhaalu,resort_or_small,,,3.60323963,72.90094041
+MV020068,Maafushivaru,Alifu Dhaalu,uninhabited,,,3.60788483,72.90033609
+MV020069,Mahchafushi,Alifu Dhaalu,uninhabited,,,3.59384345,72.88355611
+MV020070,Mirihi,Alifu Dhaalu,uninhabited,,,3.61966736,72.78066279
+MV020071,Moofushi,Alifu Dhaalu,uninhabited,,,3.88518197,72.72804564
+MV020072,Nalaguraidhoo,Alifu Dhaalu,uninhabited,,,3.48318286,72.80161182
+MV020073,Ranfinolhu,Alifu Dhaalu,uninhabited,,,3.61097873,72.72748803
+MV020074,Rangaleefinolhu,Alifu Dhaalu,uninhabited,,,3.6165083,72.71621095
+MV020075,Rangali,Alifu Dhaalu,uninhabited,,,3.61825046,72.72336441
+MV020076,Theluveligaa,Alifu Dhaalu,resort_or_small,,,3.669849,72.90261184
+MV020077,Tholhifushi,Alifu Dhaalu,uninhabited,,,3.4851615,72.78962781
+MV020078,Thun'dufushi,Alifu Dhaalu,uninhabited,,,3.78619585,72.73093985
+MV020079,Vakarufalhi,Alifu Dhaalu,uninhabited,,,3.57873691,72.90195636
+MV020080,Vilamendhoo,Alifu Dhaalu,uninhabited,,,3.63378393,72.9586148
+MV020081,Vilin'gilivaru,Alifu Dhaalu,uninhabited,,,3.6190265,72.95517776
+MV021001,Maale,Male,uninhabited,,,4.17470227,73.51017896
+MV021002,Vilin'gili,Male,uninhabited,,,4.1735434,73.48482139
+MV009037,Farukolhufushi,Kaafu,uninhabited,,,4.23146727,73.5444413
+MV021003,Hulhumaale,Male,uninhabited,,,4.22103641,73.54253389
+MV019030,Dhigiheraa,Seenu,uninhabited,,,-0.68629641,73.13093831
+MV017065,Han'daidhoo,Gaafu Dhaalu,uninhabited,,,0.19365235,73.19216061
+MV017092,Kandahdhoo,Gaafu Dhaalu,resort_or_small,,,0.19462799,73.19103477
+MV014031,Hiriyanfushi,Thaa,uninhabited,,,2.21134297,73.1495485
+MV017162,Rodhavarrehaa,Gaafu Dhaalu,resort_or_small,,,0.29503963,73.4633816
+MLE,Malé City,Male,inhabited,211908.0,,4.175495,73.509347

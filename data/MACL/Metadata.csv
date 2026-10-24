@@ -1,0 +1,21 @@
+﻿Column,Type,Description,Note
+record_id,Integer,UID,
+flight_type,Categorical,,
+dep_date,Date,Departure date of the movement,YYYY-MM-DD
+arrival_date,Date,Arrival date of the movement,YYYY-MM-DD
+carrier_code,Categorical,Operating airline ,
+route_code,Categorical,Flight route ‚,
+region,Categorical,Region of destination airport,
+aircraft_type_code,Categorical,Aircraft family,
+aircraft_category,Categorical,Aircraft body class,
+arr_adults,Integer,Arriving adult passengers,
+arr_children,Integer,Arriving child passengers,
+arr_infants,Integer,Arriving infant passengers,
+transit_adults,Integer,Transit adult passengers,
+transit_children,Integer,Transit child passengers,
+transit_infants,Integer,Transit infant passengers,
+dep_adults,Integer,Departing adult passengers,
+dep_children,Integer,Departing child passengers,
+dep_infants,Integer,Departing infant passengers,
+ata,Time,Actual time of arrival,HH:MM (24h)
+atd,Time,Actual time of departure,HH:MM (24h)

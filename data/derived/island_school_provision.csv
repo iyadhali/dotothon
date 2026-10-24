@@ -1,0 +1,186 @@
+page,atoll,island,grade_sum,subtotal,check_ok,is_region_total,enrolled_total,pre_primary,primary,lower_secondary,higher_secondary,is_preschool,is_primary,is_lower_secondary,is_higher_secondary,gr11,gr12
+22,Haa Alifu,Baarah,306,306,True,False,306,89,137,80,0,True,True,True,False,0,0
+22,Haa Alifu,Dhidhdhoo,1070,1070,True,False,1070,255,483,297,35,True,True,True,True,30,5
+22,Haa Alifu,Filladhoo,122,122,True,False,122,14,64,44,0,True,True,True,False,0,0
+22,Haa Alifu,Hoarafushi,449,449,True,False,449,107,203,139,0,True,True,True,False,0,0
+22,Haa Alifu,Ihavandhoo,979,979,True,False,979,266,412,260,41,True,True,True,True,26,15
+22,Haa Alifu,Kelaa,254,254,True,False,254,59,118,77,0,True,True,True,False,0,0
+22,Haa Alifu,Maarandhoo,168,168,True,False,168,22,98,48,0,True,True,True,False,0,0
+22,Haa Alifu,Molhadhoo,59,59,True,False,59,16,24,19,0,True,True,True,False,0,0
+22,Haa Alifu,Muraidhoo,189,189,True,False,189,45,85,59,0,True,True,True,False,0,0
+22,Haa Alifu,Thakandhoo,30,30,True,False,30,12,14,4,0,True,True,True,False,0,0
+22,Haa Alifu,Thuraakunu,90,90,True,False,90,8,47,35,0,True,True,True,False,0,0
+22,Haa Alifu,Uligan,82,82,True,False,82,10,45,27,0,True,True,True,False,0,0
+22,Haa Alifu,Utheemu,155,155,True,False,155,17,81,57,0,True,True,True,False,0,0
+22,Haa Alifu,Vashafaru,101,101,True,False,101,22,50,29,0,True,True,True,False,0,0
+23,Haa Dhaalu,Finey,117,117,True,False,117,36,50,31,0,True,True,True,False,0,0
+23,Haa Dhaalu,Hanimaadhoo,532,532,True,False,532,128,232,147,25,True,True,True,True,7,18
+23,Haa Dhaalu,Hirimaradhoo,37,37,True,False,37,4,23,10,0,True,True,True,False,0,0
+23,Haa Dhaalu,Kulhudhuffushi,2911,2911,True,False,2911,490,1341,947,133,True,True,True,True,81,52
+23,Haa Dhaalu,Kumundhoo,251,251,True,False,251,60,104,87,0,True,True,True,False,0,0
+23,Haa Dhaalu,Kurin’bi,144,144,True,False,144,30,72,42,0,True,True,True,False,0,0
+23,Haa Dhaalu,Makunudhoo,354,354,True,False,354,47,200,107,0,True,True,True,False,0,0
+23,Haa Dhaalu,Naivaadhoo,123,123,True,False,123,20,74,29,0,True,True,True,False,0,0
+23,Haa Dhaalu,Nellaidhoo,368,368,True,False,368,87,145,110,26,True,True,True,True,13,13
+23,Haa Dhaalu,Neykurendhoo,157,157,True,False,157,37,73,47,0,True,True,True,False,0,0
+23,Haa Dhaalu,Nolhivaran,685,685,True,False,685,190,298,197,0,True,True,True,False,0,0
+23,Haa Dhaalu,Nolhivaranfaru,303,303,True,False,303,38,170,95,0,True,True,True,False,0,0
+23,Haa Dhaalu,Vaikaradhoo,169,169,True,False,169,19,86,64,0,True,True,True,False,0,0
+24,Shaviyani,Bileiyfahi,159,159,True,False,159,33,80,46,0,True,True,True,False,0,0
+24,Shaviyani,Feevah,175,175,True,False,175,27,95,53,0,True,True,True,False,0,0
+24,Shaviyani,Feydhoo,253,253,True,False,253,67,112,74,0,True,True,True,False,0,0
+24,Shaviyani,Foakaidhoo,465,465,True,False,465,67,221,145,32,True,True,True,True,25,7
+24,Shaviyani,Funadhoo,673,673,True,False,673,171,279,205,18,True,True,True,True,9,9
+24,Shaviyani,Goidhoo,156,156,True,False,156,43,67,46,0,True,True,True,False,0,0
+24,Shaviyani,Kan’ditheemu,353,353,True,False,353,82,159,112,0,True,True,True,False,0,0
+24,Shaviyani,Komandoo,236,236,True,False,236,54,103,72,7,True,True,True,True,0,7
+24,Shaviyani,Lhaimagu,158,158,True,False,158,24,78,56,0,True,True,True,False,0,0
+24,Shaviyani,Maaun’goodhoo,263,263,True,False,263,58,118,87,0,True,True,True,False,0,0
+24,Shaviyani,Maroshi,100,100,True,False,100,16,53,31,0,True,True,True,False,0,0
+24,Shaviyani,Milandhoo,640,640,True,False,640,62,293,237,48,True,True,True,True,31,17
+24,Shaviyani,Narudhoo,137,137,True,False,137,18,66,53,0,True,True,True,False,0,0
+24,Shaviyani,Noomaraa,101,101,True,False,101,23,52,26,0,True,True,True,False,0,0
+25,Noonu,Fodhdhoo,66,66,True,False,66,17,31,18,0,True,True,True,False,0,0
+25,Noonu,Hen’badhoo,193,193,True,False,193,42,87,64,0,True,True,True,False,0,0
+25,Noonu,Holhudhoo,412,412,True,False,412,85,154,123,50,True,True,True,True,27,23
+25,Noonu,Ken’dhikulhudhoo,491,491,True,False,491,123,224,126,18,True,True,True,True,7,11
+25,Noonu,Kudafari,158,158,True,False,158,19,86,53,0,True,True,True,False,0,0
+25,Noonu,Landhoo,254,254,True,False,254,65,106,83,0,True,True,True,False,0,0
+25,Noonu,Lhohi,222,222,True,False,222,67,90,65,0,True,True,True,False,0,0
+25,Noonu,Maafaru,223,223,True,False,223,49,111,63,0,True,True,True,False,0,0
+25,Noonu,Maalhendhoo,209,209,True,False,209,48,101,60,0,True,True,True,False,0,0
+25,Noonu,Magoodhoo,96,96,True,False,96,17,55,24,0,True,True,True,False,0,0
+25,Noonu,Manadhoo,416,416,True,False,416,73,184,159,0,True,True,True,False,0,0
+25,Noonu,Miladhoo,251,251,True,False,251,44,118,89,0,True,True,True,False,0,0
+25,Noonu,Velidhoo,389,389,True,False,389,51,203,135,0,True,True,True,False,0,0
+26,Raa,Alifushi,514,514,True,False,514,135,211,149,19,True,True,True,True,5,14
+26,Raa,An’golhitheemu,102,102,True,False,102,17,54,31,0,True,True,True,False,0,0
+26,Raa,Dhuvaafaru,806,806,True,False,806,108,432,266,0,True,True,True,False,0,0
+26,Raa,Fainu,104,104,True,False,104,17,52,35,0,True,True,True,False,0,0
+26,Raa,Hulhudhuffaaru,405,405,True,False,405,90,158,124,33,True,True,True,True,18,15
+26,Raa,In’guraidhoo,392,392,True,False,392,102,190,100,0,True,True,True,False,0,0
+26,Raa,Innamaadhoo,141,141,True,False,141,40,57,44,0,True,True,True,False,0,0
+26,Raa,Kinolhas,182,182,True,False,182,39,86,57,0,True,True,True,False,0,0
+26,Raa,Maakurathu,248,248,True,False,248,46,127,75,0,True,True,True,False,0,0
+26,Raa,Maduvvari,468,468,True,False,468,114,232,122,0,True,True,True,False,0,0
+26,Raa,Meedhoo,563,563,True,False,563,152,218,143,50,True,True,True,True,30,20
+26,Raa,Rasgetheemu,99,99,True,False,99,16,54,29,0,True,True,True,False,0,0
+26,Raa,Rasmaadhoo,141,141,True,False,141,35,63,43,0,True,True,True,False,0,0
+26,Raa,Un’goofaaru,472,472,True,False,472,106,229,137,0,True,True,True,False,0,0
+26,Raa,Vaadhoo,99,99,True,False,99,15,51,33,0,True,True,True,False,0,0
+27,Baa,Dharavandhoo,233,233,True,False,233,46,120,67,0,True,True,True,False,0,0
+27,Baa,Dhonfan,97,97,True,False,97,20,45,32,0,True,True,True,False,0,0
+27,Baa,Eydhafushi,847,847,True,False,847,171,311,266,99,True,True,True,True,65,34
+27,Baa,Fehendhoo,29,29,True,False,29,6,15,8,0,True,True,True,False,0,0
+27,Baa,Fulhadhoo,37,37,True,False,37,10,22,5,0,True,True,True,False,0,0
+27,Baa,Goidhoo,153,153,True,False,153,53,63,37,0,True,True,True,False,0,0
+27,Baa,Hithaadhoo,210,210,True,False,210,33,98,79,0,True,True,True,False,0,0
+27,Baa,Kamadhoo,76,76,True,False,76,20,34,22,0,True,True,True,False,0,0
+27,Baa,Kendhoo,272,272,True,False,272,65,141,66,0,True,True,True,False,0,0
+27,Baa,Kihaadhoo,157,157,True,False,157,52,61,44,0,True,True,True,False,0,0
+27,Baa,Kudarikilu,127,127,True,False,127,32,63,32,0,True,True,True,False,0,0
+27,Baa,Maalhos,166,166,True,False,166,48,75,43,0,True,True,True,False,0,0
+27,Baa,Thulhaadhoo,390,390,True,False,390,100,174,107,9,True,True,True,True,9,0
+28,Lhaviyani,Hinnavaru,526,526,True,False,526,58,282,153,33,True,True,True,True,22,11
+28,Lhaviyani,Kurendhoo,294,294,True,False,294,60,144,90,0,True,True,True,False,0,0
+28,Lhaviyani,Naifaru,1130,1130,True,False,1130,216,550,335,29,True,True,True,True,10,19
+28,Lhaviyani,Olhuvelifushi,176,176,True,False,176,18,100,58,0,True,True,True,False,0,0
+28,Kaafu,Dhiffushi,300,300,True,False,300,74,146,80,0,True,True,True,False,0,0
+28,Kaafu,Gaafaru,368,368,True,False,368,53,205,110,0,True,True,True,False,0,0
+28,Kaafu,Gulhi,205,205,True,False,205,33,111,61,0,True,True,True,False,0,0
+28,Kaafu,Guraidhoo,325,325,True,False,325,36,173,116,0,True,True,True,False,0,0
+28,Kaafu,Hinmafushi,294,294,True,False,294,84,145,65,0,True,True,True,False,0,0
+28,Kaafu,Huraa,360,360,True,False,360,87,176,97,0,True,True,True,False,0,0
+28,Kaafu,Kaashidhoo,507,507,True,False,507,136,213,158,0,True,True,True,False,0,0
+28,Kaafu,Maafushi,576,576,True,False,576,172,284,112,8,True,True,True,True,1,7
+28,Kaafu,Thulusdhoo,303,303,True,False,303,60,142,101,0,True,True,True,False,0,0
+29,Alifu Alifu,Bodufolhudhoo,202,202,True,False,202,32,103,67,0,True,True,True,False,0,0
+29,Alifu Alifu,Feridhoo,117,117,True,False,117,15,63,39,0,True,True,True,False,0,0
+29,Alifu Alifu,Himandhoo,217,217,True,False,217,47,111,59,0,True,True,True,False,0,0
+29,Alifu Alifu,Maalhos,145,145,True,False,145,42,64,39,0,True,True,True,False,0,0
+29,Alifu Alifu,Mathiveri,236,236,True,False,236,57,104,75,0,True,True,True,False,0,0
+29,Alifu Alifu,Rasdhoo,301,301,True,False,301,95,121,85,0,True,True,True,False,0,0
+29,Alifu Alifu,Thoddoo,463,463,True,False,463,103,217,128,15,True,True,True,True,10,5
+29,Alifu Alifu,Ukulhas,365,365,True,False,365,36,172,118,39,True,True,True,True,28,11
+30,Alifu Dhaalu,Dhan’gethi,219,219,True,False,219,37,124,58,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Dhidhdhoo,16,16,True,False,16,5,7,4,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Dhigurah,125,125,True,False,125,31,56,38,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Fenfushi,250,250,True,False,250,42,126,82,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Hagnaameedhoo,116,116,True,False,116,12,66,38,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Kun’burudhoo,130,130,True,False,130,27,51,52,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Maamingili,620,620,True,False,620,137,308,175,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Mahibadhoo,721,721,True,False,721,192,310,193,26,True,True,True,True,17,9
+30,Alifu Dhaalu,Mandhoo,62,62,True,False,62,9,36,17,0,True,True,True,False,0,0
+30,Alifu Dhaalu,Omadhoo,270,270,True,False,270,69,143,58,0,True,True,True,False,0,0
+31,Vaavu,Felidhoo,130,130,True,False,130,11,71,48,0,True,True,True,False,0,0
+31,Vaavu,Fulidhoo,64,64,True,False,64,26,24,14,0,True,True,True,False,0,0
+31,Vaavu,Keyodhoo,221,221,True,False,221,38,101,64,18,True,True,True,True,11,7
+31,Vaavu,Thinadhoo,1,1,True,False,1,0,1,0,0,False,True,False,False,0,0
+31,Meemu,Dhiggaru,328,328,True,False,328,73,125,106,24,True,True,True,True,10,14
+31,Meemu,Kolhufushi,200,200,True,False,200,43,84,65,8,True,True,True,True,8,0
+31,Meemu,Maduvvari,58,58,True,False,58,13,27,18,0,True,True,True,False,0,0
+31,Meemu,Mulah,382,382,True,False,382,92,156,111,23,True,True,True,True,5,18
+31,Meemu,Muli,259,259,True,False,259,37,108,87,27,True,True,True,True,21,6
+31,Meemu,Naalaafushi,71,71,True,False,71,19,46,6,0,True,True,True,False,0,0
+31,Meemu,Raiymandhoo,7,7,True,False,7,1,6,0,0,False,True,False,False,0,0
+31,Meemu,Veyvah,63,63,True,False,63,15,28,20,0,True,True,True,False,0,0
+32,Faafu,Bileiydhoo,278,278,True,False,278,62,146,60,10,True,True,True,True,5,5
+32,Faafu,Dharan’boodhoo,131,131,True,False,131,9,80,42,0,True,True,True,False,0,0
+32,Faafu,Feeali,264,264,True,False,264,28,154,82,0,True,True,True,False,0,0
+32,Faafu,Magoodhoo,248,248,True,False,248,61,123,64,0,True,True,True,False,0,0
+32,Faafu,Nilandhoo,571,571,True,False,571,79,275,162,55,True,True,True,True,25,30
+32,Dhaalu,Ban’didhoo,170,170,True,False,170,35,83,52,0,True,True,True,False,0,0
+32,Dhaalu,Hulhudheli,202,202,True,False,202,39,106,57,0,True,True,True,False,0,0
+32,Dhaalu,Kudahuvadhoo,732,732,True,False,732,97,387,209,39,True,True,True,True,22,17
+32,Dhaalu,Maaen’boodhoo,146,146,True,False,146,30,68,48,0,True,True,True,False,0,0
+32,Dhaalu,Meedhoo,241,241,True,False,241,46,111,75,9,True,True,True,True,3,6
+32,Dhaalu,Rin’budhoo,66,66,True,False,66,9,34,23,0,True,True,True,False,0,0
+33,Thaa,Buruni,113,113,True,False,113,27,56,30,0,True,True,True,False,0,0
+33,Thaa,Dhiyamigili,231,231,True,False,231,70,100,61,0,True,True,True,False,0,0
+33,Thaa,Gaadhiffushi,66,66,True,False,66,17,31,18,0,True,True,True,False,0,0
+33,Thaa,Guraidhoo,356,356,True,False,356,72,159,100,25,True,True,True,True,15,10
+33,Thaa,Hirilandhoo,245,245,True,False,245,61,111,73,0,True,True,True,False,0,0
+33,Thaa,Kan’doodhoo,116,116,True,False,116,10,58,48,0,True,True,True,False,0,0
+33,Thaa,Kin’bidhoo,206,206,True,False,206,32,95,79,0,False,True,True,False,0,0
+33,Thaa,Madifushi,220,220,True,False,220,34,115,71,0,True,True,True,False,0,0
+33,Thaa,Omadhoo,92,92,True,False,92,8,48,36,0,False,True,True,False,0,0
+33,Thaa,Thimarafushi,315,315,True,False,315,108,125,82,0,True,True,True,False,0,0
+33,Thaa,Vandhoo,69,69,True,False,69,12,31,26,0,True,True,True,False,0,0
+33,Thaa,Veymandoo,391,391,True,False,391,85,163,125,18,True,True,True,True,12,6
+33,Thaa,Vilufushi,316,316,True,False,316,58,143,92,23,True,True,True,True,14,9
+34,Laamu,Dhan’bidhoo,175,175,True,False,175,52,85,38,0,True,True,True,False,0,0
+34,Laamu,Fonadhoo,834,834,True,False,834,186,362,225,61,True,True,True,True,36,25
+34,Laamu,Gan,1300,1300,True,False,1300,303,559,378,60,True,True,True,True,37,23
+34,Laamu,Hithadhoo,222,222,True,False,222,26,131,65,0,True,True,True,False,0,0
+34,Laamu,Isdhoo,229,229,True,False,229,63,100,66,0,True,True,True,False,0,0
+34,Laamu,Kalaidhoo,163,163,True,False,163,38,76,49,0,True,True,True,False,0,0
+34,Laamu,Kunahandhoo,145,145,True,False,145,31,70,44,0,True,True,True,False,0,0
+34,Laamu,Maabaidhoo,124,124,True,False,124,28,57,39,0,True,True,True,False,0,0
+34,Laamu,Maamendhoo,190,190,True,False,190,61,72,57,0,True,True,True,False,0,0
+34,Laamu,Maavah,351,351,True,False,351,59,174,112,6,True,True,True,True,1,5
+34,Laamu,Mundoo,36,36,True,False,36,5,23,8,0,True,True,True,False,0,0
+35,Gaafu Alifu,Dhaandhoo,255,255,True,False,255,62,106,68,19,True,True,True,True,12,7
+35,Gaafu Alifu,Dhevvadhoo,85,85,True,False,85,23,36,26,0,True,True,True,False,0,0
+35,Gaafu Alifu,Gemanafushi,365,365,True,False,365,80,180,105,0,True,True,True,False,0,0
+35,Gaafu Alifu,Kan’duhulhudhoo,127,127,True,False,127,19,69,39,0,True,True,True,False,0,0
+35,Gaafu Alifu,Kolamafushi,130,130,True,False,130,18,72,40,0,True,True,True,False,0,0
+35,Gaafu Alifu,Kon’dey,71,71,True,False,71,29,29,13,0,True,True,True,False,0,0
+35,Gaafu Alifu,Maamendhoo,254,254,True,False,254,35,123,95,1,True,True,True,True,0,1
+35,Gaafu Alifu,Nilandhoo,96,96,True,False,96,18,46,32,0,True,True,True,False,0,0
+35,Gaafu Alifu,Vilin’gili,746,746,True,False,746,143,362,198,43,True,True,True,True,24,19
+36,Gaafu Dhaalu,Faresmaathodaa,200,200,True,False,200,29,107,64,0,True,True,True,False,0,0
+36,Gaafu Dhaalu,Fiyoaree,156,156,True,False,156,17,86,53,0,True,True,True,False,0,0
+36,Gaafu Dhaalu,Gadhdhoo,305,305,True,False,305,40,156,96,13,True,True,True,True,6,7
+36,Gaafu Dhaalu,Hoan’dedhdhoo,216,216,True,False,216,24,101,91,0,True,True,True,False,0,0
+36,Gaafu Dhaalu,Madaveli,301,301,True,False,301,43,148,110,0,True,True,True,False,0,0
+36,Gaafu Dhaalu,Nadella,156,156,True,False,156,24,77,55,0,True,True,True,False,0,0
+36,Gaafu Dhaalu,Rathafandhoo,100,100,True,False,100,25,52,23,0,True,True,True,False,0,0
+36,Gaafu Dhaalu,Thinadhoo,1496,1496,True,False,1496,351,663,449,33,True,True,True,True,11,22
+36,Gaafu Dhaalu,Vaadhoo,100,100,True,False,100,9,62,29,0,True,True,True,False,0,0
+36,Gnaviyani,Fuvammulah,2536,2536,True,False,2536,543,1089,796,108,True,True,True,True,61,47
+37,Seenu,Feydhoo,532,532,True,False,532,56,285,191,0,True,True,True,False,0,0
+37,Seenu,Hithadhoo,3560,3560,True,False,3560,713,1469,996,382,True,True,True,True,232,150
+37,Seenu,Meedhoo,554,554,True,False,554,96,262,196,0,True,True,True,False,0,0
+37,Seenu,Maradhoo,638,638,True,False,638,63,348,227,0,True,True,True,False,0,0
+37,Seenu,Vilin’gili,842,842,True,False,842,193,403,246,0,True,True,True,False,0,0
+37,Greater Malé,Malé City (region total),39605,39605,True,True,39605,7422,17252,11624,3307,True,True,True,True,1846,1461

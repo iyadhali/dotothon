@@ -1,0 +1,6 @@
+# The web app and the analysis pipeline share one interpreter.
+# Python >= 3.12 (tested on 3.14).
+Django==5.2
+pandas>=3.0
+# only needed to rebuild the data from source (scripts/):
+# pdfplumber>=0.11        # MoE School Statistics 2024 table extraction

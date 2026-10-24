@@ -1,0 +1,165 @@
+{% extends "access/base.html" %}
+{% load fmt %}
+{% block body %}
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Maldives Datathon 2026 · Team A · Sea · Land · Air</p>
+    <h1>Can a student on island A reach grade 11–12 on island B?</h1>
+    <p class="lede">
+      {{ s.islands }} inhabited islands, {{ s.population|num }} residents, and one
+      question that decides who continues to higher secondary: how long does it take to get to a
+      school that teaches it? Travel times come from {{ s.edges|num }} ferry and speedboat
+      crossings reconstructed from a month of anonymised GPS, not from a timetable.
+    </p>
+    <div class="stats">
+      <div class="stat"><span class="n">{{ s.hs_islands }}</span><span class="l">islands teach<br>grade 11–12</span></div>
+      <div class="stat"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one within<br>2 hours</span></div>
+      <div class="stat hot"><span class="n">{{ s.no_service }}</span><span class="l">have no reachable<br>post-16 school</span></div>
+      <div class="stat"><span class="n">{{ s.kids|num }}</span><span class="l">children aged<br>0–17 in scope</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="layout">
+    <div class="card mapcard">
+      <div class="cardhead">
+        <h2>Travel time to the nearest grade 11–12 school</h2>
+        <span class="hint">size = population · colour = hours to grade 11–12</span>
+      </div>
+      <div id="map" aria-label="Map of the Maldives coloured by travel time to post-16 schooling"></div>
+      <ul class="legend">
+        <li><i style="background:#0f766e"></i>teaches here</li>
+        <li><i style="background:#2f855a"></i>under 2 h</li>
+        <li><i style="background:#d69e2e"></i>2–4 h</li>
+        <li><i style="background:#dd6b20"></i>4–8 h</li>
+        <li><i style="background:#c53030"></i>over 8 h</li>
+        <li><i style="background:#9aa5b1"></i>no observed route</li>
+      </ul>
+    </div>
+
+    <aside class="side">
+      <div class="card" id="panel"
+           {% if default_island %}hx-get="/island/{{ default_island }}/" hx-trigger="load" hx-swap="innerHTML"{% endif %}>
+        <div class="cardhead"><h2>Island profile</h2></div>
+        <p class="empty">Pick an island on the map, or from the list below.</p>
+        <form class="picker"
+              onsubmit="event.preventDefault(); htmx.ajax('GET', '/island/' + document.getElementById('jump').value + '/', {target:'#panel', swap:'innerHTML'});">
+          <select id="jump">
+            {% regroup islands by atoll as pgroups %}
+            {% for g in pgroups %}
+            <optgroup label="{{ g.grouper }}">
+              {% for i in g.list %}<option value="{{ i.node_id }}">{{ i.island }}</option>{% endfor %}
+            </optgroup>
+            {% endfor %}
+          </select>
+          <button type="submit">Open</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="cardhead"><h2>Island to island</h2></div>
+        <form class="routeform" hx-get="/route/" hx-target="#route-out" hx-swap="innerHTML" hx-indicator="#route-spin">
+          <label>From
+            <select name="from" id="from">
+              {% regroup islands by atoll as groups %}
+              {% for g in groups %}
+              <optgroup label="{{ g.grouper }}">
+                {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == default_from %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
+              </optgroup>
+              {% endfor %}
+            </select>
+          </label>
+          <label>To
+            <select name="to" id="to">
+              {% for g in groups %}
+              <optgroup label="{{ g.grouper }}">
+                {% for i in g.list %}<option value="{{ i.node_id }}"{% if i.node_id == "MLE" %} selected{% endif %}>{{ i.island }}</option>{% endfor %}
+              </optgroup>
+              {% endfor %}
+            </select>
+          </label>
+          <button type="submit">Find journey <span id="route-spin" class="htmx-indicator">…</span></button>
+        </form>
+        <div id="route-out"
+             {% if default_from and default_to %}hx-get="/route/?from={{ default_from }}&to={{ default_to }}"
+             hx-trigger="load" hx-swap="innerHTML"{% endif %}></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="card tablecard">
+    <div class="cardhead">
+      <h2>Worst served first</h2>
+      <div class="chips">
+        <button hx-get="/ranked/?band=over4" hx-target="#ranked" hx-swap="innerHTML" class="chip">Over 4 h</button>
+        <button hx-get="/ranked/?band=none" hx-target="#ranked" hx-swap="innerHTML" class="chip">No reachable school</button>
+        <button hx-get="/ranked/?band=own" hx-target="#ranked" hx-swap="innerHTML" class="chip">Hosts a school</button>
+      </div>
+    </div>
+    <div id="ranked">
+      {% include "access/_ranked.html" %}
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p><strong>Sources.</strong> Population: Maldives Bureau of Statistics, Census 2022 (island and
+    atoll indicator sheets). School supply: Ministry of Education, <em>School Statistics 2024</em>
+    (per-island enrolment by grade). Travel times: FollowMe anonymised GPS, August 2025 — crossed by
+    1,328 devices; base geometry: OCHA administrative boundaries (CC BY).</p>
+    <p><strong>Method.</strong> A stay is ≥5 consecutive polls below 2 knots; a trip is the leg
+    between two stays; the edge weight is the median observed crossing time. Journeys add a 1 hour
+    connection penalty and are capped at two sailings. Addu's six census islands are joined by
+    causeway in the model, which the boat data alone cannot see.</p>
+  </footer>
+</main>
+
+<script>
+const BAND = {own:"#0f766e", under2:"#2f855a", under4:"#d69e2e", under8:"#dd6b20",
+              over8:"#c53030", unknown:"#9aa5b1"};
+
+const map = L.map("map", {
+  zoomSnap: 0.25, minZoom: 5, worldCopyJump: false,
+  zoomControl: true, attributionControl: false
+}).setView([3.6, 73.3], 6);
+
+function radius(pop) {                      // sqrt scale, readable from 170 to 212,000 people
+  return Math.max(4.5, 3 + 2.6 * Math.log10(1 + pop) - 1.4);
+}
+
+let selected = null;
+
+function openIsland(id) {
+  document.getElementById("jump").value = id;
+  const from = document.getElementById("from");
+  if (from) from.value = id;
+  htmx.ajax("GET", "/island/" + id + "/", {target: "#panel", swap: "innerHTML"});
+}
+
+fetch("/static/access/islands_points.json")
+  .then(r => r.json())
+  .then(points => {
+    points.forEach(p => {
+      const m = L.circleMarker([p.lat, p.lon], {
+        radius: radius(p.pop),
+        color: "#ffffff", weight: 0.8, opacity: 0.85,
+        fillColor: BAND[p.band] || BAND.unknown, fillOpacity: 0.92
+      }).addTo(map);
+      const hrs = p.hours === null ? "no observed route"
+                : (p.own ? "grade 11–12 taught here" : p.hours.toFixed(1) + " h to the nearest");
+      m.bindTooltip("<b>" + p.name + "</b><br>" + p.atoll + " · " +
+                    p.pop.toLocaleString() + " residents<br>" + hrs,
+                    {sticky: true, direction: "top"});
+      m.on("click", () => {
+        if (selected) selected.setStyle({weight: 0.8, color: "#ffffff"});
+        selected = m;
+        m.setStyle({weight: 2.4, color: "#0b1f2a"});
+        openIsland(p.id);
+      });
+    });
+    // frame the archipelago rather than trusting a hard-coded centre
+    map.fitBounds(L.latLngBounds(points.map(p => [p.lat, p.lon])), {padding: [24, 24], maxZoom: 7});
+  });
+</script>
+{% endblock %}

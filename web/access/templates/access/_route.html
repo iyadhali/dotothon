@@ -1,0 +1,28 @@
+{% if error %}
+  <p class="note warn">{{ error }}</p>
+{% else %}
+  <div class="journey">
+    <div class="jhead">
+      <span class="jlabel">{{ frm_name }} → {{ to_name }}</span>
+      <span class="jtime">{{ total|floatformat:2 }} h</span>
+    </div>
+    <p class="jmeta">
+      {{ hops }} sailing{{ hops|pluralize }}
+      {% if conn_h > 0 %}· {{ conn_h|floatformat:0 }} h of that is waiting for a connection{% endif %}
+    </p>
+    <ol class="legs">
+      {% for l in legs %}
+      <li>
+        <span class="legfrom">{{ l.a_name }}</span>
+        <span class="legmid">
+          <i></i>
+          {% if l.kind == "land" %}causeway / road{% else %}{{ l.hours|floatformat:2 }} h{% endif %}
+        </span>
+        <span class="legto">{{ l.b_name }}</span>
+        {% if l.trips %}<span class="legtrips">{{ l.trips }} trip{{ l.trips|pluralize }} observed</span>{% endif %}
+        {% if l.kind == "wait" %}{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+{% endif %}

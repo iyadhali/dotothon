@@ -1,0 +1,276 @@
+PAGES: 22
+
+===== PAGE 1 =====
+TEAM BRIEFING
+Maldives Datathon 2026
+Initial pitch, mentoring, submission, pitching and judging: what
+your team needs to know
+Saturday 24 October 2026 · 9:00 AM – 10:00 PM
+Maldives Bureau of Statistics (MBS) × Women in Tech Maldives
+
+===== PAGE 2 =====
+BEFORE THE DAY
+The day at a glance
+When What happens
+Thu 22 Oct, 8:00 PM Challenge Card deadline (online form, before the event)
+Sat 24 Oct, 9:00 AM Event opens
+After opening Digital Pitch Wall: 5 minutes, then hacking begins
+10:00 – 11:30 AM Mentoring Session 1: scope and data strategy
+2:00 – 3:30 PM Mentoring Session 2: on-demand help desk
+4:30 PM Submission link opens
+6:00 PM Hard deadline: link closes, repositories frozen
+06:30 PM Expo judging at your tables, then the final on stage and awards
+10:00PM Close
+Maldives Datathon 2026 · Team lead briefing 02
+
+===== PAGE 3 =====
+BEFORE THE DAY · PRE-EVENT SUBMISSION
+Challenge Card due 22 Oct, 8:00 PM
+The rules
+TEAM NAME
+One card per team, takes 3–5 minutes
+Team Ocean (your registered name)
+Describe the problem, not the solution
+MODE OF TRANSPORT
+No datasets, methods or solutions needed yet
+Sea · Land · Air
+You can refine or change it during the datathon
+Not scored and not part of final judging
+PROBLEM STATEMENT · MAX 50 WORDS
+“Ferry connectivity is essential for reaching healthcare, No private, restricted or confidential data
+education and jobs, but route availability and frequency differ
+Team Photo
+between islands. We want to investigate patterns in ferry
+connectivity and find gaps in accessibility.”
+Challenge Card - Form link will
+be shared with the team leads
+th
+on the 20 October 2026
+Maldives Datathon 2026 · Team lead briefing 03
+
+===== PAGE 4 =====
+
+
+===== PAGE 5 =====
+ON THE DAY · INITIAL PITCH
+Digital Pitch Wall: 2 minutes
+2 min
+Introduction
+No stage presentations. The wall stays with the challenge cards open all day
+Scan the QR code or open
+for teams and mentors.
+the link. Check your own
+card.
+Maldives Datathon 2026 · Team lead briefing 04
+
+===== PAGE 6 =====
+MENTORING · SESSION 1 · 10:00 – 11:30 AM
+Mentors come to your table
+Focus: problem scope, data availability and whether your idea is feasible in the time. Stay at
+3 mentors
+your table; the group rotates. Each group covers:
+per group, mixed expertise
+GIS and spatial Data science and statistics
+10 min
+Spatial data, mapping, geospatial tools Preparation, analysis, interpretation, visuals
+maximum per team
+Transport and policy Tech and solution engineering
+Every team
+Mobility challenges and policy relevance Software, dashboards, prototypes, feasibility
+gets a scheduled visit
+Maldives Datathon 2026 · Team lead briefing 05
+
+===== PAGE 7 =====
+MENTORING · SESSION 2 · 2:00 – 3:30 PM
+Session 2: Mentors on request
+How it works
+1.Request help at the mentoring help desk
+2.Organisers assign a mentor with the right expertise
+3.The mentor visits your table, usually for about 10
+minutes
+Focus: technical blockers and getting ready for the expo.
+Mentors guide, they don’t build for you. Questions on rules, eligibility or judging go to the organising committee.
+Maldives Datathon 2026 · Team lead briefing 06
+
+===== PAGE 8 =====
+SUBMISSION
+Three items.
+One link.
+6:00 PM sharp.
+Code · Presentation File · Declaration
+
+===== PAGE 9 =====
+SUBMISSION
+What to submit
+1 · Code 2 · Slides 3 · Declaration
+GitHub repo link only, no .zip PDF, max [8] slides One per team, by the team lead
+Private repo? Give read access to Videos or animations? Also send Data sources listed accurately
+[organiser GitHub account] the original (.pptx, or a viewable Own work, outside material
+README: problem, how to run, Google Slides or Canva link) credited
+data sources, AI-assisted parts The PDF is the official copy No plagiarism or unethical
+Requirements file Cover: problem, data and method, practice
+Comments on key steps findings, meaning for transport AI tools used, and what for
+No passwords, API keys or policy
+personal data
+Maldives Datathon 2026 · Team lead briefing 08
+
+===== PAGE 10 =====
+SUBMISSION
+How and when to submit
+The team lead submits once at [submission link]: team name and number,
+4:30 PM GitHub link, slides PDF (plus originals), declaration
+Screenshot the confirmation message
+Submission link opens
+Resubmit any time before 6:00 PM; the latest version counts
+Organisers’ clock is official; commits after 6:00 PM are ignored
+Late submissions are not accepted
+6:00 PM
+Link not working? Tell the help desk at once, and email your files to [backup email]
+Hard deadline. Link closes, repo before 6:00 PM.
+frozen
+Maldives Datathon 2026 · Team lead briefing 09
+
+===== PAGE 11 =====
+SUBMISSION · RULES
+Data and AI tools
+Data AI tools: allowed
+May use the datasets provided at the event (MBS Declare which tools you used, and for what
+Census 2022, HIES 2019) and public data you’re Check the AI’s output: you are responsible for
+allowed to use everything you submit
+Name every source in your README and Every member must be able to explain the code
+declaration and findings
+No personal or confidential data Passing off others’ work as your own is
+plagiarism, with or without AI
+Maldives Datathon 2026 · Team lead briefing 10
+
+===== PAGE 12 =====
+SUBMISSION · AFTER 6:00 PM
+Pre-checks before judging
+The organisers’ tech team checks every submission, pass or fail. Judges never read code in the room.
+On time Permitted data Code runs Methods note
+Code, documentation and MBS or public data only, Complete and runnable One page on your method,
+presentation all uploaded with every source credited from your README including how AI tools were
+by 6:00 PM used
+Fail a check? You sort it out with the organisers before your team can be scored or go through to the final.
+Maldives Datathon 2026 · Team lead briefing 11
+
+===== PAGE 13 =====
+
+
+===== PAGE 14 =====
+PITCH TIME
+9 minutes at your table
+5 min 3 min 1
+Your pitch and live demo Judges’ Q&A Change
+Hard stop: when the signal sounds, the visit ends. (The website mentions 7 + 5 minutes; on the day it’s 5 + 3.)
+Your slides cover Say out loud in your pitch
+The problem you chose The data sources you used
+Your data and method Your tools: software, libraries, platforms
+Your findings Any AI tools, and what you used them for
+What they mean for transport policy
+Maldives Datathon 2026 · Team lead briefing 12
+
+===== PAGE 15 =====
+JUDGING · ROUND 1
+Expo: judges come to you
+Teams stay at their tables; judges move
+A B
+Teams drawn at random into groups A–D, checked for
+conflicts of interest
+6 teams 6 teams
+Each judging team visits its own group in team-
+number order
+Your group and visit time are announced at the
+C D
+opening
+Each judge scores on their own scorecard 7 teams 7 teams
+Maldives Datathon 2026 · Team lead briefing 13
+
+===== PAGE 16 =====
+
+
+===== PAGE 17 =====
+JUDGING · ROUND 2
+The final: top 6 on stage
+4 2 6
+Top team from each group A–D Best runners-up by average score Finalists pitch on the main stage
+Same 9 minutes: 5 pitch + 3 Q&A + 1 changeover
+Judges score every finalist on the same 8 criteria
+Scores are averaged across judges; the highest average wins
+Maldives Datathon 2026 · Team lead briefing 17
+
+===== PAGE 18 =====
+JUDGING · CRITERIA
+Eight criteria, 100 points
+th
+updated on 11 October 2026
+Criterion Weight What judges look for
+Technical execution 20% Live demo works; you explain method, results, limits
+Data utilization 15% Data utilization measures how well a team used the data to
+answer its question. Teams may use the datasets provided by the
+organisers, publicly available data, or both.
+Impact 15% A clear user and a clear action, backed by evidence
+Scalability and readiness 15% Named user, maintainable tools, realistic roadmap
+Relevance to the theme 10% A specific transport problem rooted in the Maldives
+Innovation 10% An original question or method, beyond standard charts
+Teamwork 10% Everyone contributes; several members speak
+Clarity of presentation 5% Clear story, readable visuals, on time, direct answers
+Maldives Datathon 2026 · Team lead briefing 15
+
+===== PAGE 19 =====
+STAYING IN TOUCH
+All team leads join one group
+Every team lead will be added to the official team lead group on [platform]. It’s our main channel
+to your team.
+What you’ll get there What we need from you
+Reminders and deadlines, starting with the Pass every update on to your whole
+Challenge Card team
+Your table number, judging group and visit Submit the Challenge Card, final
+time submission and declaration
+The submission and declaration links Be the contact if something goes wrong
+Schedule changes and help desk updates
+Maldives Datathon 2026 · Team lead briefing 18
+
+===== PAGE 20 =====
+FOR FIRST-TIMERS
+First datathon? Make it count
+Say hi to a team Ask early, ask often Small and working wins
+Meet another team at the Pitch Wall Mentors are there for you. No Pick one question you can really answer
+and swap one idea. by 6:00 PM.
+question is too basic.
+Everyone gets a role Take real breaks Things will break
+Data, code, story, slides. Let everyone Step outside for fresh air and drink Code crashes and Wi-Fi drops.
+water. Fresh eyes fix bugs. Accept it, laugh, and fix it together.
+have a turn speaking.
+Be respectful Capture the moment Celebrate the finish
+Submitting is a win. Cheer for every
+To teammates, other teams, Take a team photo at your table and
+share it with [#maldivesdatathon]. team at the final.
+mentors, judges and volunteers.
+Maldives Datathon 2026 - Team lead briefing 22
+
+===== PAGE 21 =====
+What to bring
+Tech kit For a long Day
+For a long day:Water bottle
+Your Laptop, and Devices
+A light jacket for the cold
+Extension cord, if they
+hall
+have one
+Comfortable clothes
+All the required software
+Notebook, pens and sticky
+installed
+notes - if you need
+Headphones, if you need
+them
+Maldives Datathon 2026 · Team lead briefing 04
+
+===== PAGE 22 =====
+See you on 24 October
+22 Oct · 8 PM 24 Oct · 9 AM 24 Oct · 6 PM
+Challenge Card due Datathon opens Submission closes
+Challenge Card- Form will be shared
+with team leads
+Maldives Bureau of Statistics (MBS) × Women in Tech Maldives

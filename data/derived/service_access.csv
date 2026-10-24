@@ -547,8 +547,8 @@ MV019001,Meedhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019001,Me
 MV019002,Hithadhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),13759,3560
 MV019003,Maradhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),2542,712
 MV019004,Feydhoo,Seenu,education,school_lower_secondary,181,True,0.0,MV019004,Feydhoo,Feydhoo — lower secondary (Gr 7-10),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_lower_secondary,181,False,0.35,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_lower_secondary,181,False,0.1,MV019003,Maradhoo,Maradhoo — lower secondary (Gr 7-10),1182,259
+MV019005,Maradhoofeydhoo,Seenu,education,school_lower_secondary,181,False,0.35,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),1398,407
+MV019006,Hulhudhoo,Seenu,education,school_lower_secondary,181,False,0.1,MV019002,Hithadhoo,Hithadhoo — lower secondary (Gr 7-10),1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — lower secondary (Gr 7-10),484,148
 MV020002,Omadhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020002,Omadhoo,Omadhoo — lower secondary (Gr 7-10),913,344
 MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_lower_secondary,181,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — lower secondary (Gr 7-10),509,173
@@ -734,8 +734,8 @@ MV019001,Meedhoo,Seenu,education,school_primary,183,True,0.0,MV019001,Meedhoo,Me
 MV019002,Hithadhoo,Seenu,education,school_primary,183,True,0.0,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),13759,3560
 MV019003,Maradhoo,Seenu,education,school_primary,183,True,0.0,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),2542,712
 MV019004,Feydhoo,Seenu,education,school_primary,183,True,0.0,MV019004,Feydhoo,Feydhoo — primary school (Gr 1-6),4289,914
-MV019005,Maradhoofeydhoo,Seenu,education,school_primary,183,False,0.35,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),1398,407
-MV019006,Hulhudhoo,Seenu,education,school_primary,183,False,0.1,MV019003,Maradhoo,Maradhoo — primary school (Gr 1-6),1182,259
+MV019005,Maradhoofeydhoo,Seenu,education,school_primary,183,False,0.35,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),1398,407
+MV019006,Hulhudhoo,Seenu,education,school_primary,183,False,0.1,MV019002,Hithadhoo,Hithadhoo — primary school (Gr 1-6),1182,259
 MV020001,Hangnaameedhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020001,Hangnaameedhoo,Hangnameedhoo — primary school (Gr 1-6),484,148
 MV020002,Omadhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020002,Omadhoo,Omadhoo — primary school (Gr 1-6),913,344
 MV020003,Kun'burudhoo,Alifu Dhaalu,education,school_primary,183,True,0.0,MV020003,Kun'burudhoo,Kuburudhoo — primary school (Gr 1-6),509,173

@@ -43,7 +43,7 @@
       <button class="chip toggle" id="netToggle" type="button" aria-pressed="false">
         <i></i> show the {{ n_links }} observed links
       </button>
-      <p class="ovlfoot" id="footnote">SQLite · rebuilt {% if db_meta.built_local %}{{ db_meta.built_local }}{% else %}—{% endif %} · {{ db_meta.files|default:0 }} new file{{ db_meta.files|default:0|pluralize }} · {{ db_meta.changes|default:0 }} logged change{{ db_meta.changes|default:0|pluralize }}<br>circle = population · colour = hours to <span id="metricname">grades 11–12</span></p>
+      <p class="ovlfoot" id="footnote">SQLite · rebuilt {% if db_meta.built_local %}{{ db_meta.built_local }}{% else %}—{% endif %} · {{ db_meta.changes|default:0 }} logged changes{% if db_meta.files %} · {{ db_meta.files }} new file{{ db_meta.files|pluralize }}{% endif %}<br>circle = population · colour = hours to <span id="metricname">grades 11–12</span></p>
     </div>
   </aside>
 

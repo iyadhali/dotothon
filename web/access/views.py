@@ -74,9 +74,9 @@ def index(request):
         "gaps": m.gaps,
         "manifest": _manifest(),
         "default_from": "MV002012",   # Kulhudhuffushi: the demo journey that works
-        "default_to": "MLE",
+        "default_to": "",
         "default_from_name": "Kulhudhuffushi",
-        "default_to_name": "Malé City",
+        "default_to_name": "",
         "default_island": request.GET.get("island", "MV002012"),
         "n_rows": len(m.inhabited),
         "n_services": len(m.services),

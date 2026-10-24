@@ -21,35 +21,6 @@
 <p class="empty">No services in the register for this island.</p>
 {% endif %}
 
-<h3 class="sub">Travel time to the nearest</h3>
-<div class="rows">
-  {% for t, a in c.access.items %}
-  <div class="row">
-    <span class="k">{{ t|svclabel|capfirst }}</span>
-    <span class="v">
-      {% if a.local %}<span class="yes">on the island</span>
-      {% elif a.hours is not None %}<strong>{{ a.hours }} h</strong> <em>to {{ a.place }}</em>
-        {% if a.provider_id %}<button class="go" data-route-from="{{ c.id }}" data-route-to="{{ a.provider_id }}" title="Plan this journey">route →</button>{% endif %}
-      {% else %}<span class="no">no observed route</span>{% endif %}
-    </span>
-  </div>
-  {% endfor %}
-  
-  
-  
-  
-  <div class="row">
-    <span class="k">Islands reachable</span>
-    <span class="v">{{ c.reach }} <em>within two sailings</em></span>
-  </div>
-  {% if c.reach == 0 %}
-  <p class="empty">
-    No boat departed this island's land mass in the month of GPS we observe — in our data Addu is
-    reached by air, not by sea. The air layer is the next stage.
-  </p>
-  {% endif %}
-</div>
-
 {% if c.links %}
 <h3 class="sub">Observed crossings from {{ c.name }}</h3>
 <table class="mini">

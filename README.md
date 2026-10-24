@@ -43,25 +43,23 @@ HTMX and Leaflet bundles are vendored, so it runs offline on venue wifi.
 
 ### What you can do in it
 
-The home page **is** the map: 187 inhabited islands, sized by population and coloured by observed
-travel time to the nearest grade 11–12 school. Everything else floats over it.
+One page: the map. Select any island and the left panel answers **what it can reach**.
 
 | Interaction | What it does |
 |---|---|
-| **Hover** an island | name, atoll, residents and travel time in a tooltip |
-| **Click** an island | profile card (population, children, provision, nearest school and campus, observed crossings) |
-| **Legend chips** | filter the map to one travel-time band; click again to clear |
-| **Zoom in** | the 21 atoll outlines and their names appear, then island names, then real coastlines |
-| **Atoll dropdown** | fly to that atoll's bounding box; `?lat=…&lon=…&z=…` opens a shared view |
-| **Search / list** | live filter over 187 islands; hover a row to light up its island, Enter to open the top hit |
-| **Island → island** | pick two islands: the best journey within two sailings, drawn on the map and split into sailing time and connection waiting |
-| **Island → service** | pick one island and a category (education, health): every service type it can reach, who provides it, how long it takes, and the journeys drawn together |
-| **Reset** (or `Esc`) | clear filters, route and selection |
-| | |
-| **Decision tables** | below the map: worst-served ranking, and the 28 islands beyond two hours with the link that would fix each |
-| **Provenance** | the footer prints when the data was last built and from how much of it |
-| **Colour by** | switch the whole map between education (grade 11–12, university campus, grade 7–10) and health (health centre, hospital) — same network, any service category |
-| **Travel time to the nearest** | hours to the nearest provider of *each* service type, and the island that provides it |
+| **Click an island** (or the atoll picker) | the island's services load: every service type, who provides it, how many hours and how many sailings |
+| **All · Education · Health** | filter the service list; the map redraws the journeys to those providers |
+| **Hour meters** | each row's bar is scaled to 8 hours, coloured by the same band as the map |
+| **Three numbers on top** | how many service types are on the island, how many are within two hours, and which one is worst |
+| **Connect to another island** | pick a second island and the journey from the selected one is drawn on the map with its sailing/waiting split |
+| **Colour the map by** | recolour 187 islands by any service type — education or health, same network |
+| **Legend chips** | filter the map to one travel-time band |
+| **Zoom in** | atoll outlines and names, then island names, then coastlines; circles scale with population |
+| **Atoll picker** | dim everything outside that atoll and fly to it; `?lat=…&lon=…&z=…` shares a view |
+| **Reset** (or `Esc`) | clear the filters, the journey and the selection |
+| **Decision tables** | below the map: the 28 islands beyond two hours, with the link that would fix each |
+
+Every picker is a searchable combobox: type three letters, arrow, enter.
 
 ### Services, not just schools
 

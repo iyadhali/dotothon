@@ -26,13 +26,7 @@
        aria-label="Map of the Maldives: circle size is population, colour is travel time to the nearest grade 11–12 school"></div>
 
   <aside class="ovl ovl-left">
-    <div class="modes" role="tablist">
-      <button class="mode is-on" data-mode="pair" role="tab" type="button">Island → island</button>
-      <button class="mode" data-mode="service" role="tab" type="button">Island → service</button>
-    </div>
-
     <div class="row2">
-      <input id="q" type="search" placeholder="Search an island…" autocomplete="off" aria-label="Search an island">
       <div class="combo" id="atollCombo">
         <input id="atollText" class="combotext" type="text" placeholder="All atolls"
                autocomplete="off" aria-label="Filter by atoll">
@@ -41,61 +35,51 @@
       </div>
     </div>
 
-    <div id="svcblock" hidden>
-      <div id="connect-out"{% if default_island %} hx-get="/connect/?island={{ default_island }}" hx-trigger="load" hx-swap="innerHTML"{% endif %}></div>
+    <div id="connect-out"{% if default_island %} hx-get="/connect/?island={{ default_island }}" hx-trigger="load" hx-swap="innerHTML"{% endif %}></div>
+
+    <div class="mapctl">
+      <label class="metricrow" id="metricrow">
+        <span>Colour the map by</span>
+        <select id="metric">
+          <option value="education:school_higher_secondary">Education · grades 11–12</option>
+          <option value="education:college">Education · university campus</option>
+          <option value="health:health_centre">Health · health centre</option>
+          <option value="health:hospital">Health · hospital</option>
+          <option value="education:school_lower_secondary">Education · grades 7–10</option>
+        </select>
+      </label>
+      <ul class="legend" id="legend">
+        <li data-band="own"><i style="background:#0f766e"></i>on the island</li>
+        <li data-band="under2"><i style="background:#2f855a"></i>under 2 h</li>
+        <li data-band="under4"><i style="background:#d69e2e"></i>2–4 h</li>
+        <li data-band="under8"><i style="background:#dd6b20"></i>4–8 h</li>
+        <li data-band="over8"><i style="background:#c53030"></i>over 8 h</li>
+        <li data-band="unknown"><i style="background:#9aa5b1"></i>no route</li>
+      </ul>
+      <p class="ovlfoot" id="footnote">circle = population · colour = hours to <span id="metricname">grades 11–12</span></p>
     </div>
-
-    <label class="metricrow" id="metricrow">
-      <span>Colour by</span>
-      <select id="metric">
-        <option value="education:school_higher_secondary">Education · grade 11–12</option>
-        <option value="education:college">Education · university campus</option>
-        <option value="health:health_centre">Health · health centre</option>
-        <option value="health:hospital">Health · hospital</option>
-        <option value="education:school_lower_secondary">Education · grade 7–10</option>
-      </select>
-    </label>
-
-    <ul class="legend" id="legend">
-      <li data-band="own"><i style="background:#0f766e"></i>on the island</li>
-      <li data-band="under2"><i style="background:#2f855a"></i>under 2 h</li>
-      <li data-band="under4"><i style="background:#d69e2e"></i>2–4 h</li>
-      <li data-band="under8"><i style="background:#dd6b20"></i>4–8 h</li>
-      <li data-band="over8"><i style="background:#c53030"></i>over 8 h</li>
-      <li data-band="unknown"><i style="background:#9aa5b1"></i>no route</li>
-    </ul>
-
-    <p class="routehint" id="routehint" hidden></p>
-    <p class="listhead" id="listhead">Furthest from a school</p>
-    <ol class="hitlist" id="hitlist"></ol>
-    <p class="ovlfoot" id="footnote">size = population · colour = hours to <span id="metricname">grade 11–12</span> · <a href="#tables">decision tables ↓</a></p>
   </aside>
 
   <aside class="ovl ovl-right">
     <div class="card" id="paircard">
-      <div class="cardhead"><h2>Island → island</h2>
-        <button class="ghost" id="swap" type="button" title="Swap start and destination">⇄ swap</button>
+      <div class="cardhead">
+        <h2>Connect to another island</h2>
+        <span class="hint">one more hop</span>
       </div>
-      <div id="route-out" data-default-from="{{ default_from }}" data-default-to="{{ default_to }}"></div>
-      <form class="routeform" id="routeform" hx-get="/route/" hx-target="#route-out" hx-swap="innerHTML">
-        <label>From
-          <div class="combo" id="fromCombo">
-            <input id="fromText" class="combotext" type="text" value="{{ default_from_name }}"
-                   autocomplete="off" placeholder="Search an island">
-            <input name="from" id="from" type="hidden" value="{{ default_from }}">
-            <ul class="combopop" hidden></ul>
-          </div>
-        </label>
-        <label>To
-          <div class="combo" id="toCombo">
-            <input id="toText" class="combotext" type="text" value="{{ default_to_name }}"
-                   autocomplete="off" placeholder="Search an island">
-            <input name="to" id="to" type="hidden" value="{{ default_to }}">
-            <ul class="combopop" hidden></ul>
-          </div>
-        </label>
-        <button type="submit">Find journey</button>
-      </form>
+      <div id="route-out" data-default-to="{{ default_to }}">
+        <p class="empty">Pick a second island and the journey from the selected one appears here.</p>
+      </div>
+      <p class="fromline">From <b id="fromName">{{ default_from_name }}</b>
+        <input name="from" id="from" type="hidden" value="{{ default_from }}"></p>
+      <label class="pickto">To
+        <div class="combo" id="toCombo">
+          <input id="toText" class="combotext" type="text" value="{{ default_to_name }}"
+                 autocomplete="off" placeholder="Search the second island">
+          <input name="to" id="to" type="hidden" value="{{ default_to }}">
+          <ul class="combopop" hidden></ul>
+        </div>
+      </label>
+      <button class="primary" id="routeBtn" type="button">Show the journey</button>
     </div>
 
     <div class="card" id="panel"
@@ -294,11 +278,19 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   const islandItems = pts.map(p => ({value:p.id, label:p.name, sub:p.atoll}))
                           .sort((a, b) => a.label.localeCompare(b.label));
   const atollItems = [...new Set(pts.map(p => p.atoll))].sort();
-  makeCombo("fromCombo", islandItems, {onPick: () => { if (el("to").value) submitRoute(); }});
   makeCombo("toCombo", islandItems, {onPick: () => { if (el("from").value) submitRoute(); }});
   makeCombo("atollCombo", atollItems.map(a => ({value:a, label:a})), {
     allowEmpty: true, emptyLabel: "All atolls",
-    onPick: r => { state.atoll = r.value; },
+    onPick: r => {
+      state.atoll = r.value;
+      state.markers.forEach((m, id) => {
+        const on = !r.value || state.byId.get(id).atoll === r.value;
+        m.setStyle({opacity: on ? 0.85 : 0.10, fillOpacity: on ? 0.92 : 0.08});
+      });
+      if (r.value && state.atollBounds.has(r.value))
+        map.fitBounds(state.atollBounds.get(r.value), {padding:[60, 60], maxZoom:9});
+      else fitAll();
+    },
   });
   setPicker("from", el("from").value);
   setPicker("to", el("to").value);
@@ -340,11 +332,11 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
   });
 
   syncZoom();
-  renderList();
-  if (mapEl.dataset.defaultIsland) selectIsland(mapEl.dataset.defaultIsland, {fly:false, load:false});
-  setMode(new URLSearchParams(location.search).get("mode") === "service" ? "service" : "pair");
+  const firstIsland = mapEl.dataset.defaultIsland;
+  if (firstIsland) selectIsland(firstIsland, {fly:false});
   const ro = el("route-out").dataset;
-  if (ro.defaultFrom && ro.defaultTo) submitRoute();   // show one worked journey on first paint
+  const qp2 = new URLSearchParams(location.search);
+  if (qp2.get("to")) { setPicker("to", qp2.get("to")); submitRoute(); }
   // share a view: ?lat=6.15&lon=73.28&z=9 opens the map at that spot, even after the demo route
   if (VIEW) { pendingView = VIEW; map.setView([VIEW.lat, VIEW.lon], VIEW.z, {animate:false}); }
 });
@@ -353,6 +345,7 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
 // a combobox instead of a 187-option <select>: type two letters, arrow, enter
 function makeCombo(target, items, {onPick, allowEmpty = false, emptyLabel = ""} = {}) {
   const box = typeof target === "string" ? el(target) : target;
+  if (!box) return null;
   const text = box.querySelector(".combotext");
   const list = box.querySelector(".combopop");
   const hidden = box.querySelector("input[type=hidden]");
@@ -413,44 +406,31 @@ function selectIsland(id, opts = {}) {
   const p = state.byId.get(id);
   if (!p) return;
   if (state.sel) state.sel.setStyle({weight:0.8, color:"#ffffff"});
+  state.selId = id;
   state.sel = state.markers.get(id);
   if (state.sel) {
     state.sel.setStyle({weight:3, color:"#0b1f2a"});
     if (opts.fly !== false) map.flyTo([p.lat, p.lon], Math.max(map.getZoom(), 8), {duration:0.6});
   }
   if (opts.load !== false) htmx.ajax("GET", `/island/${id}/`, {target:"#panel", swap:"innerHTML"});
-  if (state.mode === "service") {
-    htmx.ajax("GET", `/connect/?island=${id}`, {target:"#connect-out", swap:"innerHTML"});
-  }
+  htmx.ajax("GET", `/connect/?island=${id}`, {target:"#connect-out", swap:"innerHTML"});
+  setPicker("from", id);
+  if (el("fromName")) el("fromName").textContent = state.byId.get(id).name;
   const q = new URLSearchParams(location.search);
   q.set("island", id);
   history.replaceState({}, "", "?" + q.toString());
 }
 
 function onIslandClick(id) {
-  if (state.mode === "route") {
-    if (!state.from || (state.from && state.to)) {      // pick a new origin
-      state.from = id; state.to = null;
-      setPicker("from", id);
-      el("routehint").hidden = false;
-      el("routehint").innerHTML = `From <b>${state.byId.get(id).name}</b> — now click the <b>destination</b>.`;
-      selectIsland(id); clearRoute(); return;
-    }
-    state.to = id;
-    setPicker("to", id);
-    el("routehint").hidden = true;
-    selectIsland(id);
-    submitRoute();
-    return;
-  }
   selectIsland(id);
+  if (el("to").value && el("to").value !== id) submitRoute();
 }
 
 let autoRoute = true;
 function submitRoute() {
   const wasAuto = autoRoute;
   autoRoute = false;
-  const from = el("from").value, to = el("to").value;
+  const from = state.selId || el("from").value, to = el("to").value;
   htmx.ajax("GET", `/route/?from=${from}&to=${to}`, {target:"#route-out", swap:"innerHTML"});
   if (!wasAuto) history.replaceState({}, "", `?from=${from}&to=${to}`);
 }
@@ -461,6 +441,7 @@ let firstRoute = true;
 function drawRoute() {
   const node = document.querySelector("#route-out [data-path]");
   clearRoute();
+  clearConnect();          // a chosen journey replaces the service web, so the map stays readable
   if (!node) return;
   let path;
   try { path = JSON.parse(node.dataset.path); } catch (e) { return; }
@@ -485,14 +466,10 @@ function drawRoute() {
 }
 
 document.addEventListener("click", e => {
-  const btn = e.target.closest("[data-route-from]");
+  const btn = e.target.closest("[data-route-to]");
   if (!btn) return;
   e.preventDefault();
-  setPicker("from", btn.dataset.routeFrom);
   setPicker("to", btn.dataset.routeTo);
-  state.from = btn.dataset.routeFrom;
-  state.to = btn.dataset.routeTo;
-  setMode("pair", {keep: true});
   submitRoute();
 });
 
@@ -503,50 +480,7 @@ document.body.addEventListener("htmx:afterSwap", e => {
     if (!wasFirst) e.detail.target.scrollIntoView({block: "nearest", behavior: "smooth"});
   }
 });
-el("routeform").addEventListener("submit", e => { e.preventDefault(); submitRoute(); });
-el("swap").addEventListener("click", () => {
-  const f = el("from").value, g = el("to").value;
-  setPicker("from", g); setPicker("to", f);
-  submitRoute();
-});
-
-function setMode(m, opts = {}) {
-  state.mode = m;
-  document.querySelectorAll(".mode").forEach(b => b.classList.toggle("is-on", b.dataset.mode === m));
-  el("svcblock").hidden = m !== "service";
-  el("paircard").hidden = m === "service";
-  el("routehint").hidden = m !== "pair";
-  // in service mode the left panel is the story: drop the colour-by, legend and worst-list
-  el("metricrow").hidden = m === "service";
-  el("legend").hidden = m === "service";
-  el("hitlist").hidden = m === "service";
-  el("atollCombo").hidden = m === "service";
-  el("footnote").hidden = m === "service";
-  el("listhead").hidden = m === "service";
-  document.querySelector(".ovl-right").hidden = m === "service";
-  document.querySelector(".ovl-left").classList.toggle("wide", m === "service");
-  if (m === "service") {
-    clearConnect();
-    const island = state.sel || el("from").value;
-    if (island) {
-      htmx.ajax("GET", `/connect/?island=${island}`,
-                {target:"#connect-out", swap:"innerHTML"});
-    }
-    return;
-  }
-  el("connect-out").innerHTML = "";
-  clearConnect();
-  if (m === "pair") {
-    if (opts.keep) {
-      const a = (state.byId.get(state.from) || {}).name || "this island";
-      const b = (state.byId.get(state.to) || {}).name || "the destination";
-      el("routehint").textContent = `${a} → ${b}. Click any island to start a new journey.`;
-    } else {
-      state.from = null; state.to = null;
-      el("routehint").textContent = "Click the starting island on the map.";
-    }
-  }
-}
+el("routeBtn").addEventListener("click", submitRoute);
 
 // island to service: every provider leg drawn at once, coloured by category
 function clearConnect() {
@@ -573,7 +507,6 @@ function drawConnect() {
       : {padding:[40, 40], maxZoom:9});
   }
 }
-document.querySelectorAll(".mode").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
 
 // the ranked table is swapped by htmx, so its picker is rebuilt after every swap
 function initRankedFilter() {
@@ -608,7 +541,6 @@ el("legend").addEventListener("click", e => {
     const on = !state.band || state.byId.get(id).band === state.band;
     m.setStyle({opacity: on ? 0.85 : 0.12, fillOpacity: on ? 0.92 : 0.10});
   });
-  renderList();
 });
 
 window.addEventListener("resize", () => map.invalidateSize());
@@ -618,7 +550,6 @@ el("atoll").addEventListener("change", e => {
   if (state.atoll && state.atollBounds.has(state.atoll))
     map.fitBounds(state.atollBounds.get(state.atoll), {padding:[40,40], maxZoom:9});
   else fitAll();
-  renderList();
 });
 
 function applyMetric() {
@@ -631,7 +562,6 @@ function applyMetric() {
                 opacity: on ? 0.85 : 0.12, fillOpacity: on ? 0.92 : 0.10});
   });
   recolorPolys();
-  renderList();
 }
 
 el("metric").addEventListener("change", e => {
@@ -639,55 +569,17 @@ el("metric").addEventListener("change", e => {
   applyMetric();
 });
 
-el("q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); renderList(); });
-el("q").addEventListener("keydown", e => {
-  if (e.key === "Enter") {
-    const first = document.querySelector("#hitlist li");
-    if (first) selectIsland(first.dataset.id);
-  }
-});
 
 el("resetmap").addEventListener("click", () => {
-  state.band = null; state.atoll = ""; state.q = ""; el("q").value = ""; setPicker("atoll", "");
+  state.band = null; state.atoll = ""; setPicker("atoll", "");
+  state.markers.forEach(m => m.setStyle({opacity: 0.85, fillOpacity: 0.92}));
   document.querySelectorAll("#legend li").forEach(x => x.classList.remove("is-off"));
   state.markers.forEach(m => m.setStyle({opacity:0.85, fillOpacity:0.92, weight:0.8, color:"#ffffff"}));
   state.sel = null; clearRoute();
   syncZoom();
-  renderList();
 });
 
-function renderList() {
-  const rows = state.points
-    .filter(p => !state.atoll || p.atoll === state.atoll)
-    .filter(p => !state.band || p.band === state.band)
-    .filter(p => !state.q || p.name.toLowerCase().includes(state.q) || p.atoll.toLowerCase().includes(state.q))
-    .sort((a, b) => {
-      const ha = metricHours(a), hb = metricHours(b);
-      return (hb === null ? 1e9 : hb) - (ha === null ? 1e9 : ha);
-    });
-  const cap = state.q || state.atoll || state.band ? 200 : 8;   // a shortlist unless the user is searching
-  el("hitlist").innerHTML = rows.slice(0, cap).map(p => {
-    const h = metricHours(p);
-    const label = h === 0 ? "here" : h === null || h === undefined ? "no route" : h.toFixed(1) + " h";
-    return `<li data-id="${p.id}">
-      <i style="background:${BAND[bandOf(h)]}"></i>
-      <span class="nm">${p.name}</span>
-      <span class="at">${p.atoll}</span>
-      <span class="hr">${label}</span>
-    </li>`;
-  }).join("");
-  document.querySelectorAll("#hitlist li").forEach(li => {
-    li.addEventListener("click", () => selectIsland(li.dataset.id));
-    li.addEventListener("mouseenter", () => {
-      const m = state.markers.get(li.dataset.id);
-      if (m && m !== state.sel) m.setStyle({weight: 3, color: "#0b1f2a"});
-    });
-    li.addEventListener("mouseleave", () => {
-      const m = state.markers.get(li.dataset.id);
-      if (m && m !== state.sel) m.setStyle({weight: 0.8, color: "#ffffff"});
-    });
-  });
-}
+
 
 document.addEventListener("keydown", e => { if (e.key === "Escape") el("resetmap").click(); });
 </script>

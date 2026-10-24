@@ -1,7 +1,7 @@
 {% load fmt %}
 <div class="cardhead">
-  <h2>{{ c.name }} → services</h2>
-  <span class="pill">{{ c.atoll }}</span>
+  <h2>Services from {{ c.name }}</h2>
+  <span class="hint">{{ c.atoll }}</span>
 </div>
 
 <div class="cats">
@@ -40,4 +40,4 @@
   {% endfor %}
 </ul>
 
-<p class="ovlfoot" data-paths="{{ paths }}">Lines on the map are the journeys to each provider.</p>
+<p class="ovlfoot" data-paths="{{ paths }}" hidden></p>

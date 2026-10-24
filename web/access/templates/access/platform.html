@@ -1,0 +1,144 @@
+{% extends "access/base.html" %}
+{% load static fmt %}
+
+{% block body %}
+<header class="topbar">
+  <div class="brand">
+    <p class="eyebrow">Maldives Datathon 2026 · A Team · sea · land · air</p>
+    <h1>The platform — four datasets in, one travel-time network out</h1>
+  </div>
+  {% include "access/_nav.html" with active="platform" %}
+</header>
+
+<main class="page">
+  <section class="card">
+    <div class="cardhead">
+      <h2>One pipeline, end to end</h2>
+      <span class="muted">drop a file, and the answers rebuild themselves</span>
+    </div>
+    <ol class="flow">
+      <li>
+        <b>Sources</b>
+        <span>MACL traffic · Avas rides · FollowMe GPS · MTCC ferries · Census 2022 · MoE statistics · MoH facilities · OCHA boundaries</span>
+      </li>
+      <li>
+        <b>Ingest</b>
+        <span>each source group is fingerprinted (sha256 of path, size, mtime); only the stale
+        stages re-run, and the whole plan is printed before it runs</span>
+      </li>
+      <li>
+        <b>Derived tables</b>
+        <span>island spine · sea network from GPS · school provision from the MoE PDF · service
+        access · placement ranking</span>
+      </li>
+      <li>
+        <b>SQLite</b>
+        <span>one file, <code>data/platform.sqlite</code>, with the pipeline stages exposed as
+        views so the app never reads a CSV</span>
+      </li>
+      <li>
+        <b>App</b>
+        <span>map · services register · placement simulator, all served from the database</span>
+      </li>
+    </ol>
+    <p class="muted small">
+      {% if run %}Last ingest: {{ run.finished }} — stages
+      {{ run.stages }}{% else %}No ingest run recorded yet.{% endif %}
+    </p>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <div class="cardhead"><h2>What makes it a platform, not a dashboard</h2></div>
+      <ul class="ticks">
+        <li><b>Any service category.</b> Services live in one register with a category and a type;
+            the map, the card and the simulator all read the category. Education and health are
+            just the first two.</li>
+        <li><b>Any dataset drop.</b> New MACL, Avas, FollowMe or MTCC files are picked up by
+            fingerprint — nothing is hard-coded to a filename or a date range.</li>
+        <li><b>A database, not a folder of CSVs.</b> The app opens
+            <code>data/platform.sqlite</code> read-only; the pipeline rebuilds it atomically.</li>
+        <li><b>One network.</b> Sea crossings, the Addu causeway and (next) domestic air all feed
+            the same Dijkstra, so a new service type costs one register row, not a new model.</li>
+        <li><b>A decision tool.</b> The simulator answers "where should the next hospital go?"
+            with people and children connected, not with a heat map.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="cardhead"><h2>What the network says today</h2></div>
+      <table class="mini wide">
+        <thead><tr><th>Service</th><th class="num">Within 2 h</th><th class="num">People</th>
+          <th class="num">Median</th></tr></thead>
+        <tbody>
+        {% for r in summary %}
+          <tr>
+            <td>{{ r.service_type|svclabel }} <span class="tag">{{ r.category }}</span></td>
+            <td class="num">{{ r.islands_within_2h|floatformat:"0" }}/187</td>
+            <td class="num">{{ r.population_within_2h|num }}</td>
+            <td class="num">{{ r.median_hours }} h</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <p class="muted small">
+        Primary care and primary school reach almost every island. Hospitals and campuses do not —
+        which is the gap the platform is built to measure.
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="cardhead">
+      <h2>The seven things it was asked to do</h2>
+      <span class="muted">and where each one lives</span>
+    </div>
+    <table class="mini wide asks">
+      <tbody>
+        <tr><td>Map Maldives connectivity from the provided base data</td>
+            <td>Map page · <code>scripts/build_sea_network.py</code></td></tr>
+        <tr><td>Process new data automatically</td>
+            <td><code>scripts/ingest.py</code> · <code>scripts/watch_data.py</code> · fingerprint plan</td></tr>
+        <tr><td>Keep the data in a database (SQLite)</td>
+            <td><code>db/schema.sql</code> · <code>scripts/build_database.py</code> · <code>data/platform.sqlite</code></td></tr>
+        <tr><td>Put services on top</td>
+            <td>Services register · 6 categories · add form at <a href="/services/">/services/</a></td></tr>
+        <tr><td>Select a location and see its connectivity and options</td>
+            <td>Click an island → card with crossings, nearest school, campus, health centre, hospital</td></tr>
+        <tr><td>Simulate where a new service creates the most impact</td>
+            <td><a href="/simulator/">/simulator/</a> · <code>scripts/build_simulator.py</code></td></tr>
+        <tr><td>Feel premium end to end</td>
+            <td>one design language, offline assets, no build step, no network calls</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <div class="cardhead"><h2>How to run it</h2></div>
+      <pre class="code">make setup          # python deps
+make external       # Census, OCHA, MoE, MoH
+python3 scripts/ingest.py        # build everything
+python3 scripts/watch_data.py    # optional: rebuild on new files
+cd web &amp;&amp; python3 manage.py runserver</pre>
+      <p class="muted small">
+        Every stage is idempotent, every published number is asserted by
+        <code>scripts/check_outputs.py</code>, and the footer of every page shows when the data
+        was last built.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="cardhead"><h2>Database inventory</h2></div>
+      <table class="mini wide">
+        <thead><tr><th>Table / view</th><th class="num">Rows</th></tr></thead>
+        <tbody>
+        {% for t, n in tables.items %}
+          <tr><td><code>{{ t }}</code></td><td class="num">{{ n }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+{% endblock %}

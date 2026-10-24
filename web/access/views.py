@@ -23,6 +23,77 @@ def _manifest() -> dict | None:
         return None
 
 
+SERVICE_LABEL = {
+    "hospital": "Hospital",
+    "health_centre": "Health centre",
+    "school_higher_secondary": "Grade 11–12 school",
+    "school_lower_secondary": "Grade 7–10 school",
+    "school_primary": "Primary school",
+    "college": "University campus",
+}
+
+
+@require_GET
+def platform(request):
+    """How the thing is built: sources -> ingest -> derived tables -> SQLite -> app."""
+    from .data import db_frame
+    tables = db_frame("""
+        select name, (select count(*) from pragma_table_info(m.name)) as columns
+        from sqlite_master m where type = 'table' and name not like 'sqlite_%' order by name""")
+    counts = {}
+    for t in tables.name:
+        try:
+            counts[t] = int(db_frame("select count(*) as n from \"%s\"" % t).n.iloc[0])
+        except Exception:
+            counts[t] = None
+    runs = db_frame("select * from ingest_run order by run_id desc limit 1")
+    m = model()
+    return render(request, "access/platform.html", {
+        "run": runs.iloc[0].to_dict() if len(runs) else None,
+        "tables": counts,
+        "summary": m.summary_rows(),
+        "manifest": _manifest(),
+        "s": m.stats(),
+    })
+
+
+@require_GET
+def simulator(request):
+    """Placement simulator: where should the next facility go to connect the most people?"""
+    m = model()
+    types = m.placement_types()
+    # lead with the placement that moves the most people
+    default_type = "hospital" if any(t["service_type"] == "hospital" for t in types) else (
+        types[0]["service_type"] if types else "hospital")
+    stype = request.GET.get("type") or default_type
+    if stype not in {t["service_type"] for t in types}:
+        stype = types[0]["service_type"] if types else "hospital"
+    picks = m.placement(stype).to_dict("records")
+    enriched = []
+    for t in types:
+        st = t["service_type"]
+        first = m.placement(st).head(1).to_dict("records")
+        now = m.access_now(st)
+        enriched.append(dict(t,
+                             label=SERVICE_LABEL.get(st, st),
+                             first=first,
+                             before=now.get("islands_2h", 0),
+                             category=t.get("category", ""),
+                             metric=f"{t.get('category','')}:{st}"))
+    metric = next((e["metric"] for e in enriched if e["service_type"] == stype), "")
+    return render(request, "access/simulator.html", {
+        "types": enriched,
+        "metric": metric,
+        "stype": stype,
+        "stype_label": SERVICE_LABEL.get(stype, stype),
+        "picks": picks,
+        "now": m.access_now(stype),
+        "islands": m.picker,
+        "manifest": _manifest(),
+        "s": m.stats(),
+    })
+
+
 @require_GET
 def index(request):
     m = model()

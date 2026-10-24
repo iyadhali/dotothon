@@ -101,6 +101,7 @@ def main() -> None:
                 n_providers=len(providers),
                 has_local=isl.node_id in providers,
                 hours=None if hours == float("inf") else round(float(hours), 2),
+                provider_node=who,
                 provider_island=(nodes.set_index("node_id").name.get(who) if who else None),
                 provider_name=(names.get(who) if who else None),
                 population=int(population.get(isl.node_id, 0) or 0),

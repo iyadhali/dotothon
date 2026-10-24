@@ -6,12 +6,15 @@
     <p class="eyebrow">Maldives Datathon 2026 · Team A · Sea · Land · Air</p>
     <h1>Can a student on island A reach grade 11–12 on island B?</h1>
   </div>
-  <div class="chips">
+  <div class="topright">
+    {% include "access/_nav.html" with active="map" %}
+    <div class="chips">
     <div class="chip num"><span class="n">{{ s.hs_islands }}</span><span class="l">islands teach<br>grade 11–12</span></div>
     <div class="chip num"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one within<br>2 hours</span></div>
     <div class="chip num hot"><span class="n">{{ s.no_service }}</span><span class="l">no observed<br>route</span></div>
     <a class="chip num link" href="/services/"><span class="n">{{ n_services }}</span><span class="l">services in the<br>register →</span></a>
     <div class="chip num"><span class="n">{{ s.kids|num }}</span><span class="l">children aged<br>0–17</span></div>
+    </div>
   </div>
 </header>
 
@@ -287,6 +290,18 @@ function drawRoute() {
   return wasFirst;
 }
 
+document.addEventListener("click", e => {
+  const btn = e.target.closest("[data-route-from]");
+  if (!btn) return;
+  e.preventDefault();
+  el("from").value = btn.dataset.routeFrom;
+  el("to").value = btn.dataset.routeTo;
+  state.from = btn.dataset.routeFrom;
+  state.to = btn.dataset.routeTo;
+  setMode("route", {keep: true});
+  submitRoute();
+});
+
 document.body.addEventListener("htmx:afterSwap", e => {
   if (e.detail.target && e.detail.target.id === "route-out") {
     const wasFirst = drawRoute();
@@ -300,13 +315,19 @@ el("swap").addEventListener("click", () => {
   submitRoute();
 });
 
-function setMode(m) {
+function setMode(m, opts = {}) {
   state.mode = m;
   document.querySelectorAll(".mode").forEach(b => b.classList.toggle("is-on", b.dataset.mode === m));
   el("routehint").hidden = m !== "route";
   if (m === "route") {
-    state.from = null; state.to = null;
-    el("routehint").textContent = "Click the starting island on the map.";
+    if (opts.keep) {
+      const a = (state.byId.get(state.from) || {}).name || "this island";
+      const b = (state.byId.get(state.to) || {}).name || "the destination";
+      el("routehint").textContent = `${a} → ${b}. Click any island to start a new journey.`;
+    } else {
+      state.from = null; state.to = null;
+      el("routehint").textContent = "Click the starting island on the map.";
+    }
   }
 }
 document.querySelectorAll(".mode").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));

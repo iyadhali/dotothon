@@ -1,14 +1,17 @@
 """
 Data access layer for the accessibility explorer.
 
-Everything is loaded once from the CSVs produced by scripts/build_*.py and kept in memory:
-187 islands and 5,789 observed sea edges are small enough that a database would be overhead,
-not architecture. No models, no migrations — this app is a read-only view over the pipeline.
+The pipeline writes `data/platform.sqlite` (see `db/schema.sql` and `scripts/build_database.py`)
+and this module reads it. The views the app queries are named after the pipeline stages —
+`sea_nodes`, `sea_edges`, `island_access`, `services_placed` — so any number on screen can be
+traced back to the stage that produced it. The graph is still loaded into memory once: 187
+islands and 5,789 crossings are small, and a live query per route would be slower, not simpler.
 """
 from __future__ import annotations
 
 import heapq
 import re
+import sqlite3
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -17,7 +20,17 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 DERIVED = ROOT / "data" / "derived"
+DB = ROOT / "data" / "platform.sqlite"
 SPINE = ROOT / "data" / "external" / "island_spine.csv"
+
+
+def db_frame(sql: str, params: tuple = ()) -> pd.DataFrame:
+    """One query against the platform database, read-only."""
+    con = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+    try:
+        return pd.read_sql_query(sql, con, params=params)
+    finally:
+        con.close()
 
 TRANSFER_H = 1.0       # waiting for the next sailing
 MAX_HOPS = 2           # a journey needing three sailings is reported as not accessible
@@ -76,8 +89,8 @@ class Model:
     """
 
     def __init__(self) -> None:
-        nodes = pd.read_csv(DERIVED / "sea_nodes.csv")
-        acc = pd.read_csv(DERIVED / "island_access.csv")
+        nodes = db_frame("select * from sea_nodes")
+        acc = db_frame("select * from island_access")
         # keep the Census-derived child count (Malé's is imputed at the national share) under a
         # separate name, because sea_nodes.csv has no children for the hand-added Malé row
         acc = acc.rename(columns={"child_0_17": "kids_census"})
@@ -87,11 +100,9 @@ class Model:
         self.by_id = self.nodes.set_index("node_id", drop=False)
         self.inhabited = self.nodes[self.nodes.type == "inhabited"].copy()
         # services register (education + health) and the per-island access table built from it
-        self.services = pd.read_csv(DERIVED / "services_placed.csv")
-        self.svc_access = pd.read_csv(DERIVED / "service_access.csv")
-        summary_path = DERIVED / "service_summary.csv"
-        self.service_summary = (pd.read_csv(summary_path) if summary_path.exists()
-                                else pd.DataFrame())
+        self.services = db_frame("select * from services_placed")
+        self.svc_access = db_frame("select * from service_access")
+        self.service_summary = db_frame("select * from service_summary")
         self.hs_ids = set(self.inhabited.loc[self.inhabited.has_own_higher_secondary.fillna(False),
                                              "node_id"])
         self.ls_ids = set(self.inhabited.loc[self.inhabited.has_own_lower_secondary.fillna(False),
@@ -99,7 +110,7 @@ class Model:
 
         self.adj: dict[str, list[Edge]] = {}
         best: dict[tuple[str, str], Edge] = {}
-        for r in pd.read_csv(DERIVED / "sea_edges.csv").itertuples():
+        for r in db_frame("select * from sea_edges").itertuples():
             for a, b in ((r.from_id, r.to_id), (r.to_id, r.from_id)):
                 if not self._known(a) or not self._known(b):
                     continue
@@ -122,7 +133,7 @@ class Model:
         gaps_path = DERIVED / "priority_gaps.csv"
         self.gaps = [] if not gaps_path.exists() else [
             {k: (None if pd.isna(v) else v) for k, v in r._asdict().items()}
-            for r in pd.read_csv(gaps_path).itertuples()
+            for r in db_frame("select * from priority_gaps").itertuples()
         ]
 
         self.atolls = sorted(self.inhabited.atoll.dropna().unique().tolist())
@@ -237,6 +248,14 @@ class Model:
         return [{"name": r.name, "category": r.category, "type": r.service_type,
                  "source": r.source} for r in rows.itertuples()]
 
+    @property
+    def provider_ids(self) -> dict:
+        if not hasattr(self, "_provider_ids"):
+            self._provider_ids = {(r.node_id, r.service_type): r.provider_node
+                                  for r in self.svc_access.itertuples()
+                                  if isinstance(r.provider_node, str)}
+        return self._provider_ids
+
     def service_access_for(self, node_id: str) -> dict:
         """Hours to the nearest provider of each service type, plus who provides it."""
         rows = self.svc_access[self.svc_access.node_id == node_id]
@@ -248,6 +267,7 @@ class Model:
                 "hours": None if pd.isna(r.hours) else round(float(r.hours), 2),
                 "place": r.provider_island if isinstance(r.provider_island, str) else None,
                 "name": r.provider_name if isinstance(r.provider_name, str) else None,
+                "provider_id": self.provider_ids.get((node_id, r.service_type)),
             }
         return out
 
@@ -258,6 +278,43 @@ class Model:
             out.append({"category": cat, "type": t, "islands": int(g.has_local.sum()),
                         "n": int(g.n_providers.iloc[0])})
         return sorted(out, key=lambda d: (d["category"], -d["n"]))
+
+    def summary_rows(self) -> list[dict]:
+        """Per service type: facilities, coverage and median travel time."""
+        return db_frame("select * from service_summary order by category, service_type").to_dict("records")
+
+    # ---------------------------------------------------------------- simulator ----------
+    def placement(self, service_type: str) -> pd.DataFrame:
+        """Greedy picks 1..k for one service type, best first."""
+        return db_frame("select * from placement where service_type = ? order by k",
+                        (service_type,))
+
+    def placement_types(self) -> list[dict]:
+        rows = db_frame("""
+            select p.service_type, s.category, count(*) as picks
+            from placement p join service_summary s on s.service_type = p.service_type
+            group by p.service_type, s.category order by s.category, p.service_type""")
+        return rows.to_dict("records")
+
+    def access_now(self, service_type: str) -> dict:
+        """Today's picture for one service type, for the before/after comparison."""
+        row = db_frame("select * from service_summary where service_type = ?", (service_type,))
+        if row.empty:
+            return {}
+        r = row.iloc[0]
+        return {"facilities": int(r.n_facilities),
+                "islands_local": int(r.islands_with_local),
+                "islands_2h": int(r.islands_within_2h),
+                "people_2h": int(r.population_within_2h),
+                "children_2h": int(r.children_within_2h),
+                "median_hours": None if pd.isna(r.median_hours) else float(r.median_hours)}
+
+    def map_hours(self, service_type: str) -> dict:
+        """{node_id: hours} for one service type, for the simulator map."""
+        df = db_frame("select node_id, hours from service_access where service_type = ?",
+                      (service_type,))
+        return {r.node_id: (None if pd.isna(r.hours) else float(r.hours))
+                for r in df.itertuples()}
 
     def ranked(self, atoll: str = "", band: str = "", limit: int = 400) -> list[dict]:
         df = self.inhabited.copy()
@@ -299,13 +356,12 @@ class Model:
 
 
 def data_version() -> tuple:
-    """Cheap fingerprint of the derived tables: any rebuild changes it, so the next request
+    """Cheap fingerprint of the database: any rebuild replaces the file, so the next request
     picks up new data without restarting the server (no manual cache clear needed)."""
-    files = ("island_access.csv", "priority_gaps.csv", "sea_edges.csv",
-             "sea_nodes.csv", "island_school_provision.csv",
-             "service_access.csv", "services_placed.csv")
-    return tuple((name, (DERIVED / name).stat().st_mtime_ns)
-                 for name in files if (DERIVED / name).exists())
+    if not DB.exists():
+        return ("missing",)
+    st = DB.stat()
+    return (DB.name, st.st_mtime_ns, st.st_size)
 
 
 @lru_cache(maxsize=2)

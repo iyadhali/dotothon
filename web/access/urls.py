@@ -8,4 +8,6 @@ urlpatterns = [
     path("route/", views.route, name="route"),
     path("ranked/", views.ranked, name="ranked"),
     path("services/", views.services, name="services"),
+    path("simulator/", views.simulator, name="simulator"),
+    path("platform/", views.platform, name="platform"),
 ]

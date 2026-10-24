@@ -125,6 +125,35 @@ causeway. Journeys cost the observed median crossing time per leg plus **1 hour*
 connection, and are capped at **two sailings**: a third sailing is reported as *not accessible*
 rather than given an implausible number.
 
+
+### A platform, not a dashboard
+
+The four datasets are not read by the app. They are read by a pipeline that fingerprints every
+source, rebuilds only the stale stages, and writes one SQLite file:
+
+```
+sources ──▶ ingest (sha256 fingerprint per group) ──▶ derived tables ──▶ data/platform.sqlite ──▶ app
+```
+
+| Piece | Where |
+|---|---|
+| Source inventory + fingerprints | `data/derived/.ingest.json`, `source_manifest.json` |
+| Stage plan (dry-run prints it) | `scripts/ingest.py`, `make ingest` |
+| Watch for new drops | `scripts/watch_data.py`, `make watch` (logs to `data/derived/ingest.log`) |
+| Schema + views the app queries | `db/schema.sql` |
+| Loader | `scripts/build_database.py` → `data/platform.sqlite` |
+| Placement model | `scripts/build_simulator.py` → `placement.csv` |
+
+Drop a new `MACL/*.csv` or a new `FollowMe_*/` month, run `make ingest`, and the map, the services
+register and the simulator all move together. The app opens the database read-only and reloads
+itself when the file changes, so nothing needs restarting.
+
+**The placement simulator** (`/simulator/`) is the "so what" of the platform: for each service
+type it greedily adds one facility at a time to the island that moves the most people inside two
+hours. One hospital on Kulhudhuffushi connects **+33,399 people and +11,855 children**, taking
+hospital coverage from 35 to 54 islands — more than every school and campus decision in the same
+table combined.
+
 ## Data sources
 
 | Source | Used for | Link |

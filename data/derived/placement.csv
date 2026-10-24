@@ -1,0 +1,13 @@
+service_type,k,node_id,island,atoll,newly_within_2h,children_newly,islands_newly,pop_weighted_gain,median_gain,coverage_after,population_after
+hospital,1,MV002012,Kulhudhuffushi,Haa Dhaalu,33399,11855,19,372253.2,8.68,54,307414
+hospital,2,MV006006,Un'goofaaru,Raa,23713,7861,18,118785.8,3.08,72,331127
+hospital,3,MV007008,Eydhafushi,Baa,14623,4470,13,44582.2,1.88,85,345750
+school_higher_secondary,1,MV015005,Kalaidhoo,Laamu,6526,2021,4,6714.4,1.59,160,429128
+school_higher_secondary,2,MV009004,Thulusdhoo,Kaafu,4936,1113,3,117999.6,1.67,163,434064
+school_higher_secondary,3,MV001008,Kelaa,Haa Alifu,1674,498,2,8890.4,5.48,165,435738
+college,1,MV006006,Un'goofaaru,Raa,23713,7861,18,118785.8,3.08,68,329485
+college,2,MV007008,Eydhafushi,Baa,14623,4470,13,44582.2,1.88,81,344108
+college,3,MV015011,Hithadhoo,Laamu,11768,3765,6,110016.9,5.57,87,355876
+health_centre,1,MV018001,Fuvahmulah,Gnaviyani,9177,2761,1,0.0,0.0,187,448819
+health_centre,2,MV001007,Ihavandhoo,Haa Alifu,0,0,0,958.9,0.33,187,448819
+health_centre,3,MV001010,Dhihdhoo,Haa Alifu,0,0,0,768.6,0.23,187,448819

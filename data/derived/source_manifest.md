@@ -1,6 +1,6 @@
 # Source manifest
 
-Generated 2026-10-24 06:52 UTC by `scripts/ingest.py`.
+Generated 2026-10-24 08:14 UTC by `scripts/ingest.py`.
 
 | source | files | size | last touched | fingerprint |
 |---|---:|---:|---|---|

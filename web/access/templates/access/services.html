@@ -7,9 +7,11 @@
     <p class="eyebrow">MALDIVES DATATHON 2026 · TEAM A · SEA · LAND · AIR</p>
     <h1>Services register — education and health, island by island</h1>
   </div>
-  <div class="chips">
-    <a class="chip num" href="/"><span class="n">←</span><span class="l">back to<br>the map</span></a>
-    <div class="chip num"><span class="n">{{ total }}</span><span class="l">services<br>in the register</span></div>
+  <div class="topright">
+    {% include "access/_nav.html" with active="services" %}
+    <div class="chips">
+      <div class="chip num"><span class="n">{{ total }}</span><span class="l">services<br>in the register</span></div>
+    </div>
   </div>
 </header>
 

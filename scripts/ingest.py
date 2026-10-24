@@ -91,7 +91,9 @@ STAGES: list[tuple[str, list[str], tuple[str, ...]]] = [
     # the register is the source of truth; seed it once, then rebuild access from whatever it holds
     ("services", ["scripts/seed_services.py", "--if-missing"], ("services", "moh")),
     ("service_access", ["scripts/build_service_access.py"], ("services", "moh", "sea")),
-    ("web", ["web/build_web_data.py"], ("reachability", "service_access", "sea", "provision")),
+    ("simulator", ["scripts/build_simulator.py"], ("service_access", "sea", "services")),
+    ("database", ["scripts/build_database.py"], ("simulator", "service_access", "reachability")),
+    ("web", ["web/build_web_data.py"], ("service_access", "sea", "provision")),
     ("check", ["scripts/check_outputs.py"], ()),          # always last, always cheap
 ]
 
@@ -103,6 +105,8 @@ OUTPUTS = {
     "reachability": ["island_access.csv", "island_pairs.csv", "priority_gaps.csv"],
     "services": ["services_placed.csv"],
     "service_access": ["service_access.csv", "service_summary.csv"],
+    "simulator": ["placement.csv"],
+    "database": ["platform.sqlite"],
     "web": ["islands_points.json"],
 }
 

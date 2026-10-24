@@ -1,0 +1,33 @@
+{{Short description|Domestic Airport in Maldives}}
+{{Infobox airport
+| name        = Ifuru Airport
+| IATA        = IFU
+| ICAO        = VREI
+| mapframe    = yes
+| r1_number   = 18/36
+| r1_length_f = 3937
+| r1_length_m = 1200
+| r1_surface  = Asphalt
+| coordinates = {{Coord|5|42|50|N|73|1|50|E|display=title}}
+| elevation_f = 6
+}}
+
+'''Ifuru Airport''' {{airport codes|IFU|VREI}} is a [[domestic airport]] located in the Ungoofaaru area in [[Maldives]]. It is an operational public airport.<ref>{{Cite web|title=VREI - Ifuru Island/Ifuru Airport Airport {{!}} SkyVector|url=https://skyvector.com/airport/VREI/Ifuru-Island-Ifuru-Airport-Airport|access-date=2021-06-29|website=skyvector.com}}</ref>
+
+== Specifications ==
+Ifuru Airport is at an [[elevation]] of 6&nbsp;ft (2m) from the [[Sea level|mean sea level]]. It has one runway with length 1200m and direction 18/36. The runway has an [[Asphalt concrete|asphalt]] surface.<ref>{{Cite web|title=Ifuru Airport Profile {{!}} CAPA|url=https://centreforaviation.com/data/profiles/airports/ifuru-airport-ifu|access-date=2021-06-29|website=centreforaviation.com}}</ref>
+
+The airport caters small [[Island hopping|island-hopping]] flights.<ref>{{Cite web|title=Flying With Us|url=https://maldivian.aero/flying-with-us/|access-date=2021-06-29|website=Flying With Us|language=en}}</ref>
+
+==Airlines and destinations==
+{{Airport destination list
+<!-- -->
+| [[Maldivian (airline)|Maldivian]] |  [[Hanimaadhoo International Airport|Hanimaadhoo]], [[Velana International Airport|Malé]]
+}}
+
+== References ==
+{{reflist}}
+
+[[Category:Airports in the Maldives]]
+
+{{asia-airport-stub}}

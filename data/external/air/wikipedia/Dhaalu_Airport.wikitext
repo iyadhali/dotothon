@@ -1,0 +1,74 @@
+{{Short description|Airport in Kudahuvadhoo, the Maldives}}
+{{Infobox airport
+| name             = Dhaalu Airport
+| native_name      = ދާލު އެއާރޕޯޓް
+| image            = 
+| IATA             = DDD
+| ICAO             = VRMU
+| type             = Public
+| owner            = Reollo Investments Pvt. Ltd
+| operator         = Dhaalu Airport Holdings
+| area_served      = [[Dhaalu Atoll]], [[Maldives]]
+| location         = [[Kudahuvadhoo]]
+| elevation_f      = 6
+| website          = {{URL|http://www.dhaalu-airport.com/}}
+| coordinates      = {{coord|02|40|02|N|072|53|34|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''DDD'''
+| metric_rwy       = y
+| r1_number        = 10/28
+| r1_length_m      = 1800
+| r1_surface       = Asphalt
+}}
+
+[[File:Dhaalu_Airport.jpg | thumb | right | alt=Dhaalu Airport, Republic of Maldives | Dhaalu Airport, Republic of Maldives]]
+'''Dhaalu Airport''' {{airport codes|DDD|VRMU}} is an [[international airport]] located on the island of [[Kudahuvadhoo]] in [[Dhaalu Atoll]] in the [[Maldives|Republic of Maldives]]. It was built by Reollo Investments Pvt. Ltd. and is operated by Dhaalu Airport Holdings.
+
+==History==
+
+The airport began operations in 2017, with the first aircraft landing at Dhaalu Airport on June 1, 2017.<ref>{{Cite news|url=http://english.sun.mv/43803|title=First plane lands in Kudahuvadhoo airport - A dream come true for the people|work=Sun Online|access-date=2017-06-26}}</ref> International flights will be started from this airport to [[India]] in January 2024.
+
+==Facilities==
+The airport was built entirely on 63 hectares of reclaimed land and features a runway of 1,800 metres allowing it to accommodate [[Bombardier Dash 8|Dash-8]] and [[ATR 72|ATR-72]]  aircraft<ref>{{Cite web|url=http://en.mihaaru.com/maldives-to-unveil-dhaalu-atoll-domestic-airport-next-week/|title=Maldives to unveil Dhaalu atoll domestic airport next week – Mihaaru|website=en.mihaaru.com|language=en-US|access-date=2017-06-26|archive-date=2017-07-18|archive-url=https://web.archive.org/web/20170718112649/http://en.mihaaru.com/maldives-to-unveil-dhaalu-atoll-domestic-airport-next-week/|url-status=dead}}</ref> as well as large private jets.
+
+Dhaalu Airport is the first airport in Maldives to make extensive use of solar airfield lighting.<ref>{{Cite news|url=https://solutions4ga.com/project/dhaalu_airport/|title=Dhaalu Airport - Maldives - S4GA|work=S4GA|access-date=2017-06-26|language=en-US}}</ref>
+
+Currently, [[Manta Air]] is the only airline offering scheduled service at the airport.
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and the airline itself are not independent sources. -->{| class="wikitable"
+|+
+!Airline
+!Destinations
+!Notes
+!Ref
+|-
+|[[Manta Air]]
+|[[Velana International Airport|Malé]], [[Kempegowda International Airport|Bangalore]]
+|Terminated
+|<ref>{{Cite web |last=Maldives |first=Avaitors |date=2026-09-09 |title=Manta Air Reportedly Reducing ATR Operations as It Focuses on Seaplane Fleet Expansion |url=https://www.aviatorsmaldives.com/post/20693 |access-date=2026-09-16 |website=Aviators Maldives |language=en}}</ref>
+|-
+|[[Maldivian (airline)|Maldivian]]
+|[[Velana International Airport|Malé]]
+|
+|<ref>{{Cite web |last=Maldives |first=Avaitors |date=2026-09-14 |title=Maldivian to Launch Daily Male’ to Kudahuvadhoo Flights from 17th September |url=https://www.aviatorsmaldives.com/post/20697 |access-date=2026-09-16 |website=Aviators Maldives |language=en}}</ref>
+|}
+
+== References ==
+{{reflist}}
+
+== External links ==
+{{commons category}}
+* http://www.dhaalu-airport.com/
+
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2017]]
+
+
+{{Maldives-stub}}

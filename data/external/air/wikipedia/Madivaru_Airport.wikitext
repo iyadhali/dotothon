@@ -1,0 +1,48 @@
+{{Infobox airport
+| name             = Madivaru Airport
+| native_name      = 
+| image            = 
+| caption          = 
+| IATA             = LMV
+| ICAO             = VRGD
+| type             = Public
+| owner            = 
+| operator         = [[Maldivian_(airline)|Island Aviation Services Limited]]
+| area_served      = [[Naifaru]], [[Lhaviyani Atoll]], [[Maldives]]
+| location         = Madivaru, [[Lhaviyani Atoll]], [[Maldives]]
+| elevation_f      = 6
+| website          = 
+| coordinates      = {{coord|5.4574|73.3701|region:MV|display=it}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''LMV'''
+| metric_rwy       = y
+| r1_number        = 18/36
+| r1_length_m      = 1,200
+| r1_surface       = Asphalt
+| footnotes        = 
+}}
+
+'''Madivaru Airport''' {{Airport codes|LMV|}} is an airport on Madivaru, [[Lhaviyani Atoll]], [[Maldives]].<ref name="TradeArabia">{{cite web |title=Maldives opens its second airport in Lhaviyani |url=https://www.tradearabia.com/news/TTN_392528.html |date=2 February 2022 |website=www.tradearabia.com}}</ref>
+
+The island was previously used for military training.<ref name="hotspot"/> In May 2018 the government contracted Kuredu Holdings (the developer of [[Kurendhoo|Kuredu]] island) to develop an airport.<ref name="hotspot"/><ref>{{cite news |title=Government contracts Kuredu Holdings to develop Madivaru Airport |url=https://psmnews.mv/en/34799 |access-date=3 February 2022 |work=PSMnews.mv |language=en}}</ref> The project required reclaiming three hectares of land.<ref name="hotspot">{{cite news |title=Maldives to develop airport in Lhaviyani tourist hotspot |url=https://maldives.net.mv/25914/maldives-to-develop-airport-in-lhaviyani-tourist-hotspot/ |access-date=3 February 2022 |work=Maldives Insider |date=30 May 2018}}</ref>
+The construction contractor was [[Beijing Urban Construction Group]] (BUCG).<ref>{{cite news |title=Chinese firm to build airport in Maldives' Lhaviyani tourist hotspot |url=https://maldives.net.mv/27373/chinese-firm-to-build-airport-in-maldives-lhaviyani-tourist-hotspot/ |access-date=3 February 2022 |work=Maldives Insider |date=24 September 2018}}</ref>
+
+It is operated by Island Aviation Services Limited (IASL).<ref>{{cite news |title=Madivaru Airport handed over to IASL |url=https://psmnews.mv/en/97598 |access-date=3 February 2022 |work=PSMnews.mv |language=en}}</ref>
+
+==See also==
+* [[List of airports in the Maldives]]
+
+==References==
+{{reflist}}
+
+{{Airports in the Maldives}}
+
+[[Category:Airports in the Maldives]]
+[[Category:2022 establishments in the Maldives]]
+[[Category:Airports established in 2022]]
+
+{{Maldives-struct-stub}}
+{{Asia-airport-stub}}

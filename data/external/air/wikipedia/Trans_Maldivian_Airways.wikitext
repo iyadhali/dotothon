@@ -1,0 +1,248 @@
+{{Short description|Airline of the Maldives}}{{Infobox Airline
+| airline        = Trans Maldivian Airways
+| logo           = TMA_Logo_vertical.jpg
+| logo_size      = 150
+| fleet_size     = 65
+| destinations   = 79
+| IATA           = - 
+| ICAO           = TMW
+| callsign       = TRANS MALDIVIAN
+| parent         = [[The Carlyle Group|Carlyle]]
+| founded        = {{start date and age|1989|df=yes}}
+(''as Hummingbird Island Helicopters'')
+| headquarters   = [[Velana International Airport]]<br>[[Malé]], [[Maldives]]
+| caption = 
+| key_people     = A. U. M. Fawzy (CEO)
+| hubs           = [[Velana International Airport]]<br>[[Gan International Airport]]
+| secondary_hubs =
+| frequent_flyer =
+| alliance       =
+| website        = http://www.transmaldivian.com/
+|image=|aoc=|focus_cities=|num_employees=
+}}
+
+'''Trans Maldivian Airways (Pvt) Ltd.''' (TMA) is a private [[airline]] headquartered on the grounds of [[Velana International Airport]] in [[Malé]], [[Maldives]].<ref>"[http://www.transmaldivian.com/contact/ Contact]." Trans Maldivian Airways. Retrieved on April 21, 2015. "TRANS MALDIVIAN AIRWAYS (Pvt) Ltd. Ibrahim Nasir International Airport P.O. Box 2079 Male’ Republic of Maldives"</ref>
+
+Operating out of [[Velana International Airport]], TMA is the oldest air transfer operator operating in the country, providing seaplane transfer services to a large number of tourist resorts. TMA in 2013 operated the world's largest seaplane fleet.<ref name=":1">{{Cite web|url = http://www.blackstone.com/news-views/press-releases/details/blackstone-announces-acquisition-of-a-majority-stake-in-maldivian-air-taxi-and-trans-maldivian-airways|title = Blackstone Press Release|date = 3 February 2013|accessdate = 11 December 2014|website = Blackstone Announces Acquisition of a Majority Stake in Maldivian Air Taxi and Trans Maldivian Airways|publisher = |last = |first = }}</ref> As of 2016, December it operates out of Gan International Airport, servicing resorts in Addu, and Huvadhu Atoll.
+
+== History ==
+
+=== Hummingbird Island Airways ===
+The airline was founded in 1989 as Hummingbird Island Helicopters by pilot Kit Chambers. The company operated a strictly helicopter fleet of aircraft, moving tourists from the airport to a select number of island resorts. 1993 saw the establishment of [[Maldivian Air Taxi]], a direct competitor offering more-preferred seaplane transfers. In order to revive the market, the company was rebranded as Hummingbird Island Airways in 1997, introducing Twin Otter seaplanes to its fleet. By 1999, the fleet had transitioned out all helicopters and had a seaplane-only lineup.
+
+=== Trans Maldivian Airways ===
+In the year 2000, Hummingbird Island was rebranded as Trans Maldivian Airways, under new management. In the next years, TMA acquired a fleet of 16 [[Twin Otter]] seaplanes, operating alongside [[Maldivian Air Taxi]] to provide transfer services to a growing number of tourist resorts in numerous atolls of the archipelago.
+
+In 2006, TMA announced intentions to acquire 3 [[ATR 42]] aircraft to begin operations to the domestic airports scattered in the atolls.<ref>{{Cite web|url = http://www.haveeru.com.mv/dhivehi/business/38485|title = TMA to acquire three 46-seat aircraft to fly to internal airports of Maldives. (Dhivehi)|date = 7 October 2006|accessdate = 11 December 2014|website = Haveeru Online|publisher = Haveeru Daily|last = Saeed|first = Ahmed|language = Divehi}}</ref> One of the ATR aircraft were brought to Male' in early 2007, and operations began to [[Gan International Airport|Gan]] in August.<ref>{{Cite web|url = http://www.haveeru.com.mv/dhivehi/news/49706|script-title=dv:އެތެރޭގެ އުދުހުންތަކަށް ގެނައި ޓީއެމްއޭގެ ބޯޓް ޓެސްޓް ދަތުރެއްގައި ގަމަށް ޖައްސައިފި|date = 21 July 2007|accessdate = 11 December 2014|website = Haveeru Online|last = |first = |language = Divehi}}</ref> In 2009, TMA announced that they were suspending all domestic operations due to losses, and the two ATR aircraft acquired were subsequently sold.<ref>{{Cite web|url = http://www.haveeru.com.mv/dhivehi/business/73956|title = TMA to sell two aircraft used for domestic aircraft. (Dhivehi)|date = 3 March 2009|accessdate = 11 December 2014|website = Haveeru Online|publisher = |last = |first = |language = Divehi}}</ref>
+
+2011 saw the first [[De Havilland Canada DHC-6 Twin Otter|Twin Otter Series 400]] aircraft brought to the TMA fleet, bringing the total fleet to 23.
+
+=== Merger with Maldivian Air Taxi ===
+{{Main|Maldivian Air Taxi}}
+
+[[Maldivian Air Taxi]], established in 1993, was the sole competitor of TMA in the seaplane transfer industry. The company boasted the world's largest seaplane fleet. On February 4, 2013, the American equity fund [[Blackstone Group]] announced their buyout of the majority stake of both Trans Maldivian Airways and [[Maldivian Air Taxi]], to form a new company with a combined fleet of 44 seaplanes, making it the largest seaplane fleet in the world by far.<ref name=":1" /><ref name=":0">{{Cite web|url = http://www.haveeru.com.mv/news/47231|title = Blackstone buys majority stake in two Maldives seaplane operators|date = 4 February 2013|accessdate = |website = Haveeru Online|publisher = |last = |first = }}</ref><ref>{{Cite web|url = http://minivannews.com/politics/us-private-equity-fund-buys-both-maldivian-seaplane-operators-for-undisclosed-sum-52375|title = US private equity fund buys both Maldivian seaplane operators for undisclosed sum.|date = 4 February 2014|accessdate = |website = Minivan News|last = |first = }}</ref> The new company would retain the Trans Maldivian Airways brand name, with a new logo and livery integrating the colours of Maldivian Air Taxi.
+
+The new merger company, with conjunction with the Maldives Transport Authority, has proposed to launch seaplane services to inhabited islands in the atolls, in addition to the currently served resort islands.<ref name=":0" />
+
+=== Sold to Bain Capital ===
+On December 18, 2017 &ndash; [[Bain Capital]] Private Equity announced that it has formed a consortium to acquire Trans Maldivian Airways ("TMA"), the world’s largest seaplane operator headquartered in the Maldives, from [[The Blackstone Group|Blackstone Group]]. The Bain Capital-led consortium includes Shenzhen Tempus Global Business Services Holdings Ltd ("Tempus Global") (300178) and TBRJ Fund 1 L.P. Bain Capital, which is headquartered in the US, will own approximately 80% of TMA.<ref>{{Cite web|url=https://www.baincapital.com/news/bain-capital-private-equity-led-consortium-acquires-trans-maldivian-airways|title=Bain Capital Private Equity-led consortium acquires Trans Maldivian Airways|last=Capital|first=Bain|website=Bain Capital|access-date=2019-06-14}}</ref>
+
+== Destinations ==
+[[File:TMA Base.jpg|thumb|TMA Terminal]]
+The Maldives are one of the most attractive destinations for tourists and it has many resorts<ref>[https://www.booking.com/searchresults.en.html?region=4862&aid=2429620&no_rooms=1&group_adults=2 Resorts in Maldives]</ref> to cater to them. TMA has seaplane transfer services for tourists to and from the following resort islands:<ref>{{Cite web|url = http://www.transmaldivian.com/incredible-maldives-resorts/|title = Resorts|date = 2013|accessdate = 11 December 2014|website = |publisher = |last = |first = }}</ref>
+
+'''[[Haa Alif Atoll]]'''
+
+* Manafaru ''(JA Manafaru)''
+*Dhonakulhi ''(Hideaway Beach Resort and Spa)''
+
+[[File:TMA Aircraft.tif|thumb|Trans Maldivian Airways Aircraft Livery]]
+'''[[Shaviyani Atoll]]'''
+*Gaakoshinbi ''(Fairmont Sirru Fen Fushi)''
+*Vagaru ''(JW Marriott Maldives Resort & Spa)''
+'''[[Noonu Atoll]]'''
+*Fushivelaavaru ''(Velaa Private Island)''
+* Medhafushi ''(Sun Siyam Iru Fushi Maldives)''
+* Dhigurah ''(Siyam World Maldives)''
+*Kudafunafaru ''(Noku Maldives)''
+* Medhufaru (Soneva Jani)
+* Kuredhivaru ''(Mövenpick Resort Kuredhivaru)''
+* Randheli ''(Cheval Blanc Randheli)''
+'''[[Raa Atoll]]'''
+*[[Aarah (Raa Atoll)|Aarah]] ''(Heritance Aarah)''
+* Dhigali ''(Dhigali Maldives)''
+*Faarafushi ''(Faarufushi Maldives)''
+*Filaidhoo ''(Reethi Faru Maldives)''
+*Furaveri (Furaveri Island Resort)
+*Huruvalhi ''(The Standard Huruvalhi Maldives)''
+*
+*[[Meedhupparu]] ''(Adaaran Select Medhupparu)''
+*Uthurumaafaru ''(You & Me by Cocoon Maldives)''
+
+'''[[Baa Atoll]]'''
+* Dhunikolhu ''(Coco Palm Dhuni Kolhu)''
+*Dhigufaruvinagandu (Dhigufaru Island Resort)
+*Finolhas ''(Amilla Fushi)''
+* [[Fonimagoodhoo]] ''(Reethi Beach Resort)''
+*Kanifushi ''(Finolhu)''
+* Kunfunadhoo ''([[Soneva Fushi]])''
+* Landaa Giraavaru ''(Four Seasons Resort Maldives at Landaa Giraavaru)''
+* Milaidhoo ''(Milaidhoo)''
+*Miriandhoo ''(The Westin Maldives Miriandhoo)''
+*[[Mudhdhoo]] ''(Dusit Thani Maldives)''
+*Thiladhoo ''(The Nautilus Maldives)''
+
+'''[[Lhaviyani Atoll]]'''
+* Thilamaafushi (Le Méridien Maldives Resort & Spa)
+* Fushifaru (Fushifaru Maldives)
+* Huruvalhi (''Hurawalhi Maldives Resort)''
+* Innahura ''(Innahura Maldives Resort)''
+
+* Kanifushi ''(Atmosphere Kanifushi)''
+* Kanuhura ''(Kanuhura)''
+*Komandoo ''(Komandoo Maldives Island Resort)''
+*Kudadhoo (Kudadhoo Maldives Private Island)
+* Kuredhdhoo ''(Kuredu Resort)''
+* Madhiriguraidhoo'' (Palm Beach Resort and Spa Maldives)''
+*Ookolhufinolhu (Cocoon Maldives)
+
+'''[[Kaafu Atoll]]'''
+* Biyadhoo ''(Biyadhoo Island Resort)''
+*Bolifushi (Jumeirah Vittaveli)
+* Helengeli ''(Helengeli Island Resort)''
+* Kuda Huraa ''(Four Seasons Resort Maldives at Kuda Huraa)''
+* Medhufinolhu ''(One & Only Reethi Rah)''
+* Meerufenfushi ''(Meeru Island Resort and Spa)''
+*Olhahali ''(LUX* North Male' Atoll)''
+* Ziyaaraifushi ''(Summer Island Village)''
+[[File:Floatplane at Bathala (Maldives).jpg|thumb|right|TMA floatplane to the north of Bathala island]]
+'''[[Alif Alif Atoll]]'''
+
+* Ellaidhoo ''(Chaaya Reef Ellaidhoo)''
+* Fesdu ''(W Retreat and Spa - Maldives)''
+* Gangehi ''(Gangehi Island Resort)''
+* Halaveli ''(Constance Halaveli)''
+* Kandholhudhoo ''(Kandholhu Island)''
+* Kudafolhudhoo ''(Nika Island Resort)''
+* Kuramathi ''(Kuramathi Island Resort)''
+* Maayafushi ''(VOI Maayafushi Resort)''
+* Velidhoo'' (Velidhu Island Resort)''
+* Veligandu ''(Veligandu Island Resort and Spa)''
+'''[[Alif Dhaalu Atoll]]'''
+
+* Athuruga ''(Diamonds Athuruga)''
+* Dhidhdhoofinolhu ''(LUX* South Ari Atoll)''
+* Huvahendhoo ''(Lily Beach Resort and Spa)''
+* Kudarah ''(Amaya Resort Kudarah)''
+* Maafushivaru'' (Maafushivaru)''
+* Machchafushi ''(Centara Grand Island Resort and Spa Maldives)''
+* Mirihi ''(Mirihi Island Resort)''
+* Moofushi ''(Constance Moofushi)''
+* Rangalifinolhu ''(Conrad Maldives Rangali Island)''
+*Theluveligaa ''(Drift Thelu Veliga by Castaway)''
+* Thudufushi ''(Diamonds Thudufushi)''
+* Vakarufalhi ''(Vakarufalhi Island Resort)''
+* Vilamendhoo ''(Vilamendhoo Island Resort and Spa)''
+
+'''[[Vaavu Atoll]]'''
+* Alimatha ''(Alimatha Aquatic Resort)''
+* Dhiggiri ''(VOI Dhiggiri Resort)''
+*Thinadhoo ''(Cinnamon Velifushi)''
+'''[[Meemu Atoll]]'''
+* Medhufushi ''(Medhufushi Island Resort)''
+*Hakuraahuraa ''(Cinnamon Haakuraa Huraa)''
+
+'''[[Faafu Atoll]]'''
+* Filitheyo ''(Filitheyo Island Resort)''
+
+'''[[Dhaalu Atoll]]'''
+
+* Aluvifushi (Sun Siyam Iru Veli Maldives)
+* Dhoores ''(aaaVeee Nature's Paradise Maldives)''
+* Meedhuffushi ''(Sun Siyam Vilu Reef Maldives)''
+* Velavaru ''(Angsana Velavaru Resort)''
+*Vommuli ''(St. Regis Vommuli)''
+*
+
+== Services ==
+
+Services provided by the company include:<ref>http://www.transmaldivian.com  {{webarchive |url=https://web.archive.org/web/20140625061352/http://www.transmaldivian.com |date=June 25, 2014 }}</ref>
+* Scenic flights
+* Resort transfers
+* Picnic flights
+* Aircraft charter
+* Domestic air services
+
+== Fleet ==
+[[File:TMA DHC-6 Twin Otter at Velana International Airport, May 2017.jpg|thumb|A [[de Havilland Canada DHC-6 Twin Otter|DHC-6 Twin Otter]] at [[Velana International Airport]]]]
+{{As of|2025|8}}, Trans Maldivian Airways operates the following aircraft:<ref>{{cite magazine |title=Global Airline Guide 2025 - Trans Maldivian Airways |magazine=Airliner World |date=September 2025 |page=66}}</ref>
+
+{| class="wikitable" style="text-align:center;"
+|+ Trans Maldivian Airways fleet
+|-
+!Aircraft
+!In service
+!On order
+!Passengers
+!Notes
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 100]]
+|1
+|
+|15
+|
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 200]]
+|1
+|
+|15
+|
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 200HG]]
+|1
+|
+|15
+|
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 300]]
+|59
+|
+|15
+|
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|Viking Air DHC-6 Twin Otter Series 400]]
+|3
+|
+|15
+|
+|-
+!Total
+!65
+!colspan="3"|
+|-
+|}
+
+== Incidents and accidents ==
+
+As Trans Maldivian Airways the company suffered the following accidents:<ref>{{Cite web|url=http://www.aviainfo.gov.mv/publications/accidents/history.php|title=Maldives Civil Aviation Authority - 8Q-TMC Collision with Seawall|website=www.aviainfo.gov.mv|accessdate=Apr 15, 2021}}</ref>
+* On 19 February 2001, a [[De Havilland Canada DHC-6 Twin Otter|De Havilland Canada DHC-6 Twin Otter Series 100]] (8Q-TMA) collided with a [[De Havilland Canada DHC-6 Twin Otter|De Havilland Canada DHC-6 Twin Otter Series 300]] (8Q-TMH) while landing at Holiday Island Resort. No one was injured.<ref>"[http://www.aviainfo.gov.mv/downloads/accidents/2001_01.pdf Investigation Report of the Accident to DeHavilland DHC‐6 “TwinOtter” (8Q‐TMA) on 19 February 2001 at Sun Island Resort]" ([https://web.archive.org/web/20120704034446/http://www.aviainfo.gov.mv/downloads/accidents/2001_01.pdf Archive]). Civil Aviation Department, [[Ministry of Civil Aviation and Communication Maldives|Ministry of Transport and Civil Aviation]]. Retrieved on April 21, 2015.</ref>
+* On 17 May 2004, a [[De Havilland Canada DHC-6 Twin Otter|De Havilland Canada DHC-6 Twin Otter Series 300]] collided with the sea-wall of runway 18 at [[Ibrahim Nasir International Airport]] after experiencing problems taking off from the seaplane base at Hulhule, adjacent to the international airport. Both pilots and one passenger were seriously injured in the accident.<ref>"[http://www.aviainfo.gov.mv/downloads/accidents/2004_01.pdf ACCIDENT REPORT ON 8Q-TMC (TWIN OTTER) COLLISION WITH SEAWALL At Male’ International Airport On 17th of May 2004]" ([https://web.archive.org/web/20170516232642/http://www.aviainfo.gov.mv/downloads/accidents/2004_01.pdf Archive]). [[Accident Investigation Coordinating Committee]]. Retrieved on April 21, 2015.</ref> The aircraft, SN 434, was written off. Subsequently, SN 434 was rebuilt by Viking Air Limited to serve as the technical demonstrator (proof of concept) aircraft for Series 400 Twin Otter development.  It flew again as a Series 400 prototype in the fall of 2008, and is currently registered as C-FDHT.
+* On 27 May 2017, a [[De Havilland Canada DHC-6 Twin Otter|De Havilland Canada DHC-6 Twin Otter Series 100]] (8Q-TMV) landed on Male's sea plane port at 08:33L (03:33Z) but tipped over to the left and came to a stop partly submerged with the nose and left wing tip below the water surface.<ref>{{Cite web|url=http://avherald.com/h?article=4a996971&opt=0|title=Accident: Trans Maldivian DHC6 at Male on May 27th 2017, tipped over on water landing|website=avherald.com|accessdate=Apr 15, 2021}}</ref>
+* On 13 November 2021, a [[De Havilland Canada DHC-6 Twin Otter|De Havilland Canada DHC-6 Twin Otter Series 100]] (8Q-MBC) struck an overwater villa at the Finolhu Hotel Resort on Baa Atoll as it was taking off for Male's sea plane port. The aircraft suffered damage to the right wing, propeller and engine while the villa had minor damage. No persons were seriously injured.<ref>{{Cite web|url= https://avherald.com/h?article=4f04c643&opt=0|title=Accident: TMA DHC6 at Finolhu on Nov 13th 2021, right wing damage during water takeoff|website=avherald.com| accessdate=Nov 17, 2021}}</ref>
+* On June 9, 2024, a [[De Havilland Canada DHC-6-300 Twin Otter]] amphibious aircraft was involved in an incident upon landing at the Westin Maldives Miriandhoo Resort.  The luxury resort is located on Dharavandhoo Island, Baa Atoll, in the Maldives. Images and videos posted on social media shortly after the event show the aircraft listing to starboard after one of its floats apparently became detached.
+
+== References ==
+{{reflist}}
+
+== External links ==
+{{commons category}}
+{{Portal|Aviation}}
+* [http://www.transmaldivian.com/ Trans Maldivian Airways]
+
+{{Airlines of the Maldives}}
+
+[[Category:Airlines of the Maldives]]
+[[Category:Airlines established in 1989]]
+[[Category:1989 establishments in the Maldives]]
+[[Category:Seaplane operators]]
+[[Category:Bain Capital companies]]

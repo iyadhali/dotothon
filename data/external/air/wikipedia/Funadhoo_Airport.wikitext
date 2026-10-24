@@ -1,0 +1,80 @@
+{{Infobox airport
+| name             = Funadhoo Airport
+| native_name      = 
+| image            = 
+| caption          = 
+| IATA             = FND<ref>{{cite web|url=https://centreforaviation.com/data/profiles/airports/funadhoo-airport-fnd|title=Funadhoo Airport Profile {{!}} CAPA|website=Center for Aviation|accessdate=December 9, 2020}}</ref>
+| ICAO             = VRCF<ref>{{cite web|url=https://caa.gov.mv/attachments/Ps1uB54nHDXtJqEUOgg6bAf4d02AwtH2t2GwpyEL.pdf|title=Maldives Civil Aviation Authority Aerodrome list|website=Civil Aviation Authority|accessdate=February 4, 2022}}</ref>
+| type             = Public
+| owner            = [[Government of Maldives]]
+| operator         = Regional Airports Company Limited<br>Ground: Island Aviation Services
+| area_served      = [[Funadhoo (Shaviyani Atoll)|Funadhoo]], [[Shaviyani Atoll]], [[Maldives]]
+| location         = <!--if different than above-->
+| elevation_f      = 6
+| website          = 
+| coordinates      = {{coord|06|09|40|N|073|17|14|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''FND'''
+| metric_rwy       = y
+| r1_number        = 02/20
+| r1_length_m      = 1,100
+| r1_surface       = Asphalt
+| footnotes        = Source: IATA,<ref>
+ {{cite web
+ | title = IATA Airport Code Search (FND: Funadhoo)
+ | url = https://www.iata.org/publications/Pages/code-search.aspx
+ | publisher = [[International Air Transport Association]]
+ | accessdate = 27 November 2019
+ }}
+</ref> Maldivian,<ref>
+ {{cite web
+ | title = Fly to Funadhoo on Maldivian
+ | url = https://maldivian.aero/destinations/funadhoo.html
+ | publisher = [[Maldivian (airline)]]
+ | accessdate = 27 November 2019
+ }}
+</ref> STV,<ref>
+ {{STV|FND|Funadhoo Airport on Search for Travel}}
+</ref>
+}}
+
+'''Funadhoo Airport''' {{Airport codes|FND|VRCF}} is a domestic airport located on the island of [[Funadhoo (Shaviyani Atoll)|Funadhoo]] in [[Shaviyani Atoll]], [[Maldives]]. The first test flight to Funadhoo airport landed on January 24, 2020. The country's national airline, [[Maldivian (airline)]] commenced scheduled direct flights to Funadhoo island in Shaviyani atoll on February 3, 2020. According to the Ministry of Transport and Civil Aviation, three flights are scheduled to land every week when operations begin at Funadhoo Airport. The scheduled flights are expected to increase to three flights a day once March 2020 reaches an end.<ref>{{Cite news |last=Zalif |first=Zunana |date=28 January 2020 |title=Maldivian to begin scheduled flights to Sh. Funadhoo |url=https://raajje.mv/70339 |access-date=28 January 2020 |work=raajje.mv}}</ref>
+
+==History==
+Funadhoo airport was long-awaited dream of people residing in [[Funadhoo (Shaviyani Atoll)|Funadhoo]] and nearby islands. Land reclamation for the airport project in Funadhoo was initially started before the Local Council Elections in July 2017, but was later halted. Six months later Maldives Transport and Contracting Company's Trailing Suction Hopper Dredger, “Mahaa Jarraaf” docked in Funadhoo on 15 January 2018, and started land reclamation for the island's airport development project.<ref>{{Cite news |date=15 January 2018 |title=Land reclamation underway for Funadhoo airport project |url=https://edition.mv/news/4926 |access-date=15 January 2018 |work=The Edition}}</ref>  The land reclamation project for Funadhoo Airport was completed on 27 March 2018.  A sum of 21 hectares of land was reclaimed from the west of the island's northern side for the development of domestic airport.<ref>{{cite web |date=28 March 2018 |title=Land reclamation completed for Funadhoo Airport |url=http://corporatemaldives.com/land-reclamation-completed-for-funadhoo-airport/ |accessdate=28 March 2018 |website=Corporate Maldives}}</ref>
+
+==Facilities==
+The airport resides at an [[elevation]] of {{convert|6|ft|0}} above [[mean sea level]]. The Funadhoo Airport has a 1,200-meter-long and 30-meter-wide runway, coupled with a 90-meter taxiway and a 150-meter-long and 50-meter wide apron,<ref>{{Cite news |last=Hussain |first=Fathimath Aruma |date=16 January 2020 |title=Funadhoo Airport to open in February |url=https://en.sun.mv/57777 |url-status=dead |archive-url=https://web.archive.org/web/20230208112747/https://en.sun.mv/57777 |archive-date=8 February 2023 |access-date=16 January 2020 |work=Sun}}</ref> 
+Surface: Asphalt,
+Strength: PCN15/F/B/X/T
+
+Construction is complete on the airport terminal building, but remains ongoing on the fire building and fire pond.
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and the airline itself are not independent sources. -->
+[[Airline]]s offering scheduled passenger service:
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]] | [[Ibrahim Nasir International Airport|Malé]]
+}}
+
+==See also==
+* [[List of airports in the Maldives]]
+* [[List of airlines of the Maldives]]
+
+==References==
+{{reflist}}
+
+==External links==
+* IATA: {{cite web|url=https://www.iata.org/en/publications/directories/code-search/|title=Search for FND on IATA web site|publisher=IATA}}
+* Geonames: {{cite web|url=https://www.geonames.org/12104814/funadhoo-airport.html|title=Funadhoo Airport on Geonames|publisher=Geonames}}
+* Google Maps: {{cite web|url=https://www.google.com/maps/place/Funadhoo+Airport/@6.1575679,73.2846694,816m/data=!3m1!1e3!4m5!3m4!1s0x3b6ca9ab3a104e6f:0x36794202c93278ec!8m2!3d6.1575679!4d73.2868581|title=Funadhoo Airport on Google Maps}}
+
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:2019 establishments in the Maldives]]
+[[Category:Airports established in 2019]]

@@ -1,0 +1,271 @@
+{{Short description|Main international airport in the Maldives}}
+{{Use British English|date=May 2014}}
+{{Use dmy dates|date=June 2026}}
+{{Infobox airport
+| name             = Malé-Velana International Airport
+| native_name      = {{Lang|dv|ވެލާނާ ބައިނަލްއަޤުވާމީ ވައިގެ ބަނދަރު}}
+| image            = VIA Logo.svg
+| image_size       = 250
+| image2           =
+| image2_size      = 250
+| IATA             = MLE
+| ICAO             = VRMM
+| type             = Public/Military
+| owner            = Government of the Maldives
+| operator         = Maldives Airports Company Limited (MACL)<ref>{{cite news|url=http://www.haveeru.com.mv/gmr/46032 |title=There will be major changes to MACL: Nazim |work=[[Haveeru Daily]] |date=8 December 2012 |access-date=21 August 2013 |url-status=dead |archive-url=https://web.archive.org/web/20130731201238/http://www.haveeru.com.mv/gmr/46032 |archive-date=31 July 2013 }}</ref>
+| area_served      = [[Malé]], Maldives
+| location         = [[Hulhulé]]
+| hub              = {{ubl
+  |  | {{nowrap|[[BeOnd]]}}
+  | {{nowrap|[[Maldivian (airline)|Maldivian]]}}
+  | {{nowrap|[[Trans Maldivian Airways]]}}
+   }}
+| elevation_f      = 6
+| website          = [https://velana.macl.aero/ velana.macl.aero]
+| coordinates      = {{coord|04|11|30|N|073|31|44|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives#Indian Ocean#Asia
+| pushpin_map_size = 105
+| pushpin_caption  = Location of Airport in [[Hulhulé]], Maldives
+| pushpin_label    = '''MLE'''/VRMM
+| mapframe         = yes
+| metric_rwy       = y
+| r1_length_m      = 3,400
+| r1_surface       = Asphalt<ref>{{cite news |url=https://edition.mv/business/6970 |title=Tarring of Maldives main airport's new runway complete |work=[[The Edition]] |date=26 August 2018 |access-date=10 November 2018 }}{{Dead link|date=July 2025 |bot=InternetArchiveBot |fix-attempted=yes }}</ref>
+| r2_number        = NR/SL
+| r2_length_m      = 1190
+| r2_surface       = Water
+| r3_number        = NC/SC
+| r3_length_m      = 1100
+| r3_surface       = Water
+| r4_number        = NL/SR
+| r4_surface       = Water
+| r4_length_m      = 1000
+| r5_number        = E/W
+| r5_surface       = Water
+| r5_length_m      = 800
+| r1_number        = 18/36
+| opened           = {{start date and age|1966|04|12|df=yes|p=n|br=n}}<ref>{{cite web |title=History of MACL |url=https://macl.aero/corporate/about/history |website=Maldives Airports Company |access-date=16 December 2022 |archive-date=20 February 2023 |archive-url=https://web.archive.org/web/20230220063454/https://macl.ae/ |url-status=dead }}</ref>
+}}
+
+'''Velana International Airport''' ('''VIA'''), also known as '''Malé-Velana International Airport''' ({{Langx|dv|ވެލާނާ ބައިނަލްއަޤުވާމީ ވައިގެ ބަނދަރު}}) {{airport codes|MLE|VRMM}} is the main [[international airport]] in the [[Maldives]]. It is located on [[Hulhulé Island]] in [[Kaafu Atoll]], nearby the capital island [[Malé]]. The airport is well connected with major airports around the world, mostly serving as the main gateway into the [[Maldives]] for tourists. It is managed financially and administratively by a state owned company known as Maldives Airports Company Limited (MACL).
+
+==History==
+[[File:Getting ready for departure (3318704401).jpg|thumb|Aircraft on both the runway and the water landing strip]]
+
+===Velana International Airport===
+The airport first started out as a small strip of land on the then inhabited [[Hulhulé Island|island of Hulhulé]]. Hulhulé Airport was opened on 19 October 1960. The first runway built on Hulhulé Island was made of slotted [[steel|steel sheets]]. This runway was {{Convert|75|×|3000|ft|abbr=on}}. The first aircraft which landed at the airport was a [[Royal New Zealand Air Force]] [[Bristol Freighter]], NZ5906,<ref>{{cite web |title=19 October 1960, Bristol Freighter, NZ5906, Hulule, First land-based aircraft to land at Hulule |url=https://www.flickr.com/photos/112125468@N06/49466273588/ |website=Flickr |date=19 October 1960 |publisher=Steve Jenks |access-date=21 September 2020}}</ref> on 19 October 1960 at 13:55hrs. The first commercial flight was an [[Air Ceylon]] flight ([[Avro 748]]; 4R-ACJ) landed on this runway was at 15:50hrs on 10 April 1962. The first aircraft owned by the Maldives landed on the runway of the Hulhulé Airport on 9 October 1974.<ref name="Maldives Airports Company Limited">{{cite web |title=History |url=http://www.airports.com.mv/History.aspx |url-status=dead |archive-url=https://web.archive.org/web/20211205162716/http://www.airports.com.mv/History.aspx |archive-date=5 December 2021 |access-date=21 August 2013 |website=Maldives Airports Company Limited}}</ref>
+
+In May 1964, the government and the people of Malé worked together to construct a new asphalt runway. The four districts of [[Malé]] competed for the prize money of 1,000 [[rufiyaa]], awarded to the fastest district. On the first day 150 volunteers were enlisted for the project and 1,563.08 rufiyaa was donated. The new runway was opened on 12 April 1966 at 16:00 by [[Ibrahim Nasir|President Ibrahim Nasir]].<ref name="Maldives Airports Company Limited"/>
+
+===Upgrade to Velana International Airport===
+Maldives Airports Company Ltd (MACL) was formed on 1 January 1994 to operate and manage the Malé International Airport. MACL is governed by the board of directors appointed by the [[President of the Maldives]].<ref>{{cite web |title=Corporate |url=http://www.airports.com.mv/Coporate.aspx |url-status=dead |archive-url=https://web.archive.org/web/20131215100130/http://www.airports.com.mv/Coporate.aspx |archive-date=15 December 2013 |access-date=21 August 2013 |website=Maldives Airports Company }}</ref>
+
+On 1 January 2017, the airport was rebranded as Velana International Airport, referring to the family house name of [[Ibrahim Nasir|President Ibrahim Nasir]]. The rebranding is part of a strategic plan in aligning the airport with the economic vision of the [[Abdulla Yameen|Yameen administration]].<ref>{{Cite news |date=27 December 2016 |title=Maldives' main airport renamed 'Velana International Airport' |url=https://maldivesindependent.com/business/maldives-main-airport-renamed-velana-international-airport-128137 |access-date=3 July 2024 |work=Maldives Independent}}</ref> India has played a crucial role as a key supporter and financier of infrastructure initiatives in the Maldives, serving as a steadfast friend. India's Line of Credit amounting to $136.6 million significantly expedited the successful completion of the Male Airport project.<ref>{{Cite news |last=Nanda |first=Prakash |date=3 May 2023 |title=India 'Shadowboxes' China In The Maldives; Looks To Knock Out Chinese Challenge In The Indian Ocean Nation |url=https://www.eurasiantimes.com/india-shadowboxes-china-in-the-maldives-looks-to-knock/ |access-date=3 July 2024 |work=The EurAsian Times |language=en-US}}</ref>
+
+===Privatisation of the airport===
+In 2010, the [[Mohamed Nasheed|Nasheed]] administration appointed IFC to run a bidding process for the privatisation of the airport. The bid was won by a consortium between [[GMR Group]] and [[Malaysia Airports]] who provided 1 billion [[rufiyaa]]<ref>{{cite news |date=24 June 2010 |title=GMR offers Rf1 billion for Male airport |url=http://www.haveeru.com.mv/english/details/31175/GMR_offers_Rf1_billion_for_Male_airport |archive-url=https://web.archive.org/web/20100628021033/http://www.haveeru.com.mv/english/details/31175/GMR_offers_Rf1_billion_for_Male_airport |archive-date=28 June 2010 |work=[[Haveeru Daily]]}}</ref> as upfront fee to the government for the expansion and modernisation of the airport by 2014, and its operation for 25 years.{{cn|date=June 2026}}
+
+By the end of the year, MACL officially handed over the aerodrome licence of the airport to the newly formed GMR Malé International Airport Ltd (GMIAL).<ref>{{cite web |date=25 November 2010 |title=GMR Group achieves financial closure of GMR Male International Airport Private Limited, Republic of Maldives and takes over operations of Male International Airport |url=http://www.gmrgroup.in/corporate/pressreleasedetail.aspx?id=242 |url-status=dead |archive-url=https://web.archive.org/web/20131215092832/http://www.gmrgroup.in/corporate/pressreleasedetail.aspx?id=242 |archive-date=15 December 2013 |access-date=21 August 2013 |website=[[GMR Group]] }}</ref><ref>{{cite news |date=26 September 2010 |title=GMR to take over airport operations after advanced payment |url=http://www.haveeru.com.mv/english/details/32504/GMR_to_take_over_airport_operations_after_advanced_payment |url-status=dead |archive-url=https://web.archive.org/web/20110617034948/http://www.haveeru.com.mv/english/details/32504/GMR_to_take_over_airport_operations_after_advanced_payment |archive-date=17 June 2011 |work=[[Haveeru Daily]]}}</ref> GMIAL announced that the development plans included [[reclaimed land|reclaiming]] more land at the eastern end of the runway; where a new terminal is to be built. This terminal would consist of three separate bridged buildings. Plans for a separate cargo terminal were also announced. However, the project faced numerous delays.<ref>{{cite news |date=13 December 2010 |title=President hopes 2011 budget will speed up development projects |url=http://www.haveeru.com.mv/english/details/33546 |url-status=dead |archive-url=https://web.archive.org/web/20130731180213/http://www.haveeru.com.mv/english/details/33546 |archive-date=31 July 2013 |access-date=21 August 2013 |work=[[Haveeru Daily]] }}</ref>
+
+In late 2012, the new government of [[Maldives]] under the [[Mohamed Waheed Hassan Maniku|Waheed]] administration declared that the concession agreement was [[void ab initio]] and on 27 November 2012 gave GMIAL a deadline of seven days to 'evict the airport',<ref>{{cite news |date=27 November 2012 |title=Maldives cabinet passes to annul GMR agreement Maldives cabinet passes to annul GMR agreement |url=http://www.haveeru.com.mv/gmr/45837 |url-status=dead |archive-url=https://web.archive.org/web/20130731193132/http://www.haveeru.com.mv/gmr/45837 |archive-date=31 July 2013 |access-date=21 August 2013 |work=[[Haveeru Daily]] }}</ref><ref>{{cite news |date=27 November 2012 |title=MACL will now operate the airport: Finance Minister |url=http://www.haveeru.com.mv/gmr/45838 |url-status=dead |archive-url=https://web.archive.org/web/20130731193347/http://www.haveeru.com.mv/gmr/45838 |archive-date=31 July 2013 |access-date=21 August 2013 |work=[[Haveeru Daily]] }}</ref> a decision which drew mass protests from the government's opposition, as well as criticism from the government and media of [[India]].<ref>{{Cite news |last=Sharma |first=Rajeev |date=5 December 2012 |title=India, Maldives Row Over Airport Contract |url=https://thediplomat.com/2012/12/india-maldives-row-over-airport-contract/ |access-date=3 July 2024 |work=[[The Diplomat (magazine)|The Diplomat]] |language=en-US}}</ref> On 7 December, GMR handed over the airport to the government, and MACL was reinstated as the operator.<ref>{{cite news |date=8 December 2012 |title=Maldives govt completes take over of airport from GMR |url=http://www.haveeru.com.mv/gmr/46028 |url-status=dead |archive-url=https://web.archive.org/web/20130731195411/http://www.haveeru.com.mv/gmr/46028 |archive-date=31 July 2013 |access-date=21 August 2013 |work=[[Haveeru Daily]] }}</ref>
+
+=== Expansion of the airport ===
+On 18 September 2018, the airport finished a new runway. It is {{Convert|3400|m|4=0}} long and {{Convert|60|m|4=0}} wide, built to serve larger aircraft.<ref>{{Cite news |date=9 September 2019 |title=Velana International Airport opens new runway |url=https://www.chinadaily.com.cn/a/201809/19/WS5ba1b6dba31033b4f4656e59_1.html |access-date=3 August 2024 |work=[[China Daily]]}}</ref><ref name="Airport Technology">{{Cite web |date= |title=Velena International Airport Expansion Project, Maldives |url=https://www.airport-technology.com/projects/velena-international-airport-expansion/ |access-date=18 May 2020 |website=Airport Technology |language=en-GB}}</ref> The new runway was only used as a taxiway until 2022, when the old [[Trans Maldivian Airways]] seaplane terminal - too close to the new runway, and considered a potential hazard under international standards - was finally demolished.<ref>{{Cite web |date=2 February 2022 |title=Maldives airport doubles capacity with new runway |url=https://hotelinsidermv.com/2022/02/02/maldives-airport-doubles-capacity-with-new-runway/ |access-date=20 May 2022 |website=Hotel Insider |language=en-US |archive-date=26 May 2022 |archive-url=https://web.archive.org/web/20220526181621/https://hotelinsidermv.com/2022/02/02/maldives-airport-doubles-capacity-with-new-runway/ |url-status=dead }}</ref> Although the new runway was inaugurated on 5 September 2018 by then president of Maldives, [[Yameen Abdul Gayoom]], it was not in use for scheduled flights for 4 years from then until the runway was fully ready.<ref>{{Cite web |title=Velana International Airport has temporarily started using the new runway as a parallel taxiway. |url=https://www.routesonline.com/airports/14252/maldives-airports-company-limited/news/297487/velana-international-airport-has-temporarily-started-using-the-new-runway-as-a-parallel-taxiway/ |access-date=20 May 2022 |website=Routes |date=3 February 2022 |language=en-GB}}</ref><ref name="Avas-2022">{{Cite news |date=6 October 2022 |title=New runway, seaplane terminal open at main int'l airport |url=https://avas.mv/en/123170 |access-date=3 August 2024 |work=Avas}}</ref>
+
+On 26 June 2019, a [[Maldivian (airline)|Maldivian]] [[Airbus A320]] successfully tested the new southwest apron at Velana International Airport. This was the first live flight operation testing by Maldives Airports Company as they awaited final certification for operations. On 17 July 2019, the new apron was opened for flight operations. The [[ICAO]] fully compliant apron has three Code E MARS stands, two dedicated Code E stands and one dedicated Code C stand.{{cn|date=June 2026}}
+
+On 6 October 2022, a new Seaplane Terminal was opened.<ref>{{Cite news |last=Zalif |first=Zunana |date=6 October 2022 |title=Largest seaplane terminal in the world - 'Noovilu Seaplane Terminal' inaugurated |url=https://raajje.mv/124604 |access-date=3 August 2024 |work=[[Raajje TV]]}}</ref> The terminal was developed by China's [[Beijing Urban Construction Group]] (BUCG) at a cost of US$55 million. In the world's largest seaplane operation, the new terminal and dock can accommodate more than 100 seaplanes and operate 300 daily flights on average rising to 600 during peak season with the capacity to serve more than 6,000 tourists a day. With {{Convert|28000|m2|4=0}} of floor space, the four-storey terminal building includes offices, arrival lobbies, and 42 lounges, most of which are dedicated for resorts aside from the MACL's VIP and business lounges.<ref>{{cite web |title=New Maldives seaplane terminal ready for opening |url=https://hotelinsidermv.com/2022/07/11/new-maldives-seaplane-terminal-ready-for-opening/ |website=Hotel Insider |date=11 July 2022 |access-date=7 October 2022 |archive-date=7 October 2022 |archive-url=https://web.archive.org/web/20221007064347/https://hotelinsidermv.com/2022/07/11/new-maldives-seaplane-terminal-ready-for-opening/ |url-status=dead }}</ref>
+
+The foundation work of the new passenger terminal being constructed at the airport was completed as of December 2019.<ref>{{Cite news |date=17 December 2019 |title=The Foundation Work of the New Passenger Terminal Constructed at Velana International Airport is Completed |url=https://avas.mv/en/74991 |access-date=3 August 2024 |work=Avas}}</ref> The new passenger terminal is being developed at the south of the current international terminal and will have an area of over {{Convert|78000|m2|4=0}}.<ref>{{Cite web |title=New International Passenger Terminal Building |url=https://macl.aero/development/ongoing/1 |access-date=3 August 2024 |website=Maldives Airports Company Limited |archive-date=15 August 2021 |archive-url=https://web.archive.org/web/20210815004819/https://macl.aero/development/ongoing/1 |url-status=dead }}</ref> The current terminal was designed to serve 1 million passengers per year while the new terminal will have the capacity to serve 7.5 million passengers per year.<ref>{{cite web |title=New Terminal at Velana International Airport to Open on July 26 |url=https://themaldivesjournal.com/82050#:~:text=Maldives%20Airports%20Company%20Limited%20(MACL,to%207%20million%20passengers%20annually. |website=themaldivesjournal.com |access-date=9 July 2025}}</ref> Expected completion time of the new terminal is by 2025 and will cost about US$600 million.<ref name="The Edition">{{cite web |title=Velana Airport's new terminal to open on Independence Day |url=https://edition.mv/business/42192 |website=The Edition |access-date=9 July 2025}}</ref> The project was contracted to the [[Saudi Bin Laden Group]] in 2016.<ref name="The Edition"/> The new Terminal is slated for early opening by 26 July 2025, later becoming fully operational by Mid to Late-2025.<ref name="Airport Technology" /><ref>{{Cite news |date=21 May 2022 |title=Facade and roofing works to begin at new passenger terminal of VIA |url=https://psmnews.mv/en/103051 |access-date=3 August 2024 |work=[[PSM News]]}}</ref><ref>{{Cite news |last=Shahid |first=Malika |date=22 December 2022 |title=VIA new terminal expected to be complete in 2025 |url=https://edition.mv/business/26599 |access-date=3 August 2024 |work=[[The Edition]] |archive-date=1 November 2023 |archive-url=https://web.archive.org/web/20231101134027/https://edition.mv/business/26599 |url-status=dead }}</ref><ref>{{Cite news |date=28 November 2024 |title=Velana International Airport's New Terminal opening rescheduled to July 2025 |url=https://www.aviatorsmaldives.com/post/40080 |access-date=28 November 2024 |work=Aviators Maldives}}</ref> The new terminal has been funded by the government since 2016 from the [[Abdulla Yameen|Yameen administration]], [[Ibrahim Mohamed Solih|Solih administration]], and the [[Mohamed Muizzu|Muizzu administration]].<ref>{{Cite news |last=Naish |first=Ahmed |date=4 August 2025 |title=Nine years, three presidents and US$ 1 billion later: the Maldives airport saga explained |url=https://maldivesindependent.com/explainer/nine-years-three-presidents-and-us-1-billion-later-the-maldives-airport-saga-explained-d0b3 |access-date=7 August 2025 |work=[[Maldives Independent]]}}</ref> The expansion project also includes the construction of a cargo terminal and a fuel farm that is expected to be completed in 2020. The current cargo terminal permits the handling of 50,000 tonnes of cargo per year, the new terminal is expected to process 120,000 tonnes of cargo per year. The new fuel farm area is three times larger than the current fuel farm, while the current fuel storage capacity of the entire airport is 15,000 metric tonnes, the fuel storage capacity at the airport would reach 45,000 metric tonne by the end of the project. Under this project, an {{Convert|8.4|km|adj=on}} fuel hydrant has been installed under the airport to fuel aircraft. After the system is implemented, fuel trucks will no longer be needed to fuel aircraft, improving safety and shortening service time for the airlines.<ref name="Airport Technology" /><ref>{{Cite news |date=24 May 2022 |title=New fuel farm, cargo terminal to come into operation this year |url=https://psmnews.mv/en/103195 |access-date=3 August 2024 |work=[[PSM News]]}}</ref><ref>{{Cite news |date=16 August 2019 |title=MACL conducts tests on new fuel tanks at Velana Airport |url=https://avas.mv/en/68455 |access-date=3 August 2024 |work=Avas}}</ref>
+
+The new runway became operational by 6 October 2022, with a [[Boeing 777]] operated by [[Emirates (airline)|Emirates]] from [[Dubai International Airport|Dubai]], [[UAE]], landing on the new runway, with the existing runway being converted into a permanent taxiway, as TMA finished moving to the new seaplane terminal by August 2022. The old runway was closed by a departing [[Turkish Airlines]] [[Airbus A330]] bound for [[Istanbul Airport|Istanbul]], [[Turkey]].<ref>{{cite web |date=13 August 2022 |title=Velana International Airport's New Runway Will Become Operational From 6th October |url=https://www.aviatorsmaldives.com/post/869223415 |access-date=13 August 2022 |website=Aviators Maldives}}</ref> The runway was developed by the BUCG at a cost of US$452 million. With the operationalization of the new runway, the waiting time between landing flights will be decreased from 15 minutes to 3 minutes. The previous runway only accommodated 8 flights per hour, while the new runway can accommodate 21 flights per hour.<ref name="Avas-2022" />
+
+In July 2025, the new terminal of the airport was officially opened.<ref>{{Cite news |last=Zalif |first=Zunana |date=28 July 2025 |title=New VIA terminal launches operations exclusively with Maldivian flights |url=https://raajje.mv/168585 |access-date=29 July 2025 |work=[[Raajje TV]]}}</ref> The terminal was officially inaugurated by president [[Mohamed Muizzu]].<ref>{{Cite web |date=26 July 2025 |title=President inaugurates new terminal at Velana International Airport |url=https://presidency.gov.mv/Press/Article/34426 |access-date=7 August 2025 |website=[[The President's Office]]}}</ref> The ceremony included a [[firework show]] which landed the airport a [[Guinness World Record]] for ""Most Venues Performing Ceremonies and a Choreographed Fireworks Display".<ref>{{Cite news |last=Thaufeeq |first=Shazma |date=27 July 2025 |title=VIA fireworks show enters Guinness World Records |url=https://edition.mv/news/42967 |access-date=29 July 2025 |work=[[The Edition]]}}</ref>
+
+==Facilities==
+The airport is at an elevation of {{convert|6|ft|}} above [[mean sea level]]. It has a single [[Asphalt concrete|asphalt]] [[runway]] designated 18/36 measuring {{Convert|60|×|3400|m|abbr=on}}. The adjacent waterdrome which serves the large seaplane operations at Velana has 4 water runways, designated NR/SL, NC/SC, NL/SR and E/W, measuring {{Convert|60|×|1190|m|abbr=on}}, {{Convert|60|×|1100|m|abbr=on}}, {{Convert|60|×|1000|m|abbr=on}} and {{Convert|60|×|800|m|abbr=on}} respectively.<ref>{{cite web|url = http://www.icao.int/APAC/Meetings/2014%20waterAerodromes/WP1%20-%20regulatory%20req%20for%20water%20ad%20ops.pdf|title = Regulatory requirements for water aerodrome operations in the maldives|date = 2 June 2014|access-date = 6 February 2014|website = ICAO}}</ref> Runway NL is takeoff only and runway SR is landing only due to proximities to flying restricted areas.{{cn|date=June 2026}}
+
+The airport has three terminals: the International Terminal, the Domestic Terminal and the waterdrome Seaplane Terminal.{{cn|date=June 2026}}
+
+The airport includes the corporate headquarters of [[Trans Maldivian Airways]].<ref>{{Cite web |title=Contact us |url=https://www.transmaldivian.com/contact-us/ |access-date=3 August 2024 |website=[[Trans Maldivian Airways]] |quote=Velana International Airport, P.O. Box 2023, Male’, Republic of Maldives}}</ref>
+
+==Airlines and destinations==
+<!-- WHEN ADDING A NEW ROUTE, OR ADDING AN END DATE FOR A ROUTE PLEASE ADD AN INDEPENDENT REFERENCE, ALSO ADD THE ROUTE AND LINK ON THE CORRESPONDING AIRPORTS ARTICLE AND THE AIRLINES ARTICLE IF IT IS A NEW DESTINATION, ANYTHING WHICH IS NOT REFERENCED WILL BE REMOVED. ALSO WHEN ADDING A NEW ROUTE, A FIRM DATE IS MANDATORY.-->
+
+===Passenger===
+{{Airport-dest-list
+<!--AEROROUTES IS NOT A RELIABLE SOURCE AND SHOULD NOT BE USED. -->
+<!-- -->
+| [[Air Arabia]] | [[Sharjah International Airport|Sharjah]]<ref>{{cite news |title=Air Arabia marks its first non-stop flight to the Maldives |url=https://aviationweek.com/air-transport/airports-networks/air-arabia-marks-its-first-non-stop-flight-maldives |access-date=9 August 2026 |date=28 October 2024}}</ref>
+<!-- -->
+| [[Air Astana]] | '''Seasonal:''' [[Almaty International Airport|Almaty]]<ref>{{cite web |url=https://www.aviationpros.com/aircraft/commercial-airline/press-release/21238252/air-astana-air-astana-resumes-flights-to-the-maldives|title=Air Astana resumes flights to the Maldives|publisher=AviationPros|date=14 September 2021|accessdate=2 February 2025}}</ref> <br/> '''Seasonal charter:''' [[Nursultan Nazarbayev International Airport|Astana]]<ref>{{cite web|url=https://kz.kursiv.media/2025-07-15/lgtn-astana-maldivy-uletet-napryamuyu/ |title=Air Astana is launching direct flights from Astana to the Maldives|date=15 July 2025 |access-date=16 July 2025}}</ref>
+<!-- -->
+| [[Air France]] | '''Seasonal:''' [[Paris–Charles de Gaulle]]<ref>{{cite web |url=https://www.aviation24.be/airlines/air-france-klm-group/air-france/air-france-expands-winter-2024-2025-schedule-with-new-routes-to-brazil-salvador-maldives-male-and-sweden-kiruna/|title=Air France expands Winter 2024-2025 schedule with new routes to Brazil (Salvador), Maldives (Male), and Sweden (Kiruna)|publisher=Aviation24|date=17 May 2024|accessdate=2 February 2025}}</ref>
+<!-- -->
+| [[AirAsia]] | [[Kuala Lumpur–International]]<ref>{{cite web|url=https://www.tatlerasia.com/lifestyle/travel/airasia-maldives-male|title=Paradise is within reach with AirAsia with their frequent flights to the Maldives|date=24 February 2026|access-date=14 July 2026}}</ref>
+<!-- -->
+| [[Azerbaijan Airlines]] | [[Heydar Aliyev International Airport|Baku]] (resumes 26 October 2026)<ref>{{cite web|title=Airlines with direct flights from Male (MLE) to Baku (GYD)|url=https://www.flightsfrom.com/MLE-GYD|website=www.flightsfrom.com}}</ref>
+<!-- -->
+| [[Batik Air Malaysia]] | [[Kuala Lumpur–International]]<ref name="KualaBatik">{{cite news |last1=Casey |first1=David |title=Batik Air Malaysia Extends Network With South Korea, Maldives Routes |url=https://aviationweek.com/air-transport/airports-networks/batik-air-malaysia-extends-network-south-korea-maldives-routes |access-date=9 August 2026 |date=31 March 2023}}</ref>
+<!-- -->
+| {{nowrap|[[Beijing Capital Airlines]]}} | [[Beijing Daxing International Airport|Beijing–Daxing]]<ref>{{cite web |url=https://www.directflights.com/PKX-MLE|title=Direct flights from Beijing to Male|website=www.directflights.com}}</ref>
+<!-- -->
+| [[BeOnd]] |  [[Al Maktoum International Airport|Dubai–Al Maktoum]],<ref>{{cite news |last1=Skirka |first1=Hayley |title=Dubai to the Maldives: What it's like to fly on world's first premium leisure airline |url=https://www.thenationalnews.com/travel/2024/10/15/beond-airlines-flight-review/ |access-date=9 August 2026 |work=The National |date=16 October 2024 |language=en}}</ref> [[Milan Malpensa Airport|Milan–Malpensa]],<ref name="MilanBeond">{{cite news |last1=Legnani |first1=Matteo |title=BeOnd changes course: from Malpensa now flies all-Business to the Red Sea (Saudi shore) |url=https://www.theflightclub.it/en/2025/11/beond-marrosso-allbusiness/ |access-date=9 August 2026 |work=The Flight Club |date=13 November 2025}}</ref> [[Munich Airport|Munich]],<ref name="MilanBeond"/> [[Red Sea International Airport|Red Sea]],<ref>{{cite web |url=https://onemileatatime.com/news/beond-airlines-red-sea-flights/|title=Beond Airlines Launches Quirky Flights To Red Sea, Saudi Arabia |date=11 November 2025 |website=onemileatatime.com}}</ref> [[Zurich Airport|Zurich]]<ref name="beond1">{{cite web|url=https://onemileatatime.com/news/beond-airlines/|title=Beond, New All-Business Class Maldivian carrier to start operations from November 2023 and releases first routes|website = One Mile At A Time|date=11 October 2023 |access-date=12 October 2023}}</ref>
+<!-- -->
+| [[British Airways]] | [[London–Heathrow]]<ref>{{cite news |last1=Lassetter |first1=Jon |title=New Route of the Day (22 October 2023): Virgin Atlantic between London LHR and Malé |url=https://airserviceone.com/new-route-of-the-day-22-october-2023-virgin-atlantic-between-london-lhr-and-male |access-date=9 August 2026 |work=Air Service One |date=24 October 2023}}</ref>
+<!-- -->
+| [[Centrum Air]] | [[Islam Karimov Tashkent International Airport|Tashkent]]<ref>{{cite news |title=Centrum Air To Launch Direct Tashkent-Male' Flights Starting November 30 |url=https://www.aviatorsmaldives.com/post/20348 |access-date=9 August 2026 |work=Aviators Maldives |date=20 November 2025 |language=en}}</ref>
+<!-- -->
+| [[China Eastern Airlines]] | [[Kunming Changshui International Airport|Kunming]],<ref>{{cite news |title=China Eastern Airlines Resumes Direct Flights from Kunming to Maldives |url=https://hoteliermaldives.com/china-eastern-airlines-resumes-direct-flights-from-kunming-to-maldives |access-date=9 August 2026 |work=Hotelier Maldives |date=29 February 2024}}</ref> [[Shanghai Pudong International Airport|Shanghai–Pudong]]<ref>{{cite news |last1=Tozer-Pennington |first1=Victoria |title=China Southern On A Strong Recovery Path {{!}} Aviation News Online |url=https://aviationnews-online.com/public/article/china-southern-on-a-strong-recovery-path |access-date=9 August 2026 |work=Airline Economics Ltd |date=20 March 2023 |language=en}}</ref>
+<!-- -->
+| [[Chongqing Airlines]] | [[Bandaranaike International Airport|Colombo–Bandaranaike]]<ref>{{cite news |title=Chongqing to Launch Its First Fifth Freedom Flight to Colombo and Male in June |url=https://aviationvoice.lk/chongqing-to-launch-its-first-fifth-freedom-flight-to-colombo-and-male-in-june/ |access-date=9 August 2026 |work=Aviation Voice |date=20 April 2024}}</ref>
+<!-- -->
+| [[Discover Airlines]] | [[Frankfurt Airport|Frankfurt]]<ref>{{cite news |title=Discover Airlines Resumes Frankfurt–Malé Flights with Two Weekly Services |url=https://corporatemaldives.com/discover-airlines-resumes-frankfurt-male-flights-with-two-weekly-services/ |access-date=9 August 2026 |work=Corporate Maldives |date=14 December 2025 |language=en}}</ref>
+<!-- -->
+| [[Edelweiss Air]] | [[Zurich Airport|Zurich]]<ref>{{cite news |title=Edelweiss eyes A350 deployment, boosts winter 2025/ 26 nonstop services to Colombo and Male |url=https://aviationvoice.lk/edelweiss-eyes-a350-deployment-boosts-winter-2025-26-nonstop-services-to-colombo-and-male/ |access-date=9 August 2026 |work=Aviation Voice |date=15 May 2025}}</ref>
+<!-- -->
+| [[Emirates (airline)|Emirates]] | [[Dubai International Airport|Dubai–International]]<ref>{{cite news |last1=Shukla |first1=Shweta |title=Emirates to Resume Flights to These 16 Destinations; 4 Remain Cancelled |url=https://aviationa2z.com/index.php/2026/04/27/emirates-to-resume-flights-to-these-16-destinations/ |access-date=9 August 2026 |work=Aviation A2Z |date=27 April 2026}}</ref>
+<!-- -->
+| [[Etihad Airways]] | [[Abu Dhabi International Airport|Abu Dhabi]]<ref>{{cite news |last1=Aldah |first1=Hind |title=UAE airlines expand flights to over 250 destinations: Here's the full list |url=https://www.khaleejtimes.com/business/aviation/uae-airlines-expand-flights-to-over-250-destinations-heres-the-full-list |access-date=9 August 2026 |work=Khaleej Times |date=30 March 2026 |language=en}}</ref>
+<!-- -->
+| [[FitsAir]]| [[Bandaranaike International Airport|Colombo–Bandaranaike]]<ref>{{cite news |title=FitsAir launches direct flights on Colombo-Dhaka route |url=https://www.tbsnews.net/economy/corporates/fitsair-launches-direct-flights-colombo-dhaka-route-823101 |access-date=9 August 2026 |work=The Business Standard |date=4 April 2024 |language=en}}</ref>
+<!-- -->
+| [[Flydubai]] | [[Bandaranaike International Airport|Colombo–Bandaranaike]],<ref name="DubaiFlydubai"/> [[Dubai International Airport|Dubai–International]]<ref name="DubaiFlydubai">{{cite news |last1=Mil |first1=Seb |title=Flydubai Boeing 737 MAX 8 damaged upon arrival in Maldives this morning |url=https://airlive.net/incident/2025/12/04/flydubai-boeing-737-max-8-damaged-upon-arrival-in-maldives-this-morning/ |access-date=9 August 2026 |work=AIRLIVE |date=4 December 2025}}</ref>
+<!-- -->
+| [[Flynas]] | [[King Khalid International Airport|Riyadh]]<ref>{{cite news |last1=Ahmed |first1=Fathimath Saya |title=Flynas launches direct flights to Maldives |url=https://adhadhu.com/39141 |access-date=9 August 2026 |date=9 August 2026 |language=en}}</ref>
+<!-- -->
+| [[French Bee]] | '''Seasonal:''' [[Bandaranaike International Airport|Colombo–Bandaranaike]],<ref name="FrenchBee"/> [[Paris–Orly]] (begins 19 December 2026)<ref name="FrenchBee">{{cite news |title=French bee Launches Maldives And Sri Lanka Flights From Paris |access-date=20 June 2026 |url=https://www.rustourismnews.com/2026/06/19/french-bee-launches-maldives-and-sri-lanka-flights-from-paris/ |work=RusTourismNews}}</ref>
+<!-- -->
+| [[Greater Bay Airlines]] | [[Hong Kong International Airport|Hong Kong]]<ref>{{cite news |title=GBA: Lunar New Year flights to the Maldives - TTR Weekly |url=https://www.ttrweekly.com/site/2025/11/gba-lunar-new-year-flights-to-the-maldives/ |access-date=9 August 2026 |work=TTR Weekly |date=2 November 2025}}</ref>
+<!-- -->
+| [[Gulf Air]] | [[Bahrain International Airport|Bahrain]],<ref>{{cite news |last1=Saeed |first1=Zarya |title=Gulf Air moves operations to VIA Terminal 1 |url=https://en.mmtv.mv/6325 |access-date=9 August 2026 |work=MM |date=7 October 2025 |language=en}}</ref> [[Bandaranaike International Airport|Colombo–Bandaranaike]]<ref name="KualaBatik"/>
+<!-- -->
+| [[Hong Kong Airlines]] | '''Seasonal:''' [[Hong Kong International Airport|Hong Kong]]<ref>{{cite news |title=Hong Kong Airlines resumes Maldives flights {{!}} Atoll Times |url=https://atolltimes.mv/post/business/7351 |access-date=9 August 2026 |date=19 January 2024 |language=en}}</ref>
+<!-- -->
+| [[IndiGo]] | [[Kempegowda International Airport|Bengaluru]],<ref name="BengaluruIndiGo">{{cite news |title=IndiGo to start direct flights between Maldives-Trivandrum |url=https://edition.mv/business/44547?ref=tagpage-latest |access-date=9 August 2026 |date=25 September 2025 |language=en}}</ref> [[Cochin International Airport|Cochin]],<ref>{{cite news |title=IndiGo to Launch Direct Flights Between Malé and Trivandrum Next Month |url=https://mbr.mv/story/fc253953-76cf-452f-868f-f00ba38e94e5 |access-date=9 August 2026 |work=Maldives Business Review |date=26 September 2025 |language=en}}</ref> [[Indira Gandhi International Airport|Delhi–Indira Gandhi]],<ref>{{cite news|title=Delhi-Male Direct Flight by Indigo Restarts Operations From Nov 1, Details Here|url=https://www.news18.com/auto/delhi-male-direct-flight-by-indigo-restarts-operations-from-nov-1-details-here-8570664.html|work=News18|date=9 September 2023|access-date=10 September 2023|language=en}}</ref> [[Cochin International Airport|Kochi]],<ref name="BengaluruIndiGo"/> [[Chhatrapati Shivaji Maharaj International Airport|Mumbai–Shivaji]],<ref name="MumbaiIndiGo">{{cite news |title=IndiGo to start direct flights between Maldives-Trivandrum |url=https://edition.mv/business/44547?ref=tagpage-latest |access-date=9 August 2026 |date=25 September 2025 |language=en}}</ref> [[Thiruvananthapuram International Airport|Thiruvananthapuram]]<ref>{{Cite web|title=IndiGo launches Daily Flights between Thiruvananthapuram and Malé in Maldives|url=https://www.traveldailymedia.com/indigo-launches-daily-flights-between-thiruvananthapuram-and-male-in-maldives/|website=Travel Daily Media|date=26 September 2025 |access-date=26 September 2025}}</ref> <br/> '''Seasonal:''' [[Rajiv Gandhi International Airport|Hyderabad]]<ref>{{cite news |last1=Sengupta |first1=Joy |title=IndiGo to resume direct flights between Hyderabad and Male |url=https://hospitality.economictimes.indiatimes.com/news/travel/indigo-to-resume-direct-flights-between-hyderabad-and-male/103504886 |access-date=9 August 2026 |date=8 September 2023 |language=en}}</ref>
+<!-- -->
+| [[ITA Airways]] | '''Seasonal:''' [[Rome–Fiumicino]]<ref>{{cite news |title=ITA Airways marks 3 years of operations; plans Star Alliance entry in 2026, stronger Network |url=https://www.traveltrendstoday.in/ita-airways-marks-3-years-of-operations-plans-star-alliance-entry-in-2026-stronger-network |access-date=9 August 2026 |work=Travel Trends Today |date=9 December 2025 |language=en}}</ref>
+<!-- -->
+| [[LOT Polish Airlines]] | '''Seasonal charter:''' [[Warsaw Chopin Airport|Warsaw]]<ref>{{cite news |title=Lot Polish Airlines resumes charter flights to the Maldives |url=https://psmnews.mv/en/112120 |access-date=9 August 2026 |date=14 November 2022 |language=en}}</ref>
+<!-- -->
+| [[Malaysia Airlines]] | [[Kuala Lumpur–International]]<ref>{{cite web |url=https://www.malaymail.com/news/malaysia/2024/03/22/malaysia-airlines-introduces-new-routes-to-maldives-chiang-mai-and-da-nang-tickets-on-sale-today/124909|title=Malaysia Airlines introduces new routes to Maldives, Chiang Mai and Da Nang, tickets on sale today|work=MalayMail|date=22 March 2024 |accessdate=23 March 2024}}</ref>
+<!-- -->
+| [[Maldivian (airline)|Maldivian]] | [[Cochin International Airport|Cochin]],<ref>{{cite news |last1=Malsa |first1=Mariyam |title=188 Maldivians evacuated from Cochin |url=https://edition.mv/news/15983?ref=article-related |access-date=9 August 2026 |date=7 April 2020 |language=en}}</ref> [[Dharavandhoo Airport|Dharavandhoo]],<ref name="IfuruMaldivian"/> [[Faresmaathodaa Airport|Faresmaathodaa]],<ref name="IfuruMaldivian"/> [[Funadhoo Airport|Funadhoo]],<ref name="IfuruMaldivian"/> [[Fuvahmulah Airport|Fuvahmulah]],<ref>{{cite news |last1=Fathuhy |first1=Aishath |title=Five Additional Flights Scheduled from Malé to Fuvahmulah Coinciding with Eid Holidays |url=https://aonews.mv/en/post-5553 |access-date=9 August 2026 |work=AO News |date=18 June 2023 |language=dv}}</ref> [[Gan International Airport|Gan]],<ref name="IfuruMaldivian"/> [[Hanimaadhoo International Airport|Hanimaadhoo]],<ref>{{cite news |title=Air India, Maldivian sign interline pact to make your next holiday to Maldives easier |url=https://economictimes.indiatimes.com/nri/visit/air-india-maldivian-sign-interline-pact-to-make-your-next-holiday-to-maldives-easier/articleshow/125783907.cms |access-date=9 August 2026 |work=The Economic Times |date=5 December 2025}}</ref> [[Hoarafushi Airport|Hoarafushi]],<ref name="IfuruMaldivian"/> [[Ifuru Airport|Ifuru]],<ref name="IfuruMaldivian">{{cite news |title=Emirates, Maldivian establish interline partnership {{!}} Atoll Times |url=https://atolltimes.mv/post/business/5513 |access-date=9 August 2026 |date=14 September 2023 |language=en}}</ref> [[Kaadedhdhoo Airport|Kaadehdhoo]],<ref name="IfuruMaldivian"/> [[Kadhdhoo Airport|Kadhdhoo]],<ref name="IfuruMaldivian"/> [[Kooddoo Airport|Kooddoo]],<ref name="KooddooMaldivian">{{cite news |title=Air India, Maldivian sign interline pact to make your next holiday to Maldives easier |url=https://economictimes.indiatimes.com/nri/visit/air-india-maldivian-sign-interline-pact-to-make-your-next-holiday-to-maldives-easier/articleshow/125783907.cms |access-date=9 August 2026 |work=The Economic Times |date=5 December 2025}}</ref> [[Kulhudhuffushi Airport|Kulhudhuffushi]]<ref>{{cite news |title=Flight to Kulhudhuffushi returns to Male' after being unable to land |url=https://oneonline.mv/en/107373 |access-date=9 August 2026 |work=One Online |date=15 June 2025 |language=en}}</ref> [[Madivaru Airport|Madivaru]]<ref>{{cite news |title=New domestic airport opens in the Maldives - TravelMole |url=https://travelmole.com/news/new-domestic-airport-opens-in-the-maldives |access-date=9 August 2026 |date=1 February 2022 |language=en}}</ref> [[Maafaru International Airport|Maafaru]],<ref name="IfuruMaldivian"/> [[Maavarulu Airport|Maavarula]],<ref name="IfuruMaldivian"/> [[Muli Airport|Muli]],<ref>{{cite news |last1=Shaaleen |first1=Aishath |title=Maldivian to begin commercial flights to Muli on May 17 |url=https://en.mmtv.mv/3758 |access-date=9 August 2026 |work=MM |date=10 May 2025 |language=en}}</ref> [[Thimarafushi Airport|Thimarafushi]],<ref name="IfuruMaldivian"/> [[Thiruvananthapuram International Airport|Thiruvananthapuram]]<ref>{{cite news |last1=Shahid |first1=Malika |title=Maldivian Airline increases flights to Trivandrum |url=https://edition.mv/rcc/34660 |access-date=9 August 2026 |date=16 July 2024 |language=en}}</ref> <br/> '''Seasonal:''' [[Bangkok–Suvarnabhumi]],<ref>{{cite news |last1=Shahid |first1=Malika |title=Maldivian to operate special to Bangkok for school holidays |url=https://edition.mv/business/50696?ref=article-related |access-date=9 August 2026 |date=6 May 2025 |language=en}}</ref> [[Shenzhen Bao'an International Airport|Shenzhen]],<ref>{{cite news |last1=Mohamed |first1=Mariyath |title=Maldivian's inaugural flight to Shenzhen, China is set to depart tonight |url=https://edition.mv/business/42411?ref=home-latest |access-date=9 August 2026 |date=7 July 2025 |language=en}}</ref> [[Xi'an Xianyang International Airport|Xi'an]]<ref>{{cite web|title=Routes & Networks Latest: Rolling Daily Updates (W/C Jan. 26, 2026)|url=https://aviationweek.com/air-transport/airports-networks/routes-networks-latest-rolling-daily-updates-wc-jan-26-2026#:~:text=Maldivian%20has%20scheduled%20a%20new,runs%20from%20April%2014%2D16.|website=Aviation Week|access-date=28 January 2026}}</ref> <br/> '''Seasonal charter:''' [[Melbourne Airport|Melbourne]]<ref>{{cite web|url=https://travelweekly.com.au/luxury-escapes-to-launch-first-ever-direct-flights-from-australia-to-the-maldives/|title=Luxury Escapes to launch first-ever direct flights from Australia to the Maldives|date=19 December 2025|website=travelweekly.com.au}}</ref>
+<!-- -->
+| [[Manta Air]] | [[Dhaalu Airport|Dhaalu]],<ref>{{cite news |last1=Kaur |first1=Lavpreet |title=Maldives-based Manta Air to connect India to Dhaalu from March 1 |url=https://www.thehindu.com/news/cities/bangalore/maldives-based-manta-air-to-connect-india-to-dhaalu-from-march-1/article67854581.ece |access-date=9 August 2026 |work=The Hindu |date=17 February 2024 |language=en-IN}}</ref> [[Dharavandhoo Airport|Dharavandhoo]]<ref>{{cite news |title=Manta Air Operates First Seaplane Flight with All-Female Crew |url=https://corporatemaldives.com/manta-air-operates-first-seaplane-flight-with-all-female-crew |access-date=9 August 2026 |work=Corporate Maldives |date=9 January 2022 |language=en}}</ref>
+<!-- -->
+| [[Neos (airline)|Neos]] | '''Seasonal:''' [[Rome–Fiumicino]],<ref>{{cite news |title=Ita vola alle Maldive. E la vendita si avvicina |url=https://www.lagenziadiviaggimag.it/ita-vola-alle-maldive-e-la-vendita-si-avvicina |access-date=9 August 2026 |work=L'Agenzia di Viaggi Magazine |date=6 July 2022 |language=it-IT}}</ref> [[Verona Villafranca Airport|Verona]]<ref name="VeronaNeos">{{cite news |last1=Legnani |first1=Matteo |title=Upgrade for Neos passengers in the Maldives: it is the first Italian airline to use the new terminal in Malé |url=https://www.theflightclub.it/en/2025/12/neos-maldives-new-terminal |access-date=9 August 2026 |work=The Flight Club |date=10 December 2025}}</ref> <br /> '''Seasonal charter:''' [[Václav Havel Airport Prague|Prague]],<ref>{{cite web|url=https://pelipecky.cz/exoticke-novinka-maledivy-primym-letem-z-prahy-dovolenkuj-v-raji-jeste-pohodlneji/|title=Exotická novinka: Maledivy přímým letem z Prahy. Dovolenkuj v ráji ještě pohodlněji|publisher=pelipecky.cz|date=28 July 2025|accessdate=4 August 2025}}</ref> [[Warsaw–Chopin]]<ref name="VeronaNeos"/>
+<!-- -->
+| [[Qatar Airways]] | [[Hamad International Airport|Doha]]<ref>{{cite news |title=Qatar Airways to resume flights to the Maldives in April |url=https://visitmaldives.com/en/news/qatar-airways-to-resume-flights-to-the-maldives-in-april |access-date=9 August 2026 |work=visitmaldives |date=30 March 2026 |language=en}}</ref>
+<!-- -->
+| [[S7 Airlines]] | [[Tolmachevo Airport|Novosibirsk]] (begins {{date|2026-10-30}})<ref>{{cite web |title=S7 Airlines открыла продажи билетов на рейсы из Новосибирска на Мальдивы |url=https://www.s7.ru/ru/news/S7-Airlines-otkryla-prodazhi-biletov-na-reysy-iz-novosibirska-na-maldivy/ |website=S7.ru |publisher=S7 Airlines |access-date=6 July 2026|language=ru}}</ref>
+<!-- -->
+| [[Saudia]] | [[King Abdulaziz International Airport|Jeddah]],<ref>{{cite news |last1=Garcia |first1=Marisa |title=Saudia receives its 1st Airbus A321XLR aircraft |url=https://aerospaceglobalnews.com/news/saudia-first-airbus-a321xlr-delivery/ |access-date=9 August 2026 |work=AGN |date=26 May 2026 |language=en-en}}</ref> [[King Khalid International Airport|Riyadh]]<ref>{{cite web |title=SAUDIA to launch Riyadh-Male service |url=https://www.aaco.org/media-center/news/aaco-members/26 |access-date=9 August 2026 |date=6 January 2023}}</ref>
+<!-- -->
+| [[Sichuan Airlines]]| [[Chengdu Tianfu International Airport|Chengdu–Tianfu]]<ref>{{cite news |title=Sichuan Airlines resumes flights to Maldives |url=https://adhadhu.com/40910 |access-date=9 August 2026 |date=9 August 2026 |language=en}}</ref>
+<!-- -->
+| [[Singapore Airlines]] | [[Changi Airport|Singapore]]<ref>{{cite news |last1=Chuanren |first1=Chen |title=Singapore Airlines, United Airlines Increase Codesharing |url=https://aviationweek.com/air-transport/airports-networks/singapore-airlines-united-airlines-increase-codesharing |access-date=9 August 2026 |date=26 April 2022}}</ref>
+<!-- -->
+| [[SriLankan Airlines]] | [[Bandaranaike International Airport|Colombo–Bandaranaike]]<ref>{{cite news |last1=Abdul Azeez |first1=Azuhaar |title=SriLankan to operate flights from Mattala airport to Maldives {{!}} Atoll Times |url=https://atolltimes.mv/post/news/13 |access-date=9 August 2026 |date=9 August 2022 |language=en}}</ref>
+<!-- -->
+| [[Thai AirAsia]] | [[Bangkok–Don Mueang]]<ref>{{cite news |title=Bangkok Airways to resume Maldives flights on July 22 |url=https://maldives.net.mv/51113/bangkok-airways-to-resume-maldives-flights-on-july-22 |access-date=9 August 2026 |date=11 June 2022}}</ref>
+<!-- -->
+| [[Turkish Airlines]] | [[Istanbul Airport|Istanbul]]<ref>{{cite web |last1=Rasheed |first1=Ahmed Afruh |title=Turkish Airlines increases flights to the Maldives, expanding Istanbul connectivity {{!}} Visit Maldives Corporation |url=https://corporate.visitmaldives.com/news/turkish-airlines-increases-flights-to-the-maldives-expanding-istanbul-connectivity/?utm_sou |access-date=9 August 2026 |date=11 April 2026}}</ref>
+<!-- -->
+| [[US-Bangla Airlines]] | [[Shahjalal International Airport|Dhaka]]<ref>{{cite news |title=US-Bangla Airlines steps into 13th year of operations |url=https://unb.com.bd/category/Business/us-bangla-airlines-steps-into-13th-year-of-operations/190836 |access-date=9 August 2026 |date=17 July 2026 |language=English}}</ref>
+<!-- -->
+| [[VietJet Air]] | [[Bandaranaike International Airport|Colombo–Bandaranaike]],<ref name="Colombo&HoChiMinh">{{cite news |work=[[Daily FT]] |title=Vietjet launches three-day sale as new Colombo–Maldives service prepares for takeoff |url=https://www.ft.lk/business/Vietjet-launches-three-day-sale-as-new-ColomboMaldives-service-prepares-for-takeoff/34-798430 |access-date=9 October 2026}}</ref> [[Tan Son Nhat International Airport|Ho Chi Minh City]] (both begins 5 December 2026)<ref name="Colombo&HoChiMinh"/>
+<!-- -->
+| [[Villa Air]] | [[Villa International Airport Maamigili|Maamigili]]<ref>{{cite news |title=A New Livery Is Unveiled By Villa Air |url=https://travelution.media/8500 |access-date=9 August 2026 |work=Travelution Media |date=25 December 2022 |language=en}}</ref>
+<!-- -->
+| [[Virgin Atlantic]] | '''Seasonal:''' [[London–Heathrow]]<ref>{{cite news|last=Mayling|first=Samantha|url=https://travelweekly.co.uk/news/air/virgin-atlantic-unveils-new-services-to-maldives-and-turks-caicos|title=Virgin Atlantic unveils new services to Maldives and Turks and Caicos|work=Travel Weekly|date=17 November 2022|access-date=17 November 2022}}</ref>
+}}
+
+==Statistics==
+===Busiest international routes from MLE===
+[[File:8Q-IAB@PEK_(20250228110457).jpg|thumb|A Maldivian [[A330]], commonly used on flights to [[Melbourne]], [[Beijing]], [[Shanghai]], [[Kochi]] and [[Chengdu]]]]
+
+Velana International Airport connects to 67 airports across 28 countries. The routes between Malé (MLE) and [[Bandaranaike International Airport|Colombo]] (CMB), [[Dubai International Airport|Dubai]] (DXB) and [[Kuala Lumpur International Airport|Kuala Lumpur]] (KUL) are the busiest, with an average of 160 flights operating between these destinations per month.<ref name="FLIGHTS"/>
+
+{| class="wikitable sortable" style="white-space:nowrap"
+|+ Busiest international routes from Velana International Airport (MLE)
+{{As of|September 2026}}<ref name="FLIGHTS">{{cite news |work=FlightConnections |url=https://www.flightconnections.com/flights-from-mal%C3%A9-mle |accessdate=10 October 2026 |title=Flights from Malé (MLE)}}</ref>
+|-
+! Rank
+! Airport
+! Frequency<br>(monthly)
+! Carriers
+|-
+! 1
+| {{flagicon|SRI}} [[Bandaranaike International Airport|Colombo]] (CMB)
+|align=center| 229
+| [[Chongqing Airlines]], [[Emirates (airline)|Emirates]], [[FitsAir]], [[Flydubai]], [[Gulf Air]], [[SriLankan Airlines]]
+|-
+! 2
+| {{flagicon|UAE}} [[Dubai International Airport|Dubai]] (DXB)
+|align=center| 148
+| [[Emirates (airline)|Emirates]], [[Flydubai]]
+|-
+! 3
+| {{flagicon|MYS}} [[Kuala Lumpur International Airport|Kuala Lumpur]] (KUL)
+|align=center| 104
+| [[AirAsia]], [[Batik Air Malaysia]], [[Malaysia Airlines]]
+|-
+! 4
+| {{flagicon|UAE}} [[Zayed International Airport|Abu Dhabi]] (AUH)
+|align=center| 83
+| [[Etihad Airways]]
+|-
+!rowspan=2| 5
+| {{flagicon|SIN}} [[Changi Airport|Singapore]] (SIN)
+|align=center| 62
+| [[Singapore Airlines]]
+|-
+| {{flagicon|QAT}} [[Hamad International Airport|Doha]] (DOH)
+|align=center| 62
+| [[Qatar Airways]]
+|-
+! 7
+| {{flagicon|IND}} [[Cochin International Airport|Kochi]] (COK)
+|align=center| 54
+| [[IndiGo]], [[Maldivian (airline)|Maldivian]]
+|-
+! 8
+| {{flagicon|UAE}} [[Sharjah International Airport|Sharjah]] (SHJ)
+|align=center| 46
+| [[Air Arabia]]
+|-
+!rowspan=2| 9
+| {{flagicon|RUS}} [[Sheremetyevo International Airport|Moscow]] (SVO)
+|align=center| 40
+| [[Aeroflot]]
+|-
+| {{flagicon|IND}} [[Thiruvananthapuram International Airport|Trivandrum]] (TRV)
+|align=center| 40
+| [[IndiGo]], [[Maldivian (airline)|Maldivian]]
+|}
+
+==Incidents and accidents==
+* On 18 October 1995 a [[Dornier 228]] (9M-PEQ) operated by [[Air Maldives]] (leased from [[Pelangi Air]]) abruptly turned right, left the [[runway excursion|runway]], struck the seawall and somersaulted into the adjacent lagoon while landing. The plane was written off. Of the eight on board, three were injured but there were no fatalities.<ref name="aviainfo.gov.mv">{{cite web |title=Aircraft Accident History |url=http://www.aviainfo.gov.mv/publications/accidents/2008_1.php |access-date=3 August 2024 |website=Maldives Civil Aviation Authority}}</ref>
+* On 17 May 2004 a [[Trans Maldivian Airways]] [[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 300]], (AC 434) collided with the sea-wall of runway 18 after experiencing problems taking off from the seaplane base. Both pilots and one passenger were seriously injured in the accident. The aircraft was written off.<ref name="aviainfo.gov.mv" />
+
+==See also==
+* [[List of airports in Maldives]]
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Commons}}
+* [https://fis.com.mv/ Real-time flight information]
+* {{Official website|https://velana.macl.aero/}}
+* {{SkyVector|VRMM}}
+* {{NWS-current|VRMM}}
+* [https://web.archive.org/web/20110606110048/http://aviation-safety.net/database/airport/airport.php?id=MLE Accident history for MLE] at [[Aviation Safety Network]]
+
+{{Airports in the Maldives}}
+
+[[Category:1960 establishments in the Maldives]]
+[[Category:Airports established in 1960]]
+[[Category:Airports in the Maldives]]
+[[Category:Seaplane bases]]

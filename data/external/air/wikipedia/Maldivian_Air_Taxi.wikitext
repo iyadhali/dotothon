@@ -1,0 +1,61 @@
+{{Short description|Domestic airline in the Maldives}}
+{{Redirect|Maldivian Airlines|the national airline of the Maldives|Maldivian (airline)}}
+{{EngvarB|date=June 2025}}
+{{Use dmy dates|date=June 2025}}
+{{Infobox airline
+| airline = Maldivian Air Taxi
+| logo = MaldiveATLogo.jpg
+| logo_size = 150
+| IATA = MV
+| ICAO = MAT
+| callsign = "AIR-TAXI"
+| parent = 
+| lounge = 
+| founded ={{start date and age|1993|11|4|df=yes}}
+| frequent_flyer = 
+| headquarters = [[Malé]]
+| key_people = Lars Erik Nielsen (Founder and chairman of the board)
+| hubs = [[Velana International Airport|Ibrahim Nasir International Airport]]
+| focus_cities = 
+| fleet_size = 20
+| destinations = 52
+| alliance = 
+| website = http://www.maldivianairtaxi.com
+| ceased = {{start date and age|2013|df=yes}} (integrated into [[Trans Maldivian Airways]])}}
+
+[[File:Maldivian air taxi.jpg|thumb|right|Flight 8Q-MAO (in [[Kenn Borek Air]] colours) preparing for boarding.]]
+'''Maldivian Air Taxi''' (MAT) was a domestic carrier in the [[Maldives]] and was one of the largest seaplane operators in the world, operating over 500 flights a week during the peak tourist season. Beginning in November 1993 with two aircraft, MAT grew in direct response to the opening of newly developed resorts that require seaplane transport services for their guests.
+
+In 2013, [[The Blackstone Group]], an American equity fund, announced that they were acquiring both MAT and rival company [[Trans Maldivian Airways]] (TMA).<ref>{{Cite web|url = http://www.blackstone.com/news-views/press-releases/details/blackstone-announces-acquisition-of-a-majority-stake-in-maldivian-air-taxi-and-trans-maldivian-airways|title = Blackstone Press Release|access-date = |website = Blackstone Announces Acquisition of a Majority Stake in Maldivian Air Taxi and Trans Maldivian Airways}}</ref> A merger was brought underway and a new company was founded, retaining the Trans Maldivian Airways name, and the colours of MAT. TMA now{{when|date=September 2026}} operates 44 [[De Havilland Canada DHC-6 Twin Otter]]s, including three brand new{{when|date=September 2026}} 400 series.
+
+==History==
+The airline was established in 1993 by Danish investors and started operations in the same year. It was wholly owned by Lars Erik Nielsen (chairman) and as of March 2007 had 275 employees.<ref name="FI">{{cite news | title= Directory: World Airlines | work= [[Flight International]] | page= 46 | date= 10 April 2007}}</ref>
+
+==Fleet==
+At the time of the merger in December 2010, Maldivian Air Taxi's fleet included the following aircraft.
+*1 [[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 100]]
+*1 [[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 200]]
+*19 [[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6 Twin Otter Series 300]]
+
+Maldivian Air Taxi also had previously indicated plans to replace all of their DHC-6-100/-200/-300's with the new −400 series by [[Viking Air]].
+
+==References==
+{{reflist}}
+
+==External links==
+{{Commons category|Maldivian Air Taxi}}
+*[https://www.maldivianairtaxi.com/ Maldivian Air Taxi]
+*[http://www.borekair.com/index.php?option=com_content&view=article&id=60&Itemid=59 Maldivian Air Taxi at Kenn Borek Air]
+*[https://www.vikingair.com/ Viking Air]
+
+{{Airlines of the Maldives}}
+
+[[Category:Defunct airlines of the Maldives]]
+[[Category:21st-century disestablishments in the Maldives]]
+[[Category:Airlines established in 1993]]
+[[Category:Airlines disestablished in 2013]]
+[[Category:Defunct seaplane operators]]
+
+
+{{Asia-airline-stub}}
+{{Maldives-stub}}

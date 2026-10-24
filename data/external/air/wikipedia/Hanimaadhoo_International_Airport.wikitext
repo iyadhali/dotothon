@@ -1,0 +1,54 @@
+{{Short description|Airport in Haa Dhaalu Atoll, Maldives}}
+{{Infobox airport
+| name             = Hanimaadhoo International Airport
+| native_name      = ހަނިމާދޫ ބައިނަލްއަޤުވާމީ ވައިގެ ބަނދަރު
+| image            = File:Hanimaadhoo Airport 2025.jpg
+| IATA             = HAQ
+| ICAO             = VRMH
+| type             = Public
+| owner            = 
+| operator         = Regional Airports Company Limited
+| area_served      = Northern Maldive Atolls
+| location         = [[Hanimaadhoo]], [[Haa Dhaalu Atoll]], [[Maldives]]
+| elevation_f      = 3
+| elevation_m      = 1
+| website          = [http://airports.com.mv/domestic/hanimaadhoo.htm airports.com.mv/...]
+| coordinates      = {{coord|06|44|39|N|073|10|13|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''HAQ'''
+| mapframe         = yes
+| mapframe-zoom    = 12
+| metric_rwy       = y
+| r1_number        = 03/21
+| r1_length_m      = 2,465
+| r1_length_f      = 8087
+| r1_surface       = Asphalt
+| footnotes        = Source: [[DAFIF]]<ref name="WAD">{{usurped|1={{Deprecated archive|url=https://archive.today/20130217022002/http://www.worldaerodata.com/wad.cgi?airport=VRMH|title=Airport information for VRMH}}}} from [[DAFIF]] (effective October 2006)</ref><ref name="GCM">{{GCM|HAQ|source=DAFIF}}</ref>
+}}
+
+'''Hanimaadhoo International Airport''' ({{langx|dv|ހަނިމާދޫ ބައިނަލްއަޤުވާމީ ވައިގެ ބަނދަރު}} {{airport codes|HAQ|VRMH|p=n}}) is an [[airport]] located on the island of [[Hanimaadhoo]]<ref name="WAD">{{usurped|1={{Deprecated archive|url=https://archive.today/20130217022002/http://www.worldaerodata.com/wad.cgi?airport=VRMH|title=Airport information for VRMH}}}} from [[DAFIF]] (effective October 2006)</ref> in [[Haa Dhaalu Atoll]], [[Maldives]], opened as a domestic airport. It was upgraded to an international airport on 2 February 2012, with the introduction of direct flights to [[Thiruvananthapuram]] in [[India]] by [[Maldivian (airline)|Maldivian]].<ref>[http://www.haveeru.com.mv/dhivehi/news/133735 Haveeru News Article] {{webarchive|url=https://web.archive.org/web/20130205055405/http://www.haveeru.com.mv/dhivehi/news/133735 |date=2013-02-05 }} {{in lang|dv}}</ref> As of June 2019, it is one of three international airports in the Maldives.
+
+[[File:Hanimaadhoo Airport.jpg |thumb| Hanimaadhoo Airport in 2014]]
+
+==Facilities==
+The airport is at an [[elevation]] of {{convert|3|ft|0}} above [[mean sea level]]. It has one [[runway]] designated 03/21 with an [[Asphalt concrete|asphalt]] surface measuring {{convert|1220|x|30|m|0}}.<ref name="WAD" /> A huge airport expansion project was announced in 2021 with the line of credit facility from [[Export-import Bank Of India|Export Import Bank of India]].<ref>{{Cite web |title=Hanimaadhoo Airport expansion to include development of seaplane terminal |url=https://psmnews.mv/en/83981 |access-date=2022-07-11 |website=PSMnews.mv |date=31 March 2021 |language=en}}</ref>
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and the airline itself are not independent sources. -->
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]] | [[Kempegowda International Airport|Bengaluru]],<ref>{{cite news|title=Maldivian Launching New Flights to Growing Indian Airport from May 2025| url=https://aviationa2z.com/index.php/2025/03/15/maldivian-adds-hanimaadhoo-to-bangalore-flights/|date=March 15, 2025|newspaper=[[aviationa2z]]}}</ref> [[Dharavandhoo Airport|Dharavandhoo]], [[Ifuru Airport|Ifuru]], [[Velana International Airport|Malé]], [[Thiruvananthapuram International Airport|Thiruvananthapuram]]<ref>{{cite web |title=Maldivian Adds Colombo Ratmalana Service in Mid-1H22 |url=https://aeroroutes.com/eng/220328-q2rml |website=Aeroroutes |access-date=28 March 2022}}</ref><br>'''Seasonal:''' [[Cochin International Airport|Kochi]]<ref>{{cite news|title=Maldivian to start operations from Kochi| url=https://www.thehindu.com/news/cities/Kochi/maldivian-to-start-operations-from-kochi/article29444166.ece|date=18 September 2019|newspaper=[[The Hindu]]}}</ref>
+}}
+
+==References==
+<references />
+
+==External links==
+* {{SkyVector|VRMH}}
+* [https://web.archive.org/web/20110606110121/http://aviation-safety.net/database/airport/airport.php?id=HAQ Accident history for HAQ] at [[Aviation Safety Network]]
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]

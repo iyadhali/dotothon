@@ -1,0 +1,157 @@
+{{Short description|Airline of the Maldives}}
+{{Infobox airline
+| airline = Manta Air
+| image = 
+| IATA = NR
+| ICAO = MAV
+| callsign = SEA WING
+| aoc = 
+| hubs = {{nowrap|[[Dhaalu Airport]]}}
+| focus_cities = 
+| frequent_flyer = 
+| lounge = 
+| fleet_size = 21
+| destinations = 06
+| parent = 
+| logo = Manta Air logo.png
+| logo_size = 200px
+| founded = {{Start date and age|2018}}
+| commenced = {{Start date and age|2019|02|24|df=yes|br=y}}
+| ceased = 
+| headquarters = 
+| key_people = {{nowrap|Mohamed Khaleel (CEO)}}
+| num_employees = 250
+| website = [http://www.mantaair.mv/ mantaair.mv]
+}}
+
+'''Manta Air''' is a Maldivian airline based in the [[Maldives]], which began its operations on 24 February 2019. It began international operations in 2024.<ref>{{Cite web |url=https://mantaair.mv/news/manta-air-starts-its-operations |title=Manta Air officially begins its operations today! |date=2019-02-24 |website=www.mantaair.mv |language=en-US |access-date=2019-06-21}}</ref>
+
+== History ==
+Manta Air had its first aircraft delivered on 12 November 2018,<ref>{{Cite web|url=https://mantaair.mv/news/manta-air-welcomes-its-first-edition-to-its-fleet|title=Manta Air Welcomes its First Addition to its Fleet|website=Manta Air Welcomes its First Addition to its Fleet &#124; Manta Air|access-date=Apr 15, 2021}}</ref> and the airline was unveiled to the Maldives on 22 November 2018 by the Vice President of the Maldives, [[Faisal Naseem]].<ref>{{Cite web|url=https://mantaair.mv/news/manta-air-s-brand-officially-launched-in-the-maldives|title=Manta Air launches {{as written|i|t's [sic]}} brand officially in the Maldives|website=mantaair.mv|access-date=Apr 15, 2021}}</ref>
+
+Manta Air received the [[Air Operator's Certificate]] on 21 February 2019 and officially started its operations on 24 February 2019.<ref>{{Cite web|url=https://maldives.net.mv/29857/manta-air-begins-flight-operations/|title=Manta Air begins flight operations|date=Feb 24, 2019|access-date=Apr 15, 2021}}</ref>
+
+Manta Air began its float-plane (seaplane) operations on 17 November 2019.<ref>{{Cite web |url=https://avas.mv/en/73439 |title=Manta Air begins seaplane operation with inauguration of new terminal. |date=2019-11-18 |website=www.avas.mv/en |language=en-US |access-date=2019-11-18}}</ref><ref>{{Cite web |url=https://edition.mv/business/13497 |title=Manta Air commences seaplane flights, opens terminal. |date=2019-11-18 |website=www.edition.mv |language=en-US |access-date=2019-11-18}}</ref>
+
+== Destinations ==
+Manta Air flies is reportedly ceasing its domestic operations to switch exclusively to Seaplane operations.<ref>{{Cite web |last=Maldives |first=Avaitors |date=2026-09-09 |title=Manta Air Reportedly Reducing ATR Operations as It Focuses on Seaplane Fleet Expansion |url=https://www.aviatorsmaldives.com/post/20693 |access-date=2026-09-16 |website=Aviators Maldives |language=en}}</ref>
+{| class="wikitable"
+|+Seaplane destinations
+|-
+! Commonwealth
+! Destination
+! Notes
+! class=|Ref
+|-
+| rowspan="2" |{{flag|Maldives}}||Soneva Fushi|| style="text-align:center" |
+|
+|-
+| || style="text-align:center" |
+|
+|}
+'''Ceased operations (reportedly)'''
+{| class="wikitable"
+|-
+! Commonwealth
+!City
+! Airport
+! Notes
+! class="" |Ref
+|-
+| rowspan="2" |{{flag|Maldives}}
+|[[Malé]]||[[Velana International Airport]]|| style="text-align:center" |Terminated
+| rowspan="2" |<ref>{{Cite web |last=Maldives |first=Avaitors |date=2026-09-09 |title=Manta Air Reportedly Reducing ATR Operations as It Focuses on Seaplane Fleet Expansion |url=https://www.aviatorsmaldives.com/post/20693 |access-date=2026-09-16 |website=Aviators Maldives |language=en}}</ref>
+|-
+|[[Kudahuvadhoo]]
+|[[Dhaalu Airport]]|| style="text-align:center" |Terminated
+|-
+|{{flag|India
+}}
+|[[Bengaluru]]
+|[[Kempegowda International Airport|Kempegowda]] 
+| style="text-align: center;" |Terminated
+|
+|}
+
+== Fleet ==
+{{As of|2026|9}}, Manta Air operates the following aircraft:<ref>{{Cite news |title=Manta Air to cease domestic operations |url=https://adhadhu.com/86657 |access-date=2026-09-09 |language=en}}</ref>
+{| class="wikitable" 
+|+ Manta Air fleet 
+|-
+!Aircraft
+!In service 
+!Order 
+!Passengers 
+!Remark
+|-
+|[[ATR 72-600]] 
+|1
+|
+|64
+|Leased from [[Nordic Aviation Capital]]
+|-
+| [[De Havilland Canada DHC-6 Twin Otter|DHC-6-300 Twin Otter]]
+|16
+|
+|15
+|—
+|-
+| [[De Havilland Canada DHC-6 Twin Otter|DHC-6-200 Twin Otter]]
+|2
+|
+|15
+|—
+|-
+|Total
+!21
+!-
+!
+!
+|}
+
+[[File:8Q-RAZ.jpg|thumb|ATR 72-600 of Manta Air]]
+[[File:8Q-RAN.jpg|thumb|DHC-6-300 Twin Otter of Manta Air]]
+
+{| class="wikitable" 
+|+ Manta Air Historic fleet 
+|-
+!Aircraft
+!fleet 
+!introduced
+!Retired 
+!Replacement aircraft 
+!Remark
+|-
+|[[ATR 72-600]]
+|2
+|2019
+|2026
+|—
+|—
+|-
+|[[DHC-6-300 Twin Otter]]
+|1
+|2021
+|2024
+|—
+|—
+|-
+|[[Beechcraft 1900]]
+|1
+|2022
+|2023
+|—
+|—
+|}
+
+== References ==
+{{Commons category|Manta Air}}
+{{Reflist}}
+
+== External links ==
+
+{{Airlines of Maldives}}
+
+[[Category:Airlines of the Maldives]]
+[[Category:Airlines established in 2018]]
+[[Category:2018 establishments in the Maldives]]

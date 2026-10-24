@@ -1,0 +1,85 @@
+{{Short description|Airport of Maafaru, Maldives}}
+{{Infobox airport
+| name             = Maafaru International Airport
+| native_name      = 
+| image            = 
+| IATA             = NMF
+| ICAO             = VRDA
+| operator         = Island Aviation Services Limited
+| area_served      = [[Maafaru (Noonu Atoll)]], [[Noonu Atoll]], [[Maldives]]
+| location         = Noonu Atoll
+| elevation_m      = 
+| elevation_f      = 6
+| website          = {{URL|maafaruairport.com}}
+| coordinates      = {{coord|05|49|20|N|073|28|29|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''NMF'''
+| metric_rwy       = y
+| r1_number        = 06/24
+| r1_length_m      = 2,850
+| r1_surface       = Asphalt
+| footnotes        = Sources:<ref name="GCM">{{GCM|VRMD|Maafaru, Noonu Atoll, Maldives (ICAO: VRMD, IATA: DRV)}}</ref><ref name="Chart">{{SkyVector|VRMD|Maafaru (VRMD)}}</ref>
+}}
+
+'''Maafaru International Airport''' {{Airport codes|NMF|VRDA}} is an international airport located on [[Maafaru (Noonu Atoll)|Maafaru]], one of the islands of the [[Noonu Atoll]] in [[Maldives]]. It was officially opened on 1 December 2019.<ref name="opening">{{cite news |date=2 December 2019 |title=Maafaru International Airport officially opened |url=https://avas.mv/en/74166 |access-date=1 November 2024 |work=Avas}}</ref> As of 2024, the airport serves both domestic and international services.
+
+==Background==
+The building of the airport is  part of a scheme to develop Noonu Atoll as a luxury tourist zone. The plan to construct an airport was first announced by President [[Maumoon Abdul Gayyoom]] in the 2000s, and the actual construction was initiated in 2017 by his brother [[Abdulla Yameen]] who succeeded him.<ref name="opening" /> The building of the airport was funded by [[Abu Dhabi Fund for Development]] of [[United Arab Emirates]] which provided a grant of US$60 million. It features a 2,200-meter runway that can handle commercial aircraft the size of [[Airbus A320]]s and the [[Boeing 737]]s. It was constructed by a Singaporean contractor, Tuff Infrastructure Pvt Ltd. Test flight at the airport began on 14 August 2018.<ref name="test">{{cite news |date=15 August 2018 |title=Test flight lands at Maafaru airport |url=https://maldivesindependent.com/business/test-flight-lands-at-maafaru-airport-140179 |access-date=1 November 2024 |work=Maldives Independent}}</ref> Although not completed, the airport project was inaugurated by President [[Abdulla Yameen]] on 28 August 2018.<ref>{{Cite news |last=Abdulla |first=Shaina |date=29 August 2018 |title=President Yameen inaugurates Maafaru International Airport |url=https://edition.mv/news/6997 |access-date=1 November 2024 |work=[[The Edition]]}}</ref> After a series of delays,<ref>{{cite news |author=Mohamed |first=Shahudha |date=21 March 2019 |title=Maafaru airport contractor seeks extended deadline |url=https://edition.mv/news/9718 |access-date=1 November 2024 |work=[[The Edition]]}}</ref><ref>{{cite news |author=Shaany |first=Aishath |date=25 November 2019 |title=Gov't does not intend to hand airport operations to foreign companies: minister |url=https://raajje.mv/66610 |access-date=1 November 2024 |work=[[Raajje TV]]}}</ref><ref>{{Cite news |last=Aiham |first=Ahmed |date=26 December 2018 |title=Transport Minister to discuss controversial Maafaru Airport project with ADFD |url=https://edition.mv/news/8475 |access-date=1 November 2024 |work=[[The Edition]]}}</ref> the airport was officially opened by Planning Minister Mohamed Aslam on 1 December 2019, allowing international flight operations at the airport to begin.<ref>{{Cite news |date=25 November 2019 |title=Maafaru International Airport readies for international flights in December |url=https://mbr.mv/7812/ |url-status=dead |archive-url=https://web.archive.org/web/20200602203059/https://mbr.mv/7812/ |archive-date=2 June 2020 |work=Maldives Business Review}}</ref><ref>{{cite news |author=Mohamed |first=Shahudha |date=1 December 2019 |title=Maldivian begins flights to Maafaru International Airport |url=https://edition.mv/news/13712 |access-date=1 November 2024 |work=[[The Edition]]}}</ref>
+
+== Controversies ==
+=== Destruction of endangered turtle nesting grounds ===
+The airport was built in an area that was a major nesting ground for endangered turtles as [[Maafaru (Noonu Atoll)|Maafaru]] has had a long history of being a popular nesting ground endangered turtles.<ref>{{Cite news |last=Mohamed |first=Shahudha |date=9 April 2019 |title=Turtle steals maiden landing on Maafaru runway |url=https://edition.mv/news/10034 |access-date=1 November 2024 |work=[[The Edition]]}}</ref>
+
+On 9 April 2019, a green sea turtle that had come to Maafaru to lay its eggs, found the newly constructed runway of a brand new airport instead, and ended up laying her eggs on the tarmac.<ref>{{Cite news |last=Cockburn |first=Haarry |date=13 April 2019 |title=An endangered turtle returned to the beach to lay her eggs, only to discover an airport runway had been built |url=https://www.businessinsider.com/turtle-returns-to-the-beach-to-lay-her-eggs-finds-airport-runway-2019-4 |url-status=live |archive-url=https://web.archive.org/web/20240712090253/https://www.businessinsider.com/turtle-returns-to-the-beach-to-lay-her-eggs-finds-airport-runway-2019-4 |archive-date=12 July 2024 |access-date=1 November 2024 |work=Business Insider |agency=[[The Independent]]}}</ref><ref>{{Cite news |last=Cockburn |first=Harry |date=12 April 2019 |title=Endangered turtle returns to beach to lay its eggs only to find runway has been built |url=https://www.independent.co.uk/environment/green-sea-turtle-maldives-airport-runway-beach-eggs-a8865051.html |access-date=1 November 2024 |work=[[The Independent]]}}</ref> The turtle later died from the injuries.<ref>{{Cite news |last=Malsa |first=Mariyam |date=14 April 2019 |title=Exhausted and homeless, likely 'runway' turtle dies from injuries |url=https://edition.mv/news/10091 |access-date=1 November 2024 |work=The Edition}}</ref>
+
+=== Illegal export of coconut palms ===
+The Maldives Customs Service stopped the illegal export of coconut palm trees from the Maafaru island uprooted as a direct result of the airport project. Maafaru islanders alerted customs after the Environment Protection Agency stopped the illegal uprooting of trees from the island.<ref>{{Cite news |date=3 November 2018 |title=Maldives customs stop illegal export of coconut palms |url=https://maldivesindependent.com/environment/maldives-customs-stop-illegal-export-of-coconut-palms-142428 |access-date=1 November 2024 |work=Maldives Independent}}</ref>
+
+=== EPA halts airport expansion project ===
+On 29 December 2019, the Maldivian Environmental Protection Agency (EPA) halted the expansion project and rejected<ref>{{Cite news |last=Mohamed |first=Shahudha |date=29 December 2019 |title=EPA rejects land reclamation request for Maafaru Airport expansion |url=https://edition.mv/news/14205 |access-date=1 November 2024 |work=[[The Edition]]}}</ref> the Environmental Impact Assessment,<ref>{{Cite web |title=(EIA Addendum 2019) Second Addendum to the EIA for the proposed Airport Development Project at Maafaru Island, Noonu Atoll - Part 1 |url=http://files.epa.gov.mv/file/1493 |url-status=dead |archive-url=https://web.archive.org/web/20220707075718/http://files.epa.gov.mv/file/1493 |archive-date=7 July 2022 |website=[[Environmental Protection Agency (Maldives)|Environmental Protection Agency]]}}</ref><ref>{{Cite web |title=(EIA Addendum 2019) Second Addendum to the EIA for the proposed Airport Development Project at Maafaru Island, Noonu Atoll - Part 2 |url=http://files.epa.gov.mv/file/1492 |url-status=dead |archive-url=https://web.archive.org/web/20220708012944/http://files.epa.gov.mv/file/1492 |archive-date=8 July 2022 |website=[[Environmental Protection Agency (Maldives)|Environmental Protection Agency]]}}</ref><ref>{{Cite web |title=(EIA Addendum 2019) Second Addendum to the EIA for the proposed Airport Development Project at Maafaru Island, Noonu Atoll - Part 3 |url=http://files.epa.gov.mv/file/1491 |url-status=dead |archive-url=https://web.archive.org/web/20220708012959/http://files.epa.gov.mv/file/1491 |archive-date=8 July 2022 |website=[[Environmental Protection Agency (Maldives)|Environmental Protection Agency]]}}</ref><ref>{{Cite web |title=(EIA Addendum 2019) Second Addendum to the EIA for the proposed Airport Development Project at Maafaru Island, Noonu Atoll - Part 4 |url=http://files.epa.gov.mv/file/1490 |url-status=dead |archive-url=https://web.archive.org/web/20220708013011/http://files.epa.gov.mv/file/1490 |archive-date=8 July 2022 |website=[[Environmental Protection Agency (Maldives)|Environmental Protection Agency]]}}</ref> giving the following reasons as justification in their report.<ref>{{Cite tweet |number=1211096007238287360 |user=EPAMaldives |title=N. Maafaru airport expansion project was rejected by EPA. Below is the decision statement for the project. |author=[[Environmental Protection Agency (Maldives)|Environmental Protection Agency]] |date=29 December 2019 |access-date=2 November 2024}}</ref>
+
+# The aim of the project given as to accommodate Boeing 777 twinjet landing unfortunately is not a valid justification when compared to the long-term environmental and socio-economic negative impacts that would arise from this project.
+# The frequency of landing of large aircraft is expected to be minimal in the medium-term and the frequency of landing in the long-term is also unknown.
+# Reclamation works would lead to permanent loss of a large area of Maafaru lagoon, affecting the surrounding coral reef ecosystem.
+# Loss of lagoon space for future island expansion, while there is a high demand by the Island Council and community for excess land reclamation to compensate for the land being taken up for this expansion project.
+# Proposed dredging methodology (CSD) takes more time in operation and therefore time-frame for marine impacts is substantial. If the alternative methodology (TSHD) is to be used, the project footprint would expand outside Maafaru lagoon.
+# Sand borrow site for the reclamation has a rich sea-grass bed, which is a habitat for many juvenile marine lives as well as a sea-turtle grazing area.
+# Dredging the inner lagoon would result in turbidity and sedimentation as well as changes to the hydrodynamics which would most likely result in erosion and accretion of the unprotected coastal areas in the residential side of Maafaru, alternatively increasing the cost of the project as shore protection will be required.
+# Island is known for sea-turtle nesting, hence the loss of the grazing site as well as the turtle nesting beaches due to predictable erosion, from the activities of this project will have a direct negative impact on the marine life within the vicinity.
+# The airport expansion footprint will affect a total of 22,000 trees which is a major portion of the existing vegetation of the island.  Furthermore, this area also contains plots allocation for residential buildings, pending constructions. Hence, if the compensation plots are to be allocated from the available land, on the other end of the island, that would mean the last remaining mature vegetation of the island would also be destroyed and Maafaru would be left barren of any of its original mature vegetation. (In the report it is stated that a maximum of 250 trees can be re-located within the island).  Therefore, considering the huge cumulative impacts to the terrestrial vegetation, it would be impossible to mitigate such impacts in an island environment.
+# The proponent does not hold the legal ownership of the proposed project area, as per the Land Act (Act No. 1/2002).
+# The plan of compensation for the coconut palms and fruit bearing trees in the proposed project area within the island has not yet been decided.
+
+=== Fraud and corruption allegations ===
+The contractor for the project, Singaporean company Tuff Infrastructure Pvt Ltd. is facing multiple allegations including failing to pay their subcontractors,<ref>{{Cite news |date=23 December 2018 |title=GKD takes Maafaru airport contractor to court |url=https://edition.mv/news/8425 |access-date=2 November 2024 |work=[[The Edition]]}}</ref> using deception and sham projects to win the bid, violations of contract, and inflated costs.<ref>{{Cite news |last=Aiham |first=Ahmed |date=5 December 2018 |title=Fraught with fraudulence: The Case of Maafaru International Airport |url=https://edition.mv/report/8137 |access-date=2 November 2024 |work=[[The Edition]]}}</ref> As a result, the project was under audit from the Anti Corruption Commission of the Maldives. According to rumors, Regional Airports Director General Saamee Ageel is also accused of owning a private yacht which is currently being investigated by the Asset Recovery Commission of the Office of The President.<ref>{{Cite news |last=Aiham |first=Ahmed |date=16 December 2018 |title=Maafaru International Airport under audit |url=https://edition.mv/news/8312 |access-date=2 November 2024 |work=[[The Edition]]}}</ref> Anti-Corruption Commission requested that the Regional Airports Deputy Director General Ahmed Mahreen be suspended.<ref>{{Cite news |last=Aiham |first=Ahmed |date=5 November 2018 |title=ACC requests suspension of Regional Airports Deputy Director |url=https://edition.mv/news/7739 |access-date=2 November 2024 |work=[[The Edition]]}}</ref> Anti-Corruption Commission also requested that payment to contractors for the Maafaru International Airport be suspended.<ref>{{Cite news |last=Anees |first=Shan |date=8 November 2018 |title=Corruption watchdog orders halt on payment for Maafaru airport contractors |url=https://raajje.mv/44098 |access-date=2 November 2024 |work=[[Raajje TV]]}}</ref>
+
+=== Public opposition to the project ===
+There is online opposition to the expansion project including by the Maldivian environmentalist organisation SaveMaldives. The hashtag #SaveMaafaru has been used in regard to this opposition.
+
+==Facilities==
+The airport is at an [[elevation]] of {{convert|2|m}} above [[mean sea level]]. It has one [[runway]] which is {{convert|2,200|m|0}} in length and {{convert|40|m|0}} wide.<ref name="test" /> The airport can accommodate six jets at any one time. The airport includes a passenger terminal and a VIP lounge, and is managed and maintained by the national airline [[Maldivian (airline)|Maldivian]].<ref>{{cite news |author=Azmeela |first=Aishath |date=25 November 2019 |title=International flights to be operated from Maafaru Airport |url=https://avas.mv/en/73819 |access-date=2 November 2024 |work=Avas}}</ref> And It Also Facilitates ([[Maldives National Defence Force|MNDF]] As The Operation Hanger Of The MNDF Drone [[Bayraktar TB2]]
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and the airline itself are not independent sources. -->
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]]| [[Hanimaadhoo Airport|Hanimaadhoo]], [[Ifuru Airport|Ifuru]],<ref>{{Cite web | url=http://airlineroute.net/2015/11/06/q2-ifu-w15/ | title=Maldivian Adds Ifuru Service in W15 }}</ref> [[Ibrahim Nasir International Airport|Malé]]
+}}
+
+==See also==
+*[[List of airports in the Maldives]]
+*[[List of airlines of the Maldives]]
+
+==References==
+{{Reflist}}
+
+{{Airports in the Maldives}}
+{{authority control}}
+{{Use dmy dates|date=March 2020}}
+
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2019]]
+[[Category:2019 establishments in the Maldives]]

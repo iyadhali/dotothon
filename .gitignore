@@ -1,0 +1,11 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Datasets: only the public-source AIR network folder is versioned.
+# Datathon-provided datasets (MACL, FollowMe, MTCC, Avas, team-kandu, raw zips, etc.) stay local.
+data/*
+!data/external/
+data/external/*
+!data/external/air/

@@ -1,0 +1,1005 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-24T05:06:47Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1566865140,
+  "lat": 4.0385150,
+  "lon": 72.9195173,
+  "tags": {
+    "is_in:country": "Maledives",
+    "name": "Halaveli",
+    "place": "village"
+  }
+},
+{
+  "type": "node",
+  "id": 2334944290,
+  "lat": 4.2139376,
+  "lon": 73.5385131,
+  "tags": {
+    "name": "ހުޅުމާލެ",
+    "name:cs": "Hulhumale",
+    "name:dv": "ހުޅުމާލެ",
+    "name:en": "Hulhumalé",
+    "name:fr": "Hulhumalé",
+    "name:ml": "ഹുലുമാലി",
+    "name:ru": "Хулхумале",
+    "place": "town",
+    "wikidata": "Q1636296",
+    "wikimedia_commons": "Category:Hulhumalé",
+    "wikipedia": "en:Hulhumalé"
+  }
+},
+{
+  "type": "node",
+  "id": 2352761730,
+  "lat": 2.1880130,
+  "lon": 73.0950817,
+  "tags": {
+    "capital": "4",
+    "name": "ވޭމަންޑޫ",
+    "name:cy": "Veymandoo",
+    "name:dv": "ވޭމަންޑޫ",
+    "name:en": "Veymandoo",
+    "name:fr": "Veymandoo",
+    "name:ko": "베이만두",
+    "place": "town",
+    "wikidata": "Q2390425",
+    "wikipedia": "en:Veymandoo"
+  }
+},
+{
+  "type": "node",
+  "id": 2722414091,
+  "lat": 0.7328555,
+  "lon": 73.4343885,
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "GKK",
+    "icao": "VRMO",
+    "name": "Kuddoo",
+    "wikidata": "Q6430520"
+  }
+},
+{
+  "type": "node",
+  "id": 3113368492,
+  "lat": 3.8853882,
+  "lon": 72.7293113,
+  "tags": {
+    "aeroway": "aerodrome",
+    "name": "Waterplane arrival"
+  }
+},
+{
+  "type": "node",
+  "id": 3385374395,
+  "lat": 4.1779879,
+  "lon": 73.5107387,
+  "tags": {
+    "admin_level": "2",
+    "capital": "yes",
+    "name": "މާލެ",
+    "name:ar": "ماليه",
+    "name:be": "Мале",
+    "name:bn": "মালে",
+    "name:br": "Male",
+    "name:ca": "Malé",
+    "name:cs": "Male",
+    "name:cy": "Malé",
+    "name:de": "Malé",
+    "name:dv": "މާލެ",
+    "name:en": "Malé",
+    "name:es": "Malé",
+    "name:et": "Male",
+    "name:fr": "Malé",
+    "name:he": "מאלה",
+    "name:hi": "माले",
+    "name:hr": "Malé",
+    "name:hu": "Malé",
+    "name:it": "Male",
+    "name:ja": "マレ",
+    "name:kab": "Male",
+    "name:ko": "말레",
+    "name:ml": "മാലി",
+    "name:mr": "मले",
+    "name:nl": "Malé",
+    "name:oc": "Male",
+    "name:pl": "Male",
+    "name:ru": "Мале",
+    "name:sr": "Мале",
+    "name:sr-Latn": "Male",
+    "name:sv": "Malé",
+    "name:ta": "மாலே",
+    "name:uk": "Мале",
+    "name:zh": "马累",
+    "place": "city",
+    "population": "103693",
+    "wikidata": "Q9347",
+    "wikimedia_commons": "Category:Malé",
+    "wikipedia": "dv:މާލެ"
+  }
+},
+{
+  "type": "node",
+  "id": 3442502057,
+  "lat": 4.0736885,
+  "lon": 72.8877046,
+  "tags": {
+    "is_in:country": "Maldives",
+    "name": "Maayafushi",
+    "name:ml": "മായാഫുഷി",
+    "place": "village"
+  }
+},
+{
+  "type": "node",
+  "id": 3684988377,
+  "lat": 4.0025859,
+  "lon": 72.8817276,
+  "tags": {
+    "is_in:country": "Maledives",
+    "name": "Kandolhudhoo",
+    "place": "hamlet"
+  }
+},
+{
+  "type": "node",
+  "id": 4016221909,
+  "lat": -0.6061889,
+  "lon": 73.0879612,
+  "tags": {
+    "name": "ހިތަދޫ",
+    "name:cy": "Hithadhoo",
+    "name:dv": "ހިތަދޫ",
+    "name:en": "Hithadhoo",
+    "name:fr": "Hithadhoo",
+    "name:ja": "ヒサッドホー",
+    "name:ko": "히타두",
+    "place": "town",
+    "population": "10398",
+    "source:population": "https://en.wikipedia.org/wiki/Hithadhoo_(Addu)",
+    "wikidata": "Q2023266",
+    "wikipedia": "en:Hithadhoo (Addu)"
+  }
+},
+{
+  "type": "node",
+  "id": 4016344378,
+  "lat": 5.6680631,
+  "lon": 73.0301724,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "އުނގޫފާރު",
+    "name:cy": "Ungoofaaru",
+    "name:dv": "އުނގޫފާރު",
+    "name:en": "Ungoofaaru",
+    "name:fr": "Ungoofaaru",
+    "name:ko": "웅구파루",
+    "place": "town",
+    "wikidata": "Q2613356",
+    "wikipedia": "en:Ungoofaaru"
+  }
+},
+{
+  "type": "node",
+  "id": 4017107867,
+  "lat": 5.1033363,
+  "lon": 73.0703652,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "އޭދަފުށި",
+    "name:cy": "Eydhafushi",
+    "name:dv": "އޭދަފުށި",
+    "name:en": "Eydhafushi",
+    "name:fr": "Eydhafushi",
+    "name:ko": "에다푸시",
+    "place": "town",
+    "population": "2581",
+    "wikidata": "Q2461849",
+    "wikipedia": "en:Eydhafushi"
+  }
+},
+{
+  "type": "node",
+  "id": 4411417041,
+  "lat": 4.2628232,
+  "lon": 72.9919981,
+  "tags": {
+    "capital": "4",
+    "name": "ރަސްދޫ",
+    "name:cy": "Rasdhoo",
+    "name:dv": "ރަސްދޫ",
+    "name:en": "Rasdhoo",
+    "name:fr": "Rasdhoo",
+    "name:ko": "라스두",
+    "place": "town",
+    "wikidata": "Q2053471",
+    "wikipedia": "en:Rasdhoo"
+  }
+},
+{
+  "type": "node",
+  "id": 4411424709,
+  "lat": 3.7572007,
+  "lon": 72.9696123,
+  "tags": {
+    "capital": "4",
+    "name": "މަހިބަދޫ",
+    "name:cy": "Mahibadhoo",
+    "name:dv": "މަހިބަދޫ",
+    "name:en": "Mahibadhoo",
+    "name:fr": "Mahibadhoo",
+    "name:ko": "마히바두",
+    "place": "town",
+    "wikidata": "Q3284371",
+    "wikipedia": "en:Mahibadhoo"
+  }
+},
+{
+  "type": "node",
+  "id": 4411431929,
+  "lat": 2.6712087,
+  "lon": 72.8938459,
+  "tags": {
+    "capital": "4",
+    "name": "ކުޑަހުވަދޫ",
+    "name:cy": "Kudahuvadhoo",
+    "name:dv": "ކުޑަހުވަދޫ",
+    "name:en": "Kudahuvadhoo",
+    "name:fr": "Kudahuvadhoo",
+    "name:ko": "쿠다후바두",
+    "place": "town",
+    "wikidata": "Q2339256",
+    "wikipedia": "en:Kudahuvadhoo"
+  }
+},
+{
+  "type": "node",
+  "id": 4411437538,
+  "lat": 3.0561219,
+  "lon": 72.8898950,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "ނިލަންދޫ",
+    "name:cy": "Nilandhoo",
+    "name:dv": "ނިލަންދޫ",
+    "name:en": "Nilandhoo",
+    "name:fr": "Nilandhoo",
+    "name:ko": "닐란두",
+    "place": "town",
+    "wikidata": "Q2096454",
+    "wikipedia": "en:Nilandhoo (Faafu Atoll)"
+  }
+},
+{
+  "type": "node",
+  "id": 4411443276,
+  "lat": 0.7551045,
+  "lon": 73.4338993,
+  "tags": {
+    "capital": "4",
+    "name": "ވިލިނގިލި",
+    "name:cy": "Villingili",
+    "name:dv": "ވިލިނގިލި",
+    "name:en": "Villingili",
+    "name:fr": "Villingili",
+    "name:ko": "빌링길리",
+    "place": "town"
+  }
+},
+{
+  "type": "node",
+  "id": 4411457098,
+  "lat": -0.3005253,
+  "lon": 73.4254986,
+  "tags": {
+    "capital": "4",
+    "name": "ފުވައްމުލައް",
+    "name:cy": "Fuvahmulah",
+    "name:dv": "ފުވައްމުލައް",
+    "name:en": "Fuvahmulah",
+    "name:fr": "Fuvahmulah",
+    "name:ko": "푸바물라",
+    "place": "town",
+    "wikidata": "Q2060910",
+    "wikimedia_commons": "Category:Fuvahmulah",
+    "wikipedia": "en:Fuvahmulah"
+  }
+},
+{
+  "type": "node",
+  "id": 4411472197,
+  "lat": 6.8890460,
+  "lon": 73.1133538,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "ދިއްދޫ",
+    "name:cy": "Dhidhdhoo",
+    "name:dv": "ދިއްދޫ",
+    "name:en": "Dhidhdhoo",
+    "name:fr": "Dhidhdhoo",
+    "name:ko": "디드두",
+    "place": "town",
+    "wikidata": "Q2377972"
+  }
+},
+{
+  "type": "node",
+  "id": 4411478480,
+  "lat": 6.6229329,
+  "lon": 73.0709428,
+  "tags": {
+    "capital": "4",
+    "name": "ކުޅުދުއްފުށި",
+    "name:cy": "Kulhudhuffushi",
+    "name:dv": "ކުޅުދުއްފުށި",
+    "name:en": "Kulhudhuffushi",
+    "name:fr": "Kulhudhuffushi",
+    "name:he": "קולחודופושי",
+    "name:ko": "쿨루두푸시",
+    "place": "town",
+    "population": "15875",
+    "wikidata": "Q3185775",
+    "wikipedia": "de:Kulhudhuffushi"
+  }
+},
+{
+  "type": "node",
+  "id": 4411480841,
+  "lat": 1.8333203,
+  "lon": 73.5025558,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "ފޮނަދޫ",
+    "name:cy": "Fonadhoo",
+    "name:dv": "ފޮނަދޫ",
+    "name:en": "Fonadhoo",
+    "name:fr": "Fonadhoo",
+    "name:ko": "포나두",
+    "place": "town",
+    "wikidata": "Q3304717",
+    "wikipedia": "en:Fonadhoo"
+  }
+},
+{
+  "type": "node",
+  "id": 4411483369,
+  "lat": 5.4447776,
+  "lon": 73.3652404,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "ނައިފަރު",
+    "name:cy": "Naifaru",
+    "name:dv": "ނައިފަރު",
+    "name:en": "Naifaru",
+    "name:fr": "Naifaru",
+    "name:he": "נאיפרו",
+    "name:ko": "나이파루",
+    "place": "town",
+    "wikidata": "Q2295035",
+    "wikimedia_commons": "Category:Naifaru",
+    "wikipedia": "en:Naifaru"
+  }
+},
+{
+  "type": "node",
+  "id": 4411487502,
+  "lat": 2.9221163,
+  "lon": 73.5814986,
+  "tags": {
+    "capital": "4",
+    "name": "މުލި",
+    "name:cy": "Muli",
+    "name:dv": "މުލި",
+    "name:en": "Muli",
+    "name:fr": "Muli",
+    "name:ko": "물리",
+    "place": "town"
+  }
+},
+{
+  "type": "node",
+  "id": 4411498662,
+  "lat": 6.1488286,
+  "lon": 73.2903689,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "ފުނަދޫ",
+    "name:cy": "Funadhoo",
+    "name:dv": "ފުނަދޫ",
+    "name:en": "Funadhoo",
+    "name:fr": "Funadhoo",
+    "name:ko": "푸나두",
+    "place": "town",
+    "wikidata": "Q4175766",
+    "wikipedia": "en:Funadhoo (Shaviyani Atoll)"
+  }
+},
+{
+  "type": "node",
+  "id": 4502629775,
+  "lat": 5.7076162,
+  "lon": 73.0252199,
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "IFU",
+    "icao": "VREI",
+    "name": "Ifuru",
+    "wikidata": "Q31871149"
+  }
+},
+{
+  "type": "node",
+  "id": 4508136626,
+  "lat": 2.2124794,
+  "lon": 73.1524596,
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "TMF",
+    "icao": "VRNT",
+    "name": "Thimarafushi",
+    "wikidata": "Q14911912"
+  }
+},
+{
+  "type": "node",
+  "id": 4868156310,
+  "lat": 3.4719776,
+  "lon": 73.5473728,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "ފެލިދޫ",
+    "name:cy": "Felidhoo",
+    "name:dv": "ފެލިދޫ",
+    "name:en": "Felidhoo",
+    "name:fr": "Felidhoo",
+    "name:ko": "펠리두",
+    "place": "town"
+  }
+},
+{
+  "type": "node",
+  "id": 4868156311,
+  "lat": 4.3748502,
+  "lon": 73.6519073,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "ތުލުސްދޫ",
+    "name:cy": "Thulusdhoo",
+    "name:dv": "ތުލުސްދޫ",
+    "name:en": "Thulusdhoo",
+    "name:fr": "Thulusdhoo",
+    "name:ko": "툴루스두",
+    "place": "town",
+    "wikidata": "Q779848",
+    "wikimedia_commons": "Category:Thulusdhoo",
+    "wikipedia": "en:Thulusdhoo (Kaafu Atoll)"
+  }
+},
+{
+  "type": "node",
+  "id": 5724167457,
+  "lat": 3.0635210,
+  "lon": 72.9265702,
+  "tags": {
+    "place": "village"
+  }
+},
+{
+  "type": "node",
+  "id": 6822625006,
+  "lat": 5.2782980,
+  "lon": 73.6072389,
+  "tags": {
+    "name": "އޮޅުވެލިފުށި",
+    "name:dv": "އޮޅުވެލިފުށި",
+    "name:en": "Olhuvelifushi",
+    "place": "village",
+    "wikidata": "Q4176565",
+    "wikipedia": "en:Olhuvelifushi (Lhaviyani Atoll)"
+  }
+},
+{
+  "type": "node",
+  "id": 6822805013,
+  "lat": 5.7905005,
+  "lon": 73.3625587,
+  "tags": {
+    "name": "މިލަދޫ",
+    "name:dv": "މިލަދޫ",
+    "name:en": "Miladhoo",
+    "place": "village",
+    "wikidata": "Q2841018",
+    "wikipedia": "en:Miladhoo (Noonu Atoll)"
+  }
+},
+{
+  "type": "node",
+  "id": 6823305581,
+  "lat": 5.8827458,
+  "lon": 73.4000573,
+  "tags": {
+    "name": "ކުޑަފަރީ",
+    "name:dv": "ކުޑަފަރީ",
+    "name:en": "Kudafari",
+    "place": "village",
+    "wikidata": "Q2323356",
+    "wikipedia": "en:Kudafari"
+  }
+},
+{
+  "type": "node",
+  "id": 7400563079,
+  "lat": 2.2061554,
+  "lon": 73.1428120,
+  "tags": {
+    "name": "ތިމަރަފުށި",
+    "name:dv": "ތިމަރަފުށި",
+    "name:en": "Thimarafushi",
+    "name:fr": "Thimarafushi",
+    "place": "town",
+    "population": "3000"
+  }
+},
+{
+  "type": "node",
+  "id": 9437758900,
+  "lat": 3.0785370,
+  "lon": 72.9641446,
+  "tags": {
+    "name": "މަގޫދޫ",
+    "name:dv": "މަގޫދޫ",
+    "name:en": "Magoodhoo",
+    "place": "village"
+  }
+},
+{
+  "type": "node",
+  "id": 9554881153,
+  "lat": 0.5303510,
+  "lon": 72.9965866,
+  "tags": {
+    "capital": "4",
+    "name": "ތިނަދޫ",
+    "name:cy": "Thinadhoo",
+    "name:dv": "ތިނަދޫ",
+    "name:en": "Thinadhoo",
+    "name:fr": "Thinadhoo",
+    "name:he": "טינדו",
+    "name:ko": "티나두",
+    "place": "town",
+    "wikidata": "Q2147686",
+    "wikimedia_commons": "Category:Thinadhoo (Gaafu Dhaalu)",
+    "wikipedia": "en:Thinadhoo City"
+  }
+},
+{
+  "type": "node",
+  "id": 9554881154,
+  "lat": 5.7666661,
+  "lon": 73.4123826,
+  "tags": {
+    "capital": "4",
+    "is_in:country": "Maldives",
+    "name": "މަނަދޫ",
+    "name:cy": "Manadhoo",
+    "name:dv": "މަނަދޫ",
+    "name:en": "Manadhoo",
+    "name:fr": "Manadhoo",
+    "name:ko": "마나두",
+    "place": "town",
+    "wikidata": "Q2599649",
+    "wikipedia": "en:Manadhoo"
+  }
+},
+{
+  "type": "node",
+  "id": 11186959448,
+  "lat": 2.3566697,
+  "lon": 73.3545971,
+  "tags": {
+    "name": "މަޑިފުށި",
+    "name:dv": "މަޑިފުށި",
+    "name:en": "Madifushi",
+    "name:fr": "Madifushi",
+    "place": "town"
+  }
+},
+{
+  "type": "node",
+  "id": 12895354033,
+  "lat": -0.6908110,
+  "lon": 73.1557259,
+  "tags": {
+    "addr:city": "Addu atoll",
+    "aeroway": "aerodrome",
+    "iata": "GAN",
+    "icao": "VRMG",
+    "name": "Gan Island International Airport",
+    "wikidata": "Q1431353",
+    "wikipedia": "en:Gan International Airport"
+  }
+},
+{
+  "type": "node",
+  "id": 13747936508,
+  "lat": -0.6984855,
+  "lon": 73.1596748,
+  "tags": {
+    "aeroway": "aerodrome",
+    "landuse": "military",
+    "military": "airfield",
+    "name": "MDNF Air Corps Station GAN"
+  }
+},
+{
+  "type": "way",
+  "id": 207073193,
+  "center": {
+    "lat": 3.6487383,
+    "lon": 73.4901228
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "man_made": "raft",
+    "name": "Landing Dhiggiri"
+  }
+},
+{
+  "type": "way",
+  "id": 318417225,
+  "center": {
+    "lat": 1.8607688,
+    "lon": 73.5209714
+  },
+  "tags": {
+    "aerodrome:type": "public",
+    "aeroway": "aerodrome",
+    "closest_town": "Kadhdhoo (Laamu Atoll)",
+    "ele": "1",
+    "iata": "KDO",
+    "icao": "VRMK",
+    "name": "Kadhdhoo Airport",
+    "operator": "Maldives Airports Co.",
+    "source": "wikipedia",
+    "wikidata": "Q8215623",
+    "wikipedia": "en:Kadhdhoo Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 364296622,
+  "center": {
+    "lat": 4.0751498,
+    "lon": 72.8871012
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "name": "Landing Maayafushi"
+  }
+},
+{
+  "type": "way",
+  "id": 501718359,
+  "center": {
+    "lat": -0.3092926,
+    "lon": 73.4330561
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "FVM",
+    "icao": "VRMR",
+    "name": "Fuvahmulah Island",
+    "wikidata": "Q5510938",
+    "wikipedia": "en:Fuvahmulah Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 602758011,
+  "center": {
+    "lat": 2.6664644,
+    "lon": 72.8863225
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "DDD",
+    "icao": "VRMU",
+    "name": "Dhaalu Airport",
+    "source": "Copernicus Sentinel 2 imagery / 2018-06-26",
+    "website": "https://www.dhaalu-airport.com/",
+    "wikidata": "Q33101508",
+    "wikipedia": "en:Dhaalu Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 747425647,
+  "center": {
+    "lat": 5.8189668,
+    "lon": 73.4697279
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "NMF",
+    "icao": "VRDA",
+    "name": "Maafaru International Airport",
+    "wikidata": "Q67462952"
+  }
+},
+{
+  "type": "way",
+  "id": 747433190,
+  "center": {
+    "lat": 6.7453144,
+    "lon": 73.1679819
+  },
+  "tags": {
+    "aerodrome:type": "public",
+    "aeroway": "aerodrome",
+    "closest_town": "Hanimaadhoo (Haa Dhaalu Atoll)",
+    "ele": "1",
+    "iata": "HAQ",
+    "icao": "VRMH",
+    "name": "Hanimaadhoo Airport",
+    "operator": "Maldives Airports Co.",
+    "wikidata": "Q2580505",
+    "wikipedia": "en:Hanimaadhoo International Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 747440857,
+  "center": {
+    "lat": 4.1962306,
+    "lon": 73.5304446
+  },
+  "tags": {
+    "aerodrome": "international",
+    "aerodrome:type": "public",
+    "aeroway": "aerodrome",
+    "closest_town": "Malé",
+    "ele": "2",
+    "iata": "MLE",
+    "icao": "VRMM",
+    "internet_access": "wlan",
+    "is_in": "Male,Hulhule,Maldives",
+    "name": "ވެލާނާ ބައިނަލްއަޤުވާމީ ވައިގެ ބަނދަރު",
+    "name:cs": "Mezinárodní letiště Male",
+    "name:cy": "Maes Awyr Rhyngwladol Velana",
+    "name:en": "Velana International Airport",
+    "name:es": "Aeropuerto Internacional Velana",
+    "name:fr": "Aéroport International Velana",
+    "name:he": "נמל התעופה הבין-לאומי ולנה",
+    "name:it": "Aeroporto Internazionale Velana",
+    "name:ml": "വെള്ളാന അന്താരാഷ്ട്ര വിമാനത്താവളം",
+    "name:pt": "Aeroporto Internacional Velana",
+    "name:ru": "Международный аэропорт имени Ибрагима Насира",
+    "old_name:it": "Aeroporto Internazionale di Malé-Ibrahim Nasir",
+    "operator": "Maldives Airports Company Ltd.",
+    "ref": "MLE",
+    "source": "wikipedia",
+    "wikidata": "Q29104",
+    "wikimedia_commons": "Category:Velana International Airport",
+    "wikipedia": "en:Velana International Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 749871864,
+  "center": {
+    "lat": 5.1563627,
+    "lon": 73.1304020
+  },
+  "tags": {
+    "addr:city": "Dharavandhoo",
+    "addr:postcode": "06060",
+    "aeroway": "aerodrome",
+    "iata": "DRV",
+    "icao": "VRMD",
+    "name": "Dharavandhoo Airport",
+    "operator": "Island Aviation Services Limited",
+    "traffic": "IFR/VFR",
+    "wikidata": "Q5269175",
+    "wikipedia": "en:Dharavandhoo Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 752541163,
+  "center": {
+    "lat": 6.6310029,
+    "lon": 73.0680106
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "HDK",
+    "icao": "VRBK",
+    "internet_access": "yes",
+    "name": "Kulhudhuffushi Airport",
+    "wikidata": "Q66762568"
+  }
+},
+{
+  "type": "way",
+  "id": 757319579,
+  "center": {
+    "lat": 6.1618871,
+    "lon": 73.2875863
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "FND",
+    "icao": "VRCF",
+    "name": "Funadhoo Airport",
+    "operator": "Government of Maldives",
+    "operator:type": "government",
+    "wikidata": "Q76632644"
+  }
+},
+{
+  "type": "way",
+  "id": 870478342,
+  "center": {
+    "lat": 4.1982680,
+    "lon": 73.5367327
+  },
+  "tags": {
+    "aerodrome:type": "seaplane",
+    "aeroway": "aerodrome",
+    "name": "Waterdrome",
+    "seamark:type": "seaplane_landing_area",
+    "surface": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 978090098,
+  "center": {
+    "lat": 5.2349470,
+    "lon": 73.1166562
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "name": "Amilla floating air terminal"
+  }
+},
+{
+  "type": "way",
+  "id": 1165473041,
+  "center": {
+    "lat": 0.4891673,
+    "lon": 72.9949994
+  },
+  "tags": {
+    "aerodrome:type": "public",
+    "aeroway": "aerodrome",
+    "closest_town": "Kaadedhdhoo (Gaafu Dhaalu Atoll)",
+    "ele": "1",
+    "iata": "KDM",
+    "icao": "VRMT",
+    "name": "Kaadedhdhoo Airport",
+    "operator": "Maldives Airports Co.",
+    "source": "wikipedia",
+    "wikidata": "Q6343226",
+    "wikipedia": "en:Kaadedhdhoo Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 1165473042,
+  "center": {
+    "lat": 0.3378641,
+    "lon": 73.5122144
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "RUL",
+    "icao": "VRQM",
+    "name": "Maavarulu Airport",
+    "operator": "Regional Airports",
+    "wikidata": "Q85303555",
+    "wikipedia": "en:Maavarulu Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 1255413502,
+  "center": {
+    "lat": 6.9696739,
+    "lon": 72.8965149
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "HRF",
+    "icao": "VRAH",
+    "name": "Hoarafushi Airport",
+    "wikidata": "Q104870680",
+    "wikipedia": "en:Hoarafushi Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 1256311744,
+  "center": {
+    "lat": 5.4577319,
+    "lon": 73.3697232
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "ele": "2",
+    "iata": "LMV",
+    "icao": "VRGD",
+    "name": "Madivaru Airport",
+    "wikidata": "Q110938125",
+    "wikipedia": "en:Madivaru Airport"
+  }
+},
+{
+  "type": "way",
+  "id": 1319728541,
+  "center": {
+    "lat": 3.4717443,
+    "lon": 72.8310451
+  },
+  "tags": {
+    "aerodrome:type": "international",
+    "aeroway": "aerodrome",
+    "ele": "2",
+    "iata": "VAM",
+    "icao": "VRMV",
+    "name": "Villa International Airport Maamigili",
+    "wikidata": "Q6721089"
+  }
+},
+{
+  "type": "way",
+  "id": 1557297319,
+  "center": {
+    "lat": 2.9112754,
+    "lon": 73.5832984
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "MUM",
+    "icao": "VRKM",
+    "name": "Muli Airport",
+    "name:dv": "މުލި އެއާޕޯޓް",
+    "name:en": "Muli Airport",
+    "wikidata": "Q138302798"
+  }
+},
+{
+  "type": "way",
+  "id": 1557300131,
+  "center": {
+    "lat": 0.1928451,
+    "lon": 73.1970662
+  },
+  "tags": {
+    "aeroway": "aerodrome",
+    "iata": "FMT",
+    "icao": "VRQF",
+    "name": "Faresmaathoda Airport"
+  }
+}
+
+  ]
+}

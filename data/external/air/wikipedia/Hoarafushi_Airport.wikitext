@@ -1,0 +1,58 @@
+{{Short description|Airport in Hoarafushi, the Maldives}}
+{{Infobox airport
+| name             = Hoarafushi Airport
+| native_name      = ހޯރަފުށި އެއާޕޯޓް
+| image            = Hoarafushi Airport.jpg
+| image_size       = 250
+| IATA             = HRF
+| ICAO             = VRAH
+| type             = Public
+| owner            = MACL
+| operator         = Regional Airports Company Limited
+| area_served      = [[Hoarafushi (Haa Alif Atoll)]], [[ Haa Alif Atoll]], [[Maldives]]
+| location         = HA. Hoarafushi
+| metric_elev      = y
+| elevation_m      = 2
+| elevation_f      = 
+| coordinates      = {{coord|06|58|50|N|072|53|45|E|region:MV|display=inline,title}}
+| website          = [http://www.macl.aero/ macl.aero]
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''Hoarafushi Airport''
+| mapframe         = yes
+| metric_rwy       = y
+| r1_number        = 06/24
+| r1_length_m      = 1,200
+| r1_surface       = Asphalt
+| footnotes        = Sources: IATA<ref name="IATA">{{cite web|url=https://www.iata.org/en/publications/directories/code-search/?airport.search=rul|title=IATA code search}}</ref>
+}}
+
+'''Hoarafushi Airport''' {{airport codes|HRF|VRAH}} is a domestic [[airport]] located on [[Hoarafushi (Haa Alif Atoll)]], one of the islands of the [[Haa Alif Atoll]] in [[Maldives]]. A test flight landed at Hoarafushi Airport on 16 November 2020.<ref>{{Cite web|title=Hoarafushi, Maldives {{!}} Maldivian|url=https://maldivian.aero/destinations/hoarafushi.html|access-date=2022-02-13|website=Flights to Hoarafushi (HRF)|language=en}}</ref> [[Maldives Transport and Contracting Company]] (MTCC) was contracted the [[Maldivian rufiyaa|MVR]] 198 million project in March 2019 to develop the airport terminal and fire building. 
+
+== Airlines and destinations ==
+The airport currently serves two commercial destinations.
+
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]] | [[Hanimaadhoo International Airport|Hanimaadhoo]],<ref>{{cite web |last1=Liu |first1=Jim |title=Maldivian Resumes 2 Routes at Hanimaadhoo in 2Q25 |url=https://www.aeroroutes.com/eng/250324-q22q25haq |website=aeroroutes.com |publisher=Aeroroutes |access-date=24 March 2025}}</ref>  [[Velana International Airport|Malé]]
+| [[Manta Air]]| [[Dharavandhoo Airport|Dharavandhoo]], [[Velana International Airport|Malé]]
+}}
+
+==See also==
+*[[List of airports in the Maldives]]
+*[[List of airlines of the Maldives]]
+
+==References==
+{{Reflist}}
+
+{{commons category}}
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2019]]
+
+
+{{asia-airport-stub}}
+{{Maldives-stub}}

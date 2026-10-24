@@ -1,0 +1,61 @@
+{{Short description|Airport in the Maldives}}
+{{Infobox airport
+| name             = Dharavandhoo Airport
+| native_name      = ދަރަވަންދޫ އެއަރޕޯޓް
+| image            = Dharavandhoo Airport Terminal.jpg
+| IATA             = DRV
+| ICAO             = VRMD
+| type             = Public
+| owner            = Island Aviation Services
+| operator         = Island Aviation Services
+| opened           = {{start date|2012|10|17}}
+| area_served      = [[Baa Atoll]], [[Maldives]]
+| location         = [[Dharavandhoo]]
+| elevation_f      = 6
+| website          = 
+| coordinates      = {{coord|05|09|24|N|073|07|50|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| mapframe         = yes
+| mapframe-zoom    = 12
+| pushpin_label    = '''DRV'''
+| metric_rwy       = y
+| r1_number        = 12/30
+| r1_length_m      = 1189
+| r1_surface       = Asphalt
+| footnotes        = Sources:<ref name="GCM">{{GCM|VRMD|Dharavandhoo Island, Baa Atoll, Maldives (ICAO: VRMD, IATA: DRV)}}</ref><ref name="Chart">{{SkyVector|VRMD|Dharavandhoo (VRMD)}}</ref>
+}}
+
+'''Dharavandhoo Airport''' {{Airport codes|DRV<ref>
+ {{cite web
+ | title = IATA Airport Code Search (DRV: Dharavandhoo Island)
+ | url = http://www.iata.org/publications/Pages/code-search.aspx
+ | publisher = [[International Air Transport Association]]
+ | accessdate = 6 September 2013
+ }}
+</ref>|VRMD<ref name="Chart"/>}} is a [[domestic airport]] located on the island of [[Dharavandhoo]], part of the [[Baa Atoll]] in [[Maldives]]. It was opened on 17 October 2012 by President [[Mohamed Waheed Hassan]].<ref>{{cite news | url = http://www.haveeru.com.mv/news/45124 | title = President opens Dharavandhoo airport | work = [[Haveeru Daily]] | date = 17 October 2012 | access-date = 17 October 2012 | archive-url = https://web.archive.org/web/20151002121208/http://www.haveeru.com.mv/news/45124 | archive-date = 2 October 2015 | url-status = dead }}</ref> Flight operations began to the airport on 15th of that month.<ref>{{cite web | url = http://maldives.net.mv/7379/maldivian-begins-scheduled-flights-to-dharavandhoo-airport/ | title = Maldivian begins scheduled flights to Dharavandhoo Airport | publisher = maldives.net.mv | date = 15 October 2012}}</ref>
+
+==Facilities==
+The airport resides at an [[elevation]] of {{convert|6|ft|0}} above [[mean sea level]].<ref name="Chart" /> It has one [[runway]] which is {{convert|1189|m|0}} in length.<ref name="Chart" />
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and the airline itself are not independent sources. -->
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]]| [[Hanimaadhoo Airport|Hanimaadhoo]], [[Ifuru Airport|Ifuru]],<ref>{{Cite web|url=http://airlineroute.net/2015/11/06/q2-ifu-w15/|title = Maldivian Adds Ifuru Service in W15}}</ref> [[Maafaru International Airport|Maafaru]], [[Velana International Airport|Malé]]
+| [[Manta Air]]| [[Ifuru Airport|Ifuru]], [[Madivaru Airport|Madivaru ]], [[Velana International Airport|Malé]]
+}}
+
+==See also==
+* [[List of airports in the Maldives]]
+* [[List of airlines of the Maldives]]
+
+==References==
+<references />
+
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2012]]

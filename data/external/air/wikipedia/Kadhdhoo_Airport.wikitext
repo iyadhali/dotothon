@@ -1,0 +1,61 @@
+{{Infobox airport
+| name             = Kadhdhoo Airport
+| native_name      = ކައްދޫ އެއަރޕޯޓް
+| image            = 
+| IATA             = KDO
+| ICAO             = VRMK
+| type             = Public
+| operator         = Maldives Airports Co.
+| area_served      = [[Haddhunmathi Atoll]], [[Maldives]]
+| location         = [[Kadhdhoo Island|Kadhdhoo]], [[Laamu Atoll]]
+| elevation_f      = 4
+| elevation_m      = 1.2
+| website          = http://kacl.aero
+| coordinates      = {{coord|01|51|33|N|073|31|19|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''KDO'''
+| metric_rwy       = y
+| r1_number        = 03/21
+| r1_length_m      = 1,220
+| r1_length_f      = 4,003
+| r1_surface       = Bituminous
+| footnotes        = Sources: Airport website,<ref name="Airport">{{cite web | url = http://airports.com.mv/domestic/kadhdhoofacts.htm | title = Kadhdhoo Domestic Airport: Facts | publisher = Maldives Airports Company Limited | archiveurl = https://web.archive.org/web/20091118202448/http://www.airports.com.mv/domestic/kadhdhoofacts.htm | archivedate = 18 November 2009}}</ref> [[DAFIF]]<ref name="WAD">{{usurped|1={{Deprecated archive|url=https://archive.today/20130217013629/http://www.worldaerodata.com/wad.cgi?airport=VRMK|title=Airport information for VRMK}}}} from [[DAFIF]] (effective October 2006)</ref><ref name="GCM">{{GCM|KDO|source=DAFIF}}</ref>
+}}
+'''Kadhdhoo Airport''' ({{langx|dv|ކައްދޫ އެއަރޕޯޓް}}) {{airport codes|KDO|VRMK}} is a domestic [[airport]] located on the island of [[Kadhdhoo Island|Kadhdhoo]] in [[Laamu Atoll]], [[Maldives]].<ref name="Airport" /><ref name="WAD" /> The airport is {{convert|3.7|km|NM|abbr=on|lk=on}} northeast of [[Fonadhoo (Laamu Atoll)|Fonadhoo]].<ref name="Airport" />
+
+==History==
+
+Excavation for the runway began on 11 January 1982, and the final layer of the runway was completed on 6 April 1986. 
+
+The project was initiated under the Government's budget alone, additional financial assistance was received from outside, notably from the United Nations Development Program (UNDP), the International Civil Aviation Organization (ICAO) and the Organization of Petroleum Exporting Countries’ Fund (OPEC Fund). The length of the runway at Kadhdhoo airport was 762 meters long and 30 m wide.
+
+When the Maldivian president [[Maumoon Abdul Gayoom|Maumoon Abdul Gayyoom]] assumed office in 1978, some of the most pressing problems faced by the country were the immense difficulty involved in traveling between Malé and the outlying islands and the adverse effects in the Maldivian fishing industry due to illegal entry of foreign fishing vessels into the Maldivian territorial waters.
+
+Kadhdhoo is situated halfway between the airport of Malé and Gan.
+
+==Facilities==
+The airport resides at an [[elevation]] of {{convert|4|ft|m|1}} above [[mean sea level]]. It has one [[runway]] designated 03/21 with a [[bitumen|bituminous]] surface measuring {{convert|1220|x|30|m|0}}.<ref name="WAD" /> Airport apron is 105 m x 22 m. Short take-off and landing aircraft whose maximum weight does not exceed 5700&nbsp;kg can be accommodated.
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and airlines itself are not independent sources. -->
+{{Unreferenced section|date=January 2022}}
+{{airport destination list
+| [[Flyme (Villa Air)|Flyme]] | [[Villa International Airport Maamigili|Maamigili]], [[Velana International Airport|Malé]]
+| [[Maldivian (airline)|Maldivian]] | [[Gan International Airport|Gan]], [[Kaadedhdhoo Airport|Kaadedhdhoo]], [[Kooddoo Airport|Kooddoo]], [[Velana International Airport|Malé]]
+}}
+
+==External links==
+*{{SkyVector|VRMK}}
+* [https://web.archive.org/web/20110606110324/http://aviation-safety.net/database/airport/airport.php?id=KDO Accident history for KDO] at [[Aviation Safety Network]]
+
+==References==
+{{reflist}}
+
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 1986]]

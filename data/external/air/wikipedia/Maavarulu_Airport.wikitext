@@ -1,0 +1,58 @@
+{{short description |Airport in Maldives}}
+{{Use dmy dates|date=June 2023}}
+{{Redirect|RUL|the remaining useful life|Prognostics}}
+{{Infobox airport
+| name             = Maavarulu Airport
+| native_name      = މާވާރުލު އެއާރޕޯޓް
+| image            = Maavarulu Airport.jpg
+| image_size       = 250
+| IATA             = RUL
+| ICAO             = VRQM
+| type             = Public
+| operator         = Regional Airports Company Limited
+| area_served      = [[Gadhdhoo]], [[Gaafu Dhaalu Atoll]], [[Maldives]]
+| location         = G.Dh Maavarulu
+| metric_elev      = y
+| elevation_m      = 2
+| elevation_f      = 
+| coordinates      = {{coord|00|20|12|N|073|30|41|E|region:MV|display=inline,title}}
+| website          = [https://airports.mv/airports#RUL]
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''RUL'''
+| metric_rwy       = y
+| r1_number        = 06/24
+| r1_length_m      = 1,200
+| r1_surface       = Asphalt
+| footnotes        = Sources: IATA<ref name="IATA">{{cite web|url=https://www.iata.org/en/publications/directories/code-search/?airport.search=rul|title=IATA code search}}</ref>
+}}
+
+'''Maavarulu Airport'''<ref name="CAA">{{cite web |title=List of Land Aerodromes in Maldives |url=https://www.caa.gov.mv/attachments/Fo0c3gdATSgFEBcEdOFPZwGEUGNaKQrHLbD8PZUS.pdf |publisher=Maldives CAA |access-date=14 February 2022}}</ref> {{Airport codes|RUL|VRQM}} is a domestic [[airport]] located on [[Maavarulu]], one of the islands of the [[Gaafu Dhaalu Atoll]] in [[Maldives]]. Scheduled Flights started on 4 July 2020.{{cn|date=February 2022}}
+
+==Facilities==
+The airport resides at an [[elevation]] of {{convert|2|m}} above [[mean sea level]]. It has one [[runway]] which is {{convert|1,200|m|0}} in length and {{convert|40|m|0}} wide.{{fact|date=June 2023}}
+
+==Airlines and destinations==
+{{airport destination list
+| [[Maldivian (airline)|Maldivian]] | [[Gan International Airport|Gan]], [[Kaadedhdhoo Airport|Kaadedhdhoo]], [[Kooddoo Airport|Kooddoo]], [[Velana International Airport|Malé]]
+}}
+
+==See also==
+*[[List of airports in the Maldives]]
+*[[List of airlines of the Maldives]]
+
+==References==
+{{Reflist}}
+
+{{commons category}}
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2019]]
+
+
+{{asia-airport-stub}}
+{{Maldives-stub}}

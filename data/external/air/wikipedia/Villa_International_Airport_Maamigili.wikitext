@@ -1,0 +1,61 @@
+{{Use dmy dates|date=July 2026}}
+{{Infobox airport
+| name             = Villa International Airport Maamigili
+| native_name      = {{lang|dv|ވިލާ ބައިނަލްއަޤުވާމީ ވައިގެބަނދަރު}}
+| image            = Maamigili flughafen.jpg
+| image_size       = 250
+| IATA             = VAM
+| ICAO             = VRMV
+| type             = Public
+| owner_oper       = [[Villa Group]]
+| area_served      = [[Maamingili (Alif Dhaal Atoll)|Maamigili]], [[Alif Dhaal Atoll]], [[Maldives]]
+| location         = <!--if different than above-->
+| hub              = [[Flyme (Villa Air)|Flyme]]
+| elevation_f      = 7
+| elevation_m      = 
+| website          = 
+| coordinates      = {{coord|03|28|14|N|072|50|09|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''VAM'''
+| metric_rwy       = y
+| r1_number        = 09/27
+| r1_length_m      = 1,800
+| r1_length_f      = 5,905
+| r1_surface       = Asphalt
+| footnotes        = Source:<ref name="GCM">{{GCM|VAM|Villa Airport Maamigili (IATA: VAM, ICAO: VRMV)}}</ref>
+}}
+
+'''Villa International Airport Maamigili'''<ref>{{Cite web|url = http://www.aviainfo.gov.mv/aerodromes.php|title = List of Aerodromes from Maldives Civil Aviation Authority|date = 2015|access-date = 15 February 2015|website = Air Navigation & Aerodromes|publisher = Maldives Civil Aviation Authority}}</ref> {{Airport codes|VAM<ref>{{cite web |title=IATA Airport Code Search (VAM: Maamigili Island) |url=https://www.iata.org/en/publications/directories/code-search/?airport.search=VAM |publisher=[[International Air Transport Association]] |access-date=6 September 2013}}</ref>|VRMV}}, also known as '''Villa-Maamigili Airport''', is an airport in the [[Maldives]]. It is located on the island of [[Maamingili (Alif Dhaal Atoll)|Maamigili]] in [[Alif Dhaal Atoll]].{{cn|date=July 2026}}
+
+The airport was developed by Maldivian business tycoon [[Qasim Ibrahim]], who grew up in [[Maamigili (Alif Dhaal Atoll)|Maamigili]], as a project to develop the infrastructure and facilities of the island. He has started a project to build new runways so planes from abroad visiting his resorts will be able to land directly on this airport, instead of having to stop off at Malé airport. It was developed and operated by his company, [[Villa Group]], on land leased from the government.<ref>{{cite web |title=Maamigili Airport - Villa - The Leading Business Initiative in Maldives |url=http://www.villa.mv/index.php/developments/airport.html |url-status=dead |archive-url=https://web.archive.org/web/20170509144053/http://villa.mv/index.php/developments/airport.html |archive-date=9 May 2017 |access-date=3 February 2022 |website=Villa}}</ref> The airport opened up direct transportation facilities to two of their flagship resorts located on adjacent islands.{{cn|date=July 2026}}
+
+The opening of the airport coincided with Villa's entry into the aviation industry, the founding of a new airline [[Villa Air]] (operating as ''Flyme''), to operate from the airport.<ref>{{Cite news |last=Jameel |first=Abdullah |date=1 October 2011 |title=Maamigili airport opens with 'Flyme' airlines entering into service |url=http://www.haveeru.com.mv/news/37908 |url-status=dead |archive-url=https://web.archive.org/web/20111002070700/http://www.haveeru.com.mv/news/37908 |archive-date=2 October 2011 |access-date=15 February 2015 |work=[[Haveeru Daily]]}}</ref>
+
+The airport opened on 1 October 2011 as a [[domestic airport]]. In 2013, it was upgraded to [[international airport]] standards.{{cn|date=July 2026}}
+
+Villa Airport was downgraded to domestic status by the government in August 2014 because of security concerns, but was reinstated as an international airport 23 days later.<ref>{{Cite news |date=17 September 2014 |title=Maamigili Airport returns to international status |url=http://minivannews.com/news-in-brief/maamigili-airport-returns-to-international-status-90152 |url-status=dead |archive-url=https://web.archive.org/web/20141006184630/http://minivannews.com/news-in-brief/maamigili-airport-returns-to-international-status-90152 |archive-date=6 October 2014 |access-date=15 February 2015 |work=Minivan News}}</ref>
+
+In January 2015, Flyme started seaplane operations out of Villa Airport.<ref>{{Cite news |last=Ahmed |first=Zifleen |date=19 January 2015 |title=FlyMe officially begins seaplane operations |url=http://www.vaguthu.mv/en/8450 |url-status=dead |archive-url=https://web.archive.org/web/20150215071214/http://www.vaguthu.mv/en/8450 |archive-date=15 February 2015 |access-date=15 February 2015 |work=Vaguthu}}</ref>
+
+== Facilities ==
+The airport resides at an [[elevation]] of {{convert|6|ft|0}} above [[mean sea level]]. It has one [[runway]] designated 09/27 with a [[concrete]] surface measuring {{convert|1800|x|30|m|0}}.<ref name="GCM" />
+
+==References==
+{{reflist}}
+
+==External links==
+{{commons category-inline}}
+
+* [https://web.archive.org/web/20140322050327/http://isles.egov.mv/Project/Index.aspx?lid=1&tid=0&pid=954 Maamigili Domestic Airport] at Maldivian eGov
+* {{SkyVector|VRMV}}
+
+{{Airports in the Maldives}}
+
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2011]]
+[[Category:2011 establishments in the Maldives]]

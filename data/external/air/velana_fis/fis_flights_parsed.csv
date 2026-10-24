@@ -1,0 +1,964 @@
+id,flightNumber,airline,airlineCode,origin,originCode,destination,destinationCode,scheduledTime,estimatedTime,status,type,category,date,viaRoutes,source_file
+departure-SU321-2026-06-17-0,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:05,11:42,departed,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-Q2132-2026-06-17-0,Q2 132,Maldivian,Q2,Madivaru,LMV,Male,MLE,11:10,10:15,landed,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q2262-2026-06-17-1,Q2 262,Maldivian,Q2,Male,MLE,Kooddoo,GKK,11:20,11:46,departed,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-MH485-2026-06-17-1,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,11:25,11:09,landed,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-DV5375-2026-06-17-2,DV 5375,Scat Airlines,DV,Male,MLE,Almaty,ALA,11:30,12:21,departed,departure,international,2026-06-17,,fis_20260617080741.html
+departure-Q2224-2026-06-17-3,Q2 224,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,11:30,11:50,departed,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-FD175-2026-06-17-2,FD 175,Thai Airasia,FD,Don Mueang,DON,Male,MLE,11:35,11:19,landed,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-SQ432-2026-06-17-3,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:50,11:23,landed,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-Q22460-2026-06-17-4,Q2 2460,Maldivian,Q2,Male,MLE,Maavarulu,RUL,12:00,12:08,departed,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q2162-2026-06-17-5,Q2 162,Maldivian,Q2,Male,MLE,Muli,MUV,12:15,12:24,departed,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-JD455-2026-06-17-4,JD 455,Beijing Capital Airlines,JD,Beijing Daxing,BEI,Male,MLE,12:20,11:24,landed,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-TK734-2026-06-17-5,TK 734,Turkish Airlines,TK,Istanbul,IST,Male,MLE,12:20,12:44,landed,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-FD176-2026-06-17-7,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DON,12:30,12:29,departed,departure,international,2026-06-17,,fis_20260617080741.html
+departure-MH484-2026-06-17-6,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:30,12:34,departed,departure,international,2026-06-17,,fis_20260617080741.html
+departure-KC200-2026-06-17-8,KC 200,Air Astana,KC,Male,MLE,Astana,AST,12:40,12:32,departed,departure,international,2026-06-17,,fis_20260617080741.html
+departure-VP606-2026-06-17-9,VP 606,Villa Air,VP,Male,MLE,Maamigili,VAM,12:45,13:03,departed,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-NR401-2026-06-17-6,NR 401,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,13:00,12:52,landed,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-SQ431-2026-06-17-10,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,13:05,13:05,gate-closed,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-6E1131-2026-06-17-7,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,13:10,12:47,landed,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-OD293-2026-06-17-8,OD 293,Batik Air,OD,Kuala Lumpur,KUL,Male,MLE,13:15,13:15,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-6E1129-2026-06-17-10,6E 1129,Indigo,6E,Trivandrum,TRV,Male,MLE,13:20,13:12,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-G9091-2026-06-17-9,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:04,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-Q28105-2026-06-17-11,Q2 8105,Maldivian,Q2,Gan,GAN,Male,MLE,13:25,12:52,landed,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-EY376-2026-06-17-12,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,13:45,13:45,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-NR402-2026-06-17-11,NR 402,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,13:45,13:45,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-6E1130-2026-06-17-12,6E 1130,Indigo,6E,Male,MLE,Trivandrum,TRV,14:05,14:05,check-in-closed,departure,international,2026-06-17,,fis_20260617080741.html
+departure-6E1132-2026-06-17-13,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,14:10,14:10,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-Q2224-2026-06-17-13,Q2 224,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,14:10,13:38,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-6E1127-2026-06-17-14,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,14:15,14:08,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-OD294-2026-06-17-14,OD 294,Batik Air,OD,Male,MLE,Kuala Lumpur,KUL,14:15,18:55,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-G9092-2026-06-17-15,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-JD456-2026-06-17-16,JD 456,Beijing Capital Airlines,JD,Male,MLE,Beijing Daxing,BEI,14:20,14:20,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-Q2103-2026-06-17-15,Q2 103,Maldivian,Q2,Gan,GAN,Male,MLE,14:20,14:20,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-UL115-2026-06-17-16,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-BS337-2026-06-17-17,BS 337,Us-Bangla Airlines,BS,Dhaka,DAC,Male,MLE,14:30,14:33,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-Q22226-2026-06-17-17,Q2 2226,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,14:40,14:40,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q2244-2026-06-17-18,Q2 244,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,14:50,14:50,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-8D923-2026-06-17-18,8D 923,Fits Air,8D,Colombo,CMB,Male,MLE,14:55,14:55,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-Q2262-2026-06-17-20,Q2 262,Maldivian,Q2,Kooddoo,GKK,Male,MLE,15:00,15:00,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-Q2707-2026-06-17-19,Q2 707,Maldivian,Q2,Cochin,COK,Male,MLE,15:00,15:00,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-Q22461-2026-06-17-21,Q2 2461,Maldivian,Q2,Maavarulu,RUL,Male,MLE,15:10,15:10,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-6E1128-2026-06-17-19,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,15:15,15:15,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-Q2162-2026-06-17-22,Q2 162,Maldivian,Q2,Muli,MUV,Male,MLE,15:20,15:20,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-BS338-2026-06-17-20,BS 338,Us-Bangla Airlines,BS,Male,MLE,Dhaka,DAC,15:30,15:30,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-EK660-2026-06-17-23,EK 660,Emirates,EK,Dubai,DXB,Male,MLE,15:30,15:12,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-Q22264-2026-06-17-21,Q2 2264,Maldivian,Q2,Male,MLE,Kooddoo,GKK,15:30,15:30,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-UL116-2026-06-17-22,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-Q2124-2026-06-17-23,Q2 124,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,15:50,15:50,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-8D924-2026-06-17-24,8D 924,Fits Air,8D,Male,MLE,Colombo,CMB,15:55,15:55,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-Q22144-2026-06-17-25,Q2 2144,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,16:10,16:10,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-NR403-2026-06-17-24,NR 403,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,16:15,16:15,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-Q22227-2026-06-17-26,Q2 2227,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,16:30,16:30,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q2700-2026-06-17-26,Q2 700,Maldivian,Q2,Male,MLE,Trivandrum,TRV,16:30,16:30,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-VP609-2026-06-17-25,VP 609,Villa Air,VP,Maamigili,VAM,Male,MLE,16:30,16:30,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q2106-2026-06-17-27,Q2 106,Maldivian,Q2,Male,MLE,Gan,GAN,16:45,16:45,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-VP610-2026-06-17-28,VP 610,Villa Air,VP,Male,MLE,Maamigili,VAM,17:00,17:00,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-Q2245-2026-06-17-27,Q2 245,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,17:30,17:30,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-NR404-2026-06-17-29,NR 404,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,17:45,17:45,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q2228-2026-06-17-30,Q2 228,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,17:50,17:50,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q22166-2026-06-17-31,Q2 2166,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,18:00,18:00,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-Q22265-2026-06-17-28,Q2 2265,Maldivian,Q2,Kooddoo,GKK,Male,MLE,18:10,18:10,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-EK661-2026-06-17-32,EK 661,Emirates,EK,Male,MLE,Dubai,DXB,18:25,18:25,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-GF145-2026-06-17-29,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:25,18:25,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-Q22145-2026-06-17-30,Q2 2145,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,19:00,19:00,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-Q2125-2026-06-17-31,Q2 125,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,19:10,19:10,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-GF145-2026-06-17-33,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:25,19:25,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-EY377-2026-06-17-34,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,19:30,19:30,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-MU9655-2026-06-17-32,MU 9655,China Eastern,MU,Kunming,KMG,Male,MLE,19:35,19:35,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-NR405-2026-06-17-33,NR 405,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,19:45,19:45,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-UL103-2026-06-17-34,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:50,19:50,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-Q2701-2026-06-17-35,Q2 701,Maldivian,Q2,Trivandrum,TRV,Male,MLE,20:00,20:00,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-Q22167-2026-06-17-36,Q2 2167,Maldivian,Q2,Kadhdhoo,KDO,Male,MLE,20:10,20:10,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-MU9656-2026-06-17-35,MU 9656,China Eastern,MU,Male,MLE,Kunming,KMG,20:35,20:35,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-Q2107-2026-06-17-37,Q2 107,Maldivian,Q2,Gan,GAN,Male,MLE,20:35,20:35,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+arrival-Q2228-2026-06-17-38,Q2 228,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,20:50,20:50,on-time,arrival,domestic,2026-06-17,,fis_20260617080741.html
+departure-UL104-2026-06-17-36,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,21:00,21:00,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-QR675-2026-06-17-37,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+arrival-SQ438-2026-06-17-39,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,21:50,21:50,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-FZ1026-2026-06-17-40,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,22:10,22:10,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+arrival-MH487-2026-06-17-41,MH 487,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,22:15,22:15,on-time,arrival,international,2026-06-17,,fis_20260617080741.html
+departure-NR420-2026-06-17-38,NR 420,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,22:15,22:15,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-TK735-2026-06-17-39,TK 735,Turkish Airlines,TK,Male,MLE,Istanbul,IST,22:20,22:20,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-SQ437-2026-06-17-40,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:10,23:10,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-MH486-2026-06-17-41,MH 486,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,23:15,23:15,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-FZ1026-2026-06-17-42,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-06-17,,fis_20260617080741.html
+departure-Q2112-2026-06-17-43,Q2 112,Maldivian,Q2,Male,MLE,Kooddoo,GKK,23:30,23:30,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+departure-Q2128-2026-06-17-44,Q2 128,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,23:55,23:55,on-time,departure,domestic,2026-06-17,,fis_20260617080741.html
+arrival-EY378-2026-06-18-42,EY 378,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,05:15,05:15,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-Q2341-2026-06-18-43,Q2 341,Maldivian,Q2,Chengdu Tianfu,CHE,Male,MLE,05:50,05:50,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-GF144-2026-06-18-44,GF 144,Gulf Air,GF,Bahrain,BAH,Male,MLE,06:30,06:30,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-TK740-2026-06-18-45,TK 740,Turkish Airlines,TK,Istanbul,IST,Male,MLE,06:30,06:30,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-VP601-2026-06-18-46,VP 601,Villa Air,VP,Maamigili,VAM,Male,MLE,07:00,07:00,on-time,arrival,domestic,2026-06-18,,fis_20260617080741.html
+arrival-FZ1025-2026-06-18-47,FZ 1025,Flydubai,FZ,Dubai,DXB,Male,MLE,07:15,07:15,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-GF144-2026-06-18-45,GF 144,Gulf Air,GF,Male,MLE,Colombo,CMB,07:30,07:30,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-EK656-2026-06-18-48,EK 656,Emirates,EK,Dubai,DXB,Male,MLE,07:40,07:40,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-TK741-2026-06-18-46,TK 741,Turkish Airlines,TK,Male,MLE,Istanbul,IST,08:00,08:00,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-FZ1025-2026-06-18-47,FZ 1025,Flydubai,FZ,Male,MLE,Colombo,CMB,08:15,08:15,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-UL101-2026-06-18-49,UL 101,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,08:15,08:15,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-QR676-2026-06-18-50,QR 676,Qatar Airways,QR,Doha,DOH,Male,MLE,08:25,08:25,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-6E1133-2026-06-18-51,6E 1133,Indigo,6E,Cochin,COK,Male,MLE,09:15,09:15,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-EK657-2026-06-18-48,EK 657,Emirates,EK,Male,MLE,Dubai,DXB,09:15,09:15,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-SU320-2026-06-18-52,SU 320,Aeroflot,SU,Moscow,SVO,Male,MLE,09:25,09:25,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-UL102-2026-06-18-49,UL 102,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,09:25,09:25,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-AK074-2026-06-18-53,AK 074,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,09:50,09:50,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-EY379-2026-06-18-50,EY 379,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:50,09:50,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-6E1134-2026-06-18-51,6E 1134,Indigo,6E,Male,MLE,Cochin,COK,10:15,10:15,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-AK075-2026-06-18-52,AK 075,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,10:45,10:45,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-SU321-2026-06-18-53,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:05,11:05,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-KC555-2026-06-18-54,KC 555,Air Astana,KC,Almaty,ALA,Male,MLE,11:20,11:20,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-SU324-2026-06-18-55,SU 324,Aeroflot,SU,Moscow,SVO,Male,MLE,11:20,11:20,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-MH485-2026-06-18-56,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,11:25,11:25,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-FD175-2026-06-18-57,FD 175,Thai Airasia,FD,Don Mueang,DON,Male,MLE,11:35,11:35,cancelled,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-SQ432-2026-06-18-58,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:50,11:50,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-FD176-2026-06-18-55,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DON,12:30,12:30,cancelled,departure,international,2026-06-18,,fis_20260617080741.html
+departure-MH484-2026-06-18-54,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:30,12:30,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-VP606-2026-06-18-56,VP 606,Villa Air,VP,Male,MLE,Maamigili,VAM,12:45,12:45,on-time,departure,domestic,2026-06-18,,fis_20260617080741.html
+departure-SQ431-2026-06-18-57,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,13:05,13:05,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-6E1131-2026-06-18-59,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,13:10,13:10,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-6E1129-2026-06-18-61,6E 1129,Indigo,6E,Trivandrum,TRV,Male,MLE,13:20,13:20,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-G9091-2026-06-18-60,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:20,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-KC556-2026-06-18-58,KC 556,Air Astana,KC,Male,MLE,Almaty,ALA,13:40,13:40,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-EY376-2026-06-18-62,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,13:45,13:45,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-6E1130-2026-06-18-59,6E 1130,Indigo,6E,Male,MLE,Trivandrum,TRV,14:05,14:05,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-SU325-2026-06-18-60,SU 325,Aeroflot,SU,Male,MLE,Moscow,SVO,14:05,14:05,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-6E1132-2026-06-18-61,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,14:10,14:10,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-6E1127-2026-06-18-63,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,14:15,14:15,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-G9092-2026-06-18-62,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-UL115-2026-06-18-64,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-QR674-2026-06-18-65,QR 674,Qatar Airways,QR,Doha,DOH,Male,MLE,14:30,14:30,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-6E1128-2026-06-18-63,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,15:15,15:15,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-EK660-2026-06-18-66,EK 660,Emirates,EK,Dubai,DXB,Male,MLE,15:30,15:30,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-UL116-2026-06-18-64,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-8D923-2026-06-18-67,8D 923,Fits Air,8D,Colombo,CMB,Male,MLE,17:20,17:20,cancelled,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-MU235-2026-06-18-68,MU 235,China Eastern,MU,Shanghai,SHA,Male,MLE,17:50,17:50,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-OQ2393-2026-06-18-69,OQ 2393,Chongqing Airlines,OQ,Chongqing,CHO,Male,MLE,17:50,17:50,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-8D924-2026-06-18-65,8D 924,Fits Air,8D,Male,MLE,Colombo,CMB,18:20,18:20,cancelled,departure,international,2026-06-18,,fis_20260617080741.html
+departure-EK661-2026-06-18-66,EK 661,Emirates,EK,Male,MLE,Dubai,DXB,18:25,18:25,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-GF145-2026-06-18-70,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:25,18:25,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-OQ2394-2026-06-18-67,OQ 2394,Chongqing Airlines,OQ,Male,MLE,Colombo,CMB,18:50,18:50,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-GF145-2026-06-18-68,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:25,19:25,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-3U3923-2026-06-18-71,3U 3923,Sichuan Airlines,3U,Chengdu Tianfu,CHE,Male,MLE,19:30,19:30,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-EY377-2026-06-18-69,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,19:30,19:30,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-MU236-2026-06-18-70,MU 236,China Eastern,MU,Male,MLE,Shanghai,SHA,19:40,19:40,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-QR673-2026-06-18-71,QR 673,Qatar Airways,QR,Male,MLE,Doha,DOH,19:40,19:40,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-UL103-2026-06-18-72,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:50,19:50,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-3U3924-2026-06-18-72,3U 3924,Sichuan Airlines,3U,Male,MLE,Chengdu Tianfu,CHE,20:30,20:30,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-UL104-2026-06-18-73,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,21:00,21:00,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-QR675-2026-06-18-74,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-SQ438-2026-06-18-73,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,21:50,21:50,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-OD295-2026-06-18-74,OD 295,Batik Air,OD,Kuala Lumpur,KUL,Male,MLE,21:55,21:55,cancelled,arrival,international,2026-06-18,,fis_20260617080741.html
+arrival-FZ1026-2026-06-18-75,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,22:10,22:10,on-time,arrival,international,2026-06-18,,fis_20260617080741.html
+departure-OD296-2026-06-18-75,OD 296,Batik Air,OD,Male,MLE,Kuala Lumpur,KUL,22:55,22:55,cancelled,departure,international,2026-06-18,,fis_20260617080741.html
+departure-SQ437-2026-06-18-76,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:10,23:10,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-FZ1026-2026-06-18-77,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+departure-Q2394-2026-06-18-78,Q2 394,Maldivian,Q2,Male,MLE,Beijing,BEI,23:55,23:55,on-time,departure,international,2026-06-18,,fis_20260617080741.html
+arrival-GF144-2026-07-11-0,GF 144,Gulf Air,GF,Bahrain,BAH,Male,MLE,06:30,06:06,landed,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-NR421-2026-07-11-1,NR 421,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,07:00,06:46,landed,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2129-2026-07-11-2,Q2 129,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,07:05,06:29,landed,arrival,domestic,2026-07-11,Kooddoo,fis_20260711030016.html
+arrival-FZ1025-2026-07-11-3,FZ 1025,Flydubai,FZ,Dubai,DXB,Male,MLE,07:15,07:31,landed,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2113-2026-07-11-4,Q2 113,Maldivian,Q2,Gan,GAN,Male,MLE,07:15,06:21,landed,arrival,domestic,2026-07-11,Kaadehdhoo|Muli,fis_20260711030016.html
+departure-Q2260-2026-07-11-0,Q2 260,Maldivian,Q2,Male,MLE,Kooddoo,GKK,07:15,07:18,departed,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q22221-2026-07-11-5,Q2 2221,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,07:20,06:49,landed,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-GF144-2026-07-11-1,GF 144,Gulf Air,GF,Male,MLE,Colombo,CMB,07:30,07:05,departed,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q22249-2026-07-11-6,Q2 2249,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,07:30,07:12,landed,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-EK656-2026-07-11-7,EK 656,Emirates,EK,Dubai,DXB,Male,MLE,07:40,07:54,landed,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q28441-2026-07-11-8,Q2 8441,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,07:40,07:47,landed,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2132-2026-07-11-2,Q2 132,Maldivian,Q2,Male,MLE,Madivaru,LMV,08:00,07:54,departed,departure,domestic,2026-07-11,Maafaru,fis_20260711030016.html
+departure-Q22478-2026-07-11-3,Q2 2478,Maldivian,Q2,Male,MLE,Hoarafushi,HRF,08:00,08:00,gate-closed,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-8D921-2026-07-11-9,8D 921,Fits Air,8D,Colombo,CMB,Male,MLE,08:05,08:44,delayed,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-G9093-2026-07-11-10,G9 093,Air Arabia,G9,Sharjah,SHJ,Male,MLE,08:10,08:18,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2395-2026-07-11-11,Q2 395,Maldivian,Q2,Beijing,PEK,Male,MLE,08:10,06:31,landed,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q28140-2026-07-11-4,Q2 8140,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,08:10,08:10,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-FZ1025-2026-07-11-5,FZ 1025,Flydubai,FZ,Male,MLE,Colombo,CMB,08:15,08:15,check-in-closed,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-UL101-2026-07-11-12,UL 101,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,08:15,08:35,delayed,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2192-2026-07-11-6,Q2 192,Maldivian,Q2,Male,MLE,Funadhoo,FND,08:20,08:20,gate-closed,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2442-2026-07-11-7,Q2 442,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,08:25,08:25,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-QR676-2026-07-11-13,QR 676,Qatar Airways,QR,Doha,DOH,Male,MLE,08:25,08:50,delayed,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-VP601-2026-07-11-14,VP 601,Villa Air,VP,Maamigili,VAM,Male,MLE,08:30,08:30,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2182-2026-07-11-8,Q2 182,Maldivian,Q2,Male,MLE,Thimarafushi,TMF,08:50,08:50,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-8D922-2026-07-11-9,8D 922,Fits Air,8D,Male,MLE,Colombo,CMB,09:05,09:05,delayed,departure,international,2026-07-11,,fis_20260711030016.html
+departure-G9094-2026-07-11-10,G9 094,Air Arabia,G9,Male,MLE,Sharjah,SHJ,09:10,09:10,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-6E1133-2026-07-11-15,6E 1133,Indigo,6E,Cochin,COK,Male,MLE,09:15,09:15,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-EK657-2026-07-11-11,EK 657,Emirates,EK,Male,MLE,Dubai,DXB,09:15,09:15,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-SU320-2026-07-11-16,SU 320,Aeroflot,SU,Moscow,SVO,Male,MLE,09:25,09:11,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-UL102-2026-07-11-12,UL 102,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,09:25,09:25,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-EK658-2026-07-11-17,EK 658,Emirates,EK,Dubai,DXB,Male,MLE,09:30,09:18,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-NR408-2026-07-11-13,NR 408,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,09:30,09:30,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-EY379-2026-07-11-14,EY 379,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:40,09:40,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-WK066-2026-07-11-18,WK 066,Edelweiss,WK,Zurich,ZRH,Male,MLE,09:40,09:35,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-AK074-2026-07-11-19,AK 074,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,09:50,09:30,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2261-2026-07-11-20,Q2 261,Maldivian,Q2,Kooddoo,GKK,Male,MLE,09:55,09:55,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-6E1134-2026-07-11-15,6E 1134,Indigo,6E,Male,MLE,Cochin,COK,10:15,10:15,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-AK075-2026-07-11-16,AK 075,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,10:45,10:45,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q22479-2026-07-11-21,Q2 2479,Maldivian,Q2,Hoarafushi,HRF,Male,MLE,10:50,10:50,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2443-2026-07-11-22,Q2 443,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,10:55,10:55,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2193-2026-07-11-23,Q2 193,Maldivian,Q2,Funadhoo,FND,Male,MLE,11:00,11:00,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2706-2026-07-11-17,Q2 706,Maldivian,Q2,Male,MLE,Cochin,COK,11:00,11:00,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q28141-2026-07-11-24,Q2 8141,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,11:00,11:00,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-SU321-2026-07-11-18,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:05,11:05,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2132-2026-07-11-25,Q2 132,Maldivian,Q2,Madivaru,LMV,Male,MLE,11:10,11:10,on-time,arrival,domestic,2026-07-11,Maafaru,fis_20260711030016.html
+arrival-Q2183-2026-07-11-26,Q2 183,Maldivian,Q2,Thimarafushi,TMF,Male,MLE,11:10,11:10,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-WK067-2026-07-11-19,WK 067,Edelweiss,WK,Male,MLE,Zurich,ZRH,11:10,11:10,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-EK659-2026-07-11-20,EK 659,Emirates,EK,Male,MLE,Dubai,DXB,11:15,11:15,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-SU324-2026-07-11-27,SU 324,Aeroflot,SU,Moscow,SVO,Male,MLE,11:20,10:43,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-MH485-2026-07-11-28,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,11:25,11:24,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-NR409-2026-07-11-29,NR 409,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,11:30,11:30,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2224-2026-07-11-22,Q2 224,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,11:30,11:30,on-time,departure,domestic,2026-07-11,Ifuru,fis_20260711030016.html
+departure-VP606-2026-07-11-21,VP 606,Villa Air,VP,Male,MLE,Maamigili,VAM,11:30,11:30,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-FD175-2026-07-11-30,FD 175,Thai Airasia,FD,Don Mueang,DMK,Male,MLE,11:35,11:13,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2242-2026-07-11-23,Q2 242,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,11:35,11:35,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2162-2026-07-11-24,Q2 162,Maldivian,Q2,Male,MLE,Muli,MUM,11:45,11:45,on-time,departure,domestic,2026-07-11,Kadhdhoo,fis_20260711030016.html
+departure-Q22460-2026-07-11-25,Q2 2460,Maldivian,Q2,Male,MLE,Maavarulu,RUL,11:50,11:50,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-SQ432-2026-07-11-31,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:50,11:30,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2102-2026-07-11-26,Q2 102,Maldivian,Q2,Male,MLE,Gan,GAN,12:05,12:05,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q22142-2026-07-11-27,Q2 2142,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,12:05,12:05,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-FZ1026-2026-07-11-32,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,12:15,12:15,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-TK734-2026-07-11-33,TK 734,Turkish Airlines,TK,Istanbul,IST,Male,MLE,12:20,12:38,delayed,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-BS337-2026-07-11-34,BS 337,Us-Bangla Airlines,BS,Dhaka,DAC,Male,MLE,12:25,12:25,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2262-2026-07-11-28,Q2 262,Maldivian,Q2,Male,MLE,Kooddoo,GKK,12:25,12:25,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-FD176-2026-07-11-30,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DMK,12:30,12:30,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-MH484-2026-07-11-29,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:30,12:30,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-NR400-2026-07-11-31,NR 400,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,12:30,12:30,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-XY245-2026-07-11-35,XY 245,Flynas,XY,Riyadh,RUH,Male,MLE,12:55,12:17,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-SQ431-2026-07-11-32,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,13:05,13:05,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-6E1131-2026-07-11-36,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,13:10,13:10,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-FZ1026-2026-07-11-33,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,13:15,13:15,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-6E1129-2026-07-11-38,6E 1129,Indigo,6E,Trivandrum,TRV,Male,MLE,13:20,13:20,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-G9091-2026-07-11-37,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:20,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-BS338-2026-07-11-34,BS 338,Us-Bangla Airlines,BS,Male,MLE,Dhaka,DAC,13:25,13:25,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-EY376-2026-07-11-39,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,13:45,13:45,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-XY246-2026-07-11-35,XY 246,Flynas,XY,Male,MLE,Riyadh,RUH,13:55,13:55,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-6E1130-2026-07-11-36,6E 1130,Indigo,6E,Male,MLE,Trivandrum,TRV,14:05,14:05,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2243-2026-07-11-40,Q2 243,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,14:05,14:05,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-SU325-2026-07-11-37,SU 325,Aeroflot,SU,Male,MLE,Moscow,SVO,14:05,14:05,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-6E1132-2026-07-11-38,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,14:10,14:10,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2224-2026-07-11-41,Q2 224,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,14:10,14:10,on-time,arrival,domestic,2026-07-11,Ifuru,fis_20260711030016.html
+arrival-6E1127-2026-07-11-42,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,14:15,14:15,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-G9092-2026-07-11-39,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-UL115-2026-07-11-43,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-QR674-2026-07-11-44,QR 674,Qatar Airways,QR,Doha,DOH,Male,MLE,14:30,14:30,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2226-2026-07-11-40,Q2 226,Maldivian,Q2,Male,MLE,Ifuru,IFU,14:40,14:40,on-time,departure,domestic,2026-07-11,Dharavandhoo,fis_20260711030016.html
+departure-Q2244-2026-07-11-41,Q2 244,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,14:40,14:40,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2162-2026-07-11-45,Q2 162,Maldivian,Q2,Muli,MUM,Male,MLE,14:50,14:50,on-time,arrival,domestic,2026-07-11,Kadhdhoo,fis_20260711030016.html
+arrival-Q22143-2026-07-11-46,Q2 2143,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,14:55,14:55,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-EK652-2026-07-11-47,EK 652,Emirates,EK,Dubai,DXB,Male,MLE,15:00,15:00,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q22461-2026-07-11-48,Q2 2461,Maldivian,Q2,Maavarulu,RUL,Male,MLE,15:00,15:00,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-6E1128-2026-07-11-42,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,15:15,15:15,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-FZ1569-2026-07-11-49,FZ 1569,Flydubai,FZ,Dubai,DXB,Male,MLE,15:25,15:25,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2144-2026-07-11-43,Q2 144,Maldivian,Q2,Male,MLE,Maavarulu,RUL,15:30,15:30,on-time,departure,domestic,2026-07-11,Kaadehdhoo,fis_20260711030016.html
+arrival-Q2707-2026-07-11-50,Q2 707,Maldivian,Q2,Cochin,COK,Male,MLE,15:30,15:30,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2124-2026-07-11-45,Q2 124,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,15:35,15:35,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-UL116-2026-07-11-44,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2263-2026-07-11-51,Q2 263,Maldivian,Q2,Kooddoo,GKK,Male,MLE,15:40,15:40,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2264-2026-07-11-46,Q2 264,Maldivian,Q2,Male,MLE,Kooddoo,GKK,15:40,15:40,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2103-2026-07-11-52,Q2 103,Maldivian,Q2,Gan,GAN,Male,MLE,15:55,15:55,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-NR403-2026-07-11-53,NR 403,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,16:15,16:15,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-SV874-2026-07-11-54,SV 874,Saudia,SV,Jeddah,JED,Male,MLE,16:25,16:25,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-EK652-2026-07-11-47,EK 652,Emirates,EK,Male,MLE,Colombo,CMB,16:30,16:30,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-HB510-2026-07-11-55,HB 510,Greater Bay Airlines,HB,Hong Kong,HKG,Male,MLE,16:40,16:40,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q2106-2026-07-11-48,Q2 106,Maldivian,Q2,Male,MLE,Gan,GAN,16:45,16:45,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2700-2026-07-11-49,Q2 700,Maldivian,Q2,Male,MLE,Trivandrum,TRV,17:00,17:00,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-8D923-2026-07-11-56,8D 923,Fits Air,8D,Colombo,CMB,Male,MLE,17:20,17:20,cancelled,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2226-2026-07-11-57,Q2 226,Maldivian,Q2,Ifuru,IFU,Male,MLE,17:20,17:20,on-time,arrival,domestic,2026-07-11,Dharavandhoo,fis_20260711030016.html
+arrival-Q2245-2026-07-11-58,Q2 245,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,17:20,17:20,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-NR404-2026-07-11-51,NR 404,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,17:45,17:45,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-SV875-2026-07-11-50,SV 875,Saudia,SV,Male,MLE,Jeddah,JED,17:45,17:45,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-MU235-2026-07-11-59,MU 235,China Eastern,MU,Shanghai,PVG,Male,MLE,17:50,17:50,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-OQ2393-2026-07-11-60,OQ 2393,Chongqing Airlines,OQ,Chongqing,CKG,Male,MLE,17:50,17:50,on-time,arrival,international,2026-07-11,Colombo,fis_20260711030016.html
+departure-Q2166-2026-07-11-53,Q2 166,Maldivian,Q2,Male,MLE,Muli,MUM,17:50,17:50,on-time,departure,domestic,2026-07-11,Kadhdhoo,fis_20260711030016.html
+departure-Q2228-2026-07-11-54,Q2 228,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,17:50,17:50,on-time,departure,domestic,2026-07-11,Ifuru,fis_20260711030016.html
+departure-Q2470-2026-07-11-52,Q2 470,Maldivian,Q2,Male,MLE,Hoarafushi,HRF,17:50,17:50,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-8D924-2026-07-11-55,8D 924,Fits Air,8D,Male,MLE,Colombo,CMB,18:20,18:20,cancelled,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2265-2026-07-11-61,Q2 265,Maldivian,Q2,Kooddoo,GKK,Male,MLE,18:20,18:20,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-GF145-2026-07-11-62,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:25,18:25,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-HX791-2026-07-11-63,HX 791,Hong Kong Airlines,HX,Hong Kong,HKG,Male,MLE,18:35,18:35,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-OQ2394-2026-07-11-56,OQ 2394,Chongqing Airlines,OQ,Male,MLE,Colombo,CMB,18:50,18:50,on-time,departure,international,2026-07-11,Chongqing,fis_20260711030016.html
+departure-Q2448-2026-07-11-57,Q2 448,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,18:50,18:50,on-time,departure,domestic,2026-07-11,Kulhudhuffushi,fis_20260711030016.html
+arrival-Q2125-2026-07-11-64,Q2 125,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,18:55,18:55,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-GF145-2026-07-11-58,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:25,19:25,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-3U3923-2026-07-11-65,3U 3923,Sichuan Airlines,3U,Chengdu Tianfu,TFU,Male,MLE,19:30,19:30,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2144-2026-07-11-66,Q2 144,Maldivian,Q2,Maavarulu,RUL,Male,MLE,19:30,19:30,on-time,arrival,domestic,2026-07-11,Kaadehdhoo,fis_20260711030016.html
+departure-MU236-2026-07-11-59,MU 236,China Eastern,MU,Male,MLE,Shanghai,PVG,19:40,19:40,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-QR673-2026-07-11-60,QR 673,Qatar Airways,QR,Male,MLE,Doha,DOH,19:40,19:40,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-HB511-2026-07-11-61,HB 511,Greater Bay Airlines,HB,Male,MLE,Hong Kong,HKG,19:45,19:45,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-NR405-2026-07-11-67,NR 405,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,19:45,19:45,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-UL103-2026-07-11-68,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:50,19:50,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-Q22126-2026-07-11-62,Q2 2126,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,20:00,20:00,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q22178-2026-07-11-63,Q2 2178,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,20:10,20:10,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-3U3924-2026-07-11-64,3U 3924,Sichuan Airlines,3U,Male,MLE,Chengdu Tianfu,TFU,20:30,20:30,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2107-2026-07-11-69,Q2 107,Maldivian,Q2,Gan,GAN,Male,MLE,20:35,20:35,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-HX792-2026-07-11-65,HX 792,Hong Kong Airlines,HX,Male,MLE,Hong Kong,HKG,20:40,20:40,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2471-2026-07-11-70,Q2 471,Maldivian,Q2,Hoarafushi,HRF,Male,MLE,20:40,20:40,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2228-2026-07-11-71,Q2 228,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,20:50,20:50,on-time,arrival,domestic,2026-07-11,Ifuru,fis_20260711030016.html
+arrival-Q2166-2026-07-11-72,Q2 166,Maldivian,Q2,Kadhdhoo,KDO,Male,MLE,20:55,20:55,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2701-2026-07-11-73,Q2 701,Maldivian,Q2,Trivandrum,TRV,Male,MLE,21:00,21:00,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+departure-UL104-2026-07-11-66,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,21:00,21:00,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-QR675-2026-07-11-67,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-Q22458-2026-07-11-69,Q2 2458,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,21:20,21:20,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2324-2026-07-11-68,Q2 324,Maldivian,Q2,Male,MLE,Maafaru,NMF,21:20,21:20,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-EY377-2026-07-11-70,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,21:25,21:25,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-EK653-2026-07-11-74,EK 653,Emirates,EK,Colombo,CMB,Male,MLE,21:35,21:35,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-SQ438-2026-07-11-75,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,21:50,21:50,on-time,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-OD295-2026-07-11-76,OD 295,Batik Air,OD,Kuala Lumpur,KUL,Male,MLE,21:55,21:55,cancelled,arrival,international,2026-07-11,,fis_20260711030016.html
+arrival-Q2448-2026-07-11-77,Q2 448,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,22:20,22:20,on-time,arrival,domestic,2026-07-11,Kulhudhuffushi,fis_20260711030016.html
+departure-TK735-2026-07-11-71,TK 735,Turkish Airlines,TK,Male,MLE,Istanbul,IST,22:20,22:20,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q22179-2026-07-11-78,Q2 2179,Maldivian,Q2,Kadhdhoo,KDO,Male,MLE,22:30,22:30,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-OD296-2026-07-11-72,OD 296,Batik Air,OD,Male,MLE,Kuala Lumpur,KUL,22:55,22:55,cancelled,departure,international,2026-07-11,,fis_20260711030016.html
+departure-EK653-2026-07-11-73,EK 653,Emirates,EK,Male,MLE,Dubai,DXB,23:00,23:00,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-Q2248-2026-07-11-74,Q2 248,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,23:00,23:00,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-SQ437-2026-07-11-75,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:10,23:10,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+arrival-Q22127-2026-07-11-80,Q2 2127,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,23:20,23:20,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q2325-2026-07-11-79,Q2 325,Maldivian,Q2,Maafaru,NMF,Male,MLE,23:20,23:20,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-FZ1570-2026-07-11-76,FZ 1570,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-NR420-2026-07-11-77,NR 420,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,23:30,23:30,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2112-2026-07-11-78,Q2 112,Maldivian,Q2,Male,MLE,Gan,GAN,23:30,23:30,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+arrival-Q22459-2026-07-11-81,Q2 2459,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,23:40,23:40,on-time,arrival,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2268-2026-07-11-79,Q2 268,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,23:50,23:50,on-time,departure,domestic,2026-07-11,,fis_20260711030016.html
+departure-Q2502-2026-07-11-80,Q2 502,Maldivian,Q2,Male,MLE,Dhaka,DAC,23:55,23:55,on-time,departure,international,2026-07-11,,fis_20260711030016.html
+departure-Q26360-2026-07-12-81,Q2 6360,Maldivian,Q2,Male,MLE,Gan,GAN,01:10,01:10,on-time,departure,international,2026-07-12,Jeddah,fis_20260711030016.html
+departure-UL116-2026-07-12-0,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:33,departed,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-Q2103-2026-07-12-0,Q2 103,Maldivian,Q2,Gan,GAN,Male,MLE,15:55,15:32,landed,arrival,domestic,2026-07-12,,fis_20260712113242.html
+departure-Q2264-2026-07-12-1,Q2 264,Maldivian,Q2,Male,MLE,Kooddoo,GKK,16:00,16:53,departed,departure,domestic,2026-07-12,,fis_20260712113242.html
+departure-EK652-2026-07-12-2,EK 652,Emirates,EK,Male,MLE,Colombo,CMB,16:30,16:44,departed,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-VP609-2026-07-12-1,VP 609,Villa Air,VP,Maamigili,VAM,Male,MLE,16:30,16:18,landed,arrival,domestic,2026-07-12,,fis_20260712113242.html
+arrival-HB510-2026-07-12-2,HB 510,Greater Bay Airlines,HB,Hong Kong,HKG,Male,MLE,16:40,17:30,landed,arrival,international,2026-07-12,,fis_20260712113242.html
+arrival-NR403-2026-07-12-3,NR 403,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,16:45,16:46,landed,arrival,domestic,2026-07-12,,fis_20260712113242.html
+departure-Q2106-2026-07-12-3,Q2 106,Maldivian,Q2,Male,MLE,Gan,GAN,16:45,16:50,departed,departure,domestic,2026-07-12,,fis_20260712113242.html
+departure-VP610-2026-07-12-4,VP 610,Villa Air,VP,Male,MLE,Maamigili,VAM,17:00,17:00,boarding,departure,domestic,2026-07-12,,fis_20260712113242.html
+arrival-Q2226-2026-07-12-4,Q2 226,Maldivian,Q2,Ifuru,IFU,Male,MLE,17:20,17:06,landed,arrival,domestic,2026-07-12,Dharavandhoo,fis_20260712113242.html
+arrival-Q2245-2026-07-12-5,Q2 245,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,17:20,17:30,landed,arrival,domestic,2026-07-12,,fis_20260712113242.html
+departure-NR404-2026-07-12-5,NR 404,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,17:45,17:45,gate-closed,departure,domestic,2026-07-12,,fis_20260712113242.html
+arrival-MU235-2026-07-12-6,MU 235,China Eastern,MU,Shanghai,PVG,Male,MLE,17:50,21:25,delayed,arrival,international,2026-07-12,,fis_20260712113242.html
+departure-Q2166-2026-07-12-7,Q2 166,Maldivian,Q2,Male,MLE,Muli,MUM,17:50,17:50,on-time,departure,domestic,2026-07-12,Kadhdhoo,fis_20260712113242.html
+departure-Q2228-2026-07-12-6,Q2 228,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,17:50,17:50,boarding,departure,domestic,2026-07-12,Ifuru,fis_20260712113242.html
+arrival-Q26361-2026-07-12-7,Q2 6361,Maldivian,Q2,Jeddah,JED,Male,MLE,18:10,18:30,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+arrival-Q2471-2026-07-12-8,Q2 471,Maldivian,Q2,Hoarafushi,HRF,Male,MLE,18:20,18:09,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+arrival-GF145-2026-07-12-9,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:25,18:03,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+arrival-HX791-2026-07-12-10,HX 791,Hong Kong Airlines,HX,Hong Kong,HKG,Male,MLE,18:35,18:58,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+arrival-Q2125-2026-07-12-12,Q2 125,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,18:40,18:40,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+arrival-Q2265-2026-07-12-11,Q2 265,Maldivian,Q2,Kooddoo,GKK,Male,MLE,18:40,18:40,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+departure-Q22156-2026-07-12-8,Q2 2156,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,18:50,18:50,on-time,departure,domestic,2026-07-12,Fuvahmulah,fis_20260712113242.html
+arrival-Q2144-2026-07-12-13,Q2 144,Maldivian,Q2,Maavarulu,RUL,Male,MLE,19:05,19:05,on-time,arrival,domestic,2026-07-12,Kaadehdhoo,fis_20260712113242.html
+departure-Q22126-2026-07-12-10,Q2 2126,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,19:10,19:10,on-time,departure,domestic,2026-07-12,,fis_20260712113242.html
+departure-Q2448-2026-07-12-9,Q2 448,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,19:10,19:10,on-time,departure,domestic,2026-07-12,Kulhudhuffushi,fis_20260712113242.html
+departure-GF145-2026-07-12-11,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:25,19:25,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-MU9655-2026-07-12-14,MU 9655,China Eastern,MU,Kunming,KMG,Male,MLE,19:35,19:17,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+departure-MU236-2026-07-12-12,MU 236,China Eastern,MU,Male,MLE,Shanghai,PVG,19:40,22:30,delayed,departure,international,2026-07-12,,fis_20260712113242.html
+departure-HB511-2026-07-12-13,HB 511,Greater Bay Airlines,HB,Male,MLE,Hong Kong,HKG,19:45,19:45,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-NR405-2026-07-12-15,NR 405,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,19:45,19:45,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+departure-Q22108-2026-07-12-14,Q2 2108,Maldivian,Q2,Male,MLE,Gan,GAN,19:45,19:45,on-time,departure,domestic,2026-07-12,,fis_20260712113242.html
+arrival-UL103-2026-07-12-16,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:50,19:50,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+departure-MU9656-2026-07-12-15,MU 9656,China Eastern,MU,Male,MLE,Kunming,KMG,20:35,20:35,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-Q2107-2026-07-12-17,Q2 107,Maldivian,Q2,Gan,GAN,Male,MLE,20:35,20:35,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+departure-HX792-2026-07-12-16,HX 792,Hong Kong Airlines,HX,Male,MLE,Hong Kong,HKG,20:40,20:40,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+departure-Q2956-2026-07-12-17,Q2 956,Maldivian,Q2,Male,MLE,Melbourne,MEL,20:40,20:40,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-Q2228-2026-07-12-18,Q2 228,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,20:50,20:50,on-time,arrival,domestic,2026-07-12,Ifuru,fis_20260712113242.html
+arrival-Q2166-2026-07-12-19,Q2 166,Maldivian,Q2,Muli,MUM,Male,MLE,20:55,20:55,on-time,arrival,domestic,2026-07-12,Kadhdhoo,fis_20260712113242.html
+departure-UL104-2026-07-12-18,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,21:00,21:00,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+departure-Q22168-2026-07-12-20,Q2 2168,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,21:05,21:05,on-time,departure,domestic,2026-07-12,,fis_20260712113242.html
+arrival-Q22431-2026-07-12-20,Q2 2431,Maldivian,Q2,Bangkok,BKK,Male,MLE,21:05,21:05,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+departure-QR675-2026-07-12-19,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+departure-EY377-2026-07-12-21,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,21:25,21:25,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-EK653-2026-07-12-21,EK 653,Emirates,EK,Colombo,CMB,Male,MLE,21:35,21:35,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+arrival-SQ438-2026-07-12-22,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,21:50,21:50,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+arrival-MH487-2026-07-12-23,MH 487,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,22:15,22:15,on-time,arrival,international,2026-07-12,,fis_20260712113242.html
+departure-NR420-2026-07-12-22,NR 420,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,22:15,22:15,on-time,departure,domestic,2026-07-12,,fis_20260712113242.html
+departure-TK735-2026-07-12-23,TK 735,Turkish Airlines,TK,Male,MLE,Istanbul,IST,22:20,22:20,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+arrival-Q2448-2026-07-12-24,Q2 448,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,22:25,22:25,on-time,arrival,domestic,2026-07-12,Kulhudhuffushi,fis_20260712113242.html
+arrival-Q22127-2026-07-12-25,Q2 2127,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,22:30,22:30,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+arrival-Q22157-2026-07-12-26,Q2 2157,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,22:50,22:50,on-time,arrival,domestic,2026-07-12,Fuvahmulah,fis_20260712113242.html
+departure-EK653-2026-07-12-24,EK 653,Emirates,EK,Male,MLE,Dubai,DXB,23:00,23:00,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+departure-Q2250-2026-07-12-25,Q2 250,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,23:00,23:00,on-time,departure,domestic,2026-07-12,,fis_20260712113242.html
+departure-SQ437-2026-07-12-26,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:10,23:10,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+departure-MH486-2026-07-12-27,MH 486,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,23:15,23:15,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+departure-Q2128-2026-07-12-28,Q2 128,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,23:15,23:15,on-time,departure,domestic,2026-07-12,,fis_20260712113242.html
+arrival-Q22169-2026-07-12-27,Q2 2169,Maldivian,Q2,Kadhdhoo,KDO,Male,MLE,23:15,23:15,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+arrival-Q22109-2026-07-12-28,Q2 2109,Maldivian,Q2,Gan,GAN,Male,MLE,23:25,23:25,on-time,arrival,domestic,2026-07-12,,fis_20260712113242.html
+departure-FZ1570-2026-07-12-29,FZ 1570,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-07-12,,fis_20260712113242.html
+departure-Q2118-2026-07-12-30,Q2 118,Maldivian,Q2,Male,MLE,Gan,GAN,23:30,23:30,on-time,departure,domestic,2026-07-12,,fis_20260712113242.html
+departure-Q2220-2026-07-13-31,Q2 220,Maldivian,Q2,Male,MLE,Ifuru,IFU,05:00,05:00,on-time,departure,domestic,2026-07-13,Dharavandhoo,fis_20260712113242.html
+arrival-EY378-2026-07-13-82,EY 378,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,05:15,05:15,on-time,arrival,international,2026-07-13,,fis_20260711030016.html
+departure-Q2260-2026-07-13-32,Q2 260,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,06:20,06:20,on-time,departure,domestic,2026-07-13,Kooddoo,fis_20260712113242.html
+arrival-GF144-2026-07-13-83,GF 144,Gulf Air,GF,Bahrain,BAH,Male,MLE,06:30,06:30,on-time,arrival,international,2026-07-13,,fis_20260711030016.html
+arrival-NR421-2026-07-13-32,NR 421,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,07:00,07:00,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2251-2026-07-13-31,Q2 251,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,07:00,07:00,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2129-2026-07-13-33,Q2 129,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,07:05,07:05,on-time,arrival,domestic,2026-07-13,Kadhdhoo|Muli,fis_20260712113242.html
+arrival-Q2119-2026-07-13-34,Q2 119,Maldivian,Q2,Gan,GAN,Male,MLE,07:10,07:10,on-time,arrival,domestic,2026-07-13,Kooddoo,fis_20260712113242.html
+arrival-FZ1025-2026-07-13-84,FZ 1025,Flydubai,FZ,Dubai,DXB,Male,MLE,07:15,07:15,on-time,arrival,international,2026-07-13,,fis_20260711030016.html
+arrival-Q2220-2026-07-13-36,Q2 220,Maldivian,Q2,Ifuru,IFU,Male,MLE,07:20,07:20,on-time,arrival,domestic,2026-07-13,Dharavandhoo,fis_20260712113242.html
+departure-GF144-2026-07-13-82,GF 144,Gulf Air,GF,Male,MLE,Colombo,CMB,07:30,07:30,on-time,departure,international,2026-07-13,,fis_20260711030016.html
+arrival-VP601-2026-07-13-37,VP 601,Villa Air,VP,Maamigili,VAM,Male,MLE,07:30,07:30,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-EK656-2026-07-13-85,EK 656,Emirates,EK,Dubai,DXB,Male,MLE,07:40,07:40,on-time,arrival,international,2026-07-13,,fis_20260711030016.html
+departure-Q22460-2026-07-13-35,Q2 2460,Maldivian,Q2,Male,MLE,Maavarulu,RUL,08:00,08:00,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q2700-2026-07-13-34,Q2 700,Maldivian,Q2,Male,MLE,Trivandrum,TRV,08:00,08:00,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-G9093-2026-07-13-39,G9 093,Air Arabia,G9,Sharjah,SHJ,Male,MLE,08:10,08:10,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-FZ1025-2026-07-13-36,FZ 1025,Flydubai,FZ,Male,MLE,Colombo,CMB,08:15,08:15,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-UL101-2026-07-13-40,UL 101,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,08:15,08:15,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-Q22192-2026-07-13-37,Q2 2192,Maldivian,Q2,Male,MLE,Funadhoo,FND,08:20,08:20,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q2442-2026-07-13-38,Q2 442,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,08:25,08:25,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-QR676-2026-07-13-41,QR 676,Qatar Airways,QR,Doha,DOH,Male,MLE,08:25,08:25,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-G9094-2026-07-13-39,G9 094,Air Arabia,G9,Male,MLE,Sharjah,SHJ,09:10,09:10,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-6E1133-2026-07-13-42,6E 1133,Indigo,6E,Cochin,COK,Male,MLE,09:15,09:15,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-EK657-2026-07-13-40,EK 657,Emirates,EK,Male,MLE,Dubai,DXB,09:15,09:15,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-NR538-2026-07-13-41,NR 538,Manta Air,NR,Male,MLE,Dharavandhoo,DRV,09:15,09:15,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q22132-2026-07-13-42,Q2 2132,Maldivian,Q2,Male,MLE,Madivaru,LMV,09:20,09:20,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-SU320-2026-07-13-43,SU 320,Aeroflot,SU,Moscow,SVO,Male,MLE,09:25,09:25,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-UL102-2026-07-13-43,UL 102,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,09:25,09:25,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-EK658-2026-07-13-44,EK 658,Emirates,EK,Dubai,DXB,Male,MLE,09:30,09:30,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-EY379-2026-07-13-44,EY 379,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:40,09:40,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-AK074-2026-07-13-45,AK 074,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,09:50,09:50,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-Q2260-2026-07-13-46,Q2 260,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,10:00,10:00,on-time,arrival,domestic,2026-07-13,Kooddoo,fis_20260712113242.html
+departure-6E1134-2026-07-13-45,6E 1134,Indigo,6E,Male,MLE,Cochin,COK,10:15,10:15,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-KC199-2026-07-13-47,KC 199,Air Astana,KC,Astana,NQZ,Male,MLE,10:20,10:20,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-AK075-2026-07-13-46,AK 075,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,10:45,10:45,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-NR539-2026-07-13-49,NR 539,Manta Air,NR,Dharavandhoo,DRV,Male,MLE,10:55,10:55,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2443-2026-07-13-48,Q2 443,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,10:55,10:55,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q22193-2026-07-13-50,Q2 2193,Maldivian,Q2,Funadhoo,FND,Male,MLE,11:00,11:00,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-VP606-2026-07-13-47,VP 606,Villa Air,VP,Male,MLE,Maamigili,VAM,11:00,11:00,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-SU321-2026-07-13-48,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:05,11:05,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-Q22133-2026-07-13-52,Q2 2133,Maldivian,Q2,Madivaru,LMV,Male,MLE,11:10,11:10,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q22461-2026-07-13-51,Q2 2461,Maldivian,Q2,Maavarulu,RUL,Male,MLE,11:10,11:10,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-EK659-2026-07-13-49,EK 659,Emirates,EK,Male,MLE,Dubai,DXB,11:15,11:15,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-MH485-2026-07-13-53,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,11:25,11:25,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-NR400-2026-07-13-51,NR 400,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,11:30,11:30,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q2224-2026-07-13-50,Q2 224,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,11:30,11:30,on-time,departure,domestic,2026-07-13,Ifuru,fis_20260712113242.html
+arrival-Q2701-2026-07-13-54,Q2 701,Maldivian,Q2,Trivandrum,TRV,Male,MLE,11:30,11:30,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-FD175-2026-07-13-55,FD 175,Thai Airasia,FD,Don Mueang,DMK,Male,MLE,11:35,11:35,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-Q2242-2026-07-13-52,Q2 242,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,11:35,11:35,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-OD293-2026-07-13-56,OD 293,Batik Air,OD,Kuala Lumpur,KUL,Male,MLE,11:40,11:40,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-Q2682-2026-07-13-53,Q2 682,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,11:45,11:45,on-time,departure,domestic,2026-07-13,Muli,fis_20260712113242.html
+departure-Q2460-2026-07-13-54,Q2 460,Maldivian,Q2,Male,MLE,Maavarulu,RUL,11:50,11:50,on-time,departure,domestic,2026-07-13,Kaadehdhoo,fis_20260712113242.html
+arrival-SQ432-2026-07-13-57,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:50,11:50,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-Q2102-2026-07-13-55,Q2 102,Maldivian,Q2,Male,MLE,Gan,GAN,12:05,12:05,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-FZ1026-2026-07-13-58,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,12:15,12:15,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-TK734-2026-07-13-59,TK 734,Turkish Airlines,TK,Istanbul,IST,Male,MLE,12:20,12:20,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-BS337-2026-07-13-60,BS 337,Us-Bangla Airlines,BS,Dhaka,DAC,Male,MLE,12:25,12:25,cancelled,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-Q2262-2026-07-13-56,Q2 262,Maldivian,Q2,Male,MLE,Kooddoo,GKK,12:25,12:25,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-FD176-2026-07-13-58,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DMK,12:30,12:30,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-MH484-2026-07-13-57,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:30,12:30,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-KC200-2026-07-13-59,KC 200,Air Astana,KC,Male,MLE,Astana,NQZ,12:40,12:40,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-OD294-2026-07-13-60,OD 294,Batik Air,OD,Male,MLE,Kuala Lumpur,KUL,12:45,12:45,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-Q2706-2026-07-13-61,Q2 706,Maldivian,Q2,Male,MLE,Cochin,COK,13:00,13:00,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-SQ431-2026-07-13-62,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,13:05,13:05,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-6E1131-2026-07-13-61,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,13:10,13:10,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-FZ1026-2026-07-13-63,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,13:15,13:15,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-G9091-2026-07-13-62,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:20,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-BS338-2026-07-13-64,BS 338,Us-Bangla Airlines,BS,Male,MLE,Dhaka,DAC,13:25,13:25,cancelled,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-NR401-2026-07-13-63,NR 401,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,13:30,13:30,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-EY376-2026-07-13-64,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,13:45,13:45,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-Q2243-2026-07-13-65,Q2 243,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,14:05,14:05,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-6E1132-2026-07-13-65,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,14:10,14:10,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-Q2224-2026-07-13-66,Q2 224,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,14:10,14:10,on-time,arrival,domestic,2026-07-13,Ifuru,fis_20260712113242.html
+arrival-6E1127-2026-07-13-67,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,14:15,14:15,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-NR402-2026-07-13-66,NR 402,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,14:15,14:15,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-G9092-2026-07-13-67,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-UL115-2026-07-13-68,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-Q2226-2026-07-13-68,Q2 226,Maldivian,Q2,Male,MLE,Ifuru,IFU,14:40,14:40,on-time,departure,domestic,2026-07-13,Dharavandhoo,fis_20260712113242.html
+arrival-Q2682-2026-07-13-69,Q2 682,Maldivian,Q2,Kadhdhoo,KDO,Male,MLE,14:50,14:50,on-time,arrival,domestic,2026-07-13,Muli,fis_20260712113242.html
+arrival-EK652-2026-07-13-70,EK 652,Emirates,EK,Dubai,DXB,Male,MLE,15:00,15:00,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-6E1128-2026-07-13-69,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,15:15,15:15,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-Q2124-2026-07-13-71,Q2 124,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,15:20,15:20,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q2144-2026-07-13-70,Q2 144,Maldivian,Q2,Male,MLE,Maavarulu,RUL,15:20,15:20,on-time,departure,domestic,2026-07-13,Kaadehdhoo,fis_20260712113242.html
+arrival-FZ1569-2026-07-13-71,FZ 1569,Flydubai,FZ,Dubai,DXB,Male,MLE,15:25,15:25,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-UL116-2026-07-13-72,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-Q2264-2026-07-13-73,Q2 264,Maldivian,Q2,Male,MLE,Kooddoo,GKK,15:45,15:45,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2460-2026-07-13-72,Q2 460,Maldivian,Q2,Maavarulu,RUL,Male,MLE,15:50,15:50,on-time,arrival,domestic,2026-07-13,Kaadehdhoo,fis_20260712113242.html
+arrival-Q2103-2026-07-13-73,Q2 103,Maldivian,Q2,Gan,GAN,Male,MLE,15:55,15:55,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-NR403-2026-07-13-74,NR 403,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,16:15,16:15,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q2244-2026-07-13-74,Q2 244,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,16:20,16:20,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-EK652-2026-07-13-75,EK 652,Emirates,EK,Male,MLE,Colombo,CMB,16:30,16:30,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-VP609-2026-07-13-75,VP 609,Villa Air,VP,Maamigili,VAM,Male,MLE,16:30,16:30,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2263-2026-07-13-76,Q2 263,Maldivian,Q2,Kooddoo,GKK,Male,MLE,16:35,16:35,on-time,arrival,domestic,2026-07-13,Fuvahmulah,fis_20260712113242.html
+departure-Q2106-2026-07-13-76,Q2 106,Maldivian,Q2,Male,MLE,Gan,GAN,16:45,16:45,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2707-2026-07-13-77,Q2 707,Maldivian,Q2,Cochin,COK,Male,MLE,17:00,17:00,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-VP610-2026-07-13-77,VP 610,Villa Air,VP,Male,MLE,Maamigili,VAM,17:00,17:00,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-HB510-2026-07-13-78,HB 510,Greater Bay Airlines,HB,Hong Kong,HKG,Male,MLE,17:10,17:10,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-8D923-2026-07-13-79,8D 923,Fits Air,8D,Colombo,CMB,Male,MLE,17:20,17:20,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-NR404-2026-07-13-78,NR 404,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,17:45,17:45,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-MU235-2026-07-13-80,MU 235,China Eastern,MU,Shanghai,PVG,Male,MLE,17:50,17:50,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-Q2166-2026-07-13-79,Q2 166,Maldivian,Q2,Male,MLE,Muli,MUM,17:50,17:50,on-time,departure,domestic,2026-07-13,Kadhdhoo,fis_20260712113242.html
+departure-8D924-2026-07-13-80,8D 924,Fits Air,8D,Male,MLE,Colombo,CMB,18:20,18:20,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-GF145-2026-07-13-81,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:25,18:25,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-Q2265-2026-07-13-82,Q2 265,Maldivian,Q2,Kooddoo,GKK,Male,MLE,18:25,18:25,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-HX791-2026-07-13-83,HX 791,Hong Kong Airlines,HX,Hong Kong,HKG,Male,MLE,18:35,18:35,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-Q2125-2026-07-13-84,Q2 125,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,18:40,18:40,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2245-2026-07-13-85,Q2 245,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,18:50,18:50,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q22156-2026-07-13-81,Q2 2156,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,18:55,18:55,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q22126-2026-07-13-82,Q2 2126,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,19:10,19:10,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q2144-2026-07-13-86,Q2 144,Maldivian,Q2,Maavarulu,RUL,Male,MLE,19:20,19:20,on-time,arrival,domestic,2026-07-13,Kaadehdhoo,fis_20260712113242.html
+departure-Q22108-2026-07-13-83,Q2 2108,Maldivian,Q2,Male,MLE,Gan,GAN,19:20,19:20,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-GF145-2026-07-13-84,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:25,19:25,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-MU236-2026-07-13-85,MU 236,China Eastern,MU,Male,MLE,Shanghai,PVG,19:40,19:40,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-HB511-2026-07-13-86,HB 511,Greater Bay Airlines,HB,Male,MLE,Hong Kong,HKG,19:45,19:45,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-NR405-2026-07-13-87,NR 405,Manta Air,NR,Kudahuvadhoo,DDD,Male,MLE,19:45,19:45,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-Q22448-2026-07-13-87,Q2 2448,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,19:50,19:50,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-UL103-2026-07-13-88,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:50,19:50,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-Q2107-2026-07-13-89,Q2 107,Maldivian,Q2,Gan,GAN,Male,MLE,20:35,20:35,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-HX792-2026-07-13-88,HX 792,Hong Kong Airlines,HX,Male,MLE,Hong Kong,HKG,20:40,20:40,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-Q2228-2026-07-13-90,Q2 228,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,20:50,20:50,on-time,arrival,domestic,2026-07-13,Ifuru,fis_20260712113242.html
+arrival-Q2166-2026-07-13-91,Q2 166,Maldivian,Q2,Muli,MUM,Male,MLE,20:55,20:55,on-time,arrival,domestic,2026-07-13,Kadhdhoo,fis_20260712113242.html
+departure-UL104-2026-07-13-89,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,21:00,21:00,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-Q22458-2026-07-13-91,Q2 2458,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,21:05,21:05,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-QR675-2026-07-13-90,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-Q22178-2026-07-13-92,Q2 2178,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,21:20,21:20,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-EY377-2026-07-13-93,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,21:25,21:25,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-EK653-2026-07-13-92,EK 653,Emirates,EK,Colombo,CMB,Male,MLE,21:35,21:35,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-Q22157-2026-07-13-93,Q2 2157,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,21:45,21:45,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-SQ438-2026-07-13-94,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,21:50,21:50,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+arrival-Q22449-2026-07-13-95,Q2 2449,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,22:10,22:10,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-MH487-2026-07-13-96,MH 487,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,22:15,22:15,on-time,arrival,international,2026-07-13,,fis_20260712113242.html
+departure-NR420-2026-07-13-94,NR 420,Manta Air,NR,Male,MLE,Kudahuvadhoo,DDD,22:15,22:15,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+departure-TK735-2026-07-13-95,TK 735,Turkish Airlines,TK,Male,MLE,Istanbul,IST,22:20,22:20,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-Q22127-2026-07-13-97,Q2 2127,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,22:30,22:30,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-EK653-2026-07-13-96,EK 653,Emirates,EK,Male,MLE,Dubai,DXB,23:00,23:00,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+arrival-Q22109-2026-07-13-98,Q2 2109,Maldivian,Q2,Gan,GAN,Male,MLE,23:00,23:00,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-SQ437-2026-07-13-97,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:10,23:10,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-MH486-2026-07-13-98,MH 486,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,23:15,23:15,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-Q2128-2026-07-13-99,Q2 128,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,23:15,23:15,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q22459-2026-07-13-99,Q2 2459,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,23:25,23:25,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+departure-FZ1570-2026-07-13-100,FZ 1570,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-07-13,,fis_20260712113242.html
+departure-Q2112-2026-07-13-101,Q2 112,Maldivian,Q2,Male,MLE,Gan,GAN,23:30,23:30,on-time,departure,domestic,2026-07-13,,fis_20260712113242.html
+arrival-Q22179-2026-07-13-100,Q2 2179,Maldivian,Q2,Kadhdhoo,KDO,Male,MLE,23:40,23:40,on-time,arrival,domestic,2026-07-13,,fis_20260712113242.html
+arrival-EY378-2026-07-14-101,EY 378,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,05:15,05:15,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-Q2957-2026-07-14-102,Q2 957,Maldivian,Q2,Melbourne,MEL,Male,MLE,05:55,05:55,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-GF144-2026-07-14-103,GF 144,Gulf Air,GF,Bahrain,BAH,Male,MLE,06:30,06:30,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-FZ1025-2026-07-14-104,FZ 1025,Flydubai,FZ,Dubai,DXB,Male,MLE,07:15,07:15,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-GF144-2026-07-14-102,GF 144,Gulf Air,GF,Male,MLE,Colombo,CMB,07:30,07:30,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-EK656-2026-07-14-105,EK 656,Emirates,EK,Dubai,DXB,Male,MLE,07:40,07:40,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-8D921-2026-07-14-106,8D 921,Fits Air,8D,Colombo,CMB,Male,MLE,08:05,08:05,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-G9093-2026-07-14-107,G9 093,Air Arabia,G9,Sharjah,SHJ,Male,MLE,08:10,08:10,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-FZ1025-2026-07-14-103,FZ 1025,Flydubai,FZ,Male,MLE,Colombo,CMB,08:15,08:15,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-UL101-2026-07-14-108,UL 101,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,08:15,08:15,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-QR676-2026-07-14-109,QR 676,Qatar Airways,QR,Doha,DOH,Male,MLE,08:25,08:25,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-C6531-2026-07-14-110,C6 531,Centrum Air,C6,Tashkent,TAS,Male,MLE,08:50,08:50,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-8D922-2026-07-14-104,8D 922,Fits Air,8D,Male,MLE,Colombo,CMB,09:05,09:05,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-G9094-2026-07-14-105,G9 094,Air Arabia,G9,Male,MLE,Sharjah,SHJ,09:10,09:10,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-6E1133-2026-07-14-111,6E 1133,Indigo,6E,Cochin,COK,Male,MLE,09:15,09:15,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-EK657-2026-07-14-106,EK 657,Emirates,EK,Male,MLE,Dubai,DXB,09:15,09:15,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-SU320-2026-07-14-112,SU 320,Aeroflot,SU,Moscow,SVO,Male,MLE,09:25,09:25,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-UL102-2026-07-14-107,UL 102,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,09:25,09:25,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-EK658-2026-07-14-113,EK 658,Emirates,EK,Dubai,DXB,Male,MLE,09:30,09:30,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-EY379-2026-07-14-108,EY 379,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:40,09:40,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-AK074-2026-07-14-114,AK 074,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,09:50,09:50,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-6E1134-2026-07-14-109,6E 1134,Indigo,6E,Male,MLE,Cochin,COK,10:15,10:15,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-C6532-2026-07-14-110,C6 532,Centrum Air,C6,Male,MLE,Tashkent,TAS,10:30,10:30,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-AK075-2026-07-14-111,AK 075,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,10:45,10:45,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-SU321-2026-07-14-112,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:05,11:05,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-EK659-2026-07-14-113,EK 659,Emirates,EK,Male,MLE,Dubai,DXB,11:15,11:15,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-MH485-2026-07-14-115,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,11:25,11:25,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-FD175-2026-07-14-116,FD 175,Thai Airasia,FD,Don Mueang,DMK,Male,MLE,11:35,11:35,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-SQ432-2026-07-14-117,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:50,11:50,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-FZ1026-2026-07-14-118,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,12:15,12:15,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-BS337-2026-07-14-119,BS 337,Us-Bangla Airlines,BS,Dhaka,DAC,Male,MLE,12:25,12:25,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-FD176-2026-07-14-115,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DMK,12:30,12:30,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-MH484-2026-07-14-114,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:30,12:30,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-KC555-2026-07-14-120,KC 555,Air Astana,KC,Almaty,ALA,Male,MLE,12:35,12:35,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-XY245-2026-07-14-121,XY 245,Flynas,XY,Riyadh,RUH,Male,MLE,12:55,12:55,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-SQ431-2026-07-14-116,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,13:05,13:05,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-6E1131-2026-07-14-122,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,13:10,13:10,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-FZ1026-2026-07-14-117,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,13:15,13:15,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-6E1129-2026-07-14-124,6E 1129,Indigo,6E,Trivandrum,TRV,Male,MLE,13:20,13:20,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-G9091-2026-07-14-123,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:20,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-BS338-2026-07-14-118,BS 338,Us-Bangla Airlines,BS,Male,MLE,Dhaka,DAC,13:25,13:25,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-KC556-2026-07-14-119,KC 556,Air Astana,KC,Male,MLE,Almaty,ALA,13:40,13:40,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-EY376-2026-07-14-125,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,13:45,13:45,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-XY246-2026-07-14-120,XY 246,Flynas,XY,Male,MLE,Riyadh,RUH,13:55,13:55,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-6E1130-2026-07-14-121,6E 1130,Indigo,6E,Male,MLE,Trivandrum,TRV,14:05,14:05,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+departure-6E1132-2026-07-14-122,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,14:10,14:10,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-6E1127-2026-07-14-126,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,14:15,14:15,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-G9092-2026-07-14-123,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-UL115-2026-07-14-127,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-QR674-2026-07-14-128,QR 674,Qatar Airways,QR,Doha,DOH,Male,MLE,14:30,14:30,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-EK652-2026-07-14-129,EK 652,Emirates,EK,Dubai,DXB,Male,MLE,15:00,15:00,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-6E1128-2026-07-14-124,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,15:15,15:15,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-FZ1569-2026-07-14-130,FZ 1569,Flydubai,FZ,Dubai,DXB,Male,MLE,15:25,15:25,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-UL116-2026-07-14-125,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-SV874-2026-07-14-131,SV 874,Saudia,SV,Jeddah,JED,Male,MLE,16:25,16:25,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+departure-EK652-2026-07-14-126,EK 652,Emirates,EK,Male,MLE,Colombo,CMB,16:30,16:30,on-time,departure,international,2026-07-14,,fis_20260712113242.html
+arrival-HB510-2026-07-14-132,HB 510,Greater Bay Airlines,HB,Hong Kong,HKG,Male,MLE,17:10,17:10,on-time,arrival,international,2026-07-14,,fis_20260712113242.html
+arrival-Q2001-2026-10-15-0,Q2 001,Maldivian,Q2,Male,MLE,Male,MLE,08:00,08:00,cancelled,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-Q2132-2026-10-15-0,Q2 132,Maldivian,Q2,Male,MLE,Madivaru,LMV,08:00,08:25,departed,departure,domestic,2026-10-15,Maafaru,fis_20261015045938.html
+arrival-8D921-2026-10-15-1,8D 921,Fits Air,8D,Colombo,CMB,Male,MLE,08:05,07:44,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-G9093-2026-10-15-2,G9 093,Air Arabia,G9,Sharjah,SHJ,Male,MLE,08:10,08:42,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-FZ1025-2026-10-15-1,FZ 1025,Flydubai,FZ,Male,MLE,Colombo,CMB,08:15,08:37,departed,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-UL101-2026-10-15-3,UL 101,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,08:15,08:17,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-Q2442-2026-10-15-2,Q2 442,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,08:25,08:47,departed,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-QR676-2026-10-15-4,QR 676,Qatar Airways,QR,Doha,DOH,Male,MLE,08:25,08:29,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-6E1134-2026-10-15-3,6E 1134,Indigo,6E,Male,MLE,Cochin,COK,08:50,08:39,departed,departure,international,2026-10-15,,fis_20261015045938.html
+departure-8D922-2026-10-15-4,8D 922,Fits Air,8D,Male,MLE,Colombo,CMB,09:05,09:01,departed,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-BA061-2026-10-15-5,BA 061,British Airways,BA,London Heathrow,LHR,Male,MLE,09:05,08:47,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-G9094-2026-10-15-5,G9 094,Air Arabia,G9,Male,MLE,Sharjah,SHJ,09:10,09:10,gate-closed,departure,international,2026-10-15,,fis_20261015045938.html
+departure-EK657-2026-10-15-6,EK 657,Emirates,EK,Male,MLE,Dubai,DXB,09:15,09:36,departed,departure,international,2026-10-15,,fis_20261015045938.html
+departure-EY373-2026-10-15-7,EY 373,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:15,09:17,departed,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-DE2320-2026-10-15-6,DE 2320,Condor,DE,Frankfurt,FRA,Male,MLE,09:20,09:07,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-SU320-2026-10-15-7,SU 320,Aeroflot,SU,Moscow,SVO,Male,MLE,09:25,09:42,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-UL102-2026-10-15-8,UL 102,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,09:25,09:27,departed,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-EK658-2026-10-15-8,EK 658,Emirates,EK,Dubai,DXB,Male,MLE,09:30,09:48,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-OS022-2026-10-15-9,OS 022,Austrian Airlines,OS,Male,MLE,Vienna,VIE,09:30,09:30,gate-closed,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2503-2026-10-15-9,Q2 503,Maldivian,Q2,Dhaka,DAC,Male,MLE,09:30,08:48,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-EY379-2026-10-15-10,EY 379,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:40,09:51,departed,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-AK074-2026-10-15-10,AK 074,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,09:50,09:50,landed,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2261-2026-10-15-11,Q2 261,Maldivian,Q2,Kooddoo,GKK,Male,MLE,10:35,10:34,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-AK075-2026-10-15-11,AK 075,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,10:45,10:45,check-in-closed,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2182-2026-10-15-12,Q2 182,Maldivian,Q2,Thimarafushi,TMF,Male,MLE,10:45,10:45,on-time,arrival,domestic,2026-10-15,Kadhdhoo,fis_20261015045938.html
+arrival-Q2443-2026-10-15-13,Q2 443,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,10:55,09:34,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-Q2706-2026-10-15-12,Q2 706,Maldivian,Q2,Male,MLE,Cochin,COK,11:00,11:00,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-VP606-2026-10-15-13,VP 606,Villa Air,VP,Male,MLE,Maamigili,VAM,11:00,11:00,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-SU321-2026-10-15-14,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:05,11:05,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-BA060-2026-10-15-16,BA 060,British Airways,BA,Male,MLE,London Heathrow,LHR,11:10,11:10,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-DE2321-2026-10-15-15,DE 2321,Condor,DE,Male,MLE,Frankfurt,FRA,11:10,11:45,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2132-2026-10-15-15,Q2 132,Maldivian,Q2,Madivaru,LMV,Male,MLE,11:10,11:10,on-time,arrival,domestic,2026-10-15,Maafaru,fis_20261015045938.html
+departure-Q2162-2026-10-15-17,Q2 162,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,11:10,11:10,on-time,departure,domestic,2026-10-15,Muli,fis_20261015045938.html
+arrival-Q2192-2026-10-15-14,Q2 192,Maldivian,Q2,Hoarafushi,HRF,Male,MLE,11:10,11:10,on-time,arrival,domestic,2026-10-15,Funadhoo,fis_20261015045938.html
+departure-EK659-2026-10-15-18,EK 659,Emirates,EK,Male,MLE,Dubai,DXB,11:15,11:15,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-SU324-2026-10-15-16,SU 324,Aeroflot,SU,Moscow,SVO,Male,MLE,11:20,09:54,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-MH485-2026-10-15-17,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,11:25,11:25,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-Q2102-2026-10-15-19,Q2 102,Maldivian,Q2,Male,MLE,Gan,GAN,11:25,11:25,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-FD175-2026-10-15-18,FD 175,Thai Airasia,FD,Don Mueang,DMK,Male,MLE,11:35,12:17,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-Q22306-2026-10-15-20,Q2 2306,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,11:40,11:40,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-AI2239-2026-10-15-19,AI 2239,Air India,AI,Delhi,DEL,Male,MLE,11:45,11:34,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-Q2262-2026-10-15-22,Q2 262,Maldivian,Q2,Male,MLE,Kooddoo,GKK,11:50,11:50,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-Q2482-2026-10-15-21,Q2 482,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,11:50,11:50,on-time,departure,domestic,2026-10-15,Faresmaathodaa,fis_20261015045938.html
+arrival-SQ432-2026-10-15-20,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:50,12:03,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-Q2224-2026-10-15-23,Q2 224,Maldivian,Q2,Male,MLE,Ifuru,IFU,11:55,11:55,on-time,departure,domestic,2026-10-15,Dharavandhoo,fis_20261015045938.html
+arrival-FZ1026-2026-10-15-21,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,12:15,12:15,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-FD176-2026-10-15-25,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DMK,12:30,12:30,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-MH484-2026-10-15-24,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:30,12:30,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-AI2240-2026-10-15-26,AI 2240,Air India,AI,Male,MLE,Delhi,DEL,12:45,12:45,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-XY245-2026-10-15-22,XY 245,Flynas,XY,Riyadh,RUH,Male,MLE,12:55,12:55,cancelled,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-SQ431-2026-10-15-27,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,13:05,13:05,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-6E1131-2026-10-15-23,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,13:10,13:10,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-FZ1026-2026-10-15-28,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,13:15,13:15,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-6E1129-2026-10-15-25,6E 1129,Indigo,6E,Trivandrum,TRV,Male,MLE,13:20,13:20,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-G9091-2026-10-15-24,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:20,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-XY246-2026-10-15-29,XY 246,Flynas,XY,Male,MLE,Riyadh,RUH,13:55,13:55,cancelled,departure,international,2026-10-15,,fis_20261015045938.html
+departure-6E1130-2026-10-15-30,6E 1130,Indigo,6E,Male,MLE,Trivandrum,TRV,14:05,14:05,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-SU325-2026-10-15-31,SU 325,Aeroflot,SU,Male,MLE,Moscow,SVO,14:05,14:05,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-6E1132-2026-10-15-32,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,14:10,14:10,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-6E1127-2026-10-15-26,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,14:15,14:15,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-EY376-2026-10-15-27,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,14:15,14:15,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2162-2026-10-15-29,Q2 162,Maldivian,Q2,Muli,MUM,Male,MLE,14:15,14:15,on-time,arrival,domestic,2026-10-15,Kadhdhoo,fis_20261015045938.html
+arrival-Q2224-2026-10-15-28,Q2 224,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,14:15,14:15,on-time,arrival,domestic,2026-10-15,Ifuru,fis_20261015045938.html
+departure-G9092-2026-10-15-33,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-UL115-2026-10-15-30,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2263-2026-10-15-32,Q2 263,Maldivian,Q2,Kooddoo,GKK,Male,MLE,14:30,14:30,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+arrival-QR674-2026-10-15-31,QR 674,Qatar Airways,QR,Doha,DOH,Male,MLE,14:30,14:30,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q22307-2026-10-15-33,Q2 2307,Maldivian,Q2,Kudahuvadhoo,DDD,Male,MLE,14:35,14:35,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-Q2226-2026-10-15-34,Q2 226,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,14:55,14:55,on-time,departure,domestic,2026-10-15,Ifuru,fis_20261015045938.html
+departure-Q2244-2026-10-15-35,Q2 244,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,14:55,14:55,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-EK652-2026-10-15-34,EK 652,Emirates,EK,Dubai,DXB,Male,MLE,15:00,15:00,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2707-2026-10-15-35,Q2 707,Maldivian,Q2,Cochin,COK,Male,MLE,15:00,15:00,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2103-2026-10-15-36,Q2 103,Maldivian,Q2,Gan,GAN,Male,MLE,15:05,15:05,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-6E1128-2026-10-15-36,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,15:15,15:15,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-Q2304-2026-10-15-37,Q2 304,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,15:15,15:15,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-FZ1569-2026-10-15-37,FZ 1569,Flydubai,FZ,Dubai,DXB,Male,MLE,15:25,15:25,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-UL116-2026-10-15-38,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-Q2124-2026-10-15-39,Q2 124,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,15:45,15:45,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-Q2482-2026-10-15-38,Q2 482,Maldivian,Q2,Faresmaathodaa,FMT,Male,MLE,15:50,15:50,on-time,arrival,domestic,2026-10-15,Kaadehdhoo,fis_20261015045938.html
+departure-Q2264-2026-10-15-40,Q2 264,Maldivian,Q2,Male,MLE,Kooddoo,GKK,16:10,16:10,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-EK652-2026-10-15-41,EK 652,Emirates,EK,Male,MLE,Colombo,CMB,16:30,16:30,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-Q2144-2026-10-15-43,Q2 144,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,16:30,16:30,on-time,departure,domestic,2026-10-15,Maavarulu,fis_20261015045938.html
+departure-Q2700-2026-10-15-42,Q2 700,Maldivian,Q2,Male,MLE,Trivandrum,TRV,16:30,16:30,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-VP609-2026-10-15-39,VP 609,Villa Air,VP,Maamigili,VAM,Male,MLE,16:35,16:35,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-VP610-2026-10-15-44,VP 610,Villa Air,VP,Male,MLE,Maamigili,VAM,17:00,17:00,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-FI332-2026-10-15-40,FI 332,Icelandair,FI,Kathmandu,KTM,Male,MLE,17:05,17:05,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2226-2026-10-15-41,Q2 226,Maldivian,Q2,Ifuru,IFU,Male,MLE,17:15,17:15,on-time,arrival,domestic,2026-10-15,Dharavandhoo,fis_20261015045938.html
+arrival-Q2305-2026-10-15-42,Q2 305,Maldivian,Q2,Kudahuvadhoo,DDD,Male,MLE,17:15,17:15,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+arrival-8D923-2026-10-15-43,8D 923,Fits Air,8D,Colombo,CMB,Male,MLE,17:20,17:20,cancelled,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2245-2026-10-15-44,Q2 245,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,17:25,17:25,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+arrival-MU235-2026-10-15-45,MU 235,China Eastern,MU,Shanghai,PVG,Male,MLE,17:50,17:50,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-OQ2393-2026-10-15-46,OQ 2393,Chongqing Airlines,OQ,Colombo,CMB,Male,MLE,17:50,17:50,on-time,arrival,international,2026-10-15,Chongqing,fis_20261015045938.html
+departure-Q2106-2026-10-15-46,Q2 106,Maldivian,Q2,Male,MLE,Gan,GAN,17:55,17:55,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-Q2228-2026-10-15-45,Q2 228,Maldivian,Q2,Male,MLE,Ifuru,IFU,17:55,17:55,on-time,departure,domestic,2026-10-15,Dharavandhoo,fis_20261015045938.html
+departure-Q22308-2026-10-15-47,Q2 2308,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,18:10,18:10,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-8D924-2026-10-15-48,8D 924,Fits Air,8D,Male,MLE,Colombo,CMB,18:20,18:20,cancelled,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-GF145-2026-10-15-47,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:25,18:25,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-OQ2394-2026-10-15-49,OQ 2394,Chongqing Airlines,OQ,Male,MLE,Chongqing,CKG,18:50,18:50,on-time,departure,international,2026-10-15,Colombo,fis_20261015045938.html
+arrival-Q2265-2026-10-15-48,Q2 265,Maldivian,Q2,Kooddoo,GKK,Male,MLE,18:50,18:50,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+arrival-Q2125-2026-10-15-49,Q2 125,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,19:05,19:05,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-GF145-2026-10-15-50,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:25,19:25,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-3U3923-2026-10-15-50,3U 3923,Sichuan Airlines,3U,Chengdu Tianfu,TFU,Male,MLE,19:30,19:30,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-Q22166-2026-10-15-51,Q2 2166,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,19:30,19:30,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-EY377-2026-10-15-52,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,19:35,19:35,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-MU236-2026-10-15-53,MU 236,China Eastern,MU,Male,MLE,Shanghai,PVG,19:40,19:40,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-QR673-2026-10-15-54,QR 673,Qatar Airways,QR,Male,MLE,Doha,DOH,19:40,19:40,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-Q2448-2026-10-15-63,Q2 448,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,19:50,19:50,on-time,departure,domestic,2026-10-15,Hanimaadhoo,fis_20261015045938.html
+arrival-UL103-2026-10-15-51,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:50,19:50,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2701-2026-10-15-52,Q2 701,Maldivian,Q2,Trivandrum,TRV,Male,MLE,20:00,20:00,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q22309-2026-10-15-53,Q2 2309,Maldivian,Q2,Kudahuvadhoo,DDD,Male,MLE,20:10,20:10,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+departure-3U3924-2026-10-15-64,3U 3924,Sichuan Airlines,3U,Male,MLE,Chengdu Tianfu,TFU,20:30,20:30,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-Q2144-2026-10-15-54,Q2 144,Maldivian,Q2,Maavarulu,RUL,Male,MLE,20:30,20:30,on-time,arrival,domestic,2026-10-15,Kaadehdhoo,fis_20261015045938.html
+arrival-Q2228-2026-10-15-55,Q2 228,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,20:35,20:35,on-time,arrival,domestic,2026-10-15,Ifuru,fis_20261015045938.html
+departure-UL104-2026-10-15-65,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,21:00,21:00,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-QR675-2026-10-15-66,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-EK653-2026-10-15-56,EK 653,Emirates,EK,Colombo,CMB,Male,MLE,21:35,21:35,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-Q22167-2026-10-15-57,Q2 2167,Maldivian,Q2,Kadhdhoo,KDO,Male,MLE,21:40,21:40,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+arrival-Q2107-2026-10-15-58,Q2 107,Maldivian,Q2,Gan,GAN,Male,MLE,21:45,21:45,on-time,arrival,domestic,2026-10-15,,fis_20261015045938.html
+arrival-SQ438-2026-10-15-59,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,21:50,21:50,on-time,arrival,international,2026-10-15,,fis_20261015045938.html
+arrival-OD295-2026-10-15-60,OD 295,Batik Air,OD,Kuala Lumpur,KUL,Male,MLE,21:55,21:55,cancelled,arrival,international,2026-10-15,,fis_20261015045938.html
+departure-OD296-2026-10-15-76,OD 296,Batik Air,OD,Male,MLE,Kuala Lumpur,KUL,22:55,22:55,cancelled,departure,international,2026-10-15,,fis_20261015045938.html
+departure-EK653-2026-10-15-77,EK 653,Emirates,EK,Male,MLE,Dubai,DXB,23:00,23:00,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-Q2250-2026-10-15-78,Q2 250,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,23:00,23:00,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-SQ437-2026-10-15-79,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:10,23:10,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-Q2128-2026-10-15-80,Q2 128,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,23:15,23:15,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+arrival-Q2448-2026-10-15-61,Q2 448,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,23:15,23:15,on-time,arrival,domestic,2026-10-15,Kulhudhuffushi,fis_20261015045938.html
+departure-FZ1570-2026-10-15-81,FZ 1570,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+departure-Q2118-2026-10-15-82,Q2 118,Maldivian,Q2,Male,MLE,Gan,GAN,23:30,23:30,on-time,departure,domestic,2026-10-15,,fis_20261015045938.html
+departure-Q2394-2026-10-15-83,Q2 394,Maldivian,Q2,Male,MLE,Beijing,PEK,23:55,23:55,on-time,departure,international,2026-10-15,,fis_20261015045938.html
+arrival-WK066-2026-10-16-62,WK 066,Edelweiss,WK,Zurich,ZRH,Male,MLE,08:15,08:15,on-time,arrival,international,2026-10-16,,fis_20261015045938.html
+departure-WK067-2026-10-16-84,WK 067,Edelweiss,WK,Male,MLE,Zurich,ZRH,10:00,10:00,on-time,departure,international,2026-10-16,,fis_20261015045938.html
+arrival-EY376-2026-10-16-63,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,14:15,14:15,on-time,arrival,international,2026-10-16,,fis_20261015045938.html
+departure-EY377-2026-10-16-85,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,19:35,19:35,on-time,departure,international,2026-10-16,,fis_20261015045938.html
+arrival-EY372-2026-10-17-64,EY 372,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,07:30,07:30,on-time,arrival,international,2026-10-17,,fis_20261015045938.html
+departure-EY373-2026-10-17-95,EY 373,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:15,09:15,on-time,departure,international,2026-10-17,,fis_20261015045938.html
+arrival-6E1133-2026-10-24-0,6E 1133,Indigo,6E,Cochin,COK,Male,MLE,07:50,07:25,landed,arrival,international,2026-10-24,,dep_dom.html
+arrival-OS021-2026-10-24-0,OS 021,Austrian Airlines,OS,Vienna,VIE,Male,MLE,07:55,07:56,landed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2132-2026-10-24-1,Q2 132,Maldivian,Q2,Male,MLE,Maafaru,NMF,08:00,08:12,departed,departure,domestic,2026-10-24,Madivaru,flights_20261024T1300.json
+departure-Q2182-2026-10-24-0,Q2 182,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,08:00,08:04,departed,departure,domestic,2026-10-24,Thimarafushi,flights_20261024T1300.json
+arrival-8D921-2026-10-24-1,8D 921,Fits Air,8D,Colombo,CMB,Male,MLE,08:05,07:50,landed,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-G9093-2026-10-24-2,G9 093,Air Arabia,G9,Sharjah,SHJ,Male,MLE,08:10,08:06,landed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2470-2026-10-24-2,Q2 470,Maldivian,Q2,Male,MLE,Hoarafushi,HRF,08:10,08:14,departed,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-FZ1025-2026-10-24-3,FZ 1025,Flydubai,FZ,Male,MLE,Colombo,CMB,08:15,08:27,departed,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-UL101-2026-10-24-3,UL 101,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,08:15,08:11,landed,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-QR676-2026-10-24-4,QR 676,Qatar Airways,QR,Doha,DOH,Male,MLE,08:25,08:27,landed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-6E1134-2026-10-24-4,6E 1134,Indigo,6E,Male,MLE,Cochin,COK,08:50,08:31,departed,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q22302-2026-10-24-5,Q2 2302,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,09:00,09:07,departed,departure,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-VP8601-2026-10-24-5,VP 8601,Villa Air,VP,Maamigili,VAM,Male,MLE,09:00,09:00,cancelled,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-8D922-2026-10-24-6,8D 922,Fits Air,8D,Male,MLE,Colombo,CMB,09:05,09:05,gate-closed,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-BA061-2026-10-24-6,BA 061,British Airways,BA,London Heathrow,LHR,Male,MLE,09:05,09:21,landed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-G9094-2026-10-24-7,G9 094,Air Arabia,G9,Male,MLE,Sharjah,SHJ,09:10,09:05,departed,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-EK657-2026-10-24-8,EK 657,Emirates,EK,Male,MLE,Dubai,DXB,09:15,09:40,departed,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-EY373-2026-10-24-9,EY 373,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:15,09:18,departed,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-DE2320-2026-10-24-8,DE 2320,Condor,DE,Frankfurt,FRA,Male,MLE,09:20,10:11,delayed,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-NO510-2026-10-24-7,NO 510,Neos,NO,Verona,VRN,Male,MLE,09:20,09:49,landed,arrival,international,2026-10-24,Rome,flights_20261024T1300.json
+arrival-Q28441-2026-10-24-9,Q2 8441,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,09:20,08:57,landed,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-SU320-2026-10-24-10,SU 320,Aeroflot,SU,Moscow,SVO,Male,MLE,09:25,11:10,delayed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-UL102-2026-10-24-10,UL 102,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,09:25,09:31,departed,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-EK658-2026-10-24-11,EK 658,Emirates,EK,Dubai,DXB,Male,MLE,09:30,09:36,landed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-OS022-2026-10-24-11,OS 022,Austrian Airlines,OS,Male,MLE,Vienna,VIE,09:30,09:30,gate-closed,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-EY379-2026-10-24-12,EY 379,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:40,09:40,gate-closed,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-AK074-2026-10-24-12,AK 074,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,09:50,10:15,delayed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-Q28120-2026-10-24-13,Q2 8120,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,10:00,09:37,departed,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-AK075-2026-10-24-14,AK 075,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,10:45,10:45,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2132-2026-10-24-13,Q2 132,Maldivian,Q2,Madivaru,LMV,Male,MLE,10:50,10:50,on-time,arrival,domestic,2026-10-24,Maafaru,flights_20261024T1300.json
+arrival-Q2182-2026-10-24-16,Q2 182,Maldivian,Q2,Thimarafushi,TMF,Male,MLE,11:00,11:00,on-time,arrival,domestic,2026-10-24,Kadhdhoo,flights_20261024T1300.json
+arrival-Q22303-2026-10-24-14,Q2 2303,Maldivian,Q2,Kudahuvadhoo,DDD,Male,MLE,11:00,11:00,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-Q2471-2026-10-24-15,Q2 471,Maldivian,Q2,Hoarafushi,HRF,Male,MLE,11:00,11:00,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q2706-2026-10-24-15,Q2 706,Maldivian,Q2,Male,MLE,Cochin,COK,11:00,11:00,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2260-2026-10-24-17,Q2 260,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,11:05,10:40,on-time,arrival,domestic,2026-10-24,Kooddoo,flights_20261024T1300.json
+arrival-Q2442-2026-10-24-18,Q2 442,Maldivian,Q2,Kulhudhuffushi,HDK,Male,MLE,11:05,11:05,on-time,arrival,domestic,2026-10-24,Funadhoo,flights_20261024T1300.json
+departure-SU321-2026-10-24-16,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:05,12:50,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-BA060-2026-10-24-17,BA 060,British Airways,BA,Male,MLE,London Heathrow,LHR,11:10,11:10,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-DE2321-2026-10-24-18,DE 2321,Condor,DE,Male,MLE,Frankfurt,FRA,11:10,11:50,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-EK659-2026-10-24-19,EK 659,Emirates,EK,Male,MLE,Dubai,DXB,11:15,11:15,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-NO511-2026-10-24-20,NO 511,Neos,NO,Male,MLE,Rome,FCO,11:20,11:20,on-time,departure,international,2026-10-24,Verona,flights_20261024T1300.json
+arrival-SU324-2026-10-24-19,SU 324,Aeroflot,SU,Moscow,SVO,Male,MLE,11:20,10:35,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-MH485-2026-10-24-20,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,11:25,11:35,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2102-2026-10-24-21,Q2 102,Maldivian,Q2,Male,MLE,Gan,GAN,11:25,11:25,on-time,departure,domestic,2026-10-24,Kooddoo,flights_20261024T1300.json
+departure-Q22306-2026-10-24-22,Q2 2306,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,11:30,11:30,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q2242-2026-10-24-23,Q2 242,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,11:30,11:30,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-FD175-2026-10-24-21,FD 175,Thai Airasia,FD,Don Mueang,DMK,Male,MLE,11:35,11:29,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-AI2239-2026-10-24-22,AI 2239,Air India,AI,Delhi,DEL,Male,MLE,11:45,12:51,delayed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2262-2026-10-24-24,Q2 262,Maldivian,Q2,Male,MLE,Kooddoo,GKK,11:45,11:45,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q2460-2026-10-24-25,Q2 460,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,11:50,11:50,on-time,departure,domestic,2026-10-24,Maavarulu,flights_20261024T1300.json
+arrival-SQ432-2026-10-24-23,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:50,11:53,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2224-2026-10-24-26,Q2 224,Maldivian,Q2,Male,MLE,Ifuru,IFU,11:55,11:55,on-time,departure,domestic,2026-10-24,Dharavandhoo,flights_20261024T1300.json
+arrival-FZ1026-2026-10-24-24,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,12:15,12:15,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-TK734-2026-10-24-25,TK 734,Turkish Airlines,TK,Istanbul,IST,Male,MLE,12:20,11:47,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-BS337-2026-10-24-26,BS 337,Us-Bangla Airlines,BS,Dhaka,DAC,Male,MLE,12:25,12:56,delayed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-FD176-2026-10-24-28,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DMK,12:30,12:30,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-KC585-2026-10-24-27,KC 585,Air Astana,KC,Almaty,ALA,Male,MLE,12:30,12:52,delayed,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-MH484-2026-10-24-27,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:30,12:30,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-VP606-2026-10-24-29,VP 606,Villa Air,VP,Male,MLE,Maamigili,VAM,12:30,12:30,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-AI2240-2026-10-24-30,AI 2240,Air India,AI,Male,MLE,Delhi,DEL,12:45,13:50,delayed,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-XY245-2026-10-24-28,XY 245,Flynas,XY,Riyadh,RUH,Male,MLE,12:55,12:55,cancelled,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-SQ431-2026-10-24-31,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,13:05,13:05,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-6E1131-2026-10-24-29,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,13:10,13:10,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-FZ1026-2026-10-24-32,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,13:15,13:15,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-6E1129-2026-10-24-31,6E 1129,Indigo,6E,Trivandrum,TRV,Male,MLE,13:20,13:20,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-G9091-2026-10-24-30,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:05,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q28121-2026-10-24-32,Q2 8121,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,13:20,13:20,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-BS338-2026-10-24-33,BS 338,Us-Bangla Airlines,BS,Male,MLE,Dhaka,DAC,13:25,13:25,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-XY246-2026-10-24-34,XY 246,Flynas,XY,Male,MLE,Riyadh,RUH,13:55,13:55,cancelled,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2243-2026-10-24-33,Q2 243,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,14:00,14:00,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-6E1130-2026-10-24-35,6E 1130,Indigo,6E,Male,MLE,Trivandrum,TRV,14:05,14:05,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-SU325-2026-10-24-36,SU 325,Aeroflot,SU,Male,MLE,Moscow,SVO,14:05,14:05,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-6E1132-2026-10-24-37,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,14:10,14:10,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-6E1127-2026-10-24-34,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,14:15,14:15,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-EY376-2026-10-24-35,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,14:15,14:15,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2224-2026-10-24-36,Q2 224,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,14:15,14:15,on-time,arrival,domestic,2026-10-24,Ifuru,flights_20261024T1300.json
+departure-G9092-2026-10-24-38,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-UL115-2026-10-24-37,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2263-2026-10-24-39,Q2 263,Maldivian,Q2,Kooddoo,GKK,Male,MLE,14:30,14:30,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-QR674-2026-10-24-38,QR 674,Qatar Airways,QR,Doha,DOH,Male,MLE,14:30,14:30,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q22307-2026-10-24-40,Q2 2307,Maldivian,Q2,Kudahuvadhoo,DDD,Male,MLE,14:35,14:35,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q2144-2026-10-24-39,Q2 144,Maldivian,Q2,Male,MLE,Kaadehdhoo,KDM,14:40,14:40,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-KC586-2026-10-24-40,KC 586,Air Astana,KC,Male,MLE,Almaty,ALA,14:50,14:50,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2226-2026-10-24-41,Q2 226,Maldivian,Q2,Male,MLE,Dharavandhoo,DRV,14:55,14:55,on-time,departure,domestic,2026-10-24,Ifuru,flights_20261024T1300.json
+arrival-EK652-2026-10-24-41,EK 652,Emirates,EK,Dubai,DXB,Male,MLE,15:00,15:00,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2707-2026-10-24-42,Q2 707,Maldivian,Q2,Cochin,COK,Male,MLE,15:00,15:00,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-6E1128-2026-10-24-42,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,15:15,15:15,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2264-2026-10-24-44,Q2 264,Maldivian,Q2,Male,MLE,Kooddoo,GKK,15:15,15:15,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q2304-2026-10-24-43,Q2 304,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,15:15,15:15,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-FZ1569-2026-10-24-43,FZ 1569,Flydubai,FZ,Dubai,DXB,Male,MLE,15:25,15:25,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-UL116-2026-10-24-45,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2103-2026-10-24-44,Q2 103,Maldivian,Q2,Gan,GAN,Male,MLE,15:45,15:45,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-Q2460-2026-10-24-45,Q2 460,Maldivian,Q2,Maavarulu,RUL,Male,MLE,15:50,15:50,on-time,arrival,domestic,2026-10-24,Kaadehdhoo,flights_20261024T1300.json
+departure-Q2124-2026-10-24-46,Q2 124,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,16:15,16:15,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-EK652-2026-10-24-47,EK 652,Emirates,EK,Male,MLE,Colombo,CMB,16:30,16:30,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2700-2026-10-24-48,Q2 700,Maldivian,Q2,Male,MLE,Trivandrum,TRV,16:30,16:30,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-VP609-2026-10-24-46,VP 609,Villa Air,VP,Maamigili,VAM,Male,MLE,16:30,16:30,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q2684-2026-10-24-50,Q2 684,Maldivian,Q2,Male,MLE,Muli,MUM,17:00,17:00,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-VP610-2026-10-24-49,VP 610,Villa Air,VP,Male,MLE,Maamigili,VAM,17:00,17:00,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-SV874-2026-10-24-47,SV 874,Saudia,SV,Jeddah,JED,Male,MLE,17:10,17:10,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2226-2026-10-24-48,Q2 226,Maldivian,Q2,Ifuru,IFU,Male,MLE,17:15,17:15,on-time,arrival,domestic,2026-10-24,Dharavandhoo,flights_20261024T1300.json
+arrival-Q2305-2026-10-24-49,Q2 305,Maldivian,Q2,Kudahuvadhoo,DDD,Male,MLE,17:15,17:15,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-8D923-2026-10-24-50,8D 923,Fits Air,8D,Colombo,CMB,Male,MLE,17:20,17:20,cancelled,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2145-2026-10-24-51,Q2 145,Maldivian,Q2,Kaadehdhoo,KDM,Male,MLE,17:30,17:30,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-MU235-2026-10-24-52,MU 235,China Eastern,MU,Shanghai,PVG,Male,MLE,17:50,17:50,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-OQ2393-2026-10-24-53,OQ 2393,Chongqing Airlines,OQ,Chongqing,CKG,Male,MLE,17:50,17:50,on-time,arrival,international,2026-10-24,Colombo,flights_20261024T1300.json
+departure-Q2106-2026-10-24-52,Q2 106,Maldivian,Q2,Male,MLE,Gan,GAN,17:55,17:55,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q2228-2026-10-24-51,Q2 228,Maldivian,Q2,Male,MLE,Ifuru,IFU,17:55,17:55,on-time,departure,domestic,2026-10-24,Dharavandhoo,flights_20261024T1300.json
+arrival-Q2265-2026-10-24-54,Q2 265,Maldivian,Q2,Kooddoo,GKK,Male,MLE,18:05,18:05,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-SV875-2026-10-24-53,SV 875,Saudia,SV,Male,MLE,Jeddah,JED,18:05,18:05,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q22308-2026-10-24-54,Q2 2308,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,18:10,18:10,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-8D924-2026-10-24-55,8D 924,Fits Air,8D,Male,MLE,Colombo,CMB,18:20,18:20,cancelled,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-GF145-2026-10-24-55,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:25,18:25,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2448-2026-10-24-56,Q2 448,Maldivian,Q2,Male,MLE,Kulhudhuffushi,HDK,18:45,18:45,on-time,departure,domestic,2026-10-24,Hanimaadhoo,flights_20261024T1300.json
+departure-OQ2394-2026-10-24-57,OQ 2394,Chongqing Airlines,OQ,Male,MLE,Chongqing,CKG,18:50,18:50,on-time,departure,international,2026-10-24,Colombo,flights_20261024T1300.json
+arrival-Q2685-2026-10-24-56,Q2 685,Maldivian,Q2,Muli,MUM,Male,MLE,19:00,19:00,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-GF145-2026-10-24-58,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:25,19:25,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-3U3923-2026-10-24-57,3U 3923,Sichuan Airlines,3U,Chengdu Tianfu,TFU,Male,MLE,19:30,19:30,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+departure-EY377-2026-10-24-59,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,19:35,19:35,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2125-2026-10-24-58,Q2 125,Maldivian,Q2,Fuvahmulah,FVM,Male,MLE,19:35,19:35,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-MU236-2026-10-24-60,MU 236,China Eastern,MU,Male,MLE,Shanghai,PVG,19:40,19:40,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2166-2026-10-24-62,Q2 166,Maldivian,Q2,Male,MLE,Kadhdhoo,KDO,19:40,19:40,on-time,departure,domestic,2026-10-24,Kooddoo,flights_20261024T1300.json
+departure-QR673-2026-10-24-61,QR 673,Qatar Airways,QR,Male,MLE,Doha,DOH,19:40,19:40,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-UL103-2026-10-24-59,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:50,19:50,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2701-2026-10-24-60,Q2 701,Maldivian,Q2,Trivandrum,TRV,Male,MLE,20:00,20:00,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q22309-2026-10-24-61,Q2 2309,Maldivian,Q2,Kudahuvadhoo,DDD,Male,MLE,20:10,20:10,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+departure-3U3924-2026-10-24-63,3U 3924,Sichuan Airlines,3U,Male,MLE,Chengdu Tianfu,TFU,20:30,20:30,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-AK072-2026-10-24-62,AK 072,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,20:30,20:30,cancelled,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2228-2026-10-24-63,Q2 228,Maldivian,Q2,Dharavandhoo,DRV,Male,MLE,20:35,20:35,on-time,arrival,domestic,2026-10-24,Ifuru,flights_20261024T1300.json
+departure-UL104-2026-10-24-64,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,21:00,21:00,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-QR675-2026-10-24-65,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-AK073-2026-10-24-75,AK 073,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,21:30,21:30,cancelled,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-EK653-2026-10-24-64,EK 653,Emirates,EK,Colombo,CMB,Male,MLE,21:35,21:35,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2107-2026-10-24-65,Q2 107,Maldivian,Q2,Gan,GAN,Male,MLE,21:35,21:35,on-time,arrival,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-SQ438-2026-10-24-66,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,21:50,21:50,on-time,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-OD295-2026-10-24-67,OD 295,Batik Air,OD,Kuala Lumpur,KUL,Male,MLE,21:55,21:55,cancelled,arrival,international,2026-10-24,,flights_20261024T1300.json
+arrival-Q2448-2026-10-24-68,Q2 448,Maldivian,Q2,Hanimaadhoo,HAQ,Male,MLE,22:20,22:20,on-time,arrival,domestic,2026-10-24,Kulhudhuffushi,flights_20261024T1300.json
+departure-TK735-2026-10-24-76,TK 735,Turkish Airlines,TK,Male,MLE,Istanbul,IST,22:20,22:20,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-OD296-2026-10-24-77,OD 296,Batik Air,OD,Male,MLE,Kuala Lumpur,KUL,22:55,22:55,cancelled,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-EK653-2026-10-24-78,EK 653,Emirates,EK,Male,MLE,Dubai,DXB,23:00,23:00,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2248-2026-10-24-79,Q2 248,Maldivian,Q2,Male,MLE,Hanimaadhoo,HAQ,23:00,23:00,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+arrival-Q2166-2026-10-24-69,Q2 166,Maldivian,Q2,Kooddoo,GKK,Male,MLE,23:10,23:10,on-time,arrival,domestic,2026-10-24,Kadhdhoo,flights_20261024T1300.json
+departure-SQ437-2026-10-24-80,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:10,23:10,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2128-2026-10-24-81,Q2 128,Maldivian,Q2,Male,MLE,Fuvahmulah,FVM,23:15,23:15,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-FZ1570-2026-10-24-82,FZ 1570,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2112-2026-10-24-83,Q2 112,Maldivian,Q2,Male,MLE,Kudahuvadhoo,DDD,23:30,23:30,on-time,departure,domestic,2026-10-24,,flights_20261024T1300.json
+departure-Q25728-2026-10-24-84,Q2 5728,Maldivian,Q2,Male,MLE,Hyderabad,HYD,23:45,23:45,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+departure-Q2502-2026-10-24-85,Q2 502,Maldivian,Q2,Male,MLE,Dhaka,DAC,23:55,23:55,on-time,departure,international,2026-10-24,,flights_20261024T1300.json
+arrival-GF144-2026-10-25-70,GF 144,Gulf Air,GF,Bahrain,BAH,Male,MLE,06:35,06:35,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-FZ1207-2026-10-25-71,FZ 1207,Flydubai,FZ,Dubai,DXB,Male,MLE,06:45,06:45,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-FZ1025-2026-10-25-72,FZ 1025,Flydubai,FZ,Dubai,DXB,Male,MLE,07:15,07:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-EY372-2026-10-25-73,EY 372,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,07:25,07:25,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-8D921-2026-10-25-74,8D 921,Fits Air,8D,Colombo,CMB,Male,MLE,07:30,07:30,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-EK656-2026-10-25-75,EK 656,Emirates,EK,Dubai,DXB,Male,MLE,07:35,07:35,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-GF144-2026-10-25-86,GF 144,Gulf Air,GF,Male,MLE,Colombo,CMB,07:35,07:35,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-QR676-2026-10-25-76,QR 676,Qatar Airways,QR,Doha,DOH,Male,MLE,07:50,07:50,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-G9093-2026-10-25-77,G9 093,Air Arabia,G9,Sharjah,SHJ,Male,MLE,08:10,08:10,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-6E1131-2026-10-25-79,6E 1131,Indigo,6E,Mumbai,BOM,Male,MLE,08:15,08:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-FZ1025-2026-10-25-87,FZ 1025,Flydubai,FZ,Male,MLE,Colombo,CMB,08:15,08:15,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-UL101-2026-10-25-78,UL 101,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,08:15,08:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-C6531-2026-10-25-80,C6 531,Centrum Air,C6,Tashkent,TAS,Male,MLE,08:20,08:20,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-WK066-2026-10-25-81,WK 066,Edelweiss,WK,Zurich,ZRH,Male,MLE,08:20,08:20,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-QR670-2026-10-25-82,QR 670,Qatar Airways,QR,Doha,DOH,Male,MLE,08:25,08:25,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-8D922-2026-10-25-88,8D 922,Fits Air,8D,Male,MLE,Colombo,CMB,08:30,08:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-OS021-2026-10-25-83,OS 021,Austrian Airlines,OS,Vienna,VIE,Male,MLE,08:45,08:45,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-NO610-2026-10-25-84,NO 610,Neos,NO,Verona,VRN,Male,MLE,08:50,08:50,on-time,arrival,international,2026-10-25,Rome,flights_20261024T1300.json
+departure-EK657-2026-10-25-89,EK 657,Emirates,EK,Male,MLE,Dubai,DXB,09:05,09:05,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-EY373-2026-10-25-91,EY 373,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,09:10,09:10,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-G9094-2026-10-25-90,G9 094,Air Arabia,G9,Male,MLE,Sharjah,SHJ,09:10,09:10,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-6E1132-2026-10-25-92,6E 1132,Indigo,6E,Male,MLE,Mumbai,BOM,09:15,09:15,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-SU320-2026-10-25-85,SU 320,Aeroflot,SU,Moscow,SVO,Male,MLE,09:20,09:20,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-EK658-2026-10-25-86,EK 658,Emirates,EK,Dubai,DXB,Male,MLE,09:25,09:25,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-UL102-2026-10-25-93,UL 102,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,09:25,09:25,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-BA061-2026-10-25-87,BA 061,British Airways,BA,London Heathrow,LHR,Male,MLE,09:30,09:30,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-WK067-2026-10-25-94,WK 067,Edelweiss,WK,Male,MLE,Zurich,ZRH,09:30,09:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-QR677-2026-10-25-95,QR 677,Qatar Airways,QR,Male,MLE,Doha,DOH,09:40,09:40,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-AK074-2026-10-25-88,AK 074,Air Asia,AK,Kuala Lumpur,KUL,Male,MLE,09:50,09:50,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-C6532-2026-10-25-106,C6 532,Centrum Air,C6,Male,MLE,Tashkent,TAS,09:50,09:50,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-DE2320-2026-10-25-89,DE 2320,Condor,DE,Frankfurt,FRA,Male,MLE,10:00,10:00,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-FZ1208-2026-10-25-107,FZ 1208,Flydubai,FZ,Male,MLE,Dubai,DXB,10:10,10:10,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-SV872-2026-10-25-90,SV 872,Saudia,SV,Jeddah,JED,Male,MLE,10:15,10:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-OS022-2026-10-25-108,OS 022,Austrian Airlines,OS,Male,MLE,Vienna,VIE,10:25,10:25,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-AK075-2026-10-25-109,AK 075,Air Asia,AK,Male,MLE,Kuala Lumpur,KUL,10:45,10:45,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-NO611-2026-10-25-110,NO 611,Neos,NO,Male,MLE,Verona,VRN,10:50,10:50,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-EK659-2026-10-25-111,EK 659,Emirates,EK,Male,MLE,Dubai,DXB,10:55,10:55,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-MH485-2026-10-25-91,MH 485,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,10:55,10:55,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-SU321-2026-10-25-112,SU 321,Aeroflot,SU,Male,MLE,Moscow,SVO,11:00,11:00,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-G91011-2026-10-25-92,G9 1011,Air Arabia,G9,Sharjah,SHJ,Male,MLE,11:05,11:05,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-KC8285-2026-10-25-93,KC 8285,Air Astana,KC,Almaty,ALA,Male,MLE,11:20,11:20,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-BA060-2026-10-25-113,BA 060,British Airways,BA,Male,MLE,London Heathrow,LHR,11:30,11:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-FD175-2026-10-25-94,FD 175,Thai Airasia,FD,Don Mueang,DMK,Male,MLE,11:30,11:30,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-SQ432-2026-10-25-95,SQ 432,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,11:40,11:40,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-OD293-2026-10-25-96,OD 293,Batik Air,OD,Kuala Lumpur,KUL,Male,MLE,11:45,11:45,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-SV873-2026-10-25-114,SV 873,Saudia,SV,Male,MLE,Jeddah,JED,11:45,11:45,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-AI2239-2026-10-25-97,AI 2239,Air India,AI,Delhi,DEL,Male,MLE,11:50,11:50,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-DE2321-2026-10-25-115,DE 2321,Condor,DE,Male,MLE,Frankfurt,FRA,12:00,12:00,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-MH484-2026-10-25-116,MH 484,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,12:00,12:00,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-G91012-2026-10-25-117,G9 1012,Air Arabia,G9,Male,MLE,Sharjah,SHJ,12:05,12:05,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-FZ1026-2026-10-25-98,FZ 1026,Flydubai,FZ,Colombo,CMB,Male,MLE,12:15,12:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-FD176-2026-10-25-118,FD 176,Thai Airasia,FD,Male,MLE,Don Mueang,DMK,12:30,12:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-TK734-2026-10-25-99,TK 734,Turkish Airlines,TK,Istanbul,IST,Male,MLE,12:35,12:35,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-OD294-2026-10-25-119,OD 294,Batik Air,OD,Male,MLE,Kuala Lumpur,KUL,12:45,12:45,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-AI2240-2026-10-25-120,AI 2240,Air India,AI,Male,MLE,Delhi,DEL,12:50,12:50,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-BS337-2026-10-25-100,BS 337,Us-Bangla Airlines,BS,Dhaka,DAC,Male,MLE,12:50,12:50,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-SQ431-2026-10-25-121,SQ 431,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,12:55,12:55,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-6E1129-2026-10-25-101,6E 1129,Indigo,6E,Trivandrum,TRV,Male,MLE,13:15,13:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-FZ1026-2026-10-25-122,FZ 1026,Flydubai,FZ,Male,MLE,Dubai,DXB,13:15,13:15,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-G9091-2026-10-25-102,G9 091,Air Arabia,G9,Sharjah,SHJ,Male,MLE,13:20,13:20,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-AI2271-2026-10-25-103,AI 2271,Air India,AI,Mumbai,BOM,Male,MLE,13:30,13:30,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-EY376-2026-10-25-104,EY 376,Etihad Airways,EY,Abu Dhabi,AUH,Male,MLE,13:35,13:35,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-KC8286-2026-10-25-123,KC 8286,Air Astana,KC,Male,MLE,Almaty,ALA,13:40,13:40,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-BS338-2026-10-25-124,BS 338,Us-Bangla Airlines,BS,Male,MLE,Dhaka,DAC,13:50,13:50,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-6E1130-2026-10-25-125,6E 1130,Indigo,6E,Male,MLE,Trivandrum,TRV,14:05,14:05,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-FZ1353-2026-10-25-105,FZ 1353,Flydubai,FZ,Dubai,DXB,Male,MLE,14:15,14:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-G9092-2026-10-25-126,G9 092,Air Arabia,G9,Male,MLE,Sharjah,SHJ,14:20,14:20,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-UL115-2026-10-25-106,UL 115,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,14:25,14:25,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-AI2272-2026-10-25-127,AI 2272,Air India,AI,Male,MLE,Mumbai,BOM,14:30,14:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-6E1133-2026-10-25-107,6E 1133,Indigo,6E,Cochin,COK,Male,MLE,14:50,14:50,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-QR674-2026-10-25-108,QR 674,Qatar Airways,QR,Doha,DOH,Male,MLE,14:50,14:50,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-EK652-2026-10-25-109,EK 652,Emirates,EK,Dubai,DXB,Male,MLE,14:55,14:55,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-6E1127-2026-10-25-111,6E 1127,Indigo,6E,Bangalore,BLR,Male,MLE,15:00,15:00,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-KC585-2026-10-25-110,KC 585,Air Astana,KC,Almaty,ALA,Male,MLE,15:00,15:00,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-FZ1354-2026-10-25-128,FZ 1354,Flydubai,FZ,Male,MLE,Dubai,DXB,15:15,15:15,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-FZ1569-2026-10-25-112,FZ 1569,Flydubai,FZ,Dubai,DXB,Male,MLE,15:25,15:25,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-UL116-2026-10-25-129,UL 116,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,15:35,15:35,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-6E1134-2026-10-25-130,6E 1134,Indigo,6E,Male,MLE,Cochin,COK,15:50,15:50,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-6E1128-2026-10-25-131,6E 1128,Indigo,6E,Male,MLE,Bangalore,BLR,16:05,16:05,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-6E1141-2026-10-25-113,6E 1141,Indigo,6E,Mumbai,BOM,Male,MLE,16:05,16:05,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-KC586-2026-10-25-132,KC 586,Air Astana,KC,Male,MLE,Almaty,ALA,16:15,16:15,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-EK652-2026-10-25-133,EK 652,Emirates,EK,Male,MLE,Colombo,CMB,16:25,16:25,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-6E1142-2026-10-25-134,6E 1142,Indigo,6E,Male,MLE,Mumbai,BOM,17:45,17:45,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-GF145-2026-10-25-114,GF 145,Gulf Air,GF,Colombo,CMB,Male,MLE,18:05,18:05,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-GF145-2026-10-25-135,GF 145,Gulf Air,GF,Male,MLE,Bahrain,BAH,19:05,19:05,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-UL103-2026-10-25-115,UL 103,Srilankan Airlines,UL,Colombo,CMB,Male,MLE,19:45,19:45,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-QR671-2026-10-25-136,QR 671,Qatar Airways,QR,Male,MLE,Doha,DOH,20:45,20:45,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-UL104-2026-10-25-146,UL 104,Srilankan Airlines,UL,Male,MLE,Colombo,CMB,20:55,20:55,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-QR675-2026-10-25-147,QR 675,Qatar Airways,QR,Male,MLE,Doha,DOH,21:05,21:05,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-EK653-2026-10-25-116,EK 653,Emirates,EK,Colombo,CMB,Male,MLE,21:20,21:20,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+arrival-MU9655-2026-10-25-117,MU9655,China Eastern Airlines,,Kunming,KMG,Male,MLE,21:30,21:30,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-EY377-2026-10-25-157,EY 377,Etihad Airways,EY,Male,MLE,Abu Dhabi,AUH,21:45,21:45,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-TK735-2026-10-25-158,TK 735,Turkish Airlines,TK,Male,MLE,Istanbul,IST,21:55,21:55,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-SQ438-2026-10-25-118,SQ 438,Singapore Airlines,SQ,Singapore,SIN,Male,MLE,22:15,22:15,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-MU9656-2026-10-25-159,MU9656,China Eastern Airlines,,Male,MLE,Kunming,KMG,22:30,22:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-MH487-2026-10-25-119,MH 487,Malaysia Airlines,MH,Kuala Lumpur,KUL,Male,MLE,22:40,22:40,on-time,arrival,international,2026-10-25,,flights_20261024T1300.json
+departure-EK653-2026-10-25-160,EK 653,Emirates,EK,Male,MLE,Dubai,DXB,23:00,23:00,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-FZ1570-2026-10-25-161,FZ 1570,Flydubai,FZ,Male,MLE,Dubai,DXB,23:30,23:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-SQ437-2026-10-25-162,SQ 437,Singapore Airlines,SQ,Male,MLE,Singapore,SIN,23:30,23:30,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+departure-MH486-2026-10-25-163,MH 486,Malaysia Airlines,MH,Male,MLE,Kuala Lumpur,KUL,23:40,23:40,on-time,departure,international,2026-10-25,,flights_20261024T1300.json
+arrival-OS021-2026-10-26-120,OS 021,Austrian Airlines,OS,Vienna,VIE,Male,MLE,08:45,08:45,on-time,arrival,international,2026-10-26,,flights_20261024T1300.json

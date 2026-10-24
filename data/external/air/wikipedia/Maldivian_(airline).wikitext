@@ -1,0 +1,373 @@
+{{Short description|Airline of the Maldives}}
+{{About|the airline|other uses|Maldivian (disambiguation){{!}}Maldivian}}
+{{Multiple issues|
+{{COI|date=February 2025}}
+{{Primary sources|date=October 2025}}
+}}
+{{Use dmy dates|date=October 2019}}
+{{Infobox airline
+| airline = Maldivian
+| logo = Maldivian (airline) logo.svg
+| logo_size = 250
+| image = 8Q-IAB@PEK_(20250228110456).jpg
+| caption = A Maldivian [[Airbus A330-200]]
+| image_size = 350
+| IATA = Q2
+| ICAO = DQA
+| callsign = SKY SURFER{{Citation needed|date=June 2026}}
+| parent = Island Aviation Services (Maldivian state-owned corporation)
+| founded = {{ubl|
+  | {{start date and age|13 April 2000|||df=yes}}<br />(as ''Island Aviation Services'')
+  | {{start date and age|25 August 2008|||df=yes}}<br />(as ''Maldivian'')
+   }}
+| frequent_flyer = 
+| headquarters = [[Malé]]
+| hubs = [[Velana International Airport]]
+| focus_cities = 
+| fleet_size = 25
+| destinations = 33
+| Resort destinations = 
+| alliance = 
+| website = {{Official URL}}
+| aoc = 
+| num_employees = 4500+
+}}
+
+'''Maldivian''' is the [[airline]] division of Island Aviation Services and is based in [[Malé]], Maldives. As the [[flag carrier]] of the Maldives, they operate international flights in addition to inter-island services, with its main hub at [[Velana International Airport]].<ref>{{Cite web|url=http://www.maldivian.aero/corporate/about-maldivian.html|title=About Maldivian|publisher=Maldivian |access-date=21 July 2016}}</ref>
+
+==History==
+On 23 April 2009, the Maldivian government, under a Presidential decree, incorporated Island Aviation Services Limited as a wholly government-owned limited company. The airline began operations with a fleet comprising one [[De Havilland Canada Dash 8-200|Bombardier Dash 8 Q200]] and two [[Dornier 228]] aircraft, serving only domestic airports within the Maldives. International operations commenced on 26 January 2008, with scheduled flights to [[Trivandrum International Airport|Thiruvananthapuram]], India. On 25 August 2008, the airline division was rebranded as Maldivian.
+
+In 2023, Maldivian started using new generation [[ATR 72-600]] and [[ATR 42-600]] aircraft in its fleet, replacing its older Dash 8 aircraft. On 6 January 2025, Maldivian introduced its first widebody aircraft, an [[Airbus A330-200]], with plans to add a second A330 and a [[Boeing 787-8]]. The airline is also seeking destinations in Europe, Africa, and Asia. The inaugural flight was to [[Chengdu]] in China.<ref name="Changsha&Nanjing&Xi'an">{{cite web|url=http://www.maldivian.aero/corporate/our-company.html|title=Maldivian – Our Company|publisher=Maldivian |access-date=8 January 2015}}</ref>
+
+==Destinations==
+Maldivian flies to the following destinations on scheduled domestic and international service as of January 2025:<ref>{{cite web|url=http://www.maldivian.aero/destinations/|title=Destinations Maldivian|publisher=Maldivian|access-date=}}</ref>
+{| class="wikitable sortable mw-collapsible"
+|+Domestic and international destinations
+|-
+! Country
+! City
+! Airport
+! Notes
+! class="unsortable" |Ref
+|-
+|{{flag|Australia}}
+|[[Melbourne]]||[[Melbourne Airport]]||{{Airline seasonal|Seasonal charter}}||align=center|
+|-
+|rowspan="5"|{{flag|China}}||[[Beijing]]||[[Beijing Capital International Airport]]||align=center| ||align=center|
+|-
+|[[Chengdu]]||[[Chengdu Tianfu International Airport]]||align=center| 
+|
+|-
+|[[Shanghai]]||[[Shanghai Pudong International Airport]]|| {{Terminated}} || align="center" |
+|-
+|[[Shenzhen]]||[[Shenzhen Bao'an International Airport]]||{{airline seasonal}}||align=center|<ref>{{cite web|title=Maldivian Adds Shenzhen Service in 3Q25 |url=https://www.aeroroutes.com/eng/250618-q23q25szx |website=AeroRoutes |access-date=19 June 2025 |language=en-CA |date=19 June 2025}}</ref>
+|-
+|[[Xi'an]]||[[Xi'an Xianyang International Airport]]||{{airline seasonal}}||
+|-
+|rowspan="3"|{{flag|India}}||[[Bengaluru]]||[[Kempegowda International Airport]]||{{Terminated}}||align=center|
+|-
+|[[Kochi]]||[[Cochin International Airport]]||align=center| ||align=center|
+|-
+|[[Trivandrum]]||[[Thiruvananthapuram International Airport]]||align=center| ||align=center|
+|-
+|rowspan="18"|{{flag|Maldives}}||[[Dharavandhoo]]||[[Dharavandhoo Airport]]|| align="center" |
+|
+|-
+|[[Fares-Maathodaa|Faresmathoda]]||[[Faresmathoda Airport]]||align=center| ||align=center|
+|-
+|[[Funadhoo (Shaviyani Atoll)|Funadhoo]]||[[Funadhoo Airport]]||align=center| ||align=center|
+|-
+|[[Fuvahmulah]]||Fuvahmulah Airport||align=center| ||align=center|
+|-
+|[[Gan (Addu Atoll)|Gan]]||[[Gan International Airport]]||align=center| ||align=center|
+|-
+|[[Hanimaadhoo]]||[[Hanimaadhoo International Airport]]||align=center| ||align=center|
+|-
+|[[Hoarafushi]]||[[Hoarafushi Airport]]||align=center| ||align=center|
+|-
+|[[Raa Atoll|Ifuru]]||[[Ifuru Airport]]||align=center| ||align=center|
+|-
+|[[Gaafu Dhaalu Atoll|Kaadedhdhoo]]||[[Kaadedhdhoo Airport]]||align=center| ||align=center|
+|-
+|[[Kadhdhoo]]||[[Kadhdhoo Airport]]||align=center| ||align=center|
+|-
+|[[Kooddoo]]||[[Kooddoo Airport]]||align=center| ||align=center|
+|-
+|[[Kulhudhuffushi]]||[[Kulhudhuffushi Airport]]||align=center| ||align=center|
+|-
+|[[Maafaru (Noonu Atoll)|Maafaru]]||[[Maafaru International Airport]]||align=center| ||align=center|
+|-
+|[[Maavarulu]]||[[Maavarulu Airport]]||align=center| ||align=center|
+|-
+|[[Lhaviyani Atoll|Madivaru]]||[[Madivaru Airport]]||align=center| ||align=center|
+|-
+|[[Malé]]||[[Velana International Airport]]||{{Airline hub}}||align=center|
+|-
+|[[Thimarafushi]]||[[Thimarafushi Airport]]||align=center| ||align=center|
+|-
+|[[Muli (Meemu Atoll)|Muli]]||[[Muli Airport]]||align=center| ||align=center|
+|-
+|{{flag|Thailand}}||[[Bangkok]]||[[Suvarnabhumi International Airport]]||{{airline seasonal}}||align=center|<ref>{{cite web|title=Maldivian Adds Shenzhen Service in 3Q25 |url=https://www.aeroroutes.com/eng/250618-q23q25szx |website=AeroRoutes |access-date=19 June 2025 |language=en-CA |date=19 June 2025}}</ref>
+|-
+|}
+
+{| class="wikitable sortable mw-collapsible"
+|+Maldivian seaplane operating destinations
+|-
+! Country
+! Atoll
+! Resort
+! Notes
+! class="unsortable" |Ref
+|-
+| rowspan="14" |{{flag|Maldives}}|| rowspan="6" |[[Baa Atoll]]||[[Anathara Kihavahuravalhi]]||align=center| ||align=center|
+|-
+|[[Four Seasons Private Island]]||align=center| ||align=center|
+|-
+|[[Hirundu Island Resort]]||align=center| ||align=center|
+|-
+|[[Vakkaru Island Resort]]||align=center| ||align=center|
+|-
+|[[Kamadhoo]]
+|
+| align="center" |
+|-
+|[[Fulhadhoo]]
+|
+|
+|-
+|rowspan="4"|[[Dhaalu Atoll]]||[[Doores Island Retreat]]||align=center| ||align=center|
+|-
+|[[Kandima Island Resort]]||align=center| ||align=center|
+|-
+|[[Maagau Island Resort]]||align=center| ||align=center|
+|-
+|[[Niyaama Private Islands]]||align=center| ||align=center|
+|-
+| rowspan="2" |[[Noonu Atoll]]||[[Robinson Club Noonu]]||align=center| ||align=center|
+|-
+|[[Velidhoo (Noonu Atoll)|Velidhoo]]
+|
+| align="center" |
+|-
+|[[Raa Atoll]]||[[Kudafushi Island Resort]]||align=center| ||align=center|
+|-
+|[[Thaa Atoll]]||[[Maalifushi Island Resort]]||align=center| ||align=center|
+|-
+|}
+
+===Codeshare agreements===
+Maldivian has [[codeshare agreements]] with the following airline:
+*[[Qatar Airways]]<ref>{{cite web | url=https://www.qatarairways.com/pt-ao/partners-codeshare/maldivian-airlines.html | title=Nossa parceria com a Maldivian &#124; Qatar Airways }}</ref>
+
+===Interline agreements===
+Maldivian has [[Interlining|interline agreements]] with the following airlines:
+*[[Air India]]<ref>{{Cite web|title=Air India’s new partnership with Maldivian provides easy access to 16 hidden gems across the Maldives|URL=https://www.airindia.com/in/en/newsroom/press-release/Air-India-partners-with-Maldivian-for-easy-access-to-hidden-gems-across-the-Maldives.html}}</ref>
+*[[Azerbaijan Airlines]]<ref>{{Cite web|title=Maldivian and Azerbaijan Airlines Sign Interline Agreement to Boost Connectivity|URL=https://corporatemaldives.com/maldivian-and-azerbaijan-airlines-sign-interline-agreement-to-boost-connectivity}}</ref>
+*[[Emirates (airline)|Emirates]]<ref>{{cite web | url=https://www.emirates.com/media-centre/emirates-and-maldivian-establish-interline-partnership/ | title=Emirates and Maldivian establish interline partnership }}</ref>
+*[[Etihad Airways]]<ref>{{Cite web |date=2023-12-18 |title=Etihad and Maldivian announce exciting interline partnership |url=https://www.etihad.com/en/news/etihad-and-maldivian-announce-exciting-interline-partnership |website=Etihad}}</ref>
+
+== Fleet ==
+===Fleet development===
+{{unreferenced section|date=August 2026}}
+
+In 2000, Island Aviation Services operated one [[De Havilland Canada Dash 8-200]] and two [[Dornier 228]]s at the time, and in late 2004, they ordered one [[Bombardier Dash 8|De Havilland Canada Dash 8-200]] to expand the fleet. In 2006, the airline ordered two [[De Havilland Canada Dash 8-300|Dash 8-300]]s. The first aircraft delivery was in 2007, and the other in 2008. In 2006, all [[Dornier 228]] aircraft were phased out. In 2008, Island Aviation Services re-branded as Maldivian and handed over as the [[flag carrier]] of the Maldives. In 2011, the airline ordered one [[Airbus A320-200]] for wider routes, with it being delivered in 2012. In late 2012, a new Dash 8-300 was delivered. In 2013, they ordered five more Dash 8-300s, with the final being delivered in 2018. In 2014, Maldivian introduced the [[de Havilland Canada DHC-6 Twin Otter]], with their last one being delivered in 2018. Later in 2014, Maldivian ordered one [[Airbus A321-200]]. In late 2022, the A321 retired. In early 2023, Maldivian had taken delivery of three ATR aircraft and ordered five more aircraft. In July 2024, Maldivian ordered their first wide-body aircraft, the [[Airbus A330-200]], being delivered on 6 January 2025.
+
+===Current fleet===
+[[File:Maldivian, Airbus A320-214, 8Q-IAN.jpg|thumb|Maldivian A320-200]]
+{{As of|2026|6}}, Maldivian operates the following aircraft:
+{| class="wikitable" style="text-align:center;"
+|+ Maldivian fleet
+! rowspan="2" | Aircraft
+! rowspan="2" | In service
+! rowspan="2" | Order
+! colspan="5" | Passengers
+! rowspan="2" | Notes
+|-
+!<abbr title="First Class">F</abbr>
+!<abbr title="Business Class">C</abbr>
+!<abbr title="Premium Economy">W</abbr>
+!<abbr title="Economy Class">Y</abbr>
+!Total
+|-
+|[[Airbus A320-200]]
+|1
+|
+|—
+|14
+|—
+|138
+|152<ref>{{Cite web |title=Our Fleet |url=https://maldivian.aero/flying-with-us/our-fleet.html |access-date=2024-11-19 |publisher=Maldivian |language=en}}</ref>
+|Deliveries from 2025.<ref>{{Cite web |title=Operating Lease of one Airbus A319ceo / A321neo Aircraft|url=https://maldivian.aero/media/2024/05/14/operating-lease-of-one-airbus-a319ceo-a320ceo-aircraft.html |access-date=2024-05-14 |publisher=Maldivian |language=en}}</ref>
+|-
+|[[Airbus A330-200]]
+|1
+|1
+|—
+|18
+|36
+|210
+|264
+|Deliveries from October 2025.<ref>{{Cite web |date=6 January 2025 |title=President Dr Muizzu Unveils New Airbus A330-200, Promises Second Wide-Body Aircraft by October |url=https://psmnews.mv/en/150335 |website=PSM News}}</ref>
+|-
+|[[ATR 42-600]]
+|3
+|2
+|—
+|—
+|—
+|46
+|46
+|Deliveries from 2024 to 2026.
+|-
+|[[ATR 72-600]]
+|2
+|—
+|—
+|—
+|—
+|70
+|70
+|
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|De Havilland Canada DHC-6-300]]
+|11
+|'''2'''
+|—
+|—
+|—
+|15
+|15
+| Seaplane service.<ref>{{Cite web |title=Seaplane Service |url=https://maldivian.aero/corporate/business-services/maldivian-seaplane.html|access-date=2024-11-11 |publisher=Maldivian |language=en}}</ref>
+|-
+|[[Bombardier Dash 8|De Havilland Canada Dash 8-300]]
+|2
+|—
+|—
+|—
+|—
+|50
+|50
+|To be phased out.
+|-
+!Total
+!22
+!5
+! colspan="6" |
+|}
+
+{| class="wikitable" style="text-align:center;"
+|+ Maldivian medevac fleet
+|-
+!Aircraft
+!In service
+!Order
+!Passengers
+!Remarks
+|-
+|[[Bombardier Dash 8|De Havilland Canada Dash 8-200]]
+|1
+|—
+|Medevac <ref>{{Cite web |title=Maldives launches its first National Air Ambulance Services |url=https://edition.mv/news/32073 |access-date=2024-09-21 |website=The Edition |language=en |archive-date=21 September 2024 |archive-url=https://web.archive.org/web/20240921092103/https://edition.mv/news/32073 |url-status=dead }}</ref>
+|As Maldives Emergency Medical Services (MEMS).
+|-
+|}
+
+===Former fleet===
+{| class="wikitable" style="text-align:center;"
+|+ Maldivian historic fleet
+|-
+!Aircraft
+!Total
+!introduced
+!Retired
+!Replacement aircraft
+!Remark
+|-
+|[[Airbus A321-200]]
+|1
+|2015
+|2022
+|—
+|—
+|-
+|[[ATR 72|ATR 72-500]]
+|1
+|2022
+|2023
+|[[ATR 72-600]]
+|[[Aircraft lease|Leased]] from [[Swiftair]] due to delay of new [[ATR 72-600]] aircraft deliveries.
+|-
+|[[De Havilland Canada Dash 8-300]]
+|7
+|2007
+|2024
+|[[ATR 42/72]]
+|One sold, one scrapped and one in storage.
+|-
+|[[De Havilland Canada Dash 8-200]]
+|1
+|2000
+|2024
+|[[ATR 42/72]]
+|—
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6-300]]
+|2
+|2014
+|2017
+|—
+|—
+|-
+|[[de Havilland Canada DHC-6 Twin Otter|de Havilland Canada DHC-6-200HG]]
+|1
+|2015
+|2017
+|—
+|—
+|-
+|[[Dornier 228]]
+|2
+|2000
+|2012
+|[[Dash 8]]
+| -
+|-
+!Total
+!9
+! colspan="4" |
+|}
+
+== Livery ==
+The first livery used by the airline (Island Aviation) featured a wave pattern along the bottom of the fuselage along with two dolphins and two tuna fish. The logo was placed in the center of the tail. Along with the re-branding of Maldivian, a new livery was introduced. The new livery saw the removal of the wave pattern to a plain white fuselage, and the addition of a blue wave, with one dolphin jumping out of the water on the tail of the aircraft.
+[[File:8Q-AMD Island Aviations Services DH8B (304987903).jpg|thumb|Former livery used by the airline (as Island Aviation).]]
+
+==Other services==
+As of June 2024, Island Aviation Services provides the following services at all public airports of the [[Maldives]].<ref>{{cite web |title=Island aviation, Maldivian |url=http://www.maldivian.aero/corporate/business-services.html |access-date= |publisher=Maldivian}}</ref>
+
+* Aircraft engineering services
+* Ground control
+* Flight operations
+* Aerodrome operation
+* Refueling services
+
+==Lounges==
+Maldivian operates three lounges in the [[Maldives]]: Moonimaa lounge at [[Velana International Airport|Malé]] and Kashimaa lounges at both [[Hanimaadhoo International Airport|Hanimaadhoo]] and [[Dharavandhoo Airport|Dharavandhoo]] airports.<ref>{{cite web |title=Lounge services |url=http://www.maldivian.aero/corporate/business-services.html |access-date= |publisher=Maldivian}}</ref><ref>{{cite web |title=Inauguration of Kashimaa Lounge at Dharavandhoo Airport |url=http://maldivian.aero/media/2013/08/20/inauguration-of-kashimaa-lounge-at-dharavandhoo-airport.html |access-date=16 January 2014 |publisher=Maldivian}}</ref>
+
+==References==
+{{reflist}}
+
+==External links==
+{{Commons category|Maldivian (airline)}}
+*{{Official website}}
+{{Portal|Companies|Aviation}}
+
+{{Airlines of Maldives}}
+
+[[Category:Airlines of the Maldives]]
+[[Category:Airlines established in 2000]]
+[[Category:Malé]]
+[[Category:2000 establishments in Asia]]
+[[Category:Former seaplane operators]]
+[[Category:Government-owned airlines]]

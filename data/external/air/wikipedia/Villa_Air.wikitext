@@ -1,0 +1,156 @@
+{{Short description|Maldivian airline}}
+{{Infobox airline
+| airline = Villa Air
+| image = 
+| IATA = VP
+| ICAO = VQI
+| callsign = VILLA AIR
+| aoc = 
+| hubs = [[Villa International Airport Maamigili]]
+| focus_cities = 
+| frequent_flyer = 
+| lounge = 
+| fleet_size = 4
+| destinations = 3
+| parent = [[Villa Group]]
+| num_employees = 
+| logo = Villa air logo 2024.svg
+| logo_size = 80
+| founded = {{Start date and age|2011|03|14|df=y|br=y}}
+| commenced = {{Start date and age|2011|10|1|df=yes|br=y}}
+| headquarters = Villa House,<br />[[Malé]], Maldives
+| bases = [[Velana International Airport]]
+| website = {{URL|https://villaair.aero/}}
+| subsidiaries = * Flyme SeePlane
+}}
+'''Villa Air''' is a Maldivian [[airline]]. It flies to only one destination, [[Maamigili (Alif Dhaalu Atoll)|Maamigili]], using four [[turboprop]] aircraft.<ref name="miadhu">{{Cite news |last=Latheef |first=Abdul |date=18 March 2011 |title=Villa introduces new airline 'Fly me” |url=http://www.miadhu.com/2011/03/local-news/villa-introduces-new-airline-%E2%80%98fly-me%E2%80%9D/ |url-status=dead |archive-url=https://web.archive.org/web/20110322095654/http://www.miadhu.com/2011/03/local-news/villa-introduces-new-airline-%E2%80%98fly-me%E2%80%9D/ |archive-date=22 March 2011 |access-date=2011-03-17 |work=Miadhu}}</ref><ref>{{Cite news |date=16 March 2011 |title=Villa “Fly Me” Brand Goes Airborne |url=http://www.haamadaily.com/englishdetails.php?news=21748 |url-status=dead |archive-url=https://web.archive.org/web/20110722005200/http://www.haamadaily.com/englishdetails.php?news=21748 |archive-date=22 July 2011 |access-date=2011-03-17 |work=Haama Daily}}</ref> Their headquarters are in the Villa House in [[Malé]].<ref name="flyme">{{cite web |title=Flyme - The Premier Domestic Airline of the Maldives, Maldivian Airline by Villa Air |url=http://www.flyme.mv |url-status=dead |archive-url=https://web.archive.org/web/20171028041957/http://www.flyme.mv/ |archive-date=28 October 2017 |accessdate=2017-10-12 |website=flyme.mv}}</ref> The airline is a [[subsidiary]] of [[Villa Group]], and began operations on 1 October 2011.<ref>{{Cite news |last=Jameel |first=Abdullah |date=1 October 2011 |title=Maamigili airport opens with 'Flyme' airlines entering into service |url=http://www.haveeru.com.mv/news/37908 |url-status=dead |archive-url=https://web.archive.org/web/20111002070700/http://www.haveeru.com.mv/news/37908 |archive-date=2 October 2011 |access-date=2011-10-01 |work=[[Haveeru Daily]]}}</ref>  The company slogan is ''We fly you in style.''
+
+==Destinations==
+On 4 September 2020, the airline operated its first international charter flight from [[Velana International Airport]] to [[Bandaranaike International Airport]] carrying 72 passengers on an [[ATR 72-600]] aircraft.<ref>{{Cite web |last=Nadalet |first=Ivan |date=7 September 2020 |title=Maldives' Flyme debuts international passenger operations |url=https://www.ch-aviation.com/portal/news/94936-maldives-flyme-debuts-international-passenger-operations |access-date=2023-08-16 |website=ch-aviation |language=en}}</ref>
+ 
+Villa Air's destinations as of January 2025 include the following airports:<ref name=":0">{{Cite web |title=Route map |url=http://www.flyme.mv/Route-Map |url-status=dead |archive-url=https://web.archive.org/web/20190824223827/http://www.flyme.mv/Route-Map |archive-date=24 August 2019 |access-date=13 July 2019 |website=Flyme}}</ref>
+{| class="wikitable sortable"
+|+Domestic destinations
+|-
+! Country
+! City
+! Airport
+! Notes
+! class="unsortable" |Ref
+|-
+| rowspan="3" |{{flag|Maldives}}||[[Malé]]||[[Velana International Airport]]||{{Airline hub|Base}}|| style="text-align:center" |
+|-
+|[[Maamigili (Alif Dhaal Atoll)|Maamigili]]||[[Villa International Airport Maamigili]] ||{{Airline hub}}|| style="text-align:center" |
+|-
+|[[Dharavandhoo|Dharavandhoo]]||[[Dharavandhoo Airport]]||Resuming soon||style="text-align:center" |
+|-
+|}
+[[File:Villa Air - Maldives Ad Agency - MVHOTELS - VA-CT1-23-139.jpg|alt=Villa Air New Livery 2024|thumb|A Villa Air ATR 72-500 painted in the new 2024 livery [[aircraft registration|registered]] as 8Q-VAV]]
+==Fleet==
+===Current fleet===
+{{As of|2026|7}}, Villa Air operates the following aircraft:<ref>{{cite magazine |title=Global Airline Guide 2026 - Villa Air |magazine=Airliner World |date=October 2026 |page=19}}</ref>
+
+{| class="wikitable" style="text-align:center;"
+|+ Villa Air current fleet
+! rowspan="2" | Aircraft
+! rowspan="2" | In service
+! rowspan="2" | Order
+! colspan="2" | Passengers
+! rowspan="2" | Notes
+|-
+!<abbr title="Economy Class">Y</abbr>
+!Total
+|-
+| [[ATR 72|ATR 72-500]]
+|1
+|—
+|68
+|68
+|—
+|-
+| [[ATR 72|ATR 72-600]]
+|1
+|—
+|74
+|74
+|—
+|-
+|[[De Havilland Canada DHC-6 Twin Otter]]
+|2
+|—
+|
+|
+|—
+|}
+
+===Former fleet===
+{{As of|2025|8}}, Villa Air operated 1 ATR 72-500 and 1 ATR 72-600.<ref>{{cite magazine |title=Global Airline Guide 2025 - Villa Air |magazine=Airliner World |date=September 2025 |page=66}}</ref>
+
+[[File:FlyMe ATR42.jpg|thumb|Retired ATR 42-500 of Flyme]]
+{| class="wikitable" style="text-align:center;"
+|+ Villa Air retired fleet<ref>{{cite journal|title=Global Airline Guide 2019 (Part One)|journal=Airliner World|issue=October 2019|page=20}}</ref>
+|-
+!Aircraft
+!Fleet 
+!Introduced
+!Retired 
+!Replacement aircraft 
+!Remark
+|-
+|[[ATR 42-500]]
+|3
+|2011
+|2023
+|—
+|—
+|-
+|[[ATR 72-500]]
+|1
+|2015
+|2023
+|—
+|—
+|-
+|[[ATR 72-600]]
+|2
+|2013
+|2015
+|—
+|—
+|-
+|[[Cessna 208 Caravan|Cessna 208 Caravan Amphibian]]
+|1
+|2014
+|2018
+|[[De Havilland Canada DHC-6 Twin Otter|De Havilland Canada Dash 6-300]]
+|Amphibious Type
+|}
+
+==Logo and livery==
+[[File:Villa air logo.png|alt=Previous Flyme (Villa Air Logo)|thumb|Previous Flyme logo before rebranding]]
+[[File:Villa air logo 2024.png|alt=Villa Air new logo after rebranding from "Flyme Villa Air"|thumb|The airline's new logo]]
+Before Flyme rebranded to Villa Air, their livery had [[blue]], [[light blue]], [[green]] and [[white]] stripes on the tail and wing, and a line in the fuselage of the aircraft. In 2023, Flyme was rebranded to Villa Air. The new logo has the same colours from the previous livery but the tail and wing now has blue, and the [[tailplane]] now has a light blue [[diamond shape|diamond]] pattern and carved green. The fuselage now has blue, light blue, green and an additional [[grey]]. The new livery also has the new Villa Air logo. Only one [[ATR 72-500]], registered 8Q-VAV, currently has this new livery.
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Portal|Companies|Aviation}}
+*[http://www.flyme.mv/ Flyme]
+*[https://villaair.aero/ Villa Air]<ref>{{Cite web |date=2023-09-05 |title=Villa Air |url=https://villaair.aero/ |access-date=2024-02-03 |website=Villa Air |language=en-US}}</ref>
+*{{cite web
+ | url = http://www.skyliner-aviation.de/viewphoto.main?LC=&picid=7023 
+ | title = Photo by: Eric Cesa (Date: 17.02.2011). Airline: flyMe (I-ADLQ / 8Q-VAQ). Type: ATR 42. Airport: Italy Verona (VRN)
+ | work = Skyliner aviation news and more
+ | accessdate = 2011-03-27
+ | quote = Maldivian newcomer flyme is to start-up shortly with this former Air Dolomiti ATR 42.
+}}
+
+{{Airlines of Maldives}}
+
+[[Category:Airlines of the Maldives]]
+[[Category:Airlines established in 2011]]
+[[Category:2011 establishments in the Maldives]]
+
+{{Asia-airline-stub}}
+{{Maldives-stub}}

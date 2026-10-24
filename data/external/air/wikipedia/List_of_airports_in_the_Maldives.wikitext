@@ -1,0 +1,220 @@
+{{Short description|None}}
+{{onesource|date=March 2020}}
+{{Map of airports in Maldives}}
+This is a '''list of airports in the [[Maldives]]''', grouped by type and sorted by location.
+
+The ''Maldives'' or ''Maldive Islands'', officially the ''Republic of Maldives'', is an [[island country]] in the [[Indian Ocean]] formed by a double chain of [[Atolls of the Maldives|26 atolls]] stretching in a north–south direction off [[India]]'s [[Lakshadweep]] islands, between [[Minicoy Island]] and [[Chagos Archipelago]]. It stands in the [[Laccadive Sea]], about {{convert|700|km|0}} southwest of [[Sri Lanka]].
+
+The [[atoll]]s of Maldives encompass a [[Territory (country subdivision)|territory]] spread over roughly {{convert|90000|km2|0}}, making it one of the most disparate countries in the world. It features 1,192 [[islets]], of which two hundred are inhabited.<ref>{{Cite web |title=About Maldives |url=https://maldives.org.my/about-maldives |access-date=2024-04-26 |language=en-US}}</ref> The Republic of Maldives's [[capital city|capital]] and largest city is [[Malé]].
+
+== Airports ==
+Airport names shown in '''bold''' have scheduled passenger service on commercial airlines.
+
+{{static row numbers}} 
+{| class="wikitable sortable static-row-numbers static-row-header-text" style="font-size:100%;"
+
+|- valign="baseline"
+! style="text-align:left;" | Location
+! style="text-align:left;" | Serves
+! style="text-align:left;" | [[ICAO airport code|ICAO]]
+! style="text-align:left;" | [[IATA airport code|IATA]]
+! style="text-align:left;" | Airport&nbsp;name
+! style="text-align:left;" | [[Geographic coordinate system|Coordinates]]
+
+|- class="sortbottom"
+! colspan="6" style="text-align:left; background:#DDDDDD;" | International airports
+
+|- valign="top"
+| [[Gan (Addu Atoll)|Gan]]
+| [[Addu City]]
+| VRMG
+| GAN
+| '''[[Gan International Airport]]'''
+| {{smaller|{{coord|00|41|36|S|073|09|20|E|region:MV_type:airport|name=Gan International Airport}}}}
+
+|- valign="top"
+| [[Hanimaadhoo (Haa Dhaalu Atoll)|Hanimaadhoo]]
+| [[Haa Dhaalu Atoll|Haa Dhaalu]]
+| VRMH
+| HAQ
+| '''[[Hanimaadhoo International Airport]]'''
+| {{smaller|{{coord|06|44|39|N|073|10|13|E|region:MV_type:airport|name=Hanimaadhoo International Airport}}}}
+
+|- valign="top"
+| [[Maafaru (Noonu Atoll)|Maafaru]]
+| [[Noonu Atoll|Noonu]]
+| VRDA
+| NMF
+| '''[[Maafaru International Airport]]'''
+| {{smaller|{{coord|05|49|20|N|073|28|29|E|region:MV_type:airport|name=Maafaru International Airport}}}}
+
+|- valign="top"
+| [[Hulhulé Island|Hulhulé]]
+| [[Malé]]
+| VRMM
+| MLE
+| '''[[Velana International Airport]]'''
+| {{smaller|{{coord|04|11|30|N|073|31|45|E|region:MV_type:airport|name=Ibrahim Nasir International Airport}}}}
+
+|- valign="top"
+| [[Maamigili (Alif Dhaal Atoll)|Maamigili]]
+| [[Alif Dhaal Atoll|Alifu Dhaalu]]
+| VRMV
+| VAM
+| '''[[Villa International Airport Maamigili]]'''
+| {{smaller|{{coord|03|28|15|N|072|50|10|E|region:MV_type:airport|name=Villa International Airport Maamigili}}}}
+
+|- class="sortbottom"
+! colspan="6" style="text-align:left; background:#DDDDDD;" | Domestic airports
+
+|- valign="top"
+| [[Dharavandhoo]]
+| [[Baa Atoll|Baa]]
+| VRMD
+| DRV
+| '''[[Dharavandhoo Airport]]'''
+| {{smaller|{{coord|05|09|21|N|073|07|58|E|region:MV_type:airport|name=Dharavandhoo Airport}}}}
+
+|- valign="top"
+| [[Fuvahmulah]]
+| [[Gnaviyani Atoll|Gnaviyani]]
+| VRMR
+| FVM
+| '''Fuvahmulah Airport'''
+| {{smaller|{{coord|00|18|33|S|073|26|02|E|region:MV_type:airport|name=Fuvahmulah Airport}}}}
+
+|- valign="top"
+| [[Maavaarulu|Maavarulu]]
+| [[Gaafu Dhaalu Atoll]]
+| VRQM
+| RUL
+| '''[[Maavarulu Airport]]'''
+| {{smaller|{{coord|00|20|12|N|073|30|41|E|region:MV_type:airport|name=Maavarulu Airport}}}}
+
+|- valign="top"
+| [[Ifuru]]
+| [[Raa Atoll|Raa]], [[Noonu Atoll|Noonu]]
+| VREI
+| IFU
+| '''[[Ifuru Airport]]'''
+| {{smaller|{{coord|05|42|29|N|073|01|30|E|region:MV_type:airport|name=Ifuru Airport}}}}
+
+|- valign="top"
+| [[Kaadedhdhoo]]
+| [[Gaafu Dhaalu Atoll|Gaafu Dhaalu]]
+| VRMT
+| KDM
+| '''[[Kaadedhdhoo Airport]]'''
+| {{smaller|{{coord|00|29|17|N|072|59|49|E|region:MV_type:airport|name=Kaadedhdhoo Airport}}}}
+
+|- valign="top"
+| [[Kadhdhoo Island|Kadhdhoo]]
+| [[Laamu Atoll|Laamu]]
+| VRMK
+| KDO
+| '''[[Kadhdhoo Airport]]'''
+| {{smaller|{{coord|01|51|33|N|073|31|19|E|region:MV_type:airport|name=Kadhdhoo Airport}}}}
+
+|- valign="top"
+| [[Kooddoo]]
+| [[Gaafu Alifu Atoll|Gaafu Alifu]]
+| VRMO
+| GKK
+| '''[[Kooddoo Airport]]'''
+| {{smaller|{{coord|00|44|03|N|073|25|58|E|region:MV_type:airport|name=Kooddoo Airport}}}}
+
+|- valign="top"
+| [[Kudahuvadhoo]]
+| [[Dhaalu Atoll|Dhaalu]]
+| VRMU
+| DDD
+| '''[[Dhaalu Airport]]'''
+| {{smaller|{{coord|02|40|02|N|072|53|34|E|region:MV_type:airport|name=Dhaalu Airport}}}}
+
+|- valign="top"
+| [[Thimarafushi]]
+| [[Thaa Atoll|Thaa]]
+| VRNT
+| TMF
+| '''[[Thimarafushi Airport]]'''
+| {{smaller|{{coord|02|12|37|N|073|09|05|E|region:MV_type:airport|name=Thimarafushi Airport}}}}
+
+|- valign="top"
+| [[Kulhudhuffushi]]
+| [[Haa Dhaalu Atoll|Haa Dhaalu]]
+| VRBK
+| HDK
+| '''[[Kulhudhuffushi Airport]]'''
+| {{smaller|{{coord|06|37|52|N|073|04|00|E|region:MV_type:airport|name=Kulhudhuffushi Airport}}}}
+
+|- valign="top"
+| [[Madivaru (Lhaviyani Atoll)|Madivaru]]
+| [[Lhaviyani Atoll|Lhaviyani]]
+| VRGD
+| LMV
+| '''[[Madivaru Airport]]'''
+| {{smaller|{{coord|05|27|27|N|073|22|13|E|region:MV_type:airport|name=Madivaru Airport}}}}
+
+|- valign="top"
+| [[Funadhoo (Shaviyani Atoll)|Funadhoo]]
+| [[Shaviyani Atoll|Shaviyani]]
+| VRCF
+| FND
+| '''[[Funadhoo Airport]]'''
+| {{smaller|{{coord|06|09|40|N|073|17|14|E|region:MV_type:airport|name=Funadhoo Airport}}}}
+
+|- valign="top"
+| [[Hoarafushi]]
+| [[Haa Alifu Atoll]]
+| VRAH
+| HRF
+| '''[[Hoarafushi Airport]]'''
+| {{smaller|{{coord|06|58|50|N|072|53|45|E|region:MV_type:airport|name=Hoarafushi Airport}}}}
+
+|- valign="top"
+| [[Faresmaathodaa]]
+| [[Gaafu Dhaalu Atoll]]
+| VRQF
+| FMT
+| '''[[Faresmaathodaa Airport]]'''
+| 0.1929° N, 73.1958° E
+|- valign="top"
+|[[Muli (Meemu Atoll)|Muli]]
+|[[Meemu Atoll]]
+|VRKM
+|MUM
+|[[Muli Airport]]
+|2.9114° N, 73.5820° E
+|}
+
+== See also ==
+{{GeoGroupTemplate}}
+* [[Transport in the Maldives]]
+* [[List of airports by ICAO code: V#VR - Maldives]]
+* [[List of airlines of the Maldives]]
+* [[Wikipedia: Airline destination lists: Asia#Maldives]]
+
+== References ==
+<references />
+
+==External links==
+* [http://www.airports.com.mv/ Maldives Airports Co. Ltd.], official site
+* {{cite web | title = IATA Airport Code Search | url = http://www.iata.org/publications/Pages/code-search.aspx | publisher = [[International Air Transport Association]]}}
+* {{cite web | url = http://www.icao.int/anb/aig/Taxonomy/R4CDLocationIndicatorsbystate.pdf | title = ICAO Location Indicators by State | publisher = [[International Civil Aviation Organization]] | date = 2006-01-12 | access-date = 2010-05-11 | archive-date = 2007-09-26 | archive-url = https://web.archive.org/web/20070926235554/http://www.icao.int/anb/aig/Taxonomy/R4CDLocationIndicatorsbystate.pdf | url-status = dead }}
+* {{cite web | url = http://www.unece.org/cefact/locode/mv.htm | title = UN Location Codes: Maldives (includes IATA codes) | work = [[UN/LOCODE]] 2009-2 | publisher = [[United Nations Economic Commission for Europe|UNECE]] | date = 2010-02-08}}
+* {{usurped|1={{Deprecated archive|url=https://archive.today/20130217025017/http://www.worldaerodata.com/countries/Maldives.php|title=AIR PORTS in the Maldives|sec=el}}}}. World Aero Data.
+* [https://web.archive.org/web/20060327061935/http://www.the-airport-guide.com/search.php?by=country&search=Maldives Airports in the Maldives]. The Airport Guide.
+* [http://www.gcmap.com/search?Q=country:MV Airports in the Maldives]. Great Circle Mapper.
+* [https://www.flightradar24.com/data/airports/maldives Airports in the Maldives]. Flightradar24 database.
+
+{{Airports in the Maldives|state=collapsed}}
+{{Asia in topic|List of airports in}}
+{{Maldives topics}}
+{{Authority control}}
+
+{{DEFAULTSORT:List Of Airports In The Maldives}}
+[[Category:Airports in the Maldives|*]]
+[[Category:Lists of airports by country|Maldives]]
+[[Category:Maldives transport-related lists|Airports]]
+[[Category:Lists of airports in Asia|Maldives]]
+[[Category:Lists of buildings and structures in the Maldives|Airports]]

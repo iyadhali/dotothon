@@ -1,0 +1,50 @@
+{{Infobox airport
+| name             = Kulhudhuffushi Airport
+| native_name      = 
+| image            = 
+| IATA             = HDK
+| ICAO             = VRBK
+| type             = Public
+| owner            = 
+| operator         = Regional Airports Company Limited
+| area_served      = Northern Maldive Atolls
+| location         = [[Kulhudhuffushi]], [[Haa Dhaalu Atoll]], [[Maldives]]
+| elevation_f      = 
+| elevation_m      = 1
+| website          = 
+| coordinates      = {{coord|06|37|52|N|073|04|00|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''HDK'''
+| metric_rwy       = y
+| r1_number        = 12/30
+| r1_length_m      = 1,220
+| r1_length_f      = 
+| r1_surface       = Asphalt
+| footnotes        = Source: [[DAFIF]]<ref name="WAD">{{usurped|1=[https://web.archive.org/web/20190826174401/http://worldaerodata.com/wad.cgi?airport=VRBK Airport information for VRBK]}} from [[DAFIF]] (effective October 2006)</ref><ref name="GCM">{{GCM|HDK|source=DAFIF}}</ref>
+}}
+
+'''Kulhudhuffushi Airport''' ({{airport codes|HDK|VRBK|p=n}}) is an [[airport]] located on the city of [[Kulhudhuffushi]]<ref name="WAD">{{usurped|1=[https://web.archive.org/web/20190826174401/http://worldaerodata.com/wad.cgi?airport=VRBK Airport information for VRBK]}} from [[DAFIF]] (effective October 2006)</ref> in [[Haa Dhaalu Atoll]], [[Maldives]]. The construction of the airport began on 28 October 2017 and it was officially opened on 21 September 2018, while commercial operations began on 9 August 2019.<ref>{{Cite news |date=8 August 2019 |title=Scheduled flights to Kulhudhuffushi Airport to begin on Friday |url=https://maldivestimes.com/scheduled-flights-to-kulhudhuffushi-airport-to-begin-on-friday/ |url-status=dead |archive-url=https://web.archive.org/web/20190809144628/https://maldivestimes.com/scheduled-flights-to-kulhudhuffushi-airport-to-begin-on-friday/ |archive-date=2019-08-09 |access-date=2019-08-09 |work=Maldives Times}}</ref><ref>{{Cite web |title=Kulhudhuffushi Airport |url=https://airports.mv/airports#HDK |access-date=26 January 2024 |website=Maldives Airports Company Limited}}</ref>
+
+==Facilities==
+The airport resides at an [[elevation]] of {{convert|1|m|0}} above [[mean sea level]]. It has one [[runway]] designated 12/30 with an [[Asphalt concrete|asphalt]] surface measuring {{convert|1220|x|30|m|0}}.<ref name="WAD" />
+
+==Airlines and destinations==
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]] | [[Dharavandhoo Airport|Dharavandhoo]], [[Ifuru Airport|Ifuru]], [[Malé Airport|Malé]]
+}}
+
+==References==
+<references />
+
+==External links==
+* {{SkyVector|VRBK}}
+* [https://web.archive.org/web/20250221194840/http://aviation-safety.net/database/airport/airport.php?id=HDK Accident history for HDK] at [[Aviation Safety Network]]
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2019]]
+[[Category:2019 establishments in the Maldives]]

@@ -1,0 +1,57 @@
+{{Short description|Airport in Muli, the Maldives}}
+{{Infobox airport
+| name             = Muli Airport
+| native_name      = މުލި އެއާޕޯޓް
+| image            = 
+| image_size       = 
+| IATA             = MUM
+| ICAO             = VRKM
+| type             = Public
+| owner            = Regional Airports Company Limited
+| operator         = Regional Airports Company Limited
+| area_served      = [[Muli (Meemu Atoll)|Muli]]
+| location         = M. Muli
+| metric_elev      = 
+| elevation_m      = 
+| elevation_f      = 
+| coordinates      = {{coord|02|54|41|N|073|34|55|E|region:MV|display=inline,title}}
+| website          = [http://www.airpots.mv/ airports.mv]
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''Muli Airport''
+| mapframe         = 
+| metric_rwy       = y
+| r1_number        = 09/19
+| r1_length_m      = 1,500
+| r1_surface       = Asphalt
+| footnotes        = Sources: IATA<ref name="IATA">{{cite web|url=https://www.iata.org/en/publications/directories/code-search/?airport.search=rul|title=IATA code search}}</ref>
+}}
+
+'''Muli Airport''' {{airport codes|MUM|VRKM}} is a domestic [[airport]] located on [[Muli (Meemu Atoll)|Muli]], one of the islands of the [[Meemu Atoll]] in [[Maldives]]. A test flight landed at Muli Airport on 25 April 2025.<ref>{{Cite web|title=Muli, Maldives {{!}} Maldivian|url=https://maldivian.aero/destinations/muli.html|access-date=2026-01-31|website=Flights to Muli (MUM)|language=en}}</ref> Maldives Transport and Contracting Company (MTCC) was contracted the [[Maldivian rufiyaa|MVR]] 540 million project to develop the airport terminal and fire building. 
+
+== Airlines and destinations ==
+The airport currently serves two commercial destinations.
+
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]] | [[Kadhdhoo Airport|Kadhdhoo]],<ref>{{cite news |last1=Waheed |first1=Ainy |title=New weekly flights to connect Muli and Kadhdhoo starting tomorrow |url=https://en.mmtv.mv/4768 |access-date=9 August 2026 |date=11 Jul 2025 |language=en}}</ref> [[Velana International Airport|Malé]]<ref>{{cite news |last1=Shaaleen |first1=Aishath |title=Maldivian to begin commercial flights to Muli on May 17 |url=https://en.mmtv.mv/3758 |access-date=9 August 2026 |date=10 May 2025 |language=en}}</ref> 
+||
+}}
+
+==See also==
+*[[List of airports in the Maldives]]
+*[[List of airlines of the Maldives]]
+
+==References==
+{{Reflist}}
+
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2019]]
+
+
+{{asia-airport-stub}}
+{{Maldives-stub}}

@@ -1,0 +1,93 @@
+{{Use British English|date=October 2022}}
+{{Use dmy dates|date=March 2020}}
+{{Infobox airport
+| name                   = Gan International Airport
+| native_name            = {{nobold|{{lang|dv|ގަން ބައިނަލްއަޤްވާމީ ވައިގެބަނދަރު}}}}
+| image                  = Front view of Gan International Airport.jpg
+| image_size             = 260
+| image_alt              = 
+| caption                = Front view of GIA
+| IATA                   = GAN
+| ICAO                   = VRMG
+| GPS                    = 
+| type                   = Public
+| owner_oper             = Addu International Airport Private Limited
+| area_served            = [[Addu City]], Maldives
+| location               = [[Gan (Addu Atoll)|Gan]], [[Addu City]]
+| opened                 = <!-- {{Start date and age|YYYY|MM|DD|df=y}} -->
+| timezone               = [[Time in Maldives|Maldives Time (MVT)]]
+| utc                    = [[UTC+5]]
+| elevation_m            = 2
+| elevation_f            = 6
+| metric_elev            = y
+| coordinates            = {{Coord|00|41|36|S|073|09|20|E|region:MV-01_type:airport|display=it}}
+| website                = [https://GanAirport.com GanAirport.com]
+| image_map              = Addu atoll 76.jpg
+| image_mapsize          = 260
+| image_map_caption      = Map of Addu Atoll in 1976 showing Gan and airfield
+| pushpin_map            = Maldives#Indian Ocean
+| pushpin_map_size       = 180
+| pushpin_label          = '''GAN'''/VRMG
+| pushpin_label_position = top
+| pushpin_caption        = Location of airport in [[Gan (Addu Atoll)|Gan]], [[Maldives]]
+| metric_rwy             = y
+| r1_number              = 10/28
+| r1_length_m            = 3600<ref name=GanAirport.com-hist/>
+| r1_surface             = concrete
+| stat1_header           = 
+| stat1_data             = <!-- up to stat8 -->
+| stat_year              = 
+| footnotes              = Sources: [[Government of Maldives]],<ref name=GOV.MV>{{Cite web|url=http://AviaInfo.gov.mv/downloads/aip/aerodrome/ad_2_vrmg.pdf|title=AIP Maldives - VRMG|website=Civil Aviation Department|date=18 November 2010|access-date=24 October 2022}}</ref> [[DAFIF]]<ref>{{GCM|GAN|source=DAFIF}}  From [[DAFIF]] (effective October 2006).</ref>
+}}
+[[File:8q-meg gan.JPG|thumb|Former Mega Maldives [[Boeing 767]] on Gan International Airport [[Airport apron|parking apron]], February 2011|alt=]]
+'''Gan International Airport''' ('''GIA''') {{Airport codes|GAN|VRMG}} is an [[international airport]] located on the island of [[Gan (Addu Atoll)|Gan]] in [[Addu Atoll]] (sometimes known as Seenu Atoll) in the island nation of the [[Maldives]].<ref name=GOV.MV/>  As of June 2024, it is one of five international [[List of airports in the Maldives|airports in the Maldives]].
+
+==History==
+{{Main|RAF Gan}}
+First built by the [[Royal Navy]] (RN) for its [[Fleet Air Arm]] (FAA), it was subsequently transferred to the [[Royal Air Force]] (RAF), becoming [[RAF Gan|Royal Air Force Station Gan]] or RAF Gan. It was a British military [[Air base|airbase]] until 1976, used as a staging post for RAF aircraft flying to the [[Far East]] during [[World War II]].<ref name="GanAirport.com-hist">{{Cite web |date=2019 |title=Welcome to Gan International Airport |url=https://ganairport.com/17-gan-airport-articles/15-welcome-to-gan-international-airport |access-date=19 June 2024 |website=Gan International Airport |publisher=Addu International Airport Private Limited |archive-date=14 July 2024 |archive-url=https://web.archive.org/web/20240714023816/https://ganairport.com/17-gan-airport-articles/15-welcome-to-gan-international-airport |url-status=dead }}</ref> The first aircraft, an RAF [[Westland Walrus]] biplane, landed on the crushed [[coral]] runway of Gan on 8 February 1943.
+
+In 1976, the RAF left Gan, having no further need for its facilities, and handed it over to the Maldives government.<ref name="GanAirport.com-hist" /> The island and airfield was left to fall into disrepair for many years. Funding was subsequently found to develop the island, and RAF Gan became a civilian [[domestic airport]].<ref name="GanAirport.com-hist" />
+
+==Current use==
+Gan Airport (in its civilian incarnation) was originally run by the [[Government of Maldives]] (GoM), with technical assistance from Maldives Airports Company Limited (MACL) until January 2010. In June 2009, a [[public enterprise]] by the name of Gan Airport Company Limited (GACL) was established by President [[Mohamed Nasheed]] as part of GoM's [[privatization]] policy. GACL took over management of Gan Airport in January 2010.
+
+To promote [[tourism]] and other economic activity in the south [[Maldives]], a venture was formed early in 2012 to further develop and expand Gan Airport to international airport standards. A [[joint venture]] was formed by GACL, MACL, and [[State Trading Organization|State Trading Organization Plc]] (STO).<ref>{{Cite web |title=Company Overview |url=https://ganairport.com/14-corporate/30-overview |access-date=19 June 2024 |website=Gan International Airport |archive-date=23 June 2024 |archive-url=https://web.archive.org/web/20240623111921/https://www.ganairport.com/14-corporate/30-overview |url-status=dead }}</ref><ref>{{Cite web |date=13 January 2011 |title=Joint Venture Agreement Signed to Upgrade and Operate Gan International Airport |url=https://www.presidencymaldives.gov.mv/Press/Article/4461 |access-date=19 June 2024 |website=[[The President's Office]]}}</ref> Renaming to Gan International Airport (GIA), the venture, Addu International Airport Private Limited (AIA), owns and manages Gan International Airport. STO sold all of its shares of the airport in February 2020.<ref>{{Cite news |last=Aiham |first=Ahmed |date=18 February 2020 |title=STO to sell its shares in Addu International Airport |url=https://edition.mv/addu_international_airport/15040 |access-date=19 June 2024 |work=[[The Edition]]}}</ref> {{As of|2024|June}}, 70% of AIA is held by the [[government of Maldives]], and 30% by KASA Holdings Private Limited.<ref>{{Cite web |title=Ownership and shares |url=https://ganairport.com/14-corporate/27-ownership-and-shares |access-date=19 June 2024 |website=Gan International Airport |archive-date=26 May 2024 |archive-url=https://web.archive.org/web/20240526094810/https://ganairport.com/14-corporate/27-ownership-and-shares |url-status=dead }}</ref>
+
+In 2023, Renaatus Projects Pvt Ltd signed a contract with AIA to expand the airport to include bigger passenger terminals, fire station, parking lots, cargo facilities, restaurants and duty-free shops, [[Air traffic control|control tower]].<ref>{{Cite news |last=Rehan |first=Mohamed |date=6 March 2023 |title=India's Renaatus Projects to expand Gan International Airport |url=https://edition.mv/gan_international_airport/27316 |access-date=19 June 2024 |work=[[The Edition]]}}</ref>
+
+==Facilities==
+Gan International Airport is capable of accommodating [[International Civil Aviation Organization#Aerodrome reference code|ICAO code 4E aircraft]].  The airport lies at an elevation of {{Convert|6|ft|0|abbr=off}} above [[mean sea level]].  It has one paved [[runway]] designated 10/28, with a concrete surface, previously measuring {{Convert|2651|by|45|m|0|abbr=off}} in 2010.<ref name=GOV.MV/> During the National Development Plan of the early 1980s, Gan runway was subsequently upgraded and extended in length by {{Convert|980|m|0|abbr=off}} to {{Convert|3600|by|45|m|0|abbr=off}}.<ref name=GanAirport.com-hist/>
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and the airline itself are not independent sources. -->
+{{As of|2024|06|df=y}}, the following airlines offer regularly scheduled services:<ref name=fr24/><ref>{{Cite news |last=Rehan |first=Mohamed |date=26 December 2022 |title=Maldivian to increase flights between Gan-Kooddoo |url=https://edition.mv/gan_international_airport/26636 |access-date=19 June 2024 |work=[[The Edition]]}}</ref><ref>{{Cite news |last=Shaahunaz |first=Fathmath |date=1 December 2016 |title=Sri Lankan Airlines commences flights to Maldives south |url=https://edition.mv/gan_international_airport/1688 |access-date=19 June 2024 |work=[[The Edition]]}}</ref><ref>{{Cite news |last=Shaahunaz |first=Fathmath |date=30 June 2020 |title=Maldivian to begin direct flights between Kulhudhuffushi, Addu |url=https://edition.mv/gan_international_airport/17579 |access-date=19 June 2024 |work=[[The Edition]]}}</ref>
+{{Airport destination list
+|[[Maldivian (airline)|Maldivian]]|Fuvahmulah, [[Kaadedhdhoo Airport|Kaadedhdhoo]], [[Kooddoo Airport|Kooddoo]], [[Kulhudhuffushi Airport|Kulhudhuffushi]], [[Velana International Airport|Malé]]
+|[[SriLankan Airlines]]|[[Bandaranaike International Airport|Colombo–Bandaranaike]]
+}}
+
+==Statistics==
+{{As of|2024|04|df=y}}, the only foreign operator to Gan is [[SriLankan Airlines]]<ref name=fr24>{{Cite web|url=https://www.flightradar24.com/data/airports/gan|title=GAN airport destinations|publisher=Flightradar24|access-date=13 April 2024}} Updated constantly.</ref> using [[Airbus A320 family|Airbus A320]] aircraft.
+
+==Accidents and incidents==
+*On 12 March 2019, a [[Maldivian (airline)#Fleet|Maldivian]] [[Bombardier Dash 8 Q300]] suffered a landing gear malfunction, due to which the plane circled around the airport for one hour.<ref name=":0">{{Cite news |date=13 March 2019 |title=Maldives airline apologises for plane's landing gear malfunction |url=https://maldivesindependent.com/society/maldives-airline-apologises-for-planes-landing-gear-malfunction-144212 |access-date=19 June 2024 |work=Maldives Independent}}</ref> The aircraft landed safely, but the landing gear was not fully retracted.<ref name=":0" /> This was the first incident to occur at Gan International Airport.
+
+==References==
+{{Reflist}}
+
+==External links==
+{{Commons category-inline}}
+*[https://GanAirport.com Gan International Airport (GIA)] {{Webarchive|url=https://web.archive.org/web/20221004222912/https://ganairport.com/ |date=4 October 2022 }} —  official website of the airport
+*{{Facebook|id=GanAirport|name=Gan International Airport}}
+*{{Twitter|id=Ganairportco|name=Gan International Airport}}
+*[https://notams.aim.faa.gov/notamSearch/nsapp.html?METHOD=DISPLAYBYICAOS&REPORTTYPE=RAW&FORMATTYPE=DOMESTIC&RETRIEVELOCID=VRMG&ACTIONTYPE=NOTAMRETRIEVALBYICAOS#/results FNS NOTAM search for VRMG]
+*[http://www.aaa-fta.com Asian Academy of Aeronautics (AAA)] — flying training school based at Gan International Airport
+*{{SkyVector|VRMG}}
+* [https://web.archive.org/web/20110606110000/http://aviation-safety.net/database/airport/airport.php?id=GAN Accident history for GAN] at [[Aviation Safety Network]]
+*[https://www.jetphotos.com/photo/10255819 Aerial photograph of Gan airport aircraft parking apron and terminal]
+
+{{Airports in the Maldives}}
+{{Authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Addu Atoll]]

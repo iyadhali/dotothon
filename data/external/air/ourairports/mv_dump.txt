@@ -1,0 +1,32 @@
+Counter({'small_airport': 13, 'seaplane_base': 11, 'medium_airport': 4, 'large_airport': 3})
+FND|small_airport|Funadhoo Airport|Funadhoo|FND|VRCF|6.162443|73.28752|yes|
+LMV|small_airport|Madivaru Airport|Naifaru|LMV||5.457545|73.37026|no|
+MV-0001|seaplane_base|Biyadoo Island||||3.924968|73.45167|no|
+MV-0002|seaplane_base|Kudafushi Resort & Spa Seaplane Base|Kudafushi|||5.50897|72.98045|no|
+MV-0003|seaplane_base|Anantara Kihavah Maldives Villa Seaplane Base|Kihavah Huravalhi|||5.29819|73.0575|no|
+MV-0004|seaplane_base|Four Seasons Private Island Seaplane Base|Voavah|||5.31731|73.07896|no|
+MV-0005|seaplane_base|Vakkaru Island Resort Seaplane Base|Vakkaru|||5.13636|72.91026|no|
+MV-0006|seaplane_base|Dreamland Maldives Seaplane Base|Hirundhoo|||5.21786|73.15481|no|
+MV-0007|seaplane_base|Robinson Club Noonu Seaplane Base|Orivaru|||5.8048|73.29992|no|
+MV-0008|seaplane_base|Niyama Private Islands Seaplane Base|Olhuveli|||2.68125|72.93134|no|
+MV-0009|seaplane_base|Kandima Island Resort Seaplane Base|Boduthakurufaanu Magu|||2.7391|73.01475|no|
+MV-0010|seaplane_base|Baglioni Resort Seaplane Base|Rinbudhoo|||2.9477|72.9167|no|
+MV-0011|seaplane_base|Maalefushi Seaplane Base|Maalefushi|||2.31339|73.29609|no|
+MV-0012|small_airport|Faresmaathoda Airport|Faresmaathodaa|FMT|VRQF|0.192647|73.19675|yes|
+MV-0013|small_airport|Muli Airport|Muli|MUM||2.911389|73.58361|no|[('01', '3937', 'ASP')]
+VRAH|small_airport|Hoarafushi Airport||HRF|VRAH|6.96967|72.89628|yes|
+VRBK|small_airport|Kulhudhuffushi Airport|Kulhudhuffushi|HDK|VRBK|6.630762|73.06781|yes|
+VRDA|medium_airport|Maafaru International Airport|Noonu Atoll|NMF|VRDA|5.817407|73.46840|yes|[('06', '9350', 'Asphalt')]
+VREI|small_airport|Ifuru Airport|Ifuru Island|IFU|VREI|5.7083|73.025|no|
+VRMD|small_airport|Dharavandhoo Airport|Baa Atoll|DRV|VRMD|5.1561|73.1302|yes|[('11', '3901', 'ASP')]
+VRMF|small_airport|Fuvahmulah Airport|Fuvahmulah Island|FVM||-0.30972|73.435|no|
+VRMG|large_airport|Gan International Airport|Gan|GAN|VRMG|-0.69297|73.15262|yes|[('10', '12000', 'CON')]
+VRMH|large_airport|Hanimaadhoo International Airport|Haa Dhaalu Atoll|HAQ|VRMH|6.743235|73.16707|yes|[('03', '8087', 'ASP')]
+VRMK|medium_airport|Kadhdhoo Airport|Kadhdhoo|KDO|VRMK|1.859169|73.52189|yes|[('03', '4003', 'BIT')]
+VRMM|large_airport|Velana International Airport|Malé|MLE|VRMM|4.19183|73.52909|yes|[('18', '11155', 'ASP')]
+VRMO|small_airport|Kooddoo Airport|Huvadhu Atoll|GKK|VRMO|0.7324|73.4336|yes|[('18', '5905', '')]
+VRMT|medium_airport|Kaadedhdhoo Airport|Huvadhu Atoll|KDM|VRMT|0.488131|72.99690|yes|[('16', '4003', 'BIT')]
+VRMU|small_airport|Dhaalu Atoll Airport|Kudahuvadhoo|DDD|VRMU|2.666075|72.88711|no|[('10', '6099', 'ASP')]
+VRMV|medium_airport|Villa International Airport Maamigili|Maamigili|VAM|VRMV|3.471751|72.83263|yes|[('09', '5905', 'ASP')]
+VRNT|small_airport|Thimarafushi Airport|Thimarafushi|TMF|VRNT|2.211|73.1533|yes|
+VRQM|small_airport|Maavaarulaa Airport|Maavaarulu|RUL|VRQM|0.338085|73.51286|yes|

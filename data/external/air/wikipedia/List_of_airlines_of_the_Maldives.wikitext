@@ -1,0 +1,48 @@
+{{Short description|None}}
+This is a list of airlines operating in the [[Maldives]].
+
+==Scheduled airlines==
+{{static row numbers}} 
+{| class="wikitable sortable static-row-numbers static-row-header-text" 
+|- valign="middle"
+! Airline
+! Image
+! [[IATA]]
+! [[ICAO airline code|ICAO]]
+! [[Callsign]]
+! Commenced<BR>operations
+! Notes
+|-
+| [[BeOnd]]||[[File:Beond_Airlines_by_Matheen_Faiz.jpg|100px]]
+||    B4||  BYD|| BEOND|| 2023
+|International carrier
+|-
+| [[Flyme (Villa Air)|Villa Air]]||[[File:VillaAir_ATR75.jpg|100px]]||VP  ||VQI||VILLA AIR|| 2011
+| Domestic airline
+|-
+| [[Maldivian (airline)|Maldivian]]||[[File:Maldivian,_Airbus_A320-214,_8Q-IAN.jpg|100px]] || Q2 || DQA || ISLAND AVIATION|| 2000
+| National airline of Maldives
+|-
+|[[Manta Air]]||[[File:MantaAir 12 11 -34.jpg|100px]] ||NR  ||MAV ||Sea Wings|| 2016 
+|Domestic airline
+|-
+| [[Trans Maldivian Airways]] || [[File:8Q-TMG (16155999292).jpg|100px]]|| M8 || TMW || TRANS MALDIVIAN || 1989
+| Sea plane service
+|}
+
+==See also==
+* [[List of airlines]]
+* [[List of defunct airlines of Maldives]]
+* [[List of defunct airlines of Asia]]
+
+==References==
+{{Reflist}}
+
+{{List of airlines}}
+{{Asia topic|List of airlines of}}
+
+[[Category:Airlines of the Maldives|*]]
+[[Category:Lists of airlines by country|Maldives]]
+[[Category:Maldives transport-related lists|Airlines]]
+[[Category:Lists of companies of the Maldives|Airlines]]
+[[Category:Lists of airlines of Asia|Maldives]]

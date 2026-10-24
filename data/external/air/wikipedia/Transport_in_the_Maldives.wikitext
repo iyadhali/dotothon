@@ -1,0 +1,53 @@
+{{short description|Transportation networks and infrastructure in Maldives}}
+{{Use British English|date=May 2024}}
+{{Use dmy dates|date=May 2023}}
+{{More citations needed|date=February 2022}}
+{{multiple image
+ | align =right
+ | total_width       = 320
+ | image1 = Laamu_Link_Road.jpg
+ | caption1 = [[Laamu Atoll|Laamu Link Road]]
+ | image2 = Traveling in Maldives.jpg
+ | caption2 = [[Dhoni (fishing vessel)|Dhoni]] in the Maldives
+}}
+'''Transport in the Maldives''' is highly facilitated by road, bridges, highways, air and water networks. The country has no railways.<ref>{{Cite book|url=https://books.google.com/books?id=F84WAAAAYAAJ|title=Background Notes|date=September 1971|publisher=United States Department of State Office of Media Services|chapter=Republic of Maldives|quote=The Maldives has no railways and no highways.}}</ref><ref>{{Cite web|last=|first=|title=Train in Maldives|url=https://www.lonelyplanet.com/maldives/narratives/practical-information/transport/getting-around/train |access-date=13 January 2022 |archive-date=13 January 2022  |archive-url=https://web.archive.org/web/20220113113745/https://www.lonelyplanet.com/maldives/narratives/practical-information/transport/getting-around/train |language=en |quote=There are no rail services in Maldives.}}</ref> [[Transportation]] in the [[Maldives]] primarily revolves around its maritime and air travel systems, given the archipelagic nature of the country, which consists of [[Atolls of Maldives|26 atolls]] and over [[List of islands of the Maldives|1,000 coral islands]]. The absence of extensive road networks between islands necessitates a heavy reliance on boats and [[seaplane]]s for inter-island connectivity. [[Dhoni (fishing vessel)|Dhoni]], traditional Maldivian wooden boats, and modern speedboats are widely used for short distances and local travel, while ferries provide regular services between inhabited islands.<ref>{{cite book |last1=Ellis |first1=Royston |title=Maldives |date=2008 |publisher=Bradt Travel Guides |isbn=9781841622668 |url=https://books.google.com/books?id=zSjhruMm748C&q=Dhoni}}</ref> For longer journeys, the [[Maldives]] domestic airlines operate seaplane and airplane services that link the capital, [[Malé]], with outlying atolls, enhancing both passenger and cargo transport across the islands.
+
+[[Malé]], the [[capital city]], serves as the [[Transport hub|central hub]] for the country’s transportation network. [[Velana International Airport]], located on nearby [[Hulhulé Island]], is the primary gateway for international travel, with frequent connections to major global destinations. This airport also handles a significant volume of domestic traffic, alongside other regional airports dispersed across the atolls. For intra-city travel within Malé and its nearby islands, roads and a network of causeways and bridges facilitate movement. Notably, the [[Sinamalé Bridge]] connects Malé to [[Hulhulé Island]], improving accessibility to the [[international airport]]. Overall, the transportation infrastructure of the [[Maldives]] is crucial for its [[tourism in the Maldives|tourism]]-driven [[economy of the Maldives|economy]] and the mobility of its residents.
+
+==Road transport==
+Road infrastructure in the Maldives is relatively limited due to the country's unique geography of dispersed atolls and islands. Most of the roads are found in the capital city of Malé, Hulhumalé, and a few other larger islands like Addu Atoll. The road network in [[Malé]] is characterized by narrow streets and heavy traffic congestion, reflective of the city's high population density. The [[Sinamalé Bridge]], also known as the [[China–Maldives relations|China–Maldives Friendship]] [[Bridge]], is a significant development that connects Malé with [[Hulhulé Island]], where the [[Velana International Airport]] is located, and the planned city of [[Hulhumalé]]. This bridge has greatly improved road connectivity and facilitated easier movement between these key areas. Outside of these urban centers, most islands rely on footpaths, bicycles, and motorcycles for local transport, with very few roads available due to the small size of the islands and the prioritization of maritime and air travel for longer distances.
+[[File:Aerial view of the Sinamalé Bridge.jpg|thumb|left|[[Sinamalé Bridge]], first islander bridge in the Maldives]]
+
+In the capital city of [[Malé]], the majority of roads are paved with concrete cobblestones, while some are paved with tarmac. In [[Addu City]], many roads are surfaced with tarmac. A notable feature in [[Aduu Atoll]] is a [[highway]] known as "Addu link road", connects four islands, [[Hithadhoo (Addu)|Hithadhoo]], [[Maradhoo (Addu)|Maradhoo]], [[Maradhoo-Feydhoo|Maradhoo–Feydhoo]], [[Feydhoo (Addu)|Feydhoo]].
+
+==Ports and harbours==
+Ports and harbors in the Maldives are crucial to the nation's economy, given the country's geographic composition as an archipelago of over 1,000 islands. In [[Malé|Malé city]], there are several regional ports and harbors that facilitate inter-island transportation and support local economies, including [[Kulhudhuffushi]] Harbor, and [[Hithadhoo (Addu)|Hithadhoo]] Regional Port. These ports handle a mix of conventional and containerized [[cargo]], essential for importing goods and exporting local products. The development and maintenance of these maritime facilities are vital for the [[Maldives]], ensuring the efficient movement of goods and supporting the tourism industry, which is a significant contributor to the national GDP.
+
+[[Malé]] [[Harbor|Commercial Harbour]] is the primary hub of maritime activities and commerce in the [[Maldives]]. Located in the capital city of Malé, the port offers a range of essential services including marine pilotage, wharfage, and mooring. It is equipped to handle both conventional and containerized cargo, providing facilities for cargo handling, as well as stuffing and un-stuffing services. As the main port of the Maldives, [[Malé]] Commercial Harbour plays a critical role in the nation's economy by facilitating the import and export of goods, thereby supporting the archipelago's trade and logistics infrastructure.
+
+== Air transport ==
+{{see|List of airports in Maldives{{!}}Airports in the Maldives}}
+[[File:8Q-IAI_Maldivian_Airbus_A321-211._(40172789774).jpg|thumb|right|[[Maldivian (airline)|Maldivian]] Airbus A321]]
+
+The [[archipelago]] has 18 airports. Two had paved runways. One stretched over {{convert|10,000|ft|m|abbr=on}}. Another was in the range {{convert|8,000|to|9,999|ft|m|abbr=on}}. Three airports had unpaved runways of {{convert|3,000|to|4,999|ft|m|abbr=on}}. Five of the 18 airports schedule international flights.
+
+==See also==
+*[[List of airports in Maldives]]
+*[[Velana International Airport]]
+*[[Gan International Airport]]
+*[[Flyme (Villa Air)|Flyme]]
+*[[Maldivian (airline)|Maldivian]]
+*[[Mega Maldives]]
+*[[Trans Maldivian Airways]]
+
+== References ==
+{{Reflist}}{{Maldives topics}}
+{{Asia in topic|Transport in }}
+
+==External links==
+* [https://www.trade.gov.mv/ Ministry of Economic Development, Transport & Trade]
+
+{{Commons category|Transport in the Maldives}}
+
+{{DEFAULTSORT:Transport In The Maldives}}
+[[Category:Transport in the Maldives| ]]

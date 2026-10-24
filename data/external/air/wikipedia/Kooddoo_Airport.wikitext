@@ -1,0 +1,61 @@
+{{Redirects here|GKK|the Croatian basketball club|GKK Šibenka|the German department store group|Galeria Karstadt Kaufhof}}
+{{Infobox airport
+| name             = Kooddoo Airport Maldives
+| native_name      = ކޫއްޑޫ އެއަރޕޯޓް
+| image            = GKK Airport 20130908.JPG
+| caption          = 
+| IATA             = GKK
+| ICAO             = VRMO
+| type             = Public
+| area_served      = [[Huvadhu Atoll]], [[Maldives]]
+| location         = [[Kooddoo]], [[Gaafu Alifu Atoll]]
+| elevation_f      = 
+| website          = 
+| coordinates      = {{coord|00|43|51|N|073|25|59|E|region:MV|display=inline,title}}
+| pushpin_map      = Maldives
+| pushpin_relief   = yes
+| pushpin_map_size = 105
+| pushpin_caption  = Location in Maldives
+| pushpin_label    = '''GKK'''
+| metric_rwy       = y
+| r1_number        = 
+| r1_length_m      = 
+| r1_surface       = 
+| footnotes        = Source:<ref name="GCM">{{GCM|VRMO|Kooddoo Island, Gaafu Alifu Atoll, Maldives (ICAO: VRMO, IATA: GKK)}}</ref>
+| owner_oper       = Pristine Island Investment
+}}
+
+'''Kooddoo Airport''' {{Airport codes|GKK<ref>
+ {{cite web
+ | title = IATA Airport Code Search (GKK: Kooddoo Island)
+ | url = http://www.iata.org/publications/Pages/code-search.aspx
+ | publisher = [[International Air Transport Association]]
+ | accessdate = 6 September 2013
+ }}
+</ref>|VRMO<ref name="GCM"/>}} is a [[domestic airport]]. It is located on the island of [[Kooddoo]] in [[Gaafu Alifu Atoll]] in the [[Maldives]]. It was opened on 10 September 2012 by President [[Mohamed Waheed Hassan]].<ref name=":0">{{cite news | url = http://www.haveeru.com.mv/kooddoo_airport/44467 | title = Kooddoo airport constructed in just seven months opened | work = [[Haveeru Daily]] | date = 10 September 2012 | url-status = dead | archiveurl = https://web.archive.org/web/20140407101516/http://www.haveeru.com.mv/kooddoo_airport/44467 | archivedate = 7 April 2014 }}</ref><ref>{{cite news |date=10 September 2012 |title=Festive ceremony marks opening of Kooddoo Airport |url=https://english.sun.mv/5626 |access-date=25 October 2024 |work=Sun}}</ref><ref>{{cite news |last=Lubbock |first=Hazel |date=10 September 2012 |title=A step closer to paradise |url=http://www.cntraveller.com/news/2012/september/kooddoo-airport-gaafu-alifu-atoll-maldives |url-status=dead |archive-url=https://web.archive.org/web/20121001003820/https://www.cntraveller.com/news/2012/september/kooddoo-airport-gaafu-alifu-atoll-maldives |archive-date=1 October 2012 |work=[[Condé Nast Traveller]]}}</ref>
+
+== History ==
+The Airport was constructed by Bonavista (Maldives) Pvt Ltd in 2012 and was opened by president [[Mohamed Waheed Hassan]].<ref name=":0" /><ref>{{Cite web |date=10 September 2012 |title=President Waheed opens The Residence Maldives |url=https://presidencymaldives.gov.mv/Press/Article/7896 |access-date=25 October 2024 |website=[[The President's Office]]}}</ref> It was later renovated in 2017 by Pristine Island Investment and was opened by president [[Abdulla Yameen]], which included a new VIP lounge and two staff accommodation blocks.<ref>{{Cite news |date=25 September 2017 |title=President opens expanded Kooddoo airport and new resort |url=https://maldivesindependent.com/business/president-opens-expanded-kooddoo-airport-and-new-resort-132755 |access-date=25 October 2024 |work=Maldives Independent}}</ref> 
+
+In 2024, the [[Maldivian (airline)|Maldivian]] airline halted flights to the airport after the airport's runway damaged two of the wings of a plane.<ref>{{Cite news |last=Osmanagic |first=Ameera |date=11 October 2024 |title=Maldivian to discontinue Kooddoo operations |url=https://edition.mv/maldivian_airline/36644 |access-date=25 October 2024 |work=[[The Edition]]}}</ref> The Minister of Transport and Civil Aviation [[Mohamed Ameen (21st-century politician)|Mohamed Ameen]], has said that the operator, Pristine Island Maldives, will renovate the runway as well as the apron.<ref>{{Cite news |last=Mohamed |first=Mariyath |date=13 October 2024 |title=Kooddoo airport being renovated, flights will commence soon: Minister Ameen |url=https://edition.mv/justice/36676 |access-date=25 October 2024 |work=[[The Edition]]}}</ref><ref>{{Cite news |last=Osmanagic |first=Ameera |date=14 October 2024 |title=Operator will renovate Kooddoo Airport: Minister Ameen |url=https://edition.mv/mohamed_ameen_transport_minister/36733 |access-date=25 October 2024 |work=[[The Edition]]}}</ref>
+
+==Airlines and destinations==
+<!-- Please use only independent sources. The airport and the airline itself are not independent sources. -->
+{{Airport destination list
+| [[Maldivian (airline)|Maldivian]] | [[Gan International Airport|Gan]], [[Kadhdhoo Airport|Kadhdhoo]], [[Velana International Airport|Malé]]
+}}
+
+==See also==
+* [[List of airports in the Maldives]]
+* [[List of airlines of the Maldives]]
+
+==References==
+<references />
+
+==External links==
+* [http://skyvector.com/?ll=0.730833,73.433056&zoom=2 Aeronautical chart] at SkyVector
+{{Airports in the Maldives}}
+{{authority control}}
+
+[[Category:Airports in the Maldives]]
+[[Category:Airports established in 2012]]

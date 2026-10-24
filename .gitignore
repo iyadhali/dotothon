@@ -12,17 +12,28 @@ web/.pnpm-store/
 web/.cache/
 web/test-results/
 web/output/
+# Stray npm lockfile; this project installs with pnpm (see web/README.md)
+web/package-lock.json
 qgis/*.qgd
 qgis/*.gpkg-shm
 qgis/*.gpkg-wal
 qgis/*.qgs~
 tools/.deps/
 
-# Too large for GitHub — download links in README.md ("Large files not in this repo")
-# FollowMe daily CSVs (46–69 MB each, 1.8 GB total): see data/FollowMe/README.md
-data/FollowMe/FollowMe_august_2025/*.csv
-data/raw-zips/FollowMe.zip
-# MoH facility annual-report PDFs (200 files, 561 MB): per-file URLs in moh_annual_reports_index.tsv; extracted text kept in _text/
-data/external/health/moh_annual_reports/*.pdf
-# Upstream MBS datasets repo clone (nested git repo): https://github.com/mbs-datathon/maldives-datathon-2026-datasets
+# --- Local research datasets (not versioned) ---------------------------
+# Raw and derived datasets (~3.7 GB on disk) stay local only. Download links
+# are in README.md (Data section) and data/README.md; the derived multimodal
+# artifacts are rebuilt with scripts/multimodal/.
+# Public-source snapshots committed before this rule stay tracked: gitignore
+# never applies to files git already tracks.
+data/**
+# Upstream MBS datasets repo clone (nested git repo):
+# https://github.com/mbs-datathon/maldives-datathon-2026-datasets
 data/mbs-datasets/
+# Documentation is the exception. To version a new file under data/:
+#   git add -f data/<path>/README.md
+# Kept in git on purpose: web/public/data/ — the app, `pnpm check:routing` and
+# the CI build read those prepared browser artifacts.
+
+# macOS metadata
+.DS_Store

@@ -238,11 +238,11 @@ checks use the prepared artifacts and the recorded RTL snapshot.
 
 `scripts/multimodal/augment_network.py` (run after `build_network.py`) adds two sea layers:
 
-- **MTCC 2023 timetable**: 21 Saturday trips, 45 stops, only in the atolls with no RTL stop
+- **MTCC 2023 timetable**: 30 trips (21 run on Saturdays; each carries its published running days, none on Friday), 46 stops, only in the atolls with no RTL stop
   in the snapshot (AA, ADh, K, V, M, Lh). Source: the MTCC all-atolls timetable PDF
   (16 Jul 2023), recovered from the Wayback Machine; `research/15_ferry_timetable_gaps.md`.
   One island did not match (Felivaru, Lh).
-- **Observed boat links**: 162 regular island-to-island links from FollowMe GPS (Aug 2025)
+- **Observed boat links**: 154 regular island-to-island links from FollowMe GPS (Aug 2025)
   that touch an island the RTL network could not reach, as estimated-frequency `sea`
   services under route id `observed-boats` (switchable). These are movements of any
   tracked boat, not a public timetable; departures are spread evenly over the observed

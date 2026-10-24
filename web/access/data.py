@@ -86,6 +86,12 @@ class Model:
         self.nodes = nodes.merge(acc, on="node_id", how="left")
         self.by_id = self.nodes.set_index("node_id", drop=False)
         self.inhabited = self.nodes[self.nodes.type == "inhabited"].copy()
+        # services register (education + health) and the per-island access table built from it
+        self.services = pd.read_csv(DERIVED / "services_placed.csv")
+        self.svc_access = pd.read_csv(DERIVED / "service_access.csv")
+        summary_path = DERIVED / "service_summary.csv"
+        self.service_summary = (pd.read_csv(summary_path) if summary_path.exists()
+                                else pd.DataFrame())
         self.hs_ids = set(self.inhabited.loc[self.inhabited.has_own_higher_secondary.fillna(False),
                                              "node_id"])
         self.ls_ids = set(self.inhabited.loc[self.inhabited.has_own_lower_secondary.fillna(False),
@@ -219,10 +225,39 @@ class Model:
             "hs_place": None if hs_prov is None else self.name_of(hs_prov),
             "campus_hours": None if ca_h is None else round(ca_h, 2),
             "campus_place": None if ca_prov is None else self.name_of(ca_prov),
+            "services": self.services_on(node_id),
+            "access": self.service_access_for(node_id),
             "links": [{"to": self.name_of(e.b), "to_id": e.b, "hours": round(e.hours, 2),
                        "trips": e.trips, "kind": e.kind,
                        "knots": None if e.knots is None else round(e.knots, 1)} for e in links],
         }
+
+    def services_on(self, node_id: str) -> list[dict]:
+        rows = self.services[self.services.node_id == node_id]
+        return [{"name": r.name, "category": r.category, "type": r.service_type,
+                 "source": r.source} for r in rows.itertuples()]
+
+    def service_access_for(self, node_id: str) -> dict:
+        """Hours to the nearest provider of each service type, plus who provides it."""
+        rows = self.svc_access[self.svc_access.node_id == node_id]
+        out = {}
+        for r in rows.itertuples():
+            out[r.service_type] = {
+                "category": r.category,
+                "local": bool(r.has_local),
+                "hours": None if pd.isna(r.hours) else round(float(r.hours), 2),
+                "place": r.provider_island if isinstance(r.provider_island, str) else None,
+                "name": r.provider_name if isinstance(r.provider_name, str) else None,
+            }
+        return out
+
+    def service_types(self) -> list[dict]:
+        """The categories and types actually present in the register, for the pickers."""
+        out = []
+        for (cat, t), g in self.svc_access.groupby(["category", "service_type"]):
+            out.append({"category": cat, "type": t, "islands": int(g.has_local.sum()),
+                        "n": int(g.n_providers.iloc[0])})
+        return sorted(out, key=lambda d: (d["category"], -d["n"]))
 
     def ranked(self, atoll: str = "", band: str = "", limit: int = 400) -> list[dict]:
         df = self.inhabited.copy()
@@ -267,7 +302,8 @@ def data_version() -> tuple:
     """Cheap fingerprint of the derived tables: any rebuild changes it, so the next request
     picks up new data without restarting the server (no manual cache clear needed)."""
     files = ("island_access.csv", "priority_gaps.csv", "sea_edges.csv",
-             "sea_nodes.csv", "island_school_provision.csv")
+             "sea_nodes.csv", "island_school_provision.csv",
+             "service_access.csv", "services_placed.csv")
     return tuple((name, (DERIVED / name).stat().st_mtime_ns)
                  for name in files if (DERIVED / name).exists())
 

@@ -1,0 +1,96 @@
+{% extends "access/base.html" %}
+{% load fmt %}
+{% block title %}Services register · Maldives accessibility{% endblock %}
+{% block body %}
+<header class="topbar">
+  <div>
+    <p class="eyebrow">MALDIVES DATATHON 2026 · TEAM A · SEA · LAND · AIR</p>
+    <h1>Services register — education and health, island by island</h1>
+  </div>
+  <div class="chips">
+    <a class="chip num" href="/"><span class="n">←</span><span class="l">back to<br>the map</span></a>
+    <div class="chip num"><span class="n">{{ total }}</span><span class="l">services<br>in the register</span></div>
+  </div>
+</header>
+
+<main class="wrap page">
+  {% if added %}<p class="notice ok">Added “{{ added }}” and rebuilt the access table.</p>{% endif %}
+  {% if error %}<p class="notice bad">{{ error }}</p>{% endif %}
+
+  <section class="card">
+    <div class="cardhead">
+      <h2>What each service type reaches</h2>
+      <span class="hint">within two hours on the observed network</span>
+    </div>
+    <table class="mini wide">
+      <thead><tr><th>Service</th><th class="r">Facilities</th><th class="r">Islands with one</th>
+        <th class="r">Islands within 2 h</th><th class="r">No route</th><th class="r">People within 2 h</th>
+        <th class="r">Children within 2 h</th><th class="r">Median hours</th></tr></thead>
+      <tbody>
+      {% for r in summary %}
+        <tr>
+          <td>{{ r.service_type|svclabel|capfirst }} <span class="tag">{{ r.category }}</span></td>
+          <td class="r">{{ r.n_facilities|floatformat:"0" }}</td>
+          <td class="r">{{ r.islands_with_local|floatformat:"0" }}</td>
+          <td class="r">{{ r.islands_within_2h|floatformat:"0" }} <em>/ 187</em></td>
+          <td class="r">{{ r.islands_unreachable|floatformat:"0" }}</td>
+          <td class="r">{{ r.population_within_2h|num }}</td>
+          <td class="r">{{ r.children_within_2h|num }}</td>
+          <td class="r">{{ r.median_hours }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <p class="hint">Health centres are near-universal; hospitals are concentrated on four islands —
+    that contrast is the finding the map is built to show.</p>
+  </section>
+
+  <section class="card">
+    <div class="cardhead"><h2>Add a service</h2><span class="hint">appended to <code>data/services.csv</code>, then the access table is rebuilt</span></div>
+    <form method="post" class="svcform">
+      {% csrf_token %}
+      <label>Name<input name="name" required maxlength="90" placeholder="e.g. Maafushi Health Centre"></label>
+      <label>Service type
+        <select name="service_type" required>
+          {% for cat, t, label in types %}<option value="{{ t }}">{{ label }} ({{ cat }})</option>{% endfor %}
+        </select>
+      </label>
+      <label>Island
+        <select name="island" required>
+          {% regroup picker by atoll as groups %}
+          {% for g in groups %}
+            <optgroup label="{{ g.grouper }}">
+              {% for i in g.list %}<option value="{{ i.node_id }}">{{ i.island }}</option>{% endfor %}
+            </optgroup>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Note (optional)<input name="notes" maxlength="200" placeholder="source, phone, opening hours…"></label>
+      <button type="submit">Add service</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="cardhead">
+      <h2>Register</h2>
+      <nav class="filters">
+        <a href="/services/" class="{% if not cat %}is-on{% endif %}">All ({{ total }})</a>
+        <a href="/services/?cat=education" class="{% if cat == 'education' %}is-on{% endif %}">Education</a>
+        <a href="/services/?cat=health" class="{% if cat == 'health' %}is-on{% endif %}">Health</a>
+      </nav>
+    </div>
+    <table class="mini wide">
+      <thead><tr><th>Service</th><th>Type</th><th>Atoll</th><th>Island</th><th>Source</th></tr></thead>
+      <tbody>
+      {% for r in services %}
+        <tr><td>{{ r.name }}</td><td>{{ r.service_type|svclabel }}</td><td>{{ r.atoll }}</td>
+          <td>{{ r.island }}</td><td class="hint">{{ r.source }}</td></tr>
+      {% empty %}
+        <tr><td colspan="5" class="empty">No services in this category.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <p class="hint">Showing {{ n }} of {{ total }}.</p>
+  </section>
+</main>
+{% endblock %}

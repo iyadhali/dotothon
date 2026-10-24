@@ -102,64 +102,13 @@ def main() -> None:
         if len(pa) and len(pb):
             land_edges.append((pa.iloc[0].island_pcode, pb.iloc[0].island_pcode, h))
 
-    # ---------- travel-time graph, with road components contracted ----------
-    # Islands joined by road behave as one place for access, but the sailing budget must not be
-    # spent on tarmac. So each road component becomes one graph node, every island keeps its road
-    # offset inside that node, and the 2-sailing budget applies to actual crossings.
-    parent = {n: n for n in nodes.node_id}
+    # ---------- travel-time graph (shared with every other service layer) ----------
+    from graph_core import build as build_graph
 
-    def find(x):
-        while parent[x] != x:
-            parent[x] = parent[parent[x]]
-            x = parent[x]
-        return x
-
-    for a, b, _h in land_edges:
-        ra, rb = find(a), find(b)
-        if ra != rb:
-            parent[ra] = rb
-    comp = {n: find(n) for n in nodes.node_id}
-
-    land_adj: dict[str, list] = {}
-    for a, b, h in land_edges:
-        land_adj.setdefault(a, []).append((b, h))
-        land_adj.setdefault(b, []).append((a, h))
-    offset: dict[str, float] = {}
-    for n in nodes.node_id:
-        if comp[n] != n or n in offset:
-            continue
-        offset[n] = 0.0
-        stack = [(n, 0.0)]
-        while stack:
-            u, du = stack.pop()
-            for v, h in land_adj.get(u, []):
-                if v not in offset or du + h < offset[v] - 1e-9:
-                    offset[v] = du + h
-                    stack.append((v, du + h))
-    offset = {n: offset.get(n, 0.0) for n in nodes.node_id}
-
-    reps = sorted({comp[n] for n in nodes.node_id})
-    idx = {r: i for i, r in enumerate(reps)}
-    N = len(reps)
-    INF = np.inf
-    d = np.full((N, N), INF)
-    np.fill_diagonal(d, 0.0)
-    for a, b, h in zip(edges.from_id, edges.to_id, edges.med_hours):
-        if a in comp and b in comp:
-            i, j = idx[comp[a]], idx[comp[b]]
-            if i != j:
-                d[i, j] = min(d[i, j], h)
-    print(f"road links {len(land_edges)} | {len(nodes)} islands contracted to {N} places")
-
-    hops = np.full((N, N), 99, dtype=np.int16)
-    np.fill_diagonal(hops, 0)
-    hops[np.isfinite(d) & (d > 0)] = 1
-    for _ in range(MAX_HOPS):
-        for k in range(N):
-            alt = d[:, k][:, None] + TRANSFER_H + d[k, :][None, :]
-            better = alt < d - 1e-9
-            d = np.where(better, alt, d)
-            hops = np.where(better, hops[:, k][:, None] + hops[k, :][None, :], hops)
+    graph = build_graph(edges, nodes, land_edges)
+    comp, offset, idx = graph.comp, graph.offset, graph.idx
+    d, hops = graph.dist, graph.hops
+    print(f"road links {len(land_edges)} | {len(nodes)} islands contracted to {len(idx)} places")
 
     # ---------- per-island access ----------
     inh = nodes[nodes.type == "inhabited"].copy()

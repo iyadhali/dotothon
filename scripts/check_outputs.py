@@ -62,6 +62,20 @@ def main() -> None:
     check("every gap row names a school island", bool(gaps.nearest_hs.notna().all()),
           f"{int(gaps.nearest_hs.isna().sum())} missing")
 
+    svc = pd.read_csv(D / "service_access.csv")
+    reg = pd.read_csv(E.parent / "services.csv")
+    check("services register is non-trivial", len(reg) >= 500, f"{len(reg)} services")
+    check("every service is attached to an island",
+          bool(pd.read_csv(D / "services_placed.csv").node_id.notna().all()), "")
+    hosp = svc[svc.service_type == "hospital"]
+    n2 = int((hosp.hours <= 2).sum())
+    check("35 islands reach a hospital within two hours", n2 == 35, f"{n2}")
+    hc = svc[svc.service_type == "health_centre"]
+    check("186 islands reach a health centre within two hours",
+          int((hc.hours <= 2).sum()) == 186, f"{int((hc.hours <= 2).sum())}")
+    hp = int(hosp.loc[hosp.hours <= 2, "population"].sum())
+    check("274,015 people reach a hospital within two hours", hp == 274015, f"{hp:,}")
+
     if failures:
         print(f"\n{len(failures)} check(s) failed: {', '.join(failures)}")
         sys.exit(1)

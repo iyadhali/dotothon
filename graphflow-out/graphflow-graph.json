@@ -3,10 +3,10 @@
     {
       "id": "dialogue-session:15ti78t",
       "type": "Decision",
-      "content": "dialogue-session session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9 turns=10 tip=dialogue:15ti78t:0010",
+      "content": "dialogue-session session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9 turns=11 tip=dialogue:15ti78t:0011",
       "metadata": {
         "kind": "dialogue-session",
-        "record": "{\"id\":\"dialogue-session:15ti78t\",\"name\":\"session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9\",\"tipTurnId\":\"dialogue:15ti78t:0010\",\"turnCount\":10,\"topicTokens\":[\"10\",\"100\",\"15\",\"20\",\"2026\",\"50\",\"about\",\"access\",\"across\",\"act\",\"added\",\"affordable\",\"after\",\"air\",\"all\",\"allowed\",\"also\",\"and\",\"another\",\"answers\",\"anyone\",\"anythig\",\"app\",\"are\",\"as\",\"at\",\"automatically\",\"avas_ride\",\"average\",\"base\",\"be\",\"below\",\"benefits\",\"between\",\"beyond\",\"built\",\"ca\",\"can\",\"card\",\"carry\",\"challenge\",\"charts\",\"check\",\"chose\",\"clarity\",\"clear\",\"collaboration\",\"collected\"],\"createdAt\":1792817786469,\"updatedAt\":1792823204798}",
+        "record": "{\"id\":\"dialogue-session:15ti78t\",\"name\":\"session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9\",\"tipTurnId\":\"dialogue:15ti78t:0011\",\"turnCount\":11,\"topicTokens\":[\"10\",\"100\",\"15\",\"20\",\"2026\",\"50\",\"able\",\"about\",\"access\",\"across\",\"act\",\"add\",\"added\",\"affordable\",\"after\",\"air\",\"all\",\"allowed\",\"also\",\"and\",\"another\",\"answers\",\"anyone\",\"anythig\",\"app\",\"are\",\"as\",\"at\",\"automatically\",\"avas_ride\",\"average\",\"base\",\"based\",\"be\",\"below\",\"benefits\",\"between\",\"beyond\",\"built\",\"ca\",\"can\",\"card\",\"carry\",\"catagory\",\"center\",\"challenge\",\"charts\",\"check\"],\"createdAt\":1792817786469,\"updatedAt\":1792823448612}",
         "name": "session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9"
       }
     },
@@ -121,11 +121,23 @@
     {
       "id": "dialogue:15ti78t:0010",
       "type": "Decision",
-      "content": "dialogue-turn #10 Q: base data we provided macl, avas_ride, follow_me, mtcc when new data is added it need to be process automatically | A: (pending)",
+      "content": "dialogue-turn #10 Q: base data we provided macl, avas_ride, follow_me, mtcc when new data is added it need to be process automatically | A: Done — all four datasets are now ingested, and new data is processed automatically. ## It is drop-in Put a file where the old one lived and the pipeline rebuil…",
       "metadata": {
         "kind": "dialogue-turn",
-        "record": "{\"id\":\"dialogue:15ti78t:0010\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":10,\"userQuery\":\"base data we provided macl, avas_ride, follow_me, mtcc when new data is added it need to be process automatically\",\"assistantReply\":\"\",\"parentTurnId\":\"dialogue:15ti78t:0009\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792822612692,\"updatedAt\":1792822612692,\"title\":\"base data we provided macl, a…\",\"lastSeenAt\":1792823204798}",
+        "record": "{\"id\":\"dialogue:15ti78t:0010\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":10,\"userQuery\":\"base data we provided macl, avas_ride, follow_me, mtcc when new data is added it need to be process automatically\",\"assistantReply\":\"Done — all four datasets are now ingested, and new data is processed automatically. ## It is drop-in Put a file where the old one lived and the pipeline rebuilds only what depends on it: ``` data/MTCC.xlsx overwrite data/MACL/*.csv overwrite data/Avas_Ride/*.csv overwrite data/FollowMe_<month>/ any new folder matching data/FollowMe* is picked up ``` ```bash make watch # poll every 10 s → ingest on change (run this during the demo) make ingest # or one incremental pass python scripts/ingest.py --dry-run # show what would rebuild, change nothing ``` **Measured on the real repo:** I touched `data/MTCC.xlsx`, and 6 seconds later the watcher had detected it, run only the `normalise` + `check` stages, and rewritten the manifest — 1 second of work, not a 27-second full rebuild. ## How it knows what changed Each source group gets a **fingerprint** — SHA-256 over `(path, size, mtime)` for every file. Reading 1.9 GB of GPS to decide whether to re-read it would defeat the point, and in practice a new data drop always changes metadata. Fingerprints are stored in `data/derived/.ingest.json`, so the next run knows which inputs produced which outputs. | Change | Rebuilds | |---|---| | FollowMe folder | sea network → reachability → map | | MTCC / MACL / Avas | their tidy tables only | | Census or boundary files | island spine → reachability → map | | MoE statistics PDF | school provision → reachability → map | | *(always, cheap)* | `check` — 13 assertions on every number we publish | **The web app needs no restart.** `data.py` now keys its model on the mtimes of the derived tables, so the next request rebuilds it. A judge can watch a file land and the map change seconds later. ## What a run leaves behind [`source_manifest.md`](data/derived/source_manifest.md) — every source with its size, last-touched time, fingerprint and derived row counts — plus `source_manifest.json` and a log at `data/derived/ingest.log`. The app prints the build time in its footer, so provenance is visible on screen, not hidden in a terminal. ## All four datasets are genuinely processed, not just stored The model runs on FollowMe, so the other three would have been decorative. They now have tidy, queryable tables: - **MACL** → `macl_monthly.csv`, 175 months, 2012-01…2026-07 — with the **m/d/Y trap fixed and asserted** (the metadata says `YYYY-MM-DD`; 102,304 rows would be corrupted by trusting it) - **Avas** → `avas_daily.csv` (61 days) + `avas_fare_matrix.csv` (36 zone pairs) - **MTCC** → `mtcc_bus_monthly.csv`, `mtcc_bus_daily.csv`, `mtcc_ferry_monthly.csv`, each carrying a `supplier_note` column so \\\"sample value\\\" can never be lost downstream ## Criteria check This is **Scalability & readiness (15 %, first tie-break)**, moved 4 → 5: \\\"works with updated data\\\" is now demonstrated rather than claimed, and the integration path is one entry in two registries. Projected total **85 / 100** ([docs/judging-criteria.md](docs/judging-criteria.md)). One honest caveat worth saying out loud if asked: if someone drops a *partial* dataset (say one day of GPS), `check` will fail loudly and the watcher will log the failure rather than publish numbers that contradict the README. Failing loudly is deliberate — a silent partial rebuild is how a demo starts lying.\",\"parentTurnId\":\"dialogue:15ti78t:0009\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792822612692,\"updatedAt\":1792823245225,\"lastSeenAt\":1792823245225,\"title\":\"base data we provided macl, a…\",\"summary\":\"Done — all four datasets are now ingested, and new data is processed automatically. ## It is drop-in Put a file where the old one lived and the pipeline rebuilds only what depends on it: ``` data/MTC…\"}",
         "seq": 10,
+        "sessionId": "dialogue-session:15ti78t",
+        "jumped": false
+      }
+    },
+    {
+      "id": "dialogue:15ti78t:0011",
+      "type": "Decision",
+      "content": "dialogue-turn #11 Q: i want to maps key services, for now get some imporatant services, eg education(schools,collaage) health(island health center, hospital) i should be able to ad… | A: (pending)",
+      "metadata": {
+        "kind": "dialogue-turn",
+        "record": "{\"id\":\"dialogue:15ti78t:0011\",\"sessionId\":\"dialogue-session:15ti78t\",\"seq\":11,\"userQuery\":\"i want to maps key services, for now get some imporatant services, eg education(schools,collaage) health(island health center, hospital) i should be able to add them manually, catagory and the service how from maps i want identifty which island have access to health(based on service catagory)\",\"assistantReply\":\"\",\"parentTurnId\":\"dialogue:15ti78t:0010\",\"jumped\":false,\"relatedNodeIds\":[],\"createdAt\":1792823448612,\"updatedAt\":1792823448612,\"title\":\"i want to maps key services, …\"}",
+        "seq": 11,
         "sessionId": "dialogue-session:15ti78t",
         "jumped": false
       }
@@ -225,6 +237,16 @@
     {
       "from": "dialogue:15ti78t:0009",
       "to": "dialogue:15ti78t:0010",
+      "relation": "next_section"
+    },
+    {
+      "from": "dialogue:15ti78t:0011",
+      "to": "dialogue-session:15ti78t",
+      "relation": "part_of"
+    },
+    {
+      "from": "dialogue:15ti78t:0010",
+      "to": "dialogue:15ti78t:0011",
       "relation": "next_section"
     }
   ]

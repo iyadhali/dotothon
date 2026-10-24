@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24 06:27 UTC",
+  "generated_at": "2026-10-24 06:52 UTC",
   "sources": {
     "followme": {
       "files": 31,
@@ -42,6 +42,18 @@
       "bytes": 14054600,
       "fingerprint": "d0fd1ce9504e0b52",
       "latest_mtime": "2026-10-24 05:24"
+    },
+    "moh": {
+      "files": 1,
+      "bytes": 265582,
+      "fingerprint": "fa614465606586e1",
+      "latest_mtime": "2026-10-24 06:31"
+    },
+    "services": {
+      "files": 1,
+      "bytes": 86179,
+      "fingerprint": "4827dad82d7931c5",
+      "latest_mtime": "2026-10-24 06:51"
     }
   },
   "derived_rows": {
@@ -55,6 +67,9 @@
     "priority_gaps.csv": 28
   },
   "stages_run": {
+    "services": 0.2,
+    "service_access": 5.2,
+    "web": 0.5,
     "check": 0.3
   }
 }

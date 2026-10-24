@@ -58,9 +58,32 @@ travel time to the nearest grade 11–12 school. Everything else floats over it.
 | | |
 | **Decision tables** | below the map: worst-served ranking, and the 28 islands beyond two hours with the link that would fix each |
 | **Provenance** | the footer prints when the data was last built and from how much of it |
-| **Island profile** | population, children 0–17, whether the island teaches grade 7–10 and 11–12, hours to the nearest higher-secondary school and university campus, and the observed crossings out of that island with trip counts. |
-| **Island to island** | pick a start and a destination: the best journey within two sailings, broken down leg by leg, with the connection wait shown separately. |
-| **Worst served** | ranked list, filleted by atoll, by "over 2 h / over 4 h", by "no observed route", or by "hosts a school". |
+| **Colour by** | switch the whole map between education (grade 11–12, university campus, grade 7–10) and health (health centre, hospital) — same network, any service category |
+| **Services on the island** | every school, college, health centre and hospital the register places on that island |
+| **Travel time to the nearest** | hours to the nearest provider of *each* service type, and the island that provides it |
+| **Services register** (`/services/`) | the full register, a per-type national roll-up, and a form to **add a service by category** — the access table rebuilds itself |
+
+### Services, not just schools
+
+The model was built for education, but the network underneath is general. `data/services.csv` is a
+register of 569 facilities — 409 education (primary, lower and higher secondary, four campuses) and
+160 health (155 health centres, 5 hospitals) — each attached to an island, so accessibility is one
+Dijkstra over one graph per service type:
+
+| Service | Islands with one | Islands within 2 h | People within 2 h | Median hours |
+|---|---|---|---|---|
+| Primary school | 182 | 187 | 448,819 | 0.0 |
+| Grades 7–10 | 180 | 187 | 448,819 | 0.0 |
+| **Grades 11–12** | 43 | **156** | 422,602 | 0.56 |
+| University campus | 4 | 50 | 305,772 | 3.34 |
+| Health centre | 155 | 186 | 439,642 | 0.0 |
+| **Hospital** | 4 | **35** | 274,015 | 4.56 |
+
+The contrast is the argument: **primary care reaches almost every island (186 of 187 within two
+hours), secondary care does not — only 35 islands, 274,015 people and 51,601 children can reach a
+hospital within two hours, at a median of 4.6 hours.** The same network that shows a school gap
+shows a sharper hospital gap, and the register is editable, so the answer stays honest when a new
+facility opens.
 
 ## How it is built
 

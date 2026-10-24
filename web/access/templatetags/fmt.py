@@ -4,6 +4,21 @@ from django import template
 register = template.Library()
 
 
+SVC_LABEL = {
+    "school_primary": "primary school",
+    "school_lower_secondary": "grades 7–10",
+    "school_higher_secondary": "grades 11–12",
+    "college": "university campus",
+    "health_centre": "health centre",
+    "hospital": "hospital",
+}
+
+
+@register.filter
+def svclabel(v):
+    return SVC_LABEL.get(str(v), str(v).replace("_", " "))
+
+
 @register.filter
 def num(value) -> str:
     """187 -> '187', 448819 -> '448,819'. Blank for None."""

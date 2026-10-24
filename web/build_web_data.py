@@ -94,6 +94,15 @@ def main() -> None:
         pts.append({"id": "MLE", "name": "Malé City", "atoll": "Male",
                     "pop": int(r.population), "hours": 0.0, "own": True, "band": "own",
                     "lat": round(float(r.lat), 5), "lon": round(float(r.lon), 5)})
+    # per-island hours for every service type, so the map can be recoloured client-side
+    sa_path = ROOT / "data" / "derived" / "service_access.csv"
+    if sa_path.exists():
+        sa = pd.read_csv(sa_path)
+        metrics = {f"{cat}:{t}": g.set_index("node_id").hours.to_dict()
+                   for (cat, t), g in sa.groupby(["category", "service_type"])}
+        for p in pts:
+            p["m"] = {k: (None if pd.isna(v.get(p["id"])) else round(float(v[p["id"]]), 2))
+                      for k, v in metrics.items()}
     (OUT.parent / "islands_points.json").write_text(json.dumps(pts, separators=(",", ":")))
     print(f"wrote islands_points.json — {len(pts)} points, "
           f"{(OUT.parent / 'islands_points.json').stat().st_size / 1e3:.0f} KB")

@@ -5,11 +5,12 @@ HTML in, so the same code path serves the first paint and every interaction afte
 """
 import json
 
+import pandas as pd
 from django.http import Http404
-from django.shortcuts import render
-from django.views.decorators.http import require_GET
+from django.shortcuts import redirect, render
+from django.views.decorators.http import require_GET, require_http_methods
 
-from .data import DERIVED, model
+from .data import DERIVED, ROOT, model
 
 
 def _manifest() -> dict | None:
@@ -37,6 +38,7 @@ def index(request):
         "default_to": "MLE",
         "default_island": request.GET.get("island", "MV002012"),
         "n_rows": len(m.inhabited),
+        "n_services": len(m.services),
         "sel_atoll": "",
         "sel_band": "",
     })
@@ -97,4 +99,80 @@ def ranked(request):
         "atolls": m.atolls,
         "sel_atoll": atoll,
         "sel_band": band,
+    })
+
+
+SERVICE_TYPES = [
+    ("education", "school_primary", "Primary school (Gr 1–6)"),
+    ("education", "school_lower_secondary", "Lower secondary (Gr 7–10)"),
+    ("education", "school_higher_secondary", "Higher secondary (Gr 11–12)"),
+    ("education", "college", "College / university campus"),
+    ("health", "health_centre", "Health centre"),
+    ("health", "hospital", "Hospital"),
+    ("other", "other", "Other (describe in the name)"),
+]
+
+
+def _rebuild_services() -> tuple[bool, str]:
+    """Recompute the service access table and the map data after the register changes."""
+    import subprocess, sys
+    out = []
+    for script in ("scripts/build_service_access.py", "web/build_web_data.py"):
+        p = subprocess.run([sys.executable, str(ROOT / script)], cwd=ROOT,
+                           capture_output=True, text=True, timeout=300)
+        out.append(f"{script}: exit {p.returncode}")
+        if p.returncode != 0:
+            return False, (p.stderr or p.stdout)[-600:]
+    return True, "; ".join(out)
+
+
+@require_http_methods(["GET", "POST"])
+def services(request):
+    m = model()
+    added = error = None
+    if request.method == "POST":
+        name = (request.POST.get("name") or "").strip()
+        node = (request.POST.get("island") or "").strip()
+        stype = (request.POST.get("service_type") or "").strip()
+        category = dict((t, c) for c, t, _ in SERVICE_TYPES).get(stype, "other")
+        notes = (request.POST.get("notes") or "").strip()[:200]
+        if not name or not node or not stype:
+            error = "A name, an island and a service type are required."
+        elif node not in m.by_id.index:
+            error = f"Unknown island: {node}"
+        elif node not in set(m.inhabited.node_id):
+            error = "Pick an inhabited island — services are attributed to island communities."
+        else:
+            r = m.by_id.loc[node]
+            row = {
+                "service_id": f"usr-{abs(hash((name, node, stype))) % 10**8:08d}",
+                "category": category, "service_type": stype, "name": name[:90],
+                "atoll": r.atoll, "island": r["name"],
+                "lat": round(float(r.lat), 5), "lon": round(float(r.lon), 5),
+                "source": "added in the app", "notes": notes,
+                "added_at": __import__("datetime").date.today().isoformat(),
+            }
+            path = ROOT / "data" / "services.csv"
+            df = pd.read_csv(path)
+            if ((df.name == row["name"]) & (df.island == row["island"])).any():
+                error = f"“{row['name']}” is already on {row['island']}."
+            else:
+                pd.concat([df, pd.DataFrame([row])], ignore_index=True).to_csv(path, index=False)
+                ok, msg = _rebuild_services()
+                if ok:
+                    added = row["name"]
+                else:
+                    error = f"Saved, but the rebuild failed — {msg}"
+    cat = request.GET.get("cat", "")
+    records = m.services if not cat else m.services[m.services.category == cat]
+    return render(request, "access/services.html", {
+        "services": records.sort_values(["atoll", "island", "service_type"])
+                             [["name", "category", "service_type", "atoll", "island", "source"]]
+                             .to_dict("records"),
+        "summary": m.service_summary.to_dict("records"),
+        "types": SERVICE_TYPES,
+        "picker": m.picker,
+        "n": len(records), "total": len(m.services),
+        "cat": cat, "added": added, "error": error,
+        "s": m.stats(), "manifest": _manifest(),
     })

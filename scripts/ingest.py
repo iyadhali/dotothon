@@ -52,6 +52,8 @@ def source_files() -> dict[str, list[Path]]:
         "census": sorted((DATA / "external").glob("census2022_*.xlsx")),
         "boundaries": sorted((DATA / "external").glob("mdv_admin*.geojson")),
         "moe": sorted((DATA / "external").glob("schoolstats*.pdf")),
+        "moh": sorted((DATA / "external").glob("moh_health_facilities*")),
+        "services": [DATA / "services.csv"],      # hand-edited, or added through the app
     }
 
 
@@ -86,7 +88,10 @@ STAGES: list[tuple[str, list[str], tuple[str, ...]]] = [
     ("sea", ["scripts/build_sea_network.py"], ("followme",)),
     ("provision", ["scripts/build_school_provision.py"], ("moe",)),
     ("reachability", ["scripts/build_reachability.py"], ("spine", "sea", "provision")),
-    ("web", ["web/build_web_data.py"], ("reachability", "sea", "provision")),
+    # the register is the source of truth; seed it once, then rebuild access from whatever it holds
+    ("services", ["scripts/seed_services.py", "--if-missing"], ("services", "moh")),
+    ("service_access", ["scripts/build_service_access.py"], ("services", "moh", "sea")),
+    ("web", ["web/build_web_data.py"], ("reachability", "service_access", "sea", "provision")),
     ("check", ["scripts/check_outputs.py"], ()),          # always last, always cheap
 ]
 
@@ -96,6 +101,8 @@ OUTPUTS = {
     "sea": ["sea_edges.csv", "sea_nodes.csv"],
     "provision": ["island_school_provision.csv"],
     "reachability": ["island_access.csv", "island_pairs.csv", "priority_gaps.csv"],
+    "services": ["services_placed.csv"],
+    "service_access": ["service_access.csv", "service_summary.csv"],
     "web": ["islands_points.json"],
 }
 

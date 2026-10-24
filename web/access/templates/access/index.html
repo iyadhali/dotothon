@@ -10,6 +10,7 @@
     <div class="chip num"><span class="n">{{ s.hs_islands }}</span><span class="l">islands teach<br>grade 11–12</span></div>
     <div class="chip num"><span class="n">{{ s.within2_islands }}</span><span class="l">reach one within<br>2 hours</span></div>
     <div class="chip num hot"><span class="n">{{ s.no_service }}</span><span class="l">no observed<br>route</span></div>
+    <a class="chip num link" href="/services/"><span class="n">{{ n_services }}</span><span class="l">services in the<br>register →</span></a>
     <div class="chip num"><span class="n">{{ s.kids|num }}</span><span class="l">children aged<br>0–17</span></div>
   </div>
 </header>
@@ -35,6 +36,17 @@
       </select>
     </div>
 
+    <label class="metricrow">
+      <span>Colour by</span>
+      <select id="metric">
+        <option value="education:school_higher_secondary">Education · grade 11–12</option>
+        <option value="education:college">Education · university campus</option>
+        <option value="health:health_centre">Health · health centre</option>
+        <option value="health:hospital">Health · hospital</option>
+        <option value="education:school_lower_secondary">Education · grade 7–10</option>
+      </select>
+    </label>
+
     <ul class="legend" id="legend">
       <li data-band="own"><i style="background:#0f766e"></i>teaches here</li>
       <li data-band="under2"><i style="background:#2f855a"></i>under 2 h</li>
@@ -46,7 +58,7 @@
 
     <p class="routehint" id="routehint" hidden></p>
     <ol class="hitlist" id="hitlist"></ol>
-    <p class="ovlfoot">size = population · colour = hours to grade 11–12 · <a href="#tables">decision tables ↓</a></p>
+    <p class="ovlfoot" id="footnote">size = population · colour = hours to <span id="metricname">grade 11–12</span> · <a href="#tables">decision tables ↓</a></p>
   </aside>
 
   <aside class="ovl ovl-right">
@@ -138,10 +150,30 @@ const map = L.map(mapEl, {
 L.control.zoom({position: "bottomright"}).addTo(map);
 
 const state = {mode:"explore", from:null, to:null, band:null, atoll:"", q:"",
+               metric:"education:school_higher_secondary",
                points:[], byId:new Map(), markers:new Map(), sel:null,
                routeLayer:null, atollBounds:new Map()};
 
 const radius = pop => Math.max(4.5, 3 + 2.6 * Math.log10(1 + pop) - 1.4);
+const METRIC_NAME = {
+  "education:school_higher_secondary": "grade 11–12",
+  "education:college": "a university campus",
+  "health:health_centre": "a health centre",
+  "health:hospital": "a hospital",
+  "education:school_lower_secondary": "grade 7–10"
+};
+function metricHours(p) {
+  const v = p.m ? p.m[state.metric] : undefined;
+  return v === undefined ? p.hours : v;
+}
+function bandOf(h) {
+  if (h === 0) return "own";
+  if (h === null || h === undefined) return "unknown";
+  if (h <= 2) return "under2";
+  if (h <= 4) return "under4";
+  if (h <= 8) return "under8";
+  return "over8";
+}
 const allBounds = () => L.latLngBounds(state.points.map(p => [p.lat, p.lon]));
 // keep the archipelago clear of the two floating panels
 const isWide = () => window.innerWidth > 900;
@@ -164,13 +196,18 @@ fetch("/static/access/islands_points.json").then(r => r.json()).then(pts => {
     state.byId.set(p.id, p);
     const m = L.circleMarker([p.lat, p.lon], {
       radius: radius(p.pop), color:"#ffffff", weight:0.8, opacity:0.85,
-      fillColor: BAND[p.band] || BAND.unknown, fillOpacity:0.92
+      fillColor: BAND[bandOf(metricHours(p))] || BAND.unknown, fillOpacity:0.92
     }).addTo(group);
 
-    const hrs = p.hours === null ? "no observed route"
-              : (p.own ? "grade 11–12 taught here" : p.hours.toFixed(1) + " h to the nearest");
-    m.bindTooltip(`<b>${p.name}</b><br>${p.atoll} · ${p.pop.toLocaleString()} residents<br>${hrs}`,
-                  {sticky:true, direction:"top", className:"tip"});
+    p.band = bandOf(metricHours(p));
+    m.bindTooltip(() => {
+      const h = metricHours(p);
+      const line = h === 0 ? "here on this island"
+                 : h === null || h === undefined ? "no observed route"
+                 : h.toFixed(1) + " h to the nearest";
+      return `<b>${p.name}</b><br>${p.atoll} · ${p.pop.toLocaleString()} residents<br>`
+           + `${METRIC_NAME[state.metric]}: ${line}`;
+    }, {sticky:true, direction:"top", className:"tip"});
     m.on("mouseover", () => m.setStyle({weight:2.2, color:"#0b1f2a"}));
     m.on("mouseout", () => { if (state.sel !== m) m.setStyle({weight:0.8, color:"#ffffff"}); });
     m.on("click", () => onIslandClick(p.id));
@@ -296,6 +333,23 @@ el("atoll").addEventListener("change", e => {
   renderList();
 });
 
+function applyMetric() {
+  el("metricname").textContent = METRIC_NAME[state.metric];
+  state.points.forEach(p => { p.band = bandOf(metricHours(p)); });
+  state.markers.forEach((m, id) => {
+    const p = state.byId.get(id);
+    const on = !state.band || p.band === state.band;
+    m.setStyle({fillColor: BAND[p.band] || BAND.unknown,
+                opacity: on ? 0.85 : 0.12, fillOpacity: on ? 0.92 : 0.10});
+  });
+  renderList();
+}
+
+el("metric").addEventListener("change", e => {
+  state.metric = e.target.value;
+  applyMetric();
+});
+
 el("q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); renderList(); });
 el("q").addEventListener("keydown", e => {
   if (e.key === "Enter") {
@@ -318,14 +372,20 @@ function renderList() {
     .filter(p => !state.atoll || p.atoll === state.atoll)
     .filter(p => !state.band || p.band === state.band)
     .filter(p => !state.q || p.name.toLowerCase().includes(state.q) || p.atoll.toLowerCase().includes(state.q))
-    .sort((a, b) => (b.hours === null ? 1e9 : b.hours) - (a.hours === null ? 1e9 : a.hours));
-  el("hitlist").innerHTML = rows.slice(0, 40).map(p => `
-    <li data-id="${p.id}">
-      <i style="background:${BAND[p.band]}"></i>
+    .sort((a, b) => {
+      const ha = metricHours(a), hb = metricHours(b);
+      return (hb === null ? 1e9 : hb) - (ha === null ? 1e9 : ha);
+    });
+  el("hitlist").innerHTML = rows.slice(0, 40).map(p => {
+    const h = metricHours(p);
+    const label = h === 0 ? "here" : h === null || h === undefined ? "no route" : h.toFixed(1) + " h";
+    return `<li data-id="${p.id}">
+      <i style="background:${BAND[bandOf(h)]}"></i>
       <span class="nm">${p.name}</span>
       <span class="at">${p.atoll}</span>
-      <span class="hr">${p.hours === null ? "no route" : (p.own ? "teaches" : p.hours.toFixed(1) + " h")}</span>
-    </li>`).join("");
+      <span class="hr">${label}</span>
+    </li>`;
+  }).join("");
   document.querySelectorAll("#hitlist li").forEach(li => {
     li.addEventListener("click", () => selectIsland(li.dataset.id));
     li.addEventListener("mouseenter", () => {

@@ -10,32 +10,33 @@
   <div><span class="n">{{ c.nbrs }}</span><span class="l">sea links</span></div>
 </div>
 
+<h3 class="sub">Services on this island</h3>
+{% if c.services %}
+<ul class="svclist">
+  {% for s in c.services %}
+    <li><i class="dot {{ s.category }}"></i><span>{{ s.name }}</span><em>{{ s.type|svclabel }}</em></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">No services in the register for this island.</p>
+{% endif %}
+
+<h3 class="sub">Travel time to the nearest</h3>
 <div class="rows">
+  {% for t, a in c.access.items %}
   <div class="row">
-    <span class="k">Grade 11–12 on the island</span>
-    <span class="v">{% if c.own_hs %}<span class="yes">yes</span>{% else %}<span class="no">no</span>{% endif %}</span>
-  </div>
-  <div class="row">
-    <span class="k">Grade 7–10 on the island</span>
-    <span class="v">{% if c.own_ls %}<span class="yes">yes</span>{% else %}<span class="no">no</span>{% endif %}</span>
-  </div>
-  <div class="row">
-    <span class="k">Nearest post-16 school</span>
+    <span class="k">{{ t|svclabel|capfirst }}</span>
     <span class="v">
-      {% if c.own_hs %}<span class="yes">here</span>
-      {% elif c.hs_hours is not None %}<strong>{{ c.hs_hours }} h</strong> <em>to {{ c.hs_place }}</em>
+      {% if a.local %}<span class="yes">on the island</span>
+      {% elif a.hours is not None %}<strong>{{ a.hours }} h</strong> <em>to {{ a.place }}</em>
       {% else %}<span class="no">no observed route</span>{% endif %}
     </span>
   </div>
-  <div class="row">
-    <span class="k">Nearest university campus</span>
-    <span class="v">
-      {% if c.campus_hours is not None %}
-        {% if c.campus_hours == 0 %}<span class="yes">on the island</span>
-        {% else %}<strong>{{ c.campus_hours }} h</strong> <em>to {{ c.campus_place }}</em>{% endif %}
-      {% else %}<span class="no">no observed route</span>{% endif %}
-    </span>
-  </div>
+  {% endfor %}
+  
+  
+  
+  
   <div class="row">
     <span class="k">Islands reachable</span>
     <span class="v">{{ c.reach }} <em>within two sailings</em></span>

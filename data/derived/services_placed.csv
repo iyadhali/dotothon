@@ -1,0 +1,570 @@
+service_id,category,service_type,name,atoll,island,lat,lon,source,added_at,notes,node_id
+hea-a62d3f18,health,health_centre,Haa Alifu Thuraakunu Health Centre,Haa Alifu,Thuraakunu,7.10405,72.89868,MoH health facility list,2026-10-24,,MV001001
+hea-ebe6219c,health,health_centre,Haa Alifu Uligan Health Centre,Haa Alifu,Uligamu,7.08399,72.92698,MoH health facility list,2026-10-24,,MV001002
+hea-76b54f6a,health,health_centre,Haa Alifu Molhadhoo Health Centre,Haa Alifu,Mulhadhoo,7.01545,72.99717,MoH health facility list,2026-10-24,,MV001005
+hea-a86609ae,health,health_centre,Haa Alifu Hoarafushi Health Centre,Haa Alifu,Hoarafushi,6.98227,72.89606,MoH health facility list,2026-10-24,,MV001006
+hea-b802bf0c,health,health_centre,Haa Alifu Kelaa Health Centre,Haa Alifu,Kelaa,6.95179,73.21708,MoH health facility list,2026-10-24,,MV001008
+hea-738df33a,health,health_centre,Haa Alifu Vashafaru Health Centre,Haa Alifu,Vashafaru,6.89775,73.16239,MoH health facility list,2026-10-24,,MV001009
+hea-cacdfae9,health,health_centre,Haa Alifu Filladhoo Health Centre,Haa Alifu,Filladhoo,6.897,73.23525,MoH health facility list,2026-10-24,,MV001011
+hea-91bf0a0e,health,health_centre,Haa Alifu Maarandhoo Health Centre,Haa Alifu,Maarandhoo,6.85225,72.98413,MoH health facility list,2026-10-24,,MV001012
+hea-8e9b9024,health,health_centre,Haa Alifu Thakandhoo Health Centre,Haa Alifu,Thakandhoo,6.84445,72.99542,MoH health facility list,2026-10-24,,MV001013
+hea-c29be301,health,health_centre,Haa Alifu Muraidhoo Health Centre,Haa Alifu,Muraidhoo,6.83796,73.16711,MoH health facility list,2026-10-24,,MV001015
+hea-859c9520,health,health_centre,Haa Alifu Utheemu Health Centre,Haa Alifu,Utheemu,6.83449,73.11272,MoH health facility list,2026-10-24,,MV001014
+hea-654c8c38,health,health_centre,Haa Dhaalu Hanimaadhoo Health Centre,Haa Dhaalu,Hanimaadhoo,6.75142,73.1717,MoH health facility list,2026-10-24,,MV002003
+hea-f15197cf,health,health_centre,Haa Dhaalu Naivaadhoo Health Centre,Haa Dhaalu,Naivaadhoo,6.74708,72.93491,MoH health facility list,2026-10-24,,MV002005
+hea-f4ab0e3f,health,health_centre,Haa Dhaalu Finey Health Centre,Haa Dhaalu,Finey,6.74597,73.05329,MoH health facility list,2026-10-24,,MV002004
+hea-89387288,health,health_centre,Haa Dhaalu Hirimaradhoo Health Centre,Haa Dhaalu,Hirimaradhoo,6.72489,73.02371,MoH health facility list,2026-10-24,,MV002006
+hea-39f2634d,health,health_centre,Haa Dhaalu Nellaidhoo Health Centre,Haa Dhaalu,Nellaidhoo,6.71482,72.94685,MoH health facility list,2026-10-24,,MV002008
+hea-a2639a4c,health,health_centre,Haa Dhaalu Nolhivaranfaru Health Centre,Haa Dhaalu,Nolhivaranfaru,6.6933,73.12065,MoH health facility list,2026-10-24,,MV002007
+hea-7046a04e,health,health_centre,Haa Dhaalu Kurin'bi Health Centre,Haa Dhaalu,Kuribi,6.66553,72.99672,MoH health facility list,2026-10-24,,MV002010
+hea-c091eabc,health,health_centre,Haa Dhaalu Nolhivaran Health Centre,Haa Dhaalu,Nolhivaramu,6.66249,73.08229,MoH health facility list,2026-10-24,,MV002009
+hea-0aa7252e,health,health_centre,Haa Dhaalu Kumundhoo Health Centre,Haa Dhaalu,Kumundhoo,6.57107,73.05257,MoH health facility list,2026-10-24,,MV002013
+hea-fc10caa4,health,health_centre,Haa Dhaalu Vaikaradhoo Health Centre,Haa Dhaalu,Vaikaradhoo,6.54985,72.95306,MoH health facility list,2026-10-24,,MV002015
+hea-4c341944,health,health_centre,Haa Dhaalu Neykurendhoo Health Centre,Haa Dhaalu,Neykurendhoo,6.54307,72.97996,MoH health facility list,2026-10-24,,MV002014
+hea-699d8090,health,health_centre,Haa Dhaalu Makunudhoo Health Centre,Haa Dhaalu,Makunudhoo,6.40918,72.70542,MoH health facility list,2026-10-24,,MV002017
+hea-0c7a8f64,health,health_centre,Shaviyani Kan'ditheemu Health Centre,Shaviyani,Kaditheemu,6.44075,72.91713,MoH health facility list,2026-10-24,,MV003001
+hea-89a706f1,health,health_centre,Shaviyani Noomaraa Health Centre,Shaviyani,Noomaraa,6.43424,73.0691,MoH health facility list,2026-10-24,,MV003002
+hea-be395718,health,health_centre,Shaviyani Goidhoo Health Centre,Shaviyani,Goidhoo,6.4301,72.92992,MoH health facility list,2026-10-24,,MV003003
+hea-44d218ec,health,health_centre,Shaviyani Feevah Health Centre,Shaviyani,Feevah,6.34887,73.20997,MoH health facility list,2026-10-24,,MV003005
+hea-20620209,health,health_centre,Shaviyani Bileiyfahi Health Centre,Shaviyani,Bilehffahi,6.33789,72.97563,MoH health facility list,2026-10-24,,MV003006
+hea-c62752a3,health,health_centre,Shaviyani Foakaidhoo Health Centre,Shaviyani,Foakaidhoo,6.32672,73.14927,MoH health facility list,2026-10-24,,MV003007
+hea-23b0d2f8,health,health_centre,Shaviyani Milandhoo Health Centre,Shaviyani,Milandhoo,6.28691,73.24527,MoH health facility list,2026-10-24,,MV003016
+hea-d82c0da4,health,health_centre,Shaviyani Narudhoo Health Centre,Shaviyani,Narudhoo,6.26434,73.21818,MoH health facility list,2026-10-24,,MV003008
+hea-2dd76d26,health,health_centre,Shaviyani Maroshi Health Centre,Shaviyani,Maroshi,6.20977,73.06057,MoH health facility list,2026-10-24,,MV003010
+hea-5c246953,health,health_centre,Shaviyani Lhaimagu Health Centre,Shaviyani,Lhaimagu,6.16395,73.25127,MoH health facility list,2026-10-24,,MV003011
+hea-e3857b42,health,health_centre,Shaviyani Komandoo Health Centre,Shaviyani,Komandoo,6.05428,73.05431,MoH health facility list,2026-10-24,,MV003013
+hea-759630c5,health,health_centre,Shaviyani Maaun'goodhoo Health Centre,Shaviyani,Maaugoodhoo,6.03667,73.28373,MoH health facility list,2026-10-24,,MV003014
+hea-d2623aa0,health,health_centre,Noonu Ken'dhikulhudhoo Health Centre,Noonu,Kedhikulhudhoo,5.95238,73.41566,MoH health facility list,2026-10-24,,MV004002
+hea-ffc3bf38,health,health_centre,Noonu Maalhendhoo Health Centre,Noonu,Maalhendhoo,5.90252,73.45594,MoH health facility list,2026-10-24,,MV004003
+hea-757e3762,health,health_centre,Noonu Kudafari Health Centre,Noonu,Kudafari,5.88276,73.4003,MoH health facility list,2026-10-24,,MV004004
+hea-21f8c07d,health,health_centre,Noonu Landhoo Health Centre,Noonu,Landhoo,5.88185,73.46618,MoH health facility list,2026-10-24,,MV004005
+hea-ce193de7,health,health_centre,Noonu Maafaru Health Centre,Noonu,Maafaru,5.82404,73.47668,MoH health facility list,2026-10-24,,MV004006
+hea-48f7204c,health,health_centre,Noonu Lhohi Health Centre,Noonu,Lhohi,5.81585,73.37783,MoH health facility list,2026-10-24,,MV004007
+hea-ae8038b2,health,health_centre,Noonu Miladhoo Health Centre,Noonu,Miladhoo,5.79054,73.36233,MoH health facility list,2026-10-24,,MV004008
+hea-f348b8a9,health,health_centre,Noonu Magoodhoo Health Centre,Noonu,Magoodhoo,5.77637,73.36246,MoH health facility list,2026-10-24,,MV004009
+hea-2bde6da0,health,health_centre,Noonu Holhudhoo Health Centre,Noonu,Holhudhoo,5.75136,73.24943,MoH health facility list,2026-10-24,,MV004011
+hea-6caf68bf,health,health_centre,Noonu Fodhdhoo Health Centre,Noonu,Fodhdhoo,5.74386,73.21587,MoH health facility list,2026-10-24,,MV004012
+hea-3f560d99,health,health_centre,Noonu Velidhoo Health Centre,Noonu,Velidhoo,5.66422,73.27345,MoH health facility list,2026-10-24,,MV004013
+hea-8eac026e,health,health_centre,Raa Alifushi Health Centre,Raa,Alifushi,5.96718,72.95315,MoH health facility list,2026-10-24,,MV006001
+hea-e5cd8e2d,health,health_centre,Raa Vaadhoo Health Centre,Raa,Vaadhoo,5.85573,72.99206,MoH health facility list,2026-10-24,,MV006002
+hea-fdbf72ef,health,health_centre,Raa Rasgetheemu Health Centre,Raa,Rasgetheemu,5.80771,73.00298,MoH health facility list,2026-10-24,,MV006003
+hea-4b122b77,health,health_centre,Raa An'golhitheemu Health Centre,Raa,Agolhitheemu,5.79305,73.0064,MoH health facility list,2026-10-24,,MV006004
+hea-bdb2435a,health,health_centre,Raa Hulhudhuffaaru Health Centre,Raa,Hulhudhuffaaru,5.766,73.01185,MoH health facility list,2026-10-24,,MV006005
+hea-c0c68308,health,health_centre,Raa Dhuvaafaru Health Centre,Raa,Dhuvaafaru,5.62977,73.04113,MoH health facility list,2026-10-24,,MV006019
+hea-9e91bd9c,health,health_centre,Raa Maakurathu Health Centre,Raa,Maakurathu,5.60609,73.04331,MoH health facility list,2026-10-24,,MV006008
+hea-bb1a8d9a,health,health_centre,Raa Rasmaadhoo Health Centre,Raa,Rasmaadhoo,5.56305,73.04381,MoH health facility list,2026-10-24,,MV006009
+hea-aec500f3,health,health_centre,Raa Innamaadhoo Health Centre,Raa,Innamaadhoo,5.54932,73.04395,MoH health facility list,2026-10-24,,MV006010
+hea-d0ed19dd,health,health_centre,Raa Maduvvari Health Centre,Raa,Maduvvari,5.48647,72.896,MoH health facility list,2026-10-24,,MV006011
+hea-3c40f6cd,health,health_centre,Raa In'guraidhoo Health Centre,Raa,Iguraidhoo,5.47692,73.03686,MoH health facility list,2026-10-24,,MV006012
+hea-6cd5badd,health,health_centre,Raa Fainu Health Centre,Raa,Fainu,5.46346,73.03411,MoH health facility list,2026-10-24,,MV006013
+hea-60c3109d,health,health_centre,Raa Meedhoo Health Centre,Raa,Meedhoo,5.45812,72.95495,MoH health facility list,2026-10-24,,MV006014
+hea-ea673052,health,health_centre,Raa Kinolhas Health Centre,Raa,Kinolhas,5.4484,73.02902,MoH health facility list,2026-10-24,,MV006015
+hea-217dc195,health,health_centre,Baa Kudarikilu Health Centre,Baa,Kudarikilu,5.30045,73.07111,MoH health facility list,2026-10-24,,MV007001
+hea-714954cf,health,health_centre,Baa Kamadhoo Health Centre,Baa,Kamadhoo,5.28216,73.13692,MoH health facility list,2026-10-24,,MV007002
+hea-fc6c92d8,health,health_centre,Baa Kendhoo Health Centre,Baa,Kendhoo,5.2754,73.01029,MoH health facility list,2026-10-24,,MV007003
+hea-c9e6620c,health,health_centre,Baa Kihaadhoo Health Centre,Baa,Kihaadhoo,5.21529,73.12476,MoH health facility list,2026-10-24,,MV007004
+hea-41cdfbe7,health,health_centre,Baa Dhonfan Health Centre,Baa,Dhonfanu,5.18809,73.12265,MoH health facility list,2026-10-24,,MV007005
+hea-2b41c07b,health,health_centre,Baa Maalhos Health Centre,Baa,Maalhos,5.13475,73.10778,MoH health facility list,2026-10-24,,MV007007
+hea-9a987d7c,health,health_centre,Baa Thulhaadhoo Health Centre,Baa,Thulhaadhoo,5.02206,72.84077,MoH health facility list,2026-10-24,,MV007009
+hea-16f9c4f8,health,health_centre,Baa Hithaadhoo Health Centre,Baa,Hithaadhoo,5.00762,72.92319,MoH health facility list,2026-10-24,,MV007010
+hea-e2888941,health,health_centre,Baa Fulhadhoo Health Centre,Baa,Fulhadhoo,4.88454,72.93505,MoH health facility list,2026-10-24,,MV007011
+hea-a862453f,health,health_centre,Baa Fehendhoo Health Centre,Baa,Fehendhoo,4.88198,72.96735,MoH health facility list,2026-10-24,,MV007012
+hea-a7f55f15,health,health_centre,Baa Goidhoo Health Centre,Baa,Goidhoo,4.87108,72.99762,MoH health facility list,2026-10-24,,MV007013
+hea-5dcdcde2,health,health_centre,Lhaviyani Hinnavaru Health Centre,Lhaviyani,Hinnavaru,5.49239,73.4118,MoH health facility list,2026-10-24,,MV005001
+hea-89eb4e8e,health,health_centre,Lhaviyani Kurendhoo Health Centre,Lhaviyani,Kurendhoo,5.3342,73.46384,MoH health facility list,2026-10-24,,MV005003
+hea-44febea6,health,health_centre,Lhaviyani Olhuvelifushi Health Centre,Lhaviyani,Olhuvelifushi,5.27842,73.60684,MoH health facility list,2026-10-24,,MV005004
+hea-4579da53,health,health_centre,Kaafu Kaashidhoo Health Centre,Kaafu,Kaashidhoo,4.95702,73.46398,MoH health facility list,2026-10-24,,MV009001
+hea-a82b4cc9,health,health_centre,Kaafu Gaafaru Health Centre,Kaafu,Gaafaru,4.73627,73.50045,MoH health facility list,2026-10-24,,MV009002
+hea-6712be95,health,health_centre,Kaafu Dhiffushi Health Centre,Kaafu,Dhiffushi,4.4421,73.71406,MoH health facility list,2026-10-24,,MV009003
+hea-98b3f4e5,health,health_centre,Kaafu Thulusdhoo Health Centre,Kaafu,Thulusdhoo,4.37335,73.64854,MoH health facility list,2026-10-24,,MV009004
+hea-efd4001e,health,health_centre,Kaafu Huraa Health Centre,Kaafu,Huraa,4.3338,73.602,MoH health facility list,2026-10-24,,MV009005
+hea-b04bfabc,health,health_centre,Kaafu Hinmafushi Health Centre,Kaafu,Himmafushi,4.30849,73.57148,MoH health facility list,2026-10-24,,MV009006
+hea-38271374,health,health_centre,Kaafu Gulhi Health Centre,Kaafu,Gulhi,3.99109,73.50926,MoH health facility list,2026-10-24,,MV009007
+hea-24c00dcf,health,health_centre,Kaafu Guraidhoo Health Centre,Kaafu,Guraidhoo,3.90063,73.46751,MoH health facility list,2026-10-24,,MV009009
+hea-faf554a0,health,health_centre,Alifu Alifu Thoddoo Health Centre,Alifu Alifu,Thoddoo,4.437,72.95898,MoH health facility list,2026-10-24,,MV008001
+hea-54b7d1dd,health,health_centre,Alifu Alifu Ukulhas Health Centre,Alifu Alifu,Ukulhas,4.21479,72.86455,MoH health facility list,2026-10-24,,MV008003
+hea-2a48893f,health,health_centre,Alifu Alifu Mathiveri Health Centre,Alifu Alifu,Mathiveri,4.19205,72.74562,MoH health facility list,2026-10-24,,MV008004
+hea-c2f71282,health,health_centre,Alifu Alifu Bodufolhudhoo Health Centre,Alifu Alifu,Bodufolhudhoo,4.18584,72.77353,MoH health facility list,2026-10-24,,MV008005
+hea-559d76ec,health,health_centre,Alifu Alifu Feridhoo Health Centre,Alifu Alifu,Feridhoo,4.05106,72.72552,MoH health facility list,2026-10-24,,MV008006
+hea-c80633c8,health,health_centre,Alifu Alifu Maalhos Health Centre,Alifu Alifu,Maalhos,3.98645,72.71899,MoH health facility list,2026-10-24,,MV008007
+hea-af8a932f,health,health_centre,Alifu Alifu Himandhoo Health Centre,Alifu Alifu,Himandhoo,3.92126,72.7444,MoH health facility list,2026-10-24,,MV008008
+hea-62298e53,health,health_centre,Alifu Dhaalu Hangnaameedhoo Health Centre,Alifu Dhaalu,Hangnameedhoo,3.84933,72.95542,MoH health facility list,2026-10-24,,MV020001
+hea-789272ed,health,health_centre,Alifu Dhaalu Omadhoo Health Centre,Alifu Dhaalu,Omadhoo,3.79163,72.96261,MoH health facility list,2026-10-24,,MV020002
+hea-366b5cb0,health,health_centre,Alifu Dhaalu Kun'burudhoo Health Centre,Alifu Dhaalu,Kuburudhoo,3.77536,72.92544,MoH health facility list,2026-10-24,,MV020003
+hea-fc17b2cb,health,health_centre,Alifu Dhaalu Mandhoo Health Centre,Alifu Dhaalu,Mandhoo,3.69791,72.70973,MoH health facility list,2026-10-24,,MV020005
+hea-80784e3f,health,health_centre,Alifu Dhaalu Dhan'gethi Health Centre,Alifu Dhaalu,Dhagethi,3.60762,72.95574,MoH health facility list,2026-10-24,,MV020006
+hea-8f6a5c2c,health,health_centre,Alifu Dhaalu Dhigurah Health Centre,Alifu Dhaalu,Dhigurah,3.52548,72.92326,MoH health facility list,2026-10-24,,MV020007
+hea-fc06dabf,health,health_centre,Alifu Dhaalu Fenfushi Health Centre,Alifu Dhaalu,Fenfushi,3.48894,72.78486,MoH health facility list,2026-10-24,,MV020008
+hea-6de54dc2,health,health_centre,Alifu Dhaalu Dhidhdhoo Health Centre,Alifu Dhaalu,Dhidhdhoo,3.48501,72.8761,MoH health facility list,2026-10-24,,MV020009
+hea-1f54c773,health,health_centre,Alifu Dhaalu Maamigili Health Centre,Alifu Dhaalu,Maamigili,3.4757,72.8366,MoH health facility list,2026-10-24,,MV020010
+hea-30db20ee,health,health_centre,Vaavu Fulidhoo Health Centre,Vaavu,Fulidhoo,3.68034,73.41582,MoH health facility list,2026-10-24,,MV010001
+hea-8c787588,health,health_centre,Vaavu Thinadhoo Health Centre,Vaavu,Thinadhoo,3.48777,73.53868,MoH health facility list,2026-10-24,,MV010002
+hea-367236af,health,health_centre,Vaavu Keyodhoo Health Centre,Vaavu,Keyodhoo,3.4621,73.54998,MoH health facility list,2026-10-24,,MV010004
+hea-5a3e8578,health,health_centre,Vaavu Rakeedhoo Health Centre,Vaavu,Rakeedhoo,3.31489,73.46991,MoH health facility list,2026-10-24,,MV010005
+hea-a54d7105,health,health_centre,Meemu Dhiggaru Health Centre,Meemu,Dhiggaru,3.11177,73.56544,MoH health facility list,2026-10-24,,MV013008
+hea-d9e226de,health,health_centre,Meemu Raiymandhoo Health Centre,Meemu,Raimandhoo,3.08904,73.6395,MoH health facility list,2026-10-24,,MV013001
+hea-d82a6183,health,health_centre,Meemu Veyvah Health Centre,Meemu,Veyvah,2.95637,73.60018,MoH health facility list,2026-10-24,,MV013003
+hea-45e2524a,health,health_centre,Meemu Mulah Health Centre,Meemu,Mulah,2.94657,73.58493,MoH health facility list,2026-10-24,,MV013004
+hea-d00ea100,health,health_centre,Meemu Naalaafushi Health Centre,Meemu,Naalaafushi,2.89556,73.57756,MoH health facility list,2026-10-24,,MV013006
+hea-f3623f05,health,health_centre,Meemu Kolhufushi Health Centre,Meemu,Kolhufushi,2.77706,73.42498,MoH health facility list,2026-10-24,,MV013007
+hea-f5286f1b,health,health_centre,Faafu Feeali Health Centre,Faafu,Feeali,3.26995,73.00146,MoH health facility list,2026-10-24,,MV011001
+hea-9588af47,health,health_centre,Faafu Bileiydhoo Health Centre,Faafu,Biledhdhoo,3.11838,72.98409,MoH health facility list,2026-10-24,,MV011002
+hea-ad6533d8,health,health_centre,Faafu Magoodhoo Health Centre,Faafu,Magoodhoo,3.07946,72.96509,MoH health facility list,2026-10-24,,MV011003
+hea-c617b351,health,health_centre,Faafu Dharan'boodhoo Health Centre,Faafu,Dharaboodhoo,3.06302,72.92646,MoH health facility list,2026-10-24,,MV011004
+hea-edd12925,health,health_centre,Dhaalu Meedhoo Health Centre,Dhaalu,Meedhoo,2.9981,73.00783,MoH health facility list,2026-10-24,,MV012001
+hea-1f141f6f,health,health_centre,Dhaalu Ban'didhoo Health Centre,Dhaalu,Badidhoo,2.93679,72.99045,MoH health facility list,2026-10-24,,MV012002
+hea-e5e4c66d,health,health_centre,Dhaalu Rin'budhoo Health Centre,Dhaalu,Ribudhoo,2.92458,72.89548,MoH health facility list,2026-10-24,,MV012003
+hea-918cc3de,health,health_centre,Dhaalu Hulhudheli Health Centre,Dhaalu,Hulhudheli,2.8584,72.84705,MoH health facility list,2026-10-24,,MV012004
+hea-965f58d2,health,health_centre,Dhaalu Maaen'boodhoo Health Centre,Dhaalu,Maaeboodhoo,2.69575,72.96456,MoH health facility list,2026-10-24,,MV012007
+hea-a5628c2c,health,health_centre,Thaa Buruni Health Centre,Thaa,Buruni,2.55873,73.10617,MoH health facility list,2026-10-24,,MV014001
+hea-a9ac88ca,health,health_centre,Thaa Vilufushi Health Centre,Thaa,Vilufushi,2.50306,73.30894,MoH health facility list,2026-10-24,,MV014002
+hea-b96496ec,health,health_centre,Thaa Madifushi Health Centre,Thaa,Madifushi,2.35724,73.35577,MoH health facility list,2026-10-24,,MV014003
+hea-b9744356,health,health_centre,Thaa Dhiyamigili Health Centre,Thaa,Dhiyamigili,2.34022,73.33787,MoH health facility list,2026-10-24,,MV014004
+hea-2b48ad5f,health,health_centre,Thaa Guraidhoo Health Centre,Thaa,Guraidhoo,2.32232,73.31748,MoH health facility list,2026-10-24,,MV014005
+hea-57765167,health,health_centre,Thaa Kan'doodhoo Health Centre,Thaa,Kadoodhoo,2.3216,72.91677,MoH health facility list,2026-10-24,,MV014006
+hea-3c8e7af1,health,health_centre,Thaa Vandhoo Health Centre,Thaa,Vandhoo,2.29175,72.94181,MoH health facility list,2026-10-24,,MV014007
+hea-2aa1769a,health,health_centre,Thaa Hirilandhoo Health Centre,Thaa,Hirilandhoo,2.26969,72.93182,MoH health facility list,2026-10-24,,MV014008
+hea-661a1b7e,health,health_centre,Thaa Gaadhiffushi Health Centre,Thaa,Gaadhiffushi,2.25283,73.2132,MoH health facility list,2026-10-24,,MV014009
+hea-912ecde5,health,health_centre,Thaa Kin'bidhoo Health Centre,Thaa,Kibidhoo,2.16809,73.06492,MoH health facility list,2026-10-24,,MV014012
+hea-771d28c2,health,health_centre,Thaa Omadhoo Health Centre,Thaa,Omadhoo,2.16745,73.02393,MoH health facility list,2026-10-24,,MV014013
+hea-af19f3a7,health,health_centre,Laamu Isdhoo Health Centre,Laamu,Isdhoo,2.12478,73.57998,MoH health facility list,2026-10-24,,MV015001
+hea-64cd06bf,health,health_centre,Laamu Dhan'bidhoo Health Centre,Laamu,Dhabidhoo,2.09377,73.54525,MoH health facility list,2026-10-24,,MV015002
+hea-e9fa90ad,health,health_centre,Laamu Mundoo Health Centre,Laamu,Mundoo,2.01122,73.5344,MoH health facility list,2026-10-24,,MV015004
+hea-4fad635f,health,health_centre,Laamu Maavah Health Centre,Laamu,Maavah,1.88534,73.24325,MoH health facility list,2026-10-24,,MV015007
+hea-d7572f02,health,health_centre,Laamu Fonadhoo Health Centre,Laamu,Fonadhoo,1.83559,73.5036,MoH health facility list,2026-10-24,,MV015008
+hea-3814a237,health,health_centre,Laamu Maamendhoo Health Centre,Laamu,Maamendhoo,1.81832,73.38901,MoH health facility list,2026-10-24,,MV015010
+hea-9d15e8aa,health,health_centre,Laamu Hithadhoo Health Centre,Laamu,Hithadhoo,1.79659,73.38851,MoH health facility list,2026-10-24,,MV015011
+hea-861746bd,health,health_centre,Laamu Kunahandhoo Health Centre,Laamu,Kunahandhoo,1.78386,73.36815,MoH health facility list,2026-10-24,,MV015012
+hea-0885edda,health,health_centre,Gaafu Alifu Kolamaafushi Health Centre,Gaafu Alifu,Kolamaafushi,0.83725,73.18399,MoH health facility list,2026-10-24,,MV016001
+hea-0316b701,health,health_centre,Gaafu Alifu Maamendhoo Health Centre,Gaafu Alifu,Maamendhoo,0.71344,73.43952,MoH health facility list,2026-10-24,,MV016003
+hea-5890eec8,health,health_centre,Gaafu Alifu Nilandhoo Health Centre,Gaafu Alifu,Nilandhoo,0.6365,73.44659,MoH health facility list,2026-10-24,,MV016004
+hea-af3f31c0,health,health_centre,Gaafu Alifu Dhaandhoo Health Centre,Gaafu Alifu,Dhaandhoo,0.62072,73.46208,MoH health facility list,2026-10-24,,MV016005
+hea-49c48a4a,health,health_centre,Gaafu Alifu Dhevvadhoo Health Centre,Gaafu Alifu,Dhevvadhoo,0.55678,73.24258,MoH health facility list,2026-10-24,,MV016006
+hea-2fa6dc65,health,health_centre,Gaafu Alifu Kon'dey Health Centre,Gaafu Alifu,Kodey,0.49974,73.54805,MoH health facility list,2026-10-24,,MV016007
+hea-f53ecfba,health,health_centre,Gaafu Alifu Gemanafushi Health Centre,Gaafu Alifu,Gemanafushi,0.44222,73.56873,MoH health facility list,2026-10-24,,MV016009
+hea-4bfdb3f7,health,health_centre,Gaafu Alifu Kan'duhulhudhoo Health Centre,Gaafu Alifu,Kanduhulhudhoo,0.35149,73.53986,MoH health facility list,2026-10-24,,MV016010
+hea-7909f72c,health,health_centre,Gaafu Dhaalu Madaveli Health Centre,Gaafu Dhaalu,Madaveli,0.45905,72.99829,MoH health facility list,2026-10-24,,MV017001
+hea-66cfc193,health,health_centre,Gaafu Dhaalu Hoan'dedhdhoo Health Centre,Gaafu Dhaalu,Hoadedhdhoo,0.44431,73.00358,MoH health facility list,2026-10-24,,MV017002
+hea-087aa3e3,health,health_centre,Gaafu Dhaalu Nadellaa Health Centre,Gaafu Dhaalu,Nadallaa,0.29369,73.04056,MoH health facility list,2026-10-24,,MV017003
+hea-20f7c03a,health,health_centre,Gaafu Dhaalu Gadhdhoo Health Centre,Gaafu Dhaalu,Gadhdhoo,0.29029,73.45771,MoH health facility list,2026-10-24,,MV017004
+hea-e61495c2,health,health_centre,Gaafu Dhaalu Rathafandhoo Health Centre,Gaafu Dhaalu,Rathafandhoo,0.25284,73.10507,MoH health facility list,2026-10-24,,MV017005
+hea-164f71aa,health,health_centre,Gaafu Dhaalu Vaadhoo Health Centre,Gaafu Dhaalu,Vaadhoo,0.22729,73.27338,MoH health facility list,2026-10-24,,MV017006
+hea-abcc8dc5,health,health_centre,Gaafu Dhaalu Fiyoaree Health Centre,Gaafu Dhaalu,Fiyoari,0.22117,73.13673,MoH health facility list,2026-10-24,,MV017007
+hea-97325518,health,health_centre,Gaafu Dhaalu Faresmaathodaa Health Centre,Gaafu Dhaalu,Fares-Maathodaa,0.19918,73.18983,MoH health facility list,2026-10-24,,MV017008
+hea-d9981bc1,health,health_centre,Seenu Hulhumeedhoo Health Centre,Seenu,Hulhudhoo,-0.59876,73.22548,MoH health facility list,2026-10-24,,MV019006
+hea-30726971,health,health_centre,Seenu Maradhoo Health Centre,Seenu,Maradhoo,-0.66488,73.11817,MoH health facility list,2026-10-24,,MV019003
+hea-e712eb5d,health,health_centre,Seenu Feydhoo Health Centre,Seenu,Feydhoo,-0.6823,73.13487,MoH health facility list,2026-10-24,,MV019004
+hea-4189ca97,health,hospital,Indira Gandhi Memorial Hospital,Male (city),"Malé City (incl. Villimalé, Hulhumalé)",4.17549,73.50935,Wikipedia list of hospitals in the Maldives,2026-10-24,starter set — the ministry lists 23 government hospitals; add the rest with this form,MLE
+hea-7f751689,health,hospital,ADK Hospital,Male (city),"Malé City (incl. Villimalé, Hulhumalé)",4.17549,73.50935,Wikipedia list of hospitals in the Maldives,2026-10-24,starter set — the ministry lists 23 government hospitals; add the rest with this form,MLE
+hea-ce019349,health,hospital,Gan Regional Hospital,Laamu,Gamu,1.91007,73.54113,Wikipedia list of hospitals in the Maldives,2026-10-24,starter set — the ministry lists 23 government hospitals; add the rest with this form,MV015013
+hea-01611775,health,hospital,Faafu Atoll Hospital,Faafu,Nilandhoo,3.0571,72.88846,Wikipedia list of hospitals in the Maldives,2026-10-24,starter set — the ministry lists 23 government hospitals; add the rest with this form,MV011005
+hea-d49094a0,health,hospital,Addu Equatorial Hospital,Seenu,Hithadhoo,-0.61577,73.09356,Wikipedia list of hospitals in the Maldives,2026-10-24,starter set — the ministry lists 23 government hospitals; add the rest with this form,MV019002
+edu-ba243e3b,education,school_primary,Baarah — primary school (Gr 1-6),Haa Alifu,Baarah,6.81692,73.21314,MoE School Statistics 2024,2026-10-24,,MV001016
+edu-92467cf9,education,school_lower_secondary,Baarah — lower secondary (Gr 7-10),Haa Alifu,Baarah,6.81692,73.21314,MoE School Statistics 2024,2026-10-24,,MV001016
+edu-14a3cea1,education,school_primary,Dhidhdhoo — primary school (Gr 1-6),Haa Alifu,Dhidhdhoo,6.88741,73.11404,MoE School Statistics 2024,2026-10-24,,MV001010
+edu-5796f091,education,school_lower_secondary,Dhidhdhoo — lower secondary (Gr 7-10),Haa Alifu,Dhidhdhoo,6.88741,73.11404,MoE School Statistics 2024,2026-10-24,,MV001010
+edu-1e42ad43,education,school_higher_secondary,Dhidhdhoo — higher secondary (Gr 11-12),Haa Alifu,Dhidhdhoo,6.88741,73.11404,MoE School Statistics 2024,2026-10-24,,MV001010
+edu-cb63802c,education,school_primary,Filladhoo — primary school (Gr 1-6),Haa Alifu,Filladhoo,6.897,73.23525,MoE School Statistics 2024,2026-10-24,,MV001011
+edu-bf6eca64,education,school_lower_secondary,Filladhoo — lower secondary (Gr 7-10),Haa Alifu,Filladhoo,6.897,73.23525,MoE School Statistics 2024,2026-10-24,,MV001011
+edu-0d2cd079,education,school_primary,Hoarafushi — primary school (Gr 1-6),Haa Alifu,Hoarafushi,6.98227,72.89606,MoE School Statistics 2024,2026-10-24,,MV001006
+edu-865b9e70,education,school_lower_secondary,Hoarafushi — lower secondary (Gr 7-10),Haa Alifu,Hoarafushi,6.98227,72.89606,MoE School Statistics 2024,2026-10-24,,MV001006
+edu-1aba06f0,education,school_primary,Ihavandhoo — primary school (Gr 1-6),Haa Alifu,Ihavandhoo,6.95279,72.92591,MoE School Statistics 2024,2026-10-24,,MV001007
+edu-2660a12f,education,school_lower_secondary,Ihavandhoo — lower secondary (Gr 7-10),Haa Alifu,Ihavandhoo,6.95279,72.92591,MoE School Statistics 2024,2026-10-24,,MV001007
+edu-fcf308f9,education,school_higher_secondary,Ihavandhoo — higher secondary (Gr 11-12),Haa Alifu,Ihavandhoo,6.95279,72.92591,MoE School Statistics 2024,2026-10-24,,MV001007
+edu-f5dc19a4,education,school_primary,Kelaa — primary school (Gr 1-6),Haa Alifu,Kelaa,6.95179,73.21708,MoE School Statistics 2024,2026-10-24,,MV001008
+edu-77896cf0,education,school_lower_secondary,Kelaa — lower secondary (Gr 7-10),Haa Alifu,Kelaa,6.95179,73.21708,MoE School Statistics 2024,2026-10-24,,MV001008
+edu-8705f99d,education,school_primary,Maarandhoo — primary school (Gr 1-6),Haa Alifu,Maarandhoo,6.85225,72.98413,MoE School Statistics 2024,2026-10-24,,MV001012
+edu-bf7d2217,education,school_lower_secondary,Maarandhoo — lower secondary (Gr 7-10),Haa Alifu,Maarandhoo,6.85225,72.98413,MoE School Statistics 2024,2026-10-24,,MV001012
+edu-305db157,education,school_primary,Mulhadhoo — primary school (Gr 1-6),Haa Alifu,Mulhadhoo,7.01545,72.99717,MoE School Statistics 2024,2026-10-24,,MV001005
+edu-a4949494,education,school_lower_secondary,Mulhadhoo — lower secondary (Gr 7-10),Haa Alifu,Mulhadhoo,7.01545,72.99717,MoE School Statistics 2024,2026-10-24,,MV001005
+edu-edbababe,education,school_primary,Muraidhoo — primary school (Gr 1-6),Haa Alifu,Muraidhoo,6.83796,73.16711,MoE School Statistics 2024,2026-10-24,,MV001015
+edu-42d6cd5e,education,school_lower_secondary,Muraidhoo — lower secondary (Gr 7-10),Haa Alifu,Muraidhoo,6.83796,73.16711,MoE School Statistics 2024,2026-10-24,,MV001015
+edu-43e5ee64,education,school_primary,Thakandhoo — primary school (Gr 1-6),Haa Alifu,Thakandhoo,6.84445,72.99542,MoE School Statistics 2024,2026-10-24,,MV001013
+edu-a66e05e7,education,school_lower_secondary,Thakandhoo — lower secondary (Gr 7-10),Haa Alifu,Thakandhoo,6.84445,72.99542,MoE School Statistics 2024,2026-10-24,,MV001013
+edu-16d52628,education,school_primary,Thuraakunu — primary school (Gr 1-6),Haa Alifu,Thuraakunu,7.10405,72.89868,MoE School Statistics 2024,2026-10-24,,MV001001
+edu-71e518f2,education,school_lower_secondary,Thuraakunu — lower secondary (Gr 7-10),Haa Alifu,Thuraakunu,7.10405,72.89868,MoE School Statistics 2024,2026-10-24,,MV001001
+edu-5b6ab585,education,school_primary,Uligamu — primary school (Gr 1-6),Haa Alifu,Uligamu,7.08399,72.92698,MoE School Statistics 2024,2026-10-24,,MV001002
+edu-d4d6bc60,education,school_lower_secondary,Uligamu — lower secondary (Gr 7-10),Haa Alifu,Uligamu,7.08399,72.92698,MoE School Statistics 2024,2026-10-24,,MV001002
+edu-d0d11a3a,education,school_primary,Utheemu — primary school (Gr 1-6),Haa Alifu,Utheemu,6.83449,73.11272,MoE School Statistics 2024,2026-10-24,,MV001014
+edu-b498946a,education,school_lower_secondary,Utheemu — lower secondary (Gr 7-10),Haa Alifu,Utheemu,6.83449,73.11272,MoE School Statistics 2024,2026-10-24,,MV001014
+edu-49fc8fe4,education,school_primary,Vashafaru — primary school (Gr 1-6),Haa Alifu,Vashafaru,6.89775,73.16239,MoE School Statistics 2024,2026-10-24,,MV001009
+edu-a565742f,education,school_lower_secondary,Vashafaru — lower secondary (Gr 7-10),Haa Alifu,Vashafaru,6.89775,73.16239,MoE School Statistics 2024,2026-10-24,,MV001009
+edu-42cc13d6,education,school_primary,Finey — primary school (Gr 1-6),Haa Dhaalu,Finey,6.74597,73.05329,MoE School Statistics 2024,2026-10-24,,MV002004
+edu-a2a1e2a0,education,school_lower_secondary,Finey — lower secondary (Gr 7-10),Haa Dhaalu,Finey,6.74597,73.05329,MoE School Statistics 2024,2026-10-24,,MV002004
+edu-7564ff54,education,school_primary,Hanimaadhoo — primary school (Gr 1-6),Haa Dhaalu,Hanimaadhoo,6.75142,73.1717,MoE School Statistics 2024,2026-10-24,,MV002003
+edu-3d4b966b,education,school_lower_secondary,Hanimaadhoo — lower secondary (Gr 7-10),Haa Dhaalu,Hanimaadhoo,6.75142,73.1717,MoE School Statistics 2024,2026-10-24,,MV002003
+edu-9fd13971,education,school_higher_secondary,Hanimaadhoo — higher secondary (Gr 11-12),Haa Dhaalu,Hanimaadhoo,6.75142,73.1717,MoE School Statistics 2024,2026-10-24,,MV002003
+edu-2ccc658e,education,school_primary,Hirimaradhoo — primary school (Gr 1-6),Haa Dhaalu,Hirimaradhoo,6.72489,73.02371,MoE School Statistics 2024,2026-10-24,,MV002006
+edu-f99a8719,education,school_lower_secondary,Hirimaradhoo — lower secondary (Gr 7-10),Haa Dhaalu,Hirimaradhoo,6.72489,73.02371,MoE School Statistics 2024,2026-10-24,,MV002006
+edu-abc02ba6,education,school_primary,Kulhudhuffushi — primary school (Gr 1-6),Haa Dhaalu,Kulhudhuffushi,6.62319,73.06941,MoE School Statistics 2024,2026-10-24,,MV002012
+edu-4a5df209,education,school_lower_secondary,Kulhudhuffushi — lower secondary (Gr 7-10),Haa Dhaalu,Kulhudhuffushi,6.62319,73.06941,MoE School Statistics 2024,2026-10-24,,MV002012
+edu-d12da7ff,education,school_higher_secondary,Kulhudhuffushi — higher secondary (Gr 11-12),Haa Dhaalu,Kulhudhuffushi,6.62319,73.06941,MoE School Statistics 2024,2026-10-24,,MV002012
+edu-fce7e4ce,education,school_primary,Kumundhoo — primary school (Gr 1-6),Haa Dhaalu,Kumundhoo,6.57107,73.05257,MoE School Statistics 2024,2026-10-24,,MV002013
+edu-20f42657,education,school_lower_secondary,Kumundhoo — lower secondary (Gr 7-10),Haa Dhaalu,Kumundhoo,6.57107,73.05257,MoE School Statistics 2024,2026-10-24,,MV002013
+edu-c88d134a,education,school_primary,Kuribi — primary school (Gr 1-6),Haa Dhaalu,Kuribi,6.66553,72.99672,MoE School Statistics 2024,2026-10-24,,MV002010
+edu-287f5b53,education,school_lower_secondary,Kuribi — lower secondary (Gr 7-10),Haa Dhaalu,Kuribi,6.66553,72.99672,MoE School Statistics 2024,2026-10-24,,MV002010
+edu-f3b4cea2,education,school_primary,Makunudhoo — primary school (Gr 1-6),Haa Dhaalu,Makunudhoo,6.40918,72.70542,MoE School Statistics 2024,2026-10-24,,MV002017
+edu-9d7a9aa9,education,school_lower_secondary,Makunudhoo — lower secondary (Gr 7-10),Haa Dhaalu,Makunudhoo,6.40918,72.70542,MoE School Statistics 2024,2026-10-24,,MV002017
+edu-b2c0d9f5,education,school_primary,Naivaadhoo — primary school (Gr 1-6),Haa Dhaalu,Naivaadhoo,6.74708,72.93491,MoE School Statistics 2024,2026-10-24,,MV002005
+edu-75f46e6a,education,school_lower_secondary,Naivaadhoo — lower secondary (Gr 7-10),Haa Dhaalu,Naivaadhoo,6.74708,72.93491,MoE School Statistics 2024,2026-10-24,,MV002005
+edu-32956cc1,education,school_primary,Nellaidhoo — primary school (Gr 1-6),Haa Dhaalu,Nellaidhoo,6.71482,72.94685,MoE School Statistics 2024,2026-10-24,,MV002008
+edu-5d091406,education,school_lower_secondary,Nellaidhoo — lower secondary (Gr 7-10),Haa Dhaalu,Nellaidhoo,6.71482,72.94685,MoE School Statistics 2024,2026-10-24,,MV002008
+edu-cb074043,education,school_higher_secondary,Nellaidhoo — higher secondary (Gr 11-12),Haa Dhaalu,Nellaidhoo,6.71482,72.94685,MoE School Statistics 2024,2026-10-24,,MV002008
+edu-5ec197dc,education,school_primary,Neykurendhoo — primary school (Gr 1-6),Haa Dhaalu,Neykurendhoo,6.54307,72.97996,MoE School Statistics 2024,2026-10-24,,MV002014
+edu-cb89bd52,education,school_lower_secondary,Neykurendhoo — lower secondary (Gr 7-10),Haa Dhaalu,Neykurendhoo,6.54307,72.97996,MoE School Statistics 2024,2026-10-24,,MV002014
+edu-076a6631,education,school_primary,Nolhivaramu — primary school (Gr 1-6),Haa Dhaalu,Nolhivaramu,6.66249,73.08229,MoE School Statistics 2024,2026-10-24,,MV002009
+edu-afc37753,education,school_lower_secondary,Nolhivaramu — lower secondary (Gr 7-10),Haa Dhaalu,Nolhivaramu,6.66249,73.08229,MoE School Statistics 2024,2026-10-24,,MV002009
+edu-2f936255,education,school_primary,Nolhivaranfaru — primary school (Gr 1-6),Haa Dhaalu,Nolhivaranfaru,6.6933,73.12065,MoE School Statistics 2024,2026-10-24,,MV002007
+edu-1a91f4cf,education,school_lower_secondary,Nolhivaranfaru — lower secondary (Gr 7-10),Haa Dhaalu,Nolhivaranfaru,6.6933,73.12065,MoE School Statistics 2024,2026-10-24,,MV002007
+edu-1d448d15,education,school_primary,Vaikaradhoo — primary school (Gr 1-6),Haa Dhaalu,Vaikaradhoo,6.54985,72.95306,MoE School Statistics 2024,2026-10-24,,MV002015
+edu-37f3a339,education,school_lower_secondary,Vaikaradhoo — lower secondary (Gr 7-10),Haa Dhaalu,Vaikaradhoo,6.54985,72.95306,MoE School Statistics 2024,2026-10-24,,MV002015
+edu-8534788a,education,school_primary,Bilehffahi — primary school (Gr 1-6),Shaviyani,Bilehffahi,6.33789,72.97563,MoE School Statistics 2024,2026-10-24,,MV003006
+edu-935d73bc,education,school_lower_secondary,Bilehffahi — lower secondary (Gr 7-10),Shaviyani,Bilehffahi,6.33789,72.97563,MoE School Statistics 2024,2026-10-24,,MV003006
+edu-ee34477c,education,school_primary,Feevah — primary school (Gr 1-6),Shaviyani,Feevah,6.34887,73.20997,MoE School Statistics 2024,2026-10-24,,MV003005
+edu-b7f496d6,education,school_lower_secondary,Feevah — lower secondary (Gr 7-10),Shaviyani,Feevah,6.34887,73.20997,MoE School Statistics 2024,2026-10-24,,MV003005
+edu-e5c74c10,education,school_primary,Feydhoo — primary school (Gr 1-6),Shaviyani,Feydhoo,6.36045,73.04859,MoE School Statistics 2024,2026-10-24,,MV003004
+edu-86c14d71,education,school_lower_secondary,Feydhoo — lower secondary (Gr 7-10),Shaviyani,Feydhoo,6.36045,73.04859,MoE School Statistics 2024,2026-10-24,,MV003004
+edu-7036c0f1,education,school_primary,Foakaidhoo — primary school (Gr 1-6),Shaviyani,Foakaidhoo,6.32672,73.14927,MoE School Statistics 2024,2026-10-24,,MV003007
+edu-fa999584,education,school_lower_secondary,Foakaidhoo — lower secondary (Gr 7-10),Shaviyani,Foakaidhoo,6.32672,73.14927,MoE School Statistics 2024,2026-10-24,,MV003007
+edu-cc5ff4ad,education,school_higher_secondary,Foakaidhoo — higher secondary (Gr 11-12),Shaviyani,Foakaidhoo,6.32672,73.14927,MoE School Statistics 2024,2026-10-24,,MV003007
+edu-3044043b,education,school_primary,Funadhoo — primary school (Gr 1-6),Shaviyani,Funadhoo,6.15407,73.28906,MoE School Statistics 2024,2026-10-24,,MV003015
+edu-55900a86,education,school_lower_secondary,Funadhoo — lower secondary (Gr 7-10),Shaviyani,Funadhoo,6.15407,73.28906,MoE School Statistics 2024,2026-10-24,,MV003015
+edu-b92a3680,education,school_higher_secondary,Funadhoo — higher secondary (Gr 11-12),Shaviyani,Funadhoo,6.15407,73.28906,MoE School Statistics 2024,2026-10-24,,MV003015
+edu-180f4c86,education,school_primary,Goidhoo — primary school (Gr 1-6),Shaviyani,Goidhoo,6.4301,72.92992,MoE School Statistics 2024,2026-10-24,,MV003003
+edu-a2993d6f,education,school_lower_secondary,Goidhoo — lower secondary (Gr 7-10),Shaviyani,Goidhoo,6.4301,72.92992,MoE School Statistics 2024,2026-10-24,,MV003003
+edu-e63308db,education,school_primary,Kaditheemu — primary school (Gr 1-6),Shaviyani,Kaditheemu,6.44075,72.91713,MoE School Statistics 2024,2026-10-24,,MV003001
+edu-4d8e1b70,education,school_lower_secondary,Kaditheemu — lower secondary (Gr 7-10),Shaviyani,Kaditheemu,6.44075,72.91713,MoE School Statistics 2024,2026-10-24,,MV003001
+edu-cfb5c294,education,school_primary,Komandoo — primary school (Gr 1-6),Shaviyani,Komandoo,6.05428,73.05431,MoE School Statistics 2024,2026-10-24,,MV003013
+edu-a7886894,education,school_lower_secondary,Komandoo — lower secondary (Gr 7-10),Shaviyani,Komandoo,6.05428,73.05431,MoE School Statistics 2024,2026-10-24,,MV003013
+edu-f62b3a01,education,school_higher_secondary,Komandoo — higher secondary (Gr 11-12),Shaviyani,Komandoo,6.05428,73.05431,MoE School Statistics 2024,2026-10-24,,MV003013
+edu-42d9b197,education,school_primary,Lhaimagu — primary school (Gr 1-6),Shaviyani,Lhaimagu,6.16395,73.25127,MoE School Statistics 2024,2026-10-24,,MV003011
+edu-18dbff78,education,school_lower_secondary,Lhaimagu — lower secondary (Gr 7-10),Shaviyani,Lhaimagu,6.16395,73.25127,MoE School Statistics 2024,2026-10-24,,MV003011
+edu-eeb45d06,education,school_primary,Maaugoodhoo — primary school (Gr 1-6),Shaviyani,Maaugoodhoo,6.03667,73.28373,MoE School Statistics 2024,2026-10-24,,MV003014
+edu-62b881ca,education,school_lower_secondary,Maaugoodhoo — lower secondary (Gr 7-10),Shaviyani,Maaugoodhoo,6.03667,73.28373,MoE School Statistics 2024,2026-10-24,,MV003014
+edu-dfa876d3,education,school_primary,Maroshi — primary school (Gr 1-6),Shaviyani,Maroshi,6.20977,73.06057,MoE School Statistics 2024,2026-10-24,,MV003010
+edu-66c5bc2e,education,school_lower_secondary,Maroshi — lower secondary (Gr 7-10),Shaviyani,Maroshi,6.20977,73.06057,MoE School Statistics 2024,2026-10-24,,MV003010
+edu-202bc2c8,education,school_primary,Milandhoo — primary school (Gr 1-6),Shaviyani,Milandhoo,6.28691,73.24527,MoE School Statistics 2024,2026-10-24,,MV003016
+edu-4f8194e4,education,school_lower_secondary,Milandhoo — lower secondary (Gr 7-10),Shaviyani,Milandhoo,6.28691,73.24527,MoE School Statistics 2024,2026-10-24,,MV003016
+edu-00f2eb4c,education,school_higher_secondary,Milandhoo — higher secondary (Gr 11-12),Shaviyani,Milandhoo,6.28691,73.24527,MoE School Statistics 2024,2026-10-24,,MV003016
+edu-87cb552c,education,school_primary,Narudhoo — primary school (Gr 1-6),Shaviyani,Narudhoo,6.26434,73.21818,MoE School Statistics 2024,2026-10-24,,MV003008
+edu-56389186,education,school_lower_secondary,Narudhoo — lower secondary (Gr 7-10),Shaviyani,Narudhoo,6.26434,73.21818,MoE School Statistics 2024,2026-10-24,,MV003008
+edu-311c0c87,education,school_primary,Noomaraa — primary school (Gr 1-6),Shaviyani,Noomaraa,6.43424,73.0691,MoE School Statistics 2024,2026-10-24,,MV003002
+edu-bf7eec07,education,school_lower_secondary,Noomaraa — lower secondary (Gr 7-10),Shaviyani,Noomaraa,6.43424,73.0691,MoE School Statistics 2024,2026-10-24,,MV003002
+edu-0a8c6249,education,school_primary,Fodhdhoo — primary school (Gr 1-6),Noonu,Fodhdhoo,5.74386,73.21587,MoE School Statistics 2024,2026-10-24,,MV004012
+edu-75c3a3dc,education,school_lower_secondary,Fodhdhoo — lower secondary (Gr 7-10),Noonu,Fodhdhoo,5.74386,73.21587,MoE School Statistics 2024,2026-10-24,,MV004012
+edu-38616ecf,education,school_primary,Henbadhoo — primary school (Gr 1-6),Noonu,Henbadhoo,5.96754,73.39285,MoE School Statistics 2024,2026-10-24,,MV004001
+edu-05c20a29,education,school_lower_secondary,Henbadhoo — lower secondary (Gr 7-10),Noonu,Henbadhoo,5.96754,73.39285,MoE School Statistics 2024,2026-10-24,,MV004001
+edu-d6884722,education,school_primary,Holhudhoo — primary school (Gr 1-6),Noonu,Holhudhoo,5.75136,73.24943,MoE School Statistics 2024,2026-10-24,,MV004011
+edu-670391cb,education,school_lower_secondary,Holhudhoo — lower secondary (Gr 7-10),Noonu,Holhudhoo,5.75136,73.24943,MoE School Statistics 2024,2026-10-24,,MV004011
+edu-6c674fe2,education,school_higher_secondary,Holhudhoo — higher secondary (Gr 11-12),Noonu,Holhudhoo,5.75136,73.24943,MoE School Statistics 2024,2026-10-24,,MV004011
+edu-685d8440,education,school_primary,Kedhikulhudhoo — primary school (Gr 1-6),Noonu,Kedhikulhudhoo,5.95238,73.41566,MoE School Statistics 2024,2026-10-24,,MV004002
+edu-ba6ac2d4,education,school_lower_secondary,Kedhikulhudhoo — lower secondary (Gr 7-10),Noonu,Kedhikulhudhoo,5.95238,73.41566,MoE School Statistics 2024,2026-10-24,,MV004002
+edu-49184700,education,school_higher_secondary,Kedhikulhudhoo — higher secondary (Gr 11-12),Noonu,Kedhikulhudhoo,5.95238,73.41566,MoE School Statistics 2024,2026-10-24,,MV004002
+edu-ccecf069,education,school_primary,Kudafari — primary school (Gr 1-6),Noonu,Kudafari,5.88276,73.4003,MoE School Statistics 2024,2026-10-24,,MV004004
+edu-f7dcaa5e,education,school_lower_secondary,Kudafari — lower secondary (Gr 7-10),Noonu,Kudafari,5.88276,73.4003,MoE School Statistics 2024,2026-10-24,,MV004004
+edu-f6700f18,education,school_primary,Landhoo — primary school (Gr 1-6),Noonu,Landhoo,5.88185,73.46618,MoE School Statistics 2024,2026-10-24,,MV004005
+edu-f93ccd1b,education,school_lower_secondary,Landhoo — lower secondary (Gr 7-10),Noonu,Landhoo,5.88185,73.46618,MoE School Statistics 2024,2026-10-24,,MV004005
+edu-a0d01222,education,school_primary,Lhohi — primary school (Gr 1-6),Noonu,Lhohi,5.81585,73.37783,MoE School Statistics 2024,2026-10-24,,MV004007
+edu-8493b814,education,school_lower_secondary,Lhohi — lower secondary (Gr 7-10),Noonu,Lhohi,5.81585,73.37783,MoE School Statistics 2024,2026-10-24,,MV004007
+edu-2694a8f0,education,school_primary,Maafaru — primary school (Gr 1-6),Noonu,Maafaru,5.82404,73.47668,MoE School Statistics 2024,2026-10-24,,MV004006
+edu-9f61daf7,education,school_lower_secondary,Maafaru — lower secondary (Gr 7-10),Noonu,Maafaru,5.82404,73.47668,MoE School Statistics 2024,2026-10-24,,MV004006
+edu-7d13d547,education,school_primary,Maalhendhoo — primary school (Gr 1-6),Noonu,Maalhendhoo,5.90252,73.45594,MoE School Statistics 2024,2026-10-24,,MV004003
+edu-08edc019,education,school_lower_secondary,Maalhendhoo — lower secondary (Gr 7-10),Noonu,Maalhendhoo,5.90252,73.45594,MoE School Statistics 2024,2026-10-24,,MV004003
+edu-36be3349,education,school_primary,Magoodhoo — primary school (Gr 1-6),Noonu,Magoodhoo,5.77637,73.36246,MoE School Statistics 2024,2026-10-24,,MV004009
+edu-b3b1a359,education,school_lower_secondary,Magoodhoo — lower secondary (Gr 7-10),Noonu,Magoodhoo,5.77637,73.36246,MoE School Statistics 2024,2026-10-24,,MV004009
+edu-73d42656,education,school_primary,Manadhoo — primary school (Gr 1-6),Noonu,Manadhoo,5.76626,73.41119,MoE School Statistics 2024,2026-10-24,,MV004010
+edu-e16949eb,education,school_lower_secondary,Manadhoo — lower secondary (Gr 7-10),Noonu,Manadhoo,5.76626,73.41119,MoE School Statistics 2024,2026-10-24,,MV004010
+edu-67cb6ed4,education,school_primary,Miladhoo — primary school (Gr 1-6),Noonu,Miladhoo,5.79054,73.36233,MoE School Statistics 2024,2026-10-24,,MV004008
+edu-4159952a,education,school_lower_secondary,Miladhoo — lower secondary (Gr 7-10),Noonu,Miladhoo,5.79054,73.36233,MoE School Statistics 2024,2026-10-24,,MV004008
+edu-3366cbb9,education,school_primary,Velidhoo — primary school (Gr 1-6),Noonu,Velidhoo,5.66422,73.27345,MoE School Statistics 2024,2026-10-24,,MV004013
+edu-3908460a,education,school_lower_secondary,Velidhoo — lower secondary (Gr 7-10),Noonu,Velidhoo,5.66422,73.27345,MoE School Statistics 2024,2026-10-24,,MV004013
+edu-28cd1621,education,school_primary,Alifushi — primary school (Gr 1-6),Raa,Alifushi,5.96718,72.95315,MoE School Statistics 2024,2026-10-24,,MV006001
+edu-bd43d0cd,education,school_lower_secondary,Alifushi — lower secondary (Gr 7-10),Raa,Alifushi,5.96718,72.95315,MoE School Statistics 2024,2026-10-24,,MV006001
+edu-69c8f559,education,school_higher_secondary,Alifushi — higher secondary (Gr 11-12),Raa,Alifushi,5.96718,72.95315,MoE School Statistics 2024,2026-10-24,,MV006001
+edu-023c6081,education,school_primary,Agolhitheemu — primary school (Gr 1-6),Raa,Agolhitheemu,5.79305,73.0064,MoE School Statistics 2024,2026-10-24,,MV006004
+edu-4ccb5b1b,education,school_lower_secondary,Agolhitheemu — lower secondary (Gr 7-10),Raa,Agolhitheemu,5.79305,73.0064,MoE School Statistics 2024,2026-10-24,,MV006004
+edu-49d33b09,education,school_primary,Dhuvaafaru — primary school (Gr 1-6),Raa,Dhuvaafaru,5.62977,73.04113,MoE School Statistics 2024,2026-10-24,,MV006019
+edu-33238b24,education,school_lower_secondary,Dhuvaafaru — lower secondary (Gr 7-10),Raa,Dhuvaafaru,5.62977,73.04113,MoE School Statistics 2024,2026-10-24,,MV006019
+edu-090fd68e,education,school_primary,Fainu — primary school (Gr 1-6),Raa,Fainu,5.46346,73.03411,MoE School Statistics 2024,2026-10-24,,MV006013
+edu-c1184924,education,school_lower_secondary,Fainu — lower secondary (Gr 7-10),Raa,Fainu,5.46346,73.03411,MoE School Statistics 2024,2026-10-24,,MV006013
+edu-541d6eeb,education,school_primary,Hulhudhuffaaru — primary school (Gr 1-6),Raa,Hulhudhuffaaru,5.766,73.01185,MoE School Statistics 2024,2026-10-24,,MV006005
+edu-a0017ad1,education,school_lower_secondary,Hulhudhuffaaru — lower secondary (Gr 7-10),Raa,Hulhudhuffaaru,5.766,73.01185,MoE School Statistics 2024,2026-10-24,,MV006005
+edu-446a4618,education,school_higher_secondary,Hulhudhuffaaru — higher secondary (Gr 11-12),Raa,Hulhudhuffaaru,5.766,73.01185,MoE School Statistics 2024,2026-10-24,,MV006005
+edu-022cb777,education,school_primary,Iguraidhoo — primary school (Gr 1-6),Raa,Iguraidhoo,5.47692,73.03686,MoE School Statistics 2024,2026-10-24,,MV006012
+edu-69af7bb3,education,school_lower_secondary,Iguraidhoo — lower secondary (Gr 7-10),Raa,Iguraidhoo,5.47692,73.03686,MoE School Statistics 2024,2026-10-24,,MV006012
+edu-96913c59,education,school_primary,Innamaadhoo — primary school (Gr 1-6),Raa,Innamaadhoo,5.54932,73.04395,MoE School Statistics 2024,2026-10-24,,MV006010
+edu-f029d47c,education,school_lower_secondary,Innamaadhoo — lower secondary (Gr 7-10),Raa,Innamaadhoo,5.54932,73.04395,MoE School Statistics 2024,2026-10-24,,MV006010
+edu-b0fc488c,education,school_primary,Kinolhas — primary school (Gr 1-6),Raa,Kinolhas,5.4484,73.02902,MoE School Statistics 2024,2026-10-24,,MV006015
+edu-dd536ee6,education,school_lower_secondary,Kinolhas — lower secondary (Gr 7-10),Raa,Kinolhas,5.4484,73.02902,MoE School Statistics 2024,2026-10-24,,MV006015
+edu-57045bc6,education,school_primary,Maakurathu — primary school (Gr 1-6),Raa,Maakurathu,5.60609,73.04331,MoE School Statistics 2024,2026-10-24,,MV006008
+edu-e8fc3881,education,school_lower_secondary,Maakurathu — lower secondary (Gr 7-10),Raa,Maakurathu,5.60609,73.04331,MoE School Statistics 2024,2026-10-24,,MV006008
+edu-fead573c,education,school_primary,Maduvvari — primary school (Gr 1-6),Raa,Maduvvari,5.48647,72.896,MoE School Statistics 2024,2026-10-24,,MV006011
+edu-8ae77ff1,education,school_lower_secondary,Maduvvari — lower secondary (Gr 7-10),Raa,Maduvvari,5.48647,72.896,MoE School Statistics 2024,2026-10-24,,MV006011
+edu-d3151767,education,school_primary,Meedhoo — primary school (Gr 1-6),Raa,Meedhoo,5.45812,72.95495,MoE School Statistics 2024,2026-10-24,,MV006014
+edu-eefefb6f,education,school_lower_secondary,Meedhoo — lower secondary (Gr 7-10),Raa,Meedhoo,5.45812,72.95495,MoE School Statistics 2024,2026-10-24,,MV006014
+edu-92755835,education,school_higher_secondary,Meedhoo — higher secondary (Gr 11-12),Raa,Meedhoo,5.45812,72.95495,MoE School Statistics 2024,2026-10-24,,MV006014
+edu-f51d1e77,education,school_primary,Rasgetheemu — primary school (Gr 1-6),Raa,Rasgetheemu,5.80771,73.00298,MoE School Statistics 2024,2026-10-24,,MV006003
+edu-44ea3134,education,school_lower_secondary,Rasgetheemu — lower secondary (Gr 7-10),Raa,Rasgetheemu,5.80771,73.00298,MoE School Statistics 2024,2026-10-24,,MV006003
+edu-a082e293,education,school_primary,Rasmaadhoo — primary school (Gr 1-6),Raa,Rasmaadhoo,5.56305,73.04381,MoE School Statistics 2024,2026-10-24,,MV006009
+edu-2c260fa1,education,school_lower_secondary,Rasmaadhoo — lower secondary (Gr 7-10),Raa,Rasmaadhoo,5.56305,73.04381,MoE School Statistics 2024,2026-10-24,,MV006009
+edu-615e1678,education,school_primary,Ugoofaaru — primary school (Gr 1-6),Raa,Ugoofaaru,5.66838,73.02997,MoE School Statistics 2024,2026-10-24,,MV006006
+edu-9692943b,education,school_lower_secondary,Ugoofaaru — lower secondary (Gr 7-10),Raa,Ugoofaaru,5.66838,73.02997,MoE School Statistics 2024,2026-10-24,,MV006006
+edu-b4e9255c,education,school_primary,Vaadhoo — primary school (Gr 1-6),Raa,Vaadhoo,5.85573,72.99206,MoE School Statistics 2024,2026-10-24,,MV006002
+edu-5eba1ec5,education,school_lower_secondary,Vaadhoo — lower secondary (Gr 7-10),Raa,Vaadhoo,5.85573,72.99206,MoE School Statistics 2024,2026-10-24,,MV006002
+edu-dc87e9eb,education,school_primary,Dharavandhoo — primary school (Gr 1-6),Baa,Dharavandhoo,5.15675,73.13153,MoE School Statistics 2024,2026-10-24,,MV007006
+edu-c6dc57ae,education,school_lower_secondary,Dharavandhoo — lower secondary (Gr 7-10),Baa,Dharavandhoo,5.15675,73.13153,MoE School Statistics 2024,2026-10-24,,MV007006
+edu-f080fff3,education,school_primary,Dhonfanu — primary school (Gr 1-6),Baa,Dhonfanu,5.18809,73.12265,MoE School Statistics 2024,2026-10-24,,MV007005
+edu-c0428331,education,school_lower_secondary,Dhonfanu — lower secondary (Gr 7-10),Baa,Dhonfanu,5.18809,73.12265,MoE School Statistics 2024,2026-10-24,,MV007005
+edu-de34bdf8,education,school_primary,Eydhafushi — primary school (Gr 1-6),Baa,Eydhafushi,5.10269,73.07028,MoE School Statistics 2024,2026-10-24,,MV007008
+edu-cf805e22,education,school_lower_secondary,Eydhafushi — lower secondary (Gr 7-10),Baa,Eydhafushi,5.10269,73.07028,MoE School Statistics 2024,2026-10-24,,MV007008
+edu-7e7bc0ae,education,school_higher_secondary,Eydhafushi — higher secondary (Gr 11-12),Baa,Eydhafushi,5.10269,73.07028,MoE School Statistics 2024,2026-10-24,,MV007008
+edu-a3d38050,education,school_primary,Fehendhoo — primary school (Gr 1-6),Baa,Fehendhoo,4.88198,72.96735,MoE School Statistics 2024,2026-10-24,,MV007012
+edu-4c3d6dce,education,school_lower_secondary,Fehendhoo — lower secondary (Gr 7-10),Baa,Fehendhoo,4.88198,72.96735,MoE School Statistics 2024,2026-10-24,,MV007012
+edu-81aea854,education,school_primary,Fulhadhoo — primary school (Gr 1-6),Baa,Fulhadhoo,4.88454,72.93505,MoE School Statistics 2024,2026-10-24,,MV007011
+edu-c2bda10a,education,school_lower_secondary,Fulhadhoo — lower secondary (Gr 7-10),Baa,Fulhadhoo,4.88454,72.93505,MoE School Statistics 2024,2026-10-24,,MV007011
+edu-450cadca,education,school_primary,Goidhoo — primary school (Gr 1-6),Baa,Goidhoo,4.87108,72.99762,MoE School Statistics 2024,2026-10-24,,MV007013
+edu-5ac6fac7,education,school_lower_secondary,Goidhoo — lower secondary (Gr 7-10),Baa,Goidhoo,4.87108,72.99762,MoE School Statistics 2024,2026-10-24,,MV007013
+edu-8bba97a9,education,school_primary,Hithaadhoo — primary school (Gr 1-6),Baa,Hithaadhoo,5.00762,72.92319,MoE School Statistics 2024,2026-10-24,,MV007010
+edu-1b0f0b7b,education,school_lower_secondary,Hithaadhoo — lower secondary (Gr 7-10),Baa,Hithaadhoo,5.00762,72.92319,MoE School Statistics 2024,2026-10-24,,MV007010
+edu-883dd7e4,education,school_primary,Kamadhoo — primary school (Gr 1-6),Baa,Kamadhoo,5.28216,73.13692,MoE School Statistics 2024,2026-10-24,,MV007002
+edu-ffccb749,education,school_lower_secondary,Kamadhoo — lower secondary (Gr 7-10),Baa,Kamadhoo,5.28216,73.13692,MoE School Statistics 2024,2026-10-24,,MV007002
+edu-b6cac872,education,school_primary,Kendhoo — primary school (Gr 1-6),Baa,Kendhoo,5.2754,73.01029,MoE School Statistics 2024,2026-10-24,,MV007003
+edu-9fc81753,education,school_lower_secondary,Kendhoo — lower secondary (Gr 7-10),Baa,Kendhoo,5.2754,73.01029,MoE School Statistics 2024,2026-10-24,,MV007003
+edu-e7418639,education,school_primary,Kihaadhoo — primary school (Gr 1-6),Baa,Kihaadhoo,5.21529,73.12476,MoE School Statistics 2024,2026-10-24,,MV007004
+edu-eee37de5,education,school_lower_secondary,Kihaadhoo — lower secondary (Gr 7-10),Baa,Kihaadhoo,5.21529,73.12476,MoE School Statistics 2024,2026-10-24,,MV007004
+edu-dd45245b,education,school_primary,Kudarikilu — primary school (Gr 1-6),Baa,Kudarikilu,5.30045,73.07111,MoE School Statistics 2024,2026-10-24,,MV007001
+edu-65247ae0,education,school_lower_secondary,Kudarikilu — lower secondary (Gr 7-10),Baa,Kudarikilu,5.30045,73.07111,MoE School Statistics 2024,2026-10-24,,MV007001
+edu-0828d92f,education,school_primary,Maalhos — primary school (Gr 1-6),Baa,Maalhos,5.13475,73.10778,MoE School Statistics 2024,2026-10-24,,MV007007
+edu-666fc905,education,school_lower_secondary,Maalhos — lower secondary (Gr 7-10),Baa,Maalhos,5.13475,73.10778,MoE School Statistics 2024,2026-10-24,,MV007007
+edu-0c615bae,education,school_primary,Thulhaadhoo — primary school (Gr 1-6),Baa,Thulhaadhoo,5.02206,72.84077,MoE School Statistics 2024,2026-10-24,,MV007009
+edu-93dfa594,education,school_lower_secondary,Thulhaadhoo — lower secondary (Gr 7-10),Baa,Thulhaadhoo,5.02206,72.84077,MoE School Statistics 2024,2026-10-24,,MV007009
+edu-f65ee469,education,school_higher_secondary,Thulhaadhoo — higher secondary (Gr 11-12),Baa,Thulhaadhoo,5.02206,72.84077,MoE School Statistics 2024,2026-10-24,,MV007009
+edu-16c95bc4,education,school_primary,Hinnavaru — primary school (Gr 1-6),Lhaviyani,Hinnavaru,5.49239,73.4118,MoE School Statistics 2024,2026-10-24,,MV005001
+edu-1953893e,education,school_lower_secondary,Hinnavaru — lower secondary (Gr 7-10),Lhaviyani,Hinnavaru,5.49239,73.4118,MoE School Statistics 2024,2026-10-24,,MV005001
+edu-3c958e0e,education,school_higher_secondary,Hinnavaru — higher secondary (Gr 11-12),Lhaviyani,Hinnavaru,5.49239,73.4118,MoE School Statistics 2024,2026-10-24,,MV005001
+edu-df7d5fef,education,school_primary,Kurendhoo — primary school (Gr 1-6),Lhaviyani,Kurendhoo,5.3342,73.46384,MoE School Statistics 2024,2026-10-24,,MV005003
+edu-7c0f7e36,education,school_lower_secondary,Kurendhoo — lower secondary (Gr 7-10),Lhaviyani,Kurendhoo,5.3342,73.46384,MoE School Statistics 2024,2026-10-24,,MV005003
+edu-bed21895,education,school_primary,Naifaru — primary school (Gr 1-6),Lhaviyani,Naifaru,5.44523,73.3651,MoE School Statistics 2024,2026-10-24,,MV005002
+edu-44b28915,education,school_lower_secondary,Naifaru — lower secondary (Gr 7-10),Lhaviyani,Naifaru,5.44523,73.3651,MoE School Statistics 2024,2026-10-24,,MV005002
+edu-51a4cfb3,education,school_higher_secondary,Naifaru — higher secondary (Gr 11-12),Lhaviyani,Naifaru,5.44523,73.3651,MoE School Statistics 2024,2026-10-24,,MV005002
+edu-d1d97c73,education,school_primary,Olhuvelifushi — primary school (Gr 1-6),Lhaviyani,Olhuvelifushi,5.27842,73.60684,MoE School Statistics 2024,2026-10-24,,MV005004
+edu-aad3970c,education,school_lower_secondary,Olhuvelifushi — lower secondary (Gr 7-10),Lhaviyani,Olhuvelifushi,5.27842,73.60684,MoE School Statistics 2024,2026-10-24,,MV005004
+edu-a441781c,education,school_primary,Dhiffushi — primary school (Gr 1-6),Kaafu,Dhiffushi,4.4421,73.71406,MoE School Statistics 2024,2026-10-24,,MV009003
+edu-31fc47b2,education,school_lower_secondary,Dhiffushi — lower secondary (Gr 7-10),Kaafu,Dhiffushi,4.4421,73.71406,MoE School Statistics 2024,2026-10-24,,MV009003
+edu-69993308,education,school_primary,Gaafaru — primary school (Gr 1-6),Kaafu,Gaafaru,4.73627,73.50045,MoE School Statistics 2024,2026-10-24,,MV009002
+edu-51f28a4a,education,school_lower_secondary,Gaafaru — lower secondary (Gr 7-10),Kaafu,Gaafaru,4.73627,73.50045,MoE School Statistics 2024,2026-10-24,,MV009002
+edu-16326439,education,school_primary,Gulhi — primary school (Gr 1-6),Kaafu,Gulhi,3.99109,73.50926,MoE School Statistics 2024,2026-10-24,,MV009007
+edu-773af442,education,school_lower_secondary,Gulhi — lower secondary (Gr 7-10),Kaafu,Gulhi,3.99109,73.50926,MoE School Statistics 2024,2026-10-24,,MV009007
+edu-5fdbec45,education,school_primary,Guraidhoo — primary school (Gr 1-6),Kaafu,Guraidhoo,3.90063,73.46751,MoE School Statistics 2024,2026-10-24,,MV009009
+edu-9ab91ee5,education,school_lower_secondary,Guraidhoo — lower secondary (Gr 7-10),Kaafu,Guraidhoo,3.90063,73.46751,MoE School Statistics 2024,2026-10-24,,MV009009
+edu-13af0333,education,school_primary,Himmafushi — primary school (Gr 1-6),Kaafu,Himmafushi,4.30849,73.57148,MoE School Statistics 2024,2026-10-24,,MV009006
+edu-3c5c4661,education,school_lower_secondary,Himmafushi — lower secondary (Gr 7-10),Kaafu,Himmafushi,4.30849,73.57148,MoE School Statistics 2024,2026-10-24,,MV009006
+edu-90f4e15a,education,school_primary,Huraa — primary school (Gr 1-6),Kaafu,Huraa,4.3338,73.602,MoE School Statistics 2024,2026-10-24,,MV009005
+edu-8b07aae2,education,school_lower_secondary,Huraa — lower secondary (Gr 7-10),Kaafu,Huraa,4.3338,73.602,MoE School Statistics 2024,2026-10-24,,MV009005
+edu-8e4efcf4,education,school_primary,Kaashidhoo — primary school (Gr 1-6),Kaafu,Kaashidhoo,4.95702,73.46398,MoE School Statistics 2024,2026-10-24,,MV009001
+edu-40f8a313,education,school_lower_secondary,Kaashidhoo — lower secondary (Gr 7-10),Kaafu,Kaashidhoo,4.95702,73.46398,MoE School Statistics 2024,2026-10-24,,MV009001
+edu-b7c89507,education,school_primary,Maafushi — primary school (Gr 1-6),Kaafu,Maafushi,3.9412,73.4899,MoE School Statistics 2024,2026-10-24,,MV009008
+edu-3fbd2bbb,education,school_lower_secondary,Maafushi — lower secondary (Gr 7-10),Kaafu,Maafushi,3.9412,73.4899,MoE School Statistics 2024,2026-10-24,,MV009008
+edu-3a29ebec,education,school_higher_secondary,Maafushi — higher secondary (Gr 11-12),Kaafu,Maafushi,3.9412,73.4899,MoE School Statistics 2024,2026-10-24,,MV009008
+edu-7791b9e3,education,school_primary,Thulusdhoo — primary school (Gr 1-6),Kaafu,Thulusdhoo,4.37335,73.64854,MoE School Statistics 2024,2026-10-24,,MV009004
+edu-9e2586ae,education,school_lower_secondary,Thulusdhoo — lower secondary (Gr 7-10),Kaafu,Thulusdhoo,4.37335,73.64854,MoE School Statistics 2024,2026-10-24,,MV009004
+edu-3895c774,education,school_primary,Bodufolhudhoo — primary school (Gr 1-6),Alifu Alifu,Bodufolhudhoo,4.18584,72.77353,MoE School Statistics 2024,2026-10-24,,MV008005
+edu-19870d42,education,school_lower_secondary,Bodufolhudhoo — lower secondary (Gr 7-10),Alifu Alifu,Bodufolhudhoo,4.18584,72.77353,MoE School Statistics 2024,2026-10-24,,MV008005
+edu-148d9753,education,school_primary,Feridhoo — primary school (Gr 1-6),Alifu Alifu,Feridhoo,4.05106,72.72552,MoE School Statistics 2024,2026-10-24,,MV008006
+edu-fc5f68ab,education,school_lower_secondary,Feridhoo — lower secondary (Gr 7-10),Alifu Alifu,Feridhoo,4.05106,72.72552,MoE School Statistics 2024,2026-10-24,,MV008006
+edu-6e2bfc1b,education,school_primary,Himandhoo — primary school (Gr 1-6),Alifu Alifu,Himandhoo,3.92126,72.7444,MoE School Statistics 2024,2026-10-24,,MV008008
+edu-3c2c1d90,education,school_lower_secondary,Himandhoo — lower secondary (Gr 7-10),Alifu Alifu,Himandhoo,3.92126,72.7444,MoE School Statistics 2024,2026-10-24,,MV008008
+edu-6e0acd49,education,school_primary,Maalhos — primary school (Gr 1-6),Alifu Alifu,Maalhos,3.98645,72.71899,MoE School Statistics 2024,2026-10-24,,MV008007
+edu-2f0b7418,education,school_lower_secondary,Maalhos — lower secondary (Gr 7-10),Alifu Alifu,Maalhos,3.98645,72.71899,MoE School Statistics 2024,2026-10-24,,MV008007
+edu-c3a913a7,education,school_primary,Mathiveri — primary school (Gr 1-6),Alifu Alifu,Mathiveri,4.19205,72.74562,MoE School Statistics 2024,2026-10-24,,MV008004
+edu-bbfdd348,education,school_lower_secondary,Mathiveri — lower secondary (Gr 7-10),Alifu Alifu,Mathiveri,4.19205,72.74562,MoE School Statistics 2024,2026-10-24,,MV008004
+edu-884c026c,education,school_primary,Rasdhoo — primary school (Gr 1-6),Alifu Alifu,Rasdhoo,4.2632,72.99166,MoE School Statistics 2024,2026-10-24,,MV008002
+edu-9aabe2ed,education,school_lower_secondary,Rasdhoo — lower secondary (Gr 7-10),Alifu Alifu,Rasdhoo,4.2632,72.99166,MoE School Statistics 2024,2026-10-24,,MV008002
+edu-92c76c8b,education,school_primary,Thoddoo — primary school (Gr 1-6),Alifu Alifu,Thoddoo,4.437,72.95898,MoE School Statistics 2024,2026-10-24,,MV008001
+edu-a8564c8b,education,school_lower_secondary,Thoddoo — lower secondary (Gr 7-10),Alifu Alifu,Thoddoo,4.437,72.95898,MoE School Statistics 2024,2026-10-24,,MV008001
+edu-443cd19b,education,school_higher_secondary,Thoddoo — higher secondary (Gr 11-12),Alifu Alifu,Thoddoo,4.437,72.95898,MoE School Statistics 2024,2026-10-24,,MV008001
+edu-44fa1a8b,education,school_primary,Ukulhas — primary school (Gr 1-6),Alifu Alifu,Ukulhas,4.21479,72.86455,MoE School Statistics 2024,2026-10-24,,MV008003
+edu-fd1c1f74,education,school_lower_secondary,Ukulhas — lower secondary (Gr 7-10),Alifu Alifu,Ukulhas,4.21479,72.86455,MoE School Statistics 2024,2026-10-24,,MV008003
+edu-443f9b21,education,school_higher_secondary,Ukulhas — higher secondary (Gr 11-12),Alifu Alifu,Ukulhas,4.21479,72.86455,MoE School Statistics 2024,2026-10-24,,MV008003
+edu-eb3a4dae,education,school_primary,Dhagethi — primary school (Gr 1-6),Alifu Dhaalu,Dhagethi,3.60762,72.95574,MoE School Statistics 2024,2026-10-24,,MV020006
+edu-7f8f04f5,education,school_lower_secondary,Dhagethi — lower secondary (Gr 7-10),Alifu Dhaalu,Dhagethi,3.60762,72.95574,MoE School Statistics 2024,2026-10-24,,MV020006
+edu-c25bfb77,education,school_primary,Dhidhdhoo — primary school (Gr 1-6),Alifu Dhaalu,Dhidhdhoo,3.48501,72.8761,MoE School Statistics 2024,2026-10-24,,MV020009
+edu-04ca076b,education,school_lower_secondary,Dhidhdhoo — lower secondary (Gr 7-10),Alifu Dhaalu,Dhidhdhoo,3.48501,72.8761,MoE School Statistics 2024,2026-10-24,,MV020009
+edu-07238c91,education,school_primary,Dhigurah — primary school (Gr 1-6),Alifu Dhaalu,Dhigurah,3.52548,72.92326,MoE School Statistics 2024,2026-10-24,,MV020007
+edu-b444f390,education,school_lower_secondary,Dhigurah — lower secondary (Gr 7-10),Alifu Dhaalu,Dhigurah,3.52548,72.92326,MoE School Statistics 2024,2026-10-24,,MV020007
+edu-6d41c780,education,school_primary,Fenfushi — primary school (Gr 1-6),Alifu Dhaalu,Fenfushi,3.48894,72.78486,MoE School Statistics 2024,2026-10-24,,MV020008
+edu-242c53bc,education,school_lower_secondary,Fenfushi — lower secondary (Gr 7-10),Alifu Dhaalu,Fenfushi,3.48894,72.78486,MoE School Statistics 2024,2026-10-24,,MV020008
+edu-eb11315b,education,school_primary,Hangnameedhoo — primary school (Gr 1-6),Alifu Dhaalu,Hangnameedhoo,3.84933,72.95542,MoE School Statistics 2024,2026-10-24,,MV020001
+edu-bb16e6b6,education,school_lower_secondary,Hangnameedhoo — lower secondary (Gr 7-10),Alifu Dhaalu,Hangnameedhoo,3.84933,72.95542,MoE School Statistics 2024,2026-10-24,,MV020001
+edu-30f5eff1,education,school_primary,Kuburudhoo — primary school (Gr 1-6),Alifu Dhaalu,Kuburudhoo,3.77536,72.92544,MoE School Statistics 2024,2026-10-24,,MV020003
+edu-bcc675b9,education,school_lower_secondary,Kuburudhoo — lower secondary (Gr 7-10),Alifu Dhaalu,Kuburudhoo,3.77536,72.92544,MoE School Statistics 2024,2026-10-24,,MV020003
+edu-c5a48a8c,education,school_primary,Maamigili — primary school (Gr 1-6),Alifu Dhaalu,Maamigili,3.4757,72.8366,MoE School Statistics 2024,2026-10-24,,MV020010
+edu-bcb8d5ca,education,school_lower_secondary,Maamigili — lower secondary (Gr 7-10),Alifu Dhaalu,Maamigili,3.4757,72.8366,MoE School Statistics 2024,2026-10-24,,MV020010
+edu-cb653ae9,education,school_primary,Mahibadhoo — primary school (Gr 1-6),Alifu Dhaalu,Mahibadhoo,3.7571,72.96878,MoE School Statistics 2024,2026-10-24,,MV020004
+edu-d5bced2b,education,school_lower_secondary,Mahibadhoo — lower secondary (Gr 7-10),Alifu Dhaalu,Mahibadhoo,3.7571,72.96878,MoE School Statistics 2024,2026-10-24,,MV020004
+edu-7f326876,education,school_higher_secondary,Mahibadhoo — higher secondary (Gr 11-12),Alifu Dhaalu,Mahibadhoo,3.7571,72.96878,MoE School Statistics 2024,2026-10-24,,MV020004
+edu-c16eaa2b,education,school_primary,Mandhoo — primary school (Gr 1-6),Alifu Dhaalu,Mandhoo,3.69791,72.70973,MoE School Statistics 2024,2026-10-24,,MV020005
+edu-91605c44,education,school_lower_secondary,Mandhoo — lower secondary (Gr 7-10),Alifu Dhaalu,Mandhoo,3.69791,72.70973,MoE School Statistics 2024,2026-10-24,,MV020005
+edu-8ceded12,education,school_primary,Omadhoo — primary school (Gr 1-6),Alifu Dhaalu,Omadhoo,3.79163,72.96261,MoE School Statistics 2024,2026-10-24,,MV020002
+edu-8c881821,education,school_lower_secondary,Omadhoo — lower secondary (Gr 7-10),Alifu Dhaalu,Omadhoo,3.79163,72.96261,MoE School Statistics 2024,2026-10-24,,MV020002
+edu-17e5d32e,education,school_primary,Felidhoo — primary school (Gr 1-6),Vaavu,Felidhoo,3.47198,73.54748,MoE School Statistics 2024,2026-10-24,,MV010003
+edu-7d026205,education,school_lower_secondary,Felidhoo — lower secondary (Gr 7-10),Vaavu,Felidhoo,3.47198,73.54748,MoE School Statistics 2024,2026-10-24,,MV010003
+edu-663f9692,education,school_primary,Fulidhoo — primary school (Gr 1-6),Vaavu,Fulidhoo,3.68034,73.41582,MoE School Statistics 2024,2026-10-24,,MV010001
+edu-6b141d89,education,school_lower_secondary,Fulidhoo — lower secondary (Gr 7-10),Vaavu,Fulidhoo,3.68034,73.41582,MoE School Statistics 2024,2026-10-24,,MV010001
+edu-318ff369,education,school_primary,Keyodhoo — primary school (Gr 1-6),Vaavu,Keyodhoo,3.4621,73.54998,MoE School Statistics 2024,2026-10-24,,MV010004
+edu-66e263f7,education,school_lower_secondary,Keyodhoo — lower secondary (Gr 7-10),Vaavu,Keyodhoo,3.4621,73.54998,MoE School Statistics 2024,2026-10-24,,MV010004
+edu-324aa56b,education,school_higher_secondary,Keyodhoo — higher secondary (Gr 11-12),Vaavu,Keyodhoo,3.4621,73.54998,MoE School Statistics 2024,2026-10-24,,MV010004
+edu-4f54b98e,education,school_primary,Thinadhoo — primary school (Gr 1-6),Vaavu,Thinadhoo,3.48777,73.53868,MoE School Statistics 2024,2026-10-24,,MV010002
+edu-5594b2cb,education,school_primary,Dhiggaru — primary school (Gr 1-6),Meemu,Dhiggaru,3.11177,73.56544,MoE School Statistics 2024,2026-10-24,,MV013008
+edu-8c112e3c,education,school_lower_secondary,Dhiggaru — lower secondary (Gr 7-10),Meemu,Dhiggaru,3.11177,73.56544,MoE School Statistics 2024,2026-10-24,,MV013008
+edu-2f2edf6b,education,school_higher_secondary,Dhiggaru — higher secondary (Gr 11-12),Meemu,Dhiggaru,3.11177,73.56544,MoE School Statistics 2024,2026-10-24,,MV013008
+edu-0d7b4134,education,school_primary,Kolhufushi — primary school (Gr 1-6),Meemu,Kolhufushi,2.77706,73.42498,MoE School Statistics 2024,2026-10-24,,MV013007
+edu-4aa3b3b6,education,school_lower_secondary,Kolhufushi — lower secondary (Gr 7-10),Meemu,Kolhufushi,2.77706,73.42498,MoE School Statistics 2024,2026-10-24,,MV013007
+edu-d38e449f,education,school_higher_secondary,Kolhufushi — higher secondary (Gr 11-12),Meemu,Kolhufushi,2.77706,73.42498,MoE School Statistics 2024,2026-10-24,,MV013007
+edu-055d6b9d,education,school_primary,Maduvvari — primary school (Gr 1-6),Meemu,Maduvvari,3.10468,73.5732,MoE School Statistics 2024,2026-10-24,,MV013009
+edu-0353984d,education,school_lower_secondary,Maduvvari — lower secondary (Gr 7-10),Meemu,Maduvvari,3.10468,73.5732,MoE School Statistics 2024,2026-10-24,,MV013009
+edu-483f1429,education,school_primary,Mulah — primary school (Gr 1-6),Meemu,Mulah,2.94657,73.58493,MoE School Statistics 2024,2026-10-24,,MV013004
+edu-1a0015a3,education,school_lower_secondary,Mulah — lower secondary (Gr 7-10),Meemu,Mulah,2.94657,73.58493,MoE School Statistics 2024,2026-10-24,,MV013004
+edu-39b15cdd,education,school_higher_secondary,Mulah — higher secondary (Gr 11-12),Meemu,Mulah,2.94657,73.58493,MoE School Statistics 2024,2026-10-24,,MV013004
+edu-4f226ebd,education,school_primary,Muli — primary school (Gr 1-6),Meemu,Muli,2.91813,73.58142,MoE School Statistics 2024,2026-10-24,,MV013005
+edu-f61e2c42,education,school_lower_secondary,Muli — lower secondary (Gr 7-10),Meemu,Muli,2.91813,73.58142,MoE School Statistics 2024,2026-10-24,,MV013005
+edu-b02363e9,education,school_higher_secondary,Muli — higher secondary (Gr 11-12),Meemu,Muli,2.91813,73.58142,MoE School Statistics 2024,2026-10-24,,MV013005
+edu-eaa85280,education,school_primary,Naalaafushi — primary school (Gr 1-6),Meemu,Naalaafushi,2.89556,73.57756,MoE School Statistics 2024,2026-10-24,,MV013006
+edu-96ebc14e,education,school_lower_secondary,Naalaafushi — lower secondary (Gr 7-10),Meemu,Naalaafushi,2.89556,73.57756,MoE School Statistics 2024,2026-10-24,,MV013006
+edu-7eab9e0e,education,school_primary,Raimandhoo — primary school (Gr 1-6),Meemu,Raimandhoo,3.08904,73.6395,MoE School Statistics 2024,2026-10-24,,MV013001
+edu-7ae28fe2,education,school_primary,Veyvah — primary school (Gr 1-6),Meemu,Veyvah,2.95637,73.60018,MoE School Statistics 2024,2026-10-24,,MV013003
+edu-5002ae2f,education,school_lower_secondary,Veyvah — lower secondary (Gr 7-10),Meemu,Veyvah,2.95637,73.60018,MoE School Statistics 2024,2026-10-24,,MV013003
+edu-496f88d8,education,school_primary,Biledhdhoo — primary school (Gr 1-6),Faafu,Biledhdhoo,3.11838,72.98409,MoE School Statistics 2024,2026-10-24,,MV011002
+edu-aeb76d1c,education,school_lower_secondary,Biledhdhoo — lower secondary (Gr 7-10),Faafu,Biledhdhoo,3.11838,72.98409,MoE School Statistics 2024,2026-10-24,,MV011002
+edu-15667786,education,school_higher_secondary,Biledhdhoo — higher secondary (Gr 11-12),Faafu,Biledhdhoo,3.11838,72.98409,MoE School Statistics 2024,2026-10-24,,MV011002
+edu-8626e007,education,school_primary,Dharaboodhoo — primary school (Gr 1-6),Faafu,Dharaboodhoo,3.06302,72.92646,MoE School Statistics 2024,2026-10-24,,MV011004
+edu-7d32f97e,education,school_lower_secondary,Dharaboodhoo — lower secondary (Gr 7-10),Faafu,Dharaboodhoo,3.06302,72.92646,MoE School Statistics 2024,2026-10-24,,MV011004
+edu-eb0e736a,education,school_primary,Feeali — primary school (Gr 1-6),Faafu,Feeali,3.26995,73.00146,MoE School Statistics 2024,2026-10-24,,MV011001
+edu-0589e87e,education,school_lower_secondary,Feeali — lower secondary (Gr 7-10),Faafu,Feeali,3.26995,73.00146,MoE School Statistics 2024,2026-10-24,,MV011001
+edu-906e0b4f,education,school_primary,Magoodhoo — primary school (Gr 1-6),Faafu,Magoodhoo,3.07946,72.96509,MoE School Statistics 2024,2026-10-24,,MV011003
+edu-0815b06a,education,school_lower_secondary,Magoodhoo — lower secondary (Gr 7-10),Faafu,Magoodhoo,3.07946,72.96509,MoE School Statistics 2024,2026-10-24,,MV011003
+edu-12186ed0,education,school_primary,Nilandhoo — primary school (Gr 1-6),Faafu,Nilandhoo,3.0571,72.88846,MoE School Statistics 2024,2026-10-24,,MV011005
+edu-81fa6e1a,education,school_lower_secondary,Nilandhoo — lower secondary (Gr 7-10),Faafu,Nilandhoo,3.0571,72.88846,MoE School Statistics 2024,2026-10-24,,MV011005
+edu-2cac4f14,education,school_higher_secondary,Nilandhoo — higher secondary (Gr 11-12),Faafu,Nilandhoo,3.0571,72.88846,MoE School Statistics 2024,2026-10-24,,MV011005
+edu-f68e1d74,education,school_primary,Badidhoo — primary school (Gr 1-6),Dhaalu,Badidhoo,2.93679,72.99045,MoE School Statistics 2024,2026-10-24,,MV012002
+edu-526a1033,education,school_lower_secondary,Badidhoo — lower secondary (Gr 7-10),Dhaalu,Badidhoo,2.93679,72.99045,MoE School Statistics 2024,2026-10-24,,MV012002
+edu-3107d567,education,school_primary,Hulhudheli — primary school (Gr 1-6),Dhaalu,Hulhudheli,2.8584,72.84705,MoE School Statistics 2024,2026-10-24,,MV012004
+edu-5c48a925,education,school_lower_secondary,Hulhudheli — lower secondary (Gr 7-10),Dhaalu,Hulhudheli,2.8584,72.84705,MoE School Statistics 2024,2026-10-24,,MV012004
+edu-ec96ed13,education,school_primary,Kudahuvadhoo — primary school (Gr 1-6),Dhaalu,Kudahuvadhoo,2.67062,72.8908,MoE School Statistics 2024,2026-10-24,,MV012008
+edu-886f2ee1,education,school_lower_secondary,Kudahuvadhoo — lower secondary (Gr 7-10),Dhaalu,Kudahuvadhoo,2.67062,72.8908,MoE School Statistics 2024,2026-10-24,,MV012008
+edu-2a5015ab,education,school_higher_secondary,Kudahuvadhoo — higher secondary (Gr 11-12),Dhaalu,Kudahuvadhoo,2.67062,72.8908,MoE School Statistics 2024,2026-10-24,,MV012008
+edu-6189940b,education,school_primary,Maaeboodhoo — primary school (Gr 1-6),Dhaalu,Maaeboodhoo,2.69575,72.96456,MoE School Statistics 2024,2026-10-24,,MV012007
+edu-30895a95,education,school_lower_secondary,Maaeboodhoo — lower secondary (Gr 7-10),Dhaalu,Maaeboodhoo,2.69575,72.96456,MoE School Statistics 2024,2026-10-24,,MV012007
+edu-f601fd29,education,school_primary,Meedhoo — primary school (Gr 1-6),Dhaalu,Meedhoo,2.9981,73.00783,MoE School Statistics 2024,2026-10-24,,MV012001
+edu-c1a6e907,education,school_lower_secondary,Meedhoo — lower secondary (Gr 7-10),Dhaalu,Meedhoo,2.9981,73.00783,MoE School Statistics 2024,2026-10-24,,MV012001
+edu-697e8cdd,education,school_higher_secondary,Meedhoo — higher secondary (Gr 11-12),Dhaalu,Meedhoo,2.9981,73.00783,MoE School Statistics 2024,2026-10-24,,MV012001
+edu-806d8a93,education,school_primary,Ribudhoo — primary school (Gr 1-6),Dhaalu,Ribudhoo,2.92458,72.89548,MoE School Statistics 2024,2026-10-24,,MV012003
+edu-a0f411d8,education,school_lower_secondary,Ribudhoo — lower secondary (Gr 7-10),Dhaalu,Ribudhoo,2.92458,72.89548,MoE School Statistics 2024,2026-10-24,,MV012003
+edu-548b323a,education,school_primary,Buruni — primary school (Gr 1-6),Thaa,Buruni,2.55873,73.10617,MoE School Statistics 2024,2026-10-24,,MV014001
+edu-44ae7411,education,school_lower_secondary,Buruni — lower secondary (Gr 7-10),Thaa,Buruni,2.55873,73.10617,MoE School Statistics 2024,2026-10-24,,MV014001
+edu-65e18ccf,education,school_primary,Dhiyamigili — primary school (Gr 1-6),Thaa,Dhiyamigili,2.34022,73.33787,MoE School Statistics 2024,2026-10-24,,MV014004
+edu-8e2a6e95,education,school_lower_secondary,Dhiyamigili — lower secondary (Gr 7-10),Thaa,Dhiyamigili,2.34022,73.33787,MoE School Statistics 2024,2026-10-24,,MV014004
+edu-526d3930,education,school_primary,Gaadhiffushi — primary school (Gr 1-6),Thaa,Gaadhiffushi,2.25283,73.2132,MoE School Statistics 2024,2026-10-24,,MV014009
+edu-cc9ed106,education,school_lower_secondary,Gaadhiffushi — lower secondary (Gr 7-10),Thaa,Gaadhiffushi,2.25283,73.2132,MoE School Statistics 2024,2026-10-24,,MV014009
+edu-e9ba5150,education,school_primary,Guraidhoo — primary school (Gr 1-6),Thaa,Guraidhoo,2.32232,73.31748,MoE School Statistics 2024,2026-10-24,,MV014005
+edu-070b4c04,education,school_lower_secondary,Guraidhoo — lower secondary (Gr 7-10),Thaa,Guraidhoo,2.32232,73.31748,MoE School Statistics 2024,2026-10-24,,MV014005
+edu-7e760c55,education,school_higher_secondary,Guraidhoo — higher secondary (Gr 11-12),Thaa,Guraidhoo,2.32232,73.31748,MoE School Statistics 2024,2026-10-24,,MV014005
+edu-17808663,education,school_primary,Hirilandhoo — primary school (Gr 1-6),Thaa,Hirilandhoo,2.26969,72.93182,MoE School Statistics 2024,2026-10-24,,MV014008
+edu-0275eddb,education,school_lower_secondary,Hirilandhoo — lower secondary (Gr 7-10),Thaa,Hirilandhoo,2.26969,72.93182,MoE School Statistics 2024,2026-10-24,,MV014008
+edu-44e9e6a5,education,school_primary,Kadoodhoo — primary school (Gr 1-6),Thaa,Kadoodhoo,2.3216,72.91677,MoE School Statistics 2024,2026-10-24,,MV014006
+edu-82153fa8,education,school_lower_secondary,Kadoodhoo — lower secondary (Gr 7-10),Thaa,Kadoodhoo,2.3216,72.91677,MoE School Statistics 2024,2026-10-24,,MV014006
+edu-72d1d57a,education,school_primary,Kibidhoo — primary school (Gr 1-6),Thaa,Kibidhoo,2.16809,73.06492,MoE School Statistics 2024,2026-10-24,,MV014012
+edu-e151c3c3,education,school_lower_secondary,Kibidhoo — lower secondary (Gr 7-10),Thaa,Kibidhoo,2.16809,73.06492,MoE School Statistics 2024,2026-10-24,,MV014012
+edu-9c187784,education,school_primary,Madifushi — primary school (Gr 1-6),Thaa,Madifushi,2.35724,73.35577,MoE School Statistics 2024,2026-10-24,,MV014003
+edu-f2188016,education,school_lower_secondary,Madifushi — lower secondary (Gr 7-10),Thaa,Madifushi,2.35724,73.35577,MoE School Statistics 2024,2026-10-24,,MV014003
+edu-dde98356,education,school_primary,Omadhoo — primary school (Gr 1-6),Thaa,Omadhoo,2.16745,73.02393,MoE School Statistics 2024,2026-10-24,,MV014013
+edu-15e5d961,education,school_lower_secondary,Omadhoo — lower secondary (Gr 7-10),Thaa,Omadhoo,2.16745,73.02393,MoE School Statistics 2024,2026-10-24,,MV014013
+edu-8f458567,education,school_primary,Thimarafushi — primary school (Gr 1-6),Thaa,Thimarafushi,2.20965,73.14893,MoE School Statistics 2024,2026-10-24,,MV014010
+edu-e1f66ae4,education,school_lower_secondary,Thimarafushi — lower secondary (Gr 7-10),Thaa,Thimarafushi,2.20965,73.14893,MoE School Statistics 2024,2026-10-24,,MV014010
+edu-6f42a760,education,school_primary,Vandhoo — primary school (Gr 1-6),Thaa,Vandhoo,2.29175,72.94181,MoE School Statistics 2024,2026-10-24,,MV014007
+edu-5b25d833,education,school_lower_secondary,Vandhoo — lower secondary (Gr 7-10),Thaa,Vandhoo,2.29175,72.94181,MoE School Statistics 2024,2026-10-24,,MV014007
+edu-500f8729,education,school_primary,Veymandoo — primary school (Gr 1-6),Thaa,Veymandoo,2.18743,73.09544,MoE School Statistics 2024,2026-10-24,,MV014011
+edu-99c064f9,education,school_lower_secondary,Veymandoo — lower secondary (Gr 7-10),Thaa,Veymandoo,2.18743,73.09544,MoE School Statistics 2024,2026-10-24,,MV014011
+edu-1b0410b8,education,school_higher_secondary,Veymandoo — higher secondary (Gr 11-12),Thaa,Veymandoo,2.18743,73.09544,MoE School Statistics 2024,2026-10-24,,MV014011
+edu-f6896fac,education,school_primary,Vilufushi — primary school (Gr 1-6),Thaa,Vilufushi,2.50306,73.30894,MoE School Statistics 2024,2026-10-24,,MV014002
+edu-f6233891,education,school_lower_secondary,Vilufushi — lower secondary (Gr 7-10),Thaa,Vilufushi,2.50306,73.30894,MoE School Statistics 2024,2026-10-24,,MV014002
+edu-cf216b7e,education,school_higher_secondary,Vilufushi — higher secondary (Gr 11-12),Thaa,Vilufushi,2.50306,73.30894,MoE School Statistics 2024,2026-10-24,,MV014002
+edu-5ff0765b,education,school_primary,Dhabidhoo — primary school (Gr 1-6),Laamu,Dhabidhoo,2.09377,73.54525,MoE School Statistics 2024,2026-10-24,,MV015002
+edu-57040c5b,education,school_lower_secondary,Dhabidhoo — lower secondary (Gr 7-10),Laamu,Dhabidhoo,2.09377,73.54525,MoE School Statistics 2024,2026-10-24,,MV015002
+edu-dfcbd202,education,school_primary,Fonadhoo — primary school (Gr 1-6),Laamu,Fonadhoo,1.83559,73.5036,MoE School Statistics 2024,2026-10-24,,MV015008
+edu-e0a2dacf,education,school_lower_secondary,Fonadhoo — lower secondary (Gr 7-10),Laamu,Fonadhoo,1.83559,73.5036,MoE School Statistics 2024,2026-10-24,,MV015008
+edu-2c104349,education,school_higher_secondary,Fonadhoo — higher secondary (Gr 11-12),Laamu,Fonadhoo,1.83559,73.5036,MoE School Statistics 2024,2026-10-24,,MV015008
+edu-78811ff8,education,school_primary,Hithadhoo — primary school (Gr 1-6),Laamu,Hithadhoo,1.79659,73.38851,MoE School Statistics 2024,2026-10-24,,MV015011
+edu-b103ac58,education,school_lower_secondary,Hithadhoo — lower secondary (Gr 7-10),Laamu,Hithadhoo,1.79659,73.38851,MoE School Statistics 2024,2026-10-24,,MV015011
+edu-e3234179,education,school_primary,Isdhoo — primary school (Gr 1-6),Laamu,Isdhoo,2.12478,73.57998,MoE School Statistics 2024,2026-10-24,,MV015001
+edu-3c57a82c,education,school_lower_secondary,Isdhoo — lower secondary (Gr 7-10),Laamu,Isdhoo,2.12478,73.57998,MoE School Statistics 2024,2026-10-24,,MV015001
+edu-27ca49ad,education,school_primary,Kalaidhoo — primary school (Gr 1-6),Laamu,Kalaidhoo,2.11352,73.55991,MoE School Statistics 2024,2026-10-24,,MV015005
+edu-0384aea6,education,school_lower_secondary,Kalaidhoo — lower secondary (Gr 7-10),Laamu,Kalaidhoo,2.11352,73.55991,MoE School Statistics 2024,2026-10-24,,MV015005
+edu-74889fa7,education,school_primary,Kunahandhoo — primary school (Gr 1-6),Laamu,Kunahandhoo,1.78386,73.36815,MoE School Statistics 2024,2026-10-24,,MV015012
+edu-3ce0f562,education,school_lower_secondary,Kunahandhoo — lower secondary (Gr 7-10),Laamu,Kunahandhoo,1.78386,73.36815,MoE School Statistics 2024,2026-10-24,,MV015012
+edu-21d110d5,education,school_primary,Maabaidhoo — primary school (Gr 1-6),Laamu,Maabaidhoo,2.02963,73.53376,MoE School Statistics 2024,2026-10-24,,MV015003
+edu-1da71f0d,education,school_lower_secondary,Maabaidhoo — lower secondary (Gr 7-10),Laamu,Maabaidhoo,2.02963,73.53376,MoE School Statistics 2024,2026-10-24,,MV015003
+edu-df92c79e,education,school_primary,Maamendhoo — primary school (Gr 1-6),Laamu,Maamendhoo,1.81832,73.38901,MoE School Statistics 2024,2026-10-24,,MV015010
+edu-7a97cd60,education,school_lower_secondary,Maamendhoo — lower secondary (Gr 7-10),Laamu,Maamendhoo,1.81832,73.38901,MoE School Statistics 2024,2026-10-24,,MV015010
+edu-cab612a3,education,school_primary,Maavah — primary school (Gr 1-6),Laamu,Maavah,1.88534,73.24325,MoE School Statistics 2024,2026-10-24,,MV015007
+edu-2a3920f5,education,school_lower_secondary,Maavah — lower secondary (Gr 7-10),Laamu,Maavah,1.88534,73.24325,MoE School Statistics 2024,2026-10-24,,MV015007
+edu-33687afd,education,school_higher_secondary,Maavah — higher secondary (Gr 11-12),Laamu,Maavah,1.88534,73.24325,MoE School Statistics 2024,2026-10-24,,MV015007
+edu-d150af33,education,school_primary,Mundoo — primary school (Gr 1-6),Laamu,Mundoo,2.01122,73.5344,MoE School Statistics 2024,2026-10-24,,MV015004
+edu-594ab380,education,school_lower_secondary,Mundoo — lower secondary (Gr 7-10),Laamu,Mundoo,2.01122,73.5344,MoE School Statistics 2024,2026-10-24,,MV015004
+edu-4175aaa9,education,school_primary,Dhaandhoo — primary school (Gr 1-6),Gaafu Alifu,Dhaandhoo,0.62072,73.46208,MoE School Statistics 2024,2026-10-24,,MV016005
+edu-27ef45ca,education,school_lower_secondary,Dhaandhoo — lower secondary (Gr 7-10),Gaafu Alifu,Dhaandhoo,0.62072,73.46208,MoE School Statistics 2024,2026-10-24,,MV016005
+edu-764253d3,education,school_higher_secondary,Dhaandhoo — higher secondary (Gr 11-12),Gaafu Alifu,Dhaandhoo,0.62072,73.46208,MoE School Statistics 2024,2026-10-24,,MV016005
+edu-2338a2ba,education,school_primary,Dhevvadhoo — primary school (Gr 1-6),Gaafu Alifu,Dhevvadhoo,0.55678,73.24258,MoE School Statistics 2024,2026-10-24,,MV016006
+edu-57864762,education,school_lower_secondary,Dhevvadhoo — lower secondary (Gr 7-10),Gaafu Alifu,Dhevvadhoo,0.55678,73.24258,MoE School Statistics 2024,2026-10-24,,MV016006
+edu-83d6000e,education,school_primary,Gemanafushi — primary school (Gr 1-6),Gaafu Alifu,Gemanafushi,0.44222,73.56873,MoE School Statistics 2024,2026-10-24,,MV016009
+edu-87636e5f,education,school_lower_secondary,Gemanafushi — lower secondary (Gr 7-10),Gaafu Alifu,Gemanafushi,0.44222,73.56873,MoE School Statistics 2024,2026-10-24,,MV016009
+edu-ef5ce7b8,education,school_primary,Kanduhulhudhoo — primary school (Gr 1-6),Gaafu Alifu,Kanduhulhudhoo,0.35149,73.53986,MoE School Statistics 2024,2026-10-24,,MV016010
+edu-146b6e1e,education,school_lower_secondary,Kanduhulhudhoo — lower secondary (Gr 7-10),Gaafu Alifu,Kanduhulhudhoo,0.35149,73.53986,MoE School Statistics 2024,2026-10-24,,MV016010
+edu-f5f520b8,education,school_primary,Kolamaafushi — primary school (Gr 1-6),Gaafu Alifu,Kolamaafushi,0.83725,73.18399,MoE School Statistics 2024,2026-10-24,,MV016001
+edu-9cd1d065,education,school_lower_secondary,Kolamaafushi — lower secondary (Gr 7-10),Gaafu Alifu,Kolamaafushi,0.83725,73.18399,MoE School Statistics 2024,2026-10-24,,MV016001
+edu-b8fbbd95,education,school_primary,Kodey — primary school (Gr 1-6),Gaafu Alifu,Kodey,0.49974,73.54805,MoE School Statistics 2024,2026-10-24,,MV016007
+edu-88a61408,education,school_lower_secondary,Kodey — lower secondary (Gr 7-10),Gaafu Alifu,Kodey,0.49974,73.54805,MoE School Statistics 2024,2026-10-24,,MV016007
+edu-49297a56,education,school_primary,Maamendhoo — primary school (Gr 1-6),Gaafu Alifu,Maamendhoo,0.71344,73.43952,MoE School Statistics 2024,2026-10-24,,MV016003
+edu-07a4f8b0,education,school_lower_secondary,Maamendhoo — lower secondary (Gr 7-10),Gaafu Alifu,Maamendhoo,0.71344,73.43952,MoE School Statistics 2024,2026-10-24,,MV016003
+edu-efbc529c,education,school_higher_secondary,Maamendhoo — higher secondary (Gr 11-12),Gaafu Alifu,Maamendhoo,0.71344,73.43952,MoE School Statistics 2024,2026-10-24,,MV016003
+edu-8e98f8eb,education,school_primary,Nilandhoo — primary school (Gr 1-6),Gaafu Alifu,Nilandhoo,0.6365,73.44659,MoE School Statistics 2024,2026-10-24,,MV016004
+edu-379ac89a,education,school_lower_secondary,Nilandhoo — lower secondary (Gr 7-10),Gaafu Alifu,Nilandhoo,0.6365,73.44659,MoE School Statistics 2024,2026-10-24,,MV016004
+edu-cc8aabc1,education,school_primary,Viligili — primary school (Gr 1-6),Gaafu Alifu,Viligili,0.75617,73.43552,MoE School Statistics 2024,2026-10-24,,MV016002
+edu-477ed699,education,school_lower_secondary,Viligili — lower secondary (Gr 7-10),Gaafu Alifu,Viligili,0.75617,73.43552,MoE School Statistics 2024,2026-10-24,,MV016002
+edu-2f666711,education,school_higher_secondary,Viligili — higher secondary (Gr 11-12),Gaafu Alifu,Viligili,0.75617,73.43552,MoE School Statistics 2024,2026-10-24,,MV016002
+edu-d6ef812c,education,school_primary,Fares-Maathodaa — primary school (Gr 1-6),Gaafu Dhaalu,Fares-Maathodaa,0.19918,73.18983,MoE School Statistics 2024,2026-10-24,,MV017008
+edu-426caffa,education,school_lower_secondary,Fares-Maathodaa — lower secondary (Gr 7-10),Gaafu Dhaalu,Fares-Maathodaa,0.19918,73.18983,MoE School Statistics 2024,2026-10-24,,MV017008
+edu-bd45ba7d,education,school_primary,Fiyoari — primary school (Gr 1-6),Gaafu Dhaalu,Fiyoari,0.22117,73.13673,MoE School Statistics 2024,2026-10-24,,MV017007
+edu-71ad93cf,education,school_lower_secondary,Fiyoari — lower secondary (Gr 7-10),Gaafu Dhaalu,Fiyoari,0.22117,73.13673,MoE School Statistics 2024,2026-10-24,,MV017007
+edu-cf880fab,education,school_primary,Gadhdhoo — primary school (Gr 1-6),Gaafu Dhaalu,Gadhdhoo,0.29029,73.45771,MoE School Statistics 2024,2026-10-24,,MV017004
+edu-7f6f1fd4,education,school_lower_secondary,Gadhdhoo — lower secondary (Gr 7-10),Gaafu Dhaalu,Gadhdhoo,0.29029,73.45771,MoE School Statistics 2024,2026-10-24,,MV017004
+edu-4133128c,education,school_higher_secondary,Gadhdhoo — higher secondary (Gr 11-12),Gaafu Dhaalu,Gadhdhoo,0.29029,73.45771,MoE School Statistics 2024,2026-10-24,,MV017004
+edu-aa2fe466,education,school_primary,Hoadedhdhoo — primary school (Gr 1-6),Gaafu Dhaalu,Hoadedhdhoo,0.44431,73.00358,MoE School Statistics 2024,2026-10-24,,MV017002
+edu-e39949d8,education,school_lower_secondary,Hoadedhdhoo — lower secondary (Gr 7-10),Gaafu Dhaalu,Hoadedhdhoo,0.44431,73.00358,MoE School Statistics 2024,2026-10-24,,MV017002
+edu-3503efd3,education,school_primary,Madaveli — primary school (Gr 1-6),Gaafu Dhaalu,Madaveli,0.45905,72.99829,MoE School Statistics 2024,2026-10-24,,MV017001
+edu-d377be53,education,school_lower_secondary,Madaveli — lower secondary (Gr 7-10),Gaafu Dhaalu,Madaveli,0.45905,72.99829,MoE School Statistics 2024,2026-10-24,,MV017001
+edu-d03d03c0,education,school_primary,Nadallaa — primary school (Gr 1-6),Gaafu Dhaalu,Nadallaa,0.29369,73.04056,MoE School Statistics 2024,2026-10-24,,MV017003
+edu-a0152a5e,education,school_lower_secondary,Nadallaa — lower secondary (Gr 7-10),Gaafu Dhaalu,Nadallaa,0.29369,73.04056,MoE School Statistics 2024,2026-10-24,,MV017003
+edu-d4bef047,education,school_primary,Rathafandhoo — primary school (Gr 1-6),Gaafu Dhaalu,Rathafandhoo,0.25284,73.10507,MoE School Statistics 2024,2026-10-24,,MV017005
+edu-eacec3f7,education,school_lower_secondary,Rathafandhoo — lower secondary (Gr 7-10),Gaafu Dhaalu,Rathafandhoo,0.25284,73.10507,MoE School Statistics 2024,2026-10-24,,MV017005
+edu-6be1d9f0,education,school_primary,Thinadhoo — primary school (Gr 1-6),Gaafu Dhaalu,Thinadhoo,0.53238,72.99708,MoE School Statistics 2024,2026-10-24,,MV017010
+edu-efbe3ae7,education,school_lower_secondary,Thinadhoo — lower secondary (Gr 7-10),Gaafu Dhaalu,Thinadhoo,0.53238,72.99708,MoE School Statistics 2024,2026-10-24,,MV017010
+edu-738f10a3,education,school_higher_secondary,Thinadhoo — higher secondary (Gr 11-12),Gaafu Dhaalu,Thinadhoo,0.53238,72.99708,MoE School Statistics 2024,2026-10-24,,MV017010
+edu-7c8dd1a8,education,school_primary,Vaadhoo — primary school (Gr 1-6),Gaafu Dhaalu,Vaadhoo,0.22729,73.27338,MoE School Statistics 2024,2026-10-24,,MV017006
+edu-92c8959d,education,school_lower_secondary,Vaadhoo — lower secondary (Gr 7-10),Gaafu Dhaalu,Vaadhoo,0.22729,73.27338,MoE School Statistics 2024,2026-10-24,,MV017006
+edu-8dd83976,education,school_primary,Fuvahmulah — primary school (Gr 1-6),Gnaviyani,Fuvahmulah,-0.29447,73.42339,MoE School Statistics 2024,2026-10-24,,MV018001
+edu-c57ad982,education,school_lower_secondary,Fuvahmulah — lower secondary (Gr 7-10),Gnaviyani,Fuvahmulah,-0.29447,73.42339,MoE School Statistics 2024,2026-10-24,,MV018001
+edu-42e4a7df,education,school_higher_secondary,Fuvahmulah — higher secondary (Gr 11-12),Gnaviyani,Fuvahmulah,-0.29447,73.42339,MoE School Statistics 2024,2026-10-24,,MV018001
+edu-0b3e60b6,education,school_primary,Feydhoo — primary school (Gr 1-6),Seenu,Feydhoo,-0.6823,73.13487,MoE School Statistics 2024,2026-10-24,,MV019004
+edu-167230fb,education,school_lower_secondary,Feydhoo — lower secondary (Gr 7-10),Seenu,Feydhoo,-0.6823,73.13487,MoE School Statistics 2024,2026-10-24,,MV019004
+edu-bc955e23,education,school_primary,Hithadhoo — primary school (Gr 1-6),Seenu,Hithadhoo,-0.61577,73.09356,MoE School Statistics 2024,2026-10-24,,MV019002
+edu-70fbf33f,education,school_lower_secondary,Hithadhoo — lower secondary (Gr 7-10),Seenu,Hithadhoo,-0.61577,73.09356,MoE School Statistics 2024,2026-10-24,,MV019002
+edu-140943c0,education,school_higher_secondary,Hithadhoo — higher secondary (Gr 11-12),Seenu,Hithadhoo,-0.61577,73.09356,MoE School Statistics 2024,2026-10-24,,MV019002
+edu-fbaf0a50,education,school_primary,Meedhoo — primary school (Gr 1-6),Seenu,Meedhoo,-0.58447,73.23066,MoE School Statistics 2024,2026-10-24,,MV019001
+edu-eacbdcd3,education,school_lower_secondary,Meedhoo — lower secondary (Gr 7-10),Seenu,Meedhoo,-0.58447,73.23066,MoE School Statistics 2024,2026-10-24,,MV019001
+edu-51abf6a9,education,school_primary,Maradhoo — primary school (Gr 1-6),Seenu,Maradhoo,-0.66488,73.11817,MoE School Statistics 2024,2026-10-24,,MV019003
+edu-390158fc,education,school_lower_secondary,Maradhoo — lower secondary (Gr 7-10),Seenu,Maradhoo,-0.66488,73.11817,MoE School Statistics 2024,2026-10-24,,MV019003
+edu-2a17d8ee,education,college,The Maldives National University,Male (city),"Malé City (incl. Villimalé, Hulhumalé)",4.17549,73.50935,MNU campus list,2026-10-24,,MLE
+edu-de57c5a5,education,college,MNU Kulhudhuffushi Campus,Haa Dhaalu,Kulhudhuffushi,6.62319,73.06941,MNU campus list,2026-10-24,,MV002012
+edu-f449aeae,education,college,MNU Thinadhoo Campus,Gaafu Dhaalu,Thinadhoo,0.53238,72.99708,MNU campus list,2026-10-24,,MV017010
+edu-68ef2c1f,education,college,MNU Hithadhoo Campus,Seenu,Hithadhoo,-0.61577,73.09356,MNU campus list,2026-10-24,,MV019002

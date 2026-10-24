@@ -1,6 +1,6 @@
 # Source manifest
 
-Generated 2026-10-24 06:27 UTC by `scripts/ingest.py`.
+Generated 2026-10-24 06:52 UTC by `scripts/ingest.py`.
 
 | source | files | size | last touched | fingerprint |
 |---|---:|---:|---|---|
@@ -11,6 +11,8 @@ Generated 2026-10-24 06:27 UTC by `scripts/ingest.py`.
 | census | 2 | 223 kB | 2026-10-24 05:06 | `2c1aef5cd9027a92` |
 | boundaries | 2 | 18 MB | 2026-10-24 05:06 | `22468774e3d7754d` |
 | moe | 1 | 14 MB | 2026-10-24 05:24 | `d0fd1ce9504e0b52` |
+| moh | 1 | 266 kB | 2026-10-24 06:31 | `fa614465606586e1` |
+| services | 1 | 86 kB | 2026-10-24 06:51 | `4827dad82d7931c5` |
 
 Derived tables:
 

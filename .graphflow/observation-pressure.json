@@ -2,11 +2,11 @@
   "sessions": {
     "session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9": {
       "sessionId": "session-60d06c42-fdc1-4b2f-8fb5-66cc667b32a9",
-      "rawBytes": 1126,
-      "visibleBytes": 1126,
-      "observations": 3,
-      "usedTokensEstimate": 282,
-      "updatedAt": "2026-10-24T06:27:12.960Z"
+      "rawBytes": 27946,
+      "visibleBytes": 27946,
+      "observations": 15,
+      "usedTokensEstimate": 6987,
+      "updatedAt": "2026-10-24T06:32:12.645Z"
     }
   }
 }
